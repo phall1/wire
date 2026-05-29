@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-aether-imp",
+  "family": "media-type",
+  "slug": "application-vnd-aether-imp",
+  "title": "application/vnd.aether.imp",
+  "summary": "Media type \"application/vnd.aether.imp\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.aether.imp",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.aether.imp",
+      "Template": "application/vnd.aether.imp",
+      "Reference": "[Jay_Moskowitz]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.aether.imp"
+  ]
+}

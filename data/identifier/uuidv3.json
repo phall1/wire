@@ -1,0 +1,44 @@
+{
+  "id": "identifier/uuidv3",
+  "family": "identifier",
+  "slug": "uuidv3",
+  "title": "UUID Version 3 (name-based, MD5)",
+  "summary": "UUIDv3 is a name-based UUID derived deterministically by MD5-hashing a namespace UUID concatenated with a name, then overwriting the version (3) and variant bits. The same namespace + name always yields the same UUID, so it is used to mint stable ids from URLs, DNS names, or OIDs. UUIDv5 is the SHA-1 equivalent and is preferred for new designs.",
+  "kind": "identifier",
+  "aliases": [
+    "UUID v3",
+    "name-based UUID (MD5)",
+    "version 3 UUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.3",
+  "source_version": "RFC 9562 §5.3",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv5",
+    "identifier/uuidv4"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.3",
+    "example": "5df41881-3aed-3515-88a7-2f4a814cf09e",
+    "bit_layout": [
+      { "field": "md5_high", "bits": 48, "meaning": "High 48 bits of MD5(namespace_uuid || name)." },
+      { "field": "ver", "bits": 4, "meaning": "version = 0b0011 (3), overwriting hash bits." },
+      { "field": "md5_mid", "bits": 12, "meaning": "Next 12 bits of the MD5 digest." },
+      { "field": "var", "bits": 2, "meaning": "variant = 0b10, overwriting hash bits." },
+      { "field": "md5_low", "bits": 62, "meaning": "Remaining 62 bits of the MD5 digest." }
+    ],
+    "length_bits": 128,
+    "sortable": false,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "Deterministic: UUIDv3(namespace, name) = set_version_variant( MD5( bytes(namespace) || bytes(name) ), 3 ). Same inputs -> same UUID.",
+      "Example uses the DNS namespace (6ba7b810-9dad-11d1-80b4-00c04fd430c8) with name 'www.example.com', yielding 5df41881-3aed-3515-88a7-2f4a814cf09e (RFC 9562 Appendix).",
+      "MD5 is used only for namespacing, not security; prefer UUIDv5 (SHA-1) for new applications per RFC 9562."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

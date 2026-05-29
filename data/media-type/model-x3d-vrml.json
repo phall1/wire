@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-x3d-vrml",
+  "family": "media-type",
+  "slug": "model-x3d-vrml",
+  "title": "model/x3d-vrml",
+  "summary": "Media type \"model/x3d-vrml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/x3d-vrml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "x3d-vrml",
+      "Template": "model/x3d-vrml",
+      "Reference": "[Web3D][Web3D_X3D]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/x3d-vrml"
+  ]
+}

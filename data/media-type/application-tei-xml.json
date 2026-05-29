@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-tei-xml",
+  "family": "media-type",
+  "slug": "application-tei-xml",
+  "title": "application/tei+xml",
+  "summary": "Media type \"application/tei+xml\". Registered/referenced in RFC6129.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/tei+xml",
+    "reference_rfcs": [
+      "RFC6129"
+    ],
+    "raw_columns": {
+      "Name": "tei+xml",
+      "Template": "application/tei+xml",
+      "Reference": "[RFC6129]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/tei+xml"
+  ]
+}

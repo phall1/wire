@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-cpim",
+  "family": "media-type",
+  "slug": "message-cpim",
+  "title": "message/CPIM",
+  "summary": "Media type \"message/CPIM\". Registered/referenced in RFC3862.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/CPIM",
+    "reference_rfcs": [
+      "RFC3862"
+    ],
+    "raw_columns": {
+      "Name": "CPIM",
+      "Template": "message/CPIM",
+      "Reference": "[RFC3862]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/CPIM"
+  ]
+}

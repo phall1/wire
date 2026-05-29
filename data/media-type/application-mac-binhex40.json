@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-mac-binhex40",
+  "family": "media-type",
+  "slug": "application-mac-binhex40",
+  "title": "application/mac-binhex40",
+  "summary": "Media type \"application/mac-binhex40\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mac-binhex40",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "mac-binhex40",
+      "Template": "application/mac-binhex40",
+      "Reference": "[Patrik_Faltstrom]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mac-binhex40"
+  ]
+}

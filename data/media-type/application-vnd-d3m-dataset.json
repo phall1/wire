@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-d3m-dataset",
+  "family": "media-type",
+  "slug": "application-vnd-d3m-dataset",
+  "title": "application/vnd.d3m-dataset",
+  "summary": "Media type \"application/vnd.d3m-dataset\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.d3m-dataset",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.d3m-dataset",
+      "Template": "application/vnd.d3m-dataset",
+      "Reference": "[Mi_Tar]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.d3m-dataset"
+  ]
+}

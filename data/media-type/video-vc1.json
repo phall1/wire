@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-vc1",
+  "family": "media-type",
+  "slug": "video-vc1",
+  "title": "video/vc1",
+  "summary": "Media type \"video/vc1\". Registered/referenced in RFC4425.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vc1",
+    "reference_rfcs": [
+      "RFC4425"
+    ],
+    "raw_columns": {
+      "Name": "vc1",
+      "Template": "video/vc1",
+      "Reference": "[RFC4425]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vc1"
+  ]
+}

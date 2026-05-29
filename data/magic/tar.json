@@ -1,0 +1,33 @@
+{
+  "id": "magic/tar",
+  "family": "magic",
+  "slug": "tar",
+  "title": "tar (ustar) signature (offset 257: 75 73 74 61 72)",
+  "summary": "A POSIX/ustar tar archive has no magic at offset 0. Instead the per-file header carries the ASCII string 'ustar' at byte offset 257, followed by a version field. Older 'v7' tar archives have no magic at all and must be detected by checksum validation.",
+  "kind": "signature",
+  "aliases": ["tar magic", "ustar"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html#tag_20_92_13_06",
+  "source_version": "POSIX.1-2017 (IEEE 1003.1) pax, ustar Interchange Format (magic 'ustar\\0' at offset 257)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/gzip", "magic/7z"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "75 73 74 61 72",
+    "offset": 257,
+    "magic_ascii": "ustar",
+    "extensions": ["tar"],
+    "mime": "application/x-tar",
+    "spec": "POSIX.1-2017 ustar Interchange Format",
+    "notes": [
+      "The 512-byte file header has the 6-byte 'magic' field at offset 257.",
+      "POSIX ustar: 'ustar\\0' (75 73 74 61 72 00) with version '00' at offset 263.",
+      "GNU tar: 'ustar  \\0' (75 73 74 61 72 20 20 00) — 'ustar' then two spaces then NUL.",
+      "Legacy v7 tar has NO magic; detection relies on validating the octal header checksum.",
+      "tar files are very often compressed: .tar.gz/.tgz (gzip 1F 8B), .tar.bz2, .tar.xz — those outer magics apply first."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

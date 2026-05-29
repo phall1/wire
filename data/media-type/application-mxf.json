@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-mxf",
+  "family": "media-type",
+  "slug": "application-mxf",
+  "title": "application/mxf",
+  "summary": "Media type \"application/mxf\". Registered/referenced in RFC4539.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mxf",
+    "reference_rfcs": [
+      "RFC4539"
+    ],
+    "raw_columns": {
+      "Name": "mxf",
+      "Template": "application/mxf",
+      "Reference": "[RFC4539]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mxf"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-dlna-mpeg-tts",
+  "family": "media-type",
+  "slug": "video-vnd-dlna-mpeg-tts",
+  "title": "video/vnd.dlna.mpeg-tts",
+  "summary": "Media type \"video/vnd.dlna.mpeg-tts\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.dlna.mpeg-tts",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dlna.mpeg-tts",
+      "Template": "video/vnd.dlna.mpeg-tts",
+      "Reference": "[Edwin_Heredia]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.dlna.mpeg-tts"
+  ]
+}

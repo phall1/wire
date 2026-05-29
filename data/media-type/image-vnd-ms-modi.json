@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-ms-modi",
+  "family": "media-type",
+  "slug": "image-vnd-ms-modi",
+  "title": "image/vnd.ms-modi",
+  "summary": "Media type \"image/vnd.ms-modi\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.ms-modi",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.ms-modi",
+      "Template": "image/vnd.ms-modi",
+      "Reference": "[Gregory_Vaughan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.ms-modi"
+  ]
+}

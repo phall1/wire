@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/amphtml",
+  "family": "well-known-uri",
+  "slug": "amphtml",
+  "title": "/.well-known/amphtml",
+  "summary": "Well-known URI suffix \"/.well-known/amphtml\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "amphtml",
+    "reference_rfcs": [],
+    "registration_date": "2020-07-06",
+    "raw_columns": {
+      "URI Suffix": "amphtml",
+      "Reference": "[https://developers.google.com/amp/cache/update-cache]",
+      "Status": "provisional",
+      "Change Controller": "AMP Project (OpenJS Foundation)",
+      "Related Information": "",
+      "Date Registered": "2020-07-06",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

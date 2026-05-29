@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/current",
+  "family": "link-relation",
+  "slug": "current",
+  "title": "current",
+  "summary": "Link relation type \"current\": Refers to a resource containing the most recent\n      item(s) in a collection of resources. Defined in RFC5005.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "current",
+    "reference_rfcs": [
+      "RFC5005"
+    ],
+    "raw_columns": {
+      "Relation Name": "current",
+      "Description": "Refers to a resource containing the most recent\n      item(s) in a collection of resources.",
+      "Reference": "[RFC5005]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

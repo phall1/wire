@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-senml-exi",
+  "family": "media-type",
+  "slug": "application-senml-exi",
+  "title": "application/senml-exi",
+  "summary": "Media type \"application/senml-exi\". Registered/referenced in RFC8428.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/senml-exi",
+    "reference_rfcs": [
+      "RFC8428"
+    ],
+    "raw_columns": {
+      "Name": "senml-exi",
+      "Template": "application/senml-exi",
+      "Reference": "[RFC8428]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/senml-exi"
+  ]
+}

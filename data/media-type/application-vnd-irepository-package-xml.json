@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-irepository-package-xml",
+  "family": "media-type",
+  "slug": "application-vnd-irepository-package-xml",
+  "title": "application/vnd.irepository.package+xml",
+  "summary": "Media type \"application/vnd.irepository.package+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.irepository.package+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.irepository.package+xml",
+      "Template": "application/vnd.irepository.package+xml",
+      "Reference": "[Martin_Knowles]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.irepository.package+xml"
+  ]
+}

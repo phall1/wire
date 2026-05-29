@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-xcdn",
+  "family": "media-type",
+  "slug": "application-vnd-xcdn",
+  "title": "application/vnd.xcdn",
+  "summary": "Media type \"application/vnd.xcdn\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.xcdn",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.xcdn",
+      "Template": "application/vnd.xcdn",
+      "Reference": "[Gioele_Stefano_Luca_Fierro]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.xcdn"
+  ]
+}

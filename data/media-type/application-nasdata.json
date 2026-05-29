@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-nasdata",
+  "family": "media-type",
+  "slug": "application-nasdata",
+  "title": "application/nasdata",
+  "summary": "Media type \"application/nasdata\". Registered/referenced in RFC4707.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/nasdata",
+    "reference_rfcs": [
+      "RFC4707"
+    ],
+    "raw_columns": {
+      "Name": "nasdata",
+      "Template": "application/nasdata",
+      "Reference": "[RFC4707]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/nasdata"
+  ]
+}

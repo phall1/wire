@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/working-copy-of",
+  "family": "link-relation",
+  "slug": "working-copy-of",
+  "title": "working-copy-of",
+  "summary": "Link relation type \"working-copy-of\": Points to the versioned resource from which this\n      working copy was obtained. Defined in RFC5829.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "working-copy-of",
+    "reference_rfcs": [
+      "RFC5829"
+    ],
+    "raw_columns": {
+      "Relation Name": "working-copy-of",
+      "Description": "Points to the versioned resource from which this\n      working copy was obtained.",
+      "Reference": "[RFC5829]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

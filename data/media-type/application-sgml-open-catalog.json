@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-sgml-open-catalog",
+  "family": "media-type",
+  "slug": "application-sgml-open-catalog",
+  "title": "application/sgml-open-catalog",
+  "summary": "Media type \"application/sgml-open-catalog\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/sgml-open-catalog",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "sgml-open-catalog",
+      "Template": "application/sgml-open-catalog",
+      "Reference": "[Paul_Grosso]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/sgml-open-catalog"
+  ]
+}

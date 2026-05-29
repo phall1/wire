@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-rpki-signed-tal",
+  "family": "media-type",
+  "slug": "application-rpki-signed-tal",
+  "title": "application/rpki-signed-tal",
+  "summary": "Media type \"application/rpki-signed-tal\". Registered/referenced in RFC9691.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-signed-tal",
+    "reference_rfcs": [
+      "RFC9691"
+    ],
+    "raw_columns": {
+      "Name": "rpki-signed-tal",
+      "Template": "application/rpki-signed-tal",
+      "Reference": "[RFC9691]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-signed-tal"
+  ]
+}

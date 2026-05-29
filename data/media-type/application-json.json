@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-json",
+  "family": "media-type",
+  "slug": "application-json",
+  "title": "application/json",
+  "summary": "Media type \"application/json\". Registered/referenced in RFC8259.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/json",
+    "reference_rfcs": [
+      "RFC8259"
+    ],
+    "raw_columns": {
+      "Name": "json",
+      "Template": "application/json",
+      "Reference": "[RFC8259]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/json"
+  ]
+}

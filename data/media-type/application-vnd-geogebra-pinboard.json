@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-geogebra-pinboard",
+  "family": "media-type",
+  "slug": "application-vnd-geogebra-pinboard",
+  "title": "application/vnd.geogebra.pinboard",
+  "summary": "Media type \"application/vnd.geogebra.pinboard\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.geogebra.pinboard",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.geogebra.pinboard",
+      "Template": "application/vnd.geogebra.pinboard",
+      "Reference": "[GeoGebra][Michael_Borcherds]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.geogebra.pinboard"
+  ]
+}

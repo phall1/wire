@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-trolltech-linguist",
+  "family": "media-type",
+  "slug": "text-vnd-trolltech-linguist",
+  "title": "text/vnd.trolltech.linguist",
+  "summary": "Media type \"text/vnd.trolltech.linguist\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.trolltech.linguist",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.trolltech.linguist",
+      "Template": "text/vnd.trolltech.linguist",
+      "Reference": "[David_Lee_Lambert]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.trolltech.linguist"
+  ]
+}

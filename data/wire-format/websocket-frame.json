@@ -1,0 +1,41 @@
+{
+  "id": "wire-format/websocket-frame",
+  "family": "wire-format",
+  "slug": "websocket-frame",
+  "title": "WebSocket frame",
+  "summary": "A WebSocket frame starts with a byte holding FIN + RSV1-3 + a 4-bit opcode, then a byte with the MASK bit and a 7-bit payload length (126 => next 2 bytes are the length, 127 => next 8 bytes). Client-to-server frames must be masked, adding a 4-byte masking key XORed over the payload.",
+  "kind": "wire-format",
+  "aliases": ["WebSocket data frame", "ws frame", "RFC 6455 frame"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc6455#section-5.2",
+  "source_version": "RFC 6455 (The WebSocket Protocol), Section 5.2 Base Framing Protocol",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/tcp-header", "http-status/101"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 6455",
+    "summary": "A compact frame over a TCP connection upgraded from HTTP (101 Switching Protocols). The length uses a 7/7+16/7+64-bit escalating encoding, a varint-like length-prefix scheme; the payload is a length-delimited value.",
+    "structure": [
+      { "field": "FIN", "size": "1 bit", "meaning": "1 = final fragment of a message." },
+      { "field": "RSV1-3", "size": "3 bits", "meaning": "Reserved; 0 unless an extension (e.g. permessage-deflate) negotiated them." },
+      { "field": "Opcode", "size": "4 bits", "meaning": "0x0 continuation, 0x1 text, 0x2 binary, 0x8 close, 0x9 ping, 0xA pong." },
+      { "field": "MASK", "size": "1 bit", "meaning": "1 = payload is masked (mandatory for client->server frames)." },
+      { "field": "Payload len", "size": "7 bits", "meaning": "0-125 = the length; 126 = read next 16 bits as length; 127 = read next 64 bits as length." },
+      { "field": "Extended payload length", "size": "0/16/64 bits", "meaning": "Present only when the 7-bit length is 126 or 127; big-endian." },
+      { "field": "Masking key", "size": "0 or 32 bits", "meaning": "Present iff MASK=1; XORed (key[i mod 4]) over each payload byte." },
+      { "field": "Payload data", "size": "= payload length", "meaning": "Application data (unmasked first if MASK was set)." }
+    ],
+    "example_hex": "81 05 48 65 6C 6C 6F",
+    "example_decoded": "Unmasked text frame 'Hello': 0x81 = FIN + opcode 0x1 (text); 0x05 = MASK 0, length 5; 48 65 6C 6C 6F = ASCII 'Hello'.",
+    "see": ["http-status/101"],
+    "notes": [
+      "The connection is established by an HTTP Upgrade handshake returning 101 Switching Protocols; frames flow afterward.",
+      "Client->server frames MUST be masked (MASK=1) to defend caches/proxies; server->client frames MUST NOT be masked.",
+      "Control frames (close/ping/pong, opcodes >= 8) must have a payload <= 125 bytes and must not be fragmented.",
+      "The escalating 7 / 16 / 64-bit length is a compact length prefix, conceptually the 'L' of a TLV."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

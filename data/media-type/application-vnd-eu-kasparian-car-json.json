@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-eu-kasparian-car-json",
+  "family": "media-type",
+  "slug": "application-vnd-eu-kasparian-car-json",
+  "title": "application/vnd.eu.kasparian.car+json",
+  "summary": "Media type \"application/vnd.eu.kasparian.car+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.eu.kasparian.car+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.eu.kasparian.car+json",
+      "Template": "application/vnd.eu.kasparian.car+json",
+      "Reference": "[Hervé_Kasparian]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.eu.kasparian.car+json"
+  ]
+}

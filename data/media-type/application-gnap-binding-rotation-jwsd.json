@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-gnap-binding-rotation-jwsd",
+  "family": "media-type",
+  "slug": "application-gnap-binding-rotation-jwsd",
+  "title": "application/gnap-binding-rotation-jwsd",
+  "summary": "Media type \"application/gnap-binding-rotation-jwsd\". Registered/referenced in RFC9635.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/gnap-binding-rotation-jwsd",
+    "reference_rfcs": [
+      "RFC9635"
+    ],
+    "raw_columns": {
+      "Name": "gnap-binding-rotation-jwsd",
+      "Template": "application/gnap-binding-rotation-jwsd",
+      "Reference": "[RFC9635]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/gnap-binding-rotation-jwsd"
+  ]
+}

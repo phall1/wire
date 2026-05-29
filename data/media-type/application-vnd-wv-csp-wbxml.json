@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-wv-csp-wbxml",
+  "family": "media-type",
+  "slug": "application-vnd-wv-csp-wbxml",
+  "title": "application/vnd.wv.csp+wbxml",
+  "summary": "Media type \"application/vnd.wv.csp+wbxml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.wv.csp+wbxml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.wv.csp+wbxml",
+      "Template": "application/vnd.wv.csp+wbxml",
+      "Reference": "[Matti_Salmi]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.wv.csp+wbxml"
+  ]
+}

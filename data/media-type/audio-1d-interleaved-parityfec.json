@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-1d-interleaved-parityfec",
+  "family": "media-type",
+  "slug": "audio-1d-interleaved-parityfec",
+  "title": "audio/1d-interleaved-parityfec",
+  "summary": "Media type \"audio/1d-interleaved-parityfec\". Registered/referenced in RFC6015.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/1d-interleaved-parityfec",
+    "reference_rfcs": [
+      "RFC6015"
+    ],
+    "raw_columns": {
+      "Name": "1d-interleaved-parityfec",
+      "Template": "audio/1d-interleaved-parityfec",
+      "Reference": "[RFC6015]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/1d-interleaved-parityfec"
+  ]
+}

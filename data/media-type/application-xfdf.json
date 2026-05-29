@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-xfdf",
+  "family": "media-type",
+  "slug": "application-xfdf",
+  "title": "application/xfdf",
+  "summary": "Media type \"application/xfdf\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/xfdf",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "xfdf",
+      "Template": "application/xfdf",
+      "Reference": "[ISO-TC_171-SC_2][Betsy_Fanning]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/xfdf"
+  ]
+}

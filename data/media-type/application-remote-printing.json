@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-remote-printing",
+  "family": "media-type",
+  "slug": "application-remote-printing",
+  "title": "application/remote-printing",
+  "summary": "Media type \"application/remote-printing\". Registered/referenced in RFC1486.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/remote-printing",
+    "reference_rfcs": [
+      "RFC1486"
+    ],
+    "raw_columns": {
+      "Name": "remote-printing (OBSOLETE)",
+      "Template": "application/remote-printing",
+      "Reference": "[RFC1486][Marshall_Rose][Moving TPC.INT and NSAP.INT infrastructure domains to historic]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/remote-printing",
+    "application/remote-printing (OBSOLETE)"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "media-type/multipart-mixed",
+  "family": "media-type",
+  "slug": "multipart-mixed",
+  "title": "multipart/mixed",
+  "summary": "Media type \"multipart/mixed\". Registered/referenced in RFC2046, RFC2045.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/mixed",
+    "reference_rfcs": [
+      "RFC2046",
+      "RFC2045"
+    ],
+    "raw_columns": {
+      "Name": "mixed",
+      "Template": "multipart/mixed",
+      "Reference": "[RFC2046][RFC2045]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/mixed"
+  ]
+}

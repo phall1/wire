@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-sparql-query",
+  "family": "media-type",
+  "slug": "application-sparql-query",
+  "title": "application/sparql-query",
+  "summary": "Media type \"application/sparql-query\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/sparql-query",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "sparql-query",
+      "Template": "application/sparql-query",
+      "Reference": "[W3C][http://www.w3.org/TR/2007/CR-rdf-sparql-query-20070614/#mediaType]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/sparql-query"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/multipart-related",
+  "family": "media-type",
+  "slug": "multipart-related",
+  "title": "multipart/related",
+  "summary": "Media type \"multipart/related\". Registered/referenced in RFC2387.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/related",
+    "reference_rfcs": [
+      "RFC2387"
+    ],
+    "raw_columns": {
+      "Name": "related",
+      "Template": "multipart/related",
+      "Reference": "[RFC2387]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/related"
+  ]
+}

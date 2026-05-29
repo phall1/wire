@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-flatland-3dml",
+  "family": "media-type",
+  "slug": "model-vnd-flatland-3dml",
+  "title": "model/vnd.flatland.3dml",
+  "summary": "Media type \"model/vnd.flatland.3dml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.flatland.3dml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.flatland.3dml",
+      "Template": "model/vnd.flatland.3dml",
+      "Reference": "[Michael_Powers]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.flatland.3dml"
+  ]
+}

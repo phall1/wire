@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/publication",
+  "family": "link-relation",
+  "slug": "publication",
+  "title": "publication",
+  "summary": "Link relation type \"publication\": Links to a publication manifest. A manifest represents structured information about a publication, such as informative metadata, a list of resources, and a def….",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "publication",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "publication",
+      "Description": "Links to a publication manifest. A manifest represents structured information about a publication, such as informative metadata, a list of resources, and a default reading order.",
+      "Reference": "[Publication Manifest]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

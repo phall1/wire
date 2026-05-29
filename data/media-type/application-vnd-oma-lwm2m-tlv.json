@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-oma-lwm2m-tlv",
+  "family": "media-type",
+  "slug": "application-vnd-oma-lwm2m-tlv",
+  "title": "application/vnd.oma.lwm2m+tlv",
+  "summary": "Media type \"application/vnd.oma.lwm2m+tlv\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.oma.lwm2m+tlv",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.oma.lwm2m+tlv",
+      "Template": "application/vnd.oma.lwm2m+tlv",
+      "Reference": "[Open_Mobile_Naming_Authority][John_Mudge]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.oma.lwm2m+tlv"
+  ]
+}

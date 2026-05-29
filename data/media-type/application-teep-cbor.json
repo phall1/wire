@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-teep-cbor",
+  "family": "media-type",
+  "slug": "application-teep-cbor",
+  "title": "application/teep+cbor",
+  "summary": "Media type \"application/teep+cbor\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/teep+cbor",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "teep+cbor",
+      "Template": "application/teep+cbor",
+      "Reference": "[RFC-ietf-teep-protocol-26]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/teep+cbor"
+  ]
+}

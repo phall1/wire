@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-font-tdpfr",
+  "family": "media-type",
+  "slug": "application-font-tdpfr",
+  "title": "application/font-tdpfr",
+  "summary": "Media type \"application/font-tdpfr\". Registered/referenced in RFC3073.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/font-tdpfr",
+    "reference_rfcs": [
+      "RFC3073"
+    ],
+    "raw_columns": {
+      "Name": "font-tdpfr",
+      "Template": "application/font-tdpfr",
+      "Reference": "[RFC3073]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/font-tdpfr"
+  ]
+}

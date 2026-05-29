@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-mods-xml",
+  "family": "media-type",
+  "slug": "application-mods-xml",
+  "title": "application/mods+xml",
+  "summary": "Media type \"application/mods+xml\". Registered/referenced in RFC6207.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mods+xml",
+    "reference_rfcs": [
+      "RFC6207"
+    ],
+    "raw_columns": {
+      "Name": "mods+xml",
+      "Template": "application/mods+xml",
+      "Reference": "[RFC6207]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mods+xml"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "wire-format/ipv4-header",
+  "family": "wire-format",
+  "slug": "ipv4-header",
+  "title": "IPv4 header",
+  "summary": "The IPv4 datagram header is at least 20 bytes: version/IHL, DSCP/ECN, total length, identification/flags/fragment-offset for fragmentation, TTL, protocol, header checksum, and the 32-bit source and destination addresses, followed by optional options. The IHL field gives the header length in 32-bit words.",
+  "kind": "wire-format",
+  "aliases": ["IP header", "Internet Protocol v4 header"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc791#section-3.1",
+  "source_version": "RFC 791 (Internet Protocol), Section 3.1 Internet Header Format",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/tcp-header", "wire-format/udp-header"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 791",
+    "summary": "Minimum 20-byte header. Carries addressing, fragmentation, a TTL hop limit, a protocol selector pointing at the next header (6 = TCP, 17 = UDP, 1 = ICMP), and a header-only checksum.",
+    "structure": [
+      { "field": "Version", "size": "4 bits", "meaning": "IP version, 4 for IPv4." },
+      { "field": "IHL", "size": "4 bits", "meaning": "Internet Header Length in 32-bit words (5 = 20 bytes minimum, up to 15 = 60 bytes)." },
+      { "field": "DSCP", "size": "6 bits", "meaning": "Differentiated Services Code Point (QoS class); originally the Type of Service field." },
+      { "field": "ECN", "size": "2 bits", "meaning": "Explicit Congestion Notification." },
+      { "field": "Total Length", "size": "16 bits", "meaning": "Entire datagram size (header + data) in bytes, up to 65535." },
+      { "field": "Identification", "size": "16 bits", "meaning": "Fragment group id, used to reassemble fragments of one datagram." },
+      { "field": "Flags", "size": "3 bits", "meaning": "Bit 0 reserved (0), DF (Don't Fragment), MF (More Fragments)." },
+      { "field": "Fragment Offset", "size": "13 bits", "meaning": "Position of this fragment in the original datagram, in 8-byte units." },
+      { "field": "Time to Live (TTL)", "size": "8 bits", "meaning": "Hop limit; decremented by each router, datagram dropped at 0." },
+      { "field": "Protocol", "size": "8 bits", "meaning": "Next-layer protocol (per IANA): 1 ICMP, 6 TCP, 17 UDP, 41 IPv6-in-IPv4." },
+      { "field": "Header Checksum", "size": "16 bits", "meaning": "Ones-complement checksum over the header only; recomputed at each hop (TTL changes)." },
+      { "field": "Source Address", "size": "32 bits", "meaning": "Sender IPv4 address." },
+      { "field": "Destination Address", "size": "32 bits", "meaning": "Receiver IPv4 address." },
+      { "field": "Options", "size": "variable", "meaning": "Optional (record route, timestamp, etc.), padded to a 32-bit boundary; present only when IHL > 5." }
+    ],
+    "example_hex": "45 00 00 3C ...",
+    "example_decoded": "First byte 0x45 = version 4, IHL 5 (20-byte header, no options). 0x00 = DSCP/ECN 0. 0x003C = total length 60 bytes.",
+    "see": ["wire-format/tcp-header", "wire-format/udp-header"],
+    "notes": [
+      "The Protocol field is the demultiplexer to the next header; values are the IANA 'Protocol Numbers' registry.",
+      "The header checksum covers only the header, so it must be recomputed whenever the TTL is decremented.",
+      "IPv6 dropped the header checksum and in-network fragmentation, simplifying its fixed 40-byte header."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

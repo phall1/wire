@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-h261",
+  "family": "media-type",
+  "slug": "video-h261",
+  "title": "video/H261",
+  "summary": "Media type \"video/H261\". Registered/referenced in RFC4587.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/H261",
+    "reference_rfcs": [
+      "RFC4587"
+    ],
+    "raw_columns": {
+      "Name": "H261",
+      "Template": "video/H261",
+      "Reference": "[RFC4587]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/H261"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/ext/file-signature.v1.schema.json",
+  "title": "ext_type: file-signature@1",
+  "description": "Extension block for file-format magic numbers / signatures — the leading (or offset) byte pattern that identifies a file format (PNG, PDF, ZIP, ELF, ...). Magic is recorded as space-separated printable hex bytes (e.g. '89 50 4E 47'); the optional ASCII rendering spells the printable form. Never store literal control bytes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["magic_hex", "extensions"],
+  "properties": {
+    "magic_hex": {
+      "type": "string",
+      "description": "The signature bytes as space-separated uppercase hex (e.g. '89 50 4E 47 0D 0A 1A 0A'). This is the identifying pattern at `offset`."
+    },
+    "offset": {
+      "type": "integer",
+      "description": "Byte offset within the file where the signature begins. Default 0 (start of file).",
+      "default": 0
+    },
+    "magic_ascii": {
+      "type": "string",
+      "description": "Optional printable-ASCII rendering of the signature where meaningful (e.g. '%PDF', 'PK', 'GIF89a', '\\x7fELF'). Non-printable bytes shown as escapes, never as literal control bytes."
+    },
+    "extensions": {
+      "type": "array",
+      "description": "Common filename extensions for this format (without the dot), e.g. ['png'], ['jpg','jpeg'].",
+      "items": { "type": "string" }
+    },
+    "mime": {
+      "type": "string",
+      "description": "Optional canonical media type, e.g. 'image/png'."
+    },
+    "trailer_hex": {
+      "type": "string",
+      "description": "Optional trailing signature bytes (footer) as space-separated hex, where the format defines one (e.g. JPEG 'FF D9')."
+    },
+    "spec": {
+      "type": "string",
+      "description": "Optional defining specification / authoritative reference (RFC, ISO, vendor spec)."
+    },
+    "notes": {
+      "type": "array",
+      "description": "Optional gotchas / clarifications (variant signatures, container caveats, offset subtleties). Free text, one per item.",
+      "items": { "type": "string" }
+    }
+  }
+}

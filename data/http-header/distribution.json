@@ -1,0 +1,31 @@
+{
+  "id": "http-header/distribution",
+  "family": "http-header",
+  "slug": "distribution",
+  "title": "Distribution",
+  "summary": "Message header field \"Distribution\" (protocol: netnews), status standard. Defined in RFC5536.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Distribution",
+    "reference_rfcs": [
+      "RFC5536"
+    ],
+    "raw_columns": {
+      "value": "Distribution",
+      "protocol": "netnews",
+      "status": "standard",
+      "Reference": "[RFC5536]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Distribution"
+  ]
+}

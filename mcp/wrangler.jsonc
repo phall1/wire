@@ -1,0 +1,17 @@
+{
+  // wire-mcp — standalone MCP server Worker for wire.phall.io.
+  // Stateless shim over wire's live static JSON: no Durable Objects, no
+  // storage bindings, no migrations. Deploy with `bunx wrangler deploy`.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wire-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-01",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    // Upstream origin the shim fetches from. Override locally (e.g. point at a
+    // running `astro preview`) by setting WIRE_ORIGIN, or edit here.
+    "WIRE_ORIGIN": "https://wire.phall.io"
+  }
+}

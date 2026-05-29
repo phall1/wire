@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-mj2",
+  "family": "media-type",
+  "slug": "video-mj2",
+  "title": "video/mj2",
+  "summary": "Media type \"video/mj2\". Registered/referenced in RFC3745.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/mj2",
+    "reference_rfcs": [
+      "RFC3745"
+    ],
+    "raw_columns": {
+      "Name": "mj2",
+      "Template": "video/mj2",
+      "Reference": "[RFC3745]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/mj2"
+  ]
+}

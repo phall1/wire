@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-timestamp-query",
+  "family": "media-type",
+  "slug": "application-timestamp-query",
+  "title": "application/timestamp-query",
+  "summary": "Media type \"application/timestamp-query\". Registered/referenced in RFC3161.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/timestamp-query",
+    "reference_rfcs": [
+      "RFC3161"
+    ],
+    "raw_columns": {
+      "Name": "timestamp-query",
+      "Template": "application/timestamp-query",
+      "Reference": "[RFC3161]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/timestamp-query"
+  ]
+}

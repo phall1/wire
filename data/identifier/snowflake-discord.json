@@ -1,0 +1,63 @@
+{
+  "id": "identifier/snowflake-discord",
+  "family": "identifier",
+  "slug": "snowflake-discord",
+  "title": "Snowflake ID (Discord)",
+  "summary": "A Discord Snowflake is a 64-bit, time-sortable id used for every user, message, channel, and guild. Layout (bits 63 down to 0): a 42-bit millisecond timestamp offset from the Discord epoch 1420070400000 ms (2015-01-01), a 5-bit internal worker id, a 5-bit internal process id, and a 12-bit per-process increment. It is a Twitter-Snowflake derivative that repartitions the machine bits and uses a different epoch.",
+  "kind": "identifier",
+  "aliases": [
+    "Discord Snowflake",
+    "discord id"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://docs.discord.com/developers/reference",
+  "source_version": "Discord Developer Docs — Reference > Snowflakes (retrieved 2026-05-29)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.bit_layout",
+      "source_url": "https://docs.discord.com/developers/reference",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Discord docs: 42-bit timestamp (bits 63-22) ms since epoch 1420070400000, 5-bit internal worker id (21-17), 5-bit internal process id (16-12), 12-bit increment (11-0)."
+    },
+    {
+      "claim_ref": "ext.example",
+      "source_url": "https://docs.discord.com/developers/reference",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Discord docs worked example 175928847299117063 -> ts 41944705796, worker 1, process 0, increment 7."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/Snowflake_ID",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Second independent source confirming the snowflake family, the Discord epoch, and that the 64-bit id is delivered as a string in JSON to avoid float precision loss."
+    }
+  ],
+  "see_also": [
+    "identifier/snowflake-twitter",
+    "identifier/uuidv7"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Discord Snowflake (Discord Developer Docs)",
+    "example": "175928847299117063",
+    "bit_layout": [
+      { "field": "timestamp", "bits": 42, "meaning": "Bits 63-22: milliseconds since the Discord epoch 1420070400000 (2015-01-01 00:00:00 UTC)." },
+      { "field": "worker_id", "bits": 5, "meaning": "Bits 21-17: internal worker id." },
+      { "field": "process_id", "bits": 5, "meaning": "Bits 16-12: internal process id." },
+      { "field": "increment", "bits": 12, "meaning": "Bits 11-0: counter incremented for every id generated on that process." }
+    ],
+    "length_bits": 64,
+    "sortable": true,
+    "encoding": "decimal uint64 (delivered as a JSON string to avoid 53-bit float precision loss)",
+    "notes": [
+      "Discord epoch is 1420070400000 ms (2015-01-01); add it back to the timestamp field to get Unix ms. Discord uses 42 timestamp bits (vs Twitter's 41).",
+      "Worked example 175928847299117063 decodes to timestamp 41944705796 (-> 2016-04-30 11:18:25.796 UTC), worker 1, process 0, increment 7.",
+      "A Twitter-Snowflake derivative: it splits the 10 machine bits as 5-bit worker + 5-bit process rather than 5-bit datacenter + 5-bit worker, and uses the 2015 Discord epoch.",
+      "Sorts by creation time because the timestamp is the high-order field; always treat as a string in JSON (exceeds JS 53-bit safe integers)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

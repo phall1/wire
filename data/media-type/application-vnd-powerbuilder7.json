@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-powerbuilder7",
+  "family": "media-type",
+  "slug": "application-vnd-powerbuilder7",
+  "title": "application/vnd.powerbuilder7",
+  "summary": "Media type \"application/vnd.powerbuilder7\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.powerbuilder7",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.powerbuilder7",
+      "Template": "application/vnd.powerbuilder7",
+      "Reference": "[Reed_Shilts]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.powerbuilder7"
+  ]
+}

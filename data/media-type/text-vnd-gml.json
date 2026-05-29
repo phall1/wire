@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-gml",
+  "family": "media-type",
+  "slug": "text-vnd-gml",
+  "title": "text/vnd.gml",
+  "summary": "Media type \"text/vnd.gml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.gml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.gml",
+      "Template": "text/vnd.gml",
+      "Reference": "[Mi_Tar]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.gml"
+  ]
+}

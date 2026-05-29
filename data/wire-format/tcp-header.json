@@ -1,0 +1,43 @@
+{
+  "id": "wire-format/tcp-header",
+  "family": "wire-format",
+  "slug": "tcp-header",
+  "title": "TCP header",
+  "summary": "The TCP segment header is at least 20 bytes: source and destination ports, a 32-bit sequence number, a 32-bit acknowledgement number, a data-offset/flags word (including SYN/ACK/FIN/RST/PSH/URG), a 16-bit window, checksum, and urgent pointer, followed by optional options padded to a 32-bit boundary.",
+  "kind": "wire-format",
+  "aliases": ["TCP segment header", "Transmission Control Protocol header"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9293#section-3.1",
+  "source_version": "RFC 9293 (Transmission Control Protocol), Section 3.1 Header Format",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/ipv4-header", "wire-format/udp-header", "port/443"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 9293",
+    "summary": "Fixed 20-byte header (plus options). Reliable, ordered, connection-oriented transport. The 4-bit Data Offset gives the header length in 32-bit words so a parser knows where options end and payload begins.",
+    "structure": [
+      { "field": "Source Port", "size": "16 bits", "meaning": "Sending port." },
+      { "field": "Destination Port", "size": "16 bits", "meaning": "Receiving port." },
+      { "field": "Sequence Number", "size": "32 bits", "meaning": "Byte-stream sequence number of the first data octet (or the ISN+1 if SYN set)." },
+      { "field": "Acknowledgement Number", "size": "32 bits", "meaning": "Next sequence number the sender expects, valid when the ACK flag is set." },
+      { "field": "Data Offset", "size": "4 bits", "meaning": "Header length in 32-bit words (5 = 20 bytes minimum, up to 15 = 60 bytes with options)." },
+      { "field": "Reserved", "size": "4 bits", "meaning": "Must be zero (formerly part of a 6-bit reserved + flags layout)." },
+      { "field": "Flags", "size": "8 bits", "meaning": "CWR, ECE, URG, ACK, PSH, RST, SYN, FIN control bits." },
+      { "field": "Window", "size": "16 bits", "meaning": "Receive window: bytes the sender of this segment is willing to accept (scaled by the Window Scale option if negotiated)." },
+      { "field": "Checksum", "size": "16 bits", "meaning": "Ones-complement checksum over the header, payload, and a pseudo-header." },
+      { "field": "Urgent Pointer", "size": "16 bits", "meaning": "Offset of urgent data, valid when the URG flag is set." },
+      { "field": "Options", "size": "0-320 bits", "meaning": "Optional, e.g. MSS, Window Scale, SACK-Permitted, Timestamps; padded with zeros to a 32-bit boundary." }
+    ],
+    "example_hex": "01 BB C0 A8 ... (illustrative ports)",
+    "example_decoded": "First two bytes 0x01BB = 443 as a destination port (HTTPS). Full segment parsing requires the IP header for length/pseudo-header checksum.",
+    "see": ["wire-format/ipv4-header"],
+    "notes": [
+      "Minimum header is 20 bytes; Data Offset < 5 is invalid.",
+      "The checksum is computed over a pseudo-header (src/dst IP, protocol=6, TCP length) plus the TCP header and data.",
+      "SYN/SYN-ACK/ACK is the three-way handshake; FIN or RST tears the connection down."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

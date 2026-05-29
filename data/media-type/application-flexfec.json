@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-flexfec",
+  "family": "media-type",
+  "slug": "application-flexfec",
+  "title": "application/flexfec",
+  "summary": "Media type \"application/flexfec\". Registered/referenced in RFC8627.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/flexfec",
+    "reference_rfcs": [
+      "RFC8627"
+    ],
+    "raw_columns": {
+      "Name": "flexfec",
+      "Template": "application/flexfec",
+      "Reference": "[RFC8627]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/flexfec"
+  ]
+}

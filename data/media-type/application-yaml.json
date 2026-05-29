@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-yaml",
+  "family": "media-type",
+  "slug": "application-yaml",
+  "title": "application/yaml",
+  "summary": "Media type \"application/yaml\". Registered/referenced in RFC9512.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/yaml",
+    "reference_rfcs": [
+      "RFC9512"
+    ],
+    "raw_columns": {
+      "Name": "yaml",
+      "Template": "application/yaml",
+      "Reference": "[YAML][RFC9512]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/yaml"
+  ]
+}

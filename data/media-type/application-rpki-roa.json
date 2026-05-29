@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-rpki-roa",
+  "family": "media-type",
+  "slug": "application-rpki-roa",
+  "title": "application/rpki-roa",
+  "summary": "Media type \"application/rpki-roa\". Registered/referenced in RFC9582.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-roa",
+    "reference_rfcs": [
+      "RFC9582"
+    ],
+    "raw_columns": {
+      "Name": "rpki-roa",
+      "Template": "application/rpki-roa",
+      "Reference": "[RFC9582]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-roa"
+  ]
+}

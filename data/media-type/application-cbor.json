@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cbor",
+  "family": "media-type",
+  "slug": "application-cbor",
+  "title": "application/cbor",
+  "summary": "Media type \"application/cbor\". Registered/referenced in RFC8949.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cbor",
+    "reference_rfcs": [
+      "RFC8949"
+    ],
+    "raw_columns": {
+      "Name": "cbor",
+      "Template": "application/cbor",
+      "Reference": "[RFC8949]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cbor"
+  ]
+}

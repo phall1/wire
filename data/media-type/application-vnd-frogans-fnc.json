@@ -1,0 +1,29 @@
+{
+  "id": "media-type/application-vnd-frogans-fnc",
+  "family": "media-type",
+  "slug": "application-vnd-frogans-fnc",
+  "title": "application/vnd.frogans.fnc",
+  "summary": "Media type \"application/vnd.frogans.fnc\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.frogans.fnc",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.frogans.fnc (OBSOLETE)",
+      "Template": "application/vnd.frogans.fnc",
+      "Reference": "[OP3FT][Alexis_Tamas]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.frogans.fnc",
+    "application/vnd.frogans.fnc (OBSOLETE)"
+  ]
+}

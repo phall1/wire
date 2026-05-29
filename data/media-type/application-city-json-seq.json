@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-city-json-seq",
+  "family": "media-type",
+  "slug": "application-city-json-seq",
+  "title": "application/city+json-seq",
+  "summary": "Media type \"application/city+json-seq\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/city+json-seq",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "city+json-seq",
+      "Template": "application/city+json-seq",
+      "Reference": "[OGC][Scott_Simmons]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/city+json-seq"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "media-type/audio-basic",
+  "family": "media-type",
+  "slug": "audio-basic",
+  "title": "audio/basic",
+  "summary": "Media type \"audio/basic\". Registered/referenced in RFC2045, RFC2046.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/basic",
+    "reference_rfcs": [
+      "RFC2045",
+      "RFC2046"
+    ],
+    "raw_columns": {
+      "Name": "basic",
+      "Template": "audio/basic",
+      "Reference": "[RFC2045][RFC2046]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/basic"
+  ]
+}

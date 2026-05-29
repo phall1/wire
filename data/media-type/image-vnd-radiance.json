@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-radiance",
+  "family": "media-type",
+  "slug": "image-vnd-radiance",
+  "title": "image/vnd.radiance",
+  "summary": "Media type \"image/vnd.radiance\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.radiance",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.radiance",
+      "Template": "image/vnd.radiance",
+      "Reference": "[Randolph_Fritz][Greg_Ward]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.radiance"
+  ]
+}

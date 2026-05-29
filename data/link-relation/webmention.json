@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/webmention",
+  "family": "link-relation",
+  "slug": "webmention",
+  "title": "webmention",
+  "summary": "Link relation type \"webmention\": Identifies a target URI that supports the Webmention protocol.\n    This allows clients that mention a resource in some form of publishing process\n    to contac….",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "webmention",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "webmention",
+      "Description": "Identifies a target URI that supports the Webmention protocol.\n    This allows clients that mention a resource in some form of publishing process\n    to contact that endpoint and inform it that this resource has been mentioned.",
+      "Reference": "[Webmention]",
+      "Notes": "This is a similar \"Linkback\" mechanism to the ones of Refback, Trackback, and Pingback.\n    It uses a different protocol, though, and thus should be discoverable through its own link\n    relation type."
+    }
+  },
+  "updated": "2026-05-29"
+}

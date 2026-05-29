@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-g726-40",
+  "family": "media-type",
+  "slug": "audio-g726-40",
+  "title": "audio/G726-40",
+  "summary": "Media type \"audio/G726-40\". Registered/referenced in RFC4856.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/G726-40",
+    "reference_rfcs": [
+      "RFC4856"
+    ],
+    "raw_columns": {
+      "Name": "G726-40",
+      "Template": "audio/G726-40",
+      "Reference": "[RFC4856]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/G726-40"
+  ]
+}

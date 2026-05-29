@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-mikey",
+  "family": "media-type",
+  "slug": "application-mikey",
+  "title": "application/mikey",
+  "summary": "Media type \"application/mikey\". Registered/referenced in RFC3830.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mikey",
+    "reference_rfcs": [
+      "RFC3830"
+    ],
+    "raw_columns": {
+      "Name": "mikey",
+      "Template": "application/mikey",
+      "Reference": "[RFC3830]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mikey"
+  ]
+}

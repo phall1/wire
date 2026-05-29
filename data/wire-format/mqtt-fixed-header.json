@@ -1,0 +1,35 @@
+{
+  "id": "wire-format/mqtt-fixed-header",
+  "family": "wire-format",
+  "slug": "mqtt-fixed-header",
+  "title": "MQTT fixed header",
+  "summary": "Every MQTT control packet begins with a 2+ byte fixed header: one byte holding a 4-bit packet type and 4 bits of type-specific flags, followed by a variable-length 'Remaining Length' encoded as 1-4 bytes of a base-128 varint (7 bits payload, top bit continuation). It is a compact type-then-length framing.",
+  "kind": "wire-format",
+  "aliases": ["MQTT control packet header", "MQTT remaining length"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901021",
+  "source_version": "OASIS MQTT Version 5.0, Section 2.1.1 Fixed Header / 1.5.5 Variable Byte Integer",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/leb128-varint", "wire-format/tcp-header", "port/1883"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "OASIS MQTT v5.0",
+    "summary": "MQTT's fixed header is a control-packet-type nibble + flags byte, then a Variable Byte Integer 'Remaining Length' giving the number of bytes in the variable header plus payload. The Variable Byte Integer is MQTT's own little-endian base-128 varint, capped at 4 bytes (max 268435455).",
+    "structure": [
+      { "field": "Packet type", "size": "4 bits", "meaning": "Control packet type, e.g. 1 CONNECT, 2 CONNACK, 3 PUBLISH, 8 SUBSCRIBE, 12 PINGREQ, 14 DISCONNECT, 15 AUTH." },
+      { "field": "Flags", "size": "4 bits", "meaning": "Type-specific flags; for PUBLISH: DUP (bit 3), QoS (bits 2-1), RETAIN (bit 0). Other packet types use fixed reserved values." },
+      { "field": "Remaining Length", "size": "1-4 bytes", "meaning": "Variable Byte Integer (7 bits payload per byte, high bit = continuation, little-endian groups) counting variable header + payload bytes that follow." }
+    ],
+    "example_hex": "30 0C",
+    "example_decoded": "PUBLISH with no flags: 0x30 = type 3 (PUBLISH), flags 0 (QoS 0, no DUP/RETAIN); 0x0C = Remaining Length 12 (single varint byte, high bit clear), so 12 more bytes follow.",
+    "see": ["wire-format/leb128-varint"],
+    "notes": [
+      "Remaining Length uses the same 7-bits + continuation-bit scheme as protobuf/LEB128 varints, but MQTT limits it to 4 bytes (max value 268435455).",
+      "Packet type 0 is reserved/forbidden; type 15 is AUTH in MQTT 5.0.",
+      "PUBLISH is the only type that uses all four flag bits meaningfully (DUP/QoS/RETAIN)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

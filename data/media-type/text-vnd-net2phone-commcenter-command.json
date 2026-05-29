@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-net2phone-commcenter-command",
+  "family": "media-type",
+  "slug": "text-vnd-net2phone-commcenter-command",
+  "title": "text/vnd.net2phone.commcenter.command",
+  "summary": "Media type \"text/vnd.net2phone.commcenter.command\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.net2phone.commcenter.command",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.net2phone.commcenter.command",
+      "Template": "text/vnd.net2phone.commcenter.command",
+      "Reference": "[Feiyu_Xie]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.net2phone.commcenter.command"
+  ]
+}

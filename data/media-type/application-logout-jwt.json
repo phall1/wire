@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-logout-jwt",
+  "family": "media-type",
+  "slug": "application-logout-jwt",
+  "title": "application/logout+jwt",
+  "summary": "Media type \"application/logout+jwt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/logout+jwt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "logout+jwt",
+      "Template": "application/logout+jwt",
+      "Reference": "[OpenID_Foundation_Artifact_Binding_WG]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/logout+jwt"
+  ]
+}

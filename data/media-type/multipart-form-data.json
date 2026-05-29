@@ -1,0 +1,30 @@
+{
+  "id": "media-type/multipart-form-data",
+  "family": "media-type",
+  "slug": "multipart-form-data",
+  "title": "multipart/form-data",
+  "summary": "Media type \"multipart/form-data\". Registered/referenced in RFC7578.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/form-data",
+    "reference_rfcs": [
+      "RFC7578"
+    ],
+    "raw_columns": {
+      "Name": "form-data",
+      "Template": "multipart/form-data",
+      "Reference": "[RFC7578]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/form-data"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-csrattrs",
+  "family": "media-type",
+  "slug": "application-csrattrs",
+  "title": "application/csrattrs",
+  "summary": "Media type \"application/csrattrs\". Registered/referenced in RFC7030.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/csrattrs",
+    "reference_rfcs": [
+      "RFC7030"
+    ],
+    "raw_columns": {
+      "Name": "csrattrs",
+      "Template": "application/csrattrs",
+      "Reference": "[RFC7030]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/csrattrs"
+  ]
+}

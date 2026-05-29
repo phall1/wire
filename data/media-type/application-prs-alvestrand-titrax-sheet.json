@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-prs-alvestrand-titrax-sheet",
+  "family": "media-type",
+  "slug": "application-prs-alvestrand-titrax-sheet",
+  "title": "application/prs.alvestrand.titrax-sheet",
+  "summary": "Media type \"application/prs.alvestrand.titrax-sheet\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/prs.alvestrand.titrax-sheet",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prs.alvestrand.titrax-sheet",
+      "Template": "application/prs.alvestrand.titrax-sheet",
+      "Reference": "[Harald_T._Alvestrand]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/prs.alvestrand.titrax-sheet"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-dcd",
+  "family": "media-type",
+  "slug": "application-dcd",
+  "title": "application/DCD",
+  "summary": "Media type \"application/DCD\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/DCD",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "DCD",
+      "Template": "application/DCD",
+      "Reference": "[ASAM][Bernd_Wenzel]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/DCD"
+  ]
+}

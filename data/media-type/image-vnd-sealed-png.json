@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-sealed-png",
+  "family": "media-type",
+  "slug": "image-vnd-sealed-png",
+  "title": "image/vnd.sealed.png",
+  "summary": "Media type \"image/vnd.sealed.png\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.sealed.png",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.sealed.png",
+      "Template": "image/vnd.sealed.png",
+      "Reference": "[David_Petersen]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.sealed.png"
+  ]
+}

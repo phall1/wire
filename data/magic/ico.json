@@ -1,0 +1,46 @@
+{
+  "id": "magic/ico",
+  "family": "magic",
+  "slug": "ico",
+  "title": "Windows icon signature (00 00 01 00)",
+  "summary": "A Windows ICO icon file begins with a 6-byte ICONDIR header: a 2-byte reserved zero field, a 2-byte little-endian type field (0x0001 = icon, 0x0002 = cursor), then a 2-byte image count. So an icon starts 00 00 01 00.",
+  "kind": "signature",
+  "aliases": ["ICO magic", "ICONDIR", "Windows icon"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://learn.microsoft.com/en-us/previous-versions/ms997538(v=msdn.10)",
+  "source_version": "Microsoft Icon Image Format (ICONDIR: idReserved=0, idType=1 icon / 2 cursor, idCount)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://learn.microsoft.com/en-us/previous-versions/ms997538(v=msdn.10)",
+      "source_version": "retrieved 2026-05-29",
+      "note": "ICONDIR header: idReserved (must be 0), idType (1 = icon resource), idCount; gives 00 00 01 00 for an icon."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/ICO_(file_format)",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates 00 00 01 00 (icon) and 00 00 02 00 (cursor) headers."
+    }
+  ],
+  "see_also": ["magic/bmp", "magic/png"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "00 00 01 00",
+    "offset": 0,
+    "magic_ascii": "\\x00\\x00\\x01\\x00",
+    "extensions": ["ico"],
+    "mime": "image/x-icon",
+    "spec": "Microsoft ICO/CUR Icon Image Format",
+    "notes": [
+      "Bytes 0-1: reserved, always 0.",
+      "Bytes 2-3: type, little-endian: 0x0001 = icon (.ico), 0x0002 = cursor (.cur), giving 00 00 02 00.",
+      "Bytes 4-5: number of images in the file.",
+      "Individual images inside may be BMP (DIB) or PNG encoded (Vista+)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

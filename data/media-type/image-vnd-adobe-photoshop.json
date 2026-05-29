@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-adobe-photoshop",
+  "family": "media-type",
+  "slug": "image-vnd-adobe-photoshop",
+  "title": "image/vnd.adobe.photoshop",
+  "summary": "Media type \"image/vnd.adobe.photoshop\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.adobe.photoshop",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.adobe.photoshop",
+      "Template": "image/vnd.adobe.photoshop",
+      "Reference": "[Kim_Scarborough]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.adobe.photoshop"
+  ]
+}

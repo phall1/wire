@@ -1,0 +1,41 @@
+{
+  "id": "identifier/ksuid",
+  "family": "identifier",
+  "slug": "ksuid",
+  "title": "KSUID (K-Sortable Unique Identifier)",
+  "summary": "A KSUID is a 160-bit identifier: a 32-bit Unix timestamp (in seconds, offset to a 2014-05-13 epoch) followed by a 128-bit random payload, rendered as 27 characters of base62. The timestamp prefix makes KSUIDs roughly time-sortable, and the 32-bit second-resolution epoch offset buys over a century of range. Created by Segment.",
+  "kind": "identifier",
+  "aliases": [
+    "K-Sortable Unique Identifier",
+    "Segment KSUID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://github.com/segmentio/ksuid",
+  "source_version": "segmentio/ksuid (unversioned)",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/ulid",
+    "identifier/uuidv7"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "KSUID (github.com/segmentio/ksuid)",
+    "example": "0ujtsYcgvSTl8PAuAdqWYSMnLOv",
+    "bit_layout": [
+      { "field": "timestamp", "bits": 32, "meaning": "Unix UTC seconds MINUS the KSUID epoch offset 1400000000 (2014-05-13 16:53:20 UTC)." },
+      { "field": "payload", "bits": 128, "meaning": "Cryptographically random payload." }
+    ],
+    "length_bits": 160,
+    "sortable": true,
+    "encoding": "base62 (0-9 A-Z a-z), fixed 27 characters",
+    "notes": [
+      "20 bytes binary (4-byte timestamp + 16-byte payload) -> always 27 base62 characters, fixed width and lexicographically sortable by timestamp.",
+      "Epoch offset: KSUID timestamp = unix_seconds - 1400000000, shifting the usable range to ~2014..2150 instead of wasting the low values.",
+      "Second resolution (coarser than ULID/UUIDv7's millisecond), so ordering within the same second relies on the random payload (not strictly monotonic).",
+      "Example 0ujtsYcgvSTl8PAuAdqWYSMnLOv is the README sample (timestamp 107608047 -> 2017-10-09, payload B5A1CD34B5F99D1154FB6853345C9735)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

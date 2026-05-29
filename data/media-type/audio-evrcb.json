@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-evrcb",
+  "family": "media-type",
+  "slug": "audio-evrcb",
+  "title": "audio/EVRCB",
+  "summary": "Media type \"audio/EVRCB\". Registered/referenced in RFC5188.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/EVRCB",
+    "reference_rfcs": [
+      "RFC5188"
+    ],
+    "raw_columns": {
+      "Name": "EVRCB",
+      "Template": "audio/EVRCB",
+      "Reference": "[RFC5188]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/EVRCB"
+  ]
+}

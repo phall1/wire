@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-scvp-vp-response",
+  "family": "media-type",
+  "slug": "application-scvp-vp-response",
+  "title": "application/scvp-vp-response",
+  "summary": "Media type \"application/scvp-vp-response\". Registered/referenced in RFC5055.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/scvp-vp-response",
+    "reference_rfcs": [
+      "RFC5055"
+    ],
+    "raw_columns": {
+      "Name": "scvp-vp-response",
+      "Template": "application/scvp-vp-response",
+      "Reference": "[RFC5055]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/scvp-vp-response"
+  ]
+}

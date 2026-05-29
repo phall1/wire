@@ -1,0 +1,47 @@
+{
+  "id": "identifier/uuidv1",
+  "family": "identifier",
+  "slug": "uuidv1",
+  "title": "UUID Version 1 (Gregorian time + node)",
+  "summary": "UUIDv1 is a 128-bit time-based UUID: a 60-bit timestamp counting 100-nanosecond intervals since 1582-10-15 00:00:00 UTC (the Gregorian calendar epoch), a 14-bit clock sequence, and a 48-bit node identifier (historically the host MAC address). The time field is split across three sections, so v1 strings are NOT lexicographically time-sortable; UUIDv6 reorders the same data to fix that.",
+  "kind": "identifier",
+  "aliases": [
+    "UUID v1",
+    "time-based UUID",
+    "version 1 UUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.1",
+  "source_version": "RFC 9562 §5.1",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv4",
+    "identifier/uuidv7",
+    "identifier/uuid-nil"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.1",
+    "example": "c232ab00-9414-11ec-b3c8-9f6bdeced846",
+    "bit_layout": [
+      { "field": "time_low", "bits": 32, "meaning": "Low 32 bits of the 60-bit Gregorian timestamp (100-ns intervals since 1582-10-15)." },
+      { "field": "time_mid", "bits": 16, "meaning": "Middle 16 bits of the timestamp." },
+      { "field": "ver", "bits": 4, "meaning": "version = 0b0001 (1)." },
+      { "field": "time_high", "bits": 12, "meaning": "High 12 bits of the timestamp." },
+      { "field": "var", "bits": 2, "meaning": "variant = 0b10 (RFC 9562 / former RFC 4122)." },
+      { "field": "clock_seq", "bits": 14, "meaning": "Clock sequence, to avoid collisions when the clock is set backwards or the node changes." },
+      { "field": "node", "bits": 48, "meaning": "Node id; historically the 48-bit IEEE 802 MAC address, may be a random multicast-bit-set value for privacy." }
+    ],
+    "length_bits": 128,
+    "sortable": false,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "The 60-bit timestamp is scattered (time_low / time_mid / time_high), so byte order does NOT match time order; v1 is not sortable. UUIDv6 (RFC 9562 §5.6) is the field-compatible, time-ordered re-lay-out.",
+      "The example c232ab00-9414-11ec-b3c8-9f6bdeced846 is the RFC 9562 Appendix worked example; the version nibble (13th hex char) is '1' and the variant nibble begins '10' (here 'b').",
+      "Embedding the MAC address leaks the host; RFC 9562 permits a random node id with the multicast bit set instead."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/service-doc",
+  "family": "link-relation",
+  "slug": "service-doc",
+  "title": "service-doc",
+  "summary": "Link relation type \"service-doc\": Identifies service documentation for the context that\n      is primarily intended for human consumption. Defined in RFC8631.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "service-doc",
+    "reference_rfcs": [
+      "RFC8631"
+    ],
+    "raw_columns": {
+      "Relation Name": "service-doc",
+      "Description": "Identifies service documentation for the context that\n      is primarily intended for human consumption.",
+      "Reference": "[RFC8631]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

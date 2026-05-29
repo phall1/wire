@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-t140c",
+  "family": "media-type",
+  "slug": "audio-t140c",
+  "title": "audio/t140c",
+  "summary": "Media type \"audio/t140c\". Registered/referenced in RFC4351.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/t140c",
+    "reference_rfcs": [
+      "RFC4351"
+    ],
+    "raw_columns": {
+      "Name": "t140c",
+      "Template": "audio/t140c",
+      "Reference": "[RFC4351]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/t140c"
+  ]
+}

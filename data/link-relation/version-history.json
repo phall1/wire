@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/version-history",
+  "family": "link-relation",
+  "slug": "version-history",
+  "title": "version-history",
+  "summary": "Link relation type \"version-history\": Points to a resource containing the version history\n      for the context. Defined in RFC5829.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "version-history",
+    "reference_rfcs": [
+      "RFC5829"
+    ],
+    "raw_columns": {
+      "Relation Name": "version-history",
+      "Description": "Points to a resource containing the version history\n      for the context.",
+      "Reference": "[RFC5829]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

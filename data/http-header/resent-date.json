@@ -1,0 +1,29 @@
+{
+  "id": "http-header/resent-date",
+  "family": "http-header",
+  "slug": "resent-date",
+  "title": "Resent-Date",
+  "summary": "Message header field \"Resent-Date\" (protocol: mail), status standard.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Resent-Date",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "value": "Resent-Date",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Resent-Date"
+  ]
+}

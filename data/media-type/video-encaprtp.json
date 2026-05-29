@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-encaprtp",
+  "family": "media-type",
+  "slug": "video-encaprtp",
+  "title": "video/encaprtp",
+  "summary": "Media type \"video/encaprtp\". Registered/referenced in RFC6849.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/encaprtp",
+    "reference_rfcs": [
+      "RFC6849"
+    ],
+    "raw_columns": {
+      "Name": "encaprtp",
+      "Template": "video/encaprtp",
+      "Reference": "[RFC6849]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/encaprtp"
+  ]
+}

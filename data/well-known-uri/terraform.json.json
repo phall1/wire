@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/terraform.json",
+  "family": "well-known-uri",
+  "slug": "terraform.json",
+  "title": "/.well-known/terraform.json",
+  "summary": "Well-known URI suffix \"/.well-known/terraform.json\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "terraform.json",
+    "reference_rfcs": [],
+    "registration_date": "2024-07-01",
+    "raw_columns": {
+      "URI Suffix": "terraform.json",
+      "Reference": "[https://developer.hashicorp.com/terraform/internals/remote-service-discovery]",
+      "Status": "provisional",
+      "Change Controller": "[HashiCorp_Terraform_Team]",
+      "Related Information": "",
+      "Date Registered": "2024-07-01",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

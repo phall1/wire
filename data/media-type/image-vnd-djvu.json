@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-djvu",
+  "family": "media-type",
+  "slug": "image-vnd-djvu",
+  "title": "image/vnd.djvu",
+  "summary": "Media type \"image/vnd.djvu\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.djvu",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.djvu",
+      "Template": "image/vnd.djvu",
+      "Reference": "[Leon_Bottou]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.djvu"
+  ]
+}

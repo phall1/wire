@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-prs-pti",
+  "family": "media-type",
+  "slug": "image-prs-pti",
+  "title": "image/prs.pti",
+  "summary": "Media type \"image/prs.pti\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/prs.pti",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prs.pti",
+      "Template": "image/prs.pti",
+      "Reference": "[Juern_Laun]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/prs.pti"
+  ]
+}

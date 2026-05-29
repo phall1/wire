@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/duplicate",
+  "family": "link-relation",
+  "slug": "duplicate",
+  "title": "duplicate",
+  "summary": "Link relation type \"duplicate\": Refers to a resource whose available representations\n      are byte-for-byte identical with the corresponding representations of\n      the context IRI. Defined in RFC6249.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "duplicate",
+    "reference_rfcs": [
+      "RFC6249"
+    ],
+    "raw_columns": {
+      "Relation Name": "duplicate",
+      "Description": "Refers to a resource whose available representations\n      are byte-for-byte identical with the corresponding representations of\n      the context IRI.",
+      "Reference": "[RFC6249]",
+      "Notes": "This relation is for static resources.  That is, an HTTP GET\n      request on any duplicate will return the same representation.  It\n      does not make sense for dynamic or POSTable resources and should not\n      be used for them."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/prev-archive",
+  "family": "link-relation",
+  "slug": "prev-archive",
+  "title": "prev-archive",
+  "summary": "Link relation type \"prev-archive\": Refers to the immediately preceding archive resource. Defined in RFC5005.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "prev-archive",
+    "reference_rfcs": [
+      "RFC5005"
+    ],
+    "raw_columns": {
+      "Relation Name": "prev-archive",
+      "Description": "Refers to the immediately preceding archive resource.",
+      "Reference": "[RFC5005]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-oauth-authz-req-jwt",
+  "family": "media-type",
+  "slug": "application-oauth-authz-req-jwt",
+  "title": "application/oauth-authz-req+jwt",
+  "summary": "Media type \"application/oauth-authz-req+jwt\". Registered/referenced in RFC9101.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/oauth-authz-req+jwt",
+    "reference_rfcs": [
+      "RFC9101"
+    ],
+    "raw_columns": {
+      "Name": "oauth-authz-req+jwt",
+      "Template": "application/oauth-authz-req+jwt",
+      "Reference": "[RFC9101]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/oauth-authz-req+jwt"
+  ]
+}

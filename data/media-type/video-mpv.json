@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-mpv",
+  "family": "media-type",
+  "slug": "video-mpv",
+  "title": "video/MPV",
+  "summary": "Media type \"video/MPV\". Registered/referenced in RFC3555.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/MPV",
+    "reference_rfcs": [
+      "RFC3555"
+    ],
+    "raw_columns": {
+      "Name": "MPV",
+      "Template": "video/MPV",
+      "Reference": "[RFC3555]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/MPV"
+  ]
+}

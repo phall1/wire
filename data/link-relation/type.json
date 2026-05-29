@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/type",
+  "family": "link-relation",
+  "slug": "type",
+  "title": "type",
+  "summary": "Link relation type \"type\": Refers to a resource identifying the abstract semantic type of which the link's context is considered to be an instance. Defined in RFC6903.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "type",
+    "reference_rfcs": [
+      "RFC6903"
+    ],
+    "raw_columns": {
+      "Relation Name": "type",
+      "Description": "Refers to a resource identifying the abstract semantic type of which the link's context is considered to be an instance.",
+      "Reference": "[RFC6903], section 6",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

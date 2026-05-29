@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/deprecation",
+  "family": "link-relation",
+  "slug": "deprecation",
+  "title": "deprecation",
+  "summary": "Link relation type \"deprecation\": Refers to documentation (intended for human consumption) about the deprecation of the link's context. Defined in RFC9745.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "deprecation",
+    "reference_rfcs": [
+      "RFC9745"
+    ],
+    "raw_columns": {
+      "Relation Name": "deprecation",
+      "Description": "Refers to documentation (intended for human consumption) about the deprecation of the link's context.",
+      "Reference": "[RFC9745], section 3",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-whoispp-response",
+  "family": "media-type",
+  "slug": "application-whoispp-response",
+  "title": "application/whoispp-response",
+  "summary": "Media type \"application/whoispp-response\". Registered/referenced in RFC2958.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/whoispp-response",
+    "reference_rfcs": [
+      "RFC2958"
+    ],
+    "raw_columns": {
+      "Name": "whoispp-response",
+      "Template": "application/whoispp-response",
+      "Reference": "[RFC2958]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/whoispp-response"
+  ]
+}

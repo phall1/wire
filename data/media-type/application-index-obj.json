@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-index-obj",
+  "family": "media-type",
+  "slug": "application-index-obj",
+  "title": "application/index.obj",
+  "summary": "Media type \"application/index.obj\". Registered/referenced in RFC2652.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/index.obj",
+    "reference_rfcs": [
+      "RFC2652"
+    ],
+    "raw_columns": {
+      "Name": "index.obj",
+      "Template": "application/index.obj",
+      "Reference": "[RFC2652]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/index.obj"
+  ]
+}

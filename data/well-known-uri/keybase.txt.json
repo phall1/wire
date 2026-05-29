@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/keybase.txt",
+  "family": "well-known-uri",
+  "slug": "keybase.txt",
+  "title": "/.well-known/keybase.txt",
+  "summary": "Well-known URI suffix \"/.well-known/keybase.txt\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "keybase.txt",
+    "reference_rfcs": [],
+    "registration_date": "2014-04-08",
+    "raw_columns": {
+      "URI Suffix": "keybase.txt",
+      "Reference": "[https://keybase.io/__/keybase_well_known]",
+      "Status": "permanent",
+      "Change Controller": "[The_Keybase_Project]",
+      "Related Information": "Related information: Documentation for the Keybase [command line] and [API].",
+      "Date Registered": "2014-04-08",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

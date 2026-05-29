@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-dat12",
+  "family": "media-type",
+  "slug": "audio-dat12",
+  "title": "audio/DAT12",
+  "summary": "Media type \"audio/DAT12\". Registered/referenced in RFC3190.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/DAT12",
+    "reference_rfcs": [
+      "RFC3190"
+    ],
+    "raw_columns": {
+      "Name": "DAT12",
+      "Template": "audio/DAT12",
+      "Reference": "[RFC3190]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/DAT12"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/profile",
+  "family": "link-relation",
+  "slug": "profile",
+  "title": "profile",
+  "summary": "Link relation type \"profile\": Identifying that a resource representation conforms\nto a certain profile, without affecting the non-profile semantics\nof the resource representation. Defined in RFC6906.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "profile",
+    "reference_rfcs": [
+      "RFC6906"
+    ],
+    "raw_columns": {
+      "Relation Name": "profile",
+      "Description": "Identifying that a resource representation conforms\nto a certain profile, without affecting the non-profile semantics\nof the resource representation.",
+      "Reference": "[RFC6906]",
+      "Notes": "Profile URIs are primarily intended to be used as\nidentifiers, and thus clients SHOULD NOT indiscriminately access\nprofile URIs."
+    }
+  },
+  "updated": "2026-05-29"
+}

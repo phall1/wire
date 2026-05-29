@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-rpki-manifest",
+  "family": "media-type",
+  "slug": "application-rpki-manifest",
+  "title": "application/rpki-manifest",
+  "summary": "Media type \"application/rpki-manifest\". Registered/referenced in RFC6481.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-manifest",
+    "reference_rfcs": [
+      "RFC6481"
+    ],
+    "raw_columns": {
+      "Name": "rpki-manifest",
+      "Template": "application/rpki-manifest",
+      "Reference": "[RFC6481]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-manifest"
+  ]
+}

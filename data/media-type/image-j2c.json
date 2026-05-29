@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-j2c",
+  "family": "media-type",
+  "slug": "image-j2c",
+  "title": "image/j2c",
+  "summary": "Media type \"image/j2c\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/j2c",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "j2c",
+      "Template": "image/j2c",
+      "Reference": "[ISO-IEC_JTC_1_SC_29_WG_1][ISO-IEC_JTC_1][ITU-T]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/j2c"
+  ]
+}

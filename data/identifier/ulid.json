@@ -1,0 +1,41 @@
+{
+  "id": "identifier/ulid",
+  "family": "identifier",
+  "slug": "ulid",
+  "title": "ULID (Universally Unique Lexicographically Sortable Identifier)",
+  "summary": "A ULID is a 128-bit identifier: a 48-bit Unix-millisecond timestamp followed by 80 bits of randomness, rendered as 26 characters of Crockford's Base32. Because the timestamp is the high-order portion and Base32 preserves order, ULIDs sort lexicographically by creation time. It is UUID-compatible in size (128 bits) but more compact and case-insensitive in text.",
+  "kind": "identifier",
+  "aliases": [
+    "Universally Unique Lexicographically Sortable Identifier"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://github.com/ulid/spec",
+  "source_version": "ulid/spec (unversioned)",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv7",
+    "identifier/ksuid",
+    "encoding/base32"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "ULID spec (github.com/ulid/spec)",
+    "example": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+    "bit_layout": [
+      { "field": "time", "bits": 48, "meaning": "Unix timestamp in milliseconds; encodes as the first 10 Base32 characters." },
+      { "field": "randomness", "bits": 80, "meaning": "Cryptographically random; encodes as the last 16 Base32 characters." }
+    ],
+    "length_bits": 128,
+    "sortable": true,
+    "encoding": "Crockford's Base32 (alphabet 0123456789ABCDEFGHJKMNPQRSTVWXYZ), 26 characters",
+    "notes": [
+      "26-char string = 10 chars timestamp + 16 chars randomness. Crockford Base32 excludes I, L, O, U to avoid ambiguity; canonical form is uppercase but decoding is case-insensitive.",
+      "Lexicographically sortable: the millisecond timestamp is the most-significant field, so string sort == time sort. Monotonic mode increments the random component within the same millisecond to preserve ordering.",
+      "128 bits total, so a ULID can be stored in a UUID column; conceptually parallel to UUIDv7 (same 48-bit ms time + randomness split) but with a different text encoding.",
+      "Example 01ARZ3NDEKTSV4RRFFQ69G5FAV is the canonical example from the ULID spec."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/text-uri-list",
+  "family": "media-type",
+  "slug": "text-uri-list",
+  "title": "text/uri-list",
+  "summary": "Media type \"text/uri-list\". Registered/referenced in RFC2483.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/uri-list",
+    "reference_rfcs": [
+      "RFC2483"
+    ],
+    "raw_columns": {
+      "Name": "uri-list",
+      "Template": "text/uri-list",
+      "Reference": "[RFC2483]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/uri-list"
+  ]
+}

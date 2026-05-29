@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-dls",
+  "family": "media-type",
+  "slug": "audio-dls",
+  "title": "audio/dls",
+  "summary": "Media type \"audio/dls\". Registered/referenced in RFC4613.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/dls",
+    "reference_rfcs": [
+      "RFC4613"
+    ],
+    "raw_columns": {
+      "Name": "dls",
+      "Template": "audio/dls",
+      "Reference": "[RFC4613]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/dls"
+  ]
+}

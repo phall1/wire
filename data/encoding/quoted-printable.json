@@ -1,0 +1,85 @@
+{
+  "id": "encoding/quoted-printable",
+  "family": "encoding",
+  "slug": "quoted-printable",
+  "title": "Quoted-Printable (RFC 2045 §6.7)",
+  "summary": "Quoted-Printable is a MIME content-transfer-encoding that leaves printable US-ASCII bytes (0x21-0x7E except '=') as-is and escapes everything else as '=' followed by two uppercase hex digits, so mostly-text data stays human-readable over 7-bit mail transports. Lines are wrapped at 76 characters using a trailing '=' soft line break, and a literal '=' is always written as '=3D'.",
+  "kind": "encoding",
+  "aliases": [
+    "quoted printable",
+    "QP",
+    "MIME QP",
+    "Content-Transfer-Encoding: quoted-printable"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc2045#section-6.7",
+  "source_version": "RFC 2045 §6.7",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base64",
+    "encoding/percent-encoding"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC2045",
+    "charset": "US-ASCII",
+    "algorithm": "quoted-printable",
+    "notes": [
+      "Rule 1 (literal): printable ASCII 0x21-0x7E, EXCEPT '=' (0x3D), is left unchanged.",
+      "Rule 2 (escape): any other byte is written as '=' followed by its two-digit uppercase hex value (e.g. an e-acute in UTF-8, 0xC3 0xA9, becomes '=C3=A9').",
+      "Rule 3 ('=' is special): '=' itself MUST be encoded as '=3D'; it can never appear literally because it introduces an escape.",
+      "Whitespace: SPACE (0x20) and TAB (0x09) may appear literally except at the end of a line, where they must be escaped (=20 / =09) so trailing whitespace survives transport.",
+      "Soft line breaks: encoders limit lines to 76 chars by inserting '=' immediately before the CRLF; a decoder drops a '=' that is the last char on a line. This entry's test vectors use the simple (non-wrapped) form."
+    ],
+    "test_vectors": [
+      {
+        "input": "Hello",
+        "input_form": "ascii",
+        "output": "Hello",
+        "output_form": "ascii",
+        "algorithm": "quoted-printable",
+        "direction": "encode",
+        "note": "All printable ASCII passes through unchanged."
+      },
+      {
+        "input": "a=b",
+        "input_form": "ascii",
+        "output": "a=3Db",
+        "output_form": "ascii",
+        "algorithm": "quoted-printable",
+        "direction": "encode",
+        "note": "Literal '=' (0x3D) is always escaped to '=3D'."
+      },
+      {
+        "input": "café",
+        "input_form": "utf8",
+        "output": "cafe=CC=81",
+        "output_form": "ascii",
+        "algorithm": "quoted-printable",
+        "direction": "encode",
+        "note": "Combining acute accent U+0301 = UTF-8 0xCC 0x81 -> '=CC=81' (non-ASCII bytes escaped)."
+      },
+      {
+        "input": "100°F",
+        "input_form": "utf8",
+        "output": "100=C2=B0F",
+        "output_form": "ascii",
+        "algorithm": "quoted-printable",
+        "direction": "encode",
+        "note": "Degree sign U+00B0 = UTF-8 0xC2 0xB0 -> '=C2=B0'."
+      },
+      {
+        "input": "100=C2=B0F",
+        "input_form": "ascii",
+        "output": "100°F",
+        "output_form": "utf8",
+        "algorithm": "quoted-printable",
+        "direction": "decode",
+        "note": "Round-trip: QP-decode(\"100=C2=B0F\") = \"100°F\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

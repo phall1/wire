@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-geopackage-sqlite3",
+  "family": "media-type",
+  "slug": "application-geopackage-sqlite3",
+  "title": "application/geopackage+sqlite3",
+  "summary": "Media type \"application/geopackage+sqlite3\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/geopackage+sqlite3",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "geopackage+sqlite3",
+      "Template": "application/geopackage+sqlite3",
+      "Reference": "[OGC][Scott_Simmons]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/geopackage+sqlite3"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/text-markdown",
+  "family": "media-type",
+  "slug": "text-markdown",
+  "title": "text/markdown",
+  "summary": "Media type \"text/markdown\". Registered/referenced in RFC7763.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/markdown",
+    "reference_rfcs": [
+      "RFC7763"
+    ],
+    "raw_columns": {
+      "Name": "markdown",
+      "Template": "text/markdown",
+      "Reference": "[RFC7763]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/markdown"
+  ]
+}

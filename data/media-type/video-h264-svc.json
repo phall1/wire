@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-h264-svc",
+  "family": "media-type",
+  "slug": "video-h264-svc",
+  "title": "video/H264-SVC",
+  "summary": "Media type \"video/H264-SVC\". Registered/referenced in RFC6190.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/H264-SVC",
+    "reference_rfcs": [
+      "RFC6190"
+    ],
+    "raw_columns": {
+      "Name": "H264-SVC",
+      "Template": "video/H264-SVC",
+      "Reference": "[RFC6190]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/H264-SVC"
+  ]
+}

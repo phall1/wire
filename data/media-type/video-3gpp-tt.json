@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-3gpp-tt",
+  "family": "media-type",
+  "slug": "video-3gpp-tt",
+  "title": "video/3gpp-tt",
+  "summary": "Media type \"video/3gpp-tt\". Registered/referenced in RFC4396.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/3gpp-tt",
+    "reference_rfcs": [
+      "RFC4396"
+    ],
+    "raw_columns": {
+      "Name": "3gpp-tt",
+      "Template": "video/3gpp-tt",
+      "Reference": "[RFC4396]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/3gpp-tt"
+  ]
+}

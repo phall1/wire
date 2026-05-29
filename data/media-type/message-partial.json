@@ -1,0 +1,31 @@
+{
+  "id": "media-type/message-partial",
+  "family": "media-type",
+  "slug": "message-partial",
+  "title": "message/partial",
+  "summary": "Media type \"message/partial\". Registered/referenced in RFC2045, RFC2046.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/partial",
+    "reference_rfcs": [
+      "RFC2045",
+      "RFC2046"
+    ],
+    "raw_columns": {
+      "Name": "partial",
+      "Template": "message/partial",
+      "Reference": "[RFC2045][RFC2046]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/partial"
+  ]
+}

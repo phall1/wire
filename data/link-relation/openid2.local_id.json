@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/openid2.local_id",
+  "family": "link-relation",
+  "slug": "openid2.local_id",
+  "title": "openid2.local_id",
+  "summary": "Link relation type \"openid2.local_id\": Refers to an OpenID Authentication server on which the context relies for an assertion that the end user controls an Identifier.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "openid2.local_id",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "openid2.local_id",
+      "Description": "Refers to an OpenID Authentication server on which the context relies for an assertion that the end user controls an Identifier.",
+      "Reference": "[OpenID Authentication 2.0 - Final]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

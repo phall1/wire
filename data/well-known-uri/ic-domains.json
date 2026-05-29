@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/ic-domains",
+  "family": "well-known-uri",
+  "slug": "ic-domains",
+  "title": "/.well-known/ic-domains",
+  "summary": "Well-known URI suffix \"/.well-known/ic-domains\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ic-domains",
+    "reference_rfcs": [],
+    "registration_date": "2026-01-12",
+    "raw_columns": {
+      "URI Suffix": "ic-domains",
+      "Reference": "[https://docs.internetcomputer.org/building-apps/frontends/custom-domains/using-custom-domains#step-2-create-a-file-named-ic-domains-in-your-canister-under-the-well-known-directory-containing-the-custom-domain]",
+      "Status": "provisional",
+      "Change Controller": "[DFINITY_Foundation]",
+      "Related Information": "",
+      "Date Registered": "2026-01-12",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

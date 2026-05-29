@@ -2,5 +2,5 @@
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
   "compilerOptions": { "types": ["bun"] },
-  "exclude": ["dist"]
+  "exclude": ["dist", "mcp"]
 }

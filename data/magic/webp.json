@@ -1,0 +1,32 @@
+{
+  "id": "magic/webp",
+  "family": "magic",
+  "slug": "webp",
+  "title": "WebP signature (RIFF....WEBP)",
+  "summary": "A WebP image is a RIFF container: it begins with 'RIFF', a 4-byte little-endian file size, then the form type 'WEBP'. The identifying magic is 'RIFF' at offset 0 and 'WEBP' at offset 8.",
+  "kind": "signature",
+  "aliases": ["WebP magic", "RIFF WEBP"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://developers.google.com/speed/webp/docs/riff_container",
+  "source_version": "Google WebP Container Specification (RIFF-based)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/png", "magic/jpeg"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "52 49 46 46",
+    "offset": 0,
+    "magic_ascii": "RIFF",
+    "extensions": ["webp"],
+    "mime": "image/webp",
+    "spec": "Google WebP Container Specification (RIFF)",
+    "notes": [
+      "Bytes 0-3: 'RIFF' (52 49 46 46).",
+      "Bytes 4-7: file size minus 8, little-endian.",
+      "Bytes 8-11: 'WEBP' (57 45 42 50) — this is what distinguishes WebP from other RIFF forms like WAV ('WAVE') or AVI ('AVI ').",
+      "Bytes 12+: the chunk fourcc, e.g. 'VP8 ' (lossy), 'VP8L' (lossless), or 'VP8X' (extended)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

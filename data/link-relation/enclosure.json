@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/enclosure",
+  "family": "link-relation",
+  "slug": "enclosure",
+  "title": "enclosure",
+  "summary": "Link relation type \"enclosure\": Identifies a related resource that is potentially\n      large and might require special handling. Defined in RFC4287.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "enclosure",
+    "reference_rfcs": [
+      "RFC4287"
+    ],
+    "raw_columns": {
+      "Relation Name": "enclosure",
+      "Description": "Identifies a related resource that is potentially\n      large and might require special handling.",
+      "Reference": "[RFC4287]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

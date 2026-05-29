@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-measured-component-json",
+  "family": "media-type",
+  "slug": "application-measured-component-json",
+  "title": "application/measured-component+json",
+  "summary": "Media type \"application/measured-component+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/measured-component+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "measured-component+json",
+      "Template": "application/measured-component+json",
+      "Reference": "[RFC-ietf-rats-eat-measured-component-12]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/measured-component+json"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "magic/gzip",
+  "family": "magic",
+  "slug": "gzip",
+  "title": "gzip signature (1F 8B)",
+  "summary": "A gzip member begins with the two magic bytes 0x1F 0x8B, followed by a compression-method byte (0x08 = DEFLATE) and a flags byte. gzip is a single-file container around a DEFLATE stream.",
+  "kind": "signature",
+  "aliases": ["gz magic", "\\x1f\\x8b"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc1952#section-2.3",
+  "source_version": "RFC 1952 (GZIP file format 4.3), Section 2.3 Member header",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/zip", "magic/tar"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "1F 8B",
+    "offset": 0,
+    "magic_ascii": "\\x1f\\x8b",
+    "extensions": ["gz", "tgz"],
+    "mime": "application/gzip",
+    "spec": "RFC 1952",
+    "notes": [
+      "ID1=0x1f, ID2=0x8b are the fixed magic.",
+      "Byte 3 (CM) is the compression method; 0x08 = DEFLATE (the only one in common use), so files usually start 1F 8B 08.",
+      "Byte 4 (FLG) holds flags (FTEXT, FHCRC, FEXTRA, FNAME, FCOMMENT).",
+      "A '.tgz' / '.tar.gz' is a tar archive wrapped in a single gzip member."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

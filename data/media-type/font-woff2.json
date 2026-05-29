@@ -1,0 +1,30 @@
+{
+  "id": "media-type/font-woff2",
+  "family": "media-type",
+  "slug": "font-woff2",
+  "title": "font/woff2",
+  "summary": "Media type \"font/woff2\". Registered/referenced in RFC8081.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/font.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "font/woff2",
+    "reference_rfcs": [
+      "RFC8081"
+    ],
+    "raw_columns": {
+      "Name": "woff2",
+      "Template": "font/woff2",
+      "Reference": "[RFC8081]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "font/woff2"
+  ]
+}

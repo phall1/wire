@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-tamp-sequence-adjust-confirm",
+  "family": "media-type",
+  "slug": "application-tamp-sequence-adjust-confirm",
+  "title": "application/tamp-sequence-adjust-confirm",
+  "summary": "Media type \"application/tamp-sequence-adjust-confirm\". Registered/referenced in RFC5934.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/tamp-sequence-adjust-confirm",
+    "reference_rfcs": [
+      "RFC5934"
+    ],
+    "raw_columns": {
+      "Name": "tamp-sequence-adjust-confirm",
+      "Template": "application/tamp-sequence-adjust-confirm",
+      "Reference": "[RFC5934]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/tamp-sequence-adjust-confirm"
+  ]
+}

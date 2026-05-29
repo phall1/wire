@@ -1,0 +1,31 @@
+{
+  "id": "magic/wasm",
+  "family": "magic",
+  "slug": "wasm",
+  "title": "WebAssembly signature (00 61 73 6D)",
+  "summary": "A WebAssembly binary module begins with the 4-byte magic 0x00 'a' 's' 'm' (\\0asm), immediately followed by a 4-byte little-endian version number (currently 0x01 0x00 0x00 0x00).",
+  "kind": "signature",
+  "aliases": ["wasm magic", "\\0asm"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://webassembly.github.io/spec/core/binary/modules.html#binary-magic",
+  "source_version": "WebAssembly Core Specification, Binary Format, Modules (magic + version)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/elf"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "00 61 73 6D",
+    "offset": 0,
+    "magic_ascii": "\\x00asm",
+    "extensions": ["wasm"],
+    "mime": "application/wasm",
+    "spec": "WebAssembly Core Specification, Binary Format",
+    "notes": [
+      "Magic = 00 61 73 6D ('\\0asm').",
+      "Immediately followed by the 4-byte version, little-endian: 01 00 00 00 for version 1.",
+      "So a typical module starts 00 61 73 6D 01 00 00 00, then a sequence of sections."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-bary",
+  "family": "media-type",
+  "slug": "model-vnd-bary",
+  "title": "model/vnd.bary",
+  "summary": "Media type \"model/vnd.bary\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.bary",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.bary",
+      "Template": "model/vnd.bary",
+      "Reference": "[Displaced_Micro-Mesh_SDK_Support]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.bary"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-tetra_isi",
+  "family": "media-type",
+  "slug": "application-tetra_isi",
+  "title": "application/TETRA_ISI",
+  "summary": "Media type \"application/TETRA_ISI\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/TETRA_ISI",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "TETRA_ISI",
+      "Template": "application/TETRA_ISI",
+      "Reference": "[ETSI][Miguel_Angel_Reina_Ortega]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/TETRA_ISI"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-coap-payload",
+  "family": "media-type",
+  "slug": "application-coap-payload",
+  "title": "application/coap-payload",
+  "summary": "Media type \"application/coap-payload\". Registered/referenced in RFC8075.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/coap-payload",
+    "reference_rfcs": [
+      "RFC8075"
+    ],
+    "raw_columns": {
+      "Name": "coap-payload",
+      "Template": "application/coap-payload",
+      "Reference": "[RFC8075]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/coap-payload"
+  ]
+}

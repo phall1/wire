@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-gzip",
+  "family": "media-type",
+  "slug": "application-gzip",
+  "title": "application/gzip",
+  "summary": "Media type \"application/gzip\". Registered/referenced in RFC6713.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/gzip",
+    "reference_rfcs": [
+      "RFC6713"
+    ],
+    "raw_columns": {
+      "Name": "gzip",
+      "Template": "application/gzip",
+      "Reference": "[RFC6713]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/gzip"
+  ]
+}

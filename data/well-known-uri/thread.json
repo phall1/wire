@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/thread",
+  "family": "well-known-uri",
+  "slug": "thread",
+  "title": "/.well-known/thread",
+  "summary": "Well-known URI suffix \"/.well-known/thread\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "thread",
+    "reference_rfcs": [],
+    "registration_date": "2018-11-29",
+    "raw_columns": {
+      "URI Suffix": "thread",
+      "Reference": "[https://www.threadgroup.org/support#specifications]",
+      "Status": "permanent",
+      "Change Controller": "[Thread_Group_Inc.]",
+      "Related Information": "",
+      "Date Registered": "2018-11-29",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

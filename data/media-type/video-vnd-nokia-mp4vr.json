@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-nokia-mp4vr",
+  "family": "media-type",
+  "slug": "video-vnd-nokia-mp4vr",
+  "title": "video/vnd.nokia.mp4vr",
+  "summary": "Media type \"video/vnd.nokia.mp4vr\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.nokia.mp4vr",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.nokia.mp4vr",
+      "Template": "video/vnd.nokia.mp4vr",
+      "Reference": "[Miska_M._Hannuksela]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.nokia.mp4vr"
+  ]
+}

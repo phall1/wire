@@ -1,0 +1,37 @@
+{
+  "id": "wire-format/cbor-encoding",
+  "family": "wire-format",
+  "slug": "cbor-encoding",
+  "title": "CBOR data item encoding (major type + argument)",
+  "summary": "CBOR encodes each data item as an initial byte split into a 3-bit major type (0-7) and a 5-bit additional-information value. The additional info is the argument directly (0-23), or signals that 1/2/4/8 following bytes hold it (24-27). Strings, arrays, and maps then use that argument as a length, a self-describing tag-then-value/length scheme.",
+  "kind": "wire-format",
+  "aliases": ["CBOR encoding", "Concise Binary Object Representation", "CBOR head"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc8949#section-3",
+  "source_version": "RFC 8949 (Concise Binary Object Representation), Section 3 Specification of the CBOR Encoding",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/messagepack", "cbor-tag/0", "wire-format/asn1-ber"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8949",
+    "summary": "Every item begins with one 'initial byte': the high 3 bits are the major type, the low 5 bits the additional information. Major types: 0 unsigned int, 1 negative int, 2 byte string, 3 text string, 4 array, 5 map, 6 tag, 7 simple/float. Additional info 0-23 is the value itself; 24/25/26/27 mean a 1/2/4/8-byte big-endian argument follows; 31 marks an indefinite-length item ending in a 0xFF break. For strings/arrays/maps the argument is the length — a tag/length-then-value (TLV-flavored) form, but self-describing.",
+    "structure": [
+      { "field": "Major type", "size": "3 bits", "meaning": "Item category: 0 uint, 1 negative int, 2 byte string, 3 text string, 4 array, 5 map, 6 tag, 7 simple value / float / break." },
+      { "field": "Additional info", "size": "5 bits", "meaning": "0-23 = the argument inline; 24/25/26/27 = a 1/2/4/8-byte argument follows; 28-30 reserved; 31 = indefinite length (terminated by 0xFF break)." },
+      { "field": "Argument", "size": "0/1/2/4/8 bytes", "meaning": "Big-endian value when additional info is 24-27; e.g. for a text string this is the byte length." },
+      { "field": "Content", "size": "= argument (for strings/arrays/maps)", "meaning": "For byte/text strings: that many bytes. For arrays: that many items. For maps: that many key/value item pairs." }
+    ],
+    "example_hex": "63 66 6F 6F",
+    "example_decoded": "Text string \"foo\": 0x63 = major type 3 (text string), additional info 3 => length 3; 66 6F 6F = ASCII 'foo'.",
+    "see": ["wire-format/messagepack", "cbor-tag/0"],
+    "notes": [
+      "Major type 6 (tag) prefixes another data item with a semantic tag number — those tag numbers are the cbor-tag family in this corpus.",
+      "Floats live in major type 7: 0xF9 half, 0xFA single, 0xFB double; 0xF4 false, 0xF5 true, 0xF6 null, 0xF7 undefined.",
+      "Indefinite-length strings/arrays/maps (additional info 31) stream chunks until a 0xFF 'break' byte.",
+      "Compared with ASN.1 BER, CBOR's type is self-describing in the major type rather than a registry of tags, so a decoder needs no schema."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

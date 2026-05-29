@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/private-token-issuer-directory",
+  "family": "well-known-uri",
+  "slug": "private-token-issuer-directory",
+  "title": "/.well-known/private-token-issuer-directory",
+  "summary": "Well-known URI suffix \"/.well-known/private-token-issuer-directory\". IANA status: permanent. Defined in RFC9578.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "private-token-issuer-directory",
+    "reference_rfcs": [
+      "RFC9578"
+    ],
+    "registration_date": "2023-10-09",
+    "raw_columns": {
+      "URI Suffix": "private-token-issuer-directory",
+      "Reference": "[RFC9578]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "",
+      "Date Registered": "2023-10-09",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

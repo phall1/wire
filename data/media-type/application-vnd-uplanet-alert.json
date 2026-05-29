@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-uplanet-alert",
+  "family": "media-type",
+  "slug": "application-vnd-uplanet-alert",
+  "title": "application/vnd.uplanet.alert",
+  "summary": "Media type \"application/vnd.uplanet.alert\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.uplanet.alert",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.uplanet.alert",
+      "Template": "application/vnd.uplanet.alert",
+      "Reference": "[Bruce_Martin]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.uplanet.alert"
+  ]
+}

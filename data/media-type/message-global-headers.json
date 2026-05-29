@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-global-headers",
+  "family": "media-type",
+  "slug": "message-global-headers",
+  "title": "message/global-headers",
+  "summary": "Media type \"message/global-headers\". Registered/referenced in RFC6533.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/global-headers",
+    "reference_rfcs": [
+      "RFC6533"
+    ],
+    "raw_columns": {
+      "Name": "global-headers",
+      "Template": "message/global-headers",
+      "Reference": "[RFC6533]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/global-headers"
+  ]
+}

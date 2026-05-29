@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-clip",
+  "family": "media-type",
+  "slug": "image-vnd-clip",
+  "title": "image/vnd.clip",
+  "summary": "Media type \"image/vnd.clip\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.clip",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.clip",
+      "Template": "image/vnd.clip",
+      "Reference": "[Ryo_Inaba]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.clip"
+  ]
+}

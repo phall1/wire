@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-rpki-checklist",
+  "family": "media-type",
+  "slug": "application-rpki-checklist",
+  "title": "application/rpki-checklist",
+  "summary": "Media type \"application/rpki-checklist\". Registered/referenced in RFC9323.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-checklist",
+    "reference_rfcs": [
+      "RFC9323"
+    ],
+    "raw_columns": {
+      "Name": "rpki-checklist",
+      "Template": "application/rpki-checklist",
+      "Reference": "[RFC9323]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-checklist"
+  ]
+}

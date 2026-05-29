@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-pcmu",
+  "family": "media-type",
+  "slug": "audio-pcmu",
+  "title": "audio/PCMU",
+  "summary": "Media type \"audio/PCMU\". Registered/referenced in RFC4856.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/PCMU",
+    "reference_rfcs": [
+      "RFC4856"
+    ],
+    "raw_columns": {
+      "Name": "PCMU",
+      "Template": "audio/PCMU",
+      "Reference": "[RFC4856]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/PCMU"
+  ]
+}

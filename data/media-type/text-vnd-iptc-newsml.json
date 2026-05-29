@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-iptc-newsml",
+  "family": "media-type",
+  "slug": "text-vnd-iptc-newsml",
+  "title": "text/vnd.IPTC.NewsML",
+  "summary": "Media type \"text/vnd.IPTC.NewsML\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.IPTC.NewsML",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.IPTC.NewsML",
+      "Template": "text/vnd.IPTC.NewsML",
+      "Reference": "[IPTC]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.IPTC.NewsML"
+  ]
+}

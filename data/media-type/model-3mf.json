@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-3mf",
+  "family": "media-type",
+  "slug": "model-3mf",
+  "title": "model/3mf",
+  "summary": "Media type \"model/3mf\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/3mf",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "3mf",
+      "Template": "model/3mf",
+      "Reference": "[http://www.3mf.io/specification][_3MF][Michael_Sweet]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/3mf"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "magic/mp3-id3",
+  "family": "magic",
+  "slug": "mp3-id3",
+  "title": "MP3 / ID3 signature (ID3 or FF Fx frame sync)",
+  "summary": "An MP3 file most often begins with an ID3v2 tag whose first three bytes are the ASCII 'ID3' (0x49 0x44 0x33). A bare MPEG audio stream instead begins with an 11-bit frame sync: 0xFF followed by a byte whose top 3 bits are set (0xE0 mask), commonly seen as FF FB / FF F3 / FF F2.",
+  "kind": "signature",
+  "aliases": ["MP3 magic", "ID3", "ID3v2", "MPEG frame sync"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://id3.org/id3v2.4.0-structure",
+  "source_version": "ID3v2.4.0 structure (tag identifier 'ID3'); MPEG frame sync per ISO/IEC 11172-3",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://id3.org/id3v2.4.0-structure",
+      "source_version": "retrieved 2026-05-29",
+      "note": "ID3v2 tag begins with the file identifier 'ID3' (49 44 33) followed by two version bytes and flags."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/MP3#File_structure",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates that MPEG audio frames begin with an 11-bit sync (FF Ex/Fx); ID3v2 tags commonly prefix MP3 files, ID3v1 trails them."
+    }
+  ],
+  "see_also": ["magic/flac", "magic/ogg"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "49 44 33",
+    "offset": 0,
+    "magic_ascii": "ID3",
+    "extensions": ["mp3"],
+    "mime": "audio/mpeg",
+    "notes": [
+      "Tagged file: starts 'ID3' (49 44 33) — an ID3v2 header — then the audio frames follow after the tag.",
+      "Untagged file: starts with an MPEG frame sync, 0xFF then a byte masked 0xE0, e.g. FF FB (MPEG-1 Layer III), FF F3 / FF F2 (MPEG-2/2.5 Layer III).",
+      "ID3v1 metadata, if present, is a fixed 128-byte block at the END of the file starting with the ASCII 'TAG' (54 41 47).",
+      "Because the audio is frame-based, detection by frame sync can have false positives; the ID3 prefix is the reliable signal when present."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

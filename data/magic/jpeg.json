@@ -1,0 +1,47 @@
+{
+  "id": "magic/jpeg",
+  "family": "magic",
+  "slug": "jpeg",
+  "title": "JPEG signature (FF D8 FF)",
+  "summary": "A JPEG/JFIF/EXIF file begins with the Start-of-Image marker FF D8, immediately followed by another marker starting with FF (so the file begins FF D8 FF...). It ends with the End-of-Image marker FF D9.",
+  "kind": "signature",
+  "aliases": ["JPEG magic", "JFIF", "EXIF", "SOI", "FFD8"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://www.w3.org/Graphics/JPEG/itu-t81.pdf",
+  "source_version": "ITU-T T.81 (JPEG), Table B.1 marker codes (SOI = 0xFFD8, EOI = 0xFFD9)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://www.w3.org/Graphics/JPEG/itu-t81.pdf",
+      "source_version": "ITU-T T.81, Table B.1",
+      "note": "SOI marker = 0xFFD8 starts the stream; EOI = 0xFFD9 ends it. The next marker (also 0xFF-led) follows SOI, giving the FF D8 FF prefix."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates JFIF (FF E0) and EXIF (FF E1) APP marker following SOI, and the FF D8 FF E0 / FF D8 FF E1 / FF D8 FF DB common prefixes."
+    }
+  ],
+  "see_also": ["magic/png", "magic/gif"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FF D8 FF",
+    "offset": 0,
+    "magic_ascii": "\\xff\\xd8\\xff",
+    "extensions": ["jpg", "jpeg", "jpe", "jfif"],
+    "mime": "image/jpeg",
+    "trailer_hex": "FF D9",
+    "spec": "ITU-T T.81 / ISO/IEC 10918-1",
+    "notes": [
+      "FF D8 is the Start-of-Image (SOI) marker; the third byte FF begins the next marker segment.",
+      "Common full prefixes: FF D8 FF E0 (JFIF APP0), FF D8 FF E1 (EXIF APP1), FF D8 FF DB (raw quantization table), FF D8 FF EE (Adobe).",
+      "Stream ends with FF D9 (EOI), though appended thumbnails/metadata may follow.",
+      "Within entropy-coded data a literal 0xFF byte is followed by 0x00 (byte stuffing) so it is not mistaken for a marker."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

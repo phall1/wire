@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/easy-proxy",
+  "family": "well-known-uri",
+  "slug": "easy-proxy",
+  "title": "/.well-known/easy-proxy",
+  "summary": "Well-known URI suffix \"/.well-known/easy-proxy\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "easy-proxy",
+    "reference_rfcs": [],
+    "registration_date": "2025-05-01",
+    "raw_columns": {
+      "URI Suffix": "easy-proxy",
+      "Reference": "[https://github.com/bytedance/g3/blob/master/doc/easy-proxy.md]",
+      "Status": "provisional",
+      "Change Controller": "[The_G3_Project]",
+      "Related Information": "",
+      "Date Registered": "2025-05-01",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

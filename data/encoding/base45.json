@@ -1,0 +1,85 @@
+{
+  "id": "encoding/base45",
+  "family": "encoding",
+  "slug": "base45",
+  "title": "Base45 (RFC 9285)",
+  "summary": "Base45 (RFC 9285) encodes binary data for use in QR codes: it takes input two bytes at a time, treats each pair as a big-endian 16-bit number, and writes it as three base-45 digits (least-significant first) over a 45-character alphabet that is exactly the QR-code 'alphanumeric mode' character set. A trailing single byte becomes two digits. It is denser in a QR code than Base64 and is the carrier for EU Digital COVID Certificates.",
+  "kind": "encoding",
+  "aliases": [
+    "base-45",
+    "RFC 9285 base45",
+    "QR alphanumeric base45"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9285",
+  "source_version": "RFC 9285",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base64",
+    "encoding/ascii85"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC9285",
+    "charset": "US-ASCII",
+    "algorithm": "base45",
+    "alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:",
+    "notes": [
+      "Two-byte groups: n = byte[0]*256 + byte[1] (0..65535). Emit three base-45 digits c, d, e with n = c + d*45 + e*45^2, i.e. least-significant digit first. Always 3 characters per 2 input bytes.",
+      "A single trailing byte n (0..255) emits exactly two digits c, d with n = c + d*45. So odd-length inputs produce a length that is 3*floor(len/2)+2.",
+      "The alphabet is the 45-character QR-code alphanumeric set (note the literal SPACE at index 36, then '$ % * + - . / :'), which is why Base45 is QR-optimal.",
+      "Encoded output is ~50% larger than the raw bytes but packs far better into a QR alphanumeric segment than Base64 would.",
+      "Used as the payload encoding for EU Digital COVID Certificates (the 'HC1:' prefix is followed by Base45)."
+    ],
+    "test_vectors": [
+      {
+        "input": "AB",
+        "input_form": "ascii",
+        "output": "BB8",
+        "output_form": "ascii",
+        "algorithm": "base45",
+        "direction": "encode",
+        "note": "RFC 9285 §4.3 example 1: \"AB\" (0x4142, n=16706) -> \"BB8\"."
+      },
+      {
+        "input": "Hello!!",
+        "input_form": "ascii",
+        "output": "%69 VD92EX0",
+        "output_form": "ascii",
+        "algorithm": "base45",
+        "direction": "encode",
+        "note": "RFC 9285 §4.3 example 2: \"Hello!!\" -> \"%69 VD92EX0\" (note the literal space)."
+      },
+      {
+        "input": "base-45",
+        "input_form": "ascii",
+        "output": "UJCLQE7W581",
+        "output_form": "ascii",
+        "algorithm": "base45",
+        "direction": "encode",
+        "note": "RFC 9285 §4.3 example 3: \"base-45\" -> \"UJCLQE7W581\"."
+      },
+      {
+        "input": "ietf!",
+        "input_form": "ascii",
+        "output": "QED8WEX0",
+        "output_form": "ascii",
+        "algorithm": "base45",
+        "direction": "encode",
+        "note": "RFC 9285 §A example: \"ietf!\" -> \"QED8WEX0\"."
+      },
+      {
+        "input": "BB8",
+        "input_form": "ascii",
+        "output": "AB",
+        "output_form": "ascii",
+        "algorithm": "base45",
+        "direction": "decode",
+        "note": "Round-trip: base45-decode(\"BB8\") = \"AB\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-asyncapi-json",
+  "family": "media-type",
+  "slug": "application-asyncapi-json",
+  "title": "application/asyncapi+json",
+  "summary": "Media type \"application/asyncapi+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/asyncapi+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "asyncapi+json",
+      "Template": "application/asyncapi+json",
+      "Reference": "[Linux_Foundation][AsyncAPI_Initiative]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/asyncapi+json"
+  ]
+}

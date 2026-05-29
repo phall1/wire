@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-roughtime-server-json",
+  "family": "media-type",
+  "slug": "application-roughtime-server-json",
+  "title": "application/roughtime-server+json",
+  "summary": "Media type \"application/roughtime-server+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/roughtime-server+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "roughtime-server+json",
+      "Template": "application/roughtime-server+json",
+      "Reference": "[RFC-ietf-ntp-roughtime-19]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/roughtime-server+json"
+  ]
+}

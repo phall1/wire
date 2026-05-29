@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-pgp-keys",
+  "family": "media-type",
+  "slug": "application-pgp-keys",
+  "title": "application/pgp-keys",
+  "summary": "Media type \"application/pgp-keys\". Registered/referenced in RFC3156.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pgp-keys",
+    "reference_rfcs": [
+      "RFC3156"
+    ],
+    "raw_columns": {
+      "Name": "pgp-keys",
+      "Template": "application/pgp-keys",
+      "Reference": "[RFC3156]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pgp-keys"
+  ]
+}

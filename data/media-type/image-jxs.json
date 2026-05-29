@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-jxs",
+  "family": "media-type",
+  "slug": "image-jxs",
+  "title": "image/jxs",
+  "summary": "Media type \"image/jxs\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/jxs",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "jxs",
+      "Template": "image/jxs",
+      "Reference": "[ISO-IEC_JTC_1]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/jxs"
+  ]
+}

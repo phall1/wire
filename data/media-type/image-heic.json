@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-heic",
+  "family": "media-type",
+  "slug": "image-heic",
+  "title": "image/heic",
+  "summary": "Media type \"image/heic\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/heic",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "heic",
+      "Template": "image/heic",
+      "Reference": "[ISO-IEC_JTC_1][David_Singer]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/heic"
+  ]
+}

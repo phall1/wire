@@ -1,0 +1,31 @@
+{
+  "id": "magic/flac",
+  "family": "magic",
+  "slug": "flac",
+  "title": "FLAC signature (fLaC)",
+  "summary": "A native FLAC audio stream begins with the 4-byte ASCII marker 'fLaC' (0x66 0x4C 0x61 0x43), immediately followed by the STREAMINFO metadata block.",
+  "kind": "signature",
+  "aliases": ["FLAC magic", "fLaC"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://xiph.org/flac/format.html#stream",
+  "source_version": "FLAC format specification, Stream (marker 'fLaC')",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/ogg", "magic/mp3-id3"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "66 4C 61 43",
+    "offset": 0,
+    "magic_ascii": "fLaC",
+    "extensions": ["flac"],
+    "mime": "audio/flac",
+    "spec": "FLAC format specification (Xiph.Org)",
+    "notes": [
+      "The marker is exactly the ASCII 'fLaC' (note the capitalization).",
+      "Immediately followed by metadata blocks, the first of which must be STREAMINFO.",
+      "FLAC audio can also be carried inside an Ogg container (then the outer magic is 'OggS')."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

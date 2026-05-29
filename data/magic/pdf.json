@@ -1,0 +1,32 @@
+{
+  "id": "magic/pdf",
+  "family": "magic",
+  "slug": "pdf",
+  "title": "PDF signature (%PDF-)",
+  "summary": "A PDF file begins with the ASCII header '%PDF-' followed by a version number such as '1.7'. The percent sign marks a comment line per the PDF/PostScript syntax. Files normally end with the '%%EOF' marker.",
+  "kind": "signature",
+  "aliases": ["PDF magic", "%PDF"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/PDF32000_2008.pdf",
+  "source_version": "PDF 32000-1:2008 (ISO 32000-1), Section 7.5.2 File Header",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "25 50 44 46 2D",
+    "offset": 0,
+    "magic_ascii": "%PDF-",
+    "extensions": ["pdf"],
+    "mime": "application/pdf",
+    "trailer_hex": "25 25 45 4F 46",
+    "spec": "ISO 32000-1:2008, Section 7.5.2",
+    "notes": [
+      "Full header is '%PDF-M.N' where M.N is the version, e.g. '%PDF-1.7' = 25 50 44 46 2D 31 2E 37.",
+      "The trailer '%%EOF' (25 25 45 4F 46) ends the file; some files have trailing bytes after it.",
+      "Conforming readers may scan the first 1024 bytes for the header rather than requiring it at exact offset 0."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

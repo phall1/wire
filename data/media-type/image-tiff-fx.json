@@ -1,0 +1,30 @@
+{
+  "id": "media-type/image-tiff-fx",
+  "family": "media-type",
+  "slug": "image-tiff-fx",
+  "title": "image/tiff-fx",
+  "summary": "Media type \"image/tiff-fx\". Registered/referenced in RFC3950.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/tiff-fx",
+    "reference_rfcs": [
+      "RFC3950"
+    ],
+    "raw_columns": {
+      "Name": "tiff-fx",
+      "Template": "image/tiff-fx",
+      "Reference": "[RFC3950]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/tiff-fx"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-scitt-receipt-cose",
+  "family": "media-type",
+  "slug": "application-scitt-receipt-cose",
+  "title": "application/scitt-receipt+cose",
+  "summary": "Media type \"application/scitt-receipt+cose\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/scitt-receipt+cose",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "scitt-receipt+cose",
+      "Template": "application/scitt-receipt+cose",
+      "Reference": "[RFC-ietf-scitt-architecture-21]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/scitt-receipt+cose"
+  ]
+}

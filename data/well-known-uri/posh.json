@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/posh",
+  "family": "well-known-uri",
+  "slug": "posh",
+  "title": "/.well-known/posh",
+  "summary": "Well-known URI suffix \"/.well-known/posh\". IANA status: permanent. Defined in RFC7711.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "posh",
+    "reference_rfcs": [
+      "RFC7711"
+    ],
+    "registration_date": "2015-09-20",
+    "raw_columns": {
+      "URI Suffix": "posh",
+      "Reference": "[RFC7711]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "The suffix \"posh\" is expected to be followed by\n      an additional path component consisting of a service name (say,\n      \"spice\") and a file extension of \".json\", resulting in a full path\n      of, for instance, \"/.well-known/posh/spice.json\".  Registration of\n      service names shall be requested by developers of the relevant\n      application protocols.",
+      "Date Registered": "2015-09-20",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

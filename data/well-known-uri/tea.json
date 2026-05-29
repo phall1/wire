@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/tea",
+  "family": "well-known-uri",
+  "slug": "tea",
+  "title": "/.well-known/tea",
+  "summary": "Well-known URI suffix \"/.well-known/tea\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "tea",
+    "reference_rfcs": [],
+    "registration_date": "2026-02-28",
+    "raw_columns": {
+      "URI Suffix": "tea",
+      "Reference": "[Transparency Exchange API (coming)]",
+      "Status": "provisional",
+      "Change Controller": "[ECMA_International_TC54]",
+      "Related Information": "",
+      "Date Registered": "2026-02-28",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

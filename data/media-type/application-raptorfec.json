@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-raptorfec",
+  "family": "media-type",
+  "slug": "application-raptorfec",
+  "title": "application/raptorfec",
+  "summary": "Media type \"application/raptorfec\". Registered/referenced in RFC6682.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/raptorfec",
+    "reference_rfcs": [
+      "RFC6682"
+    ],
+    "raw_columns": {
+      "Name": "raptorfec",
+      "Template": "application/raptorfec",
+      "Reference": "[RFC6682]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/raptorfec"
+  ]
+}

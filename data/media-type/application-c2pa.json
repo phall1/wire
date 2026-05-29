@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-c2pa",
+  "family": "media-type",
+  "slug": "application-c2pa",
+  "title": "application/c2pa",
+  "summary": "Media type \"application/c2pa\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/c2pa",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "c2pa",
+      "Template": "application/c2pa",
+      "Reference": "[C2PA][Leonard_Rosenthol]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/c2pa"
+  ]
+}

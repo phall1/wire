@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cwt",
+  "family": "media-type",
+  "slug": "application-cwt",
+  "title": "application/cwt",
+  "summary": "Media type \"application/cwt\". Registered/referenced in RFC8392.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cwt",
+    "reference_rfcs": [
+      "RFC8392"
+    ],
+    "raw_columns": {
+      "Name": "cwt",
+      "Template": "application/cwt",
+      "Reference": "[RFC8392]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cwt"
+  ]
+}

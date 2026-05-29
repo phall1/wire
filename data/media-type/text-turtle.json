@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-turtle",
+  "family": "media-type",
+  "slug": "text-turtle",
+  "title": "text/turtle",
+  "summary": "Media type \"text/turtle\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/turtle",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "turtle",
+      "Template": "text/turtle",
+      "Reference": "[W3C][Eric_Prudhommeaux]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/turtle"
+  ]
+}

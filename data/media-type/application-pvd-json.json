@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-pvd-json",
+  "family": "media-type",
+  "slug": "application-pvd-json",
+  "title": "application/pvd+json",
+  "summary": "Media type \"application/pvd+json\". Registered/referenced in RFC8801.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pvd+json",
+    "reference_rfcs": [
+      "RFC8801"
+    ],
+    "raw_columns": {
+      "Name": "pvd+json",
+      "Template": "application/pvd+json",
+      "Reference": "[RFC8801]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pvd+json"
+  ]
+}

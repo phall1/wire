@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-esmertec-theme-descriptor",
+  "family": "media-type",
+  "slug": "text-vnd-esmertec-theme-descriptor",
+  "title": "text/vnd.esmertec.theme-descriptor",
+  "summary": "Media type \"text/vnd.esmertec.theme-descriptor\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.esmertec.theme-descriptor",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.esmertec.theme-descriptor",
+      "Template": "text/vnd.esmertec.theme-descriptor",
+      "Reference": "[Stefan_Eilemann]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.esmertec.theme-descriptor"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-yamaha-remote-setup",
+  "family": "media-type",
+  "slug": "application-vnd-yamaha-remote-setup",
+  "title": "application/vnd.yamaha.remote-setup",
+  "summary": "Media type \"application/vnd.yamaha.remote-setup\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.yamaha.remote-setup",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.yamaha.remote-setup",
+      "Template": "application/vnd.yamaha.remote-setup",
+      "Reference": "[Takehiro_Sukizaki]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.yamaha.remote-setup"
+  ]
+}

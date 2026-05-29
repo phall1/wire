@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-evc",
+  "family": "media-type",
+  "slug": "video-evc",
+  "title": "video/evc",
+  "summary": "Media type \"video/evc\". Registered/referenced in RFC9584.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/evc",
+    "reference_rfcs": [
+      "RFC9584"
+    ],
+    "raw_columns": {
+      "Name": "evc",
+      "Template": "video/evc",
+      "Reference": "[RFC9584]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/evc"
+  ]
+}

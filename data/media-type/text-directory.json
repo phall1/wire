@@ -1,0 +1,32 @@
+{
+  "id": "media-type/text-directory",
+  "family": "media-type",
+  "slug": "text-directory",
+  "title": "text/directory",
+  "summary": "Media type \"text/directory\". Registered/referenced in RFC2425, RFC6350.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/directory",
+    "reference_rfcs": [
+      "RFC2425",
+      "RFC6350"
+    ],
+    "raw_columns": {
+      "Name": "directory - DEPRECATED by RFC6350",
+      "Template": "text/directory",
+      "Reference": "[RFC2425][RFC6350]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/directory",
+    "text/directory - DEPRECATED by RFC6350"
+  ]
+}

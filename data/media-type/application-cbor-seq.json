@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cbor-seq",
+  "family": "media-type",
+  "slug": "application-cbor-seq",
+  "title": "application/cbor-seq",
+  "summary": "Media type \"application/cbor-seq\". Registered/referenced in RFC8742.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cbor-seq",
+    "reference_rfcs": [
+      "RFC8742"
+    ],
+    "raw_columns": {
+      "Name": "cbor-seq",
+      "Template": "application/cbor-seq",
+      "Reference": "[RFC8742]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cbor-seq"
+  ]
+}

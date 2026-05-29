@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-news-transmission",
+  "family": "media-type",
+  "slug": "application-news-transmission",
+  "title": "application/news-transmission",
+  "summary": "Media type \"application/news-transmission\". Registered/referenced in RFC5537.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/news-transmission",
+    "reference_rfcs": [
+      "RFC5537"
+    ],
+    "raw_columns": {
+      "Name": "news-transmission",
+      "Template": "application/news-transmission",
+      "Reference": "[RFC5537]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/news-transmission"
+  ]
+}

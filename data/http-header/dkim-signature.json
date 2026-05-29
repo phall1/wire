@@ -1,0 +1,31 @@
+{
+  "id": "http-header/dkim-signature",
+  "family": "http-header",
+  "slug": "dkim-signature",
+  "title": "DKIM-Signature",
+  "summary": "Message header field \"DKIM-Signature\" (protocol: mail), status standard. Defined in RFC6376.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "DKIM-Signature",
+    "reference_rfcs": [
+      "RFC6376"
+    ],
+    "raw_columns": {
+      "value": "DKIM-Signature",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC6376]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "DKIM-Signature"
+  ]
+}

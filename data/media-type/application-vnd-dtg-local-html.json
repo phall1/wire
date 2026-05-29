@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-dtg-local-html",
+  "family": "media-type",
+  "slug": "application-vnd-dtg-local-html",
+  "title": "application/vnd.dtg.local.html",
+  "summary": "Media type \"application/vnd.dtg.local.html\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.dtg.local.html",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dtg.local.html",
+      "Template": "application/vnd.dtg.local.html",
+      "Reference": "[Ali_Teffahi]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.dtg.local.html"
+  ]
+}

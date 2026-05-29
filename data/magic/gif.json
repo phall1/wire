@@ -1,0 +1,31 @@
+{
+  "id": "magic/gif",
+  "family": "magic",
+  "slug": "gif",
+  "title": "GIF signature (GIF87a / GIF89a)",
+  "summary": "A GIF file begins with a 6-byte header: the ASCII signature 'GIF' followed by a 3-byte version, either '87a' or '89a'. '89a' added transparency, animation, and application extensions.",
+  "kind": "signature",
+  "aliases": ["GIF magic", "GIF87a", "GIF89a"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.w3.org/Graphics/GIF/spec-gif89a.txt",
+  "source_version": "GIF89a specification (CompuServe, 1990), Section 17 Header",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/png", "magic/jpeg"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "47 49 46 38 39 61",
+    "offset": 0,
+    "magic_ascii": "GIF89a",
+    "extensions": ["gif"],
+    "mime": "image/gif",
+    "spec": "GIF89a specification (CompuServe, 1990)",
+    "notes": [
+      "Two versions exist: 'GIF87a' = 47 49 46 38 37 61, 'GIF89a' = 47 49 46 38 39 61.",
+      "Bytes 0-2 are the signature 'GIF'; bytes 3-5 are the version '87a' or '89a'.",
+      "After the 6-byte header comes the 7-byte Logical Screen Descriptor."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

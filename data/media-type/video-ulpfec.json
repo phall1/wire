@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-ulpfec",
+  "family": "media-type",
+  "slug": "video-ulpfec",
+  "title": "video/ulpfec",
+  "summary": "Media type \"video/ulpfec\". Registered/referenced in RFC5109.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/ulpfec",
+    "reference_rfcs": [
+      "RFC5109"
+    ],
+    "raw_columns": {
+      "Name": "ulpfec",
+      "Template": "video/ulpfec",
+      "Reference": "[RFC5109]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/ulpfec"
+  ]
+}

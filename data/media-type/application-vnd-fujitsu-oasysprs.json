@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-fujitsu-oasysprs",
+  "family": "media-type",
+  "slug": "application-vnd-fujitsu-oasysprs",
+  "title": "application/vnd.fujitsu.oasysprs",
+  "summary": "Media type \"application/vnd.fujitsu.oasysprs\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.fujitsu.oasysprs",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.fujitsu.oasysprs",
+      "Template": "application/vnd.fujitsu.oasysprs",
+      "Reference": "[Masumi_Ogita]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.fujitsu.oasysprs"
+  ]
+}

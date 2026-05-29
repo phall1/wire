@@ -1,0 +1,31 @@
+{
+  "id": "http-header/organization",
+  "family": "http-header",
+  "slug": "organization",
+  "title": "Organization",
+  "summary": "Message header field \"Organization\" (protocol: mail), IANA status informational. Defined in RFC7681 (an Informational RFC), so it is documented but not standards-track.",
+  "kind": "header",
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Organization",
+    "reference_rfcs": [
+      "RFC7681"
+    ],
+    "raw_columns": {
+      "value": "Organization",
+      "protocol": "mail",
+      "status": "informational",
+      "Reference": "[RFC7681]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Organization"
+  ]
+}

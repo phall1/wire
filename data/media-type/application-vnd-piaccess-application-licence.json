@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-piaccess-application-licence",
+  "family": "media-type",
+  "slug": "application-vnd-piaccess-application-licence",
+  "title": "application/vnd.piaccess.application-licence",
+  "summary": "Media type \"application/vnd.piaccess.application-licence\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.piaccess.application-licence",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.piaccess.application-licence",
+      "Template": "application/vnd.piaccess.application-licence",
+      "Reference": "[Lucas_Maneos]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.piaccess.application-licence"
+  ]
+}

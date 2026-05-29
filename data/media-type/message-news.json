@@ -1,0 +1,31 @@
+{
+  "id": "media-type/message-news",
+  "family": "media-type",
+  "slug": "message-news",
+  "title": "message/news",
+  "summary": "Media type \"message/news\". Registered/referenced in RFC5537.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/news",
+    "reference_rfcs": [
+      "RFC5537"
+    ],
+    "raw_columns": {
+      "Name": "news (OBSOLETED by [RFC5537])",
+      "Template": "message/news",
+      "Reference": "[RFC5537][Henry_Spencer]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/news",
+    "message/news (OBSOLETED by [RFC5537])"
+  ]
+}

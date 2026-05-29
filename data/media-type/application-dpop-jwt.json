@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-dpop-jwt",
+  "family": "media-type",
+  "slug": "application-dpop-jwt",
+  "title": "application/dpop+jwt",
+  "summary": "Media type \"application/dpop+jwt\". Registered/referenced in RFC9449.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/dpop+jwt",
+    "reference_rfcs": [
+      "RFC9449"
+    ],
+    "raw_columns": {
+      "Name": "dpop+jwt",
+      "Template": "application/dpop+jwt",
+      "Reference": "[RFC9449]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/dpop+jwt"
+  ]
+}

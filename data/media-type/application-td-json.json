@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-td-json",
+  "family": "media-type",
+  "slug": "application-td-json",
+  "title": "application/td+json",
+  "summary": "Media type \"application/td+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/td+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "td+json",
+      "Template": "application/td+json",
+      "Reference": "[W3C][Matthias_Kovatsch]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/td+json"
+  ]
+}

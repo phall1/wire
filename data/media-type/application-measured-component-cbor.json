@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-measured-component-cbor",
+  "family": "media-type",
+  "slug": "application-measured-component-cbor",
+  "title": "application/measured-component+cbor",
+  "summary": "Media type \"application/measured-component+cbor\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/measured-component+cbor",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "measured-component+cbor",
+      "Template": "application/measured-component+cbor",
+      "Reference": "[RFC-ietf-rats-eat-measured-component-12]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/measured-component+cbor"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-set-registration",
+  "family": "media-type",
+  "slug": "application-set-registration",
+  "title": "application/set-registration",
+  "summary": "Media type \"application/set-registration\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/set-registration",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "set-registration",
+      "Template": "application/set-registration",
+      "Reference": "[Brian_Korver]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/set-registration"
+  ]
+}

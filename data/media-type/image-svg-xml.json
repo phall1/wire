@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-svg-xml",
+  "family": "media-type",
+  "slug": "image-svg-xml",
+  "title": "image/svg+xml",
+  "summary": "Media type \"image/svg+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/svg+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "svg+xml",
+      "Template": "image/svg+xml",
+      "Reference": "[W3C][http://www.w3.org/TR/SVG/mimereg.html]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/svg+xml"
+  ]
+}

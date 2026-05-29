@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-in3d-spot",
+  "family": "media-type",
+  "slug": "text-vnd-in3d-spot",
+  "title": "text/vnd.in3d.spot",
+  "summary": "Media type \"text/vnd.in3d.spot\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.in3d.spot",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.in3d.spot",
+      "Template": "text/vnd.in3d.spot",
+      "Reference": "[Michael_Powers]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.in3d.spot"
+  ]
+}

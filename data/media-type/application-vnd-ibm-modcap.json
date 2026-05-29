@@ -1,0 +1,29 @@
+{
+  "id": "media-type/application-vnd-ibm-modcap",
+  "family": "media-type",
+  "slug": "application-vnd-ibm-modcap",
+  "title": "application/vnd.ibm.modcap",
+  "summary": "Media type \"application/vnd.ibm.modcap\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.ibm.modcap",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.ibm.modcap (OBSOLETED in favor of application/vnd.afpc.modca)",
+      "Template": "application/vnd.ibm.modcap",
+      "Reference": "[Reinhard_Hohensee]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.ibm.modcap",
+    "application/vnd.ibm.modcap (OBSOLETED in favor of application/vnd.afpc.modca)"
+  ]
+}

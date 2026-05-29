@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-youtube-yt",
+  "family": "media-type",
+  "slug": "video-vnd-youtube-yt",
+  "title": "video/vnd.youtube.yt",
+  "summary": "Media type \"video/vnd.youtube.yt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.youtube.yt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.youtube.yt",
+      "Template": "video/vnd.youtube.yt",
+      "Reference": "[Google]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.youtube.yt"
+  ]
+}

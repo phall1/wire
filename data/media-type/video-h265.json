@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-h265",
+  "family": "media-type",
+  "slug": "video-h265",
+  "title": "video/H265",
+  "summary": "Media type \"video/H265\". Registered/referenced in RFC7798.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/H265",
+    "reference_rfcs": [
+      "RFC7798"
+    ],
+    "raw_columns": {
+      "Name": "H265",
+      "Template": "video/H265",
+      "Reference": "[RFC7798]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/H265"
+  ]
+}

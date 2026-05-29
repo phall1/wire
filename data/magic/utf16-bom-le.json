@@ -1,0 +1,32 @@
+{
+  "id": "magic/utf16-bom-le",
+  "family": "magic",
+  "slug": "utf16-bom-le",
+  "title": "UTF-16 LE BOM (FF FE)",
+  "summary": "A UTF-16 little-endian byte-order mark is the 2-byte sequence 0xFF 0xFE — the LE serialization of U+FEFF. The reversed order 0xFE 0xFF signals UTF-16 big-endian. The BOM lets a decoder pick the byte order of the following UTF-16 text.",
+  "kind": "signature",
+  "aliases": ["UTF-16 BOM", "UTF-16LE BOM", "FF FE", "byte order mark"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.unicode.org/faq/utf_bom.html#bom4",
+  "source_version": "Unicode FAQ UTF-8/BOM (FF FE = UTF-16LE, FE FF = UTF-16BE form of U+FEFF)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/utf8-bom"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FF FE",
+    "offset": 0,
+    "magic_ascii": "\\xff\\xfe",
+    "extensions": ["txt"],
+    "mime": "text/plain",
+    "spec": "The Unicode Standard (U+FEFF byte order mark)",
+    "notes": [
+      "FF FE = UTF-16 little-endian BOM; FE FF = UTF-16 big-endian BOM.",
+      "Both are the encoding of U+FEFF in the respective byte order.",
+      "CAUTION: a UTF-32LE BOM is FF FE 00 00, which begins with the same two bytes as the UTF-16LE BOM — check the following bytes to disambiguate.",
+      "Without a BOM, UTF-16 defaults to big-endian per the Unicode standard, though in practice little-endian is common on Windows."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

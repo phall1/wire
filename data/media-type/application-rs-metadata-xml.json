@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-rs-metadata-xml",
+  "family": "media-type",
+  "slug": "application-rs-metadata-xml",
+  "title": "application/rs-metadata+xml",
+  "summary": "Media type \"application/rs-metadata+xml\". Registered/referenced in RFC7865, RFC9806.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rs-metadata+xml",
+    "reference_rfcs": [
+      "RFC7865",
+      "RFC9806"
+    ],
+    "raw_columns": {
+      "Name": "rs-metadata+xml",
+      "Template": "application/rs-metadata+xml",
+      "Reference": "[RFC7865][RFC9806]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rs-metadata+xml"
+  ]
+}

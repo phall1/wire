@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-sql",
+  "family": "media-type",
+  "slug": "application-sql",
+  "title": "application/sql",
+  "summary": "Media type \"application/sql\". Registered/referenced in RFC6922.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/sql",
+    "reference_rfcs": [
+      "RFC6922"
+    ],
+    "raw_columns": {
+      "Name": "sql",
+      "Template": "application/sql",
+      "Reference": "[RFC6922]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/sql"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-jwk-set-jwt",
+  "family": "media-type",
+  "slug": "application-jwk-set-jwt",
+  "title": "application/jwk-set+jwt",
+  "summary": "Media type \"application/jwk-set+jwt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/jwk-set+jwt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "jwk-set+jwt",
+      "Template": "application/jwk-set+jwt",
+      "Reference": "[OpenID_Foundation_Artifact_Binding_WG]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/jwk-set+jwt"
+  ]
+}

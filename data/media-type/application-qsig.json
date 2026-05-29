@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-qsig",
+  "family": "media-type",
+  "slug": "application-qsig",
+  "title": "application/QSIG",
+  "summary": "Media type \"application/QSIG\". Registered/referenced in RFC3204.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/QSIG",
+    "reference_rfcs": [
+      "RFC3204"
+    ],
+    "raw_columns": {
+      "Name": "QSIG",
+      "Template": "application/QSIG",
+      "Reference": "[RFC3204]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/QSIG"
+  ]
+}

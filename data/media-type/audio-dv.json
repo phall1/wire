@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-dv",
+  "family": "media-type",
+  "slug": "audio-dv",
+  "title": "audio/DV",
+  "summary": "Media type \"audio/DV\". Registered/referenced in RFC6469.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/DV",
+    "reference_rfcs": [
+      "RFC6469"
+    ],
+    "raw_columns": {
+      "Name": "DV",
+      "Template": "audio/DV",
+      "Reference": "[RFC6469]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/DV"
+  ]
+}

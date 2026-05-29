@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-geo-json-seq",
+  "family": "media-type",
+  "slug": "application-geo-json-seq",
+  "title": "application/geo+json-seq",
+  "summary": "Media type \"application/geo+json-seq\". Registered/referenced in RFC8142.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/geo+json-seq",
+    "reference_rfcs": [
+      "RFC8142"
+    ],
+    "raw_columns": {
+      "Name": "geo+json-seq",
+      "Template": "application/geo+json-seq",
+      "Reference": "[RFC8142]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/geo+json-seq"
+  ]
+}

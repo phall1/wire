@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-cn",
+  "family": "media-type",
+  "slug": "audio-cn",
+  "title": "audio/CN",
+  "summary": "Media type \"audio/CN\". Registered/referenced in RFC3389.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/CN",
+    "reference_rfcs": [
+      "RFC3389"
+    ],
+    "raw_columns": {
+      "Name": "CN",
+      "Template": "audio/CN",
+      "Reference": "[RFC3389]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/CN"
+  ]
+}

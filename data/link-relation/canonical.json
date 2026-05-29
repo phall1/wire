@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/canonical",
+  "family": "link-relation",
+  "slug": "canonical",
+  "title": "canonical",
+  "summary": "Link relation type \"canonical\": Designates the preferred version of a resource (the IRI and its contents). Defined in RFC6596.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "canonical",
+    "reference_rfcs": [
+      "RFC6596"
+    ],
+    "raw_columns": {
+      "Relation Name": "canonical",
+      "Description": "Designates the preferred version of a resource (the IRI and its contents).",
+      "Reference": "[RFC6596]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

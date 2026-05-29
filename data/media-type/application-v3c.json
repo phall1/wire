@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-v3c",
+  "family": "media-type",
+  "slug": "application-v3c",
+  "title": "application/v3c",
+  "summary": "Media type \"application/v3c\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/v3c",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "v3c",
+      "Template": "application/v3c",
+      "Reference": "[RFC-ietf-avtcore-rtp-v3c-17]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/v3c"
+  ]
+}

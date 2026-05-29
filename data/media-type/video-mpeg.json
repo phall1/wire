@@ -1,0 +1,31 @@
+{
+  "id": "media-type/video-mpeg",
+  "family": "media-type",
+  "slug": "video-mpeg",
+  "title": "video/mpeg",
+  "summary": "Media type \"video/mpeg\". Registered/referenced in RFC2045, RFC2046.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/mpeg",
+    "reference_rfcs": [
+      "RFC2045",
+      "RFC2046"
+    ],
+    "raw_columns": {
+      "Name": "mpeg",
+      "Template": "video/mpeg",
+      "Reference": "[RFC2045][RFC2046]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/mpeg"
+  ]
+}

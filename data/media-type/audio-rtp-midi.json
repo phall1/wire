@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-rtp-midi",
+  "family": "media-type",
+  "slug": "audio-rtp-midi",
+  "title": "audio/rtp-midi",
+  "summary": "Media type \"audio/rtp-midi\". Registered/referenced in RFC6295.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/rtp-midi",
+    "reference_rfcs": [
+      "RFC6295"
+    ],
+    "raw_columns": {
+      "Name": "rtp-midi",
+      "Template": "audio/rtp-midi",
+      "Reference": "[RFC6295]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/rtp-midi"
+  ]
+}

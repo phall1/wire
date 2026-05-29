@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-trig",
+  "family": "media-type",
+  "slug": "application-trig",
+  "title": "application/trig",
+  "summary": "Media type \"application/trig\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/trig",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "trig",
+      "Template": "application/trig",
+      "Reference": "[W3C][W3C_RDF_WG]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/trig"
+  ]
+}

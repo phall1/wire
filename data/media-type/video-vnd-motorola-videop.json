@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-motorola-videop",
+  "family": "media-type",
+  "slug": "video-vnd-motorola-videop",
+  "title": "video/vnd.motorola.videop",
+  "summary": "Media type \"video/vnd.motorola.videop\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.motorola.videop",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.motorola.videop",
+      "Template": "video/vnd.motorola.videop",
+      "Reference": "[Tom_McGinty]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.motorola.videop"
+  ]
+}

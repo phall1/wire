@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-ipfix",
+  "family": "media-type",
+  "slug": "application-ipfix",
+  "title": "application/ipfix",
+  "summary": "Media type \"application/ipfix\". Registered/referenced in RFC5655.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ipfix",
+    "reference_rfcs": [
+      "RFC5655"
+    ],
+    "raw_columns": {
+      "Name": "ipfix",
+      "Template": "application/ipfix",
+      "Reference": "[RFC5655]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ipfix"
+  ]
+}

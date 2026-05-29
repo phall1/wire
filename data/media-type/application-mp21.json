@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-mp21",
+  "family": "media-type",
+  "slug": "application-mp21",
+  "title": "application/mp21",
+  "summary": "Media type \"application/mp21\". Registered/referenced in RFC6381.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mp21",
+    "reference_rfcs": [
+      "RFC6381"
+    ],
+    "raw_columns": {
+      "Name": "mp21",
+      "Template": "application/mp21",
+      "Reference": "[RFC6381][David_Singer]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mp21"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-tm-json",
+  "family": "media-type",
+  "slug": "application-tm-json",
+  "title": "application/tm+json",
+  "summary": "Media type \"application/tm+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/tm+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "tm+json",
+      "Template": "application/tm+json",
+      "Reference": "[W3C][Sebastian_Kaebisch]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/tm+json"
+  ]
+}

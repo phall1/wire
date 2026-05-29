@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/preconnect",
+  "family": "link-relation",
+  "slug": "preconnect",
+  "title": "preconnect",
+  "summary": "Link relation type \"preconnect\": Used to indicate an origin that will be used to fetch required resources for the link context. Initiating an early connection, which includes the DNS lookup, T….",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "preconnect",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "preconnect",
+      "Description": "Used to indicate an origin that will be used to fetch required resources for the link context. Initiating an early connection, which includes the DNS lookup, TCP handshake, and optional TLS negotiation, allows the user agent to mask the high latency costs of establishing a connection.",
+      "Reference": "[HTML]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

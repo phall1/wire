@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-familysearch-gedcom",
+  "family": "media-type",
+  "slug": "text-vnd-familysearch-gedcom",
+  "title": "text/vnd.familysearch.gedcom",
+  "summary": "Media type \"text/vnd.familysearch.gedcom\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.familysearch.gedcom",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.familysearch.gedcom",
+      "Template": "text/vnd.familysearch.gedcom",
+      "Reference": "[Gordon_Clarke]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.familysearch.gedcom"
+  ]
+}

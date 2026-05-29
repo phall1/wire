@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-iges",
+  "family": "media-type",
+  "slug": "application-iges",
+  "title": "application/iges",
+  "summary": "Media type \"application/iges\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/iges",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "iges",
+      "Template": "application/iges",
+      "Reference": "[Curtis_Parks]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/iges"
+  ]
+}

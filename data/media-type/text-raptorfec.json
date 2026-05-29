@@ -1,0 +1,30 @@
+{
+  "id": "media-type/text-raptorfec",
+  "family": "media-type",
+  "slug": "text-raptorfec",
+  "title": "text/raptorfec",
+  "summary": "Media type \"text/raptorfec\". Registered/referenced in RFC6682.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/raptorfec",
+    "reference_rfcs": [
+      "RFC6682"
+    ],
+    "raw_columns": {
+      "Name": "raptorfec",
+      "Template": "text/raptorfec",
+      "Reference": "[RFC6682]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/raptorfec"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-delivery-status",
+  "family": "media-type",
+  "slug": "message-delivery-status",
+  "title": "message/delivery-status",
+  "summary": "Media type \"message/delivery-status\". Registered/referenced in RFC1894.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/delivery-status",
+    "reference_rfcs": [
+      "RFC1894"
+    ],
+    "raw_columns": {
+      "Name": "delivery-status",
+      "Template": "message/delivery-status",
+      "Reference": "[RFC1894]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/delivery-status"
+  ]
+}

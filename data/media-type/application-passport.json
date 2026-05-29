@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-passport",
+  "family": "media-type",
+  "slug": "application-passport",
+  "title": "application/passport",
+  "summary": "Media type \"application/passport\". Registered/referenced in RFC8225.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/passport",
+    "reference_rfcs": [
+      "RFC8225"
+    ],
+    "raw_columns": {
+      "Name": "passport",
+      "Template": "application/passport",
+      "Reference": "[RFC8225]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/passport"
+  ]
+}

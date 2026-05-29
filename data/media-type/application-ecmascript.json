@@ -1,0 +1,32 @@
+{
+  "id": "media-type/application-ecmascript",
+  "family": "media-type",
+  "slug": "application-ecmascript",
+  "title": "application/ecmascript",
+  "summary": "Media type \"application/ecmascript\". Registered/referenced in RFC4329, RFC9239.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ecmascript",
+    "reference_rfcs": [
+      "RFC4329",
+      "RFC9239"
+    ],
+    "raw_columns": {
+      "Name": "ecmascript (OBSOLETED in favor of text/javascript)",
+      "Template": "application/ecmascript",
+      "Reference": "[RFC4329][RFC9239]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ecmascript",
+    "application/ecmascript (OBSOLETED in favor of text/javascript)"
+  ]
+}

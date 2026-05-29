@@ -1,0 +1,30 @@
+{
+  "id": "media-type/model-vrml",
+  "family": "media-type",
+  "slug": "model-vrml",
+  "title": "model/vrml",
+  "summary": "Media type \"model/vrml\". Registered/referenced in RFC2077.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vrml",
+    "reference_rfcs": [
+      "RFC2077"
+    ],
+    "raw_columns": {
+      "Name": "vrml",
+      "Template": "model/vrml",
+      "Reference": "[RFC2077]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vrml"
+  ]
+}

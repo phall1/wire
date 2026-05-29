@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-dv",
+  "family": "media-type",
+  "slug": "video-dv",
+  "title": "video/DV",
+  "summary": "Media type \"video/DV\". Registered/referenced in RFC6469.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/DV",
+    "reference_rfcs": [
+      "RFC6469"
+    ],
+    "raw_columns": {
+      "Name": "DV",
+      "Template": "video/DV",
+      "Reference": "[RFC6469]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/DV"
+  ]
+}

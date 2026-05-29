@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-pkix-pkipath",
+  "family": "media-type",
+  "slug": "application-pkix-pkipath",
+  "title": "application/pkix-pkipath",
+  "summary": "Media type \"application/pkix-pkipath\". Registered/referenced in RFC6066.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pkix-pkipath",
+    "reference_rfcs": [
+      "RFC6066"
+    ],
+    "raw_columns": {
+      "Name": "pkix-pkipath",
+      "Template": "application/pkix-pkipath",
+      "Reference": "[RFC6066]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pkix-pkipath"
+  ]
+}

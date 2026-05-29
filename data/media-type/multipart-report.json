@@ -1,0 +1,30 @@
+{
+  "id": "media-type/multipart-report",
+  "family": "media-type",
+  "slug": "multipart-report",
+  "title": "multipart/report",
+  "summary": "Media type \"multipart/report\". Registered/referenced in RFC6522.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/report",
+    "reference_rfcs": [
+      "RFC6522"
+    ],
+    "raw_columns": {
+      "Name": "report",
+      "Template": "multipart/report",
+      "Reference": "[RFC6522]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/report"
+  ]
+}

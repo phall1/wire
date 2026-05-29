@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-mls",
+  "family": "media-type",
+  "slug": "message-mls",
+  "title": "message/mls",
+  "summary": "Media type \"message/mls\". Registered/referenced in RFC9420.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/mls",
+    "reference_rfcs": [
+      "RFC9420"
+    ],
+    "raw_columns": {
+      "Name": "mls",
+      "Template": "message/mls",
+      "Reference": "[RFC9420]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/mls"
+  ]
+}

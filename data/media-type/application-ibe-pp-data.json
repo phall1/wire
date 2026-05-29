@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-ibe-pp-data",
+  "family": "media-type",
+  "slug": "application-ibe-pp-data",
+  "title": "application/ibe-pp-data",
+  "summary": "Media type \"application/ibe-pp-data\". Registered/referenced in RFC5408.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ibe-pp-data",
+    "reference_rfcs": [
+      "RFC5408"
+    ],
+    "raw_columns": {
+      "Name": "ibe-pp-data",
+      "Template": "application/ibe-pp-data",
+      "Reference": "[RFC5408]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ibe-pp-data"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "http-header/generate-delivery-report",
+  "family": "http-header",
+  "slug": "generate-delivery-report",
+  "title": "Generate-Delivery-Report",
+  "summary": "Message header field \"Generate-Delivery-Report\" (protocol: mail). Defined in RFC4021.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Generate-Delivery-Report",
+    "reference_rfcs": [
+      "RFC4021"
+    ],
+    "raw_columns": {
+      "value": "Generate-Delivery-Report",
+      "protocol": "mail",
+      "status": "",
+      "Reference": "[RFC4021]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Generate-Delivery-Report"
+  ]
+}

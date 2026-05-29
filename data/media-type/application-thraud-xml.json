@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-thraud-xml",
+  "family": "media-type",
+  "slug": "application-thraud-xml",
+  "title": "application/thraud+xml",
+  "summary": "Media type \"application/thraud+xml\". Registered/referenced in RFC5941.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/thraud+xml",
+    "reference_rfcs": [
+      "RFC5941"
+    ],
+    "raw_columns": {
+      "Name": "thraud+xml",
+      "Template": "application/thraud+xml",
+      "Reference": "[RFC5941]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/thraud+xml"
+  ]
+}

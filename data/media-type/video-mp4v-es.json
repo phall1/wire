@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-mp4v-es",
+  "family": "media-type",
+  "slug": "video-mp4v-es",
+  "title": "video/MP4V-ES",
+  "summary": "Media type \"video/MP4V-ES\". Registered/referenced in RFC6416.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/MP4V-ES",
+    "reference_rfcs": [
+      "RFC6416"
+    ],
+    "raw_columns": {
+      "Name": "MP4V-ES",
+      "Template": "video/MP4V-ES",
+      "Reference": "[RFC6416]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/MP4V-ES"
+  ]
+}

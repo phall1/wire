@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-usac",
+  "family": "media-type",
+  "slug": "audio-usac",
+  "title": "audio/usac",
+  "summary": "Media type \"audio/usac\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/usac",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "usac",
+      "Template": "audio/usac",
+      "Reference": "[ISO-IEC_JTC_1][Max_Neuendorf]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/usac"
+  ]
+}

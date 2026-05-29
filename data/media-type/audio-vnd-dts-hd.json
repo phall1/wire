@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-vnd-dts-hd",
+  "family": "media-type",
+  "slug": "audio-vnd-dts-hd",
+  "title": "audio/vnd.dts.hd",
+  "summary": "Media type \"audio/vnd.dts.hd\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/vnd.dts.hd",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dts.hd",
+      "Template": "audio/vnd.dts.hd",
+      "Reference": "[William_Zou]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/vnd.dts.hd"
+  ]
+}

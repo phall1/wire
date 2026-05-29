@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-prc",
+  "family": "media-type",
+  "slug": "model-prc",
+  "title": "model/prc",
+  "summary": "Media type \"model/prc\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/prc",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prc",
+      "Template": "model/prc",
+      "Reference": "[ISO-TC_171-SC_2][Betsy_Fanning]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/prc"
+  ]
+}

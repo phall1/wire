@@ -1,0 +1,49 @@
+{
+  "id": "wire-format/messagepack",
+  "family": "wire-format",
+  "slug": "messagepack",
+  "title": "MessagePack encoding (format byte + data)",
+  "summary": "MessagePack encodes each value with a leading format byte that selects a type and, for many small values, packs the value into the same byte (positive fixint 0x00-0x7F, fixstr 0xA0-0xBF, fixarray 0x90-0x9F, fixmap 0x80-0x8F). Larger values use a format byte followed by a big-endian length/value. It is a compact, self-describing tag-then-value scheme similar to CBOR.",
+  "kind": "wire-format",
+  "aliases": ["MessagePack", "msgpack", "fixint", "fixstr"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://github.com/msgpack/msgpack/blob/master/spec.md",
+  "source_version": "MessagePack specification (msgpack/msgpack spec.md), retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.structure",
+      "source_url": "https://github.com/msgpack/msgpack/blob/master/spec.md",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Defines the format-byte ranges: positive fixint 0x00-0x7f, fixmap 0x80-0x8f, fixarray 0x90-0x9f, fixstr 0xa0-0xbf, nil 0xc0, etc."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc8949#section-3",
+      "source_version": "RFC 8949",
+      "note": "CBOR (RFC 8949) is the standardized format with a very similar major-type design; used here only to corroborate the self-describing tag-then-value pattern."
+    }
+  ],
+  "see_also": ["wire-format/cbor-encoding", "wire-format/protobuf-wire"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MessagePack specification",
+    "summary": "A leading format byte names the type and, for compact 'fix' forms, embeds small values directly. Strings/arrays/maps then carry a length and (for str/bin) the bytes — a self-describing tag-then-length-then-value form. MessagePack predates and heavily influenced CBOR.",
+    "structure": [
+      { "field": "Format byte", "size": "1 byte", "meaning": "Type selector; some ranges embed the value: positive fixint 0x00-0x7F, negative fixint 0xE0-0xFF, fixmap 0x80-0x8F (low nibble = entry count), fixarray 0x90-0x9F, fixstr 0xA0-0xBF (low 5 bits = byte length)." },
+      { "field": "Length / value", "size": "0/1/2/4/8 bytes", "meaning": "For typed forms: nil 0xC0, false 0xC2, true 0xC3, uint8 0xCC, uint16 0xCD, uint32 0xCE, uint64 0xCF, str8/16/32 0xD9/0xDA/0xDB, bin8/16/32 0xC4-0xC6, array16/32 0xDC/0xDD, map16/32 0xDE/0xDF — each followed by its big-endian length or value." },
+      { "field": "Content", "size": "= length", "meaning": "For str/bin: that many data bytes. For array: that many elements. For map: that many key/value pairs." }
+    ],
+    "example_hex": "A3 66 6F 6F",
+    "example_decoded": "String \"foo\": 0xA3 = fixstr with length 3 (0xA0 | 3); 66 6F 6F = ASCII 'foo'.",
+    "see": ["wire-format/cbor-encoding"],
+    "notes": [
+      "Small integers and short strings cost a single byte because the value/length is packed into the format byte (fixint/fixstr).",
+      "The ext type family (0xC7-0xC9, fixext 0xD4-0xD8) carries an application-defined type byte plus payload, akin to a tag.",
+      "CBOR (RFC 8949) standardized the same self-describing idea with cleaner major-type math and IANA-registered tags."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

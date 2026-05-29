@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-dpx",
+  "family": "media-type",
+  "slug": "image-dpx",
+  "title": "image/dpx",
+  "summary": "Media type \"image/dpx\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/dpx",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "dpx",
+      "Template": "image/dpx",
+      "Reference": "[SMPTE][SMPTE_Director_of_Standards_Development]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/dpx"
+  ]
+}

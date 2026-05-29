@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-hns-video",
+  "family": "media-type",
+  "slug": "video-vnd-hns-video",
+  "title": "video/vnd.hns.video",
+  "summary": "Media type \"video/vnd.hns.video\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.hns.video",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.hns.video",
+      "Template": "video/vnd.hns.video",
+      "Reference": "[Swaminathan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.hns.video"
+  ]
+}

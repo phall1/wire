@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/next",
+  "family": "link-relation",
+  "slug": "next",
+  "title": "next",
+  "summary": "Link relation type \"next\": Indicates that the link's context is a part of a series, and\n      that the next in the series is the link target.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "next",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "next",
+      "Description": "Indicates that the link's context is a part of a series, and\n      that the next in the series is the link target.",
+      "Reference": "[HTML]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

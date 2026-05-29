@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-google-earth-kmz",
+  "family": "media-type",
+  "slug": "application-vnd-google-earth-kmz",
+  "title": "application/vnd.google-earth.kmz",
+  "summary": "Media type \"application/vnd.google-earth.kmz\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.google-earth.kmz",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.google-earth.kmz",
+      "Template": "application/vnd.google-earth.kmz",
+      "Reference": "[Michael_Ashbridge]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.google-earth.kmz"
+  ]
+}

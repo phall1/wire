@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/idp-proxy",
+  "family": "well-known-uri",
+  "slug": "idp-proxy",
+  "title": "/.well-known/idp-proxy",
+  "summary": "Well-known URI suffix \"/.well-known/idp-proxy\". IANA status: permanent. Defined in RFC8827.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "idp-proxy",
+    "reference_rfcs": [
+      "RFC8827"
+    ],
+    "registration_date": "2019-07-25",
+    "raw_columns": {
+      "URI Suffix": "idp-proxy",
+      "Reference": "[RFC8827]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "",
+      "Date Registered": "2019-07-25",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

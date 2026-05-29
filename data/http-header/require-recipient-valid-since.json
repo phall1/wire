@@ -1,0 +1,31 @@
+{
+  "id": "http-header/require-recipient-valid-since",
+  "family": "http-header",
+  "slug": "require-recipient-valid-since",
+  "title": "Require-Recipient-Valid-Since",
+  "summary": "Message header field \"Require-Recipient-Valid-Since\" (protocol: mail), status standard. Defined in RFC7293.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Require-Recipient-Valid-Since",
+    "reference_rfcs": [
+      "RFC7293"
+    ],
+    "raw_columns": {
+      "value": "Require-Recipient-Valid-Since",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC7293]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Require-Recipient-Valid-Since"
+  ]
+}

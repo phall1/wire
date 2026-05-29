@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/manifest",
+  "family": "link-relation",
+  "slug": "manifest",
+  "title": "manifest",
+  "summary": "Link relation type \"manifest\": Links to a manifest file for the context.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "manifest",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "manifest",
+      "Description": "Links to a manifest file for the context.",
+      "Reference": "[Web App Manifest]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

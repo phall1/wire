@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/timegate",
+  "family": "link-relation",
+  "slug": "timegate",
+  "title": "timegate",
+  "summary": "Link relation type \"timegate\": The Target IRI points to a TimeGate for an Original Resource. Defined in RFC7089.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "timegate",
+    "reference_rfcs": [
+      "RFC7089"
+    ],
+    "raw_columns": {
+      "Relation Name": "timegate",
+      "Description": "The Target IRI points to a TimeGate for an Original Resource.",
+      "Reference": "[RFC7089]",
+      "Notes": "A TimeGate for an Original Resource is a resource that is\n      capable of datetime negotiation to support access to prior states\n      of the Original Resource."
+    }
+  },
+  "updated": "2026-05-29"
+}

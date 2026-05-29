@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-cccex",
+  "family": "media-type",
+  "slug": "application-cccex",
+  "title": "application/cccex",
+  "summary": "Media type \"application/cccex\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cccex",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "cccex",
+      "Template": "application/cccex",
+      "Reference": "[_3GPP]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cccex"
+  ]
+}

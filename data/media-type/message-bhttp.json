@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-bhttp",
+  "family": "media-type",
+  "slug": "message-bhttp",
+  "title": "message/bhttp",
+  "summary": "Media type \"message/bhttp\". Registered/referenced in RFC9292.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/bhttp",
+    "reference_rfcs": [
+      "RFC9292"
+    ],
+    "raw_columns": {
+      "Name": "bhttp",
+      "Template": "message/bhttp",
+      "Reference": "[RFC9292]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/bhttp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "http-header/original-recipient",
+  "family": "http-header",
+  "slug": "original-recipient",
+  "title": "Original-Recipient",
+  "summary": "Message header field \"Original-Recipient\" (protocol: mail), status standard. Defined in RFC3798, RFC5337.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Original-Recipient",
+    "reference_rfcs": [
+      "RFC3798",
+      "RFC5337"
+    ],
+    "raw_columns": {
+      "value": "Original-Recipient",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC3798][RFC5337]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Original-Recipient"
+  ]
+}

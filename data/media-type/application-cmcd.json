@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-cmcd",
+  "family": "media-type",
+  "slug": "application-cmcd",
+  "title": "application/cmcd",
+  "summary": "Media type \"application/cmcd\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cmcd",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "cmcd",
+      "Template": "application/cmcd",
+      "Reference": "[CTA][Alexandra_Blasgen]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cmcd"
+  ]
+}

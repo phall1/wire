@@ -1,0 +1,31 @@
+{
+  "id": "media-type/video-jpeg2000",
+  "family": "media-type",
+  "slug": "video-jpeg2000",
+  "title": "video/jpeg2000",
+  "summary": "Media type \"video/jpeg2000\". Registered/referenced in RFC5371, RFC5372.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/jpeg2000",
+    "reference_rfcs": [
+      "RFC5371",
+      "RFC5372"
+    ],
+    "raw_columns": {
+      "Name": "jpeg2000",
+      "Template": "video/jpeg2000",
+      "Reference": "[RFC5371][RFC5372]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/jpeg2000"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-efi",
+  "family": "media-type",
+  "slug": "application-efi",
+  "title": "application/efi",
+  "summary": "Media type \"application/efi\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/efi",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "efi",
+      "Template": "application/efi",
+      "Reference": "[UEFI_Forum][Samer_El-Haj-Mahmoud]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/efi"
+  ]
+}

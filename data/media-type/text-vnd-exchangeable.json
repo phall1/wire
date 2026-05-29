@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-exchangeable",
+  "family": "media-type",
+  "slug": "text-vnd-exchangeable",
+  "title": "text/vnd.exchangeable",
+  "summary": "Media type \"text/vnd.exchangeable\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.exchangeable",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.exchangeable",
+      "Template": "text/vnd.exchangeable",
+      "Reference": "[Martin_Cizek]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.exchangeable"
+  ]
+}

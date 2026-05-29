@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-prs-rdf-xml-crypt",
+  "family": "media-type",
+  "slug": "application-prs-rdf-xml-crypt",
+  "title": "application/prs.rdf-xml-crypt",
+  "summary": "Media type \"application/prs.rdf-xml-crypt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/prs.rdf-xml-crypt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prs.rdf-xml-crypt",
+      "Template": "application/prs.rdf-xml-crypt",
+      "Reference": "[Toby_Inkster]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/prs.rdf-xml-crypt"
+  ]
+}

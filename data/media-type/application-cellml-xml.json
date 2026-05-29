@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cellml-xml",
+  "family": "media-type",
+  "slug": "application-cellml-xml",
+  "title": "application/cellml+xml",
+  "summary": "Media type \"application/cellml+xml\". Registered/referenced in RFC4708.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cellml+xml",
+    "reference_rfcs": [
+      "RFC4708"
+    ],
+    "raw_columns": {
+      "Name": "cellml+xml",
+      "Template": "application/cellml+xml",
+      "Reference": "[RFC4708]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cellml+xml"
+  ]
+}

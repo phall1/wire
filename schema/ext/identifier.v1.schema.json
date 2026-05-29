@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/ext/identifier.v1.schema.json",
+  "title": "ext_type: identifier@1",
+  "description": "Extension block for unique-identifier formats (UUID family, ULID, Snowflake, KSUID, NanoID, ...). Captures the citable spec, a real example value, and — where the format has a fixed internal structure — a bit-level field breakdown, plus whether instances sort lexicographically/chronologically. Byte/bit values are described, not raw control bytes; any non-printable bytes in strings use JSON escapes per the rest of the corpus.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["spec", "example"],
+  "properties": {
+    "spec": {
+      "type": "string",
+      "description": "The defining specification, human-readable (e.g. 'RFC 9562', 'ULID spec (github.com/ulid/spec)', 'Twitter Snowflake', 'KSUID (github.com/segmentio/ksuid)'). The citable URL lives in core source_url / attribution."
+    },
+    "example": {
+      "type": "string",
+      "description": "A real, valid example identifier in its canonical string form (e.g. a v4 UUID, a 26-char ULID, a snowflake decimal). Chosen so it actually parses to the documented version/variant where applicable."
+    },
+    "bit_layout": {
+      "type": "array",
+      "description": "Ordered, most-significant-first breakdown of the identifier's fixed binary structure. Omitted for formats with no fixed internal layout (e.g. random NanoID).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "bits", "meaning"],
+        "properties": {
+          "field": { "type": "string", "description": "Field name, e.g. 'unix_ts_ms', 'version', 'var', 'rand_a', 'machine_id'." },
+          "bits": { "type": "integer", "description": "Width of this field in bits.", "minimum": 0 },
+          "meaning": { "type": "string", "description": "What the field encodes, including any fixed value (e.g. 'version = 0b0111 (7)', 'variant = 0b10')." }
+        }
+      }
+    },
+    "length_bits": {
+      "type": "integer",
+      "description": "Total size of the identifier in bits (e.g. 128 for UUID/ULID, 64 for Snowflake, 160 for KSUID). For text-only formats with no fixed binary width (NanoID), give the typical entropy or omit.",
+      "minimum": 0
+    },
+    "sortable": {
+      "type": "boolean",
+      "description": "True if instances sort lexicographically in (roughly) creation-time order in their canonical string form (UUIDv7, ULID, Snowflake, KSUID = true; UUIDv4, NanoID = false)."
+    },
+    "encoding": {
+      "type": "string",
+      "description": "Canonical string encoding of the identifier (e.g. 'hex with dashes (8-4-4-4-12)', \"Crockford's Base32\", 'base62', 'decimal uint64', 'URL-safe alphabet A-Za-z0-9_-')."
+    },
+    "notes": {
+      "type": "array",
+      "description": "Optional clarifications/gotchas (epoch offsets, monotonicity within a millisecond, variant bits, etc.). One item per note.",
+      "items": { "type": "string" }
+    }
+  }
+}

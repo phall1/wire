@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-yang-data-xml",
+  "family": "media-type",
+  "slug": "application-yang-data-xml",
+  "title": "application/yang-data+xml",
+  "summary": "Media type \"application/yang-data+xml\". Registered/referenced in RFC8040.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/yang-data+xml",
+    "reference_rfcs": [
+      "RFC8040"
+    ],
+    "raw_columns": {
+      "Name": "yang-data+xml",
+      "Template": "application/yang-data+xml",
+      "Reference": "[RFC8040]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/yang-data+xml"
+  ]
+}

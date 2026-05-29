@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-dece-graphic",
+  "family": "media-type",
+  "slug": "image-vnd-dece-graphic",
+  "title": "image/vnd.dece.graphic",
+  "summary": "Media type \"image/vnd.dece.graphic\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.dece.graphic",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dece.graphic",
+      "Template": "image/vnd.dece.graphic",
+      "Reference": "[Michael_A_Dolan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.dece.graphic"
+  ]
+}

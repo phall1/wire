@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-suit-envelope-cose",
+  "family": "media-type",
+  "slug": "application-suit-envelope-cose",
+  "title": "application/suit-envelope+cose",
+  "summary": "Media type \"application/suit-envelope+cose\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/suit-envelope+cose",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "suit-envelope+cose",
+      "Template": "application/suit-envelope+cose",
+      "Reference": "[RFC-ietf-suit-manifest-34]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/suit-envelope+cose"
+  ]
+}

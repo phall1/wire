@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/csvm",
+  "family": "well-known-uri",
+  "slug": "csvm",
+  "title": "/.well-known/csvm",
+  "summary": "Well-known URI suffix \"/.well-known/csvm\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "csvm",
+    "reference_rfcs": [],
+    "registration_date": "2015-09-28",
+    "raw_columns": {
+      "URI Suffix": "csvm",
+      "Reference": "[https://www.w3.org/TR/tabular-data-model/#default-locations-and-site-wide-location-configuration]",
+      "Status": "permanent",
+      "Change Controller": "W3C",
+      "Related Information": "",
+      "Date Registered": "2015-09-28",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

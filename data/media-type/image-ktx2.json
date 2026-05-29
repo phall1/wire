@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-ktx2",
+  "family": "media-type",
+  "slug": "image-ktx2",
+  "title": "image/ktx2",
+  "summary": "Media type \"image/ktx2\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/ktx2",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "ktx2",
+      "Template": "image/ktx2",
+      "Reference": "[Khronos][Mark_Callow]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/ktx2"
+  ]
+}

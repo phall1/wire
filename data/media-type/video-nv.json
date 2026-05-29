@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-nv",
+  "family": "media-type",
+  "slug": "video-nv",
+  "title": "video/nv",
+  "summary": "Media type \"video/nv\". Registered/referenced in RFC4856.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/nv",
+    "reference_rfcs": [
+      "RFC4856"
+    ],
+    "raw_columns": {
+      "Name": "nv",
+      "Template": "video/nv",
+      "Reference": "[RFC4856]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/nv"
+  ]
+}

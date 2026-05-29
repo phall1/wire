@@ -1,0 +1,30 @@
+{
+  "id": "media-type/image-jp2",
+  "family": "media-type",
+  "slug": "image-jp2",
+  "title": "image/jp2",
+  "summary": "Media type \"image/jp2\". Registered/referenced in RFC3745.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/jp2",
+    "reference_rfcs": [
+      "RFC3745"
+    ],
+    "raw_columns": {
+      "Name": "jp2",
+      "Template": "image/jp2",
+      "Reference": "[RFC3745]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/jp2"
+  ]
+}

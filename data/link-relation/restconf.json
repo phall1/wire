@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/restconf",
+  "family": "link-relation",
+  "slug": "restconf",
+  "title": "restconf",
+  "summary": "Link relation type \"restconf\": Identifies the root of RESTCONF API as configured on this HTTP server.\n      The \"restconf\" relation defines the root of the API defined in RFC8040.\n      Subs…. Defined in RFC8040.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "restconf",
+    "reference_rfcs": [
+      "RFC8040"
+    ],
+    "raw_columns": {
+      "Relation Name": "restconf",
+      "Description": "Identifies the root of RESTCONF API as configured on this HTTP server.\n      The \"restconf\" relation defines the root of the API defined in RFC8040.\n      Subsequent revisions of RESTCONF will use alternate relation values to support protocol versioning.",
+      "Reference": "[RFC8040]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

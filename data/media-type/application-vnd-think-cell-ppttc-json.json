@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-think-cell-ppttc-json",
+  "family": "media-type",
+  "slug": "application-vnd-think-cell-ppttc-json",
+  "title": "application/vnd.think-cell.ppttc+json",
+  "summary": "Media type \"application/vnd.think-cell.ppttc+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.think-cell.ppttc+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.think-cell.ppttc+json",
+      "Template": "application/vnd.think-cell.ppttc+json",
+      "Reference": "[Arno_Schoedl]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.think-cell.ppttc+json"
+  ]
+}

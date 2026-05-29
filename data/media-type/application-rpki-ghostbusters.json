@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-rpki-ghostbusters",
+  "family": "media-type",
+  "slug": "application-rpki-ghostbusters",
+  "title": "application/rpki-ghostbusters",
+  "summary": "Media type \"application/rpki-ghostbusters\". Registered/referenced in RFC6493.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-ghostbusters",
+    "reference_rfcs": [
+      "RFC6493"
+    ],
+    "raw_columns": {
+      "Name": "rpki-ghostbusters (DEPRECATED)",
+      "Template": "application/rpki-ghostbusters",
+      "Reference": "[RFC6493][Moving RFC 6493 to Historic]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-ghostbusters",
+    "application/rpki-ghostbusters (DEPRECATED)"
+  ]
+}

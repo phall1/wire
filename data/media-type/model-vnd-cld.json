@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-cld",
+  "family": "media-type",
+  "slug": "model-vnd-cld",
+  "title": "model/vnd.cld",
+  "summary": "Media type \"model/vnd.cld\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.cld",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.cld",
+      "Template": "model/vnd.cld",
+      "Reference": "[Robert_Monaghan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.cld"
+  ]
+}

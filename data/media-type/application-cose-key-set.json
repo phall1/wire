@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cose-key-set",
+  "family": "media-type",
+  "slug": "application-cose-key-set",
+  "title": "application/cose-key-set",
+  "summary": "Media type \"application/cose-key-set\". Registered/referenced in RFC9052.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cose-key-set",
+    "reference_rfcs": [
+      "RFC9052"
+    ],
+    "raw_columns": {
+      "Name": "cose-key-set",
+      "Template": "application/cose-key-set",
+      "Reference": "[RFC9052]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cose-key-set"
+  ]
+}

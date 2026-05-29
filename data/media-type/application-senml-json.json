@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-senml-json",
+  "family": "media-type",
+  "slug": "application-senml-json",
+  "title": "application/senml+json",
+  "summary": "Media type \"application/senml+json\". Registered/referenced in RFC8428.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/senml+json",
+    "reference_rfcs": [
+      "RFC8428"
+    ],
+    "raw_columns": {
+      "Name": "senml+json",
+      "Template": "application/senml+json",
+      "Reference": "[RFC8428]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/senml+json"
+  ]
+}

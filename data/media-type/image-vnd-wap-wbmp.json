@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-wap-wbmp",
+  "family": "media-type",
+  "slug": "image-vnd-wap-wbmp",
+  "title": "image/vnd.wap.wbmp",
+  "summary": "Media type \"image/vnd.wap.wbmp\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.wap.wbmp",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.wap.wbmp",
+      "Template": "image/vnd.wap.wbmp",
+      "Reference": "[Peter_Stark]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.wap.wbmp"
+  ]
+}

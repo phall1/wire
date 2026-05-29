@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/disclosure",
+  "family": "link-relation",
+  "slug": "disclosure",
+  "title": "disclosure",
+  "summary": "Link relation type \"disclosure\": Refers to a list of patent disclosures made with respect to material for which 'disclosure' relation is specified. Defined in RFC6579.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "disclosure",
+    "reference_rfcs": [
+      "RFC6579"
+    ],
+    "raw_columns": {
+      "Relation Name": "disclosure",
+      "Description": "Refers to a list of patent disclosures made with respect to material for which 'disclosure' relation is specified.",
+      "Reference": "[RFC6579]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "http-header/arc-message-signature",
+  "family": "http-header",
+  "slug": "arc-message-signature",
+  "title": "ARC-Message-Signature",
+  "summary": "Message header field \"ARC-Message-Signature\" (protocol: mail), status experimental. Defined in RFC8617.",
+  "kind": "header",
+  "status": "experimental",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ARC-Message-Signature",
+    "reference_rfcs": [
+      "RFC8617"
+    ],
+    "raw_columns": {
+      "value": "ARC-Message-Signature",
+      "protocol": "mail",
+      "status": "experimental",
+      "Reference": "[RFC8617]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "ARC-Message-Signature"
+  ]
+}

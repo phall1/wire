@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-eat-jwt",
+  "family": "media-type",
+  "slug": "application-eat-jwt",
+  "title": "application/eat+jwt",
+  "summary": "Media type \"application/eat+jwt\". Registered/referenced in RFC9782.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/eat+jwt",
+    "reference_rfcs": [
+      "RFC9782"
+    ],
+    "raw_columns": {
+      "Name": "eat+jwt",
+      "Template": "application/eat+jwt",
+      "Reference": "[RFC9782]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/eat+jwt"
+  ]
+}

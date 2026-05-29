@@ -1,0 +1,65 @@
+{
+  "id": "identifier/snowflake-twitter",
+  "family": "identifier",
+  "slug": "snowflake-twitter",
+  "title": "Snowflake ID (Twitter/X)",
+  "summary": "A Twitter Snowflake is a 64-bit, roughly time-sortable identifier laid out as: 1 unused sign bit, a 41-bit millisecond timestamp offset from a custom epoch (1288834974657 ms, 2010-11-04), a 10-bit machine id (5-bit datacenter + 5-bit worker), and a 12-bit per-millisecond sequence counter. It fits in a signed 64-bit integer and sorts by creation time, which is why it underpins tweet and many other platform ids.",
+  "kind": "identifier",
+  "aliases": [
+    "Twitter Snowflake",
+    "X Snowflake",
+    "snowflake id"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://github.com/twitter-archive/snowflake/tree/snowflake-2010",
+  "source_version": "twitter-archive/snowflake @ snowflake-2010 (original release)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.bit_layout",
+      "source_url": "https://github.com/twitter-archive/snowflake/tree/snowflake-2010",
+      "source_version": "snowflake-2010 tag",
+      "note": "Original Twitter Snowflake: 41-bit timestamp, 10-bit machine id (5 datacenter + 5 worker), 12-bit sequence, 1 unused sign bit; 64-bit signed."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/Snowflake_ID",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Second independent source for the field widths and the Twitter custom epoch 1288834974657 ms (2010-11-04)."
+    },
+    {
+      "claim_ref": "ext.example",
+      "source_url": "https://developer.x.com/en/docs/x-ids",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Twitter/X documents that Tweet/user ids are 64-bit snowflakes returned as both int64 and string (id_str) because JS cannot hold the full precision."
+    }
+  ],
+  "see_also": [
+    "identifier/snowflake-discord",
+    "identifier/uuidv7"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Twitter Snowflake (twitter-archive/snowflake)",
+    "example": "1541815603606036480",
+    "bit_layout": [
+      { "field": "sign", "bits": 1, "meaning": "Unused/reserved most-significant bit, always 0 so the value is a non-negative signed int64." },
+      { "field": "timestamp", "bits": 41, "meaning": "Milliseconds since the Twitter epoch 1288834974657 (2010-11-04 01:42:54.657 UTC)." },
+      { "field": "datacenter_id", "bits": 5, "meaning": "Datacenter identifier (part of the 10-bit machine id)." },
+      { "field": "worker_id", "bits": 5, "meaning": "Worker/machine identifier (the other half of the 10-bit machine id)." },
+      { "field": "sequence", "bits": 12, "meaning": "Per-machine counter incremented for each id within the same millisecond (4096 ids/ms/machine)." }
+    ],
+    "length_bits": 64,
+    "sortable": true,
+    "encoding": "decimal uint64 (commonly carried as a string to avoid 53-bit JS float precision loss)",
+    "notes": [
+      "Custom epoch: subtract 1288834974657 ms (2010-11-04) from the timestamp field to recover Unix ms; only ~41 bits of time fit, lasting ~69 years from that epoch.",
+      "The 10-bit machine id splits as 5-bit datacenter + 5-bit worker in the original Twitter design; other 'snowflake' systems repartition these 10 bits differently.",
+      "Because the timestamp is the high-order field, snowflakes sort by creation time. JSON consumers should treat the id as a string; a 64-bit value exceeds JavaScript's 53-bit safe integer range.",
+      "Example is an illustrative 19-digit 64-bit snowflake decimal."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

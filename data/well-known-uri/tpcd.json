@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/tpcd",
+  "family": "well-known-uri",
+  "slug": "tpcd",
+  "title": "/.well-known/tpcd",
+  "summary": "Well-known URI suffix \"/.well-known/tpcd\". IANA status: deprecated.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "tpcd",
+    "reference_rfcs": [],
+    "registration_date": "2024-05-08",
+    "raw_columns": {
+      "URI Suffix": "tpcd",
+      "Reference": "[The \"tpcd/grace-period.json\" Well-Known Resource Identifier]",
+      "Status": "deprecated",
+      "Change Controller": "[Google_LLC]",
+      "Related Information": "[https://github.com/explainers-by-googlers/3pcd-grace-period-opt-out]",
+      "Date Registered": "2024-05-08",
+      "Date Modified": "2026-04-01"
+    }
+  },
+  "updated": "2026-05-29"
+}

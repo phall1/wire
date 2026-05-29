@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-pwg-raster",
+  "family": "media-type",
+  "slug": "image-pwg-raster",
+  "title": "image/pwg-raster",
+  "summary": "Media type \"image/pwg-raster\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/pwg-raster",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "pwg-raster",
+      "Template": "image/pwg-raster",
+      "Reference": "[Michael_Sweet]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/pwg-raster"
+  ]
+}

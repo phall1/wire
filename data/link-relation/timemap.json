@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/timemap",
+  "family": "link-relation",
+  "slug": "timemap",
+  "title": "timemap",
+  "summary": "Link relation type \"timemap\": The Target IRI points to a TimeMap for an Original Resource. Defined in RFC7089.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "timemap",
+    "reference_rfcs": [
+      "RFC7089"
+    ],
+    "raw_columns": {
+      "Relation Name": "timemap",
+      "Description": "The Target IRI points to a TimeMap for an Original Resource.",
+      "Reference": "[RFC7089]",
+      "Notes": "A TimeMap for an Original Resource is a resource from which\n      a list of URIs of Mementos of the Original Resource is available."
+    }
+  },
+  "updated": "2026-05-29"
+}

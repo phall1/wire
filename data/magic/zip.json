@@ -1,0 +1,47 @@
+{
+  "id": "magic/zip",
+  "family": "magic",
+  "slug": "zip",
+  "title": "ZIP signature (PK\\x03\\x04)",
+  "summary": "A ZIP archive begins with a local file header whose signature is 'PK' (0x50 0x4B, the initials of Phil Katz) followed by 0x03 0x04. Empty archives and some variants start with the central-directory (PK\\x01\\x02) or end-of-central-directory (PK\\x05\\x06) signatures.",
+  "kind": "signature",
+  "aliases": ["ZIP magic", "PKZIP", "PK\\x03\\x04"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
+  "source_version": "PKWARE APPNOTE.TXT, .ZIP File Format Specification, 4.3.7 (local file header signature 0x04034b50)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
+      "source_version": "APPNOTE.TXT 6.3.x, section 4.3.7",
+      "note": "Local file header signature is 0x04034b50, stored little-endian => bytes 50 4B 03 04 ('PK\\x03\\x04')."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates PK\\x03\\x04 / PK\\x05\\x06 / PK\\x07\\x08 ZIP signatures and the shared-base-format note (jar, docx, xlsx, odt, epub, apk all ZIP containers)."
+    }
+  ],
+  "see_also": ["magic/gzip", "magic/java-class", "magic/7z"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "50 4B 03 04",
+    "offset": 0,
+    "magic_ascii": "PK\\x03\\x04",
+    "extensions": ["zip", "jar", "docx", "xlsx", "pptx", "odt", "epub", "apk"],
+    "mime": "application/zip",
+    "spec": "PKWARE APPNOTE.TXT .ZIP File Format Specification",
+    "notes": [
+      "Signatures are 32-bit values stored little-endian: local file header 0x04034b50 => 50 4B 03 04.",
+      "Empty archive: 'PK\\x05\\x06' (50 4B 05 06, end of central directory).",
+      "Spanned/split markers use 'PK\\x07\\x08' (50 4B 07 08).",
+      "Many formats are ZIP containers and share this magic: JAR, DOCX/XLSX/PPTX (OOXML), ODT (ODF), EPUB, APK. Disambiguation requires inspecting the archive contents (e.g. mimetype entry, META-INF).",
+      "The 'PK' bytes are the initials of Phil Katz, author of PKZIP."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

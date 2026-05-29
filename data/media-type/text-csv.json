@@ -1,0 +1,31 @@
+{
+  "id": "media-type/text-csv",
+  "family": "media-type",
+  "slug": "text-csv",
+  "title": "text/csv",
+  "summary": "Media type \"text/csv\". Registered/referenced in RFC4180, RFC7111.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/csv",
+    "reference_rfcs": [
+      "RFC4180",
+      "RFC7111"
+    ],
+    "raw_columns": {
+      "Name": "csv",
+      "Template": "text/csv",
+      "Reference": "[RFC4180][RFC7111]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/csv"
+  ]
+}

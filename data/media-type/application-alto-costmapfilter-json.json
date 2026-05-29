@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-alto-costmapfilter-json",
+  "family": "media-type",
+  "slug": "application-alto-costmapfilter-json",
+  "title": "application/alto-costmapfilter+json",
+  "summary": "Media type \"application/alto-costmapfilter+json\". Registered/referenced in RFC7285.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/alto-costmapfilter+json",
+    "reference_rfcs": [
+      "RFC7285"
+    ],
+    "raw_columns": {
+      "Name": "alto-costmapfilter+json",
+      "Template": "application/alto-costmapfilter+json",
+      "Reference": "[RFC7285]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/alto-costmapfilter+json"
+  ]
+}

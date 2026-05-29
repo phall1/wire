@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/appendix",
+  "family": "link-relation",
+  "slug": "appendix",
+  "title": "appendix",
+  "summary": "Link relation type \"appendix\": Refers to an appendix.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "appendix",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "appendix",
+      "Description": "Refers to an appendix.",
+      "Reference": "[HTML 4.01 Specification]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

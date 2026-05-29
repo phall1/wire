@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-gsm-hr-08",
+  "family": "media-type",
+  "slug": "audio-gsm-hr-08",
+  "title": "audio/GSM-HR-08",
+  "summary": "Media type \"audio/GSM-HR-08\". Registered/referenced in RFC5993.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/GSM-HR-08",
+    "reference_rfcs": [
+      "RFC5993"
+    ],
+    "raw_columns": {
+      "Name": "GSM-HR-08",
+      "Template": "audio/GSM-HR-08",
+      "Reference": "[RFC5993]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/GSM-HR-08"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "wire-format/udp-header",
+  "family": "wire-format",
+  "slug": "udp-header",
+  "title": "UDP header",
+  "summary": "The UDP header is a fixed 8 bytes: 16-bit source port, 16-bit destination port, 16-bit length (header + data), and 16-bit checksum. There is no sequencing, acknowledgement, or connection state — UDP is a thin, connectionless datagram wrapper over IP.",
+  "kind": "wire-format",
+  "aliases": ["UDP datagram header", "User Datagram Protocol header"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc768",
+  "source_version": "RFC 768 (User Datagram Protocol)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/tcp-header", "wire-format/ipv4-header", "wire-format/dns-message"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 768",
+    "summary": "An 8-byte connectionless header. Length covers the header plus data; the checksum is optional in IPv4 (zero means not computed) but mandatory in IPv6.",
+    "structure": [
+      { "field": "Source Port", "size": "16 bits", "meaning": "Sending port; may be zero if no reply is expected." },
+      { "field": "Destination Port", "size": "16 bits", "meaning": "Receiving port." },
+      { "field": "Length", "size": "16 bits", "meaning": "Length in bytes of the UDP header plus data (minimum 8)." },
+      { "field": "Checksum", "size": "16 bits", "meaning": "Ones-complement checksum over a pseudo-header, the UDP header, and data. Optional in IPv4 (0 = unused); required in IPv6." }
+    ],
+    "example_hex": "00 35 00 35 00 1C 00 00",
+    "example_decoded": "src port 0x0035 = 53 (DNS), dst port 53, length 0x001C = 28 bytes (8 header + 20 data), checksum 0x0000 (not computed).",
+    "see": ["wire-format/dns-message"],
+    "notes": [
+      "Only 8 bytes of overhead, versus TCP's 20+, which is why DNS, QUIC, DHCP, and real-time media use UDP.",
+      "No retransmission, ordering, or flow control — those are left to the application or a higher protocol (QUIC, RTP).",
+      "Length field max 65535 caps a single datagram, though the IP layer may fragment it."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

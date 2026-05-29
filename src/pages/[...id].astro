@@ -143,8 +143,89 @@ const rfcs = (ext.reference_rfcs ?? []) as string[];
     </section>
   )}
 
+  {/* ── identifier@1 ────────────────────────────────────────────── */}
+  {entry.ext_type === "identifier@1" && (
+    <section>
+      <h2 class="section-h">identifier</h2>
+      <p class="dim">spec: {ext.spec}</p>
+      <div class="badges">
+        {ext.length_bits !== undefined && <span class="badge">length <b>{ext.length_bits} bits</b></span>}
+        {ext.sortable !== undefined && (
+          <span class={`badge ${ext.sortable ? "ok" : "warn"}`}>{ext.sortable ? "sortable" : "not sortable"}</span>
+        )}
+        {ext.encoding && <span class="badge dim">{ext.encoding}</span>}
+      </div>
+      <p style="margin:.7em 0 .2em">example:</p>
+      <p><code class="bytes copyable" data-copy={ext.example}>{ext.example}<button class="copybtn" type="button" data-copy-trigger title="copy">⧉ copy</button></code></p>
+      {Array.isArray(ext.bit_layout) && ext.bit_layout.length > 0 && (
+        <table>
+          <thead><tr><th>field</th><th>bits</th><th>meaning</th></tr></thead>
+          <tbody>
+            {ext.bit_layout.map((b: any) => (
+              <tr><td><b>{b.field}</b></td><td class="accent">{b.bits}</td><td>{b.meaning}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      {Array.isArray(ext.notes) && ext.notes.length > 0 && (
+        <ul class="bare">{ext.notes.map((nx: string) => <li class="dim">{nx}</li>)}</ul>
+      )}
+    </section>
+  )}
+
+  {/* ── file-signature@1 ────────────────────────────────────────── */}
+  {entry.ext_type === "file-signature@1" && (
+    <section>
+      <h2 class="section-h">file signature</h2>
+      <p>magic: <span class="bytes copyable" data-copy={ext.magic_hex}>{ext.magic_hex}<button class="copybtn" type="button" data-copy-trigger title="copy">⧉ copy</button></span>
+        {ext.offset ? <span class="dim"> @ offset {ext.offset}</span> : <span class="dim"> @ offset 0</span>}</p>
+      {ext.magic_ascii && <p>ascii: <span class="bytes">{ext.magic_ascii}</span></p>}
+      {ext.trailer_hex && <p>trailer: <span class="bytes">{ext.trailer_hex}</span></p>}
+      <div class="badges">
+        {Array.isArray(ext.extensions) && ext.extensions.map((x: string) => <span class="badge">.{x}</span>)}
+        {ext.mime && <span class="badge dim">{ext.mime}</span>}
+      </div>
+      {ext.spec && <p class="dim">spec: {ext.spec}</p>}
+      {Array.isArray(ext.notes) && ext.notes.length > 0 && (
+        <ul class="bare">{ext.notes.map((nx: string) => <li class="dim">{nx}</li>)}</ul>
+      )}
+    </section>
+  )}
+
+  {/* ── wire-format@1 ───────────────────────────────────────────── */}
+  {entry.ext_type === "wire-format@1" && (
+    <section>
+      <h2 class="section-h">wire format</h2>
+      <p class="dim">spec: {ext.spec}</p>
+      {ext.summary && <p style="margin:.5em 0">{ext.summary}</p>}
+      {Array.isArray(ext.structure) && ext.structure.length > 0 && (
+        <table>
+          <thead><tr><th>field</th><th>size</th><th>meaning</th></tr></thead>
+          <tbody>
+            {ext.structure.map((s: any) => (
+              <tr><td><b>{s.field}</b></td><td class="accent" style="white-space:nowrap">{s.size}</td><td>{s.meaning}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      {ext.example_hex && (
+        <>
+          <p style="margin:.7em 0 .2em">example:</p>
+          <p><code class="bytes copyable" data-copy={ext.example_hex}>{ext.example_hex}<button class="copybtn" type="button" data-copy-trigger title="copy">⧉ copy</button></code></p>
+          {ext.example_decoded && <p class="dim">{ext.example_decoded}</p>}
+        </>
+      )}
+      {Array.isArray(ext.see) && ext.see.length > 0 && (
+        <p>see: {ext.see.map((s: string, i: number) => <>{i > 0 ? " · " : ""}<a href={`/${s}`}>{s}</a></>)}</p>
+      )}
+      {Array.isArray(ext.notes) && ext.notes.length > 0 && (
+        <ul class="bare">{ext.notes.map((nx: string) => <li class="dim">{nx}</li>)}</ul>
+      )}
+    </section>
+  )}
+
   {/* ── unknown ext_type → raw JSON ─────────────────────────────── */}
-  {!["terminal-escape@1", "iana-registry-row@1", "encoding@1"].includes(entry.ext_type) &&
+  {!["terminal-escape@1", "iana-registry-row@1", "encoding@1", "identifier@1", "file-signature@1", "wire-format@1"].includes(entry.ext_type) &&
     Object.keys(ext).length > 0 && (
       <section><h2 class="section-h">ext</h2><pre>{JSON.stringify(ext, null, 2)}</pre></section>
     )}
@@ -178,7 +259,115 @@ const rfcs = (ext.reference_rfcs ?? []) as string[];
   ) : null}
 
   <p class="dim" style="margin-top:2em">
-    agent: <code>curl -H 'accept: application/json' wire.phall.io/{entry.id}</code>
-    or <a href={`/${entry.id}.json`}>/{entry.id}.json</a>
+    agent: <code class="copyable" data-copy={`curl -H 'accept: application/json' wire.phall.io/${entry.id}`}>curl -H 'accept: application/json' wire.phall.io/{entry.id}<button class="copybtn" type="button" data-copy-trigger title="copy curl command">⧉ copy</button></code>
+    or <a class="jsonlink-copy" href={`/${entry.id}.json`} data-copy={`https://wire.phall.io/${entry.id}.json`}>/{entry.id}.json</a><button class="copybtn" type="button" data-copy-trigger data-copy-prev title="copy json url">⧉ copy</button>
   </p>
+
+  <style>
+    .copybtn {
+      font: inherit;
+      font-size: 0.82em;
+      margin-left: 0.6ch;
+      padding: 0 0.5ch;
+      background: transparent;
+      color: var(--color-dim, #6d6d72);
+      border: 1px solid var(--color-rule, #26262b);
+      border-radius: 2px;
+      cursor: pointer;
+      vertical-align: baseline;
+      user-select: none;
+      transition: color 0.1s, border-color 0.1s;
+    }
+    .copybtn:hover {
+      color: var(--color-accent, #5cc9a7);
+      border-color: var(--color-accent, #5cc9a7);
+    }
+    .copybtn.copied {
+      color: var(--color-accent, #5cc9a7);
+      border-color: var(--color-accent, #5cc9a7);
+    }
+    /* A small copy affordance auto-attached to every byte sequence. */
+    .bytes .copybtn,
+    code .copybtn {
+      opacity: 0.55;
+    }
+    .bytes:hover .copybtn,
+    code:hover .copybtn,
+    .copybtn:focus-visible {
+      opacity: 1;
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function payloadFor(btn) {
+        // explicit previous-sibling source (the .json link case)
+        if (btn.hasAttribute("data-copy-prev")) {
+          var prev = btn.previousElementSibling;
+          if (prev) return prev.getAttribute("data-copy") || prev.textContent.trim();
+        }
+        // nearest ancestor/self carrying data-copy
+        var host = btn.closest("[data-copy]");
+        if (host) {
+          var explicit = host.getAttribute("data-copy");
+          if (explicit) return explicit;
+          // textContent minus the button label
+          var clone = host.cloneNode(true);
+          clone.querySelectorAll(".copybtn").forEach(function (b) { b.remove(); });
+          return clone.textContent.trim();
+        }
+        return "";
+      }
+      function flash(btn) {
+        var label = btn.textContent;
+        btn.textContent = "✓ copied";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.textContent = label;
+          btn.classList.remove("copied");
+        }, 1100);
+      }
+      document.addEventListener("click", function (e) {
+        var btn = e.target.closest && e.target.closest("[data-copy-trigger]");
+        if (!btn) return;
+        e.preventDefault();
+        var text = payloadFor(btn);
+        if (!text) return;
+        var done = function () { flash(btn); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () {
+            fallbackCopy(text); done();
+          });
+        } else {
+          fallbackCopy(text); done();
+        }
+      });
+      function fallbackCopy(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch (_) {}
+        document.body.removeChild(ta);
+      }
+      // Auto-attach a copy affordance to every standalone byte sequence
+      // that doesn't already have one (terminal-escape tables, encoding vectors).
+      document.querySelectorAll(".bytes").forEach(function (el) {
+        if (el.querySelector(".copybtn")) return;
+        var raw = el.textContent.trim();
+        if (!raw) return;
+        if (!el.hasAttribute("data-copy")) el.setAttribute("data-copy", raw);
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "copybtn";
+        b.setAttribute("data-copy-trigger", "");
+        b.title = "copy bytes";
+        b.textContent = "⧉";
+        el.appendChild(b);
+      });
+    })();
+  </script>
 </BaseLayout>

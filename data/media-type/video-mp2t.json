@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-mp2t",
+  "family": "media-type",
+  "slug": "video-mp2t",
+  "title": "video/MP2T",
+  "summary": "Media type \"video/MP2T\". Registered/referenced in RFC3555.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/MP2T",
+    "reference_rfcs": [
+      "RFC3555"
+    ],
+    "raw_columns": {
+      "Name": "MP2T",
+      "Template": "video/MP2T",
+      "Reference": "[RFC3555]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/MP2T"
+  ]
+}

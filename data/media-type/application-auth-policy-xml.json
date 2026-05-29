@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-auth-policy-xml",
+  "family": "media-type",
+  "slug": "application-auth-policy-xml",
+  "title": "application/auth-policy+xml",
+  "summary": "Media type \"application/auth-policy+xml\". Registered/referenced in RFC4745.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/auth-policy+xml",
+    "reference_rfcs": [
+      "RFC4745"
+    ],
+    "raw_columns": {
+      "Name": "auth-policy+xml",
+      "Template": "application/auth-policy+xml",
+      "Reference": "[RFC4745]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/auth-policy+xml"
+  ]
+}

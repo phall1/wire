@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-dicom-rle",
+  "family": "media-type",
+  "slug": "image-dicom-rle",
+  "title": "image/dicom-rle",
+  "summary": "Media type \"image/dicom-rle\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/dicom-rle",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "dicom-rle",
+      "Template": "image/dicom-rle",
+      "Reference": "[DICOM_Standard_Committee][David_Clunie]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/dicom-rle"
+  ]
+}

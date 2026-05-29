@@ -1,0 +1,46 @@
+{
+  "id": "magic/pe-exe",
+  "family": "magic",
+  "slug": "pe-exe",
+  "title": "DOS/PE executable signature (MZ, PE\\0\\0)",
+  "summary": "A Windows PE executable (and any DOS MZ executable) begins with the ASCII 'MZ' (0x4D 0x5A). A PE file additionally contains the 'PE\\0\\0' (50 45 00 00) signature at the file offset stored in the MZ header field e_lfanew (at offset 0x3C).",
+  "kind": "signature",
+  "aliases": ["MZ magic", "PE magic", "Portable Executable", "DOS MZ"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
+  "source_version": "Microsoft PE Format spec (MS-DOS Stub 'MZ', PE signature 'PE\\0\\0' at e_lfanew)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Files begin with the MS-DOS stub starting 'MZ'; the PE signature 'PE\\0\\0' is located at the file offset given by the 4-byte field at 0x3C (e_lfanew)."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/DOS_MZ_executable",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates 'MZ' = 0x4D 0x5A (initials of Mark Zbikowski) as the DOS executable magic shared by EXE/PE."
+    }
+  ],
+  "see_also": ["magic/elf", "magic/mach-o"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4D 5A",
+    "offset": 0,
+    "magic_ascii": "MZ",
+    "extensions": ["exe", "dll", "sys", "scr", "ocx"],
+    "mime": "application/vnd.microsoft.portable-executable",
+    "spec": "Microsoft PE Format / MS-DOS MZ executable",
+    "notes": [
+      "Bytes 0-1: 'MZ' (4D 5A), the DOS MZ executable magic (initials of Mark Zbikowski). 'ZM' (5A 4D) is also tolerated by some loaders.",
+      "Offset 0x3C holds a 4-byte little-endian field (e_lfanew) pointing to the PE header.",
+      "At that offset the PE signature is 'PE\\0\\0' = 50 45 00 00, followed by the COFF file header.",
+      "A bare DOS executable has the MZ header but no PE signature."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

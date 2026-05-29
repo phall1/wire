@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/monitor",
+  "family": "link-relation",
+  "slug": "monitor",
+  "title": "monitor",
+  "summary": "Link relation type \"monitor\": Refers to a resource that can be used to monitor changes in an HTTP resource. Defined in RFC5989.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "monitor",
+    "reference_rfcs": [
+      "RFC5989"
+    ],
+    "raw_columns": {
+      "Relation Name": "monitor",
+      "Description": "Refers to a resource that can be used to monitor changes in an HTTP resource.",
+      "Reference": "[RFC5989]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

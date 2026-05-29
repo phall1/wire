@@ -1,0 +1,30 @@
+{
+  "id": "media-type/multipart-byteranges",
+  "family": "media-type",
+  "slug": "multipart-byteranges",
+  "title": "multipart/byteranges",
+  "summary": "Media type \"multipart/byteranges\". Registered/referenced in RFC9110.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/byteranges",
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Name": "byteranges",
+      "Template": "multipart/byteranges",
+      "Reference": "[RFC9110]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/byteranges"
+  ]
+}

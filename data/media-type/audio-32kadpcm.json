@@ -1,0 +1,31 @@
+{
+  "id": "media-type/audio-32kadpcm",
+  "family": "media-type",
+  "slug": "audio-32kadpcm",
+  "title": "audio/32kadpcm",
+  "summary": "Media type \"audio/32kadpcm\". Registered/referenced in RFC3802, RFC2421.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/32kadpcm",
+    "reference_rfcs": [
+      "RFC3802",
+      "RFC2421"
+    ],
+    "raw_columns": {
+      "Name": "32kadpcm",
+      "Template": "audio/32kadpcm",
+      "Reference": "[RFC3802][RFC2421]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/32kadpcm"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-ujcs-json",
+  "family": "media-type",
+  "slug": "application-ujcs-json",
+  "title": "application/ujcs+json",
+  "summary": "Media type \"application/ujcs+json\". Registered/referenced in RFC9781.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ujcs+json",
+    "reference_rfcs": [
+      "RFC9781"
+    ],
+    "raw_columns": {
+      "Name": "ujcs+json",
+      "Template": "application/ujcs+json",
+      "Reference": "[RFC9781]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ujcs+json"
+  ]
+}

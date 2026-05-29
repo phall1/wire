@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-sap-vds",
+  "family": "media-type",
+  "slug": "model-vnd-sap-vds",
+  "title": "model/vnd.sap.vds",
+  "summary": "Media type \"model/vnd.sap.vds\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.sap.vds",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.sap.vds",
+      "Template": "model/vnd.sap.vds",
+      "Reference": "[SAP_SE][Igor_Afanasyev]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.sap.vds"
+  ]
+}

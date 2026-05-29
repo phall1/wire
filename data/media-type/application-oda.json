@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-oda",
+  "family": "media-type",
+  "slug": "application-oda",
+  "title": "application/ODA",
+  "summary": "Media type \"application/ODA\". Registered/referenced in RFC1494.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ODA",
+    "reference_rfcs": [
+      "RFC1494"
+    ],
+    "raw_columns": {
+      "Name": "ODA",
+      "Template": "application/ODA",
+      "Reference": "[RFC1494]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ODA"
+  ]
+}

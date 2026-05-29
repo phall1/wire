@@ -1,0 +1,111 @@
+{
+  "id": "encoding/base32hex",
+  "family": "encoding",
+  "slug": "base32hex",
+  "title": "base32hex (RFC 4648 §7, Extended Hex alphabet)",
+  "summary": "base32hex is the 'Extended Hex' Base32 variant from RFC 4648 §7: the same 5-bits-per-character block codec as standard Base32, but over the order-preserving alphabet '0123456789ABCDEFGHIJKLMNOPQRSTUV'. Because the alphabet is monotonic, the lexicographic order of encoded strings matches the byte order of the inputs, which is why DNSSEC NSEC3 (RFC 5155) uses it. Output is padded with '=' to a multiple of 8 characters.",
+  "kind": "encoding",
+  "aliases": [
+    "base32-hex",
+    "base32 extended hex",
+    "RFC 4648 base32hex"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc4648#section-7",
+  "source_version": "RFC 4648 §7",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base32",
+    "encoding/base16"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC4648",
+    "charset": "US-ASCII",
+    "algorithm": "base32hex",
+    "alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUV",
+    "notes": [
+      "Same bit-packing as standard Base32 (40 input bits -> eight 5-bit groups), differing only in the alphabet: digits 0-9 then letters A-V.",
+      "Padding map is identical to Base32 (1 byte -> 6 '='; 2 -> 4; 3 -> 3; 4 -> 1; 5 -> 0). So 'f' -> 'CO======'.",
+      "The alphabet is monotonic, so sorting the encoded strings sorts the underlying byte values; standard Base32 (A-Z2-7) does NOT have this property.",
+      "Used by DNSSEC NSEC3 hashed owner names (RFC 5155). Distinct from standard Base32 (encoding/base32)."
+    ],
+    "test_vectors": [
+      {
+        "input": "",
+        "input_form": "utf8",
+        "output": "",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"\") = \"\"."
+      },
+      {
+        "input": "f",
+        "input_form": "utf8",
+        "output": "CO======",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"f\") = \"CO======\"."
+      },
+      {
+        "input": "fo",
+        "input_form": "utf8",
+        "output": "CPNG====",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"fo\") = \"CPNG====\"."
+      },
+      {
+        "input": "foo",
+        "input_form": "utf8",
+        "output": "CPNMU===",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"foo\") = \"CPNMU===\"."
+      },
+      {
+        "input": "foob",
+        "input_form": "utf8",
+        "output": "CPNMUOG=",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"foob\") = \"CPNMUOG=\"."
+      },
+      {
+        "input": "fooba",
+        "input_form": "utf8",
+        "output": "CPNMUOJ1",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"fooba\") = \"CPNMUOJ1\" (5 bytes -> 8 chars, no padding)."
+      },
+      {
+        "input": "foobar",
+        "input_form": "utf8",
+        "output": "CPNMUOJ1E8======",
+        "output_form": "ascii",
+        "algorithm": "base32hex",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32-HEX(\"foobar\") = \"CPNMUOJ1E8======\"."
+      },
+      {
+        "input": "CPNMUOJ1E8======",
+        "input_form": "ascii",
+        "output": "foobar",
+        "output_form": "utf8",
+        "algorithm": "base32hex",
+        "direction": "decode",
+        "note": "Round-trip: BASE32-HEX-decode(\"CPNMUOJ1E8======\") = \"foobar\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

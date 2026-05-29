@@ -1,0 +1,31 @@
+{
+  "id": "media-type/text-ecmascript",
+  "family": "media-type",
+  "slug": "text-ecmascript",
+  "title": "text/ecmascript",
+  "summary": "Media type \"text/ecmascript\". Registered/referenced in RFC9239.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/ecmascript",
+    "reference_rfcs": [
+      "RFC9239"
+    ],
+    "raw_columns": {
+      "Name": "ecmascript (OBSOLETED in favor of text/javascript)",
+      "Template": "text/ecmascript",
+      "Reference": "[RFC9239]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/ecmascript",
+    "text/ecmascript (OBSOLETED in favor of text/javascript)"
+  ]
+}

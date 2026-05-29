@@ -1,0 +1,30 @@
+{
+  "id": "media-type/text-dns",
+  "family": "media-type",
+  "slug": "text-dns",
+  "title": "text/dns",
+  "summary": "Media type \"text/dns\". Registered/referenced in RFC4027.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/dns",
+    "reference_rfcs": [
+      "RFC4027"
+    ],
+    "raw_columns": {
+      "Name": "dns",
+      "Template": "text/dns",
+      "Reference": "[RFC4027]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/dns"
+  ]
+}

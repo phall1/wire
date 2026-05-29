@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-octet-stream",
+  "family": "media-type",
+  "slug": "application-octet-stream",
+  "title": "application/octet-stream",
+  "summary": "Media type \"application/octet-stream\". Registered/referenced in RFC2045, RFC2046.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/octet-stream",
+    "reference_rfcs": [
+      "RFC2045",
+      "RFC2046"
+    ],
+    "raw_columns": {
+      "Name": "octet-stream",
+      "Template": "application/octet-stream",
+      "Reference": "[RFC2045][RFC2046]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/octet-stream"
+  ]
+}

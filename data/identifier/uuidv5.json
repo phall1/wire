@@ -1,0 +1,44 @@
+{
+  "id": "identifier/uuidv5",
+  "family": "identifier",
+  "slug": "uuidv5",
+  "title": "UUID Version 5 (name-based, SHA-1)",
+  "summary": "UUIDv5 is a name-based UUID derived deterministically by SHA-1-hashing a namespace UUID concatenated with a name, truncating to 128 bits, then overwriting the version (5) and variant bits. Like v3 it is stable — same namespace + name always yields the same UUID — but uses SHA-1 instead of MD5 and is the RFC 9562-recommended choice for name-based ids.",
+  "kind": "identifier",
+  "aliases": [
+    "UUID v5",
+    "name-based UUID (SHA-1)",
+    "version 5 UUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.5",
+  "source_version": "RFC 9562 §5.5",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv3",
+    "identifier/uuidv4"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.5",
+    "example": "2ed6657d-e927-568b-95e1-2665a8aea6a2",
+    "bit_layout": [
+      { "field": "sha1_high", "bits": 48, "meaning": "High 48 bits of SHA-1(namespace_uuid || name) (digest truncated to 128 bits)." },
+      { "field": "ver", "bits": 4, "meaning": "version = 0b0101 (5), overwriting hash bits." },
+      { "field": "sha1_mid", "bits": 12, "meaning": "Next 12 bits of the truncated digest." },
+      { "field": "var", "bits": 2, "meaning": "variant = 0b10, overwriting hash bits." },
+      { "field": "sha1_low", "bits": 62, "meaning": "Remaining 62 bits of the truncated digest." }
+    ],
+    "length_bits": 128,
+    "sortable": false,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "Deterministic: UUIDv5(namespace, name) = set_version_variant( SHA1( bytes(namespace) || bytes(name) )[0:16], 5 ). SHA-1 output is 160 bits, truncated to the leading 128.",
+      "Example uses the DNS namespace (6ba7b810-9dad-11d1-80b4-00c04fd430c8) with name 'www.example.com', yielding 2ed6657d-e927-568b-95e1-2665a8aea6a2 (RFC 9562 Appendix).",
+      "SHA-1 is used only for namespacing here, not as a security primitive; RFC 9562 recommends v5 over v3."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-webpush-options-json",
+  "family": "media-type",
+  "slug": "application-webpush-options-json",
+  "title": "application/webpush-options+json",
+  "summary": "Media type \"application/webpush-options+json\". Registered/referenced in RFC8292.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/webpush-options+json",
+    "reference_rfcs": [
+      "RFC8292"
+    ],
+    "raw_columns": {
+      "Name": "webpush-options+json",
+      "Template": "application/webpush-options+json",
+      "Reference": "[RFC8292]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/webpush-options+json"
+  ]
+}

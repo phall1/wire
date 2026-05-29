@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-dvb-subtitle",
+  "family": "media-type",
+  "slug": "image-vnd-dvb-subtitle",
+  "title": "image/vnd.dvb.subtitle",
+  "summary": "Media type \"image/vnd.dvb.subtitle\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.dvb.subtitle",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dvb.subtitle",
+      "Template": "image/vnd.dvb.subtitle",
+      "Reference": "[Peter_Siebert][Michael_Lagally]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.dvb.subtitle"
+  ]
+}

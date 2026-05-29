@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/c2pa-manifest",
+  "family": "link-relation",
+  "slug": "c2pa-manifest",
+  "title": "c2pa-manifest",
+  "summary": "Link relation type \"c2pa-manifest\": This link relation identifies the C2PA Manifest associated with the link context.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "c2pa-manifest",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "c2pa-manifest",
+      "Description": "This link relation identifies the C2PA Manifest associated with the link context",
+      "Reference": "[Content Credentials : C2PA Technical Specification]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

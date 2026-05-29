@@ -1,0 +1,31 @@
+{
+  "id": "media-type/message-external-body",
+  "family": "media-type",
+  "slug": "message-external-body",
+  "title": "message/external-body",
+  "summary": "Media type \"message/external-body\". Registered/referenced in RFC2045, RFC2046.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/external-body",
+    "reference_rfcs": [
+      "RFC2045",
+      "RFC2046"
+    ],
+    "raw_columns": {
+      "Name": "external-body",
+      "Template": "message/external-body",
+      "Reference": "[RFC2045][RFC2046]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/external-body"
+  ]
+}

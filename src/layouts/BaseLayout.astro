@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { SITE } from "../lib/wire";
+import Palette from "../components/Palette.astro";
 
 interface Props {
   title?: string;
@@ -33,11 +34,25 @@ const {
   <body>
     <slot />
 
+    <Palette />
+
     <footer id="statusline" aria-hidden="true">
       <span class="seg on">{SITE.domain}</span>
       <span class="rule"></span>
+      <span class="seg search-k" data-palette-open role="button" tabindex="0"
+        >⌘K search</span
+      >
       <span class="seg">{status}</span>
     </footer>
+
+    <style>
+      #statusline .search-k {
+        cursor: pointer;
+      }
+      #statusline .search-k:hover {
+        color: var(--color-accent);
+      }
+    </style>
 
     <script is:inline>
       console.log(

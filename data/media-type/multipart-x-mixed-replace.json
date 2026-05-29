@@ -1,0 +1,28 @@
+{
+  "id": "media-type/multipart-x-mixed-replace",
+  "family": "media-type",
+  "slug": "multipart-x-mixed-replace",
+  "title": "multipart/x-mixed-replace",
+  "summary": "Media type \"multipart/x-mixed-replace\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/x-mixed-replace",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "x-mixed-replace",
+      "Template": "multipart/x-mixed-replace",
+      "Reference": "[W3C][Robin_Berjon]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/x-mixed-replace"
+  ]
+}

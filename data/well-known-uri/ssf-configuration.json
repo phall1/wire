@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/ssf-configuration",
+  "family": "well-known-uri",
+  "slug": "ssf-configuration",
+  "title": "/.well-known/ssf-configuration",
+  "summary": "Well-known URI suffix \"/.well-known/ssf-configuration\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ssf-configuration",
+    "reference_rfcs": [],
+    "registration_date": "2024-04-18",
+    "raw_columns": {
+      "URI Suffix": "ssf-configuration",
+      "Reference": "[https://openid.net/specs/openid-sharedsignals-framework-1_0-ID2.html]",
+      "Status": "provisional",
+      "Change Controller": "[OpenID_Shared_Signals_Working_Group]",
+      "Related Information": "",
+      "Date Registered": "2024-04-18",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

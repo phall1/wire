@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/latest-version",
+  "family": "link-relation",
+  "slug": "latest-version",
+  "title": "latest-version",
+  "summary": "Link relation type \"latest-version\": Points to a resource containing the latest (e.g.,\n      current) version of the context. Defined in RFC5829.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "latest-version",
+    "reference_rfcs": [
+      "RFC5829"
+    ],
+    "raw_columns": {
+      "Relation Name": "latest-version",
+      "Description": "Points to a resource containing the latest (e.g.,\n      current) version of the context.",
+      "Reference": "[RFC5829]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

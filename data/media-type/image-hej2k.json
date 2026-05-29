@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-hej2k",
+  "family": "media-type",
+  "slug": "image-hej2k",
+  "title": "image/hej2k",
+  "summary": "Media type \"image/hej2k\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/hej2k",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "hej2k",
+      "Template": "image/hej2k",
+      "Reference": "[ISO-IEC_JTC_1][ITU-T]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/hej2k"
+  ]
+}

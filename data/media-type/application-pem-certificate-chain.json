@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-pem-certificate-chain",
+  "family": "media-type",
+  "slug": "application-pem-certificate-chain",
+  "title": "application/pem-certificate-chain",
+  "summary": "Media type \"application/pem-certificate-chain\". Registered/referenced in RFC8555.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pem-certificate-chain",
+    "reference_rfcs": [
+      "RFC8555"
+    ],
+    "raw_columns": {
+      "Name": "pem-certificate-chain",
+      "Template": "application/pem-certificate-chain",
+      "Reference": "[RFC8555]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pem-certificate-chain"
+  ]
+}

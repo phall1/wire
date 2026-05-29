@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-trickle-ice-sdpfrag",
+  "family": "media-type",
+  "slug": "application-trickle-ice-sdpfrag",
+  "title": "application/trickle-ice-sdpfrag",
+  "summary": "Media type \"application/trickle-ice-sdpfrag\". Registered/referenced in RFC8840.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/trickle-ice-sdpfrag",
+    "reference_rfcs": [
+      "RFC8840"
+    ],
+    "raw_columns": {
+      "Name": "trickle-ice-sdpfrag",
+      "Template": "application/trickle-ice-sdpfrag",
+      "Reference": "[RFC8840]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/trickle-ice-sdpfrag"
+  ]
+}

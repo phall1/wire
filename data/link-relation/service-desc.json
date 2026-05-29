@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/service-desc",
+  "family": "link-relation",
+  "slug": "service-desc",
+  "title": "service-desc",
+  "summary": "Link relation type \"service-desc\": Identifies service description for the context that\n      is primarily intended for consumption by machines. Defined in RFC8631.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "service-desc",
+    "reference_rfcs": [
+      "RFC8631"
+    ],
+    "raw_columns": {
+      "Relation Name": "service-desc",
+      "Description": "Identifies service description for the context that\n      is primarily intended for consumption by machines.",
+      "Reference": "[RFC8631]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

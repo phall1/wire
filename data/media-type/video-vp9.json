@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-vp9",
+  "family": "media-type",
+  "slug": "video-vp9",
+  "title": "video/VP9",
+  "summary": "Media type \"video/VP9\". Registered/referenced in RFC9628.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/VP9",
+    "reference_rfcs": [
+      "RFC9628"
+    ],
+    "raw_columns": {
+      "Name": "VP9",
+      "Template": "video/VP9",
+      "Reference": "[RFC9628]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/VP9"
+  ]
+}

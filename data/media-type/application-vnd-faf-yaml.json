@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-faf-yaml",
+  "family": "media-type",
+  "slug": "application-vnd-faf-yaml",
+  "title": "application/vnd.faf+yaml",
+  "summary": "Media type \"application/vnd.faf+yaml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.faf+yaml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.faf+yaml",
+      "Template": "application/vnd.faf+yaml",
+      "Reference": "[James_Wolfe]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.faf+yaml"
+  ]
+}

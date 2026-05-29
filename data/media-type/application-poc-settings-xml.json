@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-poc-settings-xml",
+  "family": "media-type",
+  "slug": "application-poc-settings-xml",
+  "title": "application/poc-settings+xml",
+  "summary": "Media type \"application/poc-settings+xml\". Registered/referenced in RFC4354.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/poc-settings+xml",
+    "reference_rfcs": [
+      "RFC4354"
+    ],
+    "raw_columns": {
+      "Name": "poc-settings+xml",
+      "Template": "application/poc-settings+xml",
+      "Reference": "[RFC4354]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/poc-settings+xml"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-jxsv",
+  "family": "media-type",
+  "slug": "video-jxsv",
+  "title": "video/jxsv",
+  "summary": "Media type \"video/jxsv\". Registered/referenced in RFC9134.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/jxsv",
+    "reference_rfcs": [
+      "RFC9134"
+    ],
+    "raw_columns": {
+      "Name": "jxsv",
+      "Template": "video/jxsv",
+      "Reference": "[RFC9134]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/jxsv"
+  ]
+}

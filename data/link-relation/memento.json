@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/memento",
+  "family": "link-relation",
+  "slug": "memento",
+  "title": "memento",
+  "summary": "Link relation type \"memento\": The Target IRI points to a Memento, a fixed resource that will not change state anymore. Defined in RFC7089.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "memento",
+    "reference_rfcs": [
+      "RFC7089"
+    ],
+    "raw_columns": {
+      "Relation Name": "memento",
+      "Description": "The Target IRI points to a Memento, a fixed resource that will not change state anymore.",
+      "Reference": "[RFC7089]",
+      "Notes": "A Memento for an Original Resource is a resource that\n      encapsulates a prior state of the Original Resource."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/webhook-authorized-senders.json",
+  "family": "well-known-uri",
+  "slug": "webhook-authorized-senders.json",
+  "title": "/.well-known/webhook-authorized-senders.json",
+  "summary": "Well-known URI suffix \"/.well-known/webhook-authorized-senders.json\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "webhook-authorized-senders.json",
+    "reference_rfcs": [],
+    "registration_date": "2025-09-29",
+    "raw_columns": {
+      "URI Suffix": "webhook-authorized-senders.json",
+      "Reference": "[https://intempus.dk/webhook-authorization]",
+      "Status": "permanent",
+      "Change Controller": "[Intempus_ApS]",
+      "Related Information": "",
+      "Date Registered": "2025-09-29",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-font-sfnt",
+  "family": "media-type",
+  "slug": "application-font-sfnt",
+  "title": "application/font-sfnt",
+  "summary": "Media type \"application/font-sfnt\". Registered/referenced in RFC8081.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/font-sfnt",
+    "reference_rfcs": [
+      "RFC8081"
+    ],
+    "raw_columns": {
+      "Name": "font-sfnt - DEPRECATED in favor of font/sfnt",
+      "Template": "application/font-sfnt",
+      "Reference": "[Levantovsky][ISO-IEC_JTC_1][RFC8081]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/font-sfnt",
+    "application/font-sfnt - DEPRECATED in favor of font/sfnt"
+  ]
+}

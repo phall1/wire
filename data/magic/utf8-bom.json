@@ -1,0 +1,32 @@
+{
+  "id": "magic/utf8-bom",
+  "family": "magic",
+  "slug": "utf8-bom",
+  "title": "UTF-8 BOM (EF BB BF)",
+  "summary": "A UTF-8 byte-order mark is the 3-byte sequence 0xEF 0xBB 0xBF — the UTF-8 encoding of U+FEFF. It carries no endianness for UTF-8; it serves only as a signature that the following text is UTF-8. Unicode does not recommend its use and many tools treat it as optional/undesirable.",
+  "kind": "signature",
+  "aliases": ["UTF-8 BOM", "U+FEFF", "EF BB BF", "byte order mark"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.unicode.org/faq/utf_bom.html#bom4",
+  "source_version": "Unicode FAQ UTF-8/BOM (EF BB BF = UTF-8 form of U+FEFF)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/utf16-bom-le"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "EF BB BF",
+    "offset": 0,
+    "magic_ascii": "\\xef\\xbb\\xbf",
+    "extensions": ["txt"],
+    "mime": "text/plain",
+    "spec": "The Unicode Standard (U+FEFF byte order mark)",
+    "notes": [
+      "EF BB BF is the UTF-8 serialization of the code point U+FEFF (ZERO WIDTH NO-BREAK SPACE used as BOM).",
+      "UTF-8 has no byte-order ambiguity, so this is purely a format signature, not an endianness marker.",
+      "Unicode neither requires nor recommends a UTF-8 BOM; it can break shebang lines, JSON parsers, and shell scripts if present.",
+      "Detect it before decoding; many parsers strip a leading EF BB BF."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

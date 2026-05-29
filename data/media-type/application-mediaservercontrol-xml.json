@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-mediaservercontrol-xml",
+  "family": "media-type",
+  "slug": "application-mediaservercontrol-xml",
+  "title": "application/mediaservercontrol+xml",
+  "summary": "Media type \"application/mediaservercontrol+xml\". Registered/referenced in RFC5022.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mediaservercontrol+xml",
+    "reference_rfcs": [
+      "RFC5022"
+    ],
+    "raw_columns": {
+      "Name": "mediaservercontrol+xml",
+      "Template": "application/mediaservercontrol+xml",
+      "Reference": "[RFC5022]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mediaservercontrol+xml"
+  ]
+}

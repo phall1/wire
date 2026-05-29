@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-tencent-tap",
+  "family": "media-type",
+  "slug": "image-vnd-tencent-tap",
+  "title": "image/vnd.tencent.tap",
+  "summary": "Media type \"image/vnd.tencent.tap\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.tencent.tap",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.tencent.tap",
+      "Template": "image/vnd.tencent.tap",
+      "Reference": "[Ni_Hui]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.tencent.tap"
+  ]
+}

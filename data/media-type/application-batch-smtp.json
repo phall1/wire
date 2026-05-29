@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-batch-smtp",
+  "family": "media-type",
+  "slug": "application-batch-smtp",
+  "title": "application/batch-SMTP",
+  "summary": "Media type \"application/batch-SMTP\". Registered/referenced in RFC2442.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/batch-SMTP",
+    "reference_rfcs": [
+      "RFC2442"
+    ],
+    "raw_columns": {
+      "Name": "batch-SMTP",
+      "Template": "application/batch-SMTP",
+      "Reference": "[RFC2442]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/batch-SMTP"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/related-website-set.json",
+  "family": "well-known-uri",
+  "slug": "related-website-set.json",
+  "title": "/.well-known/related-website-set.json",
+  "summary": "Well-known URI suffix \"/.well-known/related-website-set.json\". IANA status: deprecated.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "related-website-set.json",
+    "reference_rfcs": [],
+    "registration_date": "2023-12-01",
+    "raw_columns": {
+      "URI Suffix": "related-website-set.json",
+      "Reference": "[https://github.com/GoogleChrome/related-website-sets/blob/main/Well-Known-Specification.md]",
+      "Status": "deprecated",
+      "Change Controller": "[Google_Inc.]",
+      "Related Information": "",
+      "Date Registered": "2023-12-01",
+      "Date Modified": "2026-04-01"
+    }
+  },
+  "updated": "2026-05-29"
+}

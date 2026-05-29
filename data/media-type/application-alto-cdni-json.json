@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-alto-cdni-json",
+  "family": "media-type",
+  "slug": "application-alto-cdni-json",
+  "title": "application/alto-cdni+json",
+  "summary": "Media type \"application/alto-cdni+json\". Registered/referenced in RFC9241.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/alto-cdni+json",
+    "reference_rfcs": [
+      "RFC9241"
+    ],
+    "raw_columns": {
+      "Name": "alto-cdni+json",
+      "Template": "application/alto-cdni+json",
+      "Reference": "[RFC9241]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/alto-cdni+json"
+  ]
+}

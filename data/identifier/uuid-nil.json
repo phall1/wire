@@ -1,0 +1,40 @@
+{
+  "id": "identifier/uuid-nil",
+  "family": "identifier",
+  "slug": "uuid-nil",
+  "title": "Nil UUID (all-zero)",
+  "summary": "The Nil UUID is the special UUID with all 128 bits set to zero: 00000000-0000-0000-0000-000000000000. RFC 9562 defines it as a sentinel meaning 'no UUID' / absent value. Its version and variant nibbles are both zero, so it does not match any real version's bit pattern.",
+  "kind": "identifier",
+  "aliases": [
+    "nil UUID",
+    "null UUID",
+    "zero UUID",
+    "empty GUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.9",
+  "source_version": "RFC 9562 §5.9",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuid-max",
+    "identifier/uuidv4"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.9",
+    "example": "00000000-0000-0000-0000-000000000000",
+    "bit_layout": [
+      { "field": "all_zero", "bits": 128, "meaning": "Every bit is 0. Version nibble = 0 and variant nibble = 0, so it is not a valid v1-v8 value." }
+    ],
+    "length_bits": 128,
+    "sortable": false,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "Sentinel for 'no UUID' / unset; sorts before every other UUID.",
+      "Counterpart of the Max UUID (all ones). Both are reserved special forms in RFC 9562 §5.9 / §5.10."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

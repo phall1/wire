@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-oblivious-dns-message",
+  "family": "media-type",
+  "slug": "application-oblivious-dns-message",
+  "title": "application/oblivious-dns-message",
+  "summary": "Media type \"application/oblivious-dns-message\". Registered/referenced in RFC9230.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/oblivious-dns-message",
+    "reference_rfcs": [
+      "RFC9230"
+    ],
+    "raw_columns": {
+      "Name": "oblivious-dns-message",
+      "Template": "application/oblivious-dns-message",
+      "Reference": "[RFC9230]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/oblivious-dns-message"
+  ]
+}

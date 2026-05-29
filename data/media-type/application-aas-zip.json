@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-aas-zip",
+  "family": "media-type",
+  "slug": "application-aas-zip",
+  "title": "application/aas+zip",
+  "summary": "Media type \"application/aas+zip\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/aas+zip",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "aas+zip",
+      "Template": "application/aas+zip",
+      "Reference": "[Industrial_Digital_Twin_Association][Sandeep_Rudra]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/aas+zip"
+  ]
+}

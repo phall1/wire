@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-csv-schema",
+  "family": "media-type",
+  "slug": "text-csv-schema",
+  "title": "text/csv-schema",
+  "summary": "Media type \"text/csv-schema\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/csv-schema",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "csv-schema",
+      "Template": "text/csv-schema",
+      "Reference": "[National_Archives_UK][David_Underdown]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/csv-schema"
+  ]
+}

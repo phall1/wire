@@ -1,0 +1,35 @@
+{
+  "id": "wire-format/asn1-der",
+  "family": "wire-format",
+  "slug": "asn1-der",
+  "title": "ASN.1 DER (Distinguished Encoding Rules) — canonical TLV",
+  "summary": "DER is the canonical subset of BER: the same Tag-Length-Value structure, but with every encoding choice pinned so each value has exactly one byte representation. Length must use the definite, shortest form; SET elements are sorted; booleans use 0xFF for true. DER is what X.509 certificates, PKCS, and most crypto use because the bytes must be reproducible for signing.",
+  "kind": "wire-format",
+  "aliases": ["DER", "Distinguished Encoding Rules", "X.690 DER"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.itu.int/rec/T-REC-X.690/en",
+  "source_version": "ITU-T X.690 (02/2021) — Section 10 (DER restrictions)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/asn1-ber"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ITU-T X.690",
+    "summary": "DER = BER constrained so encodings are unique (distinguished). Same TLV layout as BER, with extra rules: definite length only and in the shortest form; the constructed/primitive choice is fixed per type; SET OF members sorted by their encoding; BOOLEAN true is exactly 0xFF; no indefinite lengths. This determinism is required wherever bytes are hashed or signed.",
+    "structure": [
+      { "field": "Identifier (Tag)", "size": "1+ bytes", "meaning": "Same class/constructed/tag-number layout as BER." },
+      { "field": "Length", "size": "1+ bytes", "meaning": "Definite form ONLY, and the shortest possible: short form for < 128, otherwise long form with no leading zero length octets. Indefinite form is forbidden." },
+      { "field": "Contents (Value)", "size": "= Length", "meaning": "Value octets; for constructed types, nested DER TLVs. SET OF contents are ordered by the encodings of the components." }
+    ],
+    "example_hex": "30 06 02 01 05 02 01 03",
+    "example_decoded": "SEQUENCE { INTEGER 5, INTEGER 3 }: 0x30 (SEQUENCE, constructed) len 0x06 | 02 01 05 (INTEGER 5) | 02 01 03 (INTEGER 3).",
+    "see": ["wire-format/asn1-ber"],
+    "notes": [
+      "Every DER encoding is also a valid BER encoding, but not vice-versa.",
+      "X.509 certificates, CSRs (PKCS#10), private keys (PKCS#8), and CMS/PKCS#7 are DER-encoded so their signatures cover a single canonical byte string.",
+      "PEM is just base64-wrapped DER with '-----BEGIN ...-----' delimiters."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

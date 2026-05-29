@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-evrcnw",
+  "family": "media-type",
+  "slug": "audio-evrcnw",
+  "title": "audio/EVRCNW",
+  "summary": "Media type \"audio/EVRCNW\". Registered/referenced in RFC6884.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/EVRCNW",
+    "reference_rfcs": [
+      "RFC6884"
+    ],
+    "raw_columns": {
+      "Name": "EVRCNW",
+      "Template": "audio/EVRCNW",
+      "Reference": "[RFC6884]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/EVRCNW"
+  ]
+}

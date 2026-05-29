@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-alto-updatestreamcontrol-json",
+  "family": "media-type",
+  "slug": "application-alto-updatestreamcontrol-json",
+  "title": "application/alto-updatestreamcontrol+json",
+  "summary": "Media type \"application/alto-updatestreamcontrol+json\". Registered/referenced in RFC8895.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/alto-updatestreamcontrol+json",
+    "reference_rfcs": [
+      "RFC8895"
+    ],
+    "raw_columns": {
+      "Name": "alto-updatestreamcontrol+json",
+      "Template": "application/alto-updatestreamcontrol+json",
+      "Reference": "[RFC8895]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/alto-updatestreamcontrol+json"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-prs-vcfbzip2",
+  "family": "media-type",
+  "slug": "application-prs-vcfbzip2",
+  "title": "application/prs.vcfbzip2",
+  "summary": "Media type \"application/prs.vcfbzip2\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/prs.vcfbzip2",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prs.vcfbzip2",
+      "Template": "application/prs.vcfbzip2",
+      "Reference": "[Paolo_Marcheschi]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/prs.vcfbzip2"
+  ]
+}

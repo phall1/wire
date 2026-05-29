@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-relax-ng-compact-syntax",
+  "family": "media-type",
+  "slug": "application-relax-ng-compact-syntax",
+  "title": "application/relax-ng-compact-syntax",
+  "summary": "Media type \"application/relax-ng-compact-syntax\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/relax-ng-compact-syntax",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "relax-ng-compact-syntax",
+      "Template": "application/relax-ng-compact-syntax",
+      "Reference": "[http://www.JTC_1sc34.org/repository/0661.pdf]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/relax-ng-compact-syntax"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "magic/ogg",
+  "family": "magic",
+  "slug": "ogg",
+  "title": "Ogg signature (OggS)",
+  "summary": "An Ogg container (carrying Vorbis, Opus, FLAC, Theora, etc.) begins each page with the 4-byte capture pattern 'OggS' (0x4F 0x67 0x67 0x53), followed by a stream-structure version byte (0x00).",
+  "kind": "signature",
+  "aliases": ["Ogg magic", "OggS", "capture pattern"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc3533#section-6",
+  "source_version": "RFC 3533 (Ogg encapsulation format), Section 6 (capture_pattern 'OggS')",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/flac", "magic/matroska-webm"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4F 67 67 53",
+    "offset": 0,
+    "magic_ascii": "OggS",
+    "extensions": ["ogg", "oga", "ogv", "opus", "spx"],
+    "mime": "application/ogg",
+    "spec": "RFC 3533",
+    "notes": [
+      "'OggS' (4F 67 67 53) is the capture pattern at the start of every Ogg page, not just the file.",
+      "The byte after the capture pattern is the stream structure version, currently 0x00.",
+      "The codec inside is identified by the first packet of each logical stream (e.g. 'OpusHead', '\\x01vorbis', '\\x80theora')."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

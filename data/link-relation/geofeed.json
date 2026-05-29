@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/geofeed",
+  "family": "link-relation",
+  "slug": "geofeed",
+  "title": "geofeed",
+  "summary": "Link relation type \"geofeed\": Refers to a resource with IP geofeed location information related to the link context. Defined in RFC9877.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "geofeed",
+    "reference_rfcs": [
+      "RFC9877"
+    ],
+    "raw_columns": {
+      "Relation Name": "geofeed",
+      "Description": "Refers to a resource with IP geofeed location information related to the link context.",
+      "Reference": "[RFC9877]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

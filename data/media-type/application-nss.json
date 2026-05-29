@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-nss",
+  "family": "media-type",
+  "slug": "application-nss",
+  "title": "application/nss",
+  "summary": "Media type \"application/nss\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/nss",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "nss",
+      "Template": "application/nss",
+      "Reference": "[Michael_Hammer]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/nss"
+  ]
+}

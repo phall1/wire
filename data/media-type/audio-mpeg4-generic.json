@@ -1,0 +1,32 @@
+{
+  "id": "media-type/audio-mpeg4-generic",
+  "family": "media-type",
+  "slug": "audio-mpeg4-generic",
+  "title": "audio/mpeg4-generic",
+  "summary": "Media type \"audio/mpeg4-generic\". Registered/referenced in RFC3640, RFC5691, RFC6295.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/mpeg4-generic",
+    "reference_rfcs": [
+      "RFC3640",
+      "RFC5691",
+      "RFC6295"
+    ],
+    "raw_columns": {
+      "Name": "mpeg4-generic",
+      "Template": "audio/mpeg4-generic",
+      "Reference": "[RFC3640][RFC5691][RFC6295]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/mpeg4-generic"
+  ]
+}

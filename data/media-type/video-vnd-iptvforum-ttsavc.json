@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-iptvforum-ttsavc",
+  "family": "media-type",
+  "slug": "video-vnd-iptvforum-ttsavc",
+  "title": "video/vnd.iptvforum.ttsavc",
+  "summary": "Media type \"video/vnd.iptvforum.ttsavc\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.iptvforum.ttsavc",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.iptvforum.ttsavc",
+      "Template": "video/vnd.iptvforum.ttsavc",
+      "Reference": "[Shuji_Nakamura]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.iptvforum.ttsavc"
+  ]
+}

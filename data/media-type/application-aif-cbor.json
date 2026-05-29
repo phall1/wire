@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-aif-cbor",
+  "family": "media-type",
+  "slug": "application-aif-cbor",
+  "title": "application/aif+cbor",
+  "summary": "Media type \"application/aif+cbor\". Registered/referenced in RFC9237.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/aif+cbor",
+    "reference_rfcs": [
+      "RFC9237"
+    ],
+    "raw_columns": {
+      "Name": "aif+cbor",
+      "Template": "application/aif+cbor",
+      "Reference": "[RFC9237]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/aif+cbor"
+  ]
+}

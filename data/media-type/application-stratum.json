@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-stratum",
+  "family": "media-type",
+  "slug": "application-stratum",
+  "title": "application/stratum",
+  "summary": "Media type \"application/stratum\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/stratum",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "stratum",
+      "Template": "application/stratum",
+      "Reference": "[Ben_van_Hartingsveldt][1]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/stratum"
+  ]
+}

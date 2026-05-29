@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-matroska-3d",
+  "family": "media-type",
+  "slug": "video-matroska-3d",
+  "title": "video/matroska-3d",
+  "summary": "Media type \"video/matroska-3d\". Registered/referenced in RFC9559.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/matroska-3d",
+    "reference_rfcs": [
+      "RFC9559"
+    ],
+    "raw_columns": {
+      "Name": "matroska-3d",
+      "Template": "video/matroska-3d",
+      "Reference": "[RFC9559]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/matroska-3d"
+  ]
+}

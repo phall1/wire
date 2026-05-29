@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-toc-cbor",
+  "family": "media-type",
+  "slug": "application-toc-cbor",
+  "title": "application/toc+cbor",
+  "summary": "Media type \"application/toc+cbor\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/toc+cbor",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "toc+cbor",
+      "Template": "application/toc+cbor",
+      "Reference": "[TCG DICE][TCG_DICE_WG][Ned_M._Smith]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/toc+cbor"
+  ]
+}

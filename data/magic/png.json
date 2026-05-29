@@ -1,0 +1,32 @@
+{
+  "id": "magic/png",
+  "family": "magic",
+  "slug": "png",
+  "title": "PNG signature (89 50 4E 47 0D 0A 1A 0A)",
+  "summary": "A PNG file begins with an 8-byte signature: 0x89 then the ASCII 'PNG', then a CRLF, a DOS EOF (0x1A), and a final LF. The non-ASCII first byte and the CR/LF/EOF bytes are deliberately chosen to detect transmission over text-mode channels that would corrupt the file.",
+  "kind": "signature",
+  "aliases": ["PNG magic", "\\x89PNG"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc2083#section-3.1",
+  "source_version": "RFC 2083 (PNG 1.0), Section 3.1 PNG file signature",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/gif", "magic/jpeg"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "89 50 4E 47 0D 0A 1A 0A",
+    "offset": 0,
+    "magic_ascii": "\\x89 P N G \\r \\n \\x1a \\n",
+    "extensions": ["png"],
+    "mime": "image/png",
+    "spec": "RFC 2083 / ISO/IEC 15948",
+    "notes": [
+      "The first byte 0x89 has the high bit set so the file is flagged as binary, not text.",
+      "Bytes 2-4 are the ASCII letters 'PNG' (0x50 0x4E 0x47).",
+      "The CR LF (0D 0A), DOS EOF (1A), and final LF (0A) catch line-ending translation and premature EOF during faulty text-mode transfers.",
+      "Immediately after the 8-byte signature comes the first chunk, normally IHDR."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-rpki-publication",
+  "family": "media-type",
+  "slug": "application-rpki-publication",
+  "title": "application/rpki-publication",
+  "summary": "Media type \"application/rpki-publication\". Registered/referenced in RFC8181.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-publication",
+    "reference_rfcs": [
+      "RFC8181"
+    ],
+    "raw_columns": {
+      "Name": "rpki-publication",
+      "Template": "application/rpki-publication",
+      "Reference": "[RFC8181]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-publication"
+  ]
+}

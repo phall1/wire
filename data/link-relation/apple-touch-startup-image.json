@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/apple-touch-startup-image",
+  "family": "link-relation",
+  "slug": "apple-touch-startup-image",
+  "title": "apple-touch-startup-image",
+  "summary": "Link relation type \"apple-touch-startup-image\": Refers to a launch screen for the context.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "apple-touch-startup-image",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "apple-touch-startup-image",
+      "Description": "Refers to a launch screen for the context.",
+      "Reference": "[Configuring Web Applications]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

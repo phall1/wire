@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-sun-j2me-app-descriptor",
+  "family": "media-type",
+  "slug": "text-vnd-sun-j2me-app-descriptor",
+  "title": "text/vnd.sun.j2me.app-descriptor",
+  "summary": "Media type \"text/vnd.sun.j2me.app-descriptor\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.sun.j2me.app-descriptor",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.sun.j2me.app-descriptor",
+      "Template": "text/vnd.sun.j2me.app-descriptor",
+      "Reference": "[Gary_Adams]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.sun.j2me.app-descriptor"
+  ]
+}

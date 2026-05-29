@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/rdap-down",
+  "family": "link-relation",
+  "slug": "rdap-down",
+  "title": "rdap-down",
+  "summary": "Link relation type \"rdap-down\": Refers to a set of RDAP child objects in a hierarchy of objects. Defined in RFC9910.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "rdap-down",
+    "reference_rfcs": [
+      "RFC9910"
+    ],
+    "raw_columns": {
+      "Relation Name": "rdap-down",
+      "Description": "Refers to a set of RDAP child objects in a hierarchy of objects.",
+      "Reference": "[RFC9910]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

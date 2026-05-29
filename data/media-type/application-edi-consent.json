@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-edi-consent",
+  "family": "media-type",
+  "slug": "application-edi-consent",
+  "title": "application/EDI-consent",
+  "summary": "Media type \"application/EDI-consent\". Registered/referenced in RFC1767.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/EDI-consent",
+    "reference_rfcs": [
+      "RFC1767"
+    ],
+    "raw_columns": {
+      "Name": "EDI-consent",
+      "Template": "application/EDI-consent",
+      "Reference": "[RFC1767]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/EDI-consent"
+  ]
+}

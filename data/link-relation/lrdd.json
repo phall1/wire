@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/lrdd",
+  "family": "link-relation",
+  "slug": "lrdd",
+  "title": "lrdd",
+  "summary": "Link relation type \"lrdd\": Refers to further information about the link's context,\n      expressed as a LRDD (\"Link-based Resource Descriptor Document\")\n      resource.  See [RFC6415] fo…. Defined in RFC6415.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "lrdd",
+    "reference_rfcs": [
+      "RFC6415"
+    ],
+    "raw_columns": {
+      "Relation Name": "lrdd",
+      "Description": "Refers to further information about the link's context,\n      expressed as a LRDD (\"Link-based Resource Descriptor Document\")\n      resource.  See [RFC6415] for information about\n      processing this relation type in host-meta documents. When used\n      elsewhere, it refers to additional links and other metadata.\n      Multiple instances indicate additional LRDD resources. LRDD\n      resources MUST have an \"application/xrd+xml\" representation, and\n      MAY have others.",
+      "Reference": "[RFC6415]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

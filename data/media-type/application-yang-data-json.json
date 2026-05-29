@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-yang-data-json",
+  "family": "media-type",
+  "slug": "application-yang-data-json",
+  "title": "application/yang-data+json",
+  "summary": "Media type \"application/yang-data+json\". Registered/referenced in RFC8040.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/yang-data+json",
+    "reference_rfcs": [
+      "RFC8040"
+    ],
+    "raw_columns": {
+      "Name": "yang-data+json",
+      "Template": "application/yang-data+json",
+      "Reference": "[RFC8040]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/yang-data+json"
+  ]
+}

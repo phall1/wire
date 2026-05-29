@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-uri-map",
+  "family": "media-type",
+  "slug": "application-vnd-uri-map",
+  "title": "application/vnd.uri-map",
+  "summary": "Media type \"application/vnd.uri-map\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.uri-map",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.uri-map",
+      "Template": "application/vnd.uri-map",
+      "Reference": "[Sebastian_Baer]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.uri-map"
+  ]
+}

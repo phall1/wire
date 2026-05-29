@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-amazon-mobi8-ebook",
+  "family": "media-type",
+  "slug": "application-vnd-amazon-mobi8-ebook",
+  "title": "application/vnd.amazon.mobi8-ebook",
+  "summary": "Media type \"application/vnd.amazon.mobi8-ebook\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.amazon.mobi8-ebook",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.amazon.mobi8-ebook",
+      "Template": "application/vnd.amazon.mobi8-ebook",
+      "Reference": "[Kim_Scarborough]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.amazon.mobi8-ebook"
+  ]
+}

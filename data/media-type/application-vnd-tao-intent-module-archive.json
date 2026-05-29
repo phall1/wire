@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-tao-intent-module-archive",
+  "family": "media-type",
+  "slug": "application-vnd-tao-intent-module-archive",
+  "title": "application/vnd.tao.intent-module-archive",
+  "summary": "Media type \"application/vnd.tao.intent-module-archive\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.tao.intent-module-archive",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.tao.intent-module-archive",
+      "Template": "application/vnd.tao.intent-module-archive",
+      "Reference": "[Daniel_Shelton]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.tao.intent-module-archive"
+  ]
+}

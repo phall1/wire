@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-express",
+  "family": "media-type",
+  "slug": "application-express",
+  "title": "application/express",
+  "summary": "Media type \"application/express\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/express",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "express",
+      "Template": "application/express",
+      "Reference": "[ISO-TC_184-SC_4][Dana_Tripp]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/express"
+  ]
+}

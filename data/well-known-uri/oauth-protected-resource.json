@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/oauth-protected-resource",
+  "family": "well-known-uri",
+  "slug": "oauth-protected-resource",
+  "title": "/.well-known/oauth-protected-resource",
+  "summary": "Well-known URI suffix \"/.well-known/oauth-protected-resource\". IANA status: permanent. Defined in RFC9728.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "oauth-protected-resource",
+    "reference_rfcs": [
+      "RFC9728"
+    ],
+    "registration_date": "2024-10-22",
+    "raw_columns": {
+      "URI Suffix": "oauth-protected-resource",
+      "Reference": "[RFC9728, Section 3]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "",
+      "Date Registered": "2024-10-22",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

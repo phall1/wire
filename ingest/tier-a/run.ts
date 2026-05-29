@@ -118,6 +118,11 @@ async function main(): Promise<void> {
 
   const summary: SummaryRow[] = [];
   const fetchFailures: FetchFailure[] = [];
+  // Track which (family[/namespace]) dirs we've already cleared this run, so
+  // multiple registries that share a family+namespace (e.g. the 11 media-type
+  // per-type CSVs all writing to data/media-type/) only wipe it once, before
+  // the first registry's writes — not on every iteration.
+  const clearedDirs = new Set<string>();
 
   for (const [registryId, reg] of Object.entries(registries)) {
     if (args.family && reg.family !== args.family) continue;
@@ -143,7 +148,11 @@ async function main(): Promise<void> {
     const { entries, included, excluded, totalRows, consideredRows } = parseRegistry(registryId, reg, csvText, sourceVersion);
 
     if (!args.dryRun) {
-      await clearFamilyDir(reg.family, reg.namespace);
+      const dirKey = reg.namespace ? `${reg.family}/${reg.namespace}` : reg.family;
+      if (!clearedDirs.has(dirKey)) {
+        await clearFamilyDir(reg.family, reg.namespace);
+        clearedDirs.add(dirKey);
+      }
       for (const e of entries) await writeEntry(e);
     }
 
@@ -201,6 +210,7 @@ function bucketReason(reason: string): string {
   if (/Unassigned/i.test(reason)) return 'Unassigned';
   if (/Reserved/i.test(reason)) return 'Reserved';
   if (/Private use/i.test(reason)) return 'Private use';
+  if (/status=(obsoleted|deprecated|reserved)/i.test(reason)) return 'http-header status obsoleted/deprecated/reserved';
   if (/status=/.test(reason)) return 'uri-scheme status != Permanent (Provisional/Historical)';
   if (/Recommended=/.test(reason)) return 'tls suite: not Recommended=Y and not classic';
   if (/no service name/.test(reason)) return 'port: no service name (nameless/Reserved)';

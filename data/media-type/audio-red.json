@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-red",
+  "family": "media-type",
+  "slug": "audio-red",
+  "title": "audio/RED",
+  "summary": "Media type \"audio/RED\". Registered/referenced in RFC3555.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/RED",
+    "reference_rfcs": [
+      "RFC3555"
+    ],
+    "raw_columns": {
+      "Name": "RED",
+      "Template": "audio/RED",
+      "Reference": "[RFC3555]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/RED"
+  ]
+}

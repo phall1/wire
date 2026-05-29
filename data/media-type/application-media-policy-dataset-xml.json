@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-media-policy-dataset-xml",
+  "family": "media-type",
+  "slug": "application-media-policy-dataset-xml",
+  "title": "application/media-policy-dataset+xml",
+  "summary": "Media type \"application/media-policy-dataset+xml\". Registered/referenced in RFC6796.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/media-policy-dataset+xml",
+    "reference_rfcs": [
+      "RFC6796"
+    ],
+    "raw_columns": {
+      "Name": "media-policy-dataset+xml",
+      "Template": "application/media-policy-dataset+xml",
+      "Reference": "[RFC6796]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/media-policy-dataset+xml"
+  ]
+}

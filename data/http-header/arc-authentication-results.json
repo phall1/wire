@@ -1,0 +1,31 @@
+{
+  "id": "http-header/arc-authentication-results",
+  "family": "http-header",
+  "slug": "arc-authentication-results",
+  "title": "ARC-Authentication-Results",
+  "summary": "Message header field \"ARC-Authentication-Results\" (protocol: mail), status experimental. Defined in RFC8617.",
+  "kind": "header",
+  "status": "experimental",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ARC-Authentication-Results",
+    "reference_rfcs": [
+      "RFC8617"
+    ],
+    "raw_columns": {
+      "value": "ARC-Authentication-Results",
+      "protocol": "mail",
+      "status": "experimental",
+      "Reference": "[RFC8617]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "ARC-Authentication-Results"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/looking-glass",
+  "family": "well-known-uri",
+  "slug": "looking-glass",
+  "title": "/.well-known/looking-glass",
+  "summary": "Well-known URI suffix \"/.well-known/looking-glass\". IANA status: permanent. Defined in RFC8522.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "looking-glass",
+    "reference_rfcs": [
+      "RFC8522"
+    ],
+    "registration_date": "2018-12-07",
+    "raw_columns": {
+      "URI Suffix": "looking-glass",
+      "Reference": "[RFC8522, Section 2]",
+      "Status": "permanent",
+      "Change Controller": "[M._Stubbig]",
+      "Related Information": "",
+      "Date Registered": "2018-12-07",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

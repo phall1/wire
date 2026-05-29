@@ -1,0 +1,94 @@
+{
+  "id": "encoding/z-base-32",
+  "family": "encoding",
+  "slug": "z-base-32",
+  "title": "z-base-32 (Zooko's human-oriented base-32)",
+  "summary": "z-base-32 is Zooko O'Whielacronx's permuted Base32: the same 5-bits-per-character scheme as RFC 4648 Base32, but with the alphabet 'ybndrfg8ejkmcpqxot1uwisza345h769', chosen so the easiest-to-say and most frequent symbols map to the most common data, with no padding characters. It is used in Tahoe-LAFS, Mnet, and BitTorrent Mainline DHT contexts where a compact, transcribable, unpadded encoding is wanted.",
+  "kind": "encoding",
+  "aliases": [
+    "zbase32",
+    "z-base32",
+    "Zooko base32",
+    "human-oriented base-32"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://philzimmermann.com/docs/human-oriented-base-32-encoding.txt",
+  "source_version": "z-base-32 specification (Zooko O'Whielacronx), retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base32",
+    "encoding/base32hex"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "z-base-32 — human-oriented base-32 (Zooko O'Whielacronx)",
+    "charset": "US-ASCII",
+    "algorithm": "z-base-32",
+    "alphabet": "ybndrfg8ejkmcpqxot1uwisza345h769",
+    "notes": [
+      "Same 5-bit grouping as standard Base32, but a permuted alphabet 'ybndrfg8ejkmcpqxot1uwisza345h769' (index 0 = 'y', index 1 = 'b', ...). No '=' padding is ever emitted.",
+      "The original spec is bit-oriented: it encodes an exact bit count, so a final partial 5-bit group takes only the bits present (e.g. 1 bit of 0 -> 'y', 1 bit of 1 -> 'o'; 2 bits '11' -> 'a'). Spec vectors include: 10 bits 1000000010 -> 'on', 20 bits 10001011100010001000 -> 'tqre', 24 bits 111100001011111111000111 -> '6n9hq', 24 bits 110101000111101000000100 -> '4t7ye'.",
+      "This entry's executable test_vectors use the common BYTE-aligned profile (whole bytes in, trailing group zero-extended to 5 bits), which round-trips byte<->string; the bit-exact form above is documented for fidelity to the original spec.",
+      "Alphabet ordering is NOT monotonic, so encoded strings do not sort in byte order (unlike base32hex). The point is human transcription, not sortability."
+    ],
+    "test_vectors": [
+      {
+        "input": "",
+        "input_form": "utf8",
+        "output": "",
+        "output_form": "ascii",
+        "algorithm": "z-base-32",
+        "direction": "encode",
+        "note": "Empty input -> empty output."
+      },
+      {
+        "input": "f",
+        "input_form": "utf8",
+        "output": "ca",
+        "output_form": "ascii",
+        "algorithm": "z-base-32",
+        "direction": "encode",
+        "note": "Byte-aligned: 'f' (0x66) -> 'ca' (8 bits -> 2 chars, trailing 5-bit group zero-extended)."
+      },
+      {
+        "input": "fo",
+        "input_form": "utf8",
+        "output": "c3zo",
+        "output_form": "ascii",
+        "algorithm": "z-base-32",
+        "direction": "encode",
+        "note": "Byte-aligned: 'fo' -> 'c3zo'."
+      },
+      {
+        "input": "foo",
+        "input_form": "utf8",
+        "output": "c3zs6",
+        "output_form": "ascii",
+        "algorithm": "z-base-32",
+        "direction": "encode",
+        "note": "Byte-aligned: 'foo' -> 'c3zs6'."
+      },
+      {
+        "input": "foobar",
+        "input_form": "utf8",
+        "output": "c3zs6aubqe",
+        "output_form": "ascii",
+        "algorithm": "z-base-32",
+        "direction": "encode",
+        "note": "Byte-aligned: 'foobar' -> 'c3zs6aubqe'."
+      },
+      {
+        "input": "c3zs6aubqe",
+        "input_form": "ascii",
+        "output": "foobar",
+        "output_form": "utf8",
+        "algorithm": "z-base-32",
+        "direction": "decode",
+        "note": "Round-trip: z-base-32-decode(\"c3zs6aubqe\") = \"foobar\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

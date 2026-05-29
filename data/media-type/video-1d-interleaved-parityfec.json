@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-1d-interleaved-parityfec",
+  "family": "media-type",
+  "slug": "video-1d-interleaved-parityfec",
+  "title": "video/1d-interleaved-parityfec",
+  "summary": "Media type \"video/1d-interleaved-parityfec\". Registered/referenced in RFC6015.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/1d-interleaved-parityfec",
+    "reference_rfcs": [
+      "RFC6015"
+    ],
+    "raw_columns": {
+      "Name": "1d-interleaved-parityfec",
+      "Template": "video/1d-interleaved-parityfec",
+      "Reference": "[RFC6015]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/1d-interleaved-parityfec"
+  ]
+}

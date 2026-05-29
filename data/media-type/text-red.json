@@ -1,0 +1,30 @@
+{
+  "id": "media-type/text-red",
+  "family": "media-type",
+  "slug": "text-red",
+  "title": "text/RED",
+  "summary": "Media type \"text/RED\". Registered/referenced in RFC4102.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/RED",
+    "reference_rfcs": [
+      "RFC4102"
+    ],
+    "raw_columns": {
+      "Name": "RED",
+      "Template": "text/RED",
+      "Reference": "[RFC4102]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/RED"
+  ]
+}

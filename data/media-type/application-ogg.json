@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-ogg",
+  "family": "media-type",
+  "slug": "application-ogg",
+  "title": "application/ogg",
+  "summary": "Media type \"application/ogg\". Registered/referenced in RFC5334, RFC7845.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ogg",
+    "reference_rfcs": [
+      "RFC5334",
+      "RFC7845"
+    ],
+    "raw_columns": {
+      "Name": "ogg",
+      "Template": "application/ogg",
+      "Reference": "[RFC5334][RFC7845]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ogg"
+  ]
+}

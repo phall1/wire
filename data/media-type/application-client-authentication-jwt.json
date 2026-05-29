@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-client-authentication-jwt",
+  "family": "media-type",
+  "slug": "application-client-authentication-jwt",
+  "title": "application/client-authentication+jwt",
+  "summary": "Media type \"application/client-authentication+jwt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/client-authentication+jwt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "client-authentication+jwt",
+      "Template": "application/client-authentication+jwt",
+      "Reference": "[RFC-ietf-oauth-rfc7523bis-11]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/client-authentication+jwt"
+  ]
+}

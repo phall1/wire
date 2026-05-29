@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/http-opportunistic",
+  "family": "well-known-uri",
+  "slug": "http-opportunistic",
+  "title": "/.well-known/http-opportunistic",
+  "summary": "Well-known URI suffix \"/.well-known/http-opportunistic\". IANA status: obsoleted. Defined in RFC8164.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "http-opportunistic",
+    "reference_rfcs": [
+      "RFC8164"
+    ],
+    "registration_date": "2017-03-20",
+    "raw_columns": {
+      "URI Suffix": "http-opportunistic",
+      "Reference": "[RFC8164, Section 2.3][Status change of HTTP experiments to Historic]",
+      "Status": "obsoleted",
+      "Change Controller": "IETF",
+      "Related Information": "",
+      "Date Registered": "2017-03-20",
+      "Date Modified": "2021-12-28"
+    }
+  },
+  "updated": "2026-05-29"
+}

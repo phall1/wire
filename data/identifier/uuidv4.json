@@ -1,0 +1,46 @@
+{
+  "id": "identifier/uuidv4",
+  "family": "identifier",
+  "slug": "uuidv4",
+  "title": "UUID Version 4 (random)",
+  "summary": "UUIDv4 is a 128-bit identifier that is random except for the 6 fixed bits: a 4-bit version (0b0100) and a 2-bit variant (0b10). The remaining 122 bits come from a cryptographically strong RNG, giving ~5.3e36 distinct values. It is the default UUID for most libraries because it needs no clock, MAC address, or coordination, at the cost of not being time-sortable.",
+  "kind": "identifier",
+  "aliases": [
+    "UUID v4",
+    "random UUID",
+    "version 4 UUID",
+    "GUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.4",
+  "source_version": "RFC 9562 §5.4",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv7",
+    "identifier/uuidv1",
+    "identifier/nanoid"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.4",
+    "example": "919108f7-52d1-4320-9bac-f847db4148a8",
+    "bit_layout": [
+      { "field": "rand_a", "bits": 48, "meaning": "Random bits." },
+      { "field": "ver", "bits": 4, "meaning": "version = 0b0100 (4)." },
+      { "field": "rand_b", "bits": 12, "meaning": "Random bits." },
+      { "field": "var", "bits": 2, "meaning": "variant = 0b10 (RFC 9562)." },
+      { "field": "rand_c", "bits": 62, "meaning": "Random bits." }
+    ],
+    "length_bits": 128,
+    "sortable": false,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "122 of the 128 bits are random; only the version (4 bits) and variant (2 bits) are fixed. The example's 13th hex char is '4' and the variant nibble begins '10' (here '9').",
+      "Not time-sortable and not deterministic; for database primary keys that benefit from index locality, prefer UUIDv7.",
+      "Random generation MUST use a cryptographically secure RNG (RFC 9562); Math.random()-style sources are non-conformant."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

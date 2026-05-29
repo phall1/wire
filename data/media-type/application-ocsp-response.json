@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-ocsp-response",
+  "family": "media-type",
+  "slug": "application-ocsp-response",
+  "title": "application/ocsp-response",
+  "summary": "Media type \"application/ocsp-response\". Registered/referenced in RFC6960.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ocsp-response",
+    "reference_rfcs": [
+      "RFC6960"
+    ],
+    "raw_columns": {
+      "Name": "ocsp-response",
+      "Template": "application/ocsp-response",
+      "Reference": "[RFC6960]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ocsp-response"
+  ]
+}

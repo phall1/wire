@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-1d-interleaved-parityfec",
+  "family": "media-type",
+  "slug": "application-1d-interleaved-parityfec",
+  "title": "application/1d-interleaved-parityfec",
+  "summary": "Media type \"application/1d-interleaved-parityfec\". Registered/referenced in RFC6015.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/1d-interleaved-parityfec",
+    "reference_rfcs": [
+      "RFC6015"
+    ],
+    "raw_columns": {
+      "Name": "1d-interleaved-parityfec",
+      "Template": "application/1d-interleaved-parityfec",
+      "Reference": "[RFC6015]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/1d-interleaved-parityfec"
+  ]
+}

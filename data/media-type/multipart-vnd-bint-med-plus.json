@@ -1,0 +1,28 @@
+{
+  "id": "media-type/multipart-vnd-bint-med-plus",
+  "family": "media-type",
+  "slug": "multipart-vnd-bint-med-plus",
+  "title": "multipart/vnd.bint.med-plus",
+  "summary": "Media type \"multipart/vnd.bint.med-plus\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/vnd.bint.med-plus",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.bint.med-plus",
+      "Template": "multipart/vnd.bint.med-plus",
+      "Reference": "[Heinz-Peter_Schütz]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/vnd.bint.med-plus"
+  ]
+}

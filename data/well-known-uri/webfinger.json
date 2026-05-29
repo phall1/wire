@@ -1,0 +1,32 @@
+{
+  "id": "well-known-uri/webfinger",
+  "family": "well-known-uri",
+  "slug": "webfinger",
+  "title": "/.well-known/webfinger",
+  "summary": "Well-known URI suffix \"/.well-known/webfinger\". IANA status: permanent. Defined in RFC7033.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "webfinger",
+    "reference_rfcs": [
+      "RFC7033"
+    ],
+    "registration_date": "2013-03-15",
+    "raw_columns": {
+      "URI Suffix": "webfinger",
+      "Reference": "[RFC7033]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "The query to the WebFinger resource will\ninclude one or more parameters in the query string; see Section 4.1\nof [RFC7033].  Resources at this location are able to return a JSON\nResource Descriptor (JRD) as described in Section 4.4 of [RFC7033].",
+      "Date Registered": "2013-03-15",
+      "Date Modified": "2013-09-06"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-vnd-dece-audio",
+  "family": "media-type",
+  "slug": "audio-vnd-dece-audio",
+  "title": "audio/vnd.dece.audio",
+  "summary": "Media type \"audio/vnd.dece.audio\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/vnd.dece.audio",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dece.audio",
+      "Template": "audio/vnd.dece.audio",
+      "Reference": "[Michael_A_Dolan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/vnd.dece.audio"
+  ]
+}

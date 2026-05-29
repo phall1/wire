@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-emergencycalldata-comment-xml",
+  "family": "media-type",
+  "slug": "application-emergencycalldata-comment-xml",
+  "title": "application/EmergencyCallData.Comment+xml",
+  "summary": "Media type \"application/EmergencyCallData.Comment+xml\". Registered/referenced in RFC7852.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/EmergencyCallData.Comment+xml",
+    "reference_rfcs": [
+      "RFC7852"
+    ],
+    "raw_columns": {
+      "Name": "EmergencyCallData.Comment+xml",
+      "Template": "application/EmergencyCallData.Comment+xml",
+      "Reference": "[RFC7852]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/EmergencyCallData.Comment+xml"
+  ]
+}

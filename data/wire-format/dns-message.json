@@ -1,0 +1,41 @@
+{
+  "id": "wire-format/dns-message",
+  "family": "wire-format",
+  "slug": "dns-message",
+  "title": "DNS message format",
+  "summary": "A DNS message is a 12-byte header followed by four sections: Question, Answer, Authority, and Additional. The header carries the transaction ID, flags (QR, Opcode, AA, TC, RD, RA, RCODE), and the four section counts (QDCOUNT/ANCOUNT/NSCOUNT/ARCOUNT). Names use length-prefixed labels with a compression pointer scheme.",
+  "kind": "wire-format",
+  "aliases": ["DNS packet", "DNS wire format", "resource record message"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc1035#section-4",
+  "source_version": "RFC 1035 (Domain Names - Implementation and Specification), Section 4 Messages",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/udp-header", "dns-rrtype/AAAA"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 1035",
+    "summary": "12-byte header + Question/Answer/Authority/Additional sections. Resource records share a TYPE/CLASS/TTL/RDLENGTH/RDATA layout — RDLENGTH then RDATA is itself a length-value (TLV-like) framing. Domain names are sequences of length-prefixed labels ending in a zero-length root label; a label whose top two bits are 11 is a 14-bit offset compression pointer.",
+    "structure": [
+      { "field": "ID", "size": "16 bits", "meaning": "Transaction identifier matching a response to its query." },
+      { "field": "Flags", "size": "16 bits", "meaning": "QR (query/response), Opcode (4 bits), AA, TC (truncated), RD, RA, Z (3 bits), RCODE (4 bits, error code)." },
+      { "field": "QDCOUNT", "size": "16 bits", "meaning": "Number of entries in the Question section." },
+      { "field": "ANCOUNT", "size": "16 bits", "meaning": "Number of resource records in the Answer section." },
+      { "field": "NSCOUNT", "size": "16 bits", "meaning": "Number of name-server resource records in the Authority section." },
+      { "field": "ARCOUNT", "size": "16 bits", "meaning": "Number of resource records in the Additional section." },
+      { "field": "Question section", "size": "variable", "meaning": "QDCOUNT entries of QNAME (labels) + QTYPE (16 bits) + QCLASS (16 bits)." },
+      { "field": "Answer / Authority / Additional", "size": "variable", "meaning": "Resource records: NAME + TYPE(16) + CLASS(16) + TTL(32) + RDLENGTH(16) + RDATA(RDLENGTH bytes)." }
+    ],
+    "example_hex": "AA AA 01 00 00 01 00 00 00 00 00 00",
+    "example_decoded": "ID 0xAAAA; flags 0x0100 = standard query, recursion desired (RD=1); QDCOUNT 1, ANCOUNT/NSCOUNT/ARCOUNT 0 — i.e. a recursive query with one question and no records yet.",
+    "see": ["dns-rrtype/AAAA"],
+    "notes": [
+      "Each resource record's RDLENGTH + RDATA is a length-then-value field, so the parser can skip record types it doesn't understand.",
+      "Name compression: a label byte with top bits 11 introduces a 14-bit pointer to an earlier name in the message, avoiding repetition.",
+      "Over UDP a response exceeding 512 bytes (or the EDNS0-advertised size) sets the TC bit, prompting a TCP retry.",
+      "QTYPE/QCLASS and the RR TYPE values come from the IANA DNS parameters registry (see dns-rrtype family)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

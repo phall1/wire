@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-debian-copyright",
+  "family": "media-type",
+  "slug": "text-vnd-debian-copyright",
+  "title": "text/vnd.debian.copyright",
+  "summary": "Media type \"text/vnd.debian.copyright\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.debian.copyright",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.debian.copyright",
+      "Template": "text/vnd.debian.copyright",
+      "Reference": "[Charles_Plessy]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.debian.copyright"
+  ]
+}

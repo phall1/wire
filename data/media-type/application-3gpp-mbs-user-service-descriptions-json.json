@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-3gpp-mbs-user-service-descriptions-json",
+  "family": "media-type",
+  "slug": "application-3gpp-mbs-user-service-descriptions-json",
+  "title": "application/3gpp-mbs-user-service-descriptions+json",
+  "summary": "Media type \"application/3gpp-mbs-user-service-descriptions+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/3gpp-mbs-user-service-descriptions+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "3gpp-mbs-user-service-descriptions+json",
+      "Template": "application/3gpp-mbs-user-service-descriptions+json",
+      "Reference": "[_3GPP_TSG_SA_WG4][Dongwook_Kim]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/3gpp-mbs-user-service-descriptions+json"
+  ]
+}

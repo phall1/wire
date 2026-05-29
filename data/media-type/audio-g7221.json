@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-g7221",
+  "family": "media-type",
+  "slug": "audio-g7221",
+  "title": "audio/G7221",
+  "summary": "Media type \"audio/G7221\". Registered/referenced in RFC5577.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/G7221",
+    "reference_rfcs": [
+      "RFC5577"
+    ],
+    "raw_columns": {
+      "Name": "G7221",
+      "Template": "audio/G7221",
+      "Reference": "[RFC5577]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/G7221"
+  ]
+}

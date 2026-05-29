@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-h264-rcdo",
+  "family": "media-type",
+  "slug": "video-h264-rcdo",
+  "title": "video/H264-RCDO",
+  "summary": "Media type \"video/H264-RCDO\". Registered/referenced in RFC6185.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/H264-RCDO",
+    "reference_rfcs": [
+      "RFC6185"
+    ],
+    "raw_columns": {
+      "Name": "H264-RCDO",
+      "Template": "video/H264-RCDO",
+      "Reference": "[RFC6185]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/H264-RCDO"
+  ]
+}

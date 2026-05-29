@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-cstadata-xml",
+  "family": "media-type",
+  "slug": "application-cstadata-xml",
+  "title": "application/CSTAdata+xml",
+  "summary": "Media type \"application/CSTAdata+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/CSTAdata+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "CSTAdata+xml",
+      "Template": "application/CSTAdata+xml",
+      "Reference": "[Ecma_International_Helpdesk]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/CSTAdata+xml"
+  ]
+}

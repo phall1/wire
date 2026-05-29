@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-lgr-xml",
+  "family": "media-type",
+  "slug": "application-lgr-xml",
+  "title": "application/lgr+xml",
+  "summary": "Media type \"application/lgr+xml\". Registered/referenced in RFC7940.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/lgr+xml",
+    "reference_rfcs": [
+      "RFC7940"
+    ],
+    "raw_columns": {
+      "Name": "lgr+xml",
+      "Template": "application/lgr+xml",
+      "Reference": "[RFC7940]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/lgr+xml"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/image-g3fax",
+  "family": "media-type",
+  "slug": "image-g3fax",
+  "title": "image/g3fax",
+  "summary": "Media type \"image/g3fax\". Registered/referenced in RFC1494.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/g3fax",
+    "reference_rfcs": [
+      "RFC1494"
+    ],
+    "raw_columns": {
+      "Name": "g3fax",
+      "Template": "image/g3fax",
+      "Reference": "[RFC1494]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/g3fax"
+  ]
+}

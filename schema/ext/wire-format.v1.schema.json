@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/ext/wire-format.v1.schema.json",
+  "title": "ext_type: wire-format@1",
+  "description": "Extension block for binary wire formats and serialization framings — the byte-level layout of a unit on the wire (TCP/IPv4/UDP headers, DNS message, WebSocket frame, MQTT fixed header, protobuf field, ASN.1 BER/DER TLV, LEB128 varint, CBOR/MessagePack items). Captures the field-by-field structure plus an illustrative hex example. Hex strings are written in plain printable form (space- or unspaced hex digits), never as literal control bytes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["spec"],
+  "properties": {
+    "spec": {
+      "type": "string",
+      "description": "The defining specification, normalized where possible (e.g. 'RFC793', 'RFC791', 'ITU-T X.690', 'protobuf encoding docs'). Single canonical reference; cross-references go in core see_also / attribution."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Optional one-paragraph plain-text description of the format and, where relevant, the TLV (tag-length-value) pattern it embodies."
+    },
+    "structure": {
+      "type": "array",
+      "description": "Ordered field layout of one unit on the wire. Each row is one field with its size and meaning, top-to-bottom / first-to-last on the wire.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "size", "meaning"],
+        "properties": {
+          "field": { "type": "string", "description": "Field name, e.g. 'Source Port', 'Tag', 'Length', 'Value', 'Flags'." },
+          "size": { "type": "string", "description": "Field width as printed in the spec, e.g. '16 bits', '4 bits', '1-9 bytes', 'variable', '32 bits'." },
+          "meaning": { "type": "string", "description": "What the field carries / how it is interpreted." }
+        }
+      }
+    },
+    "example_hex": {
+      "type": "string",
+      "description": "Optional illustrative encoding of one concrete unit, as printable hex (space-separated or contiguous hex digits). No literal control bytes." },
+    "example_decoded": {
+      "type": "string",
+      "description": "Optional human-readable decoding of `example_hex`, explaining what each chunk means."
+    },
+    "see": {
+      "type": "array",
+      "description": "Optional related entry ids within wire.phall.io (mirrors core see_also for renderer convenience).",
+      "items": { "type": "string" }
+    },
+    "notes": {
+      "type": "array",
+      "description": "Optional format-level gotchas / clarifications. Free text, one per item.",
+      "items": { "type": "string" }
+    }
+  }
+}

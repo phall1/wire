@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cpl-xml",
+  "family": "media-type",
+  "slug": "application-cpl-xml",
+  "title": "application/cpl+xml",
+  "summary": "Media type \"application/cpl+xml\". Registered/referenced in RFC3880.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cpl+xml",
+    "reference_rfcs": [
+      "RFC3880"
+    ],
+    "raw_columns": {
+      "Name": "cpl+xml",
+      "Template": "application/cpl+xml",
+      "Reference": "[RFC3880]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cpl+xml"
+  ]
+}

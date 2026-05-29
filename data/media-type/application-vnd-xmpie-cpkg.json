@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-xmpie-cpkg",
+  "family": "media-type",
+  "slug": "application-vnd-xmpie-cpkg",
+  "title": "application/vnd.xmpie.cpkg",
+  "summary": "Media type \"application/vnd.xmpie.cpkg\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.xmpie.cpkg",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.xmpie.cpkg",
+      "Template": "application/vnd.xmpie.cpkg",
+      "Reference": "[Reuven_Sherwin]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.xmpie.cpkg"
+  ]
+}

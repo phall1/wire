@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-mp2p",
+  "family": "media-type",
+  "slug": "video-mp2p",
+  "title": "video/MP2P",
+  "summary": "Media type \"video/MP2P\". Registered/referenced in RFC3555.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/MP2P",
+    "reference_rfcs": [
+      "RFC3555"
+    ],
+    "raw_columns": {
+      "Name": "MP2P",
+      "Template": "video/MP2P",
+      "Reference": "[RFC3555]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/MP2P"
+  ]
+}

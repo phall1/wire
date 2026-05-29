@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-rpki-updown",
+  "family": "media-type",
+  "slug": "application-rpki-updown",
+  "title": "application/rpki-updown",
+  "summary": "Media type \"application/rpki-updown\". Registered/referenced in RFC6492.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/rpki-updown",
+    "reference_rfcs": [
+      "RFC6492"
+    ],
+    "raw_columns": {
+      "Name": "rpki-updown",
+      "Template": "application/rpki-updown",
+      "Reference": "[RFC6492]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/rpki-updown"
+  ]
+}

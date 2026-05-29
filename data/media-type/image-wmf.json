@@ -1,0 +1,30 @@
+{
+  "id": "media-type/image-wmf",
+  "family": "media-type",
+  "slug": "image-wmf",
+  "title": "image/wmf",
+  "summary": "Media type \"image/wmf\". Registered/referenced in RFC7903.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/wmf",
+    "reference_rfcs": [
+      "RFC7903"
+    ],
+    "raw_columns": {
+      "Name": "wmf",
+      "Template": "image/wmf",
+      "Reference": "[RFC7903]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/wmf"
+  ]
+}

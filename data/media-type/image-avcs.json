@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-avcs",
+  "family": "media-type",
+  "slug": "image-avcs",
+  "title": "image/avcs",
+  "summary": "Media type \"image/avcs\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/avcs",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "avcs",
+      "Template": "image/avcs",
+      "Reference": "[ISO-IEC_JTC_1][David_Singer]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/avcs"
+  ]
+}

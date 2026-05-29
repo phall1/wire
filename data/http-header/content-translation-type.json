@@ -1,0 +1,31 @@
+{
+  "id": "http-header/content-translation-type",
+  "family": "http-header",
+  "slug": "content-translation-type",
+  "title": "Content-Translation-Type",
+  "summary": "Message header field \"Content-Translation-Type\" (protocol: MIME), status standard. Defined in RFC8255.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Content-Translation-Type",
+    "reference_rfcs": [
+      "RFC8255"
+    ],
+    "raw_columns": {
+      "value": "Content-Translation-Type",
+      "protocol": "MIME",
+      "status": "standard",
+      "Reference": "[RFC8255]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Content-Translation-Type"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-st2110-41",
+  "family": "media-type",
+  "slug": "application-st2110-41",
+  "title": "application/ST2110-41",
+  "summary": "Media type \"application/ST2110-41\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ST2110-41",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "ST2110-41",
+      "Template": "application/ST2110-41",
+      "Reference": "[SMPTE][SMPTE_Director_of_Standards_Development]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ST2110-41"
+  ]
+}

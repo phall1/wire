@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-http",
+  "family": "media-type",
+  "slug": "message-http",
+  "title": "message/http",
+  "summary": "Media type \"message/http\". Registered/referenced in RFC9112.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/http",
+    "reference_rfcs": [
+      "RFC9112"
+    ],
+    "raw_columns": {
+      "Name": "http",
+      "Template": "message/http",
+      "Reference": "[RFC9112]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/http"
+  ]
+}

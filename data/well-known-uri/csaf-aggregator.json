@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/csaf-aggregator",
+  "family": "well-known-uri",
+  "slug": "csaf-aggregator",
+  "title": "/.well-known/csaf-aggregator",
+  "summary": "Well-known URI suffix \"/.well-known/csaf-aggregator\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "csaf-aggregator",
+    "reference_rfcs": [],
+    "registration_date": "2023-02-10",
+    "raw_columns": {
+      "URI Suffix": "csaf-aggregator",
+      "Reference": "[Common Security Advisory Framework Version 2.0, OASIS Standard]",
+      "Status": "provisional",
+      "Change Controller": "[OASIS_Open]",
+      "Related Information": "",
+      "Date Registered": "2023-02-10",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/p3pv1",
+  "family": "link-relation",
+  "slug": "p3pv1",
+  "title": "p3pv1",
+  "summary": "Link relation type \"p3pv1\": Refers to a P3P privacy policy for the context.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "p3pv1",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "p3pv1",
+      "Description": "Refers to a P3P privacy policy for the context.",
+      "Reference": "[The Platform for Privacy Preferences 1.0 (P3P1.0) Specification]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/license",
+  "family": "link-relation",
+  "slug": "license",
+  "title": "license",
+  "summary": "Link relation type \"license\": Refers to a license associated with this context. Defined in RFC4946.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "license",
+    "reference_rfcs": [
+      "RFC4946"
+    ],
+    "raw_columns": {
+      "Relation Name": "license",
+      "Description": "Refers to a license associated with this context.",
+      "Reference": "[RFC4946]",
+      "Notes": "For implications of use in HTML, see: http://www.w3.org/TR/html5/links.html#link-type-license"
+    }
+  },
+  "updated": "2026-05-29"
+}

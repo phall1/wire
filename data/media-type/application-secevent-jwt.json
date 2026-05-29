@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-secevent-jwt",
+  "family": "media-type",
+  "slug": "application-secevent-jwt",
+  "title": "application/secevent+jwt",
+  "summary": "Media type \"application/secevent+jwt\". Registered/referenced in RFC8417.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/secevent+jwt",
+    "reference_rfcs": [
+      "RFC8417"
+    ],
+    "raw_columns": {
+      "Name": "secevent+jwt",
+      "Template": "application/secevent+jwt",
+      "Reference": "[RFC8417]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/secevent+jwt"
+  ]
+}

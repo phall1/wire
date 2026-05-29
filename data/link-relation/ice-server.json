@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/ice-server",
+  "family": "link-relation",
+  "slug": "ice-server",
+  "title": "ice-server",
+  "summary": "Link relation type \"ice-server\": Conveys the STUN and TURN servers that can be used by an ICE agent to establish a connection with a peer. Defined in RFC9725.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ice-server",
+    "reference_rfcs": [
+      "RFC9725"
+    ],
+    "raw_columns": {
+      "Relation Name": "ice-server",
+      "Description": "Conveys the STUN and TURN servers that can be used by an ICE agent to establish a connection with a peer.",
+      "Reference": "[RFC9725]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

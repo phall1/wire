@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-moml-xml",
+  "family": "media-type",
+  "slug": "model-vnd-moml-xml",
+  "title": "model/vnd.moml+xml",
+  "summary": "Media type \"model/vnd.moml+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.moml+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.moml+xml",
+      "Template": "model/vnd.moml+xml",
+      "Reference": "[Christopher_Brooks]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.moml+xml"
+  ]
+}

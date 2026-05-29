@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-pkcs7-mime",
+  "family": "media-type",
+  "slug": "application-pkcs7-mime",
+  "title": "application/pkcs7-mime",
+  "summary": "Media type \"application/pkcs7-mime\". Registered/referenced in RFC8551, RFC7114.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pkcs7-mime",
+    "reference_rfcs": [
+      "RFC8551",
+      "RFC7114"
+    ],
+    "raw_columns": {
+      "Name": "pkcs7-mime",
+      "Template": "application/pkcs7-mime",
+      "Reference": "[RFC8551][RFC7114]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pkcs7-mime"
+  ]
+}

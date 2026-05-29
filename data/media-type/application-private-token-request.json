@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-private-token-request",
+  "family": "media-type",
+  "slug": "application-private-token-request",
+  "title": "application/private-token-request",
+  "summary": "Media type \"application/private-token-request\". Registered/referenced in RFC9578.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/private-token-request",
+    "reference_rfcs": [
+      "RFC9578"
+    ],
+    "raw_columns": {
+      "Name": "private-token-request",
+      "Template": "application/private-token-request",
+      "Reference": "[RFC9578]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/private-token-request"
+  ]
+}

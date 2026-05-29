@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-radgamettools-bink",
+  "family": "media-type",
+  "slug": "video-vnd-radgamettools-bink",
+  "title": "video/vnd.radgamettools.bink",
+  "summary": "Media type \"video/vnd.radgamettools.bink\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.radgamettools.bink",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.radgamettools.bink",
+      "Template": "video/vnd.radgamettools.bink",
+      "Reference": "[Henrik_Andersson]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.radgamettools.bink"
+  ]
+}

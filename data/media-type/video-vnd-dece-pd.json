@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-dece-pd",
+  "family": "media-type",
+  "slug": "video-vnd-dece-pd",
+  "title": "video/vnd.dece.pd",
+  "summary": "Media type \"video/vnd.dece.pd\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.dece.pd",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dece.pd",
+      "Template": "video/vnd.dece.pd",
+      "Reference": "[Michael_A_Dolan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.dece.pd"
+  ]
+}

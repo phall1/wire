@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-dialog-info-xml",
+  "family": "media-type",
+  "slug": "application-dialog-info-xml",
+  "title": "application/dialog-info+xml",
+  "summary": "Media type \"application/dialog-info+xml\". Registered/referenced in RFC4235.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/dialog-info+xml",
+    "reference_rfcs": [
+      "RFC4235"
+    ],
+    "raw_columns": {
+      "Name": "dialog-info+xml",
+      "Template": "application/dialog-info+xml",
+      "Reference": "[RFC4235]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/dialog-info+xml"
+  ]
+}

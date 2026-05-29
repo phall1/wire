@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-vnd-presonus-multitrack",
+  "family": "media-type",
+  "slug": "audio-vnd-presonus-multitrack",
+  "title": "audio/vnd.presonus.multitrack",
+  "summary": "Media type \"audio/vnd.presonus.multitrack\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/vnd.presonus.multitrack",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.presonus.multitrack",
+      "Template": "audio/vnd.presonus.multitrack",
+      "Reference": "[Matthias_Juwan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/vnd.presonus.multitrack"
+  ]
+}

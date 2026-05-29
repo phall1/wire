@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-parityfec",
+  "family": "media-type",
+  "slug": "video-parityfec",
+  "title": "video/parityfec",
+  "summary": "Media type \"video/parityfec\". Registered/referenced in RFC3009.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/parityfec",
+    "reference_rfcs": [
+      "RFC3009"
+    ],
+    "raw_columns": {
+      "Name": "parityfec",
+      "Template": "video/parityfec",
+      "Reference": "[RFC3009]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/parityfec"
+  ]
+}

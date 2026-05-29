@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-pkix-cert",
+  "family": "media-type",
+  "slug": "application-pkix-cert",
+  "title": "application/pkix-cert",
+  "summary": "Media type \"application/pkix-cert\". Registered/referenced in RFC2585.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pkix-cert",
+    "reference_rfcs": [
+      "RFC2585"
+    ],
+    "raw_columns": {
+      "Name": "pkix-cert",
+      "Template": "application/pkix-cert",
+      "Reference": "[RFC2585]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pkix-cert"
+  ]
+}

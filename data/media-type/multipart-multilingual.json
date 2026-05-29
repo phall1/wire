@@ -1,0 +1,30 @@
+{
+  "id": "media-type/multipart-multilingual",
+  "family": "media-type",
+  "slug": "multipart-multilingual",
+  "title": "multipart/multilingual",
+  "summary": "Media type \"multipart/multilingual\". Registered/referenced in RFC8255.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/multilingual",
+    "reference_rfcs": [
+      "RFC8255"
+    ],
+    "raw_columns": {
+      "Name": "multilingual",
+      "Template": "multipart/multilingual",
+      "Reference": "[RFC8255]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/multilingual"
+  ]
+}

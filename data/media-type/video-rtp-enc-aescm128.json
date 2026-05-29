@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-rtp-enc-aescm128",
+  "family": "media-type",
+  "slug": "video-rtp-enc-aescm128",
+  "title": "video/rtp-enc-aescm128",
+  "summary": "Media type \"video/rtp-enc-aescm128\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/rtp-enc-aescm128",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "rtp-enc-aescm128",
+      "Template": "video/rtp-enc-aescm128",
+      "Reference": "[_3GPP]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/rtp-enc-aescm128"
+  ]
+}

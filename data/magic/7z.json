@@ -1,0 +1,45 @@
+{
+  "id": "magic/7z",
+  "family": "magic",
+  "slug": "7z",
+  "title": "7-Zip signature (37 7A BC AF 27 1C)",
+  "summary": "A 7-Zip archive begins with the 6-byte signature '7z' (0x37 0x7A) followed by the fixed bytes 0xBC 0xAF 0x27 0x1C, then a 2-byte format version.",
+  "kind": "signature",
+  "aliases": ["7z magic", "7-Zip"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://py7zr.readthedocs.io/en/latest/archive_format.html",
+  "source_version": "7z archive format documentation (signature header '7z\\xbc\\xaf\\x27\\x1c')",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://py7zr.readthedocs.io/en/latest/archive_format.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Signature header: kSignature = '7z' 0xBC 0xAF 0x27 0x1C, then 2-byte ArchiveVersion."
+    },
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates 37 7A BC AF 27 1C as the 7-Zip signature."
+    }
+  ],
+  "see_also": ["magic/zip", "magic/rar", "magic/gzip"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "37 7A BC AF 27 1C",
+    "offset": 0,
+    "magic_ascii": "7z\\xbc\\xaf'\\x1c",
+    "extensions": ["7z"],
+    "mime": "application/x-7z-compressed",
+    "spec": "7z archive format",
+    "notes": [
+      "Bytes 0-1: '7z' (37 7A). Bytes 2-5: fixed BC AF 27 1C.",
+      "Bytes 6-7: format version (e.g. 00 04).",
+      "Followed by a start-header CRC and a pointer to the end header that holds the actual archive metadata."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

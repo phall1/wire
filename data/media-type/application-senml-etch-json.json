@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-senml-etch-json",
+  "family": "media-type",
+  "slug": "application-senml-etch-json",
+  "title": "application/senml-etch+json",
+  "summary": "Media type \"application/senml-etch+json\". Registered/referenced in RFC8790.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/senml-etch+json",
+    "reference_rfcs": [
+      "RFC8790"
+    ],
+    "raw_columns": {
+      "Name": "senml-etch+json",
+      "Template": "application/senml-etch+json",
+      "Reference": "[RFC8790]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/senml-etch+json"
+  ]
+}

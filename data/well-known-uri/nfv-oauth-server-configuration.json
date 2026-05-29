@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/nfv-oauth-server-configuration",
+  "family": "well-known-uri",
+  "slug": "nfv-oauth-server-configuration",
+  "title": "/.well-known/nfv-oauth-server-configuration",
+  "summary": "Well-known URI suffix \"/.well-known/nfv-oauth-server-configuration\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "nfv-oauth-server-configuration",
+    "reference_rfcs": [],
+    "registration_date": "2019-06-26",
+    "raw_columns": {
+      "URI Suffix": "nfv-oauth-server-configuration",
+      "Reference": "[ETSI GS NFV-SEC 022 V2.7.1]",
+      "Status": "permanent",
+      "Change Controller": "[ETSI]",
+      "Related Information": "",
+      "Date Registered": "2019-06-26",
+      "Date Modified": "2020-01-22"
+    }
+  },
+  "updated": "2026-05-29"
+}

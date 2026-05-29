@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-hal-xml",
+  "family": "media-type",
+  "slug": "application-vnd-hal-xml",
+  "title": "application/vnd.hal+xml",
+  "summary": "Media type \"application/vnd.hal+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.hal+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.hal+xml",
+      "Template": "application/vnd.hal+xml",
+      "Reference": "[Mike_Kelly]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.hal+xml"
+  ]
+}

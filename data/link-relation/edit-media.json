@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/edit-media",
+  "family": "link-relation",
+  "slug": "edit-media",
+  "title": "edit-media",
+  "summary": "Link relation type \"edit-media\": Refers to a resource that can be used to edit media\n      associated with the link's context. Defined in RFC5023.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "edit-media",
+    "reference_rfcs": [
+      "RFC5023"
+    ],
+    "raw_columns": {
+      "Relation Name": "edit-media",
+      "Description": "Refers to a resource that can be used to edit media\n      associated with the link's context.",
+      "Reference": "[RFC5023]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

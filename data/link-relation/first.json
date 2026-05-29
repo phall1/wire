@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/first",
+  "family": "link-relation",
+  "slug": "first",
+  "title": "first",
+  "summary": "Link relation type \"first\": An IRI that refers to the furthest preceding resource\n    in a series of resources. Defined in RFC8288.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "first",
+    "reference_rfcs": [
+      "RFC8288"
+    ],
+    "raw_columns": {
+      "Relation Name": "first",
+      "Description": "An IRI that refers to the furthest preceding resource\n    in a series of resources.",
+      "Reference": "[RFC8288]",
+      "Notes": "This relation type registration did not indicate a\n      reference.  Originally requested by Mark Nottingham in December\n      2004."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "identifier/nanoid",
+  "family": "identifier",
+  "slug": "nanoid",
+  "title": "Nano ID",
+  "summary": "Nano ID is a compact, URL-safe random string identifier: by default 21 characters drawn uniformly from a 64-symbol alphabet 'A-Za-z0-9_-', giving 126 bits of entropy (collision odds comparable to UUIDv4). It has no internal structure, timestamp, or fixed binary width — it is purely random — so it is not time-sortable, but it is shorter than a UUID and safe in URLs and filenames.",
+  "kind": "identifier",
+  "aliases": [
+    "nanoid",
+    "Nano ID",
+    "nano-id"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://github.com/ai/nanoid",
+  "source_version": "ai/nanoid (unversioned)",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv4",
+    "identifier/ulid"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Nano ID (github.com/ai/nanoid)",
+    "example": "V1StGXR8_Z5jdHi6B-myT",
+    "length_bits": 126,
+    "sortable": false,
+    "encoding": "URL-safe alphabet A-Za-z0-9_- (64 symbols), default 21 characters",
+    "notes": [
+      "No fixed binary layout: every character is independent uniform randomness from a 64-symbol alphabet, so there is no bit_layout, timestamp, or version field.",
+      "Default size 21 chars * log2(64) = 126 bits of entropy, slightly more than UUIDv4's 122; the alphabet and length are configurable.",
+      "URL- and filename-safe ('_' and '-' instead of base64's '+'/'/'); not sortable and not deterministic.",
+      "Example V1StGXR8_Z5jdHi6B-myT is the README sample."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

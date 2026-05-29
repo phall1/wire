@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-calendar-json",
+  "family": "media-type",
+  "slug": "application-calendar-json",
+  "title": "application/calendar+json",
+  "summary": "Media type \"application/calendar+json\". Registered/referenced in RFC7265.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/calendar+json",
+    "reference_rfcs": [
+      "RFC7265"
+    ],
+    "raw_columns": {
+      "Name": "calendar+json",
+      "Template": "application/calendar+json",
+      "Reference": "[RFC7265]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/calendar+json"
+  ]
+}

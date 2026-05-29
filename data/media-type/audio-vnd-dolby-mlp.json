@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-vnd-dolby-mlp",
+  "family": "media-type",
+  "slug": "audio-vnd-dolby-mlp",
+  "title": "audio/vnd.dolby.mlp",
+  "summary": "Media type \"audio/vnd.dolby.mlp\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/vnd.dolby.mlp",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dolby.mlp",
+      "Template": "audio/vnd.dolby.mlp",
+      "Reference": "[Mike_Ward]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/vnd.dolby.mlp"
+  ]
+}

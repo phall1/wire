@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-rtp-enc-aescm128",
+  "family": "media-type",
+  "slug": "audio-rtp-enc-aescm128",
+  "title": "audio/rtp-enc-aescm128",
+  "summary": "Media type \"audio/rtp-enc-aescm128\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/rtp-enc-aescm128",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "rtp-enc-aescm128",
+      "Template": "audio/rtp-enc-aescm128",
+      "Reference": "[_3GPP]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/rtp-enc-aescm128"
+  ]
+}

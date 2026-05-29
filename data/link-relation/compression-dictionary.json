@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/compression-dictionary",
+  "family": "link-relation",
+  "slug": "compression-dictionary",
+  "title": "compression-dictionary",
+  "summary": "Link relation type \"compression-dictionary\": Refers to a compression dictionary used for content encoding. Defined in RFC9842.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "compression-dictionary",
+    "reference_rfcs": [
+      "RFC9842"
+    ],
+    "raw_columns": {
+      "Relation Name": "compression-dictionary",
+      "Description": "Refers to a compression dictionary used for content encoding.",
+      "Reference": "[RFC 9842, Section 3]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

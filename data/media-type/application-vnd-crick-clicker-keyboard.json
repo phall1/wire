@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-crick-clicker-keyboard",
+  "family": "media-type",
+  "slug": "application-vnd-crick-clicker-keyboard",
+  "title": "application/vnd.crick.clicker.keyboard",
+  "summary": "Media type \"application/vnd.crick.clicker.keyboard\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.crick.clicker.keyboard",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.crick.clicker.keyboard",
+      "Template": "application/vnd.crick.clicker.keyboard",
+      "Reference": "[Andrew_Burt]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.crick.clicker.keyboard"
+  ]
+}

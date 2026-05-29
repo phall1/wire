@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-valve-source-texture",
+  "family": "media-type",
+  "slug": "image-vnd-valve-source-texture",
+  "title": "image/vnd.valve.source.texture",
+  "summary": "Media type \"image/vnd.valve.source.texture\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.valve.source.texture",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.valve.source.texture",
+      "Template": "image/vnd.valve.source.texture",
+      "Reference": "[Henrik_Andersson]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.valve.source.texture"
+  ]
+}

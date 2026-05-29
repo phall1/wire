@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-sep-exi",
+  "family": "media-type",
+  "slug": "application-sep-exi",
+  "title": "application/sep-exi",
+  "summary": "Media type \"application/sep-exi\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/sep-exi",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "sep-exi",
+      "Template": "application/sep-exi",
+      "Reference": "[Robby_Simpson][IEEE]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/sep-exi"
+  ]
+}

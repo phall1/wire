@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/dnt-policy.txt",
+  "family": "well-known-uri",
+  "slug": "dnt-policy.txt",
+  "title": "/.well-known/dnt-policy.txt",
+  "summary": "Well-known URI suffix \"/.well-known/dnt-policy.txt\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "dnt-policy.txt",
+    "reference_rfcs": [],
+    "registration_date": "2015-08-19",
+    "raw_columns": {
+      "URI Suffix": "dnt-policy.txt",
+      "Reference": "[https://www.eff.org/dnt-policy]",
+      "Status": "permanent",
+      "Change Controller": "Electronic Frontier Foundation",
+      "Related Information": "",
+      "Date Registered": "2015-08-19",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

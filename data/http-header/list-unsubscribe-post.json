@@ -1,0 +1,31 @@
+{
+  "id": "http-header/list-unsubscribe-post",
+  "family": "http-header",
+  "slug": "list-unsubscribe-post",
+  "title": "List-Unsubscribe-Post",
+  "summary": "Message header field \"List-Unsubscribe-Post\" (protocol: mail), status standard. Defined in RFC8058.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "List-Unsubscribe-Post",
+    "reference_rfcs": [
+      "RFC8058"
+    ],
+    "raw_columns": {
+      "value": "List-Unsubscribe-Post",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC8058]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "List-Unsubscribe-Post"
+  ]
+}

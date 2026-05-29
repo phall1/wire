@@ -1,0 +1,45 @@
+{
+  "id": "magic/matroska-webm",
+  "family": "magic",
+  "slug": "matroska-webm",
+  "title": "Matroska / WebM signature (EBML 1A 45 DF A3)",
+  "summary": "Matroska (.mkv) and WebM files are EBML documents; they begin with the 4-byte EBML header magic 0x1A 0x45 0xDF 0xA3. The DocType element later in the header distinguishes 'matroska' from 'webm'.",
+  "kind": "signature",
+  "aliases": ["Matroska magic", "WebM magic", "EBML header", "MKV"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc8794#section-4.1",
+  "source_version": "RFC 8794 (EBML), Section 4.1 EBML Header (EBML element ID 0x1A45DFA3)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc8794#section-4.1",
+      "source_version": "RFC 8794",
+      "note": "Every EBML document starts with the EBML Header element whose ID is 0x1A45DFA3."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://www.matroska.org/technical/elements.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "DocType element ('matroska' vs 'webm') inside the EBML header distinguishes the two profiles; both share the 1A 45 DF A3 magic."
+    }
+  ],
+  "see_also": ["magic/ogg", "magic/webp"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "1A 45 DF A3",
+    "offset": 0,
+    "magic_ascii": "\\x1aE\\xdf\\xa3",
+    "extensions": ["mkv", "mka", "mks", "webm"],
+    "mime": "video/x-matroska",
+    "spec": "RFC 8794 (EBML) + Matroska/WebM specifications",
+    "notes": [
+      "1A 45 DF A3 is the EBML Header element ID, shared by all EBML documents (Matroska, WebM).",
+      "The DocType child element holds the ASCII string 'matroska' or 'webm'; that is what tells them apart.",
+      "WebM is a constrained Matroska profile (VP8/VP9/AV1 video, Vorbis/Opus audio)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

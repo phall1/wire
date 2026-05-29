@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/privacy-policy",
+  "family": "link-relation",
+  "slug": "privacy-policy",
+  "title": "privacy-policy",
+  "summary": "Link relation type \"privacy-policy\": Refers to a privacy policy associated with the link's context. Defined in RFC6903.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "privacy-policy",
+    "reference_rfcs": [
+      "RFC6903"
+    ],
+    "raw_columns": {
+      "Relation Name": "privacy-policy",
+      "Description": "Refers to a privacy policy associated with the link's context.",
+      "Reference": "[RFC6903], section 4",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

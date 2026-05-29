@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-vnd-dolby-heaac-2",
+  "family": "media-type",
+  "slug": "audio-vnd-dolby-heaac-2",
+  "title": "audio/vnd.dolby.heaac.2",
+  "summary": "Media type \"audio/vnd.dolby.heaac.2\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/vnd.dolby.heaac.2",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.dolby.heaac.2",
+      "Template": "audio/vnd.dolby.heaac.2",
+      "Reference": "[Steve_Hattersley]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/vnd.dolby.heaac.2"
+  ]
+}

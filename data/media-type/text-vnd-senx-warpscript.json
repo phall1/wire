@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-senx-warpscript",
+  "family": "media-type",
+  "slug": "text-vnd-senx-warpscript",
+  "title": "text/vnd.senx.warpscript",
+  "summary": "Media type \"text/vnd.senx.warpscript\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.senx.warpscript",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.senx.warpscript",
+      "Template": "text/vnd.senx.warpscript",
+      "Reference": "[Pierre_Papin]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.senx.warpscript"
+  ]
+}

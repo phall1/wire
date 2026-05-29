@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-chess-pgn",
+  "family": "media-type",
+  "slug": "application-vnd-chess-pgn",
+  "title": "application/vnd.chess-pgn",
+  "summary": "Media type \"application/vnd.chess-pgn\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.chess-pgn",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.chess-pgn",
+      "Template": "application/vnd.chess-pgn",
+      "Reference": "[Kim_Scarborough]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.chess-pgn"
+  ]
+}

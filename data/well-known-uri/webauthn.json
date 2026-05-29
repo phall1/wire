@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/webauthn",
+  "family": "well-known-uri",
+  "slug": "webauthn",
+  "title": "/.well-known/webauthn",
+  "summary": "Well-known URI suffix \"/.well-known/webauthn\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "webauthn",
+    "reference_rfcs": [],
+    "registration_date": "2026-01-23",
+    "raw_columns": {
+      "URI Suffix": "webauthn",
+      "Reference": "[https://www.w3.org/TR/webauthn-3/#well-known-uri-registration]",
+      "Status": "permanent",
+      "Change Controller": "W3C",
+      "Related Information": "",
+      "Date Registered": "2026-01-23",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

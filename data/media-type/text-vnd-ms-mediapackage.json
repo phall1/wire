@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-ms-mediapackage",
+  "family": "media-type",
+  "slug": "text-vnd-ms-mediapackage",
+  "title": "text/vnd.ms-mediapackage",
+  "summary": "Media type \"text/vnd.ms-mediapackage\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.ms-mediapackage",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.ms-mediapackage",
+      "Template": "text/vnd.ms-mediapackage",
+      "Reference": "[Jan_Nelson]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.ms-mediapackage"
+  ]
+}

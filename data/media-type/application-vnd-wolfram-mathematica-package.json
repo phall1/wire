@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-wolfram-mathematica-package",
+  "family": "media-type",
+  "slug": "application-vnd-wolfram-mathematica-package",
+  "title": "application/vnd.wolfram.mathematica.package",
+  "summary": "Media type \"application/vnd.wolfram.mathematica.package\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.wolfram.mathematica.package",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.wolfram.mathematica.package",
+      "Template": "application/vnd.wolfram.mathematica.package",
+      "Reference": "[Wolfram]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.wolfram.mathematica.package"
+  ]
+}

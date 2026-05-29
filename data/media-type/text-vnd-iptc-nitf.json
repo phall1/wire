@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-vnd-iptc-nitf",
+  "family": "media-type",
+  "slug": "text-vnd-iptc-nitf",
+  "title": "text/vnd.IPTC.NITF",
+  "summary": "Media type \"text/vnd.IPTC.NITF\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.IPTC.NITF",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.IPTC.NITF",
+      "Template": "text/vnd.IPTC.NITF",
+      "Reference": "[IPTC]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.IPTC.NITF"
+  ]
+}

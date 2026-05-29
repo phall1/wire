@@ -1,0 +1,33 @@
+{
+  "id": "magic/elf",
+  "family": "magic",
+  "slug": "elf",
+  "title": "ELF signature (7F 45 4C 46)",
+  "summary": "An ELF (Executable and Linkable Format) object begins with the 4-byte magic 0x7F followed by ASCII 'ELF'. The following e_ident bytes encode class (32/64-bit), data encoding (endianness), and version.",
+  "kind": "signature",
+  "aliases": ["ELF magic", "\\x7fELF"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://refspecs.linuxfoundation.org/elf/gabi4+/ch4.eheader.html",
+  "source_version": "System V ABI, ELF header, e_ident (EI_MAG0..EI_MAG3)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/mach-o", "magic/pe-exe"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "7F 45 4C 46",
+    "offset": 0,
+    "magic_ascii": "\\x7fELF",
+    "extensions": ["", "o", "so", "elf", "axf"],
+    "mime": "application/x-elf",
+    "spec": "System V Application Binary Interface (gABI)",
+    "notes": [
+      "EI_MAG0..3 = 0x7F 'E' 'L' 'F'.",
+      "Byte 4 (EI_CLASS): 0x01 = 32-bit (ELFCLASS32), 0x02 = 64-bit (ELFCLASS64).",
+      "Byte 5 (EI_DATA): 0x01 = little-endian (ELFDATA2LSB), 0x02 = big-endian (ELFDATA2MSB).",
+      "Byte 6 (EI_VERSION) = 0x01 (EV_CURRENT).",
+      "Used by Linux and most Unix-likes for executables, shared objects (.so), object files (.o), and core dumps."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

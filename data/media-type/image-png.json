@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-png",
+  "family": "media-type",
+  "slug": "image-png",
+  "title": "image/png",
+  "summary": "Media type \"image/png\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/png",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "png",
+      "Template": "image/png",
+      "Reference": "[W3C][PNG_WG][PNG]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/png"
+  ]
+}

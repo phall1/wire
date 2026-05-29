@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cdni",
+  "family": "media-type",
+  "slug": "application-cdni",
+  "title": "application/cdni",
+  "summary": "Media type \"application/cdni\". Registered/referenced in RFC7736.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cdni",
+    "reference_rfcs": [
+      "RFC7736"
+    ],
+    "raw_columns": {
+      "Name": "cdni",
+      "Template": "application/cdni",
+      "Reference": "[RFC7736]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cdni"
+  ]
+}

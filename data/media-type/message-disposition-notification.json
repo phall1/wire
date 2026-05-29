@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-disposition-notification",
+  "family": "media-type",
+  "slug": "message-disposition-notification",
+  "title": "message/disposition-notification",
+  "summary": "Media type \"message/disposition-notification\". Registered/referenced in RFC8098.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/disposition-notification",
+    "reference_rfcs": [
+      "RFC8098"
+    ],
+    "raw_columns": {
+      "Name": "disposition-notification",
+      "Template": "message/disposition-notification",
+      "Reference": "[RFC8098]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/disposition-notification"
+  ]
+}

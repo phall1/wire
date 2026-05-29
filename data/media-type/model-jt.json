@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-jt",
+  "family": "media-type",
+  "slug": "model-jt",
+  "title": "model/JT",
+  "summary": "Media type \"model/JT\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/JT",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "JT",
+      "Template": "model/JT",
+      "Reference": "[ISO-TC_184-SC_4][Michael_Zink]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/JT"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/image-tiff",
+  "family": "media-type",
+  "slug": "image-tiff",
+  "title": "image/tiff",
+  "summary": "Media type \"image/tiff\". Registered/referenced in RFC3302.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/tiff",
+    "reference_rfcs": [
+      "RFC3302"
+    ],
+    "raw_columns": {
+      "Name": "tiff",
+      "Template": "image/tiff",
+      "Reference": "[RFC3302]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/tiff"
+  ]
+}

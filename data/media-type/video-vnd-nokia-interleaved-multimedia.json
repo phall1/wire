@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-nokia-interleaved-multimedia",
+  "family": "media-type",
+  "slug": "video-vnd-nokia-interleaved-multimedia",
+  "title": "video/vnd.nokia.interleaved-multimedia",
+  "summary": "Media type \"video/vnd.nokia.interleaved-multimedia\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.nokia.interleaved-multimedia",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.nokia.interleaved-multimedia",
+      "Template": "video/vnd.nokia.interleaved-multimedia",
+      "Reference": "[Petteri_Kangaslampi]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.nokia.interleaved-multimedia"
+  ]
+}

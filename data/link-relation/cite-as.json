@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/cite-as",
+  "family": "link-relation",
+  "slug": "cite-as",
+  "title": "cite-as",
+  "summary": "Link relation type \"cite-as\": Indicates that the link target is preferred over the link context for the purpose of permanent citation. Defined in RFC8574.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "cite-as",
+    "reference_rfcs": [
+      "RFC8574"
+    ],
+    "raw_columns": {
+      "Relation Name": "cite-as",
+      "Description": "Indicates that the link target is preferred over the link context for the purpose of permanent citation.",
+      "Reference": "[RFC8574]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

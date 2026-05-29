@@ -1,0 +1,31 @@
+{
+  "id": "http-header/resent-sender",
+  "family": "http-header",
+  "slug": "resent-sender",
+  "title": "Resent-Sender",
+  "summary": "Message header field \"Resent-Sender\" (protocol: mail), status standard. Defined in RFC6854.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Resent-Sender",
+    "reference_rfcs": [
+      "RFC6854"
+    ],
+    "raw_columns": {
+      "value": "Resent-Sender",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC6854]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Resent-Sender"
+  ]
+}

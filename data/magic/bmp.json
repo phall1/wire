@@ -1,0 +1,32 @@
+{
+  "id": "magic/bmp",
+  "family": "magic",
+  "slug": "bmp",
+  "title": "BMP signature (BM)",
+  "summary": "A Windows bitmap (BMP) file begins with the 2-byte ASCII signature 'BM' (0x42 0x4D), followed by a 4-byte little-endian total file size. 'BM' is by far the most common of several possible bitmap-type marks.",
+  "kind": "signature",
+  "aliases": ["BMP magic", "bitmap", "BM"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapfileheader",
+  "source_version": "Microsoft BITMAPFILEHEADER (bfType 0x4D42 = 'BM')",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/ico", "magic/png"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "42 4D",
+    "offset": 0,
+    "magic_ascii": "BM",
+    "extensions": ["bmp", "dib"],
+    "mime": "image/bmp",
+    "spec": "Microsoft BITMAPFILEHEADER",
+    "notes": [
+      "bfType is the 16-bit value 0x4D42 stored little-endian => bytes 42 4D = 'BM'.",
+      "Bytes 2-5: bfSize, total file size in bytes, little-endian.",
+      "Bytes 10-13: bfOffBits, offset to the pixel array.",
+      "Rare alternative type marks ('BA','CI','CP','IC','PT') come from OS/2 and are essentially never seen."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

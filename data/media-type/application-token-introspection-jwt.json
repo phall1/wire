@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-token-introspection-jwt",
+  "family": "media-type",
+  "slug": "application-token-introspection-jwt",
+  "title": "application/token-introspection+jwt",
+  "summary": "Media type \"application/token-introspection+jwt\". Registered/referenced in RFC9701.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/token-introspection+jwt",
+    "reference_rfcs": [
+      "RFC9701"
+    ],
+    "raw_columns": {
+      "Name": "token-introspection+jwt",
+      "Template": "application/token-introspection+jwt",
+      "Reference": "[RFC9701]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/token-introspection+jwt"
+  ]
+}

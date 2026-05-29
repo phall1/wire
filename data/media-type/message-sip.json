@@ -1,0 +1,30 @@
+{
+  "id": "media-type/message-sip",
+  "family": "media-type",
+  "slug": "message-sip",
+  "title": "message/sip",
+  "summary": "Media type \"message/sip\". Registered/referenced in RFC3261.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/sip",
+    "reference_rfcs": [
+      "RFC3261"
+    ],
+    "raw_columns": {
+      "Name": "sip",
+      "Template": "message/sip",
+      "Reference": "[RFC3261]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/sip"
+  ]
+}

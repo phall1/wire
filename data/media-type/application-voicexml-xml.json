@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-voicexml-xml",
+  "family": "media-type",
+  "slug": "application-voicexml-xml",
+  "title": "application/voicexml+xml",
+  "summary": "Media type \"application/voicexml+xml\". Registered/referenced in RFC4267.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/voicexml+xml",
+    "reference_rfcs": [
+      "RFC4267"
+    ],
+    "raw_columns": {
+      "Name": "voicexml+xml",
+      "Template": "application/voicexml+xml",
+      "Reference": "[RFC4267]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/voicexml+xml"
+  ]
+}

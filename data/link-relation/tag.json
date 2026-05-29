@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/tag",
+  "family": "link-relation",
+  "slug": "tag",
+  "title": "tag",
+  "summary": "Link relation type \"tag\": Gives a tag (identified by the given address) that applies to\n      the current document.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "tag",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "tag",
+      "Description": "Gives a tag (identified by the given address) that applies to\n      the current document.",
+      "Reference": "[HTML]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

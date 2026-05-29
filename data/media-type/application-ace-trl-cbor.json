@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-ace-trl-cbor",
+  "family": "media-type",
+  "slug": "application-ace-trl-cbor",
+  "title": "application/ace-trl+cbor",
+  "summary": "Media type \"application/ace-trl+cbor\". Registered/referenced in RFC9770.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ace-trl+cbor",
+    "reference_rfcs": [
+      "RFC9770"
+    ],
+    "raw_columns": {
+      "Name": "ace-trl+cbor",
+      "Template": "application/ace-trl+cbor",
+      "Reference": "[RFC9770]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ace-trl+cbor"
+  ]
+}

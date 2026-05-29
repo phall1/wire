@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cose-x509",
+  "family": "media-type",
+  "slug": "application-cose-x509",
+  "title": "application/cose-x509",
+  "summary": "Media type \"application/cose-x509\". Registered/referenced in RFC9360.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cose-x509",
+    "reference_rfcs": [
+      "RFC9360"
+    ],
+    "raw_columns": {
+      "Name": "cose-x509",
+      "Template": "application/cose-x509",
+      "Reference": "[RFC9360]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cose-x509"
+  ]
+}

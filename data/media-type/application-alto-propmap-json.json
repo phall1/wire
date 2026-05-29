@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-alto-propmap-json",
+  "family": "media-type",
+  "slug": "application-alto-propmap-json",
+  "title": "application/alto-propmap+json",
+  "summary": "Media type \"application/alto-propmap+json\". Registered/referenced in RFC9240.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/alto-propmap+json",
+    "reference_rfcs": [
+      "RFC9240"
+    ],
+    "raw_columns": {
+      "Name": "alto-propmap+json",
+      "Template": "application/alto-propmap+json",
+      "Reference": "[RFC9240]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/alto-propmap+json"
+  ]
+}

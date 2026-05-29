@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/nodeinfo",
+  "family": "well-known-uri",
+  "slug": "nodeinfo",
+  "title": "/.well-known/nodeinfo",
+  "summary": "Well-known URI suffix \"/.well-known/nodeinfo\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "nodeinfo",
+    "reference_rfcs": [],
+    "registration_date": "2024-07-29",
+    "raw_columns": {
+      "URI Suffix": "nodeinfo",
+      "Reference": "[https://nodeinfo.diaspora.software/]",
+      "Status": "provisional",
+      "Change Controller": "[NodeInfo_Developer_Community]",
+      "Related Information": "",
+      "Date Registered": "2024-07-29",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-ulpfec",
+  "family": "media-type",
+  "slug": "application-ulpfec",
+  "title": "application/ulpfec",
+  "summary": "Media type \"application/ulpfec\". Registered/referenced in RFC5109.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/ulpfec",
+    "reference_rfcs": [
+      "RFC5109"
+    ],
+    "raw_columns": {
+      "Name": "ulpfec",
+      "Template": "application/ulpfec",
+      "Reference": "[RFC5109]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/ulpfec"
+  ]
+}

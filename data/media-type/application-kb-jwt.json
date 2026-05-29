@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-kb-jwt",
+  "family": "media-type",
+  "slug": "application-kb-jwt",
+  "title": "application/kb+jwt",
+  "summary": "Media type \"application/kb+jwt\". Registered/referenced in RFC9901.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/kb+jwt",
+    "reference_rfcs": [
+      "RFC9901"
+    ],
+    "raw_columns": {
+      "Name": "kb+jwt",
+      "Template": "application/kb+jwt",
+      "Reference": "[RFC9901]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/kb+jwt"
+  ]
+}

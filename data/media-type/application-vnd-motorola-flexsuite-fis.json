@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-motorola-flexsuite-fis",
+  "family": "media-type",
+  "slug": "application-vnd-motorola-flexsuite-fis",
+  "title": "application/vnd.motorola.flexsuite.fis",
+  "summary": "Media type \"application/vnd.motorola.flexsuite.fis\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.motorola.flexsuite.fis",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.motorola.flexsuite.fis",
+      "Template": "application/vnd.motorola.flexsuite.fis",
+      "Reference": "[Mark_Patton]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.motorola.flexsuite.fis"
+  ]
+}

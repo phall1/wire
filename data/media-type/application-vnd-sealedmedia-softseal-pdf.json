@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-sealedmedia-softseal-pdf",
+  "family": "media-type",
+  "slug": "application-vnd-sealedmedia-softseal-pdf",
+  "title": "application/vnd.sealedmedia.softseal.pdf",
+  "summary": "Media type \"application/vnd.sealedmedia.softseal.pdf\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.sealedmedia.softseal.pdf",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.sealedmedia.softseal.pdf",
+      "Template": "application/vnd.sealedmedia.softseal.pdf",
+      "Reference": "[David_Petersen]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.sealedmedia.softseal.pdf"
+  ]
+}

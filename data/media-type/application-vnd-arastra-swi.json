@@ -1,0 +1,29 @@
+{
+  "id": "media-type/application-vnd-arastra-swi",
+  "family": "media-type",
+  "slug": "application-vnd-arastra-swi",
+  "title": "application/vnd.arastra.swi",
+  "summary": "Media type \"application/vnd.arastra.swi\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.arastra.swi",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.arastra.swi (OBSOLETED in favor of application/vnd.aristanetworks.swi)",
+      "Template": "application/vnd.arastra.swi",
+      "Reference": "[Bill_Fenner]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.arastra.swi",
+    "application/vnd.arastra.swi (OBSOLETED in favor of application/vnd.aristanetworks.swi)"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-cmmf-configuration-information-json",
+  "family": "media-type",
+  "slug": "application-vnd-cmmf-configuration-information-json",
+  "title": "application/vnd.cmmf-configuration-information+json",
+  "summary": "Media type \"application/vnd.cmmf-configuration-information+json\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.cmmf-configuration-information+json",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.cmmf-configuration-information+json",
+      "Template": "application/vnd.cmmf-configuration-information+json",
+      "Reference": "[Jason_Cloud]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.cmmf-configuration-information+json"
+  ]
+}

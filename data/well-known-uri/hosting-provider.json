@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/hosting-provider",
+  "family": "well-known-uri",
+  "slug": "hosting-provider",
+  "title": "/.well-known/hosting-provider",
+  "summary": "Well-known URI suffix \"/.well-known/hosting-provider\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "hosting-provider",
+    "reference_rfcs": [],
+    "registration_date": "2020-07-21",
+    "raw_columns": {
+      "URI Suffix": "hosting-provider",
+      "Reference": "[https://github.com/Automattic/hosting-provider]",
+      "Status": "provisional",
+      "Change Controller": "[Automattic_Inc.]",
+      "Related Information": "",
+      "Date Registered": "2020-07-21",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

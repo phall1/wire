@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-vnd-objectvideo",
+  "family": "media-type",
+  "slug": "video-vnd-objectvideo",
+  "title": "video/vnd.objectvideo",
+  "summary": "Media type \"video/vnd.objectvideo\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/vnd.objectvideo",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.objectvideo",
+      "Template": "video/vnd.objectvideo",
+      "Reference": "[John_Clark]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/vnd.objectvideo"
+  ]
+}

@@ -43,6 +43,8 @@ export interface RegistryConfig {
   ext_type: string;
   slug_column: string;
   kind?: string;
+  /** media-type per-type CSVs only: the top-level type ('application', 'text', ...). */
+  media_toplevel?: string;
   notes?: string;
 }
 
@@ -182,6 +184,90 @@ export function parseCSV(text: string): { headers: string[]; rows: Row[] } {
 }
 
 // ---------------------------------------------------------------------------
+// 1b. Minimal Message Headers XML reader
+// ---------------------------------------------------------------------------
+
+/**
+ * IANA serves the Message Headers registry as XML only (the .csv 404s). This is
+ * a deliberately minimal, dependency-free reader for THAT one document shape —
+ * not a general XML parser. It extracts the records of the permanent header
+ * sub-registry (<registry id="perm-headers">) and returns them as Row objects
+ * shaped like the CSV rows the rest of the pipeline expects:
+ *
+ *   { value, protocol, status, Reference }
+ *
+ * `value` is the field name (<value>), `protocol` the <protocol> cell, `status`
+ * the <status> cell (blank if absent), and `Reference` a bracketed join of the
+ * row's RFC <xref> elements (e.g. "[RFC4021]") so parseRfcRefs/pickRefColumn
+ * work uniformly. XML entities in text are decoded. Deterministic; no network.
+ */
+export function parseMessageHeadersXml(xml: string): Row[] {
+  // Isolate the perm-headers sub-registry block so we don't pull provisional or
+  // content-translation rows. Match from its opening tag to the next sibling
+  // <registry id= or the end of the document.
+  const startRe = /<registry\s+id="perm-headers"\s*>/;
+  const startM = startRe.exec(xml);
+  if (!startM) return [];
+  const blockStart = startM.index + startM[0].length;
+  // Find the next sub-registry opening after the block start (sibling boundary).
+  const siblingRe = /<registry\s+id="/g;
+  siblingRe.lastIndex = blockStart;
+  const sib = siblingRe.exec(xml);
+  const blockEnd = sib ? sib.index : xml.length;
+  const block = xml.slice(blockStart, blockEnd);
+
+  const rows: Row[] = [];
+  const recordRe = /<record\b[^>]*>([\s\S]*?)<\/record>/g;
+  let rec: RegExpExecArray | null;
+  while ((rec = recordRe.exec(block)) !== null) {
+    const body = rec[1];
+    const value = xmlText(firstTag(body, 'value'));
+    if (!value) continue;
+    const protocol = xmlText(firstTag(body, 'protocol'));
+    const status = xmlText(firstTag(body, 'status'));
+    // Assemble a bracketed Reference cell from rfc xrefs only (drafts/persons
+    // are not RFC tokens and stay out of reference_rfcs anyway).
+    const refTokens: string[] = [];
+    const xrefRe = /<xref\b([^>]*)\/?>(?:<\/xref>)?/g;
+    let xm: RegExpExecArray | null;
+    while ((xm = xrefRe.exec(body)) !== null) {
+      const attrs = xm[1];
+      const typeM = /type="([^"]*)"/.exec(attrs);
+      const dataM = /data="([^"]*)"/.exec(attrs);
+      if (typeM && typeM[1] === 'rfc' && dataM) {
+        refTokens.push(`[${dataM[1].toUpperCase()}]`); // 'rfc4021' -> '[RFC4021]'
+      }
+    }
+    rows.push({
+      value,
+      protocol,
+      status,
+      Reference: refTokens.join(''),
+    });
+  }
+  return rows;
+}
+
+/** Return the inner text of the first <tag>…</tag> in `body`, or '' if absent. */
+function firstTag(body: string, tag: string): string {
+  const re = new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`);
+  const m = re.exec(body);
+  return m ? m[1] : '';
+}
+
+/** Decode the handful of XML entities that appear in this registry + trim. */
+function xmlText(s: string): string {
+  return s
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// ---------------------------------------------------------------------------
 // 2. Reference / RFC parsing
 // ---------------------------------------------------------------------------
 
@@ -215,6 +301,24 @@ export function parseRfcRefs(refCell: string): string[] {
 // ---------------------------------------------------------------------------
 
 const UNASSIGNED_RE = /^(unassigned|reserved|private use|unallocated)$/i;
+
+// Slugs that would collide with a sibling page route under /{family}/. The
+// static renderer emits a per-family index at /{family}/index, so a leaf whose
+// slug is literally 'index' (the IANA link relation 'index' is the live case)
+// would shadow / be shadowed by the family index route and fail the build. We
+// remap such reserved slugs to a deterministic, charset-safe variant ('index'
+// -> 'index-rel') and keep the real registry name verbatim in raw_columns + as
+// an alias, so nothing is lost and the entry stays discoverable by its true name.
+const RESERVED_SLUGS = new Set<string>(['index']);
+
+/**
+ * Make a derived slug safe against route collisions with sibling pages. Returns
+ * the same slug unless it is reserved, in which case it appends a '-rel' marker.
+ * Deterministic; the original is preserved by callers via raw_columns + alias.
+ */
+function safeSlug(slug: string): string {
+  return RESERVED_SLUGS.has(slug) ? `${slug}-rel` : slug;
+}
 
 /**
  * Slugify a free-form natural-key TOKEN (uri scheme, http method, dns mnemonic)
@@ -280,6 +384,10 @@ export function mapRow(family: string, reg: RegistryConfig, row: Row, sourceVers
     case 'cbor-tag':    return mapCborTag(reg, row, sourceVersion, reference_rfcs);
     case 'port':        return { skip: 'port rows are grouped, not mapped per-row (see groupPorts)' };
     case 'tls-param':   return mapTlsCipher(reg, row, sourceVersion, reference_rfcs);
+    case 'http-header':    return mapHttpHeader(reg, row, sourceVersion, reference_rfcs);
+    case 'link-relation':  return mapLinkRelation(reg, row, sourceVersion, reference_rfcs);
+    case 'well-known-uri': return mapWellKnownUri(reg, row, sourceVersion, reference_rfcs);
+    case 'media-type':     return mapMediaType(reg, row, sourceVersion, reference_rfcs);
     default:            return { skip: `no mapper for family '${family}'` };
   }
 }
@@ -509,6 +617,152 @@ function mapTlsCipher(reg: RegistryConfig, row: Row, sv: string, rfcs: string[])
   };
 }
 
+// --- http-header -----------------------------------------------------------
+// Parsed from the Message Headers XML (no CSV upstream). The XML reader
+// (parseMessageHeadersXml) synthesizes per-row columns: 'value' (field name),
+// 'protocol', 'status', and a 'Reference' cell assembled from the row's <xref>
+// elements so parseRfcRefs / pickRefColumn work uniformly. We ingest the
+// permanent header field names and skip obsolete-only noise.
+const HEADER_SKIP_STATUS = /^(obsoleted|deprecated|reserved)$/i;
+
+function mapHttpHeader(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
+  const name = (row['value'] || '').trim();
+  if (!name) return { skip: 'empty header field name' };
+  if (UNASSIGNED_RE.test(name)) return { skip: name };
+  const status = (row['status'] || '').trim();
+  if (status && HEADER_SKIP_STATUS.test(status)) return { skip: `${name} status=${status}` };
+  const protocol = (row['protocol'] || '').trim();
+  const sk = slugifyKey(name.toLowerCase());
+  if (!sk) return { skip: `unslugifiable header '${name}'` };
+  const slug = safeSlug(sk.slug);
+  const ext: EntryExt = {
+    value: name,
+    reference_rfcs: rfcs,
+    raw_columns: rawCols(row),
+  };
+  const entry = baseEntry({
+    family: 'http-header', slug,
+    title: name,
+    summary: `Message header field "${name}"${protocol ? ` (protocol: ${protocol})` : ''}${status ? `, status ${status}` : ''}.${rfcs.length ? ` Defined in ${rfcs.join(', ')}.` : ''}`,
+    kind: 'header', status: status || 'standard', reg, sourceVersion: sv, ext,
+  });
+  // alias the canonical-cased field name when the slug differs from it.
+  if (slug !== name) entry.aliases = [name];
+  return { entry };
+}
+
+// --- link-relation ---------------------------------------------------------
+function mapLinkRelation(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
+  const name = (row['Relation Name'] || '').trim();
+  const desc = (row['Description'] || '').trim();
+  if (!name) return { skip: 'empty Relation Name' };
+  if (UNASSIGNED_RE.test(name) || UNASSIGNED_RE.test(desc)) return { skip: `${name} ${desc}` };
+  const sk = slugifyKey(name.toLowerCase());
+  if (!sk) return { skip: `unslugifiable relation '${name}'` };
+  const slug = safeSlug(sk.slug);
+  const ext: EntryExt = {
+    value: name,
+    reference_rfcs: rfcs,
+    raw_columns: rawCols(row),
+  };
+  const entry = baseEntry({
+    family: 'link-relation', slug,
+    title: name,
+    summary: `Link relation type "${name}"${desc ? `: ${truncate(desc.replace(/\.\s*$/, ''), 160)}` : ''}.${rfcs.length ? ` Defined in ${rfcs.join(', ')}.` : ''}`,
+    kind: 'link-relation', status: 'standard', reg, sourceVersion: sv, ext,
+  });
+  if (slug !== name) entry.aliases = [name];
+  return { entry };
+}
+
+// --- well-known-uri --------------------------------------------------------
+function mapWellKnownUri(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
+  const suffix = (row['URI Suffix'] || '').trim();
+  const status = (row['Status'] || '').trim();
+  if (!suffix) return { skip: 'empty URI Suffix' };
+  if (UNASSIGNED_RE.test(suffix)) return { skip: `${suffix} (${status})` };
+  const sk = slugifyKey(suffix);
+  if (!sk) return { skip: `unslugifiable suffix '${suffix}'` };
+  const slug = safeSlug(sk.slug);
+  const regDate = (row['Date Registered'] || '').trim();
+  const ext: EntryExt = {
+    value: suffix,
+    reference_rfcs: rfcs,
+    ...(regDate ? { registration_date: regDate } : {}),
+    raw_columns: rawCols(row),
+  };
+  const entry = baseEntry({
+    family: 'well-known-uri', slug,
+    title: `/.well-known/${suffix}`,
+    summary: `Well-known URI suffix "/.well-known/${suffix}"${status ? `. IANA status: ${status}` : ''}.${rfcs.length ? ` Defined in ${rfcs.join(', ')}.` : ''}`,
+    kind: 'well-known-uri', status: 'standard', reg, sourceVersion: sv, ext,
+  });
+  if (slug !== suffix) entry.aliases = [suffix];
+  return { entry };
+}
+
+// --- media-type ------------------------------------------------------------
+// The per-type CSV columns are: Name, Template, Reference. Template holds the
+// canonical 'type/subtype' (e.g. 'application/json'); some rows leave it blank,
+// in which case we synthesize it from the registry's media_toplevel + Name. The
+// Name cell can carry a trailing qualifier like ' (OBSOLETED ...)' or ' -
+// DEPRECATED ...' — we strip that for the subtype but keep the row verbatim in
+// raw_columns. slug = 'type-subtype' kebab; alias = the real 'type/subtype'.
+function mapMediaType(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
+  const toplevel = reg.media_toplevel || '';
+  const nameRaw = (row['Name'] || '').trim();
+  if (!nameRaw) return { skip: 'empty Name' };
+  if (UNASSIGNED_RE.test(nameRaw)) return { skip: nameRaw };
+  // Subtype = Name with any trailing parenthetical / dash qualifier removed.
+  let subtype = nameRaw
+    .replace(/\s*\([^)]*\)\s*$/, '')          // ' (OBSOLETED in favor of ...)'
+    .replace(/\s+-\s+(DEPRECATED|OBSOLETE|OBSOLETED|DELETED)\b.*$/i, '') // ' - DEPRECATED ...'
+    .trim();
+  if (!subtype) return { skip: `empty subtype after cleaning '${nameRaw}'` };
+  // Prefer the upstream Template for the canonical type/subtype; fall back to
+  // toplevel + cleaned subtype.
+  const template = (row['Template'] || '').trim();
+  const fullType = template && template.includes('/') ? template : `${toplevel}/${subtype}`;
+  if (!fullType.includes('/')) return { skip: `cannot form type/subtype for '${nameRaw}'` };
+  // slug: slash->dash, '+' -> '-', '.' -> '-', drop other unsafe chars.
+  // We deliberately fold '.' to '-' as well (e.g. 'application/vnd.dtg.local.html'
+  // -> 'application-vnd-dtg-local-html'). The vnd.* trees use '.' purely as a
+  // hierarchy separator, and a slug ENDING in a dotted extension like '.html' or
+  // '.json' would collide with the static renderer's per-page file output
+  // (build.format:"file" emits '<slug>.html' + a '<slug>.json' twin). The real
+  // 'type/subtype' (dots, '+', '/') is preserved verbatim in raw_columns and as
+  // an alias, so nothing is lost. Order matters so a structural '+'
+  // ('audio/amr-wb+' vs 'audio/AMR-WB') survives as a trailing '-' and the two
+  // do not collide; a trailing '-' is permitted by the core id slug charset.
+  const slug = fullType
+    .replace(/[^A-Za-z0-9._/+-]+/g, '-')   // drop chars outside the safe set (keep . / + - for now)
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '')                // trim cleanup dashes BEFORE mapping separators
+    .replace(/\//g, '-')                    // slash -> dash
+    .replace(/\./g, '-')                    // dot -> dash (avoid page-extension collisions)
+    .replace(/\+/g, '-')                    // '+' -> dash (may yield a meaningful trailing dash)
+    .replace(/-+/g, '-')                    // collapse any runs introduced by the above
+    .toLowerCase();
+  if (!slug || slug === '-') return { skip: `unslugifiable media type '${fullType}'` };
+  const ext: EntryExt = {
+    value: fullType,
+    reference_rfcs: rfcs,
+    raw_columns: rawCols(row),
+  };
+  const entry = baseEntry({
+    family: 'media-type', slug,
+    title: fullType,
+    summary: `Media type "${fullType}".${rfcs.length ? ` Registered/referenced in ${rfcs.join(', ')}.` : ''}`,
+    kind: 'media-type', status: 'standard', reg, sourceVersion: sv, ext,
+  });
+  // Always alias the real 'type/subtype' (it carries the '/' and '+' the slug drops).
+  const aliases = new Set<string>();
+  if (fullType !== slug) aliases.add(fullType);
+  if (nameRaw !== fullType && nameRaw !== subtype) aliases.add(`${toplevel}/${nameRaw}`);
+  if (aliases.size) entry.aliases = [...aliases];
+  return { entry };
+}
+
 // --- port (grouped) --------------------------------------------------------
 interface PortGroup {
   rows: Row[];
@@ -614,7 +868,9 @@ function truncate(s: string, n: number): string {
  * @returns { entries, included:[ids], excluded:[{id,reason}] }
  */
 export function parseRegistry(registryId: string, reg: RegistryConfig, csvText: string, sourceVersion: string): ParseResult {
-  const { rows } = parseCSV(csvText);
+  const rows = reg.format === 'xml'
+    ? parseMessageHeadersXml(csvText)
+    : parseCSV(csvText).rows;
   const family = reg.family;
 
   if (family === 'port') {
@@ -655,13 +911,11 @@ async function loadConfig(): Promise<RegistryMap> {
   return JSON.parse(raw).registries as RegistryMap;
 }
 
-/** Find the registry config whose family (and namespace) match the requested
- *  family string. cli.ts passes a `family` like 'http-status' or 'tls-param'. */
-function findRegistryByFamily(registries: RegistryMap, family: string): [string | null, RegistryConfig | null] {
-  for (const [id, reg] of Object.entries(registries)) {
-    if (reg.family === family) return [id, reg];
-  }
-  return [null, null];
+/** Find ALL registry configs whose family matches the requested family string.
+ *  Most families have one registry; media-type spans 11 per-type CSVs that all
+ *  write into family 'media-type', so we return every match and aggregate. */
+function findRegistriesByFamily(registries: RegistryMap, family: string): Array<[string, RegistryConfig]> {
+  return Object.entries(registries).filter(([, reg]) => reg.family === family);
 }
 
 /**
@@ -674,24 +928,30 @@ function findRegistryByFamily(registries: RegistryMap, family: string): [string 
  */
 export async function parseFamily(family: string, _opts: { today?: string } = {}): Promise<Entry[]> {
   const registries = await loadConfig();
-  const [registryId, reg] = findRegistryByFamily(registries, family);
-  if (!reg || !registryId) throw new Error(`no Tier-A registry configured for family '${family}'`);
+  const matches = findRegistriesByFamily(registries, family);
+  if (matches.length === 0) throw new Error(`no Tier-A registry configured for family '${family}'`);
 
-  const csvPath = join(CACHE_DIR, `${registryId}.csv`);
-  const metaPath = join(CACHE_DIR, `${registryId}.meta.json`);
-  if (!existsSync(csvPath)) {
-    throw new Error(`no cached CSV at ${csvPath}; run 'bun run ingest/tier-a/run.ts' first to fetch the registry`);
+  const all: Entry[] = [];
+  for (const [registryId, reg] of matches) {
+    // run.ts caches every registry at .cache/tier-a/<id>.csv regardless of the
+    // upstream format (CSV or XML); the bytes are the raw response body.
+    const csvPath = join(CACHE_DIR, `${registryId}.csv`);
+    const metaPath = join(CACHE_DIR, `${registryId}.meta.json`);
+    if (!existsSync(csvPath)) {
+      throw new Error(`no cached source at ${csvPath}; run 'bun run ingest/tier-a/run.ts' first to fetch the registry`);
+    }
+    const csvText = await readFile(csvPath, 'utf8');
+    let sourceVersion = `${reg.url} (Last-Modified unknown)`;
+    if (existsSync(metaPath)) {
+      try {
+        const meta = JSON.parse(await readFile(metaPath, 'utf8'));
+        if (meta.source_version) sourceVersion = meta.source_version;
+      } catch { /* fall back to default */ }
+    }
+    const { entries } = parseRegistry(registryId, reg, csvText, sourceVersion);
+    all.push(...entries);
   }
-  const csvText = await readFile(csvPath, 'utf8');
-  let sourceVersion = `${reg.url} (Last-Modified unknown)`;
-  if (existsSync(metaPath)) {
-    try {
-      const meta = JSON.parse(await readFile(metaPath, 'utf8'));
-      if (meta.source_version) sourceVersion = meta.source_version;
-    } catch { /* fall back to default */ }
-  }
-  const { entries } = parseRegistry(registryId, reg, csvText, sourceVersion);
-  return entries;
+  return all;
 }
 
 export default parseFamily;

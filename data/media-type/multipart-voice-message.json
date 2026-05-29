@@ -1,0 +1,30 @@
+{
+  "id": "media-type/multipart-voice-message",
+  "family": "media-type",
+  "slug": "multipart-voice-message",
+  "title": "multipart/voice-message",
+  "summary": "Media type \"multipart/voice-message\". Registered/referenced in RFC3801.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/multipart.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "multipart/voice-message",
+    "reference_rfcs": [
+      "RFC3801"
+    ],
+    "raw_columns": {
+      "Name": "voice-message",
+      "Template": "multipart/voice-message",
+      "Reference": "[RFC3801]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "multipart/voice-message"
+  ]
+}

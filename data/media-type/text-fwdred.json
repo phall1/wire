@@ -1,0 +1,30 @@
+{
+  "id": "media-type/text-fwdred",
+  "family": "media-type",
+  "slug": "text-fwdred",
+  "title": "text/fwdred",
+  "summary": "Media type \"text/fwdred\". Registered/referenced in RFC6354.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/fwdred",
+    "reference_rfcs": [
+      "RFC6354"
+    ],
+    "raw_columns": {
+      "Name": "fwdred",
+      "Template": "text/fwdred",
+      "Reference": "[RFC6354]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/fwdred"
+  ]
+}

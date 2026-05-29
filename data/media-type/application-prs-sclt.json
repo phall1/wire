@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-prs-sclt",
+  "family": "media-type",
+  "slug": "application-prs-sclt",
+  "title": "application/prs.sclt",
+  "summary": "Media type \"application/prs.sclt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/prs.sclt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prs.sclt",
+      "Template": "application/prs.sclt",
+      "Reference": "[Sambhav_Aryal]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/prs.sclt"
+  ]
+}

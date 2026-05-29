@@ -1,0 +1,77 @@
+{
+  "id": "encoding/base58",
+  "family": "encoding",
+  "slug": "base58",
+  "title": "Base58 (Bitcoin alphabet)",
+  "summary": "Base58 is a binary-to-text encoding that treats the input as one big-endian integer and re-expresses it in base 58 over the alphabet '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'. It deliberately omits the visually ambiguous characters 0 (zero), O (capital o), I (capital i) and l (lowercase L), plus '+' and '/', so addresses copy cleanly and double-click-select as one token. Leading zero bytes are encoded as leading '1's. Originated in Bitcoin and is the basis of Base58Check.",
+  "kind": "encoding",
+  "aliases": [
+    "base-58",
+    "Bitcoin base58",
+    "btc base58"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.bitcoin.it/wiki/Base58Check_encoding",
+  "source_version": "Bitcoin Wiki Base58Check encoding (unversioned wiki)",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base58check",
+    "encoding/base64",
+    "encoding/base32"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "Bitcoin Wiki — Base58Check encoding",
+    "charset": "US-ASCII",
+    "algorithm": "base58",
+    "alphabet": "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz",
+    "notes": [
+      "Not a block codec: Base58 interprets the whole byte string as a single big-endian non-negative integer and converts the radix to 58. Output length is therefore not a fixed function of input length, and there is no '=' padding.",
+      "Leading 0x00 bytes carry no value in the integer but are significant, so each leading 0x00 byte is emitted as one leading '1' character (alphabet index 0).",
+      "Alphabet omits 0 O I l (and the base64 symbols + /) to avoid transcription ambiguity; this is what makes it 'human-friendly' for addresses and keys.",
+      "Base58Check (encoding/base58check) layers a version byte and a 4-byte double-SHA-256 checksum on top of this raw Base58 encoding."
+    ],
+    "test_vectors": [
+      {
+        "input": "",
+        "input_form": "utf8",
+        "output": "",
+        "output_form": "ascii",
+        "algorithm": "base58",
+        "direction": "encode",
+        "note": "Empty input -> empty output (integer 0 with no leading zero bytes)."
+      },
+      {
+        "input": "Hello World!",
+        "input_form": "utf8",
+        "output": "2NEpo7TZRRrLZSi2U",
+        "output_form": "ascii",
+        "algorithm": "base58",
+        "direction": "encode",
+        "note": "Canonical Bitcoin Wiki example: base58(\"Hello World!\") = \"2NEpo7TZRRrLZSi2U\"."
+      },
+      {
+        "input": "00000000287fb4cd",
+        "input_form": "bytes-hex",
+        "input_encoding": "hex",
+        "output": "1111233QC4",
+        "output_form": "ascii",
+        "algorithm": "base58",
+        "direction": "encode",
+        "note": "Leading-zero handling: four 0x00 bytes -> four leading '1' characters, then base58 of 0x287fb4cd."
+      },
+      {
+        "input": "2NEpo7TZRRrLZSi2U",
+        "input_form": "ascii",
+        "output": "Hello World!",
+        "output_form": "utf8",
+        "algorithm": "base58",
+        "direction": "decode",
+        "note": "Round-trip: base58-decode(\"2NEpo7TZRRrLZSi2U\") = \"Hello World!\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

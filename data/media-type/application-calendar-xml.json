@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-calendar-xml",
+  "family": "media-type",
+  "slug": "application-calendar-xml",
+  "title": "application/calendar+xml",
+  "summary": "Media type \"application/calendar+xml\". Registered/referenced in RFC6321.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/calendar+xml",
+    "reference_rfcs": [
+      "RFC6321"
+    ],
+    "raw_columns": {
+      "Name": "calendar+xml",
+      "Template": "application/calendar+xml",
+      "Reference": "[RFC6321]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/calendar+xml"
+  ]
+}

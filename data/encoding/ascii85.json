@@ -1,0 +1,87 @@
+{
+  "id": "encoding/ascii85",
+  "family": "encoding",
+  "slug": "ascii85",
+  "title": "Ascii85 (Adobe / btoa base-85)",
+  "summary": "Ascii85 packs every 4 input bytes (a 32-bit big-endian value) into 5 printable ASCII characters from '!'(0x21) to 'u'(0x75), giving ~25% expansion versus Base64's ~33%. An all-zero 4-byte group is abbreviated to the single character 'z'. A final partial group of n bytes encodes to n+1 characters. It backs PostScript and PDF (where the stream is wrapped in '<~' ... '~>').",
+  "kind": "encoding",
+  "aliases": [
+    "base85",
+    "base-85",
+    "Adobe Ascii85",
+    "btoa"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Ascii85",
+  "source_version": "Ascii85 (Adobe variant), retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base64",
+    "encoding/base45"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "Adobe Ascii85 (PostScript / PDF) — base-85",
+    "charset": "US-ASCII",
+    "algorithm": "ascii85",
+    "alphabet": "ASCII bytes 0x21 ('!') through 0x75 ('u'); base-85 digit d maps to the character (d + 33)",
+    "notes": [
+      "Each 4-byte group is read as a big-endian uint32 v and emitted as 5 base-85 digits d4..d0 where v = d4*85^4 + d3*85^3 + d2*85^2 + d1*85 + d0; each digit d is printed as the character (d + 33), i.e. '!' (0x21) .. 'u' (0x75).",
+      "Zero-group shortcut: a full 4-byte group that is 0x00000000 is written as the single character 'z' instead of '!!!!!' (Adobe variant only, and only for complete groups).",
+      "Final partial group: n input bytes (1..3) are zero-padded to 4 bytes, encoded, and only the first n+1 output characters are kept.",
+      "The Adobe PDF/PostScript framing wraps the data as '<~' ... '~>'; this entry encodes the raw payload without the delimiters.",
+      "Distinct from RFC 1924 base85 (IPv6, a different alphabet) and Z85 (ZeroMQ, RFC-less); those are not this codec."
+    ],
+    "test_vectors": [
+      {
+        "input": "",
+        "input_form": "utf8",
+        "output": "",
+        "output_form": "ascii",
+        "algorithm": "ascii85",
+        "direction": "encode",
+        "note": "Empty input -> empty output."
+      },
+      {
+        "input": "Man ",
+        "input_form": "ascii",
+        "output": "9jqo^",
+        "output_form": "ascii",
+        "algorithm": "ascii85",
+        "direction": "encode",
+        "note": "Canonical example: the 4 bytes \"Man \" (0x4D616E20) -> \"9jqo^\"."
+      },
+      {
+        "input": "sure.",
+        "input_form": "ascii",
+        "output": "F*2M7/c",
+        "output_form": "ascii",
+        "algorithm": "ascii85",
+        "direction": "encode",
+        "note": "5 bytes -> one full group (5 chars) + a 1-byte tail (2 chars) = 7 chars."
+      },
+      {
+        "input": "00000000",
+        "input_form": "bytes-hex",
+        "input_encoding": "hex",
+        "output": "z",
+        "output_form": "ascii",
+        "algorithm": "ascii85",
+        "direction": "encode",
+        "note": "Zero-group shortcut: a full 0x00000000 group encodes to the single character 'z'."
+      },
+      {
+        "input": "9jqo^",
+        "input_form": "ascii",
+        "output": "Man ",
+        "output_form": "ascii",
+        "algorithm": "ascii85",
+        "direction": "decode",
+        "note": "Round-trip: ascii85-decode(\"9jqo^\") = \"Man \"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

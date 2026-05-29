@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/last",
+  "family": "link-relation",
+  "slug": "last",
+  "title": "last",
+  "summary": "Link relation type \"last\": An IRI that refers to the furthest following resource\n      in a series of resources. Defined in RFC8288.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "last",
+    "reference_rfcs": [
+      "RFC8288"
+    ],
+    "raw_columns": {
+      "Relation Name": "last",
+      "Description": "An IRI that refers to the furthest following resource\n      in a series of resources.",
+      "Reference": "[RFC8288]",
+      "Notes": "This relation type registration did not indicate a\n      reference. Originally requested by Mark Nottingham in December\n      2004."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/openid-configuration",
+  "family": "well-known-uri",
+  "slug": "openid-configuration",
+  "title": "/.well-known/openid-configuration",
+  "summary": "Well-known URI suffix \"/.well-known/openid-configuration\". IANA status: permanent.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "openid-configuration",
+    "reference_rfcs": [],
+    "registration_date": "2013-08-27",
+    "raw_columns": {
+      "URI Suffix": "openid-configuration",
+      "Reference": "[http://openid.net/specs/openid-connect-discovery-1_0.html]",
+      "Status": "permanent",
+      "Change Controller": "[OpenID_Foundation_Artifact_Binding_Working_Group]",
+      "Related Information": "",
+      "Date Registered": "2013-08-27",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -64,6 +64,133 @@
       "slug_column": "Value",
       "kind": "parameter",
       "notes": "TLS cipher suites. slug = concatenated hex value (0x00,0x01 -> 0x0001; TLS_AES_128_GCM_SHA256 0x13,0x01 -> 0x1301). Curated to Recommended=Y plus the classic TLS 1.3 suites and a set of common TLS 1.2 suites."
+    },
+    "http-header": {
+      "url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+      "format": "xml",
+      "family": "http-header",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "value",
+      "kind": "header",
+      "notes": "Message Headers registry. IANA serves this as XML only (the .csv 404s), so the parser carries a minimal XML reader for it. We ingest the Permanent Message Header Field Names sub-registry (perm-headers); slug = field name lowercased. Capture protocol/status columns verbatim in raw_columns. Skip records whose status is obsoleted/deprecated/reserved (obsolete-only noise)."
+    },
+    "link-relation": {
+      "url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+      "format": "csv",
+      "family": "link-relation",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Relation Name",
+      "kind": "link-relation",
+      "notes": "Link Relation Types registry. slug = relation name (kebab-safe)."
+    },
+    "well-known-uri": {
+      "url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+      "format": "csv",
+      "family": "well-known-uri",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "URI Suffix",
+      "kind": "well-known-uri",
+      "notes": "Well-Known URIs registry (RFC 8615). slug = the URI suffix (kebab-safe). Skip Unassigned/Reserved rows."
+    },
+    "media-type-application": {
+      "url": "https://www.iana.org/assignments/media-types/application.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "application",
+      "notes": "Media types (application/*). One per-type CSV per top-level. slug = 'type-subtype' kebab (application/json -> application-json; slash->dash, '+' -> '-', other unsafe chars dropped). title = 'type/subtype'; alias = the real 'type/subtype'."
+    },
+    "media-type-audio": {
+      "url": "https://www.iana.org/assignments/media-types/audio.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "audio",
+      "notes": "Media types (audio/*). See media-type-application notes."
+    },
+    "media-type-font": {
+      "url": "https://www.iana.org/assignments/media-types/font.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "font",
+      "notes": "Media types (font/*). See media-type-application notes."
+    },
+    "media-type-image": {
+      "url": "https://www.iana.org/assignments/media-types/image.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "image",
+      "notes": "Media types (image/*). See media-type-application notes."
+    },
+    "media-type-message": {
+      "url": "https://www.iana.org/assignments/media-types/message.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "message",
+      "notes": "Media types (message/*). See media-type-application notes."
+    },
+    "media-type-model": {
+      "url": "https://www.iana.org/assignments/media-types/model.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "model",
+      "notes": "Media types (model/*). See media-type-application notes."
+    },
+    "media-type-multipart": {
+      "url": "https://www.iana.org/assignments/media-types/multipart.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "multipart",
+      "notes": "Media types (multipart/*). See media-type-application notes."
+    },
+    "media-type-text": {
+      "url": "https://www.iana.org/assignments/media-types/text.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "text",
+      "notes": "Media types (text/*). See media-type-application notes."
+    },
+    "media-type-video": {
+      "url": "https://www.iana.org/assignments/media-types/video.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "video",
+      "notes": "Media types (video/*). See media-type-application notes."
+    },
+    "media-type-haptics": {
+      "url": "https://www.iana.org/assignments/media-types/haptics.csv",
+      "format": "csv",
+      "family": "media-type",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Name",
+      "kind": "media-type",
+      "media_toplevel": "haptics",
+      "notes": "Media types (haptics/*). See media-type-application notes."
     }
   }
 }

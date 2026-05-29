@@ -1,0 +1,29 @@
+{
+  "id": "media-type/text-vnd-si-uricatalogue",
+  "family": "media-type",
+  "slug": "text-vnd-si-uricatalogue",
+  "title": "text/vnd.si.uricatalogue",
+  "summary": "Media type \"text/vnd.si.uricatalogue\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/vnd.si.uricatalogue",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.si.uricatalogue (OBSOLETED by request)",
+      "Template": "text/vnd.si.uricatalogue",
+      "Reference": "[Nicholas_Parks_Young]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/vnd.si.uricatalogue",
+    "text/vnd.si.uricatalogue (OBSOLETED by request)"
+  ]
+}

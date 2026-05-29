@@ -1,0 +1,30 @@
+{
+  "id": "media-type/haptics-ivs",
+  "family": "media-type",
+  "slug": "haptics-ivs",
+  "title": "haptics/ivs",
+  "summary": "Media type \"haptics/ivs\". Registered/referenced in RFC9695.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/haptics.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 21 Jan 2026 00:26:19 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "haptics/ivs",
+    "reference_rfcs": [
+      "RFC9695"
+    ],
+    "raw_columns": {
+      "Name": "ivs",
+      "Template": "haptics/ivs",
+      "Reference": "[RFC9695]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "haptics/ivs"
+  ]
+}

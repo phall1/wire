@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-telephone-event",
+  "family": "media-type",
+  "slug": "audio-telephone-event",
+  "title": "audio/telephone-event",
+  "summary": "Media type \"audio/telephone-event\". Registered/referenced in RFC4733.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/telephone-event",
+    "reference_rfcs": [
+      "RFC4733"
+    ],
+    "raw_columns": {
+      "Name": "telephone-event",
+      "Template": "audio/telephone-event",
+      "Reference": "[RFC4733]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/telephone-event"
+  ]
+}

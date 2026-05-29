@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-pkcs10",
+  "family": "media-type",
+  "slug": "application-pkcs10",
+  "title": "application/pkcs10",
+  "summary": "Media type \"application/pkcs10\". Registered/referenced in RFC5967.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/pkcs10",
+    "reference_rfcs": [
+      "RFC5967"
+    ],
+    "raw_columns": {
+      "Name": "pkcs10",
+      "Template": "application/pkcs10",
+      "Reference": "[RFC5967]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/pkcs10"
+  ]
+}

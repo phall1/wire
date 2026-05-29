@@ -1,0 +1,32 @@
+{
+  "id": "http-header/content-type",
+  "family": "http-header",
+  "slug": "content-type",
+  "title": "Content-Type",
+  "summary": "Message header field \"Content-Type\" (protocol: MIME). Defined in RFC4021, RFC9788.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Content-Type",
+    "reference_rfcs": [
+      "RFC4021",
+      "RFC9788"
+    ],
+    "raw_columns": {
+      "value": "Content-Type",
+      "protocol": "MIME",
+      "status": "",
+      "Reference": "[RFC4021][RFC9788]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Content-Type"
+  ]
+}

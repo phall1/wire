@@ -27,6 +27,12 @@ export const FAMILIES: Record<string, { label: string; blurb: string }> = {
   "dns-rrtype": { label: "dns-rrtype", blurb: "DNS resource-record types" },
   "cbor-tag": { label: "cbor-tag", blurb: "CBOR tags" },
   encoding: { label: "encoding", blurb: "encodings (base64, punycode …)" },
+  "http-header": { label: "http-header", blurb: "HTTP header fields" },
+  "link-relation": { label: "link-relation", blurb: "link relation types" },
+  "well-known-uri": { label: "well-known-uri", blurb: "well-known URIs" },
+  identifier: { label: "identifier", blurb: "unique identifier formats" },
+  magic: { label: "magic", blurb: "file magic numbers / signatures" },
+  "wire-format": { label: "wire-format", blurb: "binary wire formats & TLV" },
 };
 
 export interface Entry {

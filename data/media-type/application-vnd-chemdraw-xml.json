@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-chemdraw-xml",
+  "family": "media-type",
+  "slug": "application-vnd-chemdraw-xml",
+  "title": "application/vnd.chemdraw+xml",
+  "summary": "Media type \"application/vnd.chemdraw+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.chemdraw+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.chemdraw+xml",
+      "Template": "application/vnd.chemdraw+xml",
+      "Reference": "[Glenn_Howes]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.chemdraw+xml"
+  ]
+}

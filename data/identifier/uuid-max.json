@@ -1,0 +1,39 @@
+{
+  "id": "identifier/uuid-max",
+  "family": "identifier",
+  "slug": "uuid-max",
+  "title": "Max UUID (all-ones)",
+  "summary": "The Max UUID is the special UUID with all 128 bits set to one: ffffffff-ffff-ffff-ffff-ffffffffffff. RFC 9562 defines it as a sentinel that sorts after every other UUID — useful as an exclusive upper bound in range scans. Its version and variant nibbles are both 0xF, so it matches no real version.",
+  "kind": "identifier",
+  "aliases": [
+    "max UUID",
+    "omni UUID",
+    "all-ones UUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.10",
+  "source_version": "RFC 9562 §5.10",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuid-nil",
+    "identifier/uuidv7"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.10",
+    "example": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "bit_layout": [
+      { "field": "all_one", "bits": 128, "meaning": "Every bit is 1. Version nibble = 0xF and variant nibble = 0xF, so it is not a valid v1-v8 value." }
+    ],
+    "length_bits": 128,
+    "sortable": false,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "Sentinel that sorts after every other UUID; handy as an exclusive upper bound in time-ordered (v7) range queries.",
+      "Counterpart of the Nil UUID (all zeros). Introduced in RFC 9562 (it was not in RFC 4122)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

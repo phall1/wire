@@ -1,0 +1,28 @@
+{
+  "id": "media-type/text-prs-lines-tag",
+  "family": "media-type",
+  "slug": "text-prs-lines-tag",
+  "title": "text/prs.lines.tag",
+  "summary": "Media type \"text/prs.lines.tag\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/text.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 12 May 2026 00:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "text/prs.lines.tag",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "prs.lines.tag",
+      "Template": "text/prs.lines.tag",
+      "Reference": "[John_Lines]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "text/prs.lines.tag"
+  ]
+}

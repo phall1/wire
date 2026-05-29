@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-lotus-screencam",
+  "family": "media-type",
+  "slug": "application-vnd-lotus-screencam",
+  "title": "application/vnd.lotus-screencam",
+  "summary": "Media type \"application/vnd.lotus-screencam\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.lotus-screencam",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.lotus-screencam",
+      "Template": "application/vnd.lotus-screencam",
+      "Reference": "[Paul_Wattenberger]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.lotus-screencam"
+  ]
+}

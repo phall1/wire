@@ -1,0 +1,29 @@
+{
+  "id": "media-type/image-hsj2",
+  "family": "media-type",
+  "slug": "image-hsj2",
+  "title": "image/hsj2",
+  "summary": "Media type \"image/hsj2\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/hsj2",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "hsj2 (OBSOLETE)",
+      "Template": "image/hsj2",
+      "Reference": "[ISO-IEC_JTC_1][ITU-T]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/hsj2",
+    "image/hsj2 (OBSOLETE)"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-dvcs",
+  "family": "media-type",
+  "slug": "application-dvcs",
+  "title": "application/dvcs",
+  "summary": "Media type \"application/dvcs\". Registered/referenced in RFC3029.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/dvcs",
+    "reference_rfcs": [
+      "RFC3029"
+    ],
+    "raw_columns": {
+      "Name": "dvcs",
+      "Template": "application/dvcs",
+      "Reference": "[RFC3029]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/dvcs"
+  ]
+}

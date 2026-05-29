@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/predecessor-version",
+  "family": "link-relation",
+  "slug": "predecessor-version",
+  "title": "predecessor-version",
+  "summary": "Link relation type \"predecessor-version\": Points to a resource containing the predecessor\n      version in the version history. Defined in RFC5829.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "predecessor-version",
+    "reference_rfcs": [
+      "RFC5829"
+    ],
+    "raw_columns": {
+      "Relation Name": "predecessor-version",
+      "Description": "Points to a resource containing the predecessor\n      version in the version history.",
+      "Reference": "[RFC5829]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

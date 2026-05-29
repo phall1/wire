@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-mmt-usd-xml",
+  "family": "media-type",
+  "slug": "application-mmt-usd-xml",
+  "title": "application/mmt-usd+xml",
+  "summary": "Media type \"application/mmt-usd+xml\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/mmt-usd+xml",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "mmt-usd+xml",
+      "Template": "application/mmt-usd+xml",
+      "Reference": "[ATSC]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/mmt-usd+xml"
+  ]
+}

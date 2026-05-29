@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-tzif-leap",
+  "family": "media-type",
+  "slug": "application-tzif-leap",
+  "title": "application/tzif-leap",
+  "summary": "Media type \"application/tzif-leap\". Registered/referenced in RFC9636.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/tzif-leap",
+    "reference_rfcs": [
+      "RFC9636"
+    ],
+    "raw_columns": {
+      "Name": "tzif-leap",
+      "Template": "application/tzif-leap",
+      "Reference": "[RFC9636]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/tzif-leap"
+  ]
+}

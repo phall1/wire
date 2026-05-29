@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-flexfec",
+  "family": "media-type",
+  "slug": "video-flexfec",
+  "title": "video/flexfec",
+  "summary": "Media type \"video/flexfec\". Registered/referenced in RFC8627.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/flexfec",
+    "reference_rfcs": [
+      "RFC8627"
+    ],
+    "raw_columns": {
+      "Name": "flexfec",
+      "Template": "video/flexfec",
+      "Reference": "[RFC8627]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/flexfec"
+  ]
+}

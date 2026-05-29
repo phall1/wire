@@ -1,0 +1,31 @@
+{
+  "id": "http-header/received-spf",
+  "family": "http-header",
+  "slug": "received-spf",
+  "title": "Received-SPF",
+  "summary": "Message header field \"Received-SPF\" (protocol: mail), status standard. Defined in RFC7208.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Received-SPF",
+    "reference_rfcs": [
+      "RFC7208"
+    ],
+    "raw_columns": {
+      "value": "Received-SPF",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC7208]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Received-SPF"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-timestamped-data",
+  "family": "media-type",
+  "slug": "application-timestamped-data",
+  "title": "application/timestamped-data",
+  "summary": "Media type \"application/timestamped-data\". Registered/referenced in RFC5955.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/timestamped-data",
+    "reference_rfcs": [
+      "RFC5955"
+    ],
+    "raw_columns": {
+      "Name": "timestamped-data",
+      "Template": "application/timestamped-data",
+      "Reference": "[RFC5955]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/timestamped-data"
+  ]
+}

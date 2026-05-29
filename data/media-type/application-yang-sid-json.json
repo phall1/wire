@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-yang-sid-json",
+  "family": "media-type",
+  "slug": "application-yang-sid-json",
+  "title": "application/yang-sid+json",
+  "summary": "Media type \"application/yang-sid+json\". Registered/referenced in RFC9595.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/yang-sid+json",
+    "reference_rfcs": [
+      "RFC9595"
+    ],
+    "raw_columns": {
+      "Name": "yang-sid+json",
+      "Template": "application/yang-sid+json",
+      "Reference": "[RFC9595]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/yang-sid+json"
+  ]
+}

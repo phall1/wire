@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-bacnet-xdd-zip",
+  "family": "media-type",
+  "slug": "application-bacnet-xdd-zip",
+  "title": "application/bacnet-xdd+zip",
+  "summary": "Media type \"application/bacnet-xdd+zip\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/bacnet-xdd+zip",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "bacnet-xdd+zip",
+      "Template": "application/bacnet-xdd+zip",
+      "Reference": "[ASHRAE][Dave_Robin]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/bacnet-xdd+zip"
+  ]
+}

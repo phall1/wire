@@ -1,0 +1,46 @@
+{
+  "id": "magic/mach-o",
+  "family": "magic",
+  "slug": "mach-o",
+  "title": "Mach-O signature (FE ED FA CE / CF, fat: CA FE BA BE)",
+  "summary": "Apple's Mach-O executable format starts with a magic word: 0xFEEDFACE (32-bit) or 0xFEEDFACF (64-bit), with byte order indicating endianness. Universal ('fat') binaries that bundle multiple architectures begin with 0xCAFEBABE.",
+  "kind": "signature",
+  "aliases": ["Mach-O magic", "MH_MAGIC", "MH_MAGIC_64", "fat binary", "FEEDFACE", "FEEDFACF"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://github.com/apple-oss-distributions/xnu/blob/main/EXTERNAL_HEADERS/mach-o/loader.h",
+  "source_version": "xnu EXTERNAL_HEADERS/mach-o/loader.h (MH_MAGIC 0xfeedface, MH_MAGIC_64 0xfeedfacf); fat.h FAT_MAGIC 0xcafebabe",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://github.com/apple-oss-distributions/xnu/blob/main/EXTERNAL_HEADERS/mach-o/loader.h",
+      "source_version": "xnu loader.h",
+      "note": "MH_MAGIC = 0xfeedface, MH_MAGIC_64 = 0xfeedfacf; reversed (MH_CIGAM) forms for the opposite byte order."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/Mach-O",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates magic values and FAT_MAGIC 0xcafebabe for universal binaries, and the clash with Java .class magic."
+    }
+  ],
+  "see_also": ["magic/elf", "magic/java-class", "magic/pe-exe"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FE ED FA CE",
+    "offset": 0,
+    "magic_ascii": "\\xfe\\xed\\xfa\\xce",
+    "extensions": ["", "o", "dylib", "bundle"],
+    "mime": "application/x-mach-binary",
+    "spec": "Apple Mach-O loader.h",
+    "notes": [
+      "32-bit: MH_MAGIC = FE ED FA CE; 64-bit: MH_MAGIC_64 = FE ED FA CF.",
+      "Opposite byte order (MH_CIGAM/MH_CIGAM_64) appears reversed: CE FA ED FE / CF FA ED FE.",
+      "Universal 'fat' binaries begin with FAT_MAGIC = CA FE BA BE (big-endian), then a count of architecture slices. FAT_MAGIC_64 = CA FE BA BF.",
+      "CAUTION: CA FE BA BE is identical to the Java .class magic; disambiguate by the following bytes (Java .class next is the minor/major version; Mach-O fat next is a big-endian architecture count)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

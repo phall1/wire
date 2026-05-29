@@ -1,0 +1,31 @@
+{
+  "id": "media-type/audio-ogg",
+  "family": "media-type",
+  "slug": "audio-ogg",
+  "title": "audio/ogg",
+  "summary": "Media type \"audio/ogg\". Registered/referenced in RFC5334, RFC7845.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/ogg",
+    "reference_rfcs": [
+      "RFC5334",
+      "RFC7845"
+    ],
+    "raw_columns": {
+      "Name": "ogg",
+      "Template": "audio/ogg",
+      "Reference": "[RFC5334][RFC7845]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/ogg"
+  ]
+}

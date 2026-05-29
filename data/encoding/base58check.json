@@ -1,0 +1,58 @@
+{
+  "id": "encoding/base58check",
+  "family": "encoding",
+  "slug": "base58check",
+  "title": "Base58Check (Bitcoin)",
+  "summary": "Base58Check wraps a payload in a one-byte version prefix and a 4-byte checksum (the first 4 bytes of SHA-256(SHA-256(version || payload))), then Base58-encodes the whole thing. The checksum lets a decoder detect typos before acting on a value, which is why it encodes Bitcoin addresses, WIF private keys, and extended keys. Decoding it without verifying the checksum is a bug.",
+  "kind": "encoding",
+  "aliases": [
+    "base58-check",
+    "Bitcoin address encoding",
+    "Check58"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.bitcoin.it/wiki/Base58Check_encoding",
+  "source_version": "Bitcoin Wiki Base58Check encoding (unversioned wiki)",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base58",
+    "encoding/base16"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "Bitcoin Wiki — Base58Check encoding",
+    "charset": "US-ASCII",
+    "algorithm": "base58check",
+    "alphabet": "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz",
+    "notes": [
+      "Construction: data = version_byte (1) || payload (N). checksum = SHA-256(SHA-256(data))[0:4]. result = base58( data || checksum ).",
+      "The double SHA-256 is the Bitcoin standard digest; the checksum is the FIRST 4 bytes of that 32-byte hash, big-endian as produced.",
+      "Version byte selects the object type/network: 0x00 = mainnet P2PKH address (leading '1'), 0x05 = P2SH ('3'), 0x80 = mainnet WIF private key, 0x6F = testnet P2PKH.",
+      "A decoder MUST recompute and compare the 4-byte checksum and reject mismatches; this is the whole point of Base58Check over raw Base58."
+    ],
+    "test_vectors": [
+      {
+        "input": "00010966776006953D5567439E5E39F86A0D273BEE",
+        "input_form": "bytes-hex",
+        "input_encoding": "hex",
+        "output": "16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM",
+        "output_form": "ascii",
+        "algorithm": "base58check",
+        "direction": "encode",
+        "note": "Canonical Bitcoin Wiki 'Technical background of address' worked example: version 0x00 + HASH160 010966776006953D5567439E5E39F86A0D273BEE, double-SHA-256 checksum appended, base58 -> address 16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM. (For this codec the gate computes the checksum; input is version||payload as hex.)"
+      },
+      {
+        "input": "16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM",
+        "input_form": "ascii",
+        "output": "00010966776006953D5567439E5E39F86A0D273BEE",
+        "output_form": "bytes-hex",
+        "algorithm": "base58check",
+        "direction": "decode",
+        "note": "Round-trip: base58check-decode strips and verifies the 4-byte checksum, yielding version||payload = 00 + HASH160 (hex)."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

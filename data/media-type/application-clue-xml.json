@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-clue-xml",
+  "family": "media-type",
+  "slug": "application-clue-xml",
+  "title": "application/clue+xml",
+  "summary": "Media type \"application/clue+xml\". Registered/referenced in RFC8847.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/clue+xml",
+    "reference_rfcs": [
+      "RFC8847"
+    ],
+    "raw_columns": {
+      "Name": "clue+xml",
+      "Template": "application/clue+xml",
+      "Reference": "[RFC8847]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/clue+xml"
+  ]
+}

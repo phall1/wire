@@ -1,0 +1,31 @@
+{
+  "id": "http-header/from",
+  "family": "http-header",
+  "slug": "from",
+  "title": "From",
+  "summary": "Message header field \"From\" (protocol: mail), status standard. Defined in RFC6854.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "From",
+    "reference_rfcs": [
+      "RFC6854"
+    ],
+    "raw_columns": {
+      "value": "From",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC6854]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "From"
+  ]
+}

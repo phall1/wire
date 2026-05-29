@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-session-info",
+  "family": "media-type",
+  "slug": "application-session-info",
+  "title": "application/session-info",
+  "summary": "Media type \"application/session-info\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/session-info",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "session-info",
+      "Template": "application/session-info",
+      "Reference": "[_3GPP][Dongwook_Kim]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/session-info"
+  ]
+}

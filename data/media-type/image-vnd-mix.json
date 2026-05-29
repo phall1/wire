@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-mix",
+  "family": "media-type",
+  "slug": "image-vnd-mix",
+  "title": "image/vnd.mix",
+  "summary": "Media type \"image/vnd.mix\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.mix",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.mix",
+      "Template": "image/vnd.mix",
+      "Reference": "[Saveen_Reddy]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.mix"
+  ]
+}

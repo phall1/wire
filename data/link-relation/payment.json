@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/payment",
+  "family": "link-relation",
+  "slug": "payment",
+  "title": "payment",
+  "summary": "Link relation type \"payment\": Indicates a resource where payment is accepted. Defined in RFC8288.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "payment",
+    "reference_rfcs": [
+      "RFC8288"
+    ],
+    "raw_columns": {
+      "Relation Name": "payment",
+      "Description": "Indicates a resource where payment is accepted.",
+      "Reference": "[RFC8288]",
+      "Notes": "This relation type registration did not indicate a\n      reference.  Requested by Joshua Kinberg and Robert Sayre.  It is\n      meant as a general way to facilitate acts of payment, and thus\n      this specification makes no assumptions on the type of payment or\n      transaction protocol.  Examples may include a web page where\n      donations are accepted or where goods and services are available\n      for purchase. rel=\"payment\" is not intended to initiate an\n      automated transaction.  In Atom documents, a link element with a\n      rel=\"payment\" attribute may exist at the feed/channel level and/or\n      the entry/item level.  For example, a rel=\"payment\" link at the\n      feed/channel level may point to a \"tip jar\" URI, whereas an entry/\n      item containing a book review may include a rel=\"payment\" link\n      that points to the location where the book may be purchased\n      through an online retailer."
+    }
+  },
+  "updated": "2026-05-29"
+}

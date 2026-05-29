@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-sbml-xml",
+  "family": "media-type",
+  "slug": "application-sbml-xml",
+  "title": "application/sbml+xml",
+  "summary": "Media type \"application/sbml+xml\". Registered/referenced in RFC3823.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/sbml+xml",
+    "reference_rfcs": [
+      "RFC3823"
+    ],
+    "raw_columns": {
+      "Name": "sbml+xml",
+      "Template": "application/sbml+xml",
+      "Reference": "[RFC3823]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/sbml+xml"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "link-relation/status",
+  "family": "link-relation",
+  "slug": "status",
+  "title": "status",
+  "summary": "Link relation type \"status\": Identifies a resource that represents the context's\n      status. Defined in RFC8631.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "status",
+    "reference_rfcs": [
+      "RFC8631"
+    ],
+    "raw_columns": {
+      "Relation Name": "status",
+      "Description": "Identifies a resource that represents the context's\n      status.",
+      "Reference": "[RFC8631]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

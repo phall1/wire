@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-encaprtp",
+  "family": "media-type",
+  "slug": "application-encaprtp",
+  "title": "application/encaprtp",
+  "summary": "Media type \"application/encaprtp\". Registered/referenced in RFC6849.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/encaprtp",
+    "reference_rfcs": [
+      "RFC6849"
+    ],
+    "raw_columns": {
+      "Name": "encaprtp",
+      "Template": "application/encaprtp",
+      "Reference": "[RFC6849]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/encaprtp"
+  ]
+}

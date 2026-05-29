@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-lxf",
+  "family": "media-type",
+  "slug": "application-lxf",
+  "title": "application/LXF",
+  "summary": "Media type \"application/LXF\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/LXF",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "LXF",
+      "Template": "application/LXF",
+      "Reference": "[ASAM][Bernd_Wenzel]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/LXF"
+  ]
+}

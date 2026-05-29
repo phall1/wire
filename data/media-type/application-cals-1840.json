@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-cals-1840",
+  "family": "media-type",
+  "slug": "application-cals-1840",
+  "title": "application/CALS-1840",
+  "summary": "Media type \"application/CALS-1840\". Registered/referenced in RFC1895.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/CALS-1840",
+    "reference_rfcs": [
+      "RFC1895"
+    ],
+    "raw_columns": {
+      "Name": "CALS-1840",
+      "Template": "application/CALS-1840",
+      "Reference": "[RFC1895]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/CALS-1840"
+  ]
+}

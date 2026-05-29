@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-grib",
+  "family": "media-type",
+  "slug": "application-grib",
+  "title": "application/grib",
+  "summary": "Media type \"application/grib\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/grib",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "grib",
+      "Template": "application/grib",
+      "Reference": "[World_Meterological_Organization][Anna_Milan]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/grib"
+  ]
+}

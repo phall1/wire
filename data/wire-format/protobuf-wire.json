@@ -1,0 +1,36 @@
+{
+  "id": "wire-format/protobuf-wire",
+  "family": "wire-format",
+  "slug": "protobuf-wire",
+  "title": "Protocol Buffers wire format (tag + value)",
+  "summary": "Protobuf serializes a message as a stream of fields, each preceded by a varint 'tag' that packs the field number and a 3-bit wire type: tag = (field_number << 3) | wire_type. The wire type (0 varint, 1 64-bit, 2 length-delimited, 5 32-bit) tells the parser how to read the value, so unknown fields can be skipped. It is a tag-then-value scheme, a lean cousin of ASN.1 TLV.",
+  "kind": "wire-format",
+  "aliases": ["protobuf", "protocol buffers", "proto wire format", "field tag"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://protobuf.dev/programming-guides/encoding/",
+  "source_version": "Protocol Buffers Encoding documentation (protobuf.dev), retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/leb128-varint", "wire-format/asn1-ber", "wire-format/cbor-encoding"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Protocol Buffers Encoding (protobuf.dev)",
+    "summary": "Each field on the wire is a key (a varint tag) optionally followed by its value. The tag encodes both the field number and a wire type: tag = (field_number << 3) | wire_type. Wire type 0 = varint (int32/64, uint, bool, enum, sint via zigzag); 1 = 64-bit (fixed64, double); 2 = length-delimited (string, bytes, embedded messages, packed repeated) which is itself a length-then-value TLV; 5 = 32-bit (fixed32, float). Wire types 3/4 (start/end group) are deprecated.",
+    "structure": [
+      { "field": "Tag (key)", "size": "1+ bytes (varint)", "meaning": "(field_number << 3) | wire_type. Low 3 bits = wire type, the rest = field number. LEB128 varint, so large field numbers take more bytes." },
+      { "field": "Value", "size": "depends on wire type", "meaning": "wire type 0: a varint. type 1: exactly 8 bytes (little-endian). type 2: a varint length followed by that many content bytes (a nested TLV). type 5: exactly 4 bytes (little-endian)." }
+    ],
+    "example_hex": "08 96 01",
+    "example_decoded": "Field #1 = 150. Tag 0x08 = (1<<3)|0 => field 1, wire type 0 (varint). Value 96 01 is the LEB128 varint for 150 (0x96 has continuation bit set: 0x16=22 low 7 bits; 0x01 high => 1*128 + 22 = 150).",
+    "see": ["wire-format/leb128-varint"],
+    "notes": [
+      "tag = (field_number << 3) | wire_type is the load-bearing identity; e.g. field 3 of a string is tag (3<<3)|2 = 0x1A.",
+      "Length-delimited (wire type 2) is exactly a Length-Value pair, making nested messages a recursive TLV much like ASN.1.",
+      "Signed ints use zigzag (sint32/64) so small negatives stay short; otherwise negative int32 costs 10 bytes.",
+      "Unknown fields are skippable purely from the wire type, which is what gives protobuf forward/backward compatibility.",
+      "Field order is not guaranteed and the same message can have multiple valid encodings — protobuf is NOT canonical (unlike DER)."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

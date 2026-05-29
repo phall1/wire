@@ -1,0 +1,28 @@
+{
+  "id": "media-type/video-av1",
+  "family": "media-type",
+  "slug": "video-av1",
+  "title": "video/AV1",
+  "summary": "Media type \"video/AV1\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/AV1",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "AV1",
+      "Template": "video/AV1",
+      "Reference": "[Alliance_for_Open_Media]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/AV1"
+  ]
+}

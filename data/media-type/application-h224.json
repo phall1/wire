@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-h224",
+  "family": "media-type",
+  "slug": "application-h224",
+  "title": "application/H224",
+  "summary": "Media type \"application/H224\". Registered/referenced in RFC4573.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/H224",
+    "reference_rfcs": [
+      "RFC4573"
+    ],
+    "raw_columns": {
+      "Name": "H224",
+      "Template": "application/H224",
+      "Reference": "[RFC4573]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/H224"
+  ]
+}

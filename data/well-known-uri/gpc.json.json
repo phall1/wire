@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/gpc.json",
+  "family": "well-known-uri",
+  "slug": "gpc.json",
+  "title": "/.well-known/gpc.json",
+  "summary": "Well-known URI suffix \"/.well-known/gpc.json\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "gpc.json",
+    "reference_rfcs": [],
+    "registration_date": "2022-01-28",
+    "raw_columns": {
+      "URI Suffix": "gpc.json",
+      "Reference": "[Global Privacy Control (GPC)]",
+      "Status": "provisional",
+      "Change Controller": "W3C",
+      "Related Information": "",
+      "Date Registered": "2022-01-28",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

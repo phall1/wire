@@ -1,0 +1,31 @@
+{
+  "id": "well-known-uri/caldav",
+  "family": "well-known-uri",
+  "slug": "caldav",
+  "title": "/.well-known/caldav",
+  "summary": "Well-known URI suffix \"/.well-known/caldav\". IANA status: permanent. Defined in RFC6764.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "caldav",
+    "reference_rfcs": [
+      "RFC6764"
+    ],
+    "raw_columns": {
+      "URI Suffix": "caldav",
+      "Reference": "[RFC6764]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "see also [RFC4791]",
+      "Date Registered": "",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-atrac3",
+  "family": "media-type",
+  "slug": "audio-atrac3",
+  "title": "audio/ATRAC3",
+  "summary": "Media type \"audio/ATRAC3\". Registered/referenced in RFC5584.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/ATRAC3",
+    "reference_rfcs": [
+      "RFC5584"
+    ],
+    "raw_columns": {
+      "Name": "ATRAC3",
+      "Template": "audio/ATRAC3",
+      "Reference": "[RFC5584]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/ATRAC3"
+  ]
+}

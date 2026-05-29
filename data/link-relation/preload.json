@@ -1,0 +1,26 @@
+{
+  "id": "link-relation/preload",
+  "family": "link-relation",
+  "slug": "preload",
+  "title": "preload",
+  "summary": "Link relation type \"preload\": Refers to a resource that should be loaded early in the processing of the link's context, without blocking rendering.",
+  "kind": "link-relation",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/link-relations/link-relations-1.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 12 Jan 2026 18:11:26 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "preload",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Relation Name": "preload",
+      "Description": "Refers to a resource that should be loaded early in the processing of the link's context, without blocking rendering.",
+      "Reference": "[Preload]",
+      "Notes": "Additional target attributes establish the detailed fetch properties of the link."
+    }
+  },
+  "updated": "2026-05-29"
+}

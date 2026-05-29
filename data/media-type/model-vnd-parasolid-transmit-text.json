@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-parasolid-transmit-text",
+  "family": "media-type",
+  "slug": "model-vnd-parasolid-transmit-text",
+  "title": "model/vnd.parasolid.transmit.text",
+  "summary": "Media type \"model/vnd.parasolid.transmit.text\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.parasolid.transmit.text",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.parasolid.transmit.text",
+      "Template": "model/vnd.parasolid.transmit.text",
+      "Reference": "[Parasolid]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.parasolid.transmit.text"
+  ]
+}

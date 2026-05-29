@@ -1,0 +1,30 @@
+{
+  "id": "media-type/image-jpm",
+  "family": "media-type",
+  "slug": "image-jpm",
+  "title": "image/jpm",
+  "summary": "Media type \"image/jpm\". Registered/referenced in RFC3745.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/jpm",
+    "reference_rfcs": [
+      "RFC3745"
+    ],
+    "raw_columns": {
+      "Name": "jpm",
+      "Template": "image/jpm",
+      "Reference": "[RFC3745]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/jpm"
+  ]
+}

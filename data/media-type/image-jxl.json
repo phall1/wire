@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-jxl",
+  "family": "media-type",
+  "slug": "image-jxl",
+  "title": "image/jxl",
+  "summary": "Media type \"image/jxl\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/jxl",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "jxl",
+      "Template": "image/jxl",
+      "Reference": "[ISO-IEC_JTC_1_SC_29_WG_1][ISO-IEC_JTC_1]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/jxl"
+  ]
+}

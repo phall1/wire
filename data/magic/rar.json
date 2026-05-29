@@ -1,0 +1,45 @@
+{
+  "id": "magic/rar",
+  "family": "magic",
+  "slug": "rar",
+  "title": "RAR signature (Rar!\\x1a\\x07)",
+  "summary": "A RAR archive begins with 'Rar!' (52 61 72 21) followed by 0x1A 0x07. RAR 1.5-4.x append a single 0x00 (7 bytes total); RAR 5.0+ append 0x01 0x00 (8 bytes total).",
+  "kind": "signature",
+  "aliases": ["RAR magic", "Rar!"],
+  "status": "proprietary",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://www.rarlab.com/technote.htm",
+  "source_version": "RARLAB RAR 5.0 archive format technote (signature 'Rar!\\x1a\\x07\\x01\\x00')",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.magic_hex",
+      "source_url": "https://www.rarlab.com/technote.htm",
+      "source_version": "retrieved 2026-05-29",
+      "note": "RAR 5.0 signature: 52 61 72 21 1A 07 01 00. RAR 4.x: 52 61 72 21 1A 07 00."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Corroborates the 7-byte (v1.5-4) and 8-byte (v5) RAR signatures."
+    }
+  ],
+  "see_also": ["magic/zip", "magic/7z"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "52 61 72 21 1A 07",
+    "offset": 0,
+    "magic_ascii": "Rar!\\x1a\\x07",
+    "extensions": ["rar"],
+    "mime": "application/vnd.rar",
+    "spec": "RARLAB RAR archive format technote",
+    "notes": [
+      "RAR 1.5-4.x: 52 61 72 21 1A 07 00 (7 bytes).",
+      "RAR 5.0+: 52 61 72 21 1A 07 01 00 (8 bytes).",
+      "RAR is a proprietary format; only extraction (unrar) is openly documented."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-vp8",
+  "family": "media-type",
+  "slug": "video-vp8",
+  "title": "video/VP8",
+  "summary": "Media type \"video/VP8\". Registered/referenced in RFC7741.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/VP8",
+    "reference_rfcs": [
+      "RFC7741"
+    ],
+    "raw_columns": {
+      "Name": "VP8",
+      "Template": "video/VP8",
+      "Reference": "[RFC7741]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/VP8"
+  ]
+}

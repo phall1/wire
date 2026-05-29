@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-entity-statement-jwt",
+  "family": "media-type",
+  "slug": "application-entity-statement-jwt",
+  "title": "application/entity-statement+jwt",
+  "summary": "Media type \"application/entity-statement+jwt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/entity-statement+jwt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "entity-statement+jwt",
+      "Template": "application/entity-statement+jwt",
+      "Reference": "[OpenID_Foundation_Artifact_Binding_WG]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/entity-statement+jwt"
+  ]
+}

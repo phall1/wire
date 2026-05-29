@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-riscos",
+  "family": "media-type",
+  "slug": "application-riscos",
+  "title": "application/riscos",
+  "summary": "Media type \"application/riscos\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/riscos",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "riscos",
+      "Template": "application/riscos",
+      "Reference": "[Nick_Smith]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/riscos"
+  ]
+}

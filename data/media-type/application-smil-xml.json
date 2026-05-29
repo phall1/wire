@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-smil-xml",
+  "family": "media-type",
+  "slug": "application-smil-xml",
+  "title": "application/smil+xml",
+  "summary": "Media type \"application/smil+xml\". Registered/referenced in RFC4536.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/smil+xml",
+    "reference_rfcs": [
+      "RFC4536"
+    ],
+    "raw_columns": {
+      "Name": "smil+xml",
+      "Template": "application/smil+xml",
+      "Reference": "[RFC4536]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/smil+xml"
+  ]
+}

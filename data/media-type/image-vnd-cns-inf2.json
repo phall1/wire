@@ -1,0 +1,28 @@
+{
+  "id": "media-type/image-vnd-cns-inf2",
+  "family": "media-type",
+  "slug": "image-vnd-cns-inf2",
+  "title": "image/vnd.cns.inf2",
+  "summary": "Media type \"image/vnd.cns.inf2\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/image.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 16 Apr 2026 01:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "image/vnd.cns.inf2",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.cns.inf2",
+      "Template": "image/vnd.cns.inf2",
+      "Reference": "[Ann_McLaughlin]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "image/vnd.cns.inf2"
+  ]
+}

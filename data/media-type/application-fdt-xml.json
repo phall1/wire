@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-fdt-xml",
+  "family": "media-type",
+  "slug": "application-fdt-xml",
+  "title": "application/fdt+xml",
+  "summary": "Media type \"application/fdt+xml\". Registered/referenced in RFC6726.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/fdt+xml",
+    "reference_rfcs": [
+      "RFC6726"
+    ],
+    "raw_columns": {
+      "Name": "fdt+xml",
+      "Template": "application/fdt+xml",
+      "Reference": "[RFC6726]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/fdt+xml"
+  ]
+}

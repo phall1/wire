@@ -1,0 +1,28 @@
+{
+  "id": "media-type/audio-vnd-nokia-mobile-xmf",
+  "family": "media-type",
+  "slug": "audio-vnd-nokia-mobile-xmf",
+  "title": "audio/vnd.nokia.mobile-xmf",
+  "summary": "Media type \"audio/vnd.nokia.mobile-xmf\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/vnd.nokia.mobile-xmf",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.nokia.mobile-xmf",
+      "Template": "audio/vnd.nokia.mobile-xmf",
+      "Reference": "[Nokia]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/vnd.nokia.mobile-xmf"
+  ]
+}

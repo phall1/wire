@@ -1,0 +1,31 @@
+{
+  "id": "media-type/application-font-woff",
+  "family": "media-type",
+  "slug": "application-font-woff",
+  "title": "application/font-woff",
+  "summary": "Media type \"application/font-woff\". Registered/referenced in RFC8081.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/font-woff",
+    "reference_rfcs": [
+      "RFC8081"
+    ],
+    "raw_columns": {
+      "Name": "font-woff - DEPRECATED in favor of font/woff",
+      "Template": "application/font-woff",
+      "Reference": "[W3C][RFC8081]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/font-woff",
+    "application/font-woff - DEPRECATED in favor of font/woff"
+  ]
+}

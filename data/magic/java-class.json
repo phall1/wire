@@ -1,0 +1,32 @@
+{
+  "id": "magic/java-class",
+  "family": "magic",
+  "slug": "java-class",
+  "title": "Java class file signature (CA FE BA BE)",
+  "summary": "A compiled Java .class file begins with the 4-byte magic 0xCAFEBABE, followed by a 2-byte minor and 2-byte major version. The major version identifies the JDK that can load it (e.g. 52 = Java 8, 61 = Java 17).",
+  "kind": "signature",
+  "aliases": ["class magic", "CAFEBABE"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html",
+  "source_version": "Java Virtual Machine Specification (Java SE 17), 4.1 The ClassFile Structure (magic = 0xCAFEBABE)",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["magic/mach-o", "magic/zip"],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "CA FE BA BE",
+    "offset": 0,
+    "magic_ascii": "\\xca\\xfe\\xba\\xbe",
+    "extensions": ["class"],
+    "mime": "application/java-vm",
+    "spec": "Java Virtual Machine Specification, 4.1",
+    "notes": [
+      "Magic = CA FE BA BE.",
+      "Bytes 4-5 = minor_version, bytes 6-7 = major_version (big-endian). Major 0x34=52 is Java 8, 0x3D=61 is Java 17.",
+      "CAUTION: identical to the Mach-O universal (fat) binary magic FAT_MAGIC. The bytes that follow disambiguate: a .class file's next field is the version, a Mach-O fat header's next field is a big-endian architecture count.",
+      "JAR files are ZIP containers (PK\\x03\\x04), not raw .class files."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

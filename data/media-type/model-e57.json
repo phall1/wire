@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-e57",
+  "family": "media-type",
+  "slug": "model-e57",
+  "title": "model/e57",
+  "summary": "Media type \"model/e57\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/e57",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "e57",
+      "Template": "model/e57",
+      "Reference": "[ASTM]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/e57"
+  ]
+}

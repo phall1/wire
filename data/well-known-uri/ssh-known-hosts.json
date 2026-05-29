@@ -1,0 +1,30 @@
+{
+  "id": "well-known-uri/ssh-known-hosts",
+  "family": "well-known-uri",
+  "slug": "ssh-known-hosts",
+  "title": "/.well-known/ssh-known-hosts",
+  "summary": "Well-known URI suffix \"/.well-known/ssh-known-hosts\". IANA status: provisional.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ssh-known-hosts",
+    "reference_rfcs": [],
+    "registration_date": "2025-12-16",
+    "raw_columns": {
+      "URI Suffix": "ssh-known-hosts",
+      "Reference": "[https://c2sp.org/well-known-ssh-hosts]",
+      "Status": "provisional",
+      "Change Controller": "[David_Crawshaw]",
+      "Related Information": "",
+      "Date Registered": "2025-12-16",
+      "Date Modified": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

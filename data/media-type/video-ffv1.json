@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-ffv1",
+  "family": "media-type",
+  "slug": "video-ffv1",
+  "title": "video/FFV1",
+  "summary": "Media type \"video/FFV1\". Registered/referenced in RFC9043.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/FFV1",
+    "reference_rfcs": [
+      "RFC9043"
+    ],
+    "raw_columns": {
+      "Name": "FFV1",
+      "Template": "video/FFV1",
+      "Reference": "[RFC9043]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/FFV1"
+  ]
+}

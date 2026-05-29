@@ -1,0 +1,30 @@
+{
+  "id": "media-type/application-merge-patch-json",
+  "family": "media-type",
+  "slug": "application-merge-patch-json",
+  "title": "application/merge-patch+json",
+  "summary": "Media type \"application/merge-patch+json\". Registered/referenced in RFC7396.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/merge-patch+json",
+    "reference_rfcs": [
+      "RFC7396"
+    ],
+    "raw_columns": {
+      "Name": "merge-patch+json",
+      "Template": "application/merge-patch+json",
+      "Reference": "[RFC7396]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/merge-patch+json"
+  ]
+}

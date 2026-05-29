@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-cmw-jws",
+  "family": "media-type",
+  "slug": "application-cmw-jws",
+  "title": "application/cmw+jws",
+  "summary": "Media type \"application/cmw+jws\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/cmw+jws",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "cmw+jws",
+      "Template": "application/cmw+jws",
+      "Reference": "[RFC-ietf-rats-msg-wrap-22]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/cmw+jws"
+  ]
+}

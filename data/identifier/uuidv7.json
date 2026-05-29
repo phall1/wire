@@ -1,0 +1,47 @@
+{
+  "id": "identifier/uuidv7",
+  "family": "identifier",
+  "slug": "uuidv7",
+  "title": "UUID Version 7 (Unix-time-ordered)",
+  "summary": "UUIDv7 is a 128-bit UUID whose first 48 bits are a big-endian Unix timestamp in milliseconds, followed by the 4-bit version (0b0111), 12 random bits (rand_a), the 2-bit variant (0b10), and 62 random bits (rand_b). Because the time prefix is most-significant, v7 strings sort lexicographically in creation order, giving database-index locality without leaking a MAC address — the modern default for new keys.",
+  "kind": "identifier",
+  "aliases": [
+    "UUID v7",
+    "time-ordered UUID",
+    "version 7 UUID",
+    "sortable UUID"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc9562#section-5.7",
+  "source_version": "RFC 9562 §5.7",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "identifier/uuidv4",
+    "identifier/ulid",
+    "identifier/uuidv1"
+  ],
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562 §5.7",
+    "example": "017f22e2-79b0-7cc3-98c4-dc0c0c07398f",
+    "bit_layout": [
+      { "field": "unix_ts_ms", "bits": 48, "meaning": "Big-endian Unix timestamp in milliseconds since 1970-01-01 UTC." },
+      { "field": "ver", "bits": 4, "meaning": "version = 0b0111 (7)." },
+      { "field": "rand_a", "bits": 12, "meaning": "Random (or sub-millisecond/monotonic counter, implementation choice)." },
+      { "field": "var", "bits": 2, "meaning": "variant = 0b10 (RFC 9562)." },
+      { "field": "rand_b", "bits": 62, "meaning": "Random bits." }
+    ],
+    "length_bits": 128,
+    "sortable": true,
+    "encoding": "hex with dashes (8-4-4-4-12)",
+    "notes": [
+      "Time-ordered: the 48-bit millisecond timestamp is the most-significant field, so lexicographic order of the canonical string equals creation order (to the millisecond).",
+      "rand_a (12 bits) MAY hold a sub-millisecond fraction or a monotonic counter to keep ordering stable within a single millisecond (RFC 9562 monotonicity methods).",
+      "Example 017f22e2-79b0-7cc3-98c4-dc0c0c07398f is the RFC 9562 Appendix value; version nibble '7', variant nibble starts '10' ('9').",
+      "Conceptually close to ULID (48-bit ms time + randomness, 128 bits) but rendered as a standard dashed-hex UUID rather than Crockford Base32."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

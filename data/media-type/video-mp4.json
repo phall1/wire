@@ -1,0 +1,31 @@
+{
+  "id": "media-type/video-mp4",
+  "family": "media-type",
+  "slug": "video-mp4",
+  "title": "video/mp4",
+  "summary": "Media type \"video/mp4\". Registered/referenced in RFC4337, RFC6381.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/mp4",
+    "reference_rfcs": [
+      "RFC4337",
+      "RFC6381"
+    ],
+    "raw_columns": {
+      "Name": "mp4",
+      "Template": "video/mp4",
+      "Reference": "[RFC4337][RFC6381]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/mp4"
+  ]
+}

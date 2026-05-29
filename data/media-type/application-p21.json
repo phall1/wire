@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-p21",
+  "family": "media-type",
+  "slug": "application-p21",
+  "title": "application/p21",
+  "summary": "Media type \"application/p21\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/p21",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "p21",
+      "Template": "application/p21",
+      "Reference": "[ISO-TC_184-SC_4][Dana_Tripp]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/p21"
+  ]
+}

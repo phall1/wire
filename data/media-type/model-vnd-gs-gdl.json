@@ -1,0 +1,28 @@
+{
+  "id": "media-type/model-vnd-gs-gdl",
+  "family": "media-type",
+  "slug": "model-vnd-gs-gdl",
+  "title": "model/vnd.gs-gdl",
+  "summary": "Media type \"model/vnd.gs-gdl\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/model.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "model/vnd.gs-gdl",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.gs-gdl",
+      "Template": "model/vnd.gs-gdl",
+      "Reference": "[Attila_Babits]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "model/vnd.gs-gdl"
+  ]
+}

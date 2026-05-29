@@ -1,0 +1,30 @@
+{
+  "id": "media-type/audio-ip-mr_v2-5",
+  "family": "media-type",
+  "slug": "audio-ip-mr_v2-5",
+  "title": "audio/ip-mr_v2.5",
+  "summary": "Media type \"audio/ip-mr_v2.5\". Registered/referenced in RFC6262.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/audio.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 06 Feb 2026 00:26:24 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "audio/ip-mr_v2.5",
+    "reference_rfcs": [
+      "RFC6262"
+    ],
+    "raw_columns": {
+      "Name": "ip-mr_v2.5",
+      "Template": "audio/ip-mr_v2.5",
+      "Reference": "[RFC6262]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "audio/ip-mr_v2.5"
+  ]
+}

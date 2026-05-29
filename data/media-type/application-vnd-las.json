@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-vnd-las",
+  "family": "media-type",
+  "slug": "application-vnd-las",
+  "title": "application/vnd.las",
+  "summary": "Media type \"application/vnd.las\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/vnd.las",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.las",
+      "Template": "application/vnd.las",
+      "Reference": "[NCGIS][Bryan_Blank]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/vnd.las"
+  ]
+}

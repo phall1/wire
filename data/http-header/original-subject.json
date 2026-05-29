@@ -1,0 +1,31 @@
+{
+  "id": "http-header/original-subject",
+  "family": "http-header",
+  "slug": "original-subject",
+  "title": "Original-Subject",
+  "summary": "Message header field \"Original-Subject\" (protocol: mail), status standard. Defined in RFC5703.",
+  "kind": "header",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/message-headers/message-headers.xml",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 22:01:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "Original-Subject",
+    "reference_rfcs": [
+      "RFC5703"
+    ],
+    "raw_columns": {
+      "value": "Original-Subject",
+      "protocol": "mail",
+      "status": "standard",
+      "Reference": "[RFC5703]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "Original-Subject"
+  ]
+}

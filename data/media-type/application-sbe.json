@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-sbe",
+  "family": "media-type",
+  "slug": "application-sbe",
+  "title": "application/sbe",
+  "summary": "Media type \"application/sbe\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/sbe",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "sbe",
+      "Template": "application/sbe",
+      "Reference": "[FIX_Trading_Community][Donald_L._Mendelson]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/sbe"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "media-type/message-vnd-wfa-wsc",
+  "family": "media-type",
+  "slug": "message-vnd-wfa-wsc",
+  "title": "message/vnd.wfa.wsc",
+  "summary": "Media type \"message/vnd.wfa.wsc\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/vnd.wfa.wsc",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "vnd.wfa.wsc",
+      "Template": "message/vnd.wfa.wsc",
+      "Reference": "[Mick_Conley]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/vnd.wfa.wsc"
+  ]
+}

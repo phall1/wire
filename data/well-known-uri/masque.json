@@ -1,0 +1,33 @@
+{
+  "id": "well-known-uri/masque",
+  "family": "well-known-uri",
+  "slug": "masque",
+  "title": "/.well-known/masque",
+  "summary": "Well-known URI suffix \"/.well-known/masque\". IANA status: permanent. Defined in RFC9298, RFC9484.",
+  "kind": "well-known-uri",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/well-known-uris/well-known-uris-1.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 13 May 2026 18:41:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "masque",
+    "reference_rfcs": [
+      "RFC9298",
+      "RFC9484"
+    ],
+    "registration_date": "2022-06-23",
+    "raw_columns": {
+      "URI Suffix": "masque",
+      "Reference": "[RFC9298][RFC9484]",
+      "Status": "permanent",
+      "Change Controller": "IETF",
+      "Related Information": "For sub-suffix allocations, see the registry at [https://www.iana.org/assignments/masque].",
+      "Date Registered": "2022-06-23",
+      "Date Modified": "2023-05-16"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-h263-2000",
+  "family": "media-type",
+  "slug": "video-h263-2000",
+  "title": "video/H263-2000",
+  "summary": "Media type \"video/H263-2000\". Registered/referenced in RFC4629.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/H263-2000",
+    "reference_rfcs": [
+      "RFC4629"
+    ],
+    "raw_columns": {
+      "Name": "H263-2000",
+      "Template": "video/H263-2000",
+      "Reference": "[RFC4629]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/H263-2000"
+  ]
+}

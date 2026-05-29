@@ -1,0 +1,30 @@
+{
+  "id": "media-type/video-h264",
+  "family": "media-type",
+  "slug": "video-h264",
+  "title": "video/H264",
+  "summary": "Media type \"video/H264\". Registered/referenced in RFC6184.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/video.csv",
+  "source_version": "IANA registry, Last-Modified: Tue, 23 Sep 2025 00:51:18 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "video/H264",
+    "reference_rfcs": [
+      "RFC6184"
+    ],
+    "raw_columns": {
+      "Name": "H264",
+      "Template": "video/H264",
+      "Reference": "[RFC6184]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "video/H264"
+  ]
+}

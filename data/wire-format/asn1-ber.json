@@ -1,0 +1,35 @@
+{
+  "id": "wire-format/asn1-ber",
+  "family": "wire-format",
+  "slug": "asn1-ber",
+  "title": "ASN.1 BER (Basic Encoding Rules) — TLV",
+  "summary": "BER encodes each ASN.1 value as a Tag-Length-Value triple: an identifier octet (class + primitive/constructed bit + tag number), a length (definite short/long form, or indefinite with an end-of-contents marker), then the content. BER is the original, flexible TLV scheme; DER is its canonical, deterministic subset.",
+  "kind": "wire-format",
+  "aliases": ["BER", "Basic Encoding Rules", "ASN.1 TLV", "X.690 BER"],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.itu.int/rec/T-REC-X.690/en",
+  "source_version": "ITU-T X.690 (02/2021) — BER/CER/DER",
+  "retrieved_date": "2026-05-29",
+  "see_also": ["wire-format/asn1-der", "wire-format/protobuf-wire", "wire-format/cbor-encoding"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ITU-T X.690",
+    "summary": "BER is the archetypal Tag-Length-Value encoding. Every element is: identifier octet(s) giving tag class (universal/application/context/private) and a primitive-vs-constructed bit and the tag number; length octet(s) in definite (short < 128, or long form: 0x8N then N length bytes) or indefinite form (0x80, terminated by two 0x00 end-of-contents octets); then the content octets.",
+    "structure": [
+      { "field": "Identifier (Tag)", "size": "1+ bytes", "meaning": "Bits 8-7 = class (00 universal, 01 application, 10 context-specific, 11 private); bit 6 = constructed (1) vs primitive (0); bits 5-1 = tag number (0x1F escape => multi-byte tag in base-128)." },
+      { "field": "Length", "size": "1+ bytes", "meaning": "Short form: one octet 0x00-0x7F = length. Long form: 0x8N where N (1-126) is the count of following length octets (big-endian). Indefinite form: 0x80, content runs until an end-of-contents (00 00)." },
+      { "field": "Contents (Value)", "size": "= Length", "meaning": "The value octets; for constructed types these are themselves nested TLV elements." }
+    ],
+    "example_hex": "02 01 05",
+    "example_decoded": "INTEGER 5: tag 0x02 (universal, primitive, INTEGER) | length 0x01 (one content byte) | value 0x05.",
+    "see": ["wire-format/asn1-der"],
+    "notes": [
+      "Tag 0x02 = INTEGER, 0x04 = OCTET STRING, 0x05 = NULL, 0x06 = OBJECT IDENTIFIER, 0x30 = SEQUENCE (constructed), 0x31 = SET (constructed).",
+      "Constructed encodings nest TLVs, so the Value of a SEQUENCE is a concatenation of child TLVs — the recursive TLV pattern that inspired protobuf and others.",
+      "BER permits multiple valid encodings of the same value (definite vs indefinite length, leading-zero variations); DER removes that freedom for signatures/canonical use."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

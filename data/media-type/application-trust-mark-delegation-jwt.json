@@ -1,0 +1,28 @@
+{
+  "id": "media-type/application-trust-mark-delegation-jwt",
+  "family": "media-type",
+  "slug": "application-trust-mark-delegation-jwt",
+  "title": "application/trust-mark-delegation+jwt",
+  "summary": "Media type \"application/trust-mark-delegation+jwt\".",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/application.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 20 May 2026 17:41:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "application/trust-mark-delegation+jwt",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Name": "trust-mark-delegation+jwt",
+      "Template": "application/trust-mark-delegation+jwt",
+      "Reference": "[OpenID_Foundation_Artifact_Binding_WG][Roland_Hedberg]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "application/trust-mark-delegation+jwt"
+  ]
+}

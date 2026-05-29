@@ -1,0 +1,31 @@
+{
+  "id": "media-type/message-s-http",
+  "family": "media-type",
+  "slug": "message-s-http",
+  "title": "message/s-http",
+  "summary": "Media type \"message/s-http\". Registered/referenced in RFC2660.",
+  "kind": "media-type",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/media-types/message.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 05 Mar 2026 19:26:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "message/s-http",
+    "reference_rfcs": [
+      "RFC2660"
+    ],
+    "raw_columns": {
+      "Name": "s-http (OBSOLETE)",
+      "Template": "message/s-http",
+      "Reference": "[RFC2660][Status change of HTTP experiments to Historic]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "message/s-http",
+    "message/s-http (OBSOLETE)"
+  ]
+}

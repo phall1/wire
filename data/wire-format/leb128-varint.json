@@ -1,0 +1,48 @@
+{
+  "id": "wire-format/leb128-varint",
+  "family": "wire-format",
+  "slug": "leb128-varint",
+  "title": "LEB128 / protobuf varint (little-endian base-128)",
+  "summary": "A varint encodes an unsigned integer in a variable number of bytes, 7 bits of payload per byte, little-endian (least-significant group first). The top bit (0x80) of each byte is a continuation flag: 1 means more bytes follow, 0 means this is the last. Used by Protocol Buffers, DWARF, WebAssembly, and many length prefixes.",
+  "kind": "wire-format",
+  "aliases": ["varint", "LEB128", "ULEB128", "SLEB128", "base-128 varint"],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://protobuf.dev/programming-guides/encoding/#varints",
+  "source_version": "Protocol Buffers Encoding (varints), retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.structure",
+      "source_url": "https://protobuf.dev/programming-guides/encoding/#varints",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Defines the 7-bits-per-byte, MSB-continuation, little-endian-group varint used by protobuf."
+    },
+    {
+      "claim_ref": "ext.notes",
+      "source_url": "https://dwarfstd.org/doc/DWARF5.pdf",
+      "source_version": "DWARF 5, Section 7.6 Variable Length Data (ULEB128/SLEB128)",
+      "note": "DWARF defines the same unsigned (ULEB128) and signed (SLEB128) little-endian base-128 encoding; WebAssembly reuses it."
+    }
+  ],
+  "see_also": ["wire-format/protobuf-wire", "wire-format/cbor-encoding"],
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Protocol Buffers / DWARF LEB128",
+    "summary": "Split the integer into 7-bit groups, least-significant first. Emit each group in a byte; set the high bit (0x80) on every byte except the last to mark continuation. Decoding accumulates 7 bits at a time, shifting left by 7 per byte, until a byte with the high bit clear. SLEB128 (signed) sign-extends from the final group's high payload bit instead of zero-padding.",
+    "structure": [
+      { "field": "Group byte (repeated)", "size": "1 byte each", "meaning": "Bit 8 (0x80) = continuation flag (1 = more bytes follow, 0 = final byte). Bits 7-1 = the next 7 bits of the value, least-significant group first." }
+    ],
+    "example_hex": "96 01",
+    "example_decoded": "150. Byte 0x96 = 1001_0110: continuation bit set, payload 0x16 = 22 (low 7 bits). Byte 0x01 = 0000_0001: final, payload 1 => high 7 bits. Value = (1 << 7) | 22 = 128 + 22 = 150.",
+    "see": ["wire-format/protobuf-wire"],
+    "notes": [
+      "Little-endian by 7-bit group: the FIRST byte holds the least-significant 7 bits.",
+      "Small numbers (< 128) take one byte; this is why protobuf field numbers and lengths are cheap.",
+      "Unsigned form = ULEB128; signed form = SLEB128 (sign-extends the high bit of the last group).",
+      "WebAssembly uses ULEB128 for indices/sizes and SLEB128 for i32/i64 literals; DWARF uses both."
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}
