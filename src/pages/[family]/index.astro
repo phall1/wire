@@ -25,19 +25,52 @@ const blurb = FAMILIES[family]?.blurb ?? family;
 <BaseLayout title={`${family} · wire`} description={`${blurb} — ${items.length} entries`} jsonHref={`/${family}/index.json`}>
   <p class="crumb"><a href="/">wire</a> / <span>{family}</span></p>
   <h1>{family}</h1>
-  <p class="dim" style="margin:.4em 0 0">{blurb} · {items.length} entries</p>
+  <p class="dim" style="margin:.4em 0 0">{blurb}</p>
 
-  <table style="margin-top:1.4em">
-    <thead><tr><th>id</th><th>title</th><th>status</th><th>v</th></tr></thead>
-    <tbody>
-      {items.map((e) => (
-        <tr>
-          <td><a href={`/${e.id}`}>{e.slug}</a></td>
-          <td>{e.title}</td>
-          <td class="dim">{e.status}</td>
-          <td class={verifBadgeClass(e.verification) || "dim"}>{e.verification === "verified" ? "✓" : e.verification}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+  <input
+    id="filter"
+    class="q"
+    type="search"
+    placeholder={`filter ${items.length} ${family} entries…`}
+    autocomplete="off"
+    spellcheck="false"
+    aria-label="filter entries"
+    style="margin-top:1.2em"
+  />
+  <p class="count" id="count">{items.length} entries</p>
+
+  <nav class="rows" id="rows">
+    {items.map((e) => (
+      <a
+        class="row"
+        href={`/${e.id}`}
+        data-s={`${e.slug} ${e.title} ${(e.aliases ?? []).join(" ")}`.toLowerCase()}
+      >
+        <span class="slug">{e.slug}</span>
+        <span class="ttl">{e.title}</span>
+        <span class={`v ${verifBadgeClass(e.verification)}`}>
+          {e.verification === "verified" ? "✓" : e.verification}
+        </span>
+      </a>
+    ))}
+  </nav>
+
+  <script>
+    const f = document.getElementById("filter") as HTMLInputElement;
+    const rows = Array.from(document.querySelectorAll<HTMLAnchorElement>("#rows .row"));
+    const count = document.getElementById("count")!;
+    const total = rows.length;
+    const render = () => {
+      const q = f.value.toLowerCase().trim();
+      let shown = 0;
+      for (const r of rows) {
+        const hit = !q || (r.dataset.s ?? "").includes(q);
+        r.hidden = !hit;
+        if (hit) shown++;
+      }
+      count.textContent = q ? `${shown} of ${total} entries` : `${total} entries`;
+    };
+    f.addEventListener("input", render);
+    f.focus();
+  </script>
 </BaseLayout>

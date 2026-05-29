@@ -40,11 +40,11 @@ const families = [...new Set(entries.map((e) => e.data.family))]
   <section class="fam-list">
     <h2 class="section-h">families</h2>
     {families.map((f) => (
-      <div class="fam-row">
+      <a class="fam-row" href={`/${f.family}`}>
         <span class="count">{f.count}</span>
-        <a class="name" href={`/${f.family}`}>{f.family}</a>
+        <span class="name">{f.family}</span>
         <span class="blurb">{f.blurb}</span>
-      </div>
+      </a>
     ))}
   </section>
 
