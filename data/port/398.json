@@ -1,0 +1,38 @@
+{
+  "id": "port/398",
+  "family": "port",
+  "slug": "398",
+  "title": "Port 398 — kryptolan",
+  "summary": "Well-known port 398 (tcp/udp): Kryptolan. Service name: kryptolan.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 398,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "kryptolan",
+      "Port Number": "398",
+      "Transport Protocol": "tcp",
+      "Description": "Kryptolan",
+      "Assignee": "[Peter_de_Laval]",
+      "Contact": "[Peter_de_Laval]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

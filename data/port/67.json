@@ -1,0 +1,40 @@
+{
+  "id": "port/67",
+  "family": "port",
+  "slug": "67",
+  "title": "Port 67 — bootps",
+  "summary": "Well-known port 67 (tcp/udp): Bootstrap Protocol Server. Service name: bootps. Referenced in RFC951.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 67,
+    "reference_rfcs": [
+      "RFC951"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "bootps",
+      "Port Number": "67",
+      "Transport Protocol": "tcp",
+      "Description": "Bootstrap Protocol Server",
+      "Assignee": "[Bill_Croft]",
+      "Contact": "[Bill_Croft]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC951]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": "Defined TXT keys: None"
+    }
+  },
+  "updated": "2026-05-29"
+}

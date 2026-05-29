@@ -1,0 +1,33 @@
+{
+  "id": "tls-param/cipher-suites/0xccac",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0xccac",
+  "title": "0xccac — TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256",
+  "summary": "TLS cipher suite TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 (0xCC,0xAC, IANA value 0xccac). IANA Recommended: Y. Referenced in RFC7905.",
+  "kind": "parameter",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0xccac",
+    "reference_rfcs": [
+      "RFC7905"
+    ],
+    "recommended": true,
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0xCC,0xAC",
+      "Description": "TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256",
+      "DTLS-OK": "Y",
+      "Recommended": "Y",
+      "Reference": "[RFC7905]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "port/913",
+  "family": "port",
+  "slug": "913",
+  "title": "Port 913 — apex-edge",
+  "summary": "Well-known port 913 (tcp/udp): APEX endpoint-relay service. Service name: apex-edge. Referenced in RFC3340.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 913,
+    "reference_rfcs": [
+      "RFC3340"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "apex-edge",
+      "Port Number": "913",
+      "Transport Protocol": "tcp",
+      "Description": "APEX endpoint-relay service",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC3340]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

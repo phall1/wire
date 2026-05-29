@@ -1,0 +1,40 @@
+{
+  "id": "port/546",
+  "family": "port",
+  "slug": "546",
+  "title": "Port 546 — dhcpv6-client",
+  "summary": "Well-known port 546 (tcp/udp): DHCPv6 Client. Service name: dhcpv6-client. Referenced in RFC9915.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 546,
+    "reference_rfcs": [
+      "RFC9915"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dhcpv6-client",
+      "Port Number": "546",
+      "Transport Protocol": "tcp",
+      "Description": "DHCPv6 Client",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

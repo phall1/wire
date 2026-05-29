@@ -1,0 +1,31 @@
+{
+  "id": "tls-param/cipher-suites/0x1301",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0x1301",
+  "title": "0x1301 — TLS_AES_128_GCM_SHA256",
+  "summary": "TLS cipher suite TLS_AES_128_GCM_SHA256 (0x13,0x01, IANA value 0x1301). IANA Recommended: Y.",
+  "kind": "parameter",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0x1301",
+    "reference_rfcs": [],
+    "recommended": true,
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0x13,0x01",
+      "Description": "TLS_AES_128_GCM_SHA256",
+      "DTLS-OK": "Y",
+      "Recommended": "Y",
+      "Reference": "[RFC-ietf-tls-rfc8446bis-13]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

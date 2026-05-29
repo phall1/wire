@@ -1,0 +1,39 @@
+{
+  "id": "port/716",
+  "family": "port",
+  "slug": "716",
+  "title": "Port 716 — pana",
+  "summary": "Well-known port 716 (udp): PANA Messages. Service name: pana. Referenced in RFC5191.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 716,
+    "reference_rfcs": [
+      "RFC5191"
+    ],
+    "transports": [
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pana",
+      "Port Number": "716",
+      "Transport Protocol": "udp",
+      "Description": "PANA Messages",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC5191]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

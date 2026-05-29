@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/571",
+  "family": "cbor-tag",
+  "slug": "571",
+  "title": "CBOR tag 571 — concise-evidence-map",
+  "summary": "CBOR tag 571 (data item: map (concise-evidence-map, see CDDL)): concise-evidence-map.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 571,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "571",
+      "Data Item": "map (concise-evidence-map, see CDDL)",
+      "Semantics": "concise-evidence-map",
+      "Reference": "[TCG DICE Concise Evidence Binding for SPDM][TCG]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

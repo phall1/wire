@@ -1,0 +1,40 @@
+{
+  "id": "port/123",
+  "family": "port",
+  "slug": "123",
+  "title": "Port 123 — ntp",
+  "summary": "Well-known port 123 (tcp/udp): Network Time Protocol. Service name: ntp. Referenced in RFC5905.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 123,
+    "reference_rfcs": [
+      "RFC5905"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ntp",
+      "Port Number": "123",
+      "Transport Protocol": "tcp",
+      "Description": "Network Time Protocol",
+      "Assignee": "[Dave_Mills]",
+      "Contact": "[Dave_Mills]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC5905]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

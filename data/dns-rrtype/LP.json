@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/LP",
+  "family": "dns-rrtype",
+  "slug": "LP",
+  "title": "LP (type 107)",
+  "summary": "DNS resource record type LP (numeric type 107). Defined in RFC6742.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 107,
+    "reference_rfcs": [
+      "RFC6742"
+    ],
+    "raw_columns": {
+      "TYPE": "LP",
+      "Value": "107",
+      "Meaning": "",
+      "Reference": "[RFC6742]",
+      "Template": "ILNP/lp-completed-template",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

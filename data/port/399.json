@@ -1,0 +1,38 @@
+{
+  "id": "port/399",
+  "family": "port",
+  "slug": "399",
+  "title": "Port 399 — iso-tsap-c2",
+  "summary": "Well-known port 399 (tcp/udp): ISO Transport Class 2 Non-Control over TCP. Service name: iso-tsap-c2.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 399,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "iso-tsap-c2",
+      "Port Number": "399",
+      "Transport Protocol": "tcp",
+      "Description": "ISO Transport Class 2 Non-Control over TCP",
+      "Assignee": "[Yanick_Pouffary]",
+      "Contact": "[Yanick_Pouffary]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

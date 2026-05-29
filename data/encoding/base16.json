@@ -1,0 +1,75 @@
+{
+  "id": "encoding/base16",
+  "family": "encoding",
+  "slug": "base16",
+  "title": "Base16 — hexadecimal (RFC 4648 §8)",
+  "summary": "Base16 is plain hexadecimal: each input byte becomes exactly two characters from the alphabet 0–9 A–F. There is no padding (every byte is a whole number of characters) and the canonical RFC 4648 form is uppercase, though virtually all tooling decodes either case. It is the most transcribable but least dense of the RFC 4648 family.",
+  "kind": "encoding",
+  "aliases": [
+    "base-16",
+    "hex",
+    "hexadecimal",
+    "RFC 4648 base16"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc4648#section-8",
+  "source_version": "RFC 4648 §8",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base32",
+    "encoding/base64"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC4648",
+    "charset": "US-ASCII",
+    "algorithm": "base16",
+    "alphabet": "0123456789ABCDEF",
+    "notes": [
+      "Each 8-bit byte is split into two 4-bit nibbles; each nibble indexes the 16-character alphabet. No padding is ever required because every byte maps to exactly two characters.",
+      "RFC 4648 §8 specifies the UPPERCASE alphabet (0–9 A–F) as canonical. Lowercase 'a–f' is not RFC-canonical but is what most libraries (including Node's Buffer.toString('hex')) emit and all decoders accept. The encode test vector below therefore asserts the lowercase form the executor produces; the canonical uppercase form is asserted via a decode vector (hex decoding is case-insensitive).",
+      "Equivalent to 'hex' everywhere; the encoding-exec gate treats 'base16' and 'hex' as the same algorithm."
+    ],
+    "test_vectors": [
+      {
+        "input": "666F6F626172",
+        "input_form": "ascii",
+        "output": "foobar",
+        "output_form": "utf8",
+        "algorithm": "base16",
+        "direction": "decode",
+        "note": "RFC 4648 §10 test vector, canonical UPPERCASE: BASE16(\"foobar\") = \"666F6F626172\"; asserted here by decoding the uppercase string back to \"foobar\" (hex decode is case-insensitive)."
+      },
+      {
+        "input": "foobar",
+        "input_form": "utf8",
+        "output": "666f6f626172",
+        "output_form": "ascii",
+        "algorithm": "base16",
+        "direction": "encode",
+        "note": "Encode of \"foobar\": the executor (Buffer.toString('hex')) emits lowercase '666f6f626172'; uppercase '666F6F626172' is the RFC-canonical equivalent."
+      },
+      {
+        "input": "f",
+        "input_form": "utf8",
+        "output": "66",
+        "output_form": "ascii",
+        "algorithm": "base16",
+        "direction": "encode",
+        "note": "BASE16(\"f\") = \"66\" — single byte 0x66, two hex chars, no padding."
+      },
+      {
+        "input": "fo",
+        "input_form": "utf8",
+        "output": "666f",
+        "output_form": "ascii",
+        "algorithm": "base16",
+        "direction": "encode",
+        "note": "BASE16(\"fo\") = \"666F\" (RFC uppercase) / '666f' (executor lowercase)."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

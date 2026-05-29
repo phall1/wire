@@ -1,0 +1,38 @@
+{
+  "id": "port/207",
+  "family": "port",
+  "slug": "207",
+  "title": "Port 207 — at-7",
+  "summary": "Well-known port 207 (tcp/udp): AppleTalk Unused. Service name: at-7.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 207,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "at-7",
+      "Port Number": "207",
+      "Transport Protocol": "tcp",
+      "Description": "AppleTalk Unused",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

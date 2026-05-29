@@ -1,0 +1,38 @@
+{
+  "id": "port/197",
+  "family": "port",
+  "slug": "197",
+  "title": "Port 197 — dls",
+  "summary": "Well-known port 197 (tcp/udp): Directory Location Service. Service name: dls.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 197,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dls",
+      "Port Number": "197",
+      "Transport Protocol": "tcp",
+      "Description": "Directory Location Service",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

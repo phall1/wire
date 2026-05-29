@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/BRID",
+  "family": "dns-rrtype",
+  "slug": "BRID",
+  "title": "BRID — UAS Broadcast Remote Identification (type 68)",
+  "summary": "DNS resource record type BRID (numeric type 68): UAS Broadcast Remote Identification. Defined in RFC9886.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 68,
+    "reference_rfcs": [
+      "RFC9886"
+    ],
+    "registration_date": "2025-05-20",
+    "raw_columns": {
+      "TYPE": "BRID",
+      "Value": "68",
+      "Meaning": "UAS Broadcast Remote Identification",
+      "Reference": "[RFC9886]",
+      "Template": "BRID/brid-completed-template",
+      "Registration Date": "2025-05-20"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "dns-rrtype/TA",
+  "family": "dns-rrtype",
+  "slug": "TA",
+  "title": "TA — DNSSEC Trust Authorities (type 32768)",
+  "summary": "DNS resource record type TA (numeric type 32768): DNSSEC Trust Authorities.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 32768,
+    "reference_rfcs": [],
+    "registration_date": "2005-12-13",
+    "raw_columns": {
+      "TYPE": "TA",
+      "Value": "32768",
+      "Meaning": "DNSSEC Trust Authorities",
+      "Reference": "[Sam_Weiler][\n        Deploying DNSSEC Without a Signed Root.  Technical Report 1999-19,\nInformation Networking Institute, Carnegie Mellon University, April 2004.]",
+      "Template": "",
+      "Registration Date": "2005-12-13"
+    }
+  },
+  "updated": "2026-05-29"
+}

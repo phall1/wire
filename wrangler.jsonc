@@ -1,0 +1,40 @@
+{
+  // Cloudflare Worker for wire.phall.io — Workers Static Assets (NOT Pages).
+  // Workers (not Pages) was chosen so the future stateless MCP endpoint can live
+  // in the SAME deploy via run_worker_first on /mcp, sharing one origin.
+  //
+  // Resolution model:
+  //   - dist/ holds the immutable build artifact (per-entry .json + pre-rendered
+  //     .html, redirects.json, index.json manifests, _pagefind/, llms.txt).
+  //   - The Worker (src/worker.js) runs first for content paths so it can do
+  //     301 redirects from under-specified guesses and Accept negotiation.
+  //   - Everything the Worker doesn't handle falls through to env.ASSETS.fetch().
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wire",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-05-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Static files are the common case; the few asset types that already carry
+    // a correct Content-Type (CSS, the pagefind WASM/index, images) can serve
+    // straight from the asset server. We only need the Worker in front of the
+    // negotiable surfaces: bare entry paths, suffixed twins, and the redirect
+    // guesses. Listing them keeps cache behavior tight and first paint fast.
+    //
+    // "!" patterns are exclusions — assets served directly without the Worker.
+    "run_worker_first": [
+      "/*",
+      "!/_pagefind/*",
+      "!/assets/*",
+      "!/favicon.ico",
+      "!/robots.txt"
+    ],
+    // Bare paths are real resources here (entries), not an SPA. Let the Worker
+    // own 404 semantics; the asset server should not invent an SPA fallback.
+    "not_found_handling": "none"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

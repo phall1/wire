@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/NXNAME",
+  "family": "dns-rrtype",
+  "slug": "NXNAME",
+  "title": "NXNAME — NXDOMAIN indicator for Compact Denial of Existence (type 128)",
+  "summary": "DNS resource record type NXNAME (numeric type 128): NXDOMAIN indicator for Compact Denial of Existence. Defined in RFC9824.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 128,
+    "reference_rfcs": [
+      "RFC9824"
+    ],
+    "registration_date": "2024-07-18",
+    "raw_columns": {
+      "TYPE": "NXNAME",
+      "Value": "128",
+      "Meaning": "NXDOMAIN indicator for Compact Denial of Existence",
+      "Reference": "[RFC9824]",
+      "Template": "NXNAME/nxname-completed-template",
+      "Registration Date": "2024-07-18"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/SMIMEA",
+  "family": "dns-rrtype",
+  "slug": "SMIMEA",
+  "title": "SMIMEA — S/MIME cert association (type 53)",
+  "summary": "DNS resource record type SMIMEA (numeric type 53): S/MIME cert association. Defined in RFC8162.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 53,
+    "reference_rfcs": [
+      "RFC8162"
+    ],
+    "registration_date": "2015-12-01",
+    "raw_columns": {
+      "TYPE": "SMIMEA",
+      "Value": "53",
+      "Meaning": "S/MIME cert association",
+      "Reference": "[RFC8162]",
+      "Template": "SMIMEA/smimea-completed-template",
+      "Registration Date": "2015-12-01"
+    }
+  },
+  "updated": "2026-05-29"
+}

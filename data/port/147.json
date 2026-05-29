@@ -1,0 +1,38 @@
+{
+  "id": "port/147",
+  "family": "port",
+  "slug": "147",
+  "title": "Port 147 — iso-ip",
+  "summary": "Well-known port 147 (tcp/udp): ISO-IP. Service name: iso-ip.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 147,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "iso-ip",
+      "Port Number": "147",
+      "Transport Protocol": "tcp",
+      "Description": "ISO-IP",
+      "Assignee": "[Marshall_Rose]",
+      "Contact": "[Marshall_Rose]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

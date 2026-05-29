@@ -1,0 +1,38 @@
+{
+  "id": "port/145",
+  "family": "port",
+  "slug": "145",
+  "title": "Port 145 — uaac",
+  "summary": "Well-known port 145 (tcp/udp): UAAC Protocol. Service name: uaac.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 145,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "uaac",
+      "Port Number": "145",
+      "Transport Protocol": "tcp",
+      "Description": "UAAC Protocol",
+      "Assignee": "[David_A_Gomberg]",
+      "Contact": "[David_A_Gomberg]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

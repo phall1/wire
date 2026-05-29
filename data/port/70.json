@@ -1,0 +1,38 @@
+{
+  "id": "port/70",
+  "family": "port",
+  "slug": "70",
+  "title": "Port 70 — gopher",
+  "summary": "Well-known port 70 (tcp/udp): Gopher. Service name: gopher.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 70,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "gopher",
+      "Port Number": "70",
+      "Transport Protocol": "tcp",
+      "Description": "Gopher",
+      "Assignee": "[Mark_McCahill]",
+      "Contact": "[Mark_McCahill]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

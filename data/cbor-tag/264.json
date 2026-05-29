@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/264",
+  "family": "cbor-tag",
+  "slug": "264",
+  "title": "CBOR tag 264 — Decimal fraction with arbitrary exponent",
+  "summary": "CBOR tag 264 (data item: array): Decimal fraction with arbitrary exponent.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 264,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "264",
+      "Data Item": "array",
+      "Semantics": "Decimal fraction with arbitrary exponent",
+      "Reference": "[http://peteroupc.github.io/CBOR/bigfrac.html][Peter_Occil]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

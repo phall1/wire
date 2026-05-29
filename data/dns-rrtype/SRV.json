@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/SRV",
+  "family": "dns-rrtype",
+  "slug": "SRV",
+  "title": "SRV — Server Selection (type 33)",
+  "summary": "DNS resource record type SRV (numeric type 33): Server Selection. Defined in RFC2782.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 33,
+    "reference_rfcs": [
+      "RFC2782"
+    ],
+    "raw_columns": {
+      "TYPE": "SRV",
+      "Value": "33",
+      "Meaning": "Server Selection",
+      "Reference": "[1][RFC2782]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

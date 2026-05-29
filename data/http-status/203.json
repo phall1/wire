@@ -1,0 +1,27 @@
+{
+  "id": "http-status/203",
+  "family": "http-status",
+  "slug": "203",
+  "title": "203 Non-Authoritative Information",
+  "summary": "HTTP status code 203 Non-Authoritative Information. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 203,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "203",
+      "Description": "Non-Authoritative Information",
+      "Reference": "[RFC9110, Section 15.3.4]"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/100",
+  "family": "cbor-tag",
+  "slug": "100",
+  "title": "CBOR tag 100 — Number of days since the epoch date 1970-01-01",
+  "summary": "CBOR tag 100 (data item: Unsigned or negative integer): Number of days since the epoch date 1970-01-01. Defined in RFC8943.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 100,
+    "reference_rfcs": [
+      "RFC8943"
+    ],
+    "raw_columns": {
+      "Tag": "100",
+      "Data Item": "Unsigned or negative integer",
+      "Semantics": "Number of days since the epoch date 1970-01-01",
+      "Reference": "[RFC8943]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

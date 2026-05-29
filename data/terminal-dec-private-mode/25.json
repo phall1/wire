@@ -1,0 +1,82 @@
+{
+  "id": "terminal-dec-private-mode/25",
+  "family": "terminal-dec-private-mode",
+  "slug": "25",
+  "title": "DECTCEM 25 — Show / hide text cursor",
+  "summary": "CSI ? 25 h makes the text cursor visible; CSI ? 25 l hides it. Standardized as DECTCEM (DEC Text Cursor Enable Mode). TUIs hide the cursor while redrawing the screen to avoid a flickering caret, then show it again on exit.",
+  "kind": "control-sequence",
+  "aliases": [
+    "show cursor",
+    "hide cursor",
+    "DECTCEM",
+    "cursor visibility",
+    "?25h / ?25l",
+    "civis/cnorm"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs 'DEC Private Mode Set (DECSET)': Ps = 2 5 -> Show cursor (DECTCEM). Reset (CSI ? 25 l) hides the cursor."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1049"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 25,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = 'h' (DECSET, show); reset = 'l' (DECRST, hide). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the sequence ends at the final byte 'h' (show) or 'l' (hide)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Show cursor (DECSET)",
+        "meaning": "CSI ? 25 h makes the text cursor visible (the default state).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?25h",
+        "byte_sequence_ST_readable": "ESC [ ? 2 5 h   ==  \\x1b[?25h   (show cursor)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Hide cursor (DECRST)",
+        "meaning": "CSI ? 25 l hides the text cursor. Used by TUIs during screen redraws to prevent caret flicker.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?25l",
+        "byte_sequence_ST_readable": "ESC [ ? 2 5 l   ==  \\x1b[?25l   (hide cursor)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "ALWAYS restore the cursor (\\x1b[?25h) on exit and on signal handlers; a program that hides the cursor and crashes leaves the user with an invisible caret until they run 'reset' or 'tput cnorm'.",
+      "terminfo names these civis (hide, vi) and cnorm (normal/show, ve); ncurses uses them. There is also cvvis (very visible) which is a different capability.",
+      "Hiding the cursor does not move or change it — show restores it at whatever position it was last placed. Cursor SHAPE/blink is a separate control (DECSCUSR, CSI Ps SP q), not mode 25.",
+      "This mode is widely supported even on minimal terminals; it is one of the safest DEC private modes to rely on."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Show/hide (?25h / ?25l) are byte-exact, syntactically valid DEC-private-mode CSI sequences with the '?' prefix and h/l final bytes.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

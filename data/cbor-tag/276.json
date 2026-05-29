@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/276",
+  "family": "cbor-tag",
+  "slug": "276",
+  "title": "CBOR tag 276 — ERIS binary read capability",
+  "summary": "CBOR tag 276 (data item: byte string): ERIS binary read capability.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 276,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "276",
+      "Data Item": "byte string",
+      "Semantics": "ERIS binary read capability",
+      "Reference": "[http://purl.org/eris]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

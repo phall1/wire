@@ -1,0 +1,38 @@
+{
+  "id": "port/488",
+  "family": "port",
+  "slug": "488",
+  "title": "Port 488 — gss-http",
+  "summary": "Well-known port 488 (tcp/udp): gss-http. Service name: gss-http.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 488,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "gss-http",
+      "Port Number": "488",
+      "Transport Protocol": "tcp",
+      "Description": "gss-http",
+      "Assignee": "[Doug_Rosenthal]",
+      "Contact": "[Doug_Rosenthal]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

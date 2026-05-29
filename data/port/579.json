@@ -1,0 +1,38 @@
+{
+  "id": "port/579",
+  "family": "port",
+  "slug": "579",
+  "title": "Port 579 — decbsrv",
+  "summary": "Well-known port 579 (tcp/udp): decbsrv. Service name: decbsrv.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 579,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "decbsrv",
+      "Port Number": "579",
+      "Transport Protocol": "tcp",
+      "Description": "decbsrv",
+      "Assignee": "[Rudi_Martin]",
+      "Contact": "[Rudi_Martin]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

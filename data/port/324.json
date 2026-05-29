@@ -1,0 +1,40 @@
+{
+  "id": "port/324",
+  "family": "port",
+  "slug": "324",
+  "title": "Port 324 — rpki-rtr-tls",
+  "summary": "Well-known port 324 (tcp/udp): Resource PKI to Router Protocol over TLS. Service name: rpki-rtr-tls. Referenced in RFC6810.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 324,
+    "reference_rfcs": [
+      "RFC6810"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "rpki-rtr-tls",
+      "Port Number": "324",
+      "Transport Protocol": "tcp",
+      "Description": "Resource PKI to Router Protocol over TLS",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC6810]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

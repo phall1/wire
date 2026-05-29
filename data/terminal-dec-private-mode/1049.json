@@ -1,0 +1,81 @@
+{
+  "id": "terminal-dec-private-mode/1049",
+  "family": "terminal-dec-private-mode",
+  "slug": "1049",
+  "title": "DECSET 1049 — Alternate screen buffer",
+  "summary": "CSI ? 1049 h switches to the alternate screen buffer (after saving the cursor and clearing the alt screen); CSI ? 1049 l restores the normal screen buffer and cursor. This is what full-screen TUIs (vim, less, htop) use so that on exit the original scrollback reappears untouched.",
+  "kind": "control-sequence",
+  "aliases": [
+    "alternate screen",
+    "alt screen buffer",
+    "DECSET 1049",
+    "smcup/rmcup",
+    "?1049h / ?1049l"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs 'DEC Private Mode Set (DECSET)': Ps = 1 0 4 9 -> Save cursor as in DECSC, xterm. After saving the cursor, switch to the Alternate Screen Buffer, clearing it first. Reset (1049 l) restores the normal buffer and cursor."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/25"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1049,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private modes are CSI sequences with a leading '?' (0x3F) private-parameter prefix. Set = final byte 'h' (0x68, DECSET); reset = final byte 'l' (0x6C, DECRST). Self-terminating by the final byte."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: a DEC private mode is a CSI sequence ending at its final byte ('h' to set, 'l' to reset)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1049 h saves the cursor (as DECSC), switches to the alternate screen buffer, and clears it. The alt buffer has no scrollback; this is how a TUI takes over the whole screen.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1049h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 4 9 h   ==  \\x1b[?1049h   (enter alternate screen)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1049 l switches back to the normal screen buffer and restores the saved cursor, so the user's original scrollback reappears exactly as it was.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1049l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 4 9 l   ==  \\x1b[?1049l   (leave alternate screen)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "1049 is the modern combined form: it saves/restores the cursor AND swaps the buffer (and clears the alt buffer on enter). The older 1047 (swap buffer only) and 47 (swap, no clear) plus 1048 (save/restore cursor only) are the primitives 1049 bundles; prefer 1049.",
+      "The alternate screen buffer has NO scrollback — content written there is lost on exit. Don't write logs to the alt screen expecting them to persist.",
+      "If your program crashes while on the alt screen without emitting 1049 l, the terminal is left in the alt buffer (blank/stuck); always restore on exit/signal. This is the classic 'my terminal is broken, run reset' situation.",
+      "terminfo names these capabilities smcup (enter, ti) and rmcup (leave, te); ncurses emits them around full-screen apps."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Set (?1049h) and reset (?1049l) are syntactically valid DEC-private-mode CSI sequences with the correct '?' prefix and h/l final bytes.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

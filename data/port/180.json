@@ -1,0 +1,38 @@
+{
+  "id": "port/180",
+  "family": "port",
+  "slug": "180",
+  "title": "Port 180 — ris",
+  "summary": "Well-known port 180 (tcp/udp): Intergraph. Service name: ris.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 180,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ris",
+      "Port Number": "180",
+      "Transport Protocol": "tcp",
+      "Description": "Intergraph",
+      "Assignee": "[Dave_Buehmann]",
+      "Contact": "[Dave_Buehmann]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

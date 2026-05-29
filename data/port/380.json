@@ -1,0 +1,38 @@
+{
+  "id": "port/380",
+  "family": "port",
+  "slug": "380",
+  "title": "Port 380 — is99s",
+  "summary": "Well-known port 380 (tcp/udp): TIA/EIA/IS-99 modem server. Service name: is99s.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 380,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "is99s",
+      "Port Number": "380",
+      "Transport Protocol": "tcp",
+      "Description": "TIA/EIA/IS-99 modem server",
+      "Assignee": "[Frank_Quick]",
+      "Contact": "[Frank_Quick]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

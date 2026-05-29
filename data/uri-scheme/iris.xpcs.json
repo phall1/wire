@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/iris.xpcs",
+  "family": "uri-scheme",
+  "slug": "iris.xpcs",
+  "title": "iris.xpcs: — iris.xpcs",
+  "summary": "URI scheme \"iris.xpcs:\" — iris.xpcs. IANA status: Permanent. Defined in RFC4992.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "iris.xpcs",
+    "reference_rfcs": [
+      "RFC4992"
+    ],
+    "raw_columns": {
+      "URI Scheme": "iris.xpcs",
+      "Template": "",
+      "Description": "iris.xpcs",
+      "Status": "Permanent",
+      "CRI Scheme Number": "16134",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4992]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

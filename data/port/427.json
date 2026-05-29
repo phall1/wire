@@ -1,0 +1,38 @@
+{
+  "id": "port/427",
+  "family": "port",
+  "slug": "427",
+  "title": "Port 427 — svrloc",
+  "summary": "Well-known port 427 (tcp/udp): Server Location. Service name: svrloc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 427,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "svrloc",
+      "Port Number": "427",
+      "Transport Protocol": "tcp",
+      "Description": "Server Location",
+      "Assignee": "[Veizades]",
+      "Contact": "[Veizades]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

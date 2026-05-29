@@ -1,0 +1,33 @@
+{
+  "id": "tls-param/cipher-suites/0xcca8",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0xcca8",
+  "title": "0xcca8 — TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+  "summary": "TLS cipher suite TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (0xCC,0xA8, IANA value 0xcca8). IANA Recommended: Y. Referenced in RFC7905.",
+  "kind": "parameter",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0xcca8",
+    "reference_rfcs": [
+      "RFC7905"
+    ],
+    "recommended": true,
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0xCC,0xA8",
+      "Description": "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+      "DTLS-OK": "Y",
+      "Recommended": "Y",
+      "Reference": "[RFC7905]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

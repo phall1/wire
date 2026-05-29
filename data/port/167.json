@@ -1,0 +1,38 @@
+{
+  "id": "port/167",
+  "family": "port",
+  "slug": "167",
+  "title": "Port 167 — namp",
+  "summary": "Well-known port 167 (tcp/udp): NAMP. Service name: namp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 167,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "namp",
+      "Port Number": "167",
+      "Transport Protocol": "tcp",
+      "Description": "NAMP",
+      "Assignee": "[Marty_Schoffstahl]",
+      "Contact": "[Marty_Schoffstahl]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

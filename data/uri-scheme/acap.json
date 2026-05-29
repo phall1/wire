@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/acap",
+  "family": "uri-scheme",
+  "slug": "acap",
+  "title": "acap: — application configuration access protocol",
+  "summary": "URI scheme \"acap:\" — application configuration access protocol. IANA status: Permanent. Defined in RFC2244.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "acap",
+    "reference_rfcs": [
+      "RFC2244"
+    ],
+    "raw_columns": {
+      "URI Scheme": "acap",
+      "Template": "",
+      "Description": "application configuration access protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "12705",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2244]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

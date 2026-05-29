@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/32768",
+  "family": "cbor-tag",
+  "slug": "32768",
+  "title": "CBOR tag 32768 — Identifier for a FHIR constant",
+  "summary": "CBOR tag 32768 (data item: unsigned integer): Identifier for a FHIR constant.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 32768,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "32768",
+      "Data Item": "unsigned integer",
+      "Semantics": "Identifier for a FHIR constant",
+      "Reference": "[Stefan_Genchev]",
+      "Template": "template/32768"
+    }
+  },
+  "updated": "2026-05-29"
+}

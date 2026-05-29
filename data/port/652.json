@@ -1,0 +1,38 @@
+{
+  "id": "port/652",
+  "family": "port",
+  "slug": "652",
+  "title": "Port 652 — hello-port",
+  "summary": "Well-known port 652 (tcp/udp): HELLO_PORT. Service name: hello-port.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 652,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "hello-port",
+      "Port Number": "652",
+      "Transport Protocol": "tcp",
+      "Description": "HELLO_PORT",
+      "Assignee": "[Patrick_Cipiere]",
+      "Contact": "[Patrick_Cipiere]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

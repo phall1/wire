@@ -1,0 +1,38 @@
+{
+  "id": "port/468",
+  "family": "port",
+  "slug": "468",
+  "title": "Port 468 — photuris",
+  "summary": "Well-known port 468 (tcp/udp): proturis. Service name: photuris.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 468,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "photuris",
+      "Port Number": "468",
+      "Transport Protocol": "tcp",
+      "Description": "proturis",
+      "Assignee": "[Bill_Simpson_2]",
+      "Contact": "[Bill_Simpson_2]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

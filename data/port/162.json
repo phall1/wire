@@ -1,0 +1,38 @@
+{
+  "id": "port/162",
+  "family": "port",
+  "slug": "162",
+  "title": "Port 162 — snmptrap",
+  "summary": "Well-known port 162 (tcp/udp): SNMPTRAP. Service name: snmptrap.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 162,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "snmptrap",
+      "Port Number": "162",
+      "Transport Protocol": "tcp",
+      "Description": "SNMPTRAP",
+      "Assignee": "[Marshall_Rose]",
+      "Contact": "[Marshall_Rose]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

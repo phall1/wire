@@ -1,0 +1,38 @@
+{
+  "id": "port/137",
+  "family": "port",
+  "slug": "137",
+  "title": "Port 137 — netbios-ns",
+  "summary": "Well-known port 137 (tcp/udp): NETBIOS Name Service. Service name: netbios-ns.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 137,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "netbios-ns",
+      "Port Number": "137",
+      "Transport Protocol": "tcp",
+      "Description": "NETBIOS Name Service",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

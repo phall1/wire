@@ -1,0 +1,85 @@
+{
+  "id": "encoding/percent-encoding",
+  "family": "encoding",
+  "slug": "percent-encoding",
+  "title": "Percent-encoding (URI percent-encoding, RFC 3986 §2)",
+  "summary": "Percent-encoding (a.k.a. URL encoding) represents a byte that is unsafe or reserved in a given URI component as '%' followed by its two-digit uppercase hexadecimal value. Non-ASCII text is first encoded to bytes (UTF-8 in modern usage) and each byte is then percent-encoded — so 'é' (U+00E9 -> bytes C3 A9) becomes '%C3%A9'. Unreserved characters (A–Z a–z 0–9 and '-' '.' '_' '~') are never encoded.",
+  "kind": "encoding",
+  "aliases": [
+    "URL encoding",
+    "URI encoding",
+    "percent encoding",
+    "pct-encoding"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc3986#section-2",
+  "source_version": "RFC 3986 §2",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base16",
+    "encoding/punycode"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC3986",
+    "charset": "UTF-8",
+    "algorithm": "percent",
+    "notes": [
+      "Unreserved set (RFC 3986 §2.3), never percent-encoded: ALPHA / DIGIT / '-' / '.' / '_' / '~'.",
+      "Reserved set (§2.2) = gen-delims \":/?#[]@\" + sub-delims \"!$&'()*+,;=\". Reserved characters carry syntactic meaning and are percent-encoded when they appear as DATA rather than as a delimiter.",
+      "A percent-encoded octet is '%' + two HEX digits; RFC 3986 §2.1 says producers SHOULD emit uppercase hex (e.g. '%C3', not '%c3'), and '%41' ('A') is equivalent to its unreserved form on decode.",
+      "Non-ASCII first becomes bytes via a charset (UTF-8 today, RFC 3986 §2.5), then each byte is percent-encoded: 'café' -> 'café' bytes 63 61 66 C3 A9 -> 'caf%C3%A9'.",
+      "Executor note: the encoding-exec gate runs JavaScript encodeURIComponent/decodeURIComponent. That is a *component* encoder over UTF-8 and matches RFC 3986 for the unreserved set and space, but it intentionally leaves a few sub-delims/mark characters (\"!'()*\") unescaped, so it is not a strict RFC 3986 encoder for those. The vectors below stay within the cases where the two agree."
+    ],
+    "test_vectors": [
+      {
+        "input": "a b",
+        "input_form": "utf8",
+        "output": "a%20b",
+        "output_form": "ascii",
+        "algorithm": "percent",
+        "direction": "encode",
+        "note": "Space (0x20) -> '%20'. The canonical percent form of a space in a path/query component."
+      },
+      {
+        "input": "café",
+        "input_form": "utf8",
+        "output": "caf%C3%A9",
+        "output_form": "ascii",
+        "algorithm": "percent",
+        "direction": "encode",
+        "note": "Non-ASCII via UTF-8 then percent: 'é' (U+00E9) = bytes C3 A9 -> '%C3%A9'. ASCII 'caf' passes through unencoded."
+      },
+      {
+        "input": "a/b?c#d&e=f",
+        "input_form": "utf8",
+        "output": "a%2Fb%3Fc%23d%26e%3Df",
+        "output_form": "ascii",
+        "algorithm": "percent",
+        "direction": "encode",
+        "note": "Reserved gen-delims/sub-delims as DATA: '/'->%2F, '?'->%3F, '#'->%23, '&'->%26, '='->%3D."
+      },
+      {
+        "input": "AZaz09-._~",
+        "input_form": "utf8",
+        "output": "AZaz09-._~",
+        "output_form": "ascii",
+        "algorithm": "percent",
+        "direction": "encode",
+        "note": "Unreserved set (RFC 3986 §2.3) passes through unchanged: letters, digits, and '-' '.' '_' '~'."
+      },
+      {
+        "input": "caf%C3%A9",
+        "input_form": "ascii",
+        "output": "café",
+        "output_form": "utf8",
+        "algorithm": "percent",
+        "direction": "decode",
+        "note": "Round-trip: percent-decode('caf%C3%A9') interprets the two %-octets as UTF-8 bytes C3 A9 -> 'é', giving 'café'."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

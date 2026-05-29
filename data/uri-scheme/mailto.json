@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/mailto",
+  "family": "uri-scheme",
+  "slug": "mailto",
+  "title": "mailto: — Electronic mail address",
+  "summary": "URI scheme \"mailto:\" — Electronic mail address. IANA status: Permanent. Defined in RFC6068.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "mailto",
+    "reference_rfcs": [
+      "RFC6068"
+    ],
+    "raw_columns": {
+      "URI Scheme": "mailto",
+      "Template": "",
+      "Description": "Electronic mail address",
+      "Status": "Permanent",
+      "CRI Scheme Number": "12102",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6068]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

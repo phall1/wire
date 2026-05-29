@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/AXFR",
+  "family": "dns-rrtype",
+  "slug": "AXFR",
+  "title": "AXFR — transfer of an entire zone (type 252)",
+  "summary": "DNS resource record type AXFR (numeric type 252): transfer of an entire zone. Defined in RFC1035, RFC5936.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 252,
+    "reference_rfcs": [
+      "RFC1035",
+      "RFC5936"
+    ],
+    "raw_columns": {
+      "TYPE": "AXFR",
+      "Value": "252",
+      "Meaning": "transfer of an entire zone",
+      "Reference": "[RFC1035][RFC5936]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

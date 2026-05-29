@@ -1,0 +1,42 @@
+{
+  "id": "port/993",
+  "family": "port",
+  "slug": "993",
+  "title": "Port 993 — imaps",
+  "summary": "Well-known port 993 (tcp/udp): IMAP over TLS protocol. Service name: imaps. Referenced in RFC3501, RFC8314, RFC9051.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 993,
+    "reference_rfcs": [
+      "RFC3501",
+      "RFC8314",
+      "RFC9051"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "imaps",
+      "Port Number": "993",
+      "Transport Protocol": "tcp",
+      "Description": "IMAP over TLS protocol",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2021-02-22",
+      "Reference": "[RFC3501][RFC8314][RFC9051]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

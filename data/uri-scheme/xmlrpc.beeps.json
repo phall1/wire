@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/xmlrpc.beeps",
+  "family": "uri-scheme",
+  "slug": "xmlrpc.beeps",
+  "title": "xmlrpc.beeps: — xmlrpc.beeps",
+  "summary": "URI scheme \"xmlrpc.beeps:\" — xmlrpc.beeps. IANA status: Permanent. Defined in RFC3529.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "xmlrpc.beeps",
+    "reference_rfcs": [
+      "RFC3529"
+    ],
+    "raw_columns": {
+      "URI Scheme": "xmlrpc.beeps",
+      "Template": "",
+      "Description": "xmlrpc.beeps",
+      "Status": "Permanent",
+      "CRI Scheme Number": "15805",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3529]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/60",
+  "family": "cbor-tag",
+  "slug": "60",
+  "title": "CBOR tag 60 — A selective disclosure redacted (array) claim element.",
+  "summary": "CBOR tag 60 (data item: byte string): A selective disclosure redacted (array) claim element..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 60,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "60",
+      "Data Item": "byte string",
+      "Semantics": "A selective disclosure redacted (array) claim element. (TEMPORARY - registered 2025-12-09, expires 2026-12-09)",
+      "Reference": "[draft-ietf-spice-sd-cwt-06, Section 5.1]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

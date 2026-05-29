@@ -1,0 +1,38 @@
+{
+  "id": "port/86",
+  "family": "port",
+  "slug": "86",
+  "title": "Port 86 — mfcobol",
+  "summary": "Well-known port 86 (tcp/udp): Micro Focus Cobol. Service name: mfcobol.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 86,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mfcobol",
+      "Port Number": "86",
+      "Transport Protocol": "tcp",
+      "Description": "Micro Focus Cobol",
+      "Assignee": "[Simon_Edwards]",
+      "Contact": "[Simon_Edwards]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

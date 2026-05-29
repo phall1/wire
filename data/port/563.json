@@ -1,0 +1,40 @@
+{
+  "id": "port/563",
+  "family": "port",
+  "slug": "563",
+  "title": "Port 563 — nntps",
+  "summary": "Well-known port 563 (tcp/udp): nntp protocol over TLS/SSL (was snntp). Service name: nntps. Referenced in RFC4642.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 563,
+    "reference_rfcs": [
+      "RFC4642"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "nntps",
+      "Port Number": "563",
+      "Transport Protocol": "tcp",
+      "Description": "nntp protocol over TLS/SSL (was snntp)",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2018-07-06",
+      "Reference": "[RFC4642]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

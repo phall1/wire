@@ -1,0 +1,38 @@
+{
+  "id": "port/616",
+  "family": "port",
+  "slug": "616",
+  "title": "Port 616 — sco-sysmgr",
+  "summary": "Well-known port 616 (tcp/udp): SCO System Administration Server. Service name: sco-sysmgr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 616,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sco-sysmgr",
+      "Port Number": "616",
+      "Transport Protocol": "tcp",
+      "Description": "SCO System Administration Server",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

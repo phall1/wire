@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/38",
+  "family": "cbor-tag",
+  "slug": "38",
+  "title": "CBOR tag 38 — Language-tagged string",
+  "summary": "CBOR tag 38 (data item: array): Language-tagged string. Defined in RFC9290.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 38,
+    "reference_rfcs": [
+      "RFC9290"
+    ],
+    "raw_columns": {
+      "Tag": "38",
+      "Data Item": "array",
+      "Semantics": "Language-tagged string",
+      "Reference": "[RFC9290, Appendix A]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

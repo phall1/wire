@@ -1,0 +1,38 @@
+{
+  "id": "port/953",
+  "family": "port",
+  "slug": "953",
+  "title": "Port 953 — rndc",
+  "summary": "Well-known port 953 (tcp/udp): BIND9 remote name daemon controller. Service name: rndc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 953,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "rndc",
+      "Port Number": "953",
+      "Transport Protocol": "tcp",
+      "Description": "BIND9 remote name daemon controller",
+      "Assignee": "[Internet_Systems_Consortium_Inc]",
+      "Contact": "[Ray_Bellis]",
+      "Registration Date": "2017-06-08",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

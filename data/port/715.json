@@ -1,0 +1,40 @@
+{
+  "id": "port/715",
+  "family": "port",
+  "slug": "715",
+  "title": "Port 715 — iris-lwz",
+  "summary": "Well-known port 715 (tcp/udp): IRIS-LWZ. Service name: iris-lwz. Referenced in RFC4993.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 715,
+    "reference_rfcs": [
+      "RFC4993"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "iris-lwz",
+      "Port Number": "715",
+      "Transport Protocol": "tcp",
+      "Description": "IRIS-LWZ",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC4993]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

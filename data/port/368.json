@@ -1,0 +1,38 @@
+{
+  "id": "port/368",
+  "family": "port",
+  "slug": "368",
+  "title": "Port 368 — qbikgdp",
+  "summary": "Well-known port 368 (tcp/udp): QbikGDP. Service name: qbikgdp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 368,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "qbikgdp",
+      "Port Number": "368",
+      "Transport Protocol": "tcp",
+      "Description": "QbikGDP",
+      "Assignee": "[Adrien_de_Croy]",
+      "Contact": "[Adrien_de_Croy]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

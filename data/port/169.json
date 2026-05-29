@@ -1,0 +1,38 @@
+{
+  "id": "port/169",
+  "family": "port",
+  "slug": "169",
+  "title": "Port 169 — send",
+  "summary": "Well-known port 169 (tcp/udp): SEND. Service name: send.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 169,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "send",
+      "Port Number": "169",
+      "Transport Protocol": "tcp",
+      "Description": "SEND",
+      "Assignee": "[William_Oldwin]",
+      "Contact": "[William_Oldwin]",
+      "Registration Date": "",
+      "Modification Date": "2019-04-22",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

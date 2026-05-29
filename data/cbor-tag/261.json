@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/261",
+  "family": "cbor-tag",
+  "slug": "261",
+  "title": "CBOR tag 261 — Network Address Prefix (IPv4 or IPv6 Address + Mask Length)…",
+  "summary": "CBOR tag 261 (data item: map (IPAddress + Mask Length)): Network Address Prefix (IPv4 or IPv6 Address + Mask Length) (DEPRECATED in favor of 52 and 54\n        for IP addresses). Defined in RFC9164.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 261,
+    "reference_rfcs": [
+      "RFC9164"
+    ],
+    "raw_columns": {
+      "Tag": "261",
+      "Data Item": "map (IPAddress + Mask Length)",
+      "Semantics": "Network Address Prefix (IPv4 or IPv6 Address + Mask Length) (DEPRECATED in favor of 52 and 54\n        for IP addresses)",
+      "Reference": "[https://github.com/toravir/CBOR-Tag-Specs/blob/master/networkPrefix.md][Ravi_Raju][RFC9164]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

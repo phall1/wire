@@ -1,0 +1,38 @@
+{
+  "id": "port/847",
+  "family": "port",
+  "slug": "847",
+  "title": "Port 847 — dhcp-failover2",
+  "summary": "Well-known port 847 (tcp/udp): dhcp-failover 2. Service name: dhcp-failover2.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 847,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dhcp-failover2",
+      "Port Number": "847",
+      "Transport Protocol": "tcp",
+      "Description": "dhcp-failover 2",
+      "Assignee": "[Bernard_Volz]",
+      "Contact": "[Bernard_Volz]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

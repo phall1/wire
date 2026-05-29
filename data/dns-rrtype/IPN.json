@@ -1,0 +1,29 @@
+{
+  "id": "dns-rrtype/IPN",
+  "family": "dns-rrtype",
+  "slug": "IPN",
+  "title": "IPN — BP Node Number (type 264)",
+  "summary": "DNS resource record type IPN (numeric type 264): BP Node Number.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 264,
+    "reference_rfcs": [],
+    "registration_date": "2024-07-25",
+    "raw_columns": {
+      "TYPE": "IPN",
+      "Value": "264",
+      "Meaning": "BP Node Number",
+      "Reference": "[draft-johnson-dns-ipn-cla-07]",
+      "Template": "IPN/ipn-completed-template",
+      "Registration Date": "2024-07-25"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "terminal-osc/7",
+  "family": "terminal-osc",
+  "slug": "7",
+  "title": "OSC 7 — Report current working directory (file:// URL)",
+  "summary": "OSC 7 ; file://host/path ST tells the terminal the shell's current working directory as a file URL. Terminals use it to open new tabs/splits in the same directory and to resolve relative paths in hyperlinks. Emitted by the shell from a precmd/PROMPT_COMMAND hook. Originated with iTerm2; now broadly supported.",
+  "kind": "control-sequence",
+  "aliases": [
+    "report cwd",
+    "current working directory",
+    "OSC 7",
+    "ESC ] 7",
+    "cwd reporting"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://iterm2.com/documentation-escape-codes.html",
+  "source_version": "iTerm2 Proprietary Escape Codes, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://iterm2.com/documentation-escape-codes.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "iTerm2 documents OSC 7 ; file://hostname/path as the way the shell reports its current directory so iTerm2 can open new sessions in the same place."
+    },
+    {
+      "claim_ref": "#set",
+      "source_url": "https://gnome.pages.gitlab.gnome.org/vte/gtk4/group__VteTerminal.html",
+      "source_version": "VTE documentation, retrieved 2026-05-29",
+      "note": "VTE (GNOME Terminal) documents OSC 7 file:// URI as the current-directory / current-file URI used to open new terminals in the same directory."
+    },
+    {
+      "claim_ref": "#set",
+      "source_url": "https://wezterm.org/shell-integration.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "WezTerm shell-integration docs describe emitting OSC 7 ; file://HOST/CWD so WezTerm knows the cwd for spawning tabs/panes (second independent source for the file:// form)."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/8",
+    "terminal-osc/133",
+    "terminal-osc/0"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 7,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 7 is an iTerm2-originated de-facto convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Report cwd",
+        "meaning": "OSC 7 ; file://HOST/PATH ST reports the shell's current working directory. HOST is the hostname (so the terminal can tell local vs remote/ssh) and PATH is the absolute, percent-encoded path. The shell emits this from precmd / PROMPT_COMMAND after each directory change.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]7;file://myhost/home/user/project\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 7 ; f i l e : / / m y h o s t / h o m e / u s e r / p r o j e c t ESC \\   ==  \\x1b]7;file://myhost/home/user/project\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]7;file://myhost/home/user/project\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 7 ; f i l e : / / m y h o s t / . . . BEL   ==  \\x1b]7;file://myhost/home/user/project\\x07",
+        "subparams": []
+      }
+    ],
+    "support_matrix": [
+      {
+        "terminal": "iTerm2",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Origin of OSC 7 cwd reporting; opens new sessions in the reported directory."
+      },
+      {
+        "terminal": "VTE / GNOME Terminal",
+        "version_added": "VTE 0.38+",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Uses the file:// URI to spawn new terminals in the same directory."
+      },
+      {
+        "terminal": "WezTerm",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Reads OSC 7 to spawn tabs/panes in the current directory."
+      },
+      {
+        "terminal": "kitty",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Honors OSC 7 for new-window cwd inheritance."
+      },
+      {
+        "terminal": "Windows Terminal",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Uses OSC 7 to duplicate tabs in the same working directory."
+      }
+    ],
+    "gotchas": [
+      "The PATH component must be percent-encoded per RFC 3986: spaces become %20, etc. Emitting a raw space or other reserved char yields a malformed URL the terminal may ignore.",
+      "Include the hostname so the terminal can distinguish a local cwd from one over ssh; an empty host (file:///path) is interpreted as localhost.",
+      "OSC 7 reports the directory; it does NOT mark prompt/command boundaries — that is OSC 133. They are commonly emitted together from the same precmd hook.",
+      "OSC 7 is distinct from OSC 8 (hyperlinks) and from OSC 6 (some terminals' 'current file' / document URI); do not conflate.",
+      "Emit it from precmd / the PROMPT_COMMAND, after cd, so the terminal's notion of cwd stays in sync with the shell."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 7 form carries a file:// URL and is a syntactically valid OSC string in both ST and BEL terminator forms.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

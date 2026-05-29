@@ -1,0 +1,38 @@
+{
+  "id": "port/694",
+  "family": "port",
+  "slug": "694",
+  "title": "Port 694 — ha-cluster",
+  "summary": "Well-known port 694 (tcp/udp): ha-cluster. Service name: ha-cluster.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 694,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ha-cluster",
+      "Port Number": "694",
+      "Transport Protocol": "tcp",
+      "Description": "ha-cluster",
+      "Assignee": "[Alan_Robertson]",
+      "Contact": "[Alan_Robertson]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/682",
+  "family": "port",
+  "slug": "682",
+  "title": "Port 682 — xfr",
+  "summary": "Well-known port 682 (tcp/udp): XFR. Service name: xfr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 682,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "xfr",
+      "Port Number": "682",
+      "Transport Protocol": "tcp",
+      "Description": "XFR",
+      "Assignee": "[Noah_Paul_2]",
+      "Contact": "[Noah_Paul_2]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

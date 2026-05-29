@@ -1,0 +1,35 @@
+{
+  "id": "uri-scheme/shttp",
+  "family": "uri-scheme",
+  "slug": "shttp",
+  "title": "shttp (OBSOLETE): — Secure Hypertext Transfer Protocol",
+  "summary": "URI scheme \"shttp (OBSOLETE):\" — Secure Hypertext Transfer Protocol. IANA status: Permanent. Defined in RFC2660.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "shttp (OBSOLETE)",
+    "reference_rfcs": [
+      "RFC2660"
+    ],
+    "raw_columns": {
+      "URI Scheme": "shttp (OBSOLETE)",
+      "Template": "",
+      "Description": "Secure Hypertext Transfer Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "7874",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2660][Status change of HTTP experiments to Historic]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "shttp (OBSOLETE)"
+  ]
+}

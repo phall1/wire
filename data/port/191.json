@@ -1,0 +1,38 @@
+{
+  "id": "port/191",
+  "family": "port",
+  "slug": "191",
+  "title": "Port 191 — prospero",
+  "summary": "Well-known port 191 (tcp/udp): Prospero Directory Service. Service name: prospero.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 191,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "prospero",
+      "Port Number": "191",
+      "Transport Protocol": "tcp",
+      "Description": "Prospero Directory Service",
+      "Assignee": "[B_Clifford_Neuman]",
+      "Contact": "[B_Clifford_Neuman]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

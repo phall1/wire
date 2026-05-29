@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/CSYNC",
+  "family": "dns-rrtype",
+  "slug": "CSYNC",
+  "title": "CSYNC — Child-To-Parent Synchronization (type 62)",
+  "summary": "DNS resource record type CSYNC (numeric type 62): Child-To-Parent Synchronization. Defined in RFC7477.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 62,
+    "reference_rfcs": [
+      "RFC7477"
+    ],
+    "registration_date": "2015-01-27",
+    "raw_columns": {
+      "TYPE": "CSYNC",
+      "Value": "62",
+      "Meaning": "Child-To-Parent Synchronization",
+      "Reference": "[RFC7477]",
+      "Template": "",
+      "Registration Date": "2015-01-27"
+    }
+  },
+  "updated": "2026-05-29"
+}

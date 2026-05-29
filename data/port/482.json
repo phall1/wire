@@ -1,0 +1,38 @@
+{
+  "id": "port/482",
+  "family": "port",
+  "slug": "482",
+  "title": "Port 482 — bgs-nsi",
+  "summary": "Well-known port 482 (tcp/udp): bgs-nsi. Service name: bgs-nsi.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 482,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "bgs-nsi",
+      "Port Number": "482",
+      "Transport Protocol": "tcp",
+      "Description": "bgs-nsi",
+      "Assignee": "[Jon_Saperia]",
+      "Contact": "[Jon_Saperia]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

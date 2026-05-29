@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/17",
+  "family": "cbor-tag",
+  "slug": "17",
+  "title": "CBOR tag 17 — COSE Mac w/o Recipients Object",
+  "summary": "CBOR tag 17 (data item: COSE_Mac0): COSE Mac w/o Recipients Object. Defined in RFC9052.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 17,
+    "reference_rfcs": [
+      "RFC9052"
+    ],
+    "raw_columns": {
+      "Tag": "17",
+      "Data Item": "COSE_Mac0",
+      "Semantics": "COSE Mac w/o Recipients Object",
+      "Reference": "[RFC9052]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

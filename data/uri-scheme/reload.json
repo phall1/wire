@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/reload",
+  "family": "uri-scheme",
+  "slug": "reload",
+  "title": "reload: — reload",
+  "summary": "URI scheme \"reload:\" — reload. IANA status: Permanent. Defined in RFC6940.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "reload",
+    "reference_rfcs": [
+      "RFC6940"
+    ],
+    "raw_columns": {
+      "URI Scheme": "reload",
+      "Template": "",
+      "Description": "reload",
+      "Status": "Permanent",
+      "CRI Scheme Number": "12726",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6940]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/176",
+  "family": "port",
+  "slug": "176",
+  "title": "Port 176 — genrad-mux",
+  "summary": "Well-known port 176 (tcp/udp): GENRAD-MUX. Service name: genrad-mux.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 176,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "genrad-mux",
+      "Port Number": "176",
+      "Transport Protocol": "tcp",
+      "Description": "GENRAD-MUX",
+      "Assignee": "[Ron_Thornton]",
+      "Contact": "[Ron_Thornton]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

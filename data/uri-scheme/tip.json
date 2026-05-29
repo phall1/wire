@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/tip",
+  "family": "uri-scheme",
+  "slug": "tip",
+  "title": "tip: — Transaction Internet Protocol",
+  "summary": "URI scheme \"tip:\" — Transaction Internet Protocol. IANA status: Permanent. Defined in RFC2371.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "tip",
+    "reference_rfcs": [
+      "RFC2371"
+    ],
+    "raw_columns": {
+      "URI Scheme": "tip",
+      "Template": "",
+      "Description": "Transaction Internet Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "6651",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2371]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

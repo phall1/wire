@@ -1,0 +1,41 @@
+{
+  "id": "port/172",
+  "family": "port",
+  "slug": "172",
+  "title": "Port 172 — cl-1 (+1 more)",
+  "summary": "Well-known port 172 (tcp/udp): Network Innovations CL/1\nIANA assigned this well-formed service name as a replacement for \"cl/1\".. Service names: cl-1, cl/1.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 172,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "cl-1",
+      "Port Number": "172",
+      "Transport Protocol": "tcp",
+      "Description": "Network Innovations CL/1\nIANA assigned this well-formed service name as a replacement for \"cl/1\".",
+      "Assignee": "[Kevin_DeVault]",
+      "Contact": "[Kevin_DeVault]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "cl/1"
+  ]
+}

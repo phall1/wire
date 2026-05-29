@@ -1,0 +1,43 @@
+{
+  "id": "port/1022",
+  "family": "port",
+  "slug": "1022",
+  "title": "Port 1022 — exp2",
+  "summary": "Well-known port 1022 (tcp/udp/sctp/dccp): RFC3692-style Experiment 2. Service name: exp2. Referenced in RFC4727, RFC6335.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1022,
+    "reference_rfcs": [
+      "RFC4727",
+      "RFC6335"
+    ],
+    "transports": [
+      "tcp",
+      "udp",
+      "sctp",
+      "dccp"
+    ],
+    "raw_columns": {
+      "Service Name": "exp2",
+      "Port Number": "1022",
+      "Transport Protocol": "tcp",
+      "Description": "RFC3692-style Experiment 2",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[1][RFC4727][RFC6335]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

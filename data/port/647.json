@@ -1,0 +1,40 @@
+{
+  "id": "port/647",
+  "family": "port",
+  "slug": "647",
+  "title": "Port 647 — dhcp-failover",
+  "summary": "Well-known port 647 (tcp/udp): DHCP Failover. Service name: dhcp-failover. Referenced in RFC8156.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 647,
+    "reference_rfcs": [
+      "RFC8156"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dhcp-failover",
+      "Port Number": "647",
+      "Transport Protocol": "tcp",
+      "Description": "DHCP Failover",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2018-05-21",
+      "Reference": "[RFC8156]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

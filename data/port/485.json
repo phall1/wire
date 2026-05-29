@@ -1,0 +1,38 @@
+{
+  "id": "port/485",
+  "family": "port",
+  "slug": "485",
+  "title": "Port 485 — powerburst",
+  "summary": "Well-known port 485 (tcp/udp): Air Soft Power Burst. Service name: powerburst.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 485,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "powerburst",
+      "Port Number": "485",
+      "Transport Protocol": "tcp",
+      "Description": "Air Soft Power Burst",
+      "Assignee": "[gary]",
+      "Contact": "[gary]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

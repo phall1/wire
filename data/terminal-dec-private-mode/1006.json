@@ -1,0 +1,102 @@
+{
+  "id": "terminal-dec-private-mode/1006",
+  "family": "terminal-dec-private-mode",
+  "slug": "1006",
+  "title": "DECSET 1006 — SGR mouse mode (extended mouse encoding)",
+  "summary": "CSI ? 1006 h selects the SGR mouse-report encoding: instead of the legacy +32 byte form, events are reported as CSI < Cb ; Cx ; Cy M (press) or CSI < Cb ; Cx ; Cy m (release), using decimal numbers. This removes the 223-column limit and the UTF-8 byte collisions of the legacy encoding. It is an ENCODING toggle, paired with a tracking mode like 1000/1002/1003.",
+  "kind": "control-sequence",
+  "aliases": [
+    "SGR mouse mode",
+    "SGR mouse encoding",
+    "extended mouse mode",
+    "DECSET 1006",
+    "?1006h / ?1006l"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 0 0 6 -> Enable SGR Mouse Mode. Reports are CSI < Pb ; Px ; Py M for press and CSI < Pb ; Px ; Py m for release, with decimal parameters (no +32 offset)."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1000"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1006,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = 'h' (DECSET); reset = 'l' (DECRST). Self-terminating. The mouse REPORTS use a CSI '<' private-prefix form."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: enable/disable ends at 'h'/'l'. Reports are CSI '<' ... 'M' (press) or 'm' (release) — the final byte itself distinguishes press from release."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1006 h selects SGR-encoded mouse reports. Combine with a tracking mode (1000/1002/1003) which decides WHICH events fire.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1006h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 0 6 h   ==  \\x1b[?1006h   (enable SGR mouse encoding)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1006 l reverts to the legacy mouse encoding.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1006l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 0 6 l   ==  \\x1b[?1006l   (disable SGR mouse encoding)",
+        "subparams": []
+      },
+      {
+        "id": "report-press",
+        "anchor": "#report-press",
+        "name": "Press report (terminal -> app)",
+        "meaning": "A button press is reported as CSI < Cb ; Cx ; Cy M, all decimal. Cb is the button+modifier code, Cx the 1-based column, Cy the 1-based row. Example: button 0 (left) press at col 35, row 12 = ESC [ < 0 ; 35 ; 12 M.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[<0;35;12M",
+        "byte_sequence_ST_readable": "ESC [ < 0 ; 3 5 ; 1 2 M   ==  \\x1b[<0;35;12M   (left-button press at col35,row12)",
+        "subparams": []
+      },
+      {
+        "id": "report-release",
+        "anchor": "#report-release",
+        "name": "Release report (terminal -> app)",
+        "meaning": "A button release is reported identically but with a lowercase 'm' final byte: CSI < Cb ; Cx ; Cy m. The final byte (M vs m) is what tells press from release — this is the key advantage over the legacy encoding, which could not distinguish which button was released.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[<0;35;12m",
+        "byte_sequence_ST_readable": "ESC [ < 0 ; 3 5 ; 1 2 m   ==  \\x1b[<0;35;12m   (left-button release at col35,row12)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "1006 is an ENCODING, not a tracking mode: it does nothing on its own. Enable a tracking mode too (e.g. \\x1b[?1000h\\x1b[?1006h) or you get no events.",
+      "Press vs release is the FINAL BYTE: 'M' = press, 'm' = release. The legacy encoding could not say which button was released; SGR mode can.",
+      "Coordinates are 1-based DECIMAL with no +32 offset, so there is no 223-column ceiling and no UTF-8 byte ambiguity — always prefer 1006 over the legacy and the abandoned 1005 (UTF-8) / 1015 (urxvt) encodings.",
+      "Disable on exit (\\x1b[?1006l plus the tracking mode reset); leaving SGR mouse mode on confuses a subsequent program that expects the legacy encoding.",
+      "The 'pixel' variant 1016 (SGR-Pixels) reports pixel coordinates instead of cells; do not confuse it with 1006."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Set/reset (?1006h / ?1006l) are syntactically valid DEC-private-mode CSI sequences; the press (M) and release (m) report examples are byte-exact CSI '<' decimal forms.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "port/602",
+  "family": "port",
+  "slug": "602",
+  "title": "Port 602 — xmlrpc-beep",
+  "summary": "Well-known port 602 (tcp/udp): XML-RPC over BEEP. Service name: xmlrpc-beep. Referenced in RFC3529.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 602,
+    "reference_rfcs": [
+      "RFC3529"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "xmlrpc-beep",
+      "Port Number": "602",
+      "Transport Protocol": "tcp",
+      "Description": "XML-RPC over BEEP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC3529]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

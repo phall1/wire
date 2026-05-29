@@ -1,0 +1,40 @@
+{
+  "id": "port/848",
+  "family": "port",
+  "slug": "848",
+  "title": "Port 848 — gdoi",
+  "summary": "Well-known port 848 (tcp/udp): GDOI. Service name: gdoi. Referenced in RFC3547.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 848,
+    "reference_rfcs": [
+      "RFC3547"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "gdoi",
+      "Port Number": "848",
+      "Transport Protocol": "tcp",
+      "Description": "GDOI",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC3547]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/599",
+  "family": "port",
+  "slug": "599",
+  "title": "Port 599 — acp",
+  "summary": "Well-known port 599 (tcp/udp): Aeolon Core Protocol. Service name: acp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 599,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "acp",
+      "Port Number": "599",
+      "Transport Protocol": "tcp",
+      "Description": "Aeolon Core Protocol",
+      "Assignee": "[Michael_Alyn_Miller]",
+      "Contact": "[Michael_Alyn_Miller]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

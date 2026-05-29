@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/4",
+  "family": "cbor-tag",
+  "slug": "4",
+  "title": "CBOR tag 4 — Decimal fraction; see Section 3.4.4",
+  "summary": "CBOR tag 4 (data item: array): Decimal fraction; see Section 3.4.4. Defined in RFC8949.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 4,
+    "reference_rfcs": [
+      "RFC8949"
+    ],
+    "raw_columns": {
+      "Tag": "4",
+      "Data Item": "array",
+      "Semantics": "Decimal fraction; see Section 3.4.4",
+      "Reference": "[RFC8949]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

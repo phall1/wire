@@ -1,0 +1,38 @@
+{
+  "id": "port/360",
+  "family": "port",
+  "slug": "360",
+  "title": "Port 360 — scoi2odialog",
+  "summary": "Well-known port 360 (tcp/udp): scoi2odialog. Service name: scoi2odialog.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 360,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "scoi2odialog",
+      "Port Number": "360",
+      "Transport Protocol": "tcp",
+      "Description": "scoi2odialog",
+      "Assignee": "[Keith_Petley]",
+      "Contact": "[Keith_Petley]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

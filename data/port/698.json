@@ -1,0 +1,38 @@
+{
+  "id": "port/698",
+  "family": "port",
+  "slug": "698",
+  "title": "Port 698 — olsr",
+  "summary": "Well-known port 698 (tcp/udp): OLSR. Service name: olsr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 698,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "olsr",
+      "Port Number": "698",
+      "Transport Protocol": "tcp",
+      "Description": "OLSR",
+      "Assignee": "[Thomas_Clausen]",
+      "Contact": "[Thomas_Clausen]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

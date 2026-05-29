@@ -1,0 +1,35 @@
+{
+  "id": "uri-scheme/coap-tcp",
+  "family": "uri-scheme",
+  "slug": "coap-tcp",
+  "title": "coap+tcp: — coap+tcp (see [reviewer notes])",
+  "summary": "URI scheme \"coap+tcp:\" — coap+tcp (see [reviewer notes]). IANA status: Permanent. Defined in RFC8323.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "coap+tcp",
+    "reference_rfcs": [
+      "RFC8323"
+    ],
+    "raw_columns": {
+      "URI Scheme": "coap+tcp",
+      "Template": "",
+      "Description": "coap+tcp (see [reviewer notes])",
+      "Status": "Permanent",
+      "CRI Scheme Number": "6",
+      "Well-Known URI Support": "[RFC8323]",
+      "Reference": "[RFC8323]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "coap+tcp"
+  ]
+}

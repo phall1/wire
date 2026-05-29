@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1146111423",
+  "family": "cbor-tag",
+  "slug": "1146111423",
+  "title": "CBOR tag 1146111423 — TCG DICE Protection Environment profile descriptor",
+  "summary": "CBOR tag 1146111423 (data item: map): TCG DICE Protection Environment profile descriptor.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1146111423,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1146111423",
+      "Data Item": "map",
+      "Semantics": "TCG DICE Protection Environment profile descriptor",
+      "Reference": "[TCG DICE Protection Environment][TCG]",
+      "Template": "template/1146111423"
+    }
+  },
+  "updated": "2026-05-29"
+}

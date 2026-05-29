@@ -1,0 +1,110 @@
+{
+  "id": "encoding/base32",
+  "family": "encoding",
+  "slug": "base32",
+  "title": "Base32 (RFC 4648 §6)",
+  "summary": "Base32 maps every 5 input bytes (40 bits) to 8 ASCII characters drawn from a 32-symbol alphabet (A–Z and 2–7), padding the final group with '=' to a multiple of 8 characters. It trades density for a case-insensitive, human-transcribable alphabet that omits the easily confused 0/1/8/9, which is why it backs TOTP/HOTP secrets (RFC 4226/6238) and onion addresses.",
+  "kind": "encoding",
+  "aliases": [
+    "base-32",
+    "RFC 4648 base32"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc4648#section-6",
+  "source_version": "RFC 4648 §6",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base64",
+    "encoding/base16"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC4648",
+    "charset": "US-ASCII",
+    "algorithm": "base32",
+    "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
+    "notes": [
+      "Encodes 40 input bits (5 bytes) as eight 5-bit groups; each group indexes the 32-character alphabet. Output length is always a multiple of 8.",
+      "Padding map (bytes in last group -> '=' count): 1 byte -> 6 pads ('======'); 2 -> 4 ('===='); 3 -> 3 ('==='); 4 -> 1 ('='); 5 -> 0. So 'f' (1 byte) -> 'MY======'.",
+      "The alphabet deliberately omits 0, 1, 8, 9 to avoid confusion with O, I/L, B; decoders are case-insensitive in practice though RFC 4648 specifies the uppercase canonical form.",
+      "RFC 4648 §7 also defines 'base32hex' (alphabet 0–9 A–V), a different, order-preserving variant — not covered by this entry."
+    ],
+    "test_vectors": [
+      {
+        "input": "",
+        "input_form": "utf8",
+        "output": "",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"\") = \"\"."
+      },
+      {
+        "input": "f",
+        "input_form": "utf8",
+        "output": "MY======",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"f\") = \"MY======\"."
+      },
+      {
+        "input": "fo",
+        "input_form": "utf8",
+        "output": "MZXQ====",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"fo\") = \"MZXQ====\"."
+      },
+      {
+        "input": "foo",
+        "input_form": "utf8",
+        "output": "MZXW6===",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"foo\") = \"MZXW6===\"."
+      },
+      {
+        "input": "foob",
+        "input_form": "utf8",
+        "output": "MZXW6YQ=",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"foob\") = \"MZXW6YQ=\"."
+      },
+      {
+        "input": "fooba",
+        "input_form": "utf8",
+        "output": "MZXW6YTB",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"fooba\") = \"MZXW6YTB\" (5 bytes -> 8 chars, no padding)."
+      },
+      {
+        "input": "foobar",
+        "input_form": "utf8",
+        "output": "MZXW6YTBOI======",
+        "output_form": "ascii",
+        "algorithm": "base32",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE32(\"foobar\") = \"MZXW6YTBOI======\"."
+      },
+      {
+        "input": "MZXW6YTBOI======",
+        "input_form": "ascii",
+        "output": "foobar",
+        "output_form": "utf8",
+        "algorithm": "base32",
+        "direction": "decode",
+        "note": "Round-trip: BASE32-decode(\"MZXW6YTBOI======\") = \"foobar\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

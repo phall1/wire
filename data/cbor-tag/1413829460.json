@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1413829460",
+  "family": "cbor-tag",
+  "slug": "1413829460",
+  "title": "CBOR tag 1413829460 — Explicitly none.",
+  "summary": "CBOR tag 1413829460 (data item: any): Explicitly none..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1413829460,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1413829460",
+      "Data Item": "any",
+      "Semantics": "Explicitly none.",
+      "Reference": "[draft-bormann-cbor-notable-tags-15, Section 10.3][Joe_Hildebrand]",
+      "Template": "template/1413829460"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/ext/iana-registry-row.v1.schema.json",
+  "title": "ext_type: iana-registry-row@1",
+  "description": "Loss-free echo of a single IANA registry row (Tier-A deterministic parse). `raw_columns` is a verbatim column->value map so the entry is fully reversible back to the upstream CSV/XML row, which is what the Tier-A round-trip gate diffs against. The named fields are conveniences lifted out of raw_columns for common queries (ports, tls-param, etc.); they never replace raw_columns and may diverge in surface form (e.g. normalized casing). When a named field and its raw_columns source disagree the raw_columns value is authoritative.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["raw_columns"],
+  "properties": {
+    "value": {
+      "type": ["string", "integer"],
+      "description": "The registry's primary key for this row as printed upstream (e.g. the status code, port number, rrtype value, cbor tag, or media-type name). Mirrors the natural-key column from raw_columns."
+    },
+    "reference_rfcs": {
+      "type": "array",
+      "description": "RFC / spec references cited in the row, one normalized token per item (e.g. 'RFC9110', 'RFC2782'). Verbatim reference text stays in raw_columns; this is the parsed, link-ready form.",
+      "items": { "type": "string" }
+    },
+    "registration_date": {
+      "type": "string",
+      "description": "Registration / assignment date exactly as the registry records it (often 'YYYY-MM' or 'YYYY-MM-DD', sometimes blank or a year). Not constrained to a strict date format because IANA registries are inconsistent; the verbatim value also lives in raw_columns."
+    },
+    "registrant": {
+      "type": "string",
+      "description": "Contact / registrant / assignee / 'Reference' owner as printed in the row. Free text; some registries omit it."
+    },
+    "transports": {
+      "type": "array",
+      "description": "Port-registry convenience: the transport protocols this assignment covers (e.g. 'tcp', 'udp', 'sctp', 'dccp'). Each row in the IANA service-names-port-numbers registry is per (service, transport); this lifts the transport column out for filtering. Empty/omitted for non-port families.",
+      "items": { "type": "string", "enum": ["tcp", "udp", "sctp", "dccp"] }
+    },
+    "recommended": {
+      "type": ["boolean", "string"],
+      "description": "tls-param convenience: the IANA 'Recommended' column (Y/N/historical text). Boolean when cleanly Y/N, string to preserve qualified values verbatim. Omitted for non-TLS families."
+    },
+    "dtls_ok": {
+      "type": ["boolean", "string"],
+      "description": "tls-param convenience: the 'DTLS-OK' column (whether the parameter is permitted with DTLS). Boolean when cleanly Y/N, string to preserve qualified values verbatim. Omitted for non-TLS families."
+    },
+    "raw_columns": {
+      "type": "object",
+      "description": "Verbatim upstream-column-header -> cell-value map for THIS row, preserving every column the registry printed (including ones with no named field above), in source order where the parser can preserve it. This is the loss-free record the Tier-A round-trip gate reconciles against the re-fetched upstream; it must round-trip byte-for-byte modulo CSV quoting. A free-form object: keys are the upstream header strings, values are the raw cell strings.",
+      "additionalProperties": { "type": "string" }
+    },
+    "notes": {
+      "type": "array",
+      "description": "Registry-level footnotes/notes attached to this row (IANA registries carry per-row note references and a notes table). Verbatim note text.",
+      "items": { "type": "string" }
+    }
+  }
+}

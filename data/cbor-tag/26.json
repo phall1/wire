@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/26",
+  "family": "cbor-tag",
+  "slug": "26",
+  "title": "CBOR tag 26 — Serialised Perl object with classname and constructor argum…",
+  "summary": "CBOR tag 26 (data item: array): Serialised Perl object with classname and constructor arguments.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 26,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "26",
+      "Data Item": "array",
+      "Semantics": "Serialised Perl object with classname and constructor arguments",
+      "Reference": "[http://cbor.schmorp.de/perl-object][Marc_A._Lehmann]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

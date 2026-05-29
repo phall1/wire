@@ -1,0 +1,38 @@
+{
+  "id": "port/109",
+  "family": "port",
+  "slug": "109",
+  "title": "Port 109 — pop2",
+  "summary": "Well-known port 109 (tcp/udp): Post Office Protocol - Version 2. Service name: pop2.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 109,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pop2",
+      "Port Number": "109",
+      "Transport Protocol": "tcp",
+      "Description": "Post Office Protocol - Version 2",
+      "Assignee": "[Joyce_K_Reynolds]",
+      "Contact": "[Joyce_K_Reynolds]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

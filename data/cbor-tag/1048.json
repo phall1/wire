@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/1048",
+  "family": "cbor-tag",
+  "slug": "1048",
+  "title": "CBOR tag 1048 — IEEE OUI/CID",
+  "summary": "CBOR tag 1048 (data item: byte string): IEEE OUI/CID. Defined in RFC9542.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1048,
+    "reference_rfcs": [
+      "RFC9542"
+    ],
+    "raw_columns": {
+      "Tag": "1048",
+      "Data Item": "byte string",
+      "Semantics": "IEEE OUI/CID",
+      "Reference": "[RFC9542]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/60020",
+  "family": "cbor-tag",
+  "slug": "60020",
+  "title": "CBOR tag 60020 — The tagged CBOR array containing a set of digests expressio…",
+  "summary": "CBOR tag 60020 (data item: array): The tagged CBOR array containing a set of digests expression..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 60020,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "60020",
+      "Data Item": "array",
+      "Semantics": "The tagged CBOR array containing a set of digests expression.",
+      "Reference": "[https://github.com/nedmsmith/draft-cds-rats-intel-corim-profile/blob/main/draft-cds-rats-intel-corim-profile.md][Ned_Smith]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

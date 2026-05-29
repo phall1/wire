@@ -1,0 +1,38 @@
+{
+  "id": "port/581",
+  "family": "port",
+  "slug": "581",
+  "title": "Port 581 — bdp",
+  "summary": "Well-known port 581 (tcp/udp): Bundle Discovery Protocol. Service name: bdp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 581,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "bdp",
+      "Port Number": "581",
+      "Transport Protocol": "tcp",
+      "Description": "Bundle Discovery Protocol",
+      "Assignee": "[Gary_Malkin]",
+      "Contact": "[Gary_Malkin]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

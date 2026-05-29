@@ -1,0 +1,38 @@
+{
+  "id": "port/222",
+  "family": "port",
+  "slug": "222",
+  "title": "Port 222 — rsh-spx",
+  "summary": "Well-known port 222 (tcp/udp): Berkeley rshd with SPX auth. Service name: rsh-spx.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 222,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "rsh-spx",
+      "Port Number": "222",
+      "Transport Protocol": "tcp",
+      "Description": "Berkeley rshd with SPX auth",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

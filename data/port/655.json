@@ -1,0 +1,38 @@
+{
+  "id": "port/655",
+  "family": "port",
+  "slug": "655",
+  "title": "Port 655 — tinc",
+  "summary": "Well-known port 655 (tcp/udp): TINC. Service name: tinc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 655,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "tinc",
+      "Port Number": "655",
+      "Transport Protocol": "tcp",
+      "Description": "TINC",
+      "Assignee": "[Ivo_Timmermans]",
+      "Contact": "[Ivo_Timmermans]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

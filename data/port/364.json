@@ -1,0 +1,38 @@
+{
+  "id": "port/364",
+  "family": "port",
+  "slug": "364",
+  "title": "Port 364 — aurora-cmgr",
+  "summary": "Well-known port 364 (tcp/udp): Aurora CMGR. Service name: aurora-cmgr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 364,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "aurora-cmgr",
+      "Port Number": "364",
+      "Transport Protocol": "tcp",
+      "Description": "Aurora CMGR",
+      "Assignee": "[Philip_Budne]",
+      "Contact": "[Philip_Budne]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1298493254",
+  "family": "cbor-tag",
+  "slug": "1298493254",
+  "title": "CBOR tag 1298493254 — MoaT end-of-file marker",
+  "summary": "CBOR tag 1298493254 (data item: map): MoaT end-of-file marker.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1298493254,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1298493254",
+      "Data Item": "map",
+      "Semantics": "MoaT end-of-file marker",
+      "Reference": "[https://github.com/M-o-a-T/moat-util/][Matthias_Urlichs]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

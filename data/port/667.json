@@ -1,0 +1,38 @@
+{
+  "id": "port/667",
+  "family": "port",
+  "slug": "667",
+  "title": "Port 667 — disclose",
+  "summary": "Well-known port 667 (tcp/udp): campaign contribution disclosures - SDR Technologies. Service name: disclose.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 667,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "disclose",
+      "Port Number": "667",
+      "Transport Protocol": "tcp",
+      "Description": "campaign contribution disclosures - SDR Technologies",
+      "Assignee": "[Jim_Dixon]",
+      "Contact": "[Jim_Dixon]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

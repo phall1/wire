@@ -1,0 +1,38 @@
+{
+  "id": "port/128",
+  "family": "port",
+  "slug": "128",
+  "title": "Port 128 — gss-xlicen",
+  "summary": "Well-known port 128 (tcp/udp): GSS X License Verification. Service name: gss-xlicen.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 128,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "gss-xlicen",
+      "Port Number": "128",
+      "Transport Protocol": "tcp",
+      "Description": "GSS X License Verification",
+      "Assignee": "[John_Light]",
+      "Contact": "[John_Light]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/MR",
+  "family": "dns-rrtype",
+  "slug": "MR",
+  "title": "MR — a mail rename domain name (EXPERIMENTAL) (type 9)",
+  "summary": "DNS resource record type MR (numeric type 9): a mail rename domain name (EXPERIMENTAL). Defined in RFC1035.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 9,
+    "reference_rfcs": [
+      "RFC1035"
+    ],
+    "raw_columns": {
+      "TYPE": "MR",
+      "Value": "9",
+      "Meaning": "a mail rename domain name (EXPERIMENTAL)",
+      "Reference": "[RFC1035]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/156",
+  "family": "port",
+  "slug": "156",
+  "title": "Port 156 — sqlsrv",
+  "summary": "Well-known port 156 (tcp/udp): SQL Service. Service name: sqlsrv.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 156,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sqlsrv",
+      "Port Number": "156",
+      "Transport Protocol": "tcp",
+      "Description": "SQL Service",
+      "Assignee": "[Craig_Rogers]",
+      "Contact": "[Craig_Rogers]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/220",
+  "family": "port",
+  "slug": "220",
+  "title": "Port 220 — imap3",
+  "summary": "Well-known port 220 (tcp/udp): Interactive Mail Access Protocol v3. Service name: imap3.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 220,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "imap3",
+      "Port Number": "220",
+      "Transport Protocol": "tcp",
+      "Description": "Interactive Mail Access Protocol v3",
+      "Assignee": "[James_Rice]",
+      "Contact": "[James_Rice]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/43001",
+  "family": "cbor-tag",
+  "slug": "43001",
+  "title": "CBOR tag 43001 — Array of complex numbers in interleaved form: complex value…",
+  "summary": "CBOR tag 43001 (data item: array): Array of complex numbers in interleaved form: complex value k is stored with real (I) part \nat array index 2k and imaginary (Q) part at index (2k + 1).",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 43001,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "43001",
+      "Data Item": "array",
+      "Semantics": "Array of complex numbers in interleaved form: complex value k is stored with real (I) part \nat array index 2k and imaginary (Q) part at index (2k + 1)",
+      "Reference": "[Saajan_Chana]",
+      "Template": "template/43001"
+    }
+  },
+  "updated": "2026-05-29"
+}

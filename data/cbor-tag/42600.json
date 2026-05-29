@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/42600",
+  "family": "cbor-tag",
+  "slug": "42600",
+  "title": "CBOR tag 42600 — A confidentiality clearance. The key value pairs of the map…",
+  "summary": "CBOR tag 42600 (data item: map): A confidentiality clearance. The key value pairs of the map are defined in ADatP-4774.8.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 42600,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "42600",
+      "Data Item": "map",
+      "Semantics": "A confidentiality clearance. The key value pairs of the map are defined in ADatP-4774.8",
+      "Reference": "[Aidan_Murdock]",
+      "Template": "template/42600"
+    }
+  },
+  "updated": "2026-05-29"
+}

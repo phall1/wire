@@ -1,0 +1,38 @@
+{
+  "id": "port/208",
+  "family": "port",
+  "slug": "208",
+  "title": "Port 208 — at-8",
+  "summary": "Well-known port 208 (tcp/udp): AppleTalk Unused. Service name: at-8.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 208,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "at-8",
+      "Port Number": "208",
+      "Transport Protocol": "tcp",
+      "Description": "AppleTalk Unused",
+      "Assignee": "[Rob_Chandhok]",
+      "Contact": "[Rob_Chandhok]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

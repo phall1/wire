@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/40023",
+  "family": "cbor-tag",
+  "slug": "40023",
+  "title": "CBOR tag 40023 — ur:crypto-key, Cryptographic key used for symmetric encrypt…",
+  "summary": "CBOR tag 40023 (data item: byte string): ur:crypto-key, Cryptographic key used for symmetric encryption.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 40023,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "40023",
+      "Data Item": "byte string",
+      "Semantics": "ur:crypto-key, Cryptographic key used for symmetric encryption",
+      "Reference": "[https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

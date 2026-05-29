@@ -1,0 +1,44 @@
+{
+  "id": "port/861",
+  "family": "port",
+  "slug": "861",
+  "title": "Port 861 — owamp-control (+1 more)",
+  "summary": "Well-known port 861 (tcp/udp): OWAMP-Control. Service names: owamp-control, owamp-test. Referenced in RFC4656, RFC8545.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 861,
+    "reference_rfcs": [
+      "RFC4656",
+      "RFC8545"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "owamp-control",
+      "Port Number": "861",
+      "Transport Protocol": "tcp",
+      "Description": "OWAMP-Control",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC4656]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "owamp-test"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/310",
+  "family": "port",
+  "slug": "310",
+  "title": "Port 310 — bhmds",
+  "summary": "Well-known port 310 (tcp/udp): bhmds. Service name: bhmds.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 310,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "bhmds",
+      "Port Number": "310",
+      "Transport Protocol": "tcp",
+      "Description": "bhmds",
+      "Assignee": "[John_Kelly]",
+      "Contact": "[John_Kelly]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

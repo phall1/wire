@@ -1,0 +1,86 @@
+{
+  "id": "encoding/base64url",
+  "family": "encoding",
+  "slug": "base64url",
+  "title": "Base64url — URL- and filename-safe Base64 (RFC 4648 §5)",
+  "summary": "The URL- and filename-safe Base64 alphabet replaces standard Base64's '+' and '/' (indices 62 and 63) with '-' and '_', so the output is safe to drop into URLs, query strings, and filenames without percent-encoding. The padding '=' is commonly omitted (e.g. in JWTs); RFC 4648 §3.2 permits this when the data length is known out of band.",
+  "kind": "encoding",
+  "aliases": [
+    "base64url",
+    "URL-safe base64",
+    "filename-safe base64",
+    "base64 (URL and filename safe alphabet)",
+    "JWT base64"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc4648#section-5",
+  "source_version": "RFC 4648 §5",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base64",
+    "encoding/percent-encoding"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC4648",
+    "charset": "US-ASCII",
+    "algorithm": "base64url",
+    "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",
+    "notes": [
+      "Only the last two alphabet symbols differ from standard Base64 (§4): index 62 is '-' (was '+'), index 63 is '_' (was '/'). Everything else — the 3-byte-to-4-char grouping and bit layout — is identical.",
+      "Padding: RFC 4648 §5 keeps '=' padding, but §3.2 allows omitting it when the length is implicit. The de-facto URL-safe profile (JWT/JOSE, RFC 7515) drops trailing '=' entirely. This entry's vectors use the no-padding form, which is what the encoding-exec gate emits.",
+      "The difference from standard Base64 only shows up when the encoded bits produce index 62 or 63. Inputs whose Base64 contains '+' or '/' (e.g. bytes 0xFF 0xEF -> '/+8=') become '_-8' here, exercising both substitutions and the dropped padding."
+    ],
+    "test_vectors": [
+      {
+        "input": "ÿï",
+        "input_form": "literal",
+        "input_encoding": "latin1",
+        "output": "_-8",
+        "output_form": "ascii",
+        "algorithm": "base64url",
+        "direction": "encode",
+        "note": "Bytes 0xFF 0xEF: standard Base64 = '/+8=', URL-safe = '_-8'. Exercises BOTH alphabet substitutions ('/'->'_', '+'->'-') and the dropped '=' padding. (input read as latin1 so the two literal bytes 0xFF 0xEF are encoded directly.)"
+      },
+      {
+        "input": "foob",
+        "input_form": "utf8",
+        "output": "Zm9vYg",
+        "output_form": "ascii",
+        "algorithm": "base64url",
+        "direction": "encode",
+        "note": "BASE64(\"foob\") = 'Zm9vYg==' (standard); URL-safe no-padding form drops the '==' -> 'Zm9vYg'."
+      },
+      {
+        "input": "fo",
+        "input_form": "utf8",
+        "output": "Zm8",
+        "output_form": "ascii",
+        "algorithm": "base64url",
+        "direction": "encode",
+        "note": "BASE64(\"fo\") = 'Zm8=' (standard); URL-safe no-padding form drops the single '=' -> 'Zm8'."
+      },
+      {
+        "input": "foobar",
+        "input_form": "utf8",
+        "output": "Zm9vYmFy",
+        "output_form": "ascii",
+        "algorithm": "base64url",
+        "direction": "encode",
+        "note": "No '+', '/', or padding here, so the URL-safe output is identical to standard Base64 ('Zm9vYmFy')."
+      },
+      {
+        "input": "Zm9vYg",
+        "input_form": "ascii",
+        "output": "foob",
+        "output_form": "utf8",
+        "algorithm": "base64url",
+        "direction": "decode",
+        "note": "Round-trip: base64url-decode('Zm9vYg') = \"foob\" (no-padding input decodes fine; Node tolerates the missing '=')."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

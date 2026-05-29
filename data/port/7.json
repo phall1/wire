@@ -1,0 +1,38 @@
+{
+  "id": "port/7",
+  "family": "port",
+  "slug": "7",
+  "title": "Port 7 — echo",
+  "summary": "Well-known port 7 (tcp/udp): Echo. Service name: echo.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 7,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "echo",
+      "Port Number": "7",
+      "Transport Protocol": "tcp",
+      "Description": "Echo",
+      "Assignee": "[Jon_Postel]",
+      "Contact": "[Jon_Postel]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

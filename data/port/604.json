@@ -1,0 +1,40 @@
+{
+  "id": "port/604",
+  "family": "port",
+  "slug": "604",
+  "title": "Port 604 — tunnel",
+  "summary": "Well-known port 604 (tcp/udp): TUNNEL. Service name: tunnel. Referenced in RFC3620.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 604,
+    "reference_rfcs": [
+      "RFC3620"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "tunnel",
+      "Port Number": "604",
+      "Transport Protocol": "tcp",
+      "Description": "TUNNEL",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC3620]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/aaa",
+  "family": "uri-scheme",
+  "slug": "aaa",
+  "title": "aaa: — Diameter Protocol",
+  "summary": "URI scheme \"aaa:\" — Diameter Protocol. IANA status: Permanent. Defined in RFC6733.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "aaa",
+    "reference_rfcs": [
+      "RFC6733"
+    ],
+    "raw_columns": {
+      "URI Scheme": "aaa",
+      "Template": "",
+      "Description": "Diameter Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13862",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6733]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

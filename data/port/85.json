@@ -1,0 +1,38 @@
+{
+  "id": "port/85",
+  "family": "port",
+  "slug": "85",
+  "title": "Port 85 — mit-ml-dev",
+  "summary": "Well-known port 85 (tcp/udp): MIT ML Device. Service name: mit-ml-dev.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 85,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mit-ml-dev",
+      "Port Number": "85",
+      "Transport Protocol": "tcp",
+      "Description": "MIT ML Device",
+      "Assignee": "[David_Reed]",
+      "Contact": "[David_Reed]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

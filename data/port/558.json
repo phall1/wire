@@ -1,0 +1,38 @@
+{
+  "id": "port/558",
+  "family": "port",
+  "slug": "558",
+  "title": "Port 558 — sdnskmp",
+  "summary": "Well-known port 558 (tcp/udp): SDNSKMP. Service name: sdnskmp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 558,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sdnskmp",
+      "Port Number": "558",
+      "Transport Protocol": "tcp",
+      "Description": "SDNSKMP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

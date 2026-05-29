@@ -1,0 +1,38 @@
+{
+  "id": "port/400",
+  "family": "port",
+  "slug": "400",
+  "title": "Port 400 — osb-sd",
+  "summary": "Well-known port 400 (tcp/udp): Oracle Secure Backup. Service name: osb-sd.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 400,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "osb-sd",
+      "Port Number": "400",
+      "Transport Protocol": "tcp",
+      "Description": "Oracle Secure Backup",
+      "Assignee": "[Steven_Wertheimer]",
+      "Contact": "[Steven_Wertheimer]",
+      "Registration Date": "2008-06-06",
+      "Modification Date": "2023-12-27",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": "Formerly was Workstation Solutions"
+    }
+  },
+  "updated": "2026-05-29"
+}

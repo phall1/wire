@@ -1,0 +1,38 @@
+{
+  "id": "port/660",
+  "family": "port",
+  "slug": "660",
+  "title": "Port 660 — mac-srvr-admin",
+  "summary": "Well-known port 660 (tcp/udp): MacOS Server Admin. Service name: mac-srvr-admin.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 660,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mac-srvr-admin",
+      "Port Number": "660",
+      "Transport Protocol": "tcp",
+      "Description": "MacOS Server Admin",
+      "Assignee": "[Forest_Hill]",
+      "Contact": "[Forest_Hill]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

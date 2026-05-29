@@ -1,0 +1,38 @@
+{
+  "id": "port/133",
+  "family": "port",
+  "slug": "133",
+  "title": "Port 133 — statsrv",
+  "summary": "Well-known port 133 (tcp/udp): Statistics Service. Service name: statsrv.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 133,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "statsrv",
+      "Port Number": "133",
+      "Transport Protocol": "tcp",
+      "Description": "Statistics Service",
+      "Assignee": "[Dave_Mills_2]",
+      "Contact": "[Dave_Mills_2]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

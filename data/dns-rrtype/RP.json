@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/RP",
+  "family": "dns-rrtype",
+  "slug": "RP",
+  "title": "RP — for Responsible Person (type 17)",
+  "summary": "DNS resource record type RP (numeric type 17): for Responsible Person. Defined in RFC1183.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 17,
+    "reference_rfcs": [
+      "RFC1183"
+    ],
+    "raw_columns": {
+      "TYPE": "RP",
+      "Value": "17",
+      "Meaning": "for Responsible Person",
+      "Reference": "[RFC1183]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

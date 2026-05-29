@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/58",
+  "family": "cbor-tag",
+  "slug": "58",
+  "title": "CBOR tag 58 — An array claim element intended to be redacted, or a map ke…",
+  "summary": "CBOR tag 58 (data item: (any)): An array claim element intended to be redacted, or a map key whose key and value are intended to be redacted..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 58,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "58",
+      "Data Item": "(any)",
+      "Semantics": "An array claim element intended to be redacted, or a map key whose key and value are intended to be redacted. (TEMPORARY - registered 2025-12-09, expires 2026-12-09)",
+      "Reference": "[draft-ietf-spice-sd-cwt-06, Section 11.1]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

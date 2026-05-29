@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/crid",
+  "family": "uri-scheme",
+  "slug": "crid",
+  "title": "crid: — TV-Anytime Content Reference Identifier",
+  "summary": "URI scheme \"crid:\" — TV-Anytime Content Reference Identifier. IANA status: Permanent. Defined in RFC4078.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "crid",
+    "reference_rfcs": [
+      "RFC4078"
+    ],
+    "raw_columns": {
+      "URI Scheme": "crid",
+      "Template": "",
+      "Description": "TV-Anytime Content Reference Identifier",
+      "Status": "Permanent",
+      "CRI Scheme Number": "5990",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4078]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

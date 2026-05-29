@@ -1,0 +1,38 @@
+{
+  "id": "port/199",
+  "family": "port",
+  "slug": "199",
+  "title": "Port 199 — smux",
+  "summary": "Well-known port 199 (tcp/udp): SMUX. Service name: smux.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 199,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "smux",
+      "Port Number": "199",
+      "Transport Protocol": "tcp",
+      "Description": "SMUX",
+      "Assignee": "[Marshall_Rose]",
+      "Contact": "[Marshall_Rose]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

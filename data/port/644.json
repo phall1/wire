@@ -1,0 +1,38 @@
+{
+  "id": "port/644",
+  "family": "port",
+  "slug": "644",
+  "title": "Port 644 — dwr",
+  "summary": "Well-known port 644 (tcp/udp): dwr. Service name: dwr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 644,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dwr",
+      "Port Number": "644",
+      "Transport Protocol": "tcp",
+      "Description": "dwr",
+      "Assignee": "[Bill_Fenner]",
+      "Contact": "[Bill_Fenner]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

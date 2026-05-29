@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/RRSIG",
+  "family": "dns-rrtype",
+  "slug": "RRSIG",
+  "title": "RRSIG — RRSIG (type 46)",
+  "summary": "DNS resource record type RRSIG (numeric type 46): RRSIG. Defined in RFC4034.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 46,
+    "reference_rfcs": [
+      "RFC4034"
+    ],
+    "raw_columns": {
+      "TYPE": "RRSIG",
+      "Value": "46",
+      "Meaning": "RRSIG",
+      "Reference": "[RFC4034]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

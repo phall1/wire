@@ -1,0 +1,40 @@
+{
+  "id": "port/702",
+  "family": "port",
+  "slug": "702",
+  "title": "Port 702 — iris-beep",
+  "summary": "Well-known port 702 (tcp/udp): IRIS over BEEP. Service name: iris-beep. Referenced in RFC3983.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 702,
+    "reference_rfcs": [
+      "RFC3983"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "iris-beep",
+      "Port Number": "702",
+      "Transport Protocol": "tcp",
+      "Description": "IRIS over BEEP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC3983]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

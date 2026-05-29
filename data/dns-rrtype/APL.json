@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/APL",
+  "family": "dns-rrtype",
+  "slug": "APL",
+  "title": "APL — APL (type 42)",
+  "summary": "DNS resource record type APL (numeric type 42): APL. Defined in RFC3123.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 42,
+    "reference_rfcs": [
+      "RFC3123"
+    ],
+    "raw_columns": {
+      "TYPE": "APL",
+      "Value": "42",
+      "Meaning": "APL",
+      "Reference": "[RFC3123]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

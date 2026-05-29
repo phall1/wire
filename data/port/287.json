@@ -1,0 +1,38 @@
+{
+  "id": "port/287",
+  "family": "port",
+  "slug": "287",
+  "title": "Port 287 — k-block",
+  "summary": "Well-known port 287 (tcp/udp): K-BLOCK. Service name: k-block.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 287,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "k-block",
+      "Port Number": "287",
+      "Transport Protocol": "tcp",
+      "Description": "K-BLOCK",
+      "Assignee": "[Simon_P_Jackson]",
+      "Contact": "[Simon_P_Jackson]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

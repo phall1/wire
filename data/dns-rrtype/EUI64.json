@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/EUI64",
+  "family": "dns-rrtype",
+  "slug": "EUI64",
+  "title": "EUI64 — an EUI-64 address (type 109)",
+  "summary": "DNS resource record type EUI64 (numeric type 109): an EUI-64 address. Defined in RFC7043.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 109,
+    "reference_rfcs": [
+      "RFC7043"
+    ],
+    "registration_date": "2013-03-27",
+    "raw_columns": {
+      "TYPE": "EUI64",
+      "Value": "109",
+      "Meaning": "an EUI-64 address",
+      "Reference": "[RFC7043]",
+      "Template": "EUI64/eui64-completed-template",
+      "Registration Date": "2013-03-27"
+    }
+  },
+  "updated": "2026-05-29"
+}

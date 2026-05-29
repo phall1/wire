@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/ext/encoding.v1.schema.json",
+  "title": "ext_type: encoding@1",
+  "description": "Extension block for reversible codecs (base64, percent-encoding, punycode, ...). The load-bearing field is `test_vectors`: CI actually executes each `input -> output` transform and asserts equality, so codec facts are proven, not asserted. Strings that carry control/non-printable bytes must use JSON escapes (e.g. \\u001b), never literal control bytes, consistent with the rest of the corpus.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rfc", "test_vectors"],
+  "properties": {
+    "rfc": {
+      "type": "string",
+      "description": "The defining specification, normalized (e.g. 'RFC4648' for base64/base32/base16, 'RFC3986' for percent-encoding, 'RFC3492' for punycode). Single canonical reference; cross-references go in core see_also / attribution."
+    },
+    "charset": {
+      "type": "string",
+      "description": "Optional. The character set / repertoire the codec operates over or targets (e.g. 'US-ASCII', 'UTF-8'). Omitted when not meaningful for the codec."
+    },
+    "alphabet": {
+      "type": "string",
+      "description": "Optional. The output alphabet, verbatim, for alphabet-based codecs (e.g. base64's 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'). Omitted for codecs without a fixed alphabet (e.g. percent-encoding)."
+    },
+    "algorithm": {
+      "type": "string",
+      "description": "Codec selector consumed by the encoding-exec gate to pick the transform. One of: base64, base64url, base32, base16 (alias hex), percent (aliases percent-encoding/percent_encoding/url), punycode (alias idna). May be overridden per test_vector. Distinct from `rfc`, which is the citable spec id.",
+      "enum": [
+        "base64", "base64url", "base32", "base16", "hex",
+        "percent", "percent-encoding", "percent_encoding", "url",
+        "punycode", "idna"
+      ]
+    },
+    "test_vectors": {
+      "type": "array",
+      "description": "Executable proof set. CI applies the codec to each `input` (interpreted per `input_form`) and asserts the result equals `output` (interpreted per `output_form`). Round-trip is checked by also decoding back where the codec is reversible. At least one vector is required so every encoding entry is provably correct.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["input", "input_form", "output", "output_form"],
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "The input value, encoded per `input_form`. Non-printable bytes use JSON escapes."
+          },
+          "input_form": {
+            "type": "string",
+            "description": "How to interpret `input` before applying the codec.",
+            "enum": ["utf8", "ascii", "bytes-hex", "bytes-base64", "codepoints", "literal"]
+          },
+          "output": {
+            "type": "string",
+            "description": "The expected result, encoded per `output_form`. Non-printable bytes use JSON escapes."
+          },
+          "output_form": {
+            "type": "string",
+            "description": "How to interpret `output` for the equality assertion.",
+            "enum": ["utf8", "ascii", "bytes-hex", "bytes-base64", "codepoints", "literal"]
+          },
+          "algorithm": {
+            "type": "string",
+            "description": "Optional per-vector codec override consumed by the encoding-exec gate (falls back to ext.algorithm). Same enum as ext.algorithm.",
+            "enum": [
+              "base64", "base64url", "base32", "base16", "hex",
+              "percent", "percent-encoding", "percent_encoding", "url",
+              "punycode", "idna"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "description": "Which way the codec runs for this vector. 'encode' applies input->output; 'decode' applies the inverse. Default 'encode'.",
+            "enum": ["encode", "decode"]
+          },
+          "input_encoding": {
+            "type": "string",
+            "description": "How the gate reads `input` bytes when running the codec (Node Buffer encoding). Default 'utf8'.",
+            "enum": ["utf8", "utf-8", "hex", "base64", "latin1", "binary", "ascii"]
+          },
+          "note": {
+            "type": "string",
+            "description": "Optional human-readable note (e.g. 'RFC 4648 §10 test vector', 'padding edge case', 'IDNA example from RFC 3492')."
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "description": "Optional codec-level gotchas/clarifications (e.g. padding rules, URL-safe variant, IDNA prefix). Free text, one per item.",
+      "items": { "type": "string" }
+    }
+  }
+}

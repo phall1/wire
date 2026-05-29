@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/IPSECKEY",
+  "family": "dns-rrtype",
+  "slug": "IPSECKEY",
+  "title": "IPSECKEY — IPSECKEY (type 45)",
+  "summary": "DNS resource record type IPSECKEY (numeric type 45): IPSECKEY. Defined in RFC4025.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 45,
+    "reference_rfcs": [
+      "RFC4025"
+    ],
+    "raw_columns": {
+      "TYPE": "IPSECKEY",
+      "Value": "45",
+      "Meaning": "IPSECKEY",
+      "Reference": "[RFC4025]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

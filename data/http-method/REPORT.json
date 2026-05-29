@@ -1,0 +1,29 @@
+{
+  "id": "http-method/REPORT",
+  "family": "http-method",
+  "slug": "REPORT",
+  "title": "REPORT",
+  "summary": "HTTP request method REPORT (safe: yes, idempotent: yes). Defined in RFC3253, RFC8144.",
+  "kind": "method",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-methods/methods.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 21 Nov 2025 20:46:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "REPORT",
+    "reference_rfcs": [
+      "RFC3253",
+      "RFC8144"
+    ],
+    "raw_columns": {
+      "Method Name": "REPORT",
+      "Safe": "yes",
+      "Idempotent": "yes",
+      "Reference": "[RFC3253, Section 3.6][RFC8144, Section 2.1]"
+    }
+  },
+  "updated": "2026-05-29"
+}

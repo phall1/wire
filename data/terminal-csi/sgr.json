@@ -1,0 +1,295 @@
+{
+  "id": "terminal-csi/sgr",
+  "family": "terminal-csi",
+  "slug": "sgr",
+  "title": "CSI SGR — Select Graphic Rendition (colors & text attributes)",
+  "summary": "SGR (final byte 'm') sets character rendition: bold, italic, underline, reverse, and foreground/background color. Written CSI Ps ; Ps ... m, where each Ps is a numeric code. Code 0 resets all attributes. 30–37/40–47 select the 8 base fg/bg colors, 90–97/100–107 their bright variants, and 38/48 with a 5;n (256-color) or 2;r;g;b (truecolor) sub-parameter select indexed or 24-bit color.",
+  "kind": "control-sequence",
+  "aliases": [
+    "SGR",
+    "Select Graphic Rendition",
+    "ANSI color codes",
+    "ANSI escape colors",
+    "CSI m",
+    "ESC [ m",
+    "text attributes"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "ext.frame",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "CSI = ESC [ (0x1B 0x5B), 8-bit C1 0x9B. SGR has final byte 'm' (0x6D). Parameters are separated by ';' (0x3B)."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs 'Character Attributes (SGR)' table: 0 normal, 1 bold, 3 italic, 4 underline, 7 inverse, 22/23/24/27 resets, 30-37 fg, 38 extended fg, 39 default fg, 40-47 bg, 48 extended bg, 49 default bg, 90-97 bright fg, 100-107 bright bg."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clause 8.3.117 SGR",
+      "note": "ECMA-48 defines SGR and parameter values 0–9, 21–29, 30–39, 40–49 (the standard frame). The 38/48 extended-color forms and 90–107 bright ranges are xterm/ISO 8613-6 conventions layered on top."
+    },
+    {
+      "claim_ref": "#38-5",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "38 ; 5 ; Ps selects a foreground color from the 256-color palette (ISO 8613-6 / ITU T.416 colon form, also accepted as the xterm semicolon form)."
+    },
+    {
+      "claim_ref": "#38-2",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "38 ; 2 ; Pr ; Pg ; Pb selects a direct (truecolor) 24-bit foreground color."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/4",
+    "terminal-osc/133"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "SGR",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI is self-terminating by its final byte 'm' (0x6D). Parameters Ps are decimal, separated by ';' (0x3B). An empty parameter or 'CSI m' alone is treated as 'CSI 0 m' (reset). Per ECMA-48 clause 8.3.117; extended-color and bright ranges per xterm ctlseqs."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: CSI sequences end at their final byte. For SGR the final byte is 'm' (0x6D). The parameter list before 'm' is what carries the codes."
+    },
+    "params": [
+      {
+        "id": "0",
+        "anchor": "#0",
+        "name": "Reset / Normal",
+        "meaning": "Turn off all attributes; restore default foreground and background. 'CSI m' (empty parameter) is equivalent.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[0m",
+        "byte_sequence_ST_readable": "ESC [ 0 m   ==  \\x1b[0m   (also \\x1b[m)",
+        "subparams": []
+      },
+      {
+        "id": "1",
+        "anchor": "#1",
+        "name": "Bold / increased intensity",
+        "meaning": "Bold or increased intensity. Reset by 22.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[1m",
+        "byte_sequence_ST_readable": "ESC [ 1 m   ==  \\x1b[1m",
+        "subparams": []
+      },
+      {
+        "id": "3",
+        "anchor": "#3",
+        "name": "Italic",
+        "meaning": "Italicized. Reset by 23. (Code 2 = faint, code 5 = blink are also defined but less universally supported.)",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3m",
+        "byte_sequence_ST_readable": "ESC [ 3 m   ==  \\x1b[3m",
+        "subparams": []
+      },
+      {
+        "id": "4",
+        "anchor": "#4",
+        "name": "Underline",
+        "meaning": "Underlined. Reset by 24. (xterm/kitty also support 4:2 double, 4:3 curly via the colon sub-parameter form.)",
+        "required": false,
+        "byte_sequence_ST": "\u001b[4m",
+        "byte_sequence_ST_readable": "ESC [ 4 m   ==  \\x1b[4m",
+        "subparams": []
+      },
+      {
+        "id": "7",
+        "anchor": "#7",
+        "name": "Reverse / inverse video",
+        "meaning": "Swap foreground and background. Reset by 27.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[7m",
+        "byte_sequence_ST_readable": "ESC [ 7 m   ==  \\x1b[7m",
+        "subparams": []
+      },
+      {
+        "id": "22",
+        "anchor": "#22",
+        "name": "Normal intensity",
+        "meaning": "Neither bold nor faint; turns off 1 and 2.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[22m",
+        "byte_sequence_ST_readable": "ESC [ 2 2 m   ==  \\x1b[22m",
+        "subparams": []
+      },
+      {
+        "id": "23",
+        "anchor": "#23",
+        "name": "Not italic",
+        "meaning": "Turns off italic (3).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[23m",
+        "byte_sequence_ST_readable": "ESC [ 2 3 m   ==  \\x1b[23m",
+        "subparams": []
+      },
+      {
+        "id": "24",
+        "anchor": "#24",
+        "name": "Not underlined",
+        "meaning": "Turns off underline (4).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[24m",
+        "byte_sequence_ST_readable": "ESC [ 2 4 m   ==  \\x1b[24m",
+        "subparams": []
+      },
+      {
+        "id": "27",
+        "anchor": "#27",
+        "name": "Not reversed",
+        "meaning": "Turns off reverse/inverse video (7).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[27m",
+        "byte_sequence_ST_readable": "ESC [ 2 7 m   ==  \\x1b[27m",
+        "subparams": []
+      },
+      {
+        "id": "30-37",
+        "anchor": "#30-37",
+        "name": "Foreground color (8-color)",
+        "meaning": "Set foreground to one of the 8 base colors: 30 black, 31 red, 32 green, 33 yellow, 34 blue, 35 magenta, 36 cyan, 37 white.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[31m",
+        "byte_sequence_ST_readable": "ESC [ 3 1 m   ==  \\x1b[31m   (red foreground; 30..37 select black..white)",
+        "subparams": []
+      },
+      {
+        "id": "38",
+        "anchor": "#38",
+        "name": "Extended foreground color",
+        "meaning": "Select foreground from the 256-color palette (38;5;n) or a 24-bit direct color (38;2;r;g;b). See sub-parameters.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[38;5;0m",
+        "byte_sequence_ST_readable": "ESC [ 3 8 ; 5 ; 0 m   ==  \\x1b[38;5;0m   (256-color form; see #38-5 / #38-2)",
+        "subparams": [
+          {
+            "id": "fact-38-5",
+            "anchor": "#38-5",
+            "name": "38;5;n (256-color foreground)",
+            "meaning": "38 ; 5 ; Ps selects a foreground color by index 0–255 from the standard 256-color palette (0–15 = the 16 ANSI colors, 16–231 = 6×6×6 color cube, 232–255 = 24-step grayscale).",
+            "required": false,
+            "example_byte_sequence_ST": "\u001b[38;5;196m",
+            "example_byte_sequence_ST_readable": "ESC [ 3 8 ; 5 ; 1 9 6 m   ==  \\x1b[38;5;196m   (palette index 196, a bright red)"
+          },
+          {
+            "id": "fact-38-2",
+            "anchor": "#38-2",
+            "name": "38;2;r;g;b (truecolor foreground)",
+            "meaning": "38 ; 2 ; Pr ; Pg ; Pb selects a direct 24-bit foreground color, each component 0–255. (ISO 8613-6 / ITU T.416 specify a colon-delimited form 38:2::r:g:b; xterm and most terminals accept the semicolon form shown here.)",
+            "example_byte_sequence_ST": "\u001b[38;2;255;128;0m",
+            "example_byte_sequence_ST_readable": "ESC [ 3 8 ; 2 ; 2 5 5 ; 1 2 8 ; 0 m   ==  \\x1b[38;2;255;128;0m   (orange)"
+          }
+        ]
+      },
+      {
+        "id": "39",
+        "anchor": "#39",
+        "name": "Default foreground color",
+        "meaning": "Reset foreground to the terminal's default.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[39m",
+        "byte_sequence_ST_readable": "ESC [ 3 9 m   ==  \\x1b[39m",
+        "subparams": []
+      },
+      {
+        "id": "40-47",
+        "anchor": "#40-47",
+        "name": "Background color (8-color)",
+        "meaning": "Set background to one of the 8 base colors: 40 black, 41 red, 42 green, 43 yellow, 44 blue, 45 magenta, 46 cyan, 47 white.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[41m",
+        "byte_sequence_ST_readable": "ESC [ 4 1 m   ==  \\x1b[41m   (red background; 40..47 select black..white)",
+        "subparams": []
+      },
+      {
+        "id": "48",
+        "anchor": "#48",
+        "name": "Extended background color",
+        "meaning": "Select background from the 256-color palette (48;5;n) or a 24-bit direct color (48;2;r;g;b). Mirrors 38.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[48;5;0m",
+        "byte_sequence_ST_readable": "ESC [ 4 8 ; 5 ; 0 m   ==  \\x1b[48;5;0m   (256-color background form)",
+        "subparams": [
+          {
+            "id": "fact-48-5",
+            "anchor": "#48-5",
+            "name": "48;5;n (256-color background)",
+            "meaning": "48 ; 5 ; Ps selects a background color by index 0–255 from the standard 256-color palette.",
+            "example_byte_sequence_ST": "\u001b[48;5;21m",
+            "example_byte_sequence_ST_readable": "ESC [ 4 8 ; 5 ; 2 1 m   ==  \\x1b[48;5;21m   (palette index 21, a blue)"
+          },
+          {
+            "id": "fact-48-2",
+            "anchor": "#48-2",
+            "name": "48;2;r;g;b (truecolor background)",
+            "meaning": "48 ; 2 ; Pr ; Pg ; Pb selects a direct 24-bit background color, each component 0–255.",
+            "example_byte_sequence_ST": "\u001b[48;2;0;0;255m",
+            "example_byte_sequence_ST_readable": "ESC [ 4 8 ; 2 ; 0 ; 0 ; 2 5 5 m   ==  \\x1b[48;2;0;0;255m   (pure blue background)"
+          }
+        ]
+      },
+      {
+        "id": "49",
+        "anchor": "#49",
+        "name": "Default background color",
+        "meaning": "Reset background to the terminal's default.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[49m",
+        "byte_sequence_ST_readable": "ESC [ 4 9 m   ==  \\x1b[49m",
+        "subparams": []
+      },
+      {
+        "id": "90-97",
+        "anchor": "#90-97",
+        "name": "Bright foreground color",
+        "meaning": "Set foreground to one of the 8 bright (aixterm) colors: 90 bright black (gray), 91 bright red, 92 bright green, 93 bright yellow, 94 bright blue, 95 bright magenta, 96 bright cyan, 97 bright white.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[91m",
+        "byte_sequence_ST_readable": "ESC [ 9 1 m   ==  \\x1b[91m   (bright red foreground)",
+        "subparams": []
+      },
+      {
+        "id": "100-107",
+        "anchor": "#100-107",
+        "name": "Bright background color",
+        "meaning": "Set background to one of the 8 bright (aixterm) colors: 100 bright black through 107 bright white.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[101m",
+        "byte_sequence_ST_readable": "ESC [ 1 0 1 m   ==  \\x1b[101m   (bright red background)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Always reset with 'CSI 0 m' (\\x1b[0m) when done; leaving attributes set bleeds color into subsequent output and the next prompt.",
+      "Multiple codes can be combined in one sequence with ';' separators, e.g. \\x1b[1;31;44m = bold + red fg + blue bg.",
+      "38/48 with the 2;r;g;b (truecolor) form: ISO 8613-6 / ITU T.416 actually specify a COLON-delimited form (38:2::r:g:b) with a color-space-id slot; xterm and most terminals accept the simpler SEMICOLON form (38;2;r;g;b). Some strict parsers only accept one. The colon form is unambiguous because it cannot be confused with separate SGR parameters.",
+      "Bright colors via 90–97/100–107 (aixterm) are NOT in ECMA-48; some old/limited terminals only reach bright colors via the bold attribute (1) plus 30–37. Prefer 90–97 where supported.",
+      "Code 1 (bold) historically also brightened the foreground color on many terminals; whether 'bold' changes weight, brightness, or both is terminal- and theme-dependent.",
+      "An empty parameter list ('CSI m', i.e. \\x1b[m) means reset (0), but relying on it is less portable than writing \\x1b[0m explicitly."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Each documented SGR parameter renders as a syntactically valid CSI sequence ending in 'm', and the 38/48 extended-color sub-parameter forms (38;5;n, 38;2;r;g;b, 48;5;n, 48;2;r;g;b) are byte-exact.",
+      "behavioral_conformance": "deferred to v2; we assert byte form, not rendered pixels."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

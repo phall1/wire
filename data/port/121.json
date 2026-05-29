@@ -1,0 +1,38 @@
+{
+  "id": "port/121",
+  "family": "port",
+  "slug": "121",
+  "title": "Port 121 — erpc",
+  "summary": "Well-known port 121 (tcp/udp): Encore Expedited Remote Pro.Call. Service name: erpc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 121,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "erpc",
+      "Port Number": "121",
+      "Transport Protocol": "tcp",
+      "Description": "Encore Expedited Remote Pro.Call",
+      "Assignee": "[Jack_ONeil]",
+      "Contact": "[Jack_ONeil]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

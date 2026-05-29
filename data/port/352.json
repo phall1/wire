@@ -1,0 +1,41 @@
+{
+  "id": "port/352",
+  "family": "port",
+  "slug": "352",
+  "title": "Port 352 — dtag-ste-sb (+1 more)",
+  "summary": "Well-known port 352 (tcp/udp): DTAG. Service names: dtag-ste-sb, bhoedap4.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 352,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dtag-ste-sb",
+      "Port Number": "352",
+      "Transport Protocol": "tcp",
+      "Description": "DTAG",
+      "Assignee": "[Ruediger_Wald]",
+      "Contact": "[Ruediger_Wald]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": "(assigned long ago)"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "bhoedap4"
+  ]
+}

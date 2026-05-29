@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/32871",
+  "family": "cbor-tag",
+  "slug": "32871",
+  "title": "CBOR tag 32871 — Logical operator: ANY. Encodes the logical operation (item1…",
+  "summary": "CBOR tag 32871 (data item: array): Logical operator: ANY. Encodes the logical operation (item1||item2||item3||...)..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 32871,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "32871",
+      "Data Item": "array",
+      "Semantics": "Logical operator: ANY. Encodes the logical operation (item1||item2||item3||...).",
+      "Reference": "[Jon_Caruana]",
+      "Template": "template/32871"
+    }
+  },
+  "updated": "2026-05-29"
+}

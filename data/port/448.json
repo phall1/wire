@@ -1,0 +1,38 @@
+{
+  "id": "port/448",
+  "family": "port",
+  "slug": "448",
+  "title": "Port 448 — ddm-ssl",
+  "summary": "Well-known port 448 (tcp/udp): DDM-Remote DB Access Using Secure Sockets. Service name: ddm-ssl.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 448,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ddm-ssl",
+      "Port Number": "448",
+      "Transport Protocol": "tcp",
+      "Description": "DDM-Remote DB Access Using Secure Sockets",
+      "Assignee": "[Steven_Ritland]",
+      "Contact": "[Steven_Ritland]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

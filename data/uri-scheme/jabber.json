@@ -1,0 +1,30 @@
+{
+  "id": "uri-scheme/jabber",
+  "family": "uri-scheme",
+  "slug": "jabber",
+  "title": "jabber: — jabber",
+  "summary": "URI scheme \"jabber:\" — jabber. IANA status: Permanent.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "jabber",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "URI Scheme": "jabber",
+      "Template": "perm/jabber",
+      "Description": "jabber",
+      "Status": "Permanent",
+      "CRI Scheme Number": "6109",
+      "Well-Known URI Support": "-",
+      "Reference": "[Peter_Saint-Andre]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

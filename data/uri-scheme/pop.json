@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/pop",
+  "family": "uri-scheme",
+  "slug": "pop",
+  "title": "pop: — Post Office Protocol v3",
+  "summary": "URI scheme \"pop:\" — Post Office Protocol v3. IANA status: Permanent. Defined in RFC2384.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "pop",
+    "reference_rfcs": [
+      "RFC2384"
+    ],
+    "raw_columns": {
+      "URI Scheme": "pop",
+      "Template": "",
+      "Description": "Post Office Protocol v3",
+      "Status": "Permanent",
+      "CRI Scheme Number": "10551",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2384]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "port/547",
+  "family": "port",
+  "slug": "547",
+  "title": "Port 547 — dhcpv6-server",
+  "summary": "Well-known port 547 (tcp/udp): DHCPv6 Server. Service name: dhcpv6-server. Referenced in RFC5460, RFC9915.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 547,
+    "reference_rfcs": [
+      "RFC5460",
+      "RFC9915"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dhcpv6-server",
+      "Port Number": "547",
+      "Transport Protocol": "tcp",
+      "Description": "DHCPv6 Server",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2018-05-21",
+      "Reference": "[RFC5460]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

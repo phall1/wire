@@ -1,0 +1,44 @@
+{
+  "id": "port/862",
+  "family": "port",
+  "slug": "862",
+  "title": "Port 862 — twamp-control (+1 more)",
+  "summary": "Well-known port 862 (tcp/udp): TWAMP-Control. Service names: twamp-control, twamp-test. Referenced in RFC5357, RFC8545.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 862,
+    "reference_rfcs": [
+      "RFC5357",
+      "RFC8545"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "twamp-control",
+      "Port Number": "862",
+      "Transport Protocol": "tcp",
+      "Description": "TWAMP-Control",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC5357]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "twamp-test"
+  ]
+}

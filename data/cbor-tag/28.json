@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/28",
+  "family": "cbor-tag",
+  "slug": "28",
+  "title": "CBOR tag 28 — mark value as (potentially) shared",
+  "summary": "CBOR tag 28 (data item: multiple): mark value as (potentially) shared.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 28,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "28",
+      "Data Item": "multiple",
+      "Semantics": "mark value as (potentially) shared",
+      "Reference": "[http://cbor.schmorp.de/value-sharing][Marc_A._Lehmann]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

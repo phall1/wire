@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/40010",
+  "family": "cbor-tag",
+  "slug": "40010",
+  "title": "CBOR tag 40010 — ur:agreement-private-key, Curve25519 private key for X25519…",
+  "summary": "CBOR tag 40010 (data item: byte string): ur:agreement-private-key, Curve25519 private key for X25519 key agreement.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 40010,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "40010",
+      "Data Item": "byte string",
+      "Semantics": "ur:agreement-private-key, Curve25519 private key for X25519 key agreement",
+      "Reference": "[https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

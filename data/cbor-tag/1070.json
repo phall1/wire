@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1070",
+  "family": "cbor-tag",
+  "slug": "1070",
+  "title": "CBOR tag 1070 — SUIT_Manifest as defined in Appendix A of [RFC-ietf-suit-ma…",
+  "summary": "CBOR tag 1070 (data item: map): SUIT_Manifest as defined in Appendix A of [RFC-ietf-suit-manifest-34].",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1070,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1070",
+      "Data Item": "map",
+      "Semantics": "SUIT_Manifest as defined in Appendix A of [RFC-ietf-suit-manifest-34]",
+      "Reference": "[RFC-ietf-suit-manifest-34]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

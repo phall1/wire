@@ -1,0 +1,40 @@
+{
+  "id": "port/991",
+  "family": "port",
+  "slug": "991",
+  "title": "Port 991 — nas",
+  "summary": "Well-known port 991 (tcp/udp): Netnews Administration System. Service name: nas. Referenced in RFC4707.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 991,
+    "reference_rfcs": [
+      "RFC4707"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "nas",
+      "Port Number": "991",
+      "Transport Protocol": "tcp",
+      "Description": "Netnews Administration System",
+      "Assignee": "[Vera_Heinau][Heiko_Schlichting]",
+      "Contact": "[Vera_Heinau][Heiko_Schlichting]",
+      "Registration Date": "",
+      "Modification Date": "2017-02-10",
+      "Reference": "[RFC4707]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

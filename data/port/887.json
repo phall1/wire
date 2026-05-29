@@ -1,0 +1,41 @@
+{
+  "id": "port/887",
+  "family": "port",
+  "slug": "887",
+  "title": "Port 887 — iclcnet-svinfo (+1 more)",
+  "summary": "Well-known port 887 (tcp/udp): ICL coNETion server info\nIANA assigned this well-formed service name as a replacement for \"iclcnet_svinfo\".. Service names: iclcnet-svinfo, iclcnet_svinfo.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 887,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "iclcnet-svinfo",
+      "Port Number": "887",
+      "Transport Protocol": "tcp",
+      "Description": "ICL coNETion server info\nIANA assigned this well-formed service name as a replacement for \"iclcnet_svinfo\".",
+      "Assignee": "[Bob_Lyon]",
+      "Contact": "[Bob_Lyon]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "iclcnet_svinfo"
+  ]
+}

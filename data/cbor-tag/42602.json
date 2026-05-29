@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/42602",
+  "family": "cbor-tag",
+  "slug": "42602",
+  "title": "CBOR tag 42602 — A collection of NCMS metadata elements. The key value pairs…",
+  "summary": "CBOR tag 42602 (data item: map): A collection of NCMS metadata elements. The key value pairs of the map are defined in AdatP-5636.8.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 42602,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "42602",
+      "Data Item": "map",
+      "Semantics": "A collection of NCMS metadata elements. The key value pairs of the map are defined in AdatP-5636.8",
+      "Reference": "[Aidan_Murdock]",
+      "Template": "template/42602"
+    }
+  },
+  "updated": "2026-05-29"
+}

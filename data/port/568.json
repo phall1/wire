@@ -1,0 +1,38 @@
+{
+  "id": "port/568",
+  "family": "port",
+  "slug": "568",
+  "title": "Port 568 — ms-shuttle",
+  "summary": "Well-known port 568 (tcp/udp): microsoft shuttle. Service name: ms-shuttle.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 568,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ms-shuttle",
+      "Port Number": "568",
+      "Transport Protocol": "tcp",
+      "Description": "microsoft shuttle",
+      "Assignee": "[Rudolph_Balaz]",
+      "Contact": "[Rudolph_Balaz]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

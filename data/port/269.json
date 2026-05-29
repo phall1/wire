@@ -1,0 +1,40 @@
+{
+  "id": "port/269",
+  "family": "port",
+  "slug": "269",
+  "title": "Port 269 — manet",
+  "summary": "Well-known port 269 (tcp/udp): MANET Protocols. Service name: manet. Referenced in RFC5498.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 269,
+    "reference_rfcs": [
+      "RFC5498"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "manet",
+      "Port Number": "269",
+      "Transport Protocol": "tcp",
+      "Description": "MANET Protocols",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC5498]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

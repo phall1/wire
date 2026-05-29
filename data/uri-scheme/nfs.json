@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/nfs",
+  "family": "uri-scheme",
+  "slug": "nfs",
+  "title": "nfs: — network file system protocol",
+  "summary": "URI scheme \"nfs:\" — network file system protocol. IANA status: Permanent. Defined in RFC2224.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "nfs",
+    "reference_rfcs": [
+      "RFC2224"
+    ],
+    "raw_columns": {
+      "URI Scheme": "nfs",
+      "Template": "",
+      "Description": "network file system protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "6516",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2224]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

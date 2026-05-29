@@ -1,0 +1,40 @@
+{
+  "id": "port/271",
+  "family": "port",
+  "slug": "271",
+  "title": "Port 271 — pt-tls",
+  "summary": "Well-known port 271 (tcp/udp): IETF Network Endpoint Assessment (NEA) Posture Transport Protocol over TLS (PT-TLS). Service name: pt-tls. Referenced in RFC6876.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 271,
+    "reference_rfcs": [
+      "RFC6876"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pt-tls",
+      "Port Number": "271",
+      "Transport Protocol": "tcp",
+      "Description": "IETF Network Endpoint Assessment (NEA) Posture Transport Protocol over TLS (PT-TLS)",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "2012-07-31",
+      "Modification Date": "",
+      "Reference": "[RFC6876]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/545",
+  "family": "port",
+  "slug": "545",
+  "title": "Port 545 — appleqtcsrvr",
+  "summary": "Well-known port 545 (tcp/udp): appleqtcsrvr. Service name: appleqtcsrvr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 545,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "appleqtcsrvr",
+      "Port Number": "545",
+      "Transport Protocol": "tcp",
+      "Description": "appleqtcsrvr",
+      "Assignee": "[Murali_Ranganathan]",
+      "Contact": "[Murali_Ranganathan]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

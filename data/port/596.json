@@ -1,0 +1,38 @@
+{
+  "id": "port/596",
+  "family": "port",
+  "slug": "596",
+  "title": "Port 596 — smsd",
+  "summary": "Well-known port 596 (tcp/udp): SMSD. Service name: smsd.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 596,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "smsd",
+      "Port Number": "596",
+      "Transport Protocol": "tcp",
+      "Description": "SMSD",
+      "Assignee": "[Wayne_Barlow]",
+      "Contact": "[Wayne_Barlow]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

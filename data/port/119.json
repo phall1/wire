@@ -1,0 +1,40 @@
+{
+  "id": "port/119",
+  "family": "port",
+  "slug": "119",
+  "title": "Port 119 — nntp",
+  "summary": "Well-known port 119 (tcp/udp): Network News Transfer Protocol. Service name: nntp. Referenced in RFC3977.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 119,
+    "reference_rfcs": [
+      "RFC3977"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "nntp",
+      "Port Number": "119",
+      "Transport Protocol": "tcp",
+      "Description": "Network News Transfer Protocol",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2018-07-06",
+      "Reference": "[RFC3977]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

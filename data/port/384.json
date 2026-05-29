@@ -1,0 +1,38 @@
+{
+  "id": "port/384",
+  "family": "port",
+  "slug": "384",
+  "title": "Port 384 — arns",
+  "summary": "Well-known port 384 (tcp/udp): A Remote Network Server System. Service name: arns.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 384,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "arns",
+      "Port Number": "384",
+      "Transport Protocol": "tcp",
+      "Description": "A Remote Network Server System",
+      "Assignee": "[David_Hornsby]",
+      "Contact": "[David_Hornsby]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

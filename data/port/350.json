@@ -1,0 +1,40 @@
+{
+  "id": "port/350",
+  "family": "port",
+  "slug": "350",
+  "title": "Port 350 — matip-type-a",
+  "summary": "Well-known port 350 (tcp/udp): MATIP Type A. Service name: matip-type-a. Referenced in RFC2351.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 350,
+    "reference_rfcs": [
+      "RFC2351"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "matip-type-a",
+      "Port Number": "350",
+      "Transport Protocol": "tcp",
+      "Description": "MATIP Type A",
+      "Assignee": "[Alain_Robert]",
+      "Contact": "[Alain_Robert]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC2351]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

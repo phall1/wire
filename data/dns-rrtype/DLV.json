@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/DLV",
+  "family": "dns-rrtype",
+  "slug": "DLV",
+  "title": "DLV — DNSSEC Lookaside Validation (OBSOLETE) (type 32769)",
+  "summary": "DNS resource record type DLV (numeric type 32769): DNSSEC Lookaside Validation (OBSOLETE). Defined in RFC8749, RFC4431.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 32769,
+    "reference_rfcs": [
+      "RFC8749",
+      "RFC4431"
+    ],
+    "raw_columns": {
+      "TYPE": "DLV",
+      "Value": "32769",
+      "Meaning": "DNSSEC Lookaside Validation (OBSOLETE)",
+      "Reference": "[RFC8749][RFC4431]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

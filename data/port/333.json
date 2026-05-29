@@ -1,0 +1,38 @@
+{
+  "id": "port/333",
+  "family": "port",
+  "slug": "333",
+  "title": "Port 333 — texar",
+  "summary": "Well-known port 333 (tcp/udp): Texar Security Port. Service name: texar.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 333,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "texar",
+      "Port Number": "333",
+      "Transport Protocol": "tcp",
+      "Description": "Texar Security Port",
+      "Assignee": "[Eugen_Bacic]",
+      "Contact": "[Eugen_Bacic]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

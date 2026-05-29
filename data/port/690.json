@@ -1,0 +1,38 @@
+{
+  "id": "port/690",
+  "family": "port",
+  "slug": "690",
+  "title": "Port 690 — vatp",
+  "summary": "Well-known port 690 (tcp/udp): Velneo Application Transfer Protocol. Service name: vatp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 690,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "vatp",
+      "Port Number": "690",
+      "Transport Protocol": "tcp",
+      "Description": "Velneo Application Transfer Protocol",
+      "Assignee": "[Velneo]",
+      "Contact": "[David_Gutierrez]",
+      "Registration Date": "",
+      "Modification Date": "2015-02-03",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/271",
+  "family": "cbor-tag",
+  "slug": "271",
+  "title": "CBOR tag 271 — DDoS Open Threat Signaling (DOTS) signal channel object, as…",
+  "summary": "CBOR tag 271 (data item: DDoS Open Threat Signaling (DOTS) signal channel object): DDoS Open Threat Signaling (DOTS) signal channel object, as defined in [RFC9132]. Defined in RFC9132.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 271,
+    "reference_rfcs": [
+      "RFC9132"
+    ],
+    "raw_columns": {
+      "Tag": "271",
+      "Data Item": "DDoS Open Threat Signaling (DOTS) signal channel object",
+      "Semantics": "DDoS Open Threat Signaling (DOTS) signal channel object, as defined in [RFC9132]",
+      "Reference": "[RFC9132]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

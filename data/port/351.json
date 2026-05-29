@@ -1,0 +1,43 @@
+{
+  "id": "port/351",
+  "family": "port",
+  "slug": "351",
+  "title": "Port 351 — matip-type-b (+1 more)",
+  "summary": "Well-known port 351 (tcp/udp): MATIP Type B. Service names: matip-type-b, bhoetty. Referenced in RFC2351.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 351,
+    "reference_rfcs": [
+      "RFC2351"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "matip-type-b",
+      "Port Number": "351",
+      "Transport Protocol": "tcp",
+      "Description": "MATIP Type B",
+      "Assignee": "[Alain_Robert]",
+      "Contact": "[Alain_Robert]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC2351]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "bhoetty"
+  ]
+}

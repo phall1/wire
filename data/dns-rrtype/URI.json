@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/URI",
+  "family": "dns-rrtype",
+  "slug": "URI",
+  "title": "URI — URI (type 256)",
+  "summary": "DNS resource record type URI (numeric type 256): URI. Defined in RFC7553.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 256,
+    "reference_rfcs": [
+      "RFC7553"
+    ],
+    "registration_date": "2011-02-22",
+    "raw_columns": {
+      "TYPE": "URI",
+      "Value": "256",
+      "Meaning": "URI",
+      "Reference": "[RFC7553]",
+      "Template": "URI/uri-completed-template",
+      "Registration Date": "2011-02-22"
+    }
+  },
+  "updated": "2026-05-29"
+}

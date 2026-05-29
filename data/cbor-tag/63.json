@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/63",
+  "family": "cbor-tag",
+  "slug": "63",
+  "title": "CBOR tag 63 — Encoded CBOR Sequence [RFC8742]",
+  "summary": "CBOR tag 63 (data item: byte string): Encoded CBOR Sequence [RFC8742].",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 63,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "63",
+      "Data Item": "byte string",
+      "Semantics": "Encoded CBOR Sequence [RFC8742]",
+      "Reference": "[draft-bormann-cbor-notable-tags-02, Section 2.1]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

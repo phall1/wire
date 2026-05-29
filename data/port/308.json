@@ -1,0 +1,38 @@
+{
+  "id": "port/308",
+  "family": "port",
+  "slug": "308",
+  "title": "Port 308 — novastorbakcup",
+  "summary": "Well-known port 308 (tcp/udp): Novastor Backup. Service name: novastorbakcup.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 308,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "novastorbakcup",
+      "Port Number": "308",
+      "Transport Protocol": "tcp",
+      "Description": "Novastor Backup",
+      "Assignee": "[Brian_Dickman]",
+      "Contact": "[Brian_Dickman]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

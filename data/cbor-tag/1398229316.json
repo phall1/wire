@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/1398229316",
+  "family": "cbor-tag",
+  "slug": "1398229316",
+  "title": "CBOR tag 1398229316 — Concise Software Identifier (CoSWID)",
+  "summary": "CBOR tag 1398229316 (data item: map): Concise Software Identifier (CoSWID). Defined in RFC9393.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1398229316,
+    "reference_rfcs": [
+      "RFC9393"
+    ],
+    "raw_columns": {
+      "Tag": "1398229316",
+      "Data Item": "map",
+      "Semantics": "Concise Software Identifier (CoSWID)",
+      "Reference": "[RFC9393]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

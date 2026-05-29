@@ -1,0 +1,113 @@
+{
+  "id": "encoding/base64",
+  "family": "encoding",
+  "slug": "base64",
+  "title": "Base64 (RFC 4648 §4)",
+  "summary": "Base64 maps every 3 input bytes to 4 ASCII characters drawn from a 64-symbol alphabet (A–Z, a–z, 0–9, '+', '/'), padding the final group with '=' so the output length is always a multiple of 4. It is the canonical binary-to-text encoding for MIME, data: URLs, PEM, HTTP Basic auth, and JWT headers/payloads (which use the URL-safe variant).",
+  "kind": "encoding",
+  "aliases": [
+    "base-64",
+    "RFC 4648 base64",
+    "standard base64",
+    "MIME base64"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc4648",
+  "source_version": "RFC 4648",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/base64url",
+    "encoding/base32",
+    "encoding/base16"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC4648",
+    "charset": "US-ASCII",
+    "algorithm": "base64",
+    "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+    "notes": [
+      "Encodes 24 input bits (3 bytes) as four 6-bit groups; each group indexes the 64-character alphabet.",
+      "Padding: '=' fills the last 4-character quantum when the input is not a multiple of 3 bytes. 1 leftover byte (8 bits) -> two chars + '=='; 2 leftover bytes (16 bits) -> three chars + '='. A 3-byte multiple needs no padding.",
+      "Alphabet index 62 is '+' and 63 is '/'. The URL- and filename-safe variant (RFC 4648 §5, encoding/base64url) substitutes '-' and '_' so the output is safe in URLs and filenames.",
+      "RFC 4648 §3.3: decoders MUST reject characters outside the alphabet unless explicitly told to ignore them; this entry's standard alphabet does not permit line breaks. MIME (RFC 2045) inserts CRLF every 76 characters, which is a separate, looser profile."
+    ],
+    "test_vectors": [
+      {
+        "input": "",
+        "input_form": "utf8",
+        "output": "",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"\") = \"\"."
+      },
+      {
+        "input": "f",
+        "input_form": "utf8",
+        "output": "Zg==",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"f\") = \"Zg==\" (1 byte -> 2 chars + '==')."
+      },
+      {
+        "input": "fo",
+        "input_form": "utf8",
+        "output": "Zm8=",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"fo\") = \"Zm8=\" (2 bytes -> 3 chars + '=')."
+      },
+      {
+        "input": "foo",
+        "input_form": "utf8",
+        "output": "Zm9v",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"foo\") = \"Zm9v\" (3 bytes -> 4 chars, no padding)."
+      },
+      {
+        "input": "foob",
+        "input_form": "utf8",
+        "output": "Zm9vYg==",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"foob\") = \"Zm9vYg==\"."
+      },
+      {
+        "input": "fooba",
+        "input_form": "utf8",
+        "output": "Zm9vYmE=",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"fooba\") = \"Zm9vYmE=\"."
+      },
+      {
+        "input": "foobar",
+        "input_form": "utf8",
+        "output": "Zm9vYmFy",
+        "output_form": "ascii",
+        "algorithm": "base64",
+        "direction": "encode",
+        "note": "RFC 4648 §10 test vector: BASE64(\"foobar\") = \"Zm9vYmFy\" (6 bytes -> 8 chars, no padding)."
+      },
+      {
+        "input": "Zm9vYmFy",
+        "input_form": "ascii",
+        "output": "foobar",
+        "output_form": "utf8",
+        "algorithm": "base64",
+        "direction": "decode",
+        "note": "Round-trip: BASE64-decode(\"Zm9vYmFy\") = \"foobar\"."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

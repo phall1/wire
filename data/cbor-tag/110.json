@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/110",
+  "family": "cbor-tag",
+  "slug": "110",
+  "title": "CBOR tag 110 — relative object identifier (BER encoding); SDNV [RFC6256] s…",
+  "summary": "CBOR tag 110 (data item: byte string, array, or map): relative object identifier (BER encoding); SDNV [RFC6256] sequence. Defined in RFC9090.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 110,
+    "reference_rfcs": [
+      "RFC9090"
+    ],
+    "raw_columns": {
+      "Tag": "110",
+      "Data Item": "byte string, array, or map",
+      "Semantics": "relative object identifier (BER encoding); SDNV [RFC6256] sequence",
+      "Reference": "[RFC9090]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

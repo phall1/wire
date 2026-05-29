@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/about",
+  "family": "uri-scheme",
+  "slug": "about",
+  "title": "about: — about",
+  "summary": "URI scheme \"about:\" — about. IANA status: Permanent. Defined in RFC6694.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "about",
+    "reference_rfcs": [
+      "RFC6694"
+    ],
+    "raw_columns": {
+      "URI Scheme": "about",
+      "Template": "",
+      "Description": "about",
+      "Status": "Permanent",
+      "CRI Scheme Number": "3786",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6694]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

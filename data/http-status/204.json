@@ -1,0 +1,27 @@
+{
+  "id": "http-status/204",
+  "family": "http-status",
+  "slug": "204",
+  "title": "204 No Content",
+  "summary": "HTTP status code 204 No Content. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 204,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "204",
+      "Description": "No Content",
+      "Reference": "[RFC9110, Section 15.3.5]"
+    }
+  },
+  "updated": "2026-05-29"
+}

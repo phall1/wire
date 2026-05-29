@@ -1,0 +1,33 @@
+{
+  "id": "tls-param/cipher-suites/0x009d",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0x009d",
+  "title": "0x009d — TLS_RSA_WITH_AES_256_GCM_SHA384",
+  "summary": "TLS cipher suite TLS_RSA_WITH_AES_256_GCM_SHA384 (0x00,0x9D, IANA value 0x009d). IANA Recommended: D. Referenced in RFC5288.",
+  "kind": "parameter",
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0x009d",
+    "reference_rfcs": [
+      "RFC5288"
+    ],
+    "recommended": "D",
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0x00,0x9D",
+      "Description": "TLS_RSA_WITH_AES_256_GCM_SHA384",
+      "DTLS-OK": "Y",
+      "Recommended": "D",
+      "Reference": "[RFC5288][RFC-ietf-tls-deprecate-obsolete-kex-08]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

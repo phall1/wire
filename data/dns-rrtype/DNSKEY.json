@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/DNSKEY",
+  "family": "dns-rrtype",
+  "slug": "DNSKEY",
+  "title": "DNSKEY — DNSKEY (type 48)",
+  "summary": "DNS resource record type DNSKEY (numeric type 48): DNSKEY. Defined in RFC4034.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 48,
+    "reference_rfcs": [
+      "RFC4034"
+    ],
+    "raw_columns": {
+      "TYPE": "DNSKEY",
+      "Value": "48",
+      "Meaning": "DNSKEY",
+      "Reference": "[RFC4034]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

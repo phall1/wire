@@ -1,0 +1,38 @@
+{
+  "id": "port/170",
+  "family": "port",
+  "slug": "170",
+  "title": "Port 170 — print-srv",
+  "summary": "Well-known port 170 (tcp/udp): Network PostScript. Service name: print-srv.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 170,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "print-srv",
+      "Port Number": "170",
+      "Transport Protocol": "tcp",
+      "Description": "Network PostScript",
+      "Assignee": "[Brian_Reid]",
+      "Contact": "[Brian_Reid]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/416",
+  "family": "port",
+  "slug": "416",
+  "title": "Port 416 — silverplatter",
+  "summary": "Well-known port 416 (tcp/udp): Silverplatter. Service name: silverplatter.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 416,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "silverplatter",
+      "Port Number": "416",
+      "Transport Protocol": "tcp",
+      "Description": "Silverplatter",
+      "Assignee": "[Peter_Ciuffetti]",
+      "Contact": "[Peter_Ciuffetti]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

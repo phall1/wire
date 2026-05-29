@@ -1,0 +1,33 @@
+{
+  "id": "tls-param/cipher-suites/0xc028",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0xc028",
+  "title": "0xc028 — TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+  "summary": "TLS cipher suite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xC0,0x28, IANA value 0xc028). IANA Recommended: N. Referenced in RFC5289.",
+  "kind": "parameter",
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0xc028",
+    "reference_rfcs": [
+      "RFC5289"
+    ],
+    "recommended": false,
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0xC0,0x28",
+      "Description": "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+      "DTLS-OK": "Y",
+      "Recommended": "N",
+      "Reference": "[RFC5289]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

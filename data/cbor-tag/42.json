@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/42",
+  "family": "cbor-tag",
+  "slug": "42",
+  "title": "CBOR tag 42 — IPLD content identifier",
+  "summary": "CBOR tag 42 (data item: byte string): IPLD content identifier.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 42,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "42",
+      "Data Item": "byte string",
+      "Semantics": "IPLD content identifier",
+      "Reference": "[https://github.com/ipld/cid-cbor/][Volker_Mische]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

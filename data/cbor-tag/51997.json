@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/51997",
+  "family": "cbor-tag",
+  "slug": "51997",
+  "title": "CBOR tag 51997 — A tag value of 51997 indicates that the payload is CBOR-LD.",
+  "summary": "CBOR tag 51997 (data item: array): A tag value of 51997 indicates that the payload is CBOR-LD..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 51997,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "51997",
+      "Data Item": "array",
+      "Semantics": "A tag value of 51997 indicates that the payload is CBOR-LD.",
+      "Reference": "[https://json-ld.github.io/cbor-ld-spec/#cbor-tags-for-cbor-ld][Wesley_Smith]",
+      "Template": "template/51997"
+    }
+  },
+  "updated": "2026-05-29"
+}

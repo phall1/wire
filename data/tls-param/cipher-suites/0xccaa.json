@@ -1,0 +1,33 @@
+{
+  "id": "tls-param/cipher-suites/0xccaa",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0xccaa",
+  "title": "0xccaa — TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+  "summary": "TLS cipher suite TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (0xCC,0xAA, IANA value 0xccaa). IANA Recommended: D. Referenced in RFC7905.",
+  "kind": "parameter",
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0xccaa",
+    "reference_rfcs": [
+      "RFC7905"
+    ],
+    "recommended": "D",
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0xCC,0xAA",
+      "Description": "TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+      "DTLS-OK": "Y",
+      "Recommended": "D",
+      "Reference": "[RFC7905][RFC-ietf-tls-deprecate-obsolete-kex-08]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

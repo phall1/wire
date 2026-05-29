@@ -1,0 +1,69 @@
+{
+  "$comment": "Tier-A registry config map: {registry_id -> {url, format, family, namespace?, ext_type, slug_column, notes}}. Decoupled from IANA's irregular download filenames; the closed `family` vocabulary is the permalink segment. Fetched + parsed deterministically by ingest/tier-a/run.mjs (no LLM in the loop). source_version is the upstream HTTP Last-Modified captured at fetch time.",
+  "registries": {
+    "http-status": {
+      "url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+      "format": "csv",
+      "family": "http-status",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Value",
+      "kind": "status-code",
+      "notes": "HTTP status codes. slug = numeric code. Skip range rows (e.g. 105-199) and Unassigned/Reserved."
+    },
+    "http-method": {
+      "url": "https://www.iana.org/assignments/http-methods/methods.csv",
+      "format": "csv",
+      "family": "http-method",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Method Name",
+      "kind": "method",
+      "notes": "HTTP request methods. slug = method token (GET, PATCH, ...). All rows are assigned methods."
+    },
+    "uri-scheme": {
+      "url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+      "format": "csv",
+      "family": "uri-scheme",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "URI Scheme",
+      "kind": "scheme",
+      "notes": "URI schemes. slug = scheme name. Curated to Status=Permanent (skip Provisional/Historical) for the Tier-A corpus."
+    },
+    "dns-rrtype": {
+      "url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+      "format": "csv",
+      "family": "dns-rrtype",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "TYPE",
+      "kind": "rrtype",
+      "notes": "DNS resource record types. slug = mnemonic TYPE (AAAA). Skip Unassigned/Reserved/Private use rows."
+    },
+    "cbor-tag": {
+      "url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+      "format": "csv",
+      "family": "cbor-tag",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Tag",
+      "kind": "tag",
+      "notes": "CBOR tags. slug = tag number. Skip Unassigned and range rows (e.g. 6-15); single-integer tags only."
+    },
+    "port": {
+      "url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+      "format": "csv",
+      "family": "port",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Port Number",
+      "kind": "port",
+      "notes": "Service names and port numbers. Per (service, transport) upstream; we collapse to one entry per port number, collecting transports. Curated to well-known system ports 0-1023 WITH a service name (skip the ~14000 user/dynamic and nameless rows)."
+    },
+    "tls-cipher": {
+      "url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+      "format": "csv",
+      "family": "tls-param",
+      "namespace": "cipher-suites",
+      "ext_type": "iana-registry-row@1",
+      "slug_column": "Value",
+      "kind": "parameter",
+      "notes": "TLS cipher suites. slug = concatenated hex value (0x00,0x01 -> 0x0001; TLS_AES_128_GCM_SHA256 0x13,0x01 -> 0x1301). Curated to Recommended=Y plus the classic TLS 1.3 suites and a set of common TLS 1.2 suites."
+    }
+  }
+}

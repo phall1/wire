@@ -1,0 +1,38 @@
+{
+  "id": "port/706",
+  "family": "port",
+  "slug": "706",
+  "title": "Port 706 — silc",
+  "summary": "Well-known port 706 (tcp/udp): SILC. Service name: silc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 706,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "silc",
+      "Port Number": "706",
+      "Transport Protocol": "tcp",
+      "Description": "SILC",
+      "Assignee": "[Pekka_Riikonen]",
+      "Contact": "[Pekka_Riikonen]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

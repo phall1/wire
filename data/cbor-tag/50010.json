@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/50010",
+  "family": "cbor-tag",
+  "slug": "50010",
+  "title": "CBOR tag 50010 — PlatformV_HAS_EVENT",
+  "summary": "CBOR tag 50010 (data item: array): PlatformV_HAS_EVENT.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 50010,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "50010",
+      "Data Item": "array",
+      "Semantics": "PlatformV_HAS_EVENT",
+      "Reference": "[https://github.com/arthurwangtz/platformv-cbor][Wang_Tongzhou]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

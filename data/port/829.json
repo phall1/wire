@@ -1,0 +1,38 @@
+{
+  "id": "port/829",
+  "family": "port",
+  "slug": "829",
+  "title": "Port 829 — pkix-3-ca-ra",
+  "summary": "Well-known port 829 (tcp/udp): PKIX-3 CA/RA. Service name: pkix-3-ca-ra.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 829,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pkix-3-ca-ra",
+      "Port Number": "829",
+      "Transport Protocol": "tcp",
+      "Description": "PKIX-3 CA/RA",
+      "Assignee": "[Carlisle_Adams]",
+      "Contact": "[Carlisle_Adams]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

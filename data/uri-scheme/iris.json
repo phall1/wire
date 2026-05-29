@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/iris",
+  "family": "uri-scheme",
+  "slug": "iris",
+  "title": "iris: — Internet Registry Information Service",
+  "summary": "URI scheme \"iris:\" — Internet Registry Information Service. IANA status: Permanent. Defined in RFC3981.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "iris",
+    "reference_rfcs": [
+      "RFC3981"
+    ],
+    "raw_columns": {
+      "URI Scheme": "iris",
+      "Template": "",
+      "Description": "Internet Registry Information Service",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13986",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3981]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

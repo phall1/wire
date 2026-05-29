@@ -1,0 +1,38 @@
+{
+  "id": "port/435",
+  "family": "port",
+  "slug": "435",
+  "title": "Port 435 — mobilip-mn",
+  "summary": "Well-known port 435 (tcp/udp): MobilIP-MN. Service name: mobilip-mn.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 435,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mobilip-mn",
+      "Port Number": "435",
+      "Transport Protocol": "tcp",
+      "Description": "MobilIP-MN",
+      "Assignee": "[Kannan_Alagappan_2]",
+      "Contact": "[Kannan_Alagappan_2]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

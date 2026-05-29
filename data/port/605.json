@@ -1,0 +1,40 @@
+{
+  "id": "port/605",
+  "family": "port",
+  "slug": "605",
+  "title": "Port 605 — soap-beep",
+  "summary": "Well-known port 605 (tcp/udp): SOAP over BEEP. Service name: soap-beep. Referenced in RFC4227.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 605,
+    "reference_rfcs": [
+      "RFC4227"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "soap-beep",
+      "Port Number": "605",
+      "Transport Protocol": "tcp",
+      "Description": "SOAP over BEEP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC4227]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

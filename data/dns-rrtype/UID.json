@@ -1,0 +1,28 @@
+{
+  "id": "dns-rrtype/UID",
+  "family": "dns-rrtype",
+  "slug": "UID",
+  "title": "UID (type 101)",
+  "summary": "DNS resource record type UID (numeric type 101).",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 101,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "TYPE": "UID",
+      "Value": "101",
+      "Meaning": "",
+      "Reference": "[IANA-Reserved]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

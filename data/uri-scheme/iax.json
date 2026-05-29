@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/iax",
+  "family": "uri-scheme",
+  "slug": "iax",
+  "title": "iax: — Inter-Asterisk eXchange Version 2",
+  "summary": "URI scheme \"iax:\" — Inter-Asterisk eXchange Version 2. IANA status: Permanent. Defined in RFC5456.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "iax",
+    "reference_rfcs": [
+      "RFC5456"
+    ],
+    "raw_columns": {
+      "URI Scheme": "iax",
+      "Template": "",
+      "Description": "Inter-Asterisk eXchange Version 2",
+      "Status": "Permanent",
+      "CRI Scheme Number": "7126",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC5456]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

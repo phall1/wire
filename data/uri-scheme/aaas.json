@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/aaas",
+  "family": "uri-scheme",
+  "slug": "aaas",
+  "title": "aaas: — Diameter Protocol with Secure Transport",
+  "summary": "URI scheme \"aaas:\" — Diameter Protocol with Secure Transport. IANA status: Permanent. Defined in RFC6733.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "aaas",
+    "reference_rfcs": [
+      "RFC6733"
+    ],
+    "raw_columns": {
+      "URI Scheme": "aaas",
+      "Template": "",
+      "Description": "Diameter Protocol with Secure Transport",
+      "Status": "Permanent",
+      "CRI Scheme Number": "14526",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6733]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

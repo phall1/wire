@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/45",
+  "family": "cbor-tag",
+  "slug": "45",
+  "title": "CBOR tag 45 — YANG identityref datatype; see Section 6.10.",
+  "summary": "CBOR tag 45 (data item: unsigned integer or text string): YANG identityref datatype; see Section 6.10.. Defined in RFC9254.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 45,
+    "reference_rfcs": [
+      "RFC9254"
+    ],
+    "raw_columns": {
+      "Tag": "45",
+      "Data Item": "unsigned integer or text string",
+      "Semantics": "YANG identityref datatype; see Section 6.10.",
+      "Reference": "[RFC9254]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

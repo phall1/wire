@@ -1,0 +1,38 @@
+{
+  "id": "port/411",
+  "family": "port",
+  "slug": "411",
+  "title": "Port 411 — rmt",
+  "summary": "Well-known port 411 (tcp/udp): Remote MT Protocol. Service name: rmt.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 411,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "rmt",
+      "Port Number": "411",
+      "Transport Protocol": "tcp",
+      "Description": "Remote MT Protocol",
+      "Assignee": "[Peter_Eriksson]",
+      "Contact": "[Peter_Eriksson]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

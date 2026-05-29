@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/55800",
+  "family": "cbor-tag",
+  "slug": "55800",
+  "title": "CBOR tag 55800 — indicates that the file contains CBOR Sequences",
+  "summary": "CBOR tag 55800 (data item: tagged byte string): indicates that the file contains CBOR Sequences. Defined in RFC9277.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 55800,
+    "reference_rfcs": [
+      "RFC9277"
+    ],
+    "raw_columns": {
+      "Tag": "55800",
+      "Data Item": "tagged byte string",
+      "Semantics": "indicates that the file contains CBOR Sequences",
+      "Reference": "[RFC9277]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

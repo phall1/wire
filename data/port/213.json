@@ -1,0 +1,38 @@
+{
+  "id": "port/213",
+  "family": "port",
+  "slug": "213",
+  "title": "Port 213 — ipx",
+  "summary": "Well-known port 213 (tcp/udp): IPX. Service name: ipx.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 213,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ipx",
+      "Port Number": "213",
+      "Transport Protocol": "tcp",
+      "Description": "IPX",
+      "Assignee": "[Don_Provan]",
+      "Contact": "[Don_Provan]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

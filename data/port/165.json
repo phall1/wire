@@ -1,0 +1,38 @@
+{
+  "id": "port/165",
+  "family": "port",
+  "slug": "165",
+  "title": "Port 165 — xns-courier",
+  "summary": "Well-known port 165 (tcp/udp): Xerox. Service name: xns-courier.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 165,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "xns-courier",
+      "Port Number": "165",
+      "Transport Protocol": "tcp",
+      "Description": "Xerox",
+      "Assignee": "[Susie_Armstrong_2]",
+      "Contact": "[Susie_Armstrong_2]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/HTTPS",
+  "family": "dns-rrtype",
+  "slug": "HTTPS",
+  "title": "HTTPS — SVCB-compatible type for use with HTTP (type 65)",
+  "summary": "DNS resource record type HTTPS (numeric type 65): SVCB-compatible type for use with HTTP. Defined in RFC9460.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 65,
+    "reference_rfcs": [
+      "RFC9460"
+    ],
+    "registration_date": "2020-06-30",
+    "raw_columns": {
+      "TYPE": "HTTPS",
+      "Value": "65",
+      "Meaning": "SVCB-compatible type for use with HTTP",
+      "Reference": "[RFC9460]",
+      "Template": "HTTPS/https-completed-template",
+      "Registration Date": "2020-06-30"
+    }
+  },
+  "updated": "2026-05-29"
+}

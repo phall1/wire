@@ -1,0 +1,40 @@
+{
+  "id": "port/433",
+  "family": "port",
+  "slug": "433",
+  "title": "Port 433 — nnsp",
+  "summary": "Well-known port 433 (tcp/udp): NNTP for transit servers (NNSP). Service name: nnsp. Referenced in RFC3977.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 433,
+    "reference_rfcs": [
+      "RFC3977"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "nnsp",
+      "Port Number": "433",
+      "Transport Protocol": "tcp",
+      "Description": "NNTP for transit servers (NNSP)",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2018-07-06",
+      "Reference": "[RFC3977]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

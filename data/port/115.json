@@ -1,0 +1,38 @@
+{
+  "id": "port/115",
+  "family": "port",
+  "slug": "115",
+  "title": "Port 115 — sftp",
+  "summary": "Well-known port 115 (tcp/udp): Simple File Transfer Protocol. Service name: sftp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 115,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sftp",
+      "Port Number": "115",
+      "Transport Protocol": "tcp",
+      "Description": "Simple File Transfer Protocol",
+      "Assignee": "[Mark_Lottor]",
+      "Contact": "[Mark_Lottor]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

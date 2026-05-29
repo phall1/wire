@@ -1,0 +1,29 @@
+{
+  "id": "dns-rrtype/SINK",
+  "family": "dns-rrtype",
+  "slug": "SINK",
+  "title": "SINK — SINK (type 40)",
+  "summary": "DNS resource record type SINK (numeric type 40): SINK.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 40,
+    "reference_rfcs": [],
+    "registration_date": "1997-11",
+    "raw_columns": {
+      "TYPE": "SINK",
+      "Value": "40",
+      "Meaning": "SINK",
+      "Reference": "[Donald_E_Eastlake][draft-eastlake-kitchen-sink-02]",
+      "Template": "",
+      "Registration Date": "1997-11"
+    }
+  },
+  "updated": "2026-05-29"
+}

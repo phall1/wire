@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1330664270",
+  "family": "cbor-tag",
+  "slug": "1330664270",
+  "title": "CBOR tag 1330664270 — A CBOR encoded Openswan configuration file, as stored on di…",
+  "summary": "CBOR tag 1330664270 (data item: byte-string): A CBOR encoded Openswan configuration file, as stored on disk for\nunit test cases..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1330664270,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1330664270",
+      "Data Item": "byte-string",
+      "Semantics": "A CBOR encoded Openswan configuration file, as stored on disk for\nunit test cases.",
+      "Reference": "[Michael_Richardson][Samir_Hussain]",
+      "Template": "template/1330664270"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/45",
+  "family": "port",
+  "slug": "45",
+  "title": "Port 45 — mpm",
+  "summary": "Well-known port 45 (tcp/udp): Message Processing Module [recv]. Service name: mpm.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 45,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mpm",
+      "Port Number": "45",
+      "Transport Protocol": "tcp",
+      "Description": "Message Processing Module [recv]",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

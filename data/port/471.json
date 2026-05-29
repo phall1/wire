@@ -1,0 +1,38 @@
+{
+  "id": "port/471",
+  "family": "port",
+  "slug": "471",
+  "title": "Port 471 — mondex",
+  "summary": "Well-known port 471 (tcp/udp): Mondex. Service name: mondex.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 471,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mondex",
+      "Port Number": "471",
+      "Transport Protocol": "tcp",
+      "Description": "Mondex",
+      "Assignee": "[Bill_Reding]",
+      "Contact": "[Bill_Reding]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

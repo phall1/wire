@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/267",
+  "family": "cbor-tag",
+  "slug": "267",
+  "title": "CBOR tag 267 — Internationalized resource identifier reference (IRI refere…",
+  "summary": "CBOR tag 267 (data item: text string): Internationalized resource identifier reference (IRI reference).",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 267,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "267",
+      "Data Item": "text string",
+      "Semantics": "Internationalized resource identifier reference (IRI reference)",
+      "Reference": "[https://peteroupc.github.io/CBOR/iri.html][Peter_Occil]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

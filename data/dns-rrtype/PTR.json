@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/PTR",
+  "family": "dns-rrtype",
+  "slug": "PTR",
+  "title": "PTR — a domain name pointer (type 12)",
+  "summary": "DNS resource record type PTR (numeric type 12): a domain name pointer. Defined in RFC1035.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 12,
+    "reference_rfcs": [
+      "RFC1035"
+    ],
+    "raw_columns": {
+      "TYPE": "PTR",
+      "Value": "12",
+      "Meaning": "a domain name pointer",
+      "Reference": "[RFC1035]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/urn",
+  "family": "uri-scheme",
+  "slug": "urn",
+  "title": "urn: — Uniform Resource Names",
+  "summary": "URI scheme \"urn:\" — Uniform Resource Names. IANA status: Permanent. Defined in RFC8141.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "urn",
+    "reference_rfcs": [
+      "RFC8141"
+    ],
+    "raw_columns": {
+      "URI Scheme": "urn",
+      "Template": "",
+      "Description": "Uniform Resource Names",
+      "Status": "Permanent",
+      "CRI Scheme Number": "4",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC8141][IANA registry urn-namespaces]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

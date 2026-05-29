@@ -1,0 +1,40 @@
+{
+  "id": "port/88",
+  "family": "port",
+  "slug": "88",
+  "title": "Port 88 — kerberos",
+  "summary": "Well-known port 88 (tcp/udp): Kerberos. Service name: kerberos. Referenced in RFC4120.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 88,
+    "reference_rfcs": [
+      "RFC4120"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "kerberos",
+      "Port Number": "88",
+      "Transport Protocol": "tcp",
+      "Description": "Kerberos",
+      "Assignee": "[B_Clifford_Neuman]",
+      "Contact": "[B_Clifford_Neuman]",
+      "Registration Date": "",
+      "Modification Date": "2022-02-18",
+      "Reference": "[RFC4120]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

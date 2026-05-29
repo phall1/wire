@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/OPENPGPKEY",
+  "family": "dns-rrtype",
+  "slug": "OPENPGPKEY",
+  "title": "OPENPGPKEY — OpenPGP Key (type 61)",
+  "summary": "DNS resource record type OPENPGPKEY (numeric type 61): OpenPGP Key. Defined in RFC7929.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 61,
+    "reference_rfcs": [
+      "RFC7929"
+    ],
+    "registration_date": "2014-08-12",
+    "raw_columns": {
+      "TYPE": "OPENPGPKEY",
+      "Value": "61",
+      "Meaning": "OpenPGP Key",
+      "Reference": "[RFC7929]",
+      "Template": "OPENPGPKEY/openpgpkey-completed-template",
+      "Registration Date": "2014-08-12"
+    }
+  },
+  "updated": "2026-05-29"
+}

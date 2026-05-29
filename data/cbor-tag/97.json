@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/97",
+  "family": "cbor-tag",
+  "slug": "97",
+  "title": "CBOR tag 97 — COSE MACed Data Object",
+  "summary": "CBOR tag 97 (data item: COSE_Mac): COSE MACed Data Object. Defined in RFC9052.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 97,
+    "reference_rfcs": [
+      "RFC9052"
+    ],
+    "raw_columns": {
+      "Tag": "97",
+      "Data Item": "COSE_Mac",
+      "Semantics": "COSE MACed Data Object",
+      "Reference": "[RFC9052]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

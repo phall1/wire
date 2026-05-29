@@ -1,0 +1,38 @@
+{
+  "id": "port/198",
+  "family": "port",
+  "slug": "198",
+  "title": "Port 198 — dls-mon",
+  "summary": "Well-known port 198 (tcp/udp): Directory Location Service Monitor. Service name: dls-mon.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 198,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dls-mon",
+      "Port Number": "198",
+      "Transport Protocol": "tcp",
+      "Description": "Directory Location Service Monitor",
+      "Assignee": "[Scott_Bellew]",
+      "Contact": "[Scott_Bellew]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

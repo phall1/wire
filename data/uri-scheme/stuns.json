@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/stuns",
+  "family": "uri-scheme",
+  "slug": "stuns",
+  "title": "stuns: — stuns",
+  "summary": "URI scheme \"stuns:\" — stuns. IANA status: Permanent. Defined in RFC7064.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "stuns",
+    "reference_rfcs": [
+      "RFC7064"
+    ],
+    "raw_columns": {
+      "URI Scheme": "stuns",
+      "Template": "",
+      "Description": "stuns",
+      "Status": "Permanent",
+      "CRI Scheme Number": "14901",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC7064]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "http-status/502",
+  "family": "http-status",
+  "slug": "502",
+  "title": "502 Bad Gateway",
+  "summary": "HTTP status code 502 Bad Gateway. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 502,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "502",
+      "Description": "Bad Gateway",
+      "Reference": "[RFC9110, Section 15.6.3]"
+    }
+  },
+  "updated": "2026-05-29"
+}

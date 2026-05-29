@@ -1,0 +1,33 @@
+{
+  "id": "uri-scheme/tel",
+  "family": "uri-scheme",
+  "slug": "tel",
+  "title": "tel: — telephone",
+  "summary": "URI scheme \"tel:\" — telephone. IANA status: Permanent. Defined in RFC3966, RFC5341.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "tel",
+    "reference_rfcs": [
+      "RFC3966",
+      "RFC5341"
+    ],
+    "raw_columns": {
+      "URI Scheme": "tel",
+      "Template": "",
+      "Description": "telephone",
+      "Status": "Permanent",
+      "CRI Scheme Number": "3143",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3966][RFC5341]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

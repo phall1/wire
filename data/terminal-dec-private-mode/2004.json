@@ -1,0 +1,102 @@
+{
+  "id": "terminal-dec-private-mode/2004",
+  "family": "terminal-dec-private-mode",
+  "slug": "2004",
+  "title": "DECSET 2004 — Bracketed paste mode",
+  "summary": "CSI ? 2004 h enables bracketed paste: when the user pastes, the terminal wraps the pasted text in ESC [ 2 0 0 ~ ... ESC [ 2 0 1 ~ so the application can tell pasted text from typed keystrokes and avoid executing it. CSI ? 2004 l disables it.",
+  "kind": "control-sequence",
+  "aliases": [
+    "bracketed paste",
+    "bracketed paste mode",
+    "DECSET 2004",
+    "?2004h / ?2004l",
+    "paste guard"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 2 0 0 4 -> Set bracketed paste mode. When enabled, pasted text is bracketed with control sequences ESC [ 2 0 0 ~ (start) and ESC [ 2 0 1 ~ (end) so the application can distinguish it from typed input."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1049"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 2004,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: ends at the final byte 'h'/'l'. The paste WRAPPERS the terminal then emits (ESC [ 200~ / ESC [ 201~) are themselves separate CSI '~' sequences."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 2004 h turns on bracketed paste. While enabled, when the user pastes, the terminal sends ESC [ 200~ before and ESC [ 201~ after the pasted bytes.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?2004h",
+        "byte_sequence_ST_readable": "ESC [ ? 2 0 0 4 h   ==  \\x1b[?2004h   (enable bracketed paste)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 2004 l turns off bracketed paste; pasted text is then delivered as raw keystrokes with no wrappers.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?2004l",
+        "byte_sequence_ST_readable": "ESC [ ? 2 0 0 4 l   ==  \\x1b[?2004l   (disable bracketed paste)",
+        "subparams": []
+      },
+      {
+        "id": "paste-begin",
+        "anchor": "#paste-begin",
+        "name": "Paste-begin marker (terminal -> app)",
+        "meaning": "When bracketed paste is enabled, the terminal sends this BEFORE pasted content. The application reads it and treats subsequent bytes as literal data, not commands.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[200~",
+        "byte_sequence_ST_readable": "ESC [ 2 0 0 ~   ==  \\x1b[200~   (start of paste)",
+        "subparams": []
+      },
+      {
+        "id": "paste-end",
+        "anchor": "#paste-end",
+        "name": "Paste-end marker (terminal -> app)",
+        "meaning": "The terminal sends this AFTER pasted content, signalling the end of the literal paste region.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[201~",
+        "byte_sequence_ST_readable": "ESC [ 2 0 1 ~   ==  \\x1b[201~   (end of paste)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "?2004h enables the MODE; the actual wrappers (ESC [ 200~ / ESC [ 201~) are sent by the TERMINAL to the application around real pastes — your program enables the mode, then reads and strips the wrappers.",
+      "Security purpose: bracketed paste prevents a pasted blob that contains a newline from auto-executing in the shell, and prevents pasted ANSI/control bytes from being interpreted as commands. Do NOT interpret bytes between 200~ and 201~ as control sequences.",
+      "Terminals do not strip control characters inside the paste; the application must decide how to handle embedded ESC/newlines within the bracketed region.",
+      "Re-enable the mode after running a child program that may have reset it (e.g. a TUI that did its own raw-mode setup), or paste detection silently stops working.",
+      "Reset the mode (?2004l) when your program exits, so the next program/shell isn't left with an unexpected paste mode state."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Set/reset (?2004h / ?2004l) and the paste begin/end markers (ESC[200~ / ESC[201~) are byte-exact and syntactically valid CSI sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

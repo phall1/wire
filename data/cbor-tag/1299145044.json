@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1299145044",
+  "family": "cbor-tag",
+  "slug": "1299145044",
+  "title": "CBOR tag 1299145044 — MoaT file identifier / details",
+  "summary": "CBOR tag 1299145044 (data item: array): MoaT file identifier / details.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1299145044,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1299145044",
+      "Data Item": "array",
+      "Semantics": "MoaT file identifier / details",
+      "Reference": "[https://github.com/M-o-a-T/moat-util/][Matthias_Urlichs]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

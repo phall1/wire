@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/553",
+  "family": "cbor-tag",
+  "slug": "553",
+  "title": "CBOR tag 553 — A CBOR tag that contains min-svn that identifies a security…",
+  "summary": "CBOR tag 553 (data item: unsigned integer): A CBOR tag that contains min-svn that identifies a security version number that is evaluated with greater than or equals semantics.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 553,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "553",
+      "Data Item": "unsigned integer",
+      "Semantics": "A CBOR tag that contains min-svn that identifies a security version number that is evaluated with greater than or equals semantics",
+      "Reference": "[TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

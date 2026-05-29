@@ -1,0 +1,40 @@
+{
+  "id": "port/603",
+  "family": "port",
+  "slug": "603",
+  "title": "Port 603 — idxp",
+  "summary": "Well-known port 603 (tcp/udp): IDXP. Service name: idxp. Referenced in RFC4767.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 603,
+    "reference_rfcs": [
+      "RFC4767"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "idxp",
+      "Port Number": "603",
+      "Transport Protocol": "tcp",
+      "Description": "IDXP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC4767]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

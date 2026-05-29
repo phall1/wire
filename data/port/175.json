@@ -1,0 +1,38 @@
+{
+  "id": "port/175",
+  "family": "port",
+  "slug": "175",
+  "title": "Port 175 — vmnet",
+  "summary": "Well-known port 175 (tcp/udp): VMNET. Service name: vmnet.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 175,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "vmnet",
+      "Port Number": "175",
+      "Transport Protocol": "tcp",
+      "Description": "VMNET",
+      "Assignee": "[Christopher_Tengi]",
+      "Contact": "[Christopher_Tengi]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/990",
+  "family": "port",
+  "slug": "990",
+  "title": "Port 990 — ftps",
+  "summary": "Well-known port 990 (tcp/udp): ftp protocol, control, over TLS/SSL. Service name: ftps.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 990,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ftps",
+      "Port Number": "990",
+      "Transport Protocol": "tcp",
+      "Description": "ftp protocol, control, over TLS/SSL",
+      "Assignee": "[Christopher_Allen]",
+      "Contact": "[Christopher_Allen]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

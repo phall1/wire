@@ -1,0 +1,180 @@
+{
+  "id": "terminal-osc/8",
+  "family": "terminal-osc",
+  "slug": "8",
+  "title": "OSC 8 — Hyperlinks (clickable links in terminal output)",
+  "summary": "OSC 8 marks a run of text as a clickable hyperlink: OSC 8 ; params ; URI ST  link text  OSC 8 ; ; ST. The opening sequence carries the target URI (and optional params like id=...); the closing sequence has empty params and empty URI to end the link. Specified by the Gnome VTE 'hyperlinks' proposal and supported across most modern terminals.",
+  "kind": "control-sequence",
+  "aliases": [
+    "terminal hyperlinks",
+    "clickable links",
+    "OSC 8",
+    "ESC ] 8",
+    "hyperlinks in terminal emulators"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda",
+  "source_version": "'Hyperlinks in terminal emulators' spec (Egmont Koblinger / VTE), retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda",
+      "source_version": "retrieved 2026-05-29",
+      "note": "The canonical 'Hyperlinks in terminal emulators' spec: OSC 8 ; params ; URI ST ... OSC 8 ; ; ST. params are key=value pairs separated by ':'; the only standard key is 'id'."
+    },
+    {
+      "claim_ref": "#open",
+      "source_url": "https://wezterm.org/hyperlinks.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "WezTerm documents the OSC 8 explicit-hyperlink escape sequence with the same open/close structure (second independent source for the open/close form)."
+    },
+    {
+      "claim_ref": "#close",
+      "source_url": "https://wezterm.org/hyperlinks.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "OSC 8 ; ; ST (empty params, empty URI) closes the hyperlink span."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/7",
+    "terminal-osc/133"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 8,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 8 is the VTE-originated de-facto hyperlink convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "The hyperlink spec recommends ST (ESC \\) as the terminator and warns that BEL, while accepted by some terminals, is discouraged for OSC 8. Emit ST."
+    },
+    "params": [
+      {
+        "id": "open",
+        "anchor": "#open",
+        "name": "Open hyperlink",
+        "meaning": "OSC 8 ; params ; URI ST begins a hyperlink. params is a possibly-empty list of key=value pairs separated by ':' (the only standardized key is 'id', used to group multi-line links). URI is the target (e.g. https://..., file://...). The text printed AFTER this sequence and BEFORE the closing sequence is the clickable link text.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]8;;https://example.com\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 8 ; ; h t t p s : / / e x a m p l e . c o m ESC \\   ==  \\x1b]8;;https://example.com\\x1b\\\\   (empty params, then URI)",
+        "byte_sequence_BEL": "\u001b]8;;https://example.com\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 8 ; ; h t t p s : / / e x a m p l e . c o m BEL   ==  \\x1b]8;;https://example.com\\x07   (BEL accepted but ST preferred)",
+        "subparams": [
+          {
+            "id": "fact-8-id",
+            "anchor": "#id-param",
+            "name": "id= parameter",
+            "meaning": "OSC 8 ; id=NAME ; URI ST assigns an id so that multiple separate spans (e.g. a link that wraps across lines) are treated as one logical hyperlink and highlight together on hover.",
+            "example_byte_sequence_ST": "\u001b]8;id=foo;https://example.com\u001b\\",
+            "example_byte_sequence_ST_readable": "ESC ] 8 ; i d = f o o ; h t t p s : / / e x a m p l e . c o m ESC \\   ==  \\x1b]8;id=foo;https://example.com\\x1b\\\\"
+          }
+        ]
+      },
+      {
+        "id": "close",
+        "anchor": "#close",
+        "name": "Close hyperlink",
+        "meaning": "OSC 8 ; ; ST (empty params AND empty URI) ends the current hyperlink. Text after this is no longer part of the link.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]8;;\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 8 ; ; ESC \\   ==  \\x1b]8;;\\x1b\\\\   (both fields empty -> close)",
+        "byte_sequence_BEL": "\u001b]8;;\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 8 ; ; BEL   ==  \\x1b]8;;\\x07",
+        "subparams": []
+      }
+    ],
+    "support_matrix": [
+      {
+        "terminal": "VTE / GNOME Terminal",
+        "version_added": "VTE 0.50 (2017)",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Reference implementation; the spec originated here."
+      },
+      {
+        "terminal": "iTerm2",
+        "version_added": "3.1+",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports OSC 8 explicit hyperlinks."
+      },
+      {
+        "terminal": "kitty",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Full support including id= grouping; configurable open action."
+      },
+      {
+        "terminal": "WezTerm",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Documents the explicit OSC 8 hyperlink escape plus implicit/auto-link rules."
+      },
+      {
+        "terminal": "Windows Terminal",
+        "version_added": "1.4+",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Renders OSC 8 hyperlinks as clickable."
+      },
+      {
+        "terminal": "foot",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports OSC 8 hyperlinks."
+      },
+      {
+        "terminal": "Contour",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports OSC 8 hyperlinks."
+      },
+      {
+        "terminal": "Ghostty",
+        "version_added": "1.0",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports OSC 8 hyperlinks."
+      },
+      {
+        "terminal": "Terminal.app (macOS)",
+        "version_added": "n/a",
+        "level": "none",
+        "variant_of": null,
+        "notes": "Apple Terminal does not implement OSC 8; the link text renders but is not clickable."
+      }
+    ],
+    "gotchas": [
+      "The CLOSING sequence must have BOTH fields empty: OSC 8 ; ; ST. A non-empty URI starts a NEW link rather than closing the old one.",
+      "URIs should be absolute and percent-encoded; per the spec the URI should not exceed ~2083 bytes and control bytes / chars outside printable ASCII must be percent-encoded.",
+      "Use the id= param when a single link wraps across multiple lines or is interrupted, so the terminal highlights all parts together on hover; without it, wrapped links may be treated as separate links.",
+      "Prefer ST (ESC \\) over BEL for OSC 8 — the spec explicitly discourages BEL here even though many terminals accept it.",
+      "If a terminal does not support OSC 8, it ignores the escape and prints just the link text, so output degrades gracefully — but always include human-meaningful link text, never rely on the URI being visible.",
+      "Nesting hyperlinks is not supported; open one, then close it before opening another."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 8 open (with and without id=) and the empty-empty close form are syntactically valid OSC strings; ST is the emitted terminator.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

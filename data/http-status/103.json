@@ -1,0 +1,27 @@
+{
+  "id": "http-status/103",
+  "family": "http-status",
+  "slug": "103",
+  "title": "103 Early Hints",
+  "summary": "HTTP status code 103 Early Hints. Defined in RFC8297.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 103,
+    "reference_rfcs": [
+      "RFC8297"
+    ],
+    "raw_columns": {
+      "Value": "103",
+      "Description": "Early Hints",
+      "Reference": "[RFC8297]"
+    }
+  },
+  "updated": "2026-05-29"
+}

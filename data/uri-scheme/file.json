@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/file",
+  "family": "uri-scheme",
+  "slug": "file",
+  "title": "file: — Host-specific file names",
+  "summary": "URI scheme \"file:\" — Host-specific file names. IANA status: Permanent. Defined in RFC8089.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "file",
+    "reference_rfcs": [
+      "RFC8089"
+    ],
+    "raw_columns": {
+      "URI Scheme": "file",
+      "Template": "",
+      "Description": "Host-specific file names",
+      "Status": "Permanent",
+      "CRI Scheme Number": "12068",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC8089]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

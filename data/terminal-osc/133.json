@@ -1,0 +1,293 @@
+{
+  "id": "terminal-osc/133",
+  "family": "terminal-osc",
+  "slug": "133",
+  "title": "OSC 133 \u2014 Semantic Prompts (FinalTerm / FTCS shell integration)",
+  "summary": "OSC 133 marks shell prompt, command-input, and command-output boundaries so terminals can navigate by command, fold output, and color the prompt by exit status. Four subcommands: A (prompt start), B (command-line start), C (output start), D[;exitcode] (command finished). Originated in the defunct FinalTerm emulator; harmonized by Per Bothner's Semantic Prompts proposal; near-universally adopted.",
+  "kind": "control-sequence",
+  "aliases": [
+    "FTCS",
+    "FinalTerm prompt markers",
+    "FinalTerm sequences",
+    "semantic prompts",
+    "shell integration marks",
+    "FTCS_PROMPT/FTCS_COMMAND_START/FTCS_COMMAND_EXECUTED/FTCS_COMMAND_FINISHED"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://gitlab.freedesktop.org/Per_Bothner/specifications/-/blob/master/proposals/semantic-prompts.md",
+  "source_version": "semantic-prompts.md @ gitlab.freedesktop.org/Per_Bothner/specifications master (unversioned living document)",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://gitlab.freedesktop.org/Per_Bothner/specifications/-/blob/master/proposals/semantic-prompts.md",
+      "source_version": "master, retrieved 2026-05-29",
+      "note": "Semantic Prompts proposal is the harmonizing cross-terminal spec; defines purpose of prompt/input/output marking."
+    },
+    {
+      "claim_ref": "#A",
+      "source_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/shell-integration",
+      "source_version": "retrieved 2026-05-29",
+      "note": "OSC 133 ; A ST = FTCS_PROMPT, start of prompt. Stated identically by Windows Terminal docs and Contour."
+    },
+    {
+      "claim_ref": "#A",
+      "source_url": "https://contour-terminal.org/vt-extensions/osc-133-shell-integration/",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Second independent source for A semantics (quorum)."
+    },
+    {
+      "claim_ref": "#B",
+      "source_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/shell-integration",
+      "source_version": "retrieved 2026-05-29",
+      "note": "OSC 133 ; B ST = FTCS_COMMAND_START, start of command line / end of prompt."
+    },
+    {
+      "claim_ref": "#B",
+      "source_url": "https://contour-terminal.org/vt-extensions/osc-133-shell-integration/",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Second independent source for B semantics (quorum)."
+    },
+    {
+      "claim_ref": "#C",
+      "source_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/shell-integration",
+      "source_version": "retrieved 2026-05-29",
+      "note": "OSC 133 ; C ST = FTCS_COMMAND_EXECUTED, start of command output / end of command line."
+    },
+    {
+      "claim_ref": "#C",
+      "source_url": "https://contour-terminal.org/vt-extensions/osc-133-shell-integration/",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Second independent source for C semantics (quorum)."
+    },
+    {
+      "claim_ref": "#D",
+      "source_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/shell-integration",
+      "source_version": "retrieved 2026-05-29",
+      "note": "OSC 133 ; D [ ; exitcode ] ST = FTCS_COMMAND_FINISHED; 0 success, nonzero error; omitting exitcode leaves the mark default-colored."
+    },
+    {
+      "claim_ref": "#D",
+      "source_url": "https://contour-terminal.org/vt-extensions/osc-133-shell-integration/",
+      "source_version": "retrieved 2026-05-29",
+      "note": "Second independent source for D semantics including optional exit code (quorum)."
+    },
+    {
+      "claim_ref": "#origin",
+      "source_url": "https://iterm2.com/documentation-escape-codes.html",
+      "source_version": "retrieved 2026-05-29",
+      "note": "iTerm2 states the sequences were pioneered by the now-defunct FinalTerm emulator and documents them."
+    },
+    {
+      "claim_ref": "ext.terminator",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "OSC frame is ESC ] ... terminated by ST (ESC \\\\); xterm convention also accepts BEL (0x07) as terminator."
+    },
+    {
+      "claim_ref": "ext.frame",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "OSC = ESC ] (0x9D in 8-bit). ECMA-48 5th ed. 1991 defines the OSC frame and ST; command numbers are not registered anywhere."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/633",
+    "terminal-osc/0",
+    "terminal-osc/7",
+    "terminal-osc/8"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 133,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "Per ECMA-48 5th ed. 1991 / ISO 6429. Command numbers (the '133') have no registry; see terminfo.dev and xterm ctlseqs."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST. xterm and virtually all modern terminals ALSO accept BEL on the parsing side. Emit ST for spec-correctness; accept both when parsing."
+    },
+    "params": [
+      {
+        "id": "A",
+        "anchor": "#A",
+        "name": "FTCS_PROMPT",
+        "meaning": "Start of the prompt. Emitted by the shell precmd hook just before printing PS1.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]133;A\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 ; A ESC \\   ==  \\x1b]133;A\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]133;A\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 ; A BEL   ==  \\x1b]133;A\\x07",
+        "subparams": []
+      },
+      {
+        "id": "B",
+        "anchor": "#B",
+        "name": "FTCS_COMMAND_START",
+        "meaning": "Start of the command line / end of the prompt. Everything after this until C is what the user typed.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]133;B\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 ; B ESC \\   ==  \\x1b]133;B\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]133;B\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 ; B BEL   ==  \\x1b]133;B\\x07",
+        "subparams": []
+      },
+      {
+        "id": "C",
+        "anchor": "#C",
+        "name": "FTCS_COMMAND_EXECUTED",
+        "meaning": "Start of command output / end of the command line. Emitted from the shell preexec hook, just before the command runs.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]133;C\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 ; C ESC \\   ==  \\x1b]133;C\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]133;C\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 ; C BEL   ==  \\x1b]133;C\\x07",
+        "subparams": []
+      },
+      {
+        "id": "D",
+        "anchor": "#D",
+        "name": "FTCS_COMMAND_FINISHED",
+        "meaning": "End of the command. Optional exit code as a second parameter: 0 = success, nonzero = error. Omitting the exit code leaves the mark default-colored (no success/error tint).",
+        "required": false,
+        "byte_sequence_ST": "\u001b]133;D\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 ; D ESC \\   ==  \\x1b]133;D\\x1b\\\\   (no exit code)",
+        "byte_sequence_BEL": "\u001b]133;D\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 ; D BEL   ==  \\x1b]133;D\\x07   (no exit code)",
+        "subparams": [
+          {
+            "id": "fact-d-exitcode",
+            "anchor": "#fact-d-exitcode",
+            "name": "ExitCode",
+            "meaning": "Optional integer exit status of the finished command. 0 = success (often green mark), nonzero = error (often red mark). When absent, the terminal does not tint the mark.",
+            "required": false,
+            "example_byte_sequence_ST": "\u001b]133;D;0\u001b\\",
+            "example_byte_sequence_ST_readable": "ESC ] 1 3 3 ; D ; 0 ESC \\   ==  \\x1b]133;D;0\\x1b\\\\   (success)",
+            "example_byte_sequence_nonzero_ST": "\u001b]133;D;1\u001b\\",
+            "example_byte_sequence_nonzero_ST_readable": "ESC ] 1 3 3 ; D ; 1 ESC \\   ==  \\x1b]133;D;1\\x1b\\\\   (error, exit 1)"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "variant_of": "terminal-osc/133",
+        "label": "OSC 633 (VS Code)",
+        "entry_id": "terminal-osc/633",
+        "note": "VS Code's integrated terminal uses OSC 633 as a superset/sibling of OSC 133 (633;A/B/C/D mirror 133, plus 633;E command line, 633;P properties like Cwd). VS Code emits BOTH 133 and 633 for portability. Treat 633 as a distinct entry; cross-linked via see_also."
+      },
+      {
+        "variant_of": "terminal-osc/133",
+        "label": "FTCS_COMMAND (P;)",
+        "entry_id": "terminal-osc/133",
+        "note": "Some implementations add OSC 133 ; P ; key=value ST for aux properties (e.g. Cwd, prompt kind) and OSC 133 ; L for fresh-line. These are extensions in the Semantic Prompts proposal beyond the core A/B/C/D and support varies; treat as partial."
+      }
+    ],
+    "support_matrix": [
+      {
+        "terminal": "FinalTerm",
+        "version_added": "original (defunct)",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Origin of the FTCS sequences; project is defunct but documented by iTerm2."
+      },
+      {
+        "terminal": "iTerm2",
+        "version_added": "Shell Integration (3.x)",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Documents the sequences; also defines its own OSC 1337 family for additional shell-integration features."
+      },
+      {
+        "terminal": "VTE / GNOME Terminal",
+        "version_added": "VTE 0.66+",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Recognizes OSC 133 A/B/C/D for prompt/command tracking."
+      },
+      {
+        "terminal": "WezTerm",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Implements semantic zones from OSC 133; documents shell integration."
+      },
+      {
+        "terminal": "kitty",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Uses OSC 133 for shell integration / command tracking."
+      },
+      {
+        "terminal": "Ghostty",
+        "version_added": "1.0",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports OSC 133 shell integration out of the box."
+      },
+      {
+        "terminal": "Windows Terminal",
+        "version_added": "stable shell-integration tutorial",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Documents A/B/C/D identically to Contour; supports D exit-code coloring."
+      },
+      {
+        "terminal": "Contour",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Dedicated OSC-133 shell-integration page; authoritative cross-source for A/B/C/D."
+      },
+      {
+        "terminal": "VS Code integrated terminal",
+        "version_added": "shell integration",
+        "level": "variant",
+        "variant_of": "terminal-osc/633",
+        "notes": "Prefers OSC 633 (superset) but also accepts/emits OSC 133 for portability."
+      },
+      {
+        "terminal": "Warp",
+        "version_added": "documented",
+        "level": "partial",
+        "variant_of": null,
+        "notes": "Block model derives from prompt/command boundaries; uses shell-integration marks though its native model predates a pure 133 dependency."
+      },
+      {
+        "terminal": "DomTerm",
+        "version_added": "Per Bothner ref impl",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Reference implementation behind the Semantic Prompts proposal."
+      }
+    ],
+    "gotchas": [
+      "Terminator divergence: ECMA-48 requires ST (ESC \\, i.e. \\x1b\\x5c). xterm and nearly every modern terminal ALSO accept BEL (\\x07). Emit ST; accept both when parsing. Mixing a bare ESC followed by an unrelated byte will mis-terminate the string.",
+      "Wrap marks in PROMPT_COMMAND/precmd, not inside the visible PS1 width calculation: in bash/zsh the mark bytes must be wrapped in \\[ \\] (bash) or %{ %} (zsh) so the shell does not count them as visible columns, otherwise line editing and wrapping break.",
+      "C must be emitted from preexec (just before the command runs), not from precmd, or output folding will include the command line itself.",
+      "D's exit code is OPTIONAL; if you always want success/error coloring you must pass it explicitly (\\x1b]133;D;$?\\x1b\\). A bare D leaves the mark untinted.",
+      "OSC 633 (VS Code) is NOT the same entry: 633 is a superset with extra subcommands (E command-line, P properties). Do not assume a 133 parser handles 633;P key=value.",
+      "There is NO registry for the number 133 itself; collisions are possible in principle but 133 is de-facto reserved for FinalTerm/FTCS across the ecosystem.",
+      "8-bit forms (0x9D for OSC, 0x9C for ST) exist per ECMA-48 but are rarely used in UTF-8 locales because they collide with UTF-8 continuation bytes; always prefer the 7-bit ESC-based forms in modern pipelines."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Entry emits a syntactically correct ST-terminated example (\\x1b]133;A\\x1b\\\\) and records that BEL (\\x07) is also accepted on the parsing side, capturing the ECMA-48-vs-practice divergence.",
+      "behavioral_conformance": "deferred to v2 (headless VTE harness asserting observed prompt/command/output zones); support_matrix cells are pre-shaped to receive those results."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

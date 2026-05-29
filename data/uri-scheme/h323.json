@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/h323",
+  "family": "uri-scheme",
+  "slug": "h323",
+  "title": "h323: — H.323",
+  "summary": "URI scheme \"h323:\" — H.323. IANA status: Permanent. Defined in RFC3508.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "h323",
+    "reference_rfcs": [
+      "RFC3508"
+    ],
+    "raw_columns": {
+      "URI Scheme": "h323",
+      "Template": "",
+      "Description": "H.323",
+      "Status": "Permanent",
+      "CRI Scheme Number": "10317",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3508]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "dns-rrtype/GID",
+  "family": "dns-rrtype",
+  "slug": "GID",
+  "title": "GID (type 102)",
+  "summary": "DNS resource record type GID (numeric type 102).",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 102,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "TYPE": "GID",
+      "Value": "102",
+      "Meaning": "",
+      "Reference": "[IANA-Reserved]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

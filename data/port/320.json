@@ -1,0 +1,38 @@
+{
+  "id": "port/320",
+  "family": "port",
+  "slug": "320",
+  "title": "Port 320 — ptp-general",
+  "summary": "Well-known port 320 (tcp/udp): PTP General. Service name: ptp-general.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 320,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ptp-general",
+      "Port Number": "320",
+      "Transport Protocol": "tcp",
+      "Description": "PTP General",
+      "Assignee": "[Kang_Lee]",
+      "Contact": "[Kang_Lee]",
+      "Registration Date": "2010-07-27",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

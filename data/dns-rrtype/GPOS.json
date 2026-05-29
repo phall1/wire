@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/GPOS",
+  "family": "dns-rrtype",
+  "slug": "GPOS",
+  "title": "GPOS — Geographical Position (type 27)",
+  "summary": "DNS resource record type GPOS (numeric type 27): Geographical Position. Defined in RFC1712.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 27,
+    "reference_rfcs": [
+      "RFC1712"
+    ],
+    "raw_columns": {
+      "TYPE": "GPOS",
+      "Value": "27",
+      "Meaning": "Geographical Position",
+      "Reference": "[RFC1712]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

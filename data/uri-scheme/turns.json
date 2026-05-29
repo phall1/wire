@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/turns",
+  "family": "uri-scheme",
+  "slug": "turns",
+  "title": "turns: — turns",
+  "summary": "URI scheme \"turns:\" — turns. IANA status: Permanent. Defined in RFC7065.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "turns",
+    "reference_rfcs": [
+      "RFC7065"
+    ],
+    "raw_columns": {
+      "URI Scheme": "turns",
+      "Template": "",
+      "Description": "turns",
+      "Status": "Permanent",
+      "CRI Scheme Number": "1926",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC7065]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

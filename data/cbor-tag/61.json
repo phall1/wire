@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/61",
+  "family": "cbor-tag",
+  "slug": "61",
+  "title": "CBOR tag 61 — CBOR Web Token (CWT)",
+  "summary": "CBOR tag 61 (data item: CBOR Web Token (CWT)): CBOR Web Token (CWT). Defined in RFC8392.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 61,
+    "reference_rfcs": [
+      "RFC8392"
+    ],
+    "raw_columns": {
+      "Tag": "61",
+      "Data Item": "CBOR Web Token (CWT)",
+      "Semantics": "CBOR Web Token (CWT)",
+      "Reference": "[RFC8392][Michael_B._Jones]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/icap",
+  "family": "uri-scheme",
+  "slug": "icap",
+  "title": "icap: — Internet Content Adaptation Protocol",
+  "summary": "URI scheme \"icap:\" — Internet Content Adaptation Protocol. IANA status: Permanent. Defined in RFC3507.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "icap",
+    "reference_rfcs": [
+      "RFC3507"
+    ],
+    "raw_columns": {
+      "URI Scheme": "icap",
+      "Template": "",
+      "Description": "Internet Content Adaptation Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "12566",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3507]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

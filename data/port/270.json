@@ -1,0 +1,40 @@
+{
+  "id": "port/270",
+  "family": "port",
+  "slug": "270",
+  "title": "Port 270 — gist",
+  "summary": "Well-known port 270 (tcp/udp): Reserved. Service name: gist. Referenced in RFC5971.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 270,
+    "reference_rfcs": [
+      "RFC5971"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "",
+      "Port Number": "270",
+      "Transport Protocol": "tcp",
+      "Description": "Reserved",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

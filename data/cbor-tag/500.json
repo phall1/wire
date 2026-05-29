@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/500",
+  "family": "cbor-tag",
+  "slug": "500",
+  "title": "CBOR tag 500 — Earmarked for CoRIM",
+  "summary": "CBOR tag 500 (data item: any): Earmarked for CoRIM.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 500,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "500",
+      "Data Item": "any",
+      "Semantics": "Earmarked for CoRIM",
+      "Reference": "[draft-ietf-rats-corim-07]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

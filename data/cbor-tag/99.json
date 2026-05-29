@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/99",
+  "family": "cbor-tag",
+  "slug": "99",
+  "title": "CBOR tag 99 — CRI Reference",
+  "summary": "CBOR tag 99 (data item: array): CRI Reference.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 99,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "99",
+      "Data Item": "array",
+      "Semantics": "CRI Reference",
+      "Reference": "[RFC-ietf-core-href-29]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

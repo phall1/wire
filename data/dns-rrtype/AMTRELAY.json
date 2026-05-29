@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/AMTRELAY",
+  "family": "dns-rrtype",
+  "slug": "AMTRELAY",
+  "title": "AMTRELAY — Automatic Multicast Tunneling Relay (type 260)",
+  "summary": "DNS resource record type AMTRELAY (numeric type 260): Automatic Multicast Tunneling Relay. Defined in RFC8777.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 260,
+    "reference_rfcs": [
+      "RFC8777"
+    ],
+    "registration_date": "2019-02-06",
+    "raw_columns": {
+      "TYPE": "AMTRELAY",
+      "Value": "260",
+      "Meaning": "Automatic Multicast Tunneling Relay",
+      "Reference": "[RFC8777]",
+      "Template": "AMTRELAY/amtrelay-completed-template",
+      "Registration Date": "2019-02-06"
+    }
+  },
+  "updated": "2026-05-29"
+}

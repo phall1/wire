@@ -1,0 +1,30 @@
+{
+  "id": "uri-scheme/doi",
+  "family": "uri-scheme",
+  "slug": "doi",
+  "title": "doi: — doi",
+  "summary": "URI scheme \"doi:\" — doi. IANA status: Permanent.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "doi",
+    "reference_rfcs": [],
+    "raw_columns": {
+      "URI Scheme": "doi",
+      "Template": "",
+      "Description": "doi",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13014",
+      "Well-Known URI Support": "-",
+      "Reference": "[DOI URI Scheme][Pierre-Anthony_Lemieux][DOI_Foundation]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

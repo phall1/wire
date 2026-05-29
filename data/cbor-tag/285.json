@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/285",
+  "family": "cbor-tag",
+  "slug": "285",
+  "title": "CBOR tag 285 — SUIT_Report_Protected",
+  "summary": "CBOR tag 285 (data item: array): SUIT_Report_Protected.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 285,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "285",
+      "Data Item": "array",
+      "Semantics": "SUIT_Report_Protected",
+      "Reference": "[RFC-ietf-suit-report-19]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

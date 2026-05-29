@@ -1,0 +1,29 @@
+{
+  "id": "http-method/PROPPATCH",
+  "family": "http-method",
+  "slug": "PROPPATCH",
+  "title": "PROPPATCH",
+  "summary": "HTTP request method PROPPATCH (safe: no, idempotent: yes). Defined in RFC4918, RFC8144.",
+  "kind": "method",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-methods/methods.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 21 Nov 2025 20:46:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "PROPPATCH",
+    "reference_rfcs": [
+      "RFC4918",
+      "RFC8144"
+    ],
+    "raw_columns": {
+      "Method Name": "PROPPATCH",
+      "Safe": "no",
+      "Idempotent": "yes",
+      "Reference": "[RFC4918, Section 9.2][RFC8144, Section 2.2]"
+    }
+  },
+  "updated": "2026-05-29"
+}

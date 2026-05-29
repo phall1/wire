@@ -1,0 +1,41 @@
+{
+  "id": "port/143",
+  "family": "port",
+  "slug": "143",
+  "title": "Port 143 — imap",
+  "summary": "Well-known port 143 (tcp/udp): Internet Message Access Protocol. Service name: imap. Referenced in RFC3501, RFC9051.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 143,
+    "reference_rfcs": [
+      "RFC3501",
+      "RFC9051"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "imap",
+      "Port Number": "143",
+      "Transport Protocol": "tcp",
+      "Description": "Internet Message Access Protocol",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2021-02-22",
+      "Reference": "[RFC3501][RFC9051]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

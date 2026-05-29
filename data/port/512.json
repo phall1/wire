@@ -1,0 +1,42 @@
+{
+  "id": "port/512",
+  "family": "port",
+  "slug": "512",
+  "title": "Port 512 — exec (+2 more)",
+  "summary": "Well-known port 512 (tcp/udp): remote process execution; authentication performed using passwords and UNIX login names. Service names: exec, comsat, biff.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 512,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "exec",
+      "Port Number": "512",
+      "Transport Protocol": "tcp",
+      "Description": "remote process execution; authentication performed using passwords and UNIX login names",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "comsat",
+    "biff"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/635",
+  "family": "port",
+  "slug": "635",
+  "title": "Port 635 — rlzdbase",
+  "summary": "Well-known port 635 (tcp/udp): RLZ DBase. Service name: rlzdbase.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 635,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "rlzdbase",
+      "Port Number": "635",
+      "Transport Protocol": "tcp",
+      "Description": "RLZ DBase",
+      "Assignee": "[Michael_Ginn]",
+      "Contact": "[Michael_Ginn]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

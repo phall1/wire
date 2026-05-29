@@ -1,0 +1,38 @@
+{
+  "id": "port/90",
+  "family": "port",
+  "slug": "90",
+  "title": "Port 90 — dnsix",
+  "summary": "Well-known port 90 (tcp/udp): DNSIX Securit Attribute Token Map. Service name: dnsix.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 90,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dnsix",
+      "Port Number": "90",
+      "Transport Protocol": "tcp",
+      "Description": "DNSIX Securit Attribute Token Map",
+      "Assignee": "[Charles_Watt]",
+      "Contact": "[Charles_Watt]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "PORT 90 also being used unofficially by Pointcast",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

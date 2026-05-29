@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/104",
+  "family": "cbor-tag",
+  "slug": "104",
+  "title": "CBOR tag 104 — Geographic Coordinate Reference System WKT or EPSG number",
+  "summary": "CBOR tag 104 (data item: multiple): Geographic Coordinate Reference System WKT or EPSG number.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 104,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "104",
+      "Data Item": "multiple",
+      "Semantics": "Geographic Coordinate Reference System WKT or EPSG number",
+      "Reference": "[draft-clarke-cbor-crs-01]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

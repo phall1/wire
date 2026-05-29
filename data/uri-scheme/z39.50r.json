@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/z39.50r",
+  "family": "uri-scheme",
+  "slug": "z39.50r",
+  "title": "z39.50r: — Z39.50 Retrieval",
+  "summary": "URI scheme \"z39.50r:\" — Z39.50 Retrieval. IANA status: Permanent. Defined in RFC2056.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "z39.50r",
+    "reference_rfcs": [
+      "RFC2056"
+    ],
+    "raw_columns": {
+      "URI Scheme": "z39.50r",
+      "Template": "",
+      "Description": "Z39.50 Retrieval",
+      "Status": "Permanent",
+      "CRI Scheme Number": "8159",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2056]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

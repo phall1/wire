@@ -1,0 +1,38 @@
+{
+  "id": "port/224",
+  "family": "port",
+  "slug": "224",
+  "title": "Port 224 — masqdialer",
+  "summary": "Well-known port 224 (tcp/udp): masqdialer. Service name: masqdialer.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 224,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "masqdialer",
+      "Port Number": "224",
+      "Transport Protocol": "tcp",
+      "Description": "masqdialer",
+      "Assignee": "[Charles_Wright]",
+      "Contact": "[Charles_Wright]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": "Possible Conflict of Port 222 with \"Masqdialer\""
+    }
+  },
+  "updated": "2026-05-29"
+}

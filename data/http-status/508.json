@@ -1,0 +1,27 @@
+{
+  "id": "http-status/508",
+  "family": "http-status",
+  "slug": "508",
+  "title": "508 Loop Detected",
+  "summary": "HTTP status code 508 Loop Detected. Defined in RFC5842.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 508,
+    "reference_rfcs": [
+      "RFC5842"
+    ],
+    "raw_columns": {
+      "Value": "508",
+      "Description": "Loop Detected",
+      "Reference": "[RFC5842]"
+    }
+  },
+  "updated": "2026-05-29"
+}

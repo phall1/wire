@@ -1,0 +1,28 @@
+{
+  "id": "http-method/MKACTIVITY",
+  "family": "http-method",
+  "slug": "MKACTIVITY",
+  "title": "MKACTIVITY",
+  "summary": "HTTP request method MKACTIVITY (safe: no, idempotent: yes). Defined in RFC3253.",
+  "kind": "method",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-methods/methods.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 21 Nov 2025 20:46:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "MKACTIVITY",
+    "reference_rfcs": [
+      "RFC3253"
+    ],
+    "raw_columns": {
+      "Method Name": "MKACTIVITY",
+      "Safe": "no",
+      "Idempotent": "yes",
+      "Reference": "[RFC3253, Section 13.5]"
+    }
+  },
+  "updated": "2026-05-29"
+}

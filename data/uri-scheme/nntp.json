@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/nntp",
+  "family": "uri-scheme",
+  "slug": "nntp",
+  "title": "nntp: — USENET news using NNTP access",
+  "summary": "URI scheme \"nntp:\" — USENET news using NNTP access. IANA status: Permanent. Defined in RFC5538.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "nntp",
+    "reference_rfcs": [
+      "RFC5538"
+    ],
+    "raw_columns": {
+      "URI Scheme": "nntp",
+      "Template": "",
+      "Description": "USENET news using NNTP access",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13499",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC5538]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

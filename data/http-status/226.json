@@ -1,0 +1,27 @@
+{
+  "id": "http-status/226",
+  "family": "http-status",
+  "slug": "226",
+  "title": "226 IM Used",
+  "summary": "HTTP status code 226 IM Used. Defined in RFC3229.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 226,
+    "reference_rfcs": [
+      "RFC3229"
+    ],
+    "raw_columns": {
+      "Value": "226",
+      "Description": "IM Used",
+      "Reference": "[RFC3229]"
+    }
+  },
+  "updated": "2026-05-29"
+}

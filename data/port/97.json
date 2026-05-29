@@ -1,0 +1,38 @@
+{
+  "id": "port/97",
+  "family": "port",
+  "slug": "97",
+  "title": "Port 97 — swift-rvf",
+  "summary": "Well-known port 97 (tcp/udp): Swift Remote Virtural File Protocol. Service name: swift-rvf.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 97,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "swift-rvf",
+      "Port Number": "97",
+      "Transport Protocol": "tcp",
+      "Description": "Swift Remote Virtural File Protocol",
+      "Assignee": "[Maurice_R_Turcotte]",
+      "Contact": "[Maurice_R_Turcotte]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

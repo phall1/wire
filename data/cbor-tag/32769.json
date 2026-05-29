@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/32769",
+  "family": "cbor-tag",
+  "slug": "32769",
+  "title": "CBOR tag 32769 — External reference",
+  "summary": "CBOR tag 32769 (data item: multiple): External reference.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 32769,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "32769",
+      "Data Item": "multiple",
+      "Semantics": "External reference",
+      "Reference": "[https://gitlab.com/Hawk777/cbor-specs/-/blob/main/external-reference.md][Christopher_Head]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

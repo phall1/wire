@@ -1,0 +1,38 @@
+{
+  "id": "port/595",
+  "family": "port",
+  "slug": "595",
+  "title": "Port 595 — cab-protocol",
+  "summary": "Well-known port 595 (tcp/udp): CAB Protocol. Service name: cab-protocol.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 595,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "cab-protocol",
+      "Port Number": "595",
+      "Transport Protocol": "tcp",
+      "Description": "CAB Protocol",
+      "Assignee": "[Winston_Hetherington]",
+      "Contact": "[Winston_Hetherington]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "port/587",
+  "family": "port",
+  "slug": "587",
+  "title": "Port 587 — submission",
+  "summary": "Well-known port 587 (tcp/udp): Message Submission. Service name: submission. Referenced in RFC6409.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 587,
+    "reference_rfcs": [
+      "RFC6409"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "submission",
+      "Port Number": "587",
+      "Transport Protocol": "tcp",
+      "Description": "Message Submission",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "2011-11-17",
+      "Reference": "[RFC6409]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

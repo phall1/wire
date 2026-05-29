@@ -1,0 +1,38 @@
+{
+  "id": "port/651",
+  "family": "port",
+  "slug": "651",
+  "title": "Port 651 — ieee-mms",
+  "summary": "Well-known port 651 (tcp/udp): IEEE MMS. Service name: ieee-mms.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 651,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ieee-mms",
+      "Port Number": "651",
+      "Transport Protocol": "tcp",
+      "Description": "IEEE MMS",
+      "Assignee": "[Curtis_Anderson]",
+      "Contact": "[Curtis_Anderson]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/dtn",
+  "family": "uri-scheme",
+  "slug": "dtn",
+  "title": "dtn: — DTNRG research and development",
+  "summary": "URI scheme \"dtn:\" — DTNRG research and development. IANA status: Permanent. Defined in RFC9171.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "dtn",
+    "reference_rfcs": [
+      "RFC9171"
+    ],
+    "raw_columns": {
+      "URI Scheme": "dtn",
+      "Template": "",
+      "Description": "DTNRG research and development",
+      "Status": "Permanent",
+      "CRI Scheme Number": "7456",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC9171]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

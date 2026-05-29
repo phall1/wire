@@ -1,0 +1,43 @@
+{
+  "id": "port/631",
+  "family": "port",
+  "slug": "631",
+  "title": "Port 631 — ipp (+1 more)",
+  "summary": "Well-known port 631 (tcp/udp): IPP (Internet Printing Protocol). Service names: ipp, ipps. Referenced in RFC8011.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 631,
+    "reference_rfcs": [
+      "RFC8011"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ipp",
+      "Port Number": "631",
+      "Transport Protocol": "tcp",
+      "Description": "IPP (Internet Printing Protocol)",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2018-07-06",
+      "Reference": "[RFC8011]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": "Defined TXT keys: See BonjourPrinting.pdf."
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "ipps"
+  ]
+}

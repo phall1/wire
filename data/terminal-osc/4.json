@@ -1,0 +1,93 @@
+{
+  "id": "terminal-osc/4",
+  "family": "terminal-osc",
+  "slug": "4",
+  "title": "OSC 4 — Set / query color palette entry",
+  "summary": "OSC 4 ; c ; spec ST sets palette color number c to spec, where spec is an X11 color name or rgb:RR/GG/BB form. OSC 4 ; c ; ? ST queries the current value of palette entry c; the terminal replies with OSC 4 ; c ; rgb:RRRR/GGGG/BBBB ST. Lets a program recolor or read any of the 256 indexed colors at runtime.",
+  "kind": "control-sequence",
+  "aliases": [
+    "set color palette",
+    "query color palette",
+    "OSC 4",
+    "ESC ] 4",
+    "set ANSI color"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 4 ; c ; spec -> Change Color Number c to the color specified by spec. Any number of c ; spec pairs may be given. A '?' for spec queries and the terminal reports the color back with a control sequence of the same form."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/104",
+    "terminal-csi/sgr"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 4,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 4 is an xterm convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm also accepts BEL. Emit ST, accept both. Query replies are likewise terminated with ST (or BEL)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set color",
+        "meaning": "OSC 4 ; c ; spec ST sets palette index c (0–255) to spec. spec is an X11 color name (e.g. 'red') or an rgb:RR/GG/BB / #RRGGBB form. Multiple c ; spec pairs may be concatenated in one sequence.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]4;1;rgb:ff/00/00\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 4 ; 1 ; r g b : f f / 0 0 / 0 0 ESC \\   ==  \\x1b]4;1;rgb:ff/00/00\\x1b\\\\   (set palette color 1 to red)",
+        "byte_sequence_BEL": "\u001b]4;1;rgb:ff/00/00\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 4 ; 1 ; r g b : f f / 0 0 / 0 0 BEL   ==  \\x1b]4;1;rgb:ff/00/00\\x07",
+        "subparams": []
+      },
+      {
+        "id": "query",
+        "anchor": "#query",
+        "name": "Query color",
+        "meaning": "OSC 4 ; c ; ? ST asks the terminal for the current value of palette index c. The terminal replies with OSC 4 ; c ; rgb:RRRR/GGGG/BBBB ST (note 16-bit-per-channel form in the reply).",
+        "required": false,
+        "byte_sequence_ST": "\u001b]4;1;?\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 4 ; 1 ; ? ESC \\   ==  \\x1b]4;1;?\\x1b\\\\   (query palette color 1; reply e.g. \\x1b]4;1;rgb:ffff/0000/0000\\x1b\\\\)",
+        "byte_sequence_BEL": "\u001b]4;1;?\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 4 ; 1 ; ? BEL   ==  \\x1b]4;1;?\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The query REPLY uses 16-bit-per-channel rgb:RRRR/GGGG/BBBB (four hex digits per channel), while many setters use 8-bit rgb:RR/GG/BB; do not assume the reply width matches what you wrote.",
+      "Reading a query reply requires the program to read from the tty and parse the OSC; if the terminal does not support the query (or it is disabled), the read blocks — always use a timeout.",
+      "Use OSC 104 to reset palette entries back to their defaults (OSC 104 with no parameters resets all colors).",
+      "Related OSCs set special colors, not palette indices: OSC 10 = default foreground, OSC 11 = default background, OSC 12 = cursor color. These are distinct from OSC 4's indexed palette.",
+      "spec parsing follows X11 XParseColor: names, #RGB / #RRGGBB / #RRRGGGBBB / #RRRRGGGGBBBB, and rgb:/rgbi: forms are accepted; portability is best with the rgb:RR/GG/BB form."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 4 set and query forms are syntactically valid OSC strings in both ST and BEL terminator forms; the query carries the literal '?' spec.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

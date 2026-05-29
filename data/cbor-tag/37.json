@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/37",
+  "family": "cbor-tag",
+  "slug": "37",
+  "title": "CBOR tag 37 — Binary UUID ([RFC9562, Section 4])",
+  "summary": "CBOR tag 37 (data item: byte string): Binary UUID ([RFC9562, Section 4]).",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 37,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "37",
+      "Data Item": "byte string",
+      "Semantics": "Binary UUID ([RFC9562, Section 4])",
+      "Reference": "[https://github.com/lucas-clemente/cbor-specs/blob/master/uuid.md][Lucas_Clemente]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

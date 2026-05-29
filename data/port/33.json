@@ -1,0 +1,38 @@
+{
+  "id": "port/33",
+  "family": "port",
+  "slug": "33",
+  "title": "Port 33 — dsp",
+  "summary": "Well-known port 33 (tcp/udp): Display Support Protocol. Service name: dsp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 33,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dsp",
+      "Port Number": "33",
+      "Transport Protocol": "tcp",
+      "Description": "Display Support Protocol",
+      "Assignee": "[Ed_Cain]",
+      "Contact": "[Ed_Cain]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

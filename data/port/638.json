@@ -1,0 +1,38 @@
+{
+  "id": "port/638",
+  "family": "port",
+  "slug": "638",
+  "title": "Port 638 — mcns-sec",
+  "summary": "Well-known port 638 (tcp/udp): mcns-sec. Service name: mcns-sec.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 638,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mcns-sec",
+      "Port Number": "638",
+      "Transport Protocol": "tcp",
+      "Description": "mcns-sec",
+      "Assignee": "[Kaz_Ozawa]",
+      "Contact": "[Kaz_Ozawa]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

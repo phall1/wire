@@ -1,0 +1,38 @@
+{
+  "id": "port/50",
+  "family": "port",
+  "slug": "50",
+  "title": "Port 50 — re-mail-ck",
+  "summary": "Well-known port 50 (tcp/udp): Remote Mail Checking Protocol. Service name: re-mail-ck.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 50,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "re-mail-ck",
+      "Port Number": "50",
+      "Transport Protocol": "tcp",
+      "Description": "Remote Mail Checking Protocol",
+      "Assignee": "[Steve_Dorner]",
+      "Contact": "[Steve_Dorner]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

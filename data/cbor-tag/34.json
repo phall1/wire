@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/34",
+  "family": "cbor-tag",
+  "slug": "34",
+  "title": "CBOR tag 34 — base64; see Section 3.4.5.3",
+  "summary": "CBOR tag 34 (data item: text string): base64; see Section 3.4.5.3. Defined in RFC8949.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 34,
+    "reference_rfcs": [
+      "RFC8949"
+    ],
+    "raw_columns": {
+      "Tag": "34",
+      "Data Item": "text string",
+      "Semantics": "base64; see Section 3.4.5.3",
+      "Reference": "[RFC8949]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

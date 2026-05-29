@@ -1,0 +1,28 @@
+{
+  "id": "http-method/SEARCH",
+  "family": "http-method",
+  "slug": "SEARCH",
+  "title": "SEARCH",
+  "summary": "HTTP request method SEARCH (safe: yes, idempotent: yes). Defined in RFC5323.",
+  "kind": "method",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-methods/methods.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 21 Nov 2025 20:46:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "SEARCH",
+    "reference_rfcs": [
+      "RFC5323"
+    ],
+    "raw_columns": {
+      "Method Name": "SEARCH",
+      "Safe": "yes",
+      "Idempotent": "yes",
+      "Reference": "[RFC5323, Section 2]"
+    }
+  },
+  "updated": "2026-05-29"
+}

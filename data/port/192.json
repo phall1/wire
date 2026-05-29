@@ -1,0 +1,38 @@
+{
+  "id": "port/192",
+  "family": "port",
+  "slug": "192",
+  "title": "Port 192 — osu-nms",
+  "summary": "Well-known port 192 (tcp/udp): OSU Network Monitoring System. Service name: osu-nms.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 192,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "osu-nms",
+      "Port Number": "192",
+      "Transport Protocol": "tcp",
+      "Description": "OSU Network Monitoring System",
+      "Assignee": "[Doug_Karl]",
+      "Contact": "[Doug_Karl]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

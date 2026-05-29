@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/geo",
+  "family": "uri-scheme",
+  "slug": "geo",
+  "title": "geo: — Geographic Locations",
+  "summary": "URI scheme \"geo:\" — Geographic Locations. IANA status: Permanent. Defined in RFC5870.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "geo",
+    "reference_rfcs": [
+      "RFC5870"
+    ],
+    "raw_columns": {
+      "URI Scheme": "geo",
+      "Template": "",
+      "Description": "Geographic Locations",
+      "Status": "Permanent",
+      "CRI Scheme Number": "3342",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC5870]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

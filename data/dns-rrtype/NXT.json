@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/NXT",
+  "family": "dns-rrtype",
+  "slug": "NXT",
+  "title": "NXT — Next Domain (OBSOLETE) (type 30)",
+  "summary": "DNS resource record type NXT (numeric type 30): Next Domain (OBSOLETE). Defined in RFC2535, RFC3755.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 30,
+    "reference_rfcs": [
+      "RFC2535",
+      "RFC3755"
+    ],
+    "raw_columns": {
+      "TYPE": "NXT",
+      "Value": "30",
+      "Meaning": "Next Domain (OBSOLETE)",
+      "Reference": "[RFC2535][RFC3755]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

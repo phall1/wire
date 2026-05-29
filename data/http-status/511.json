@@ -1,0 +1,27 @@
+{
+  "id": "http-status/511",
+  "family": "http-status",
+  "slug": "511",
+  "title": "511 Network Authentication Required",
+  "summary": "HTTP status code 511 Network Authentication Required. Defined in RFC6585.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 511,
+    "reference_rfcs": [
+      "RFC6585"
+    ],
+    "raw_columns": {
+      "Value": "511",
+      "Description": "Network Authentication Required",
+      "Reference": "[RFC6585]"
+    }
+  },
+  "updated": "2026-05-29"
+}

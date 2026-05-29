@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/201",
+  "family": "cbor-tag",
+  "slug": "201",
+  "title": "CBOR tag 201 — enclosed dCBOR",
+  "summary": "CBOR tag 201 (data item: any): enclosed dCBOR.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 201,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "201",
+      "Data Item": "any",
+      "Semantics": "enclosed dCBOR",
+      "Reference": "[draft-mcnally-deterministic-cbor-10]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

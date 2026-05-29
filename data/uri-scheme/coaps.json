@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/coaps",
+  "family": "uri-scheme",
+  "slug": "coaps",
+  "title": "coaps: — coaps",
+  "summary": "URI scheme \"coaps:\" — coaps. IANA status: Permanent. Defined in RFC7252.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "coaps",
+    "reference_rfcs": [
+      "RFC7252"
+    ],
+    "raw_columns": {
+      "URI Scheme": "coaps",
+      "Template": "",
+      "Description": "coaps",
+      "Status": "Permanent",
+      "CRI Scheme Number": "1",
+      "Well-Known URI Support": "[RFC7252]",
+      "Reference": "[RFC7252]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

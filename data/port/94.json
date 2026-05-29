@@ -1,0 +1,38 @@
+{
+  "id": "port/94",
+  "family": "port",
+  "slug": "94",
+  "title": "Port 94 — objcall",
+  "summary": "Well-known port 94 (tcp/udp): Tivoli Object Dispatcher. Service name: objcall.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 94,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "objcall",
+      "Port Number": "94",
+      "Transport Protocol": "tcp",
+      "Description": "Tivoli Object Dispatcher",
+      "Assignee": "[Tom_Bereiter]",
+      "Contact": "[Tom_Bereiter]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

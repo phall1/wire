@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/pkcs11",
+  "family": "uri-scheme",
+  "slug": "pkcs11",
+  "title": "pkcs11: — PKCS#11",
+  "summary": "URI scheme \"pkcs11:\" — PKCS#11. IANA status: Permanent. Defined in RFC7512.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "pkcs11",
+    "reference_rfcs": [
+      "RFC7512"
+    ],
+    "raw_columns": {
+      "URI Scheme": "pkcs11",
+      "Template": "",
+      "Description": "PKCS#11",
+      "Status": "Permanent",
+      "CRI Scheme Number": "9312",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC7512]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

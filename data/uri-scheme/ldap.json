@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/ldap",
+  "family": "uri-scheme",
+  "slug": "ldap",
+  "title": "ldap: — Lightweight Directory Access Protocol",
+  "summary": "URI scheme \"ldap:\" — Lightweight Directory Access Protocol. IANA status: Permanent. Defined in RFC4516.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ldap",
+    "reference_rfcs": [
+      "RFC4516"
+    ],
+    "raw_columns": {
+      "URI Scheme": "ldap",
+      "Template": "",
+      "Description": "Lightweight Directory Access Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13442",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4516]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

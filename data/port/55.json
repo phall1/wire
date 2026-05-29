@@ -1,0 +1,38 @@
+{
+  "id": "port/55",
+  "family": "port",
+  "slug": "55",
+  "title": "Port 55 — isi-gl",
+  "summary": "Well-known port 55 (tcp/udp): ISI Graphics Language. Service name: isi-gl.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 55,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "isi-gl",
+      "Port Number": "55",
+      "Transport Protocol": "tcp",
+      "Description": "ISI Graphics Language",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

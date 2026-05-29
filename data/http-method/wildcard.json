@@ -1,0 +1,31 @@
+{
+  "id": "http-method/wildcard",
+  "family": "http-method",
+  "slug": "wildcard",
+  "title": "* (wildcard, CONNECT/Accept)",
+  "summary": "HTTP request method * (safe: no, idempotent: no). Defined in RFC9110.",
+  "kind": "method",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-methods/methods.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 21 Nov 2025 20:46:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "*",
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Method Name": "*",
+      "Safe": "no",
+      "Idempotent": "no",
+      "Reference": "[RFC9110, Section 18.2]"
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "*"
+  ]
+}

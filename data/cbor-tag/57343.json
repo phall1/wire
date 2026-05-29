@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/57343",
+  "family": "cbor-tag",
+  "slug": "57343",
+  "title": "CBOR tag 57343 — Identify and define a record structure (a sequence of prope…",
+  "summary": "CBOR tag 57343 (data item: array): Identify and define a record structure (a sequence of property names), and use that record structure definition to interpret the included values..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 57343,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "57343",
+      "Data Item": "array",
+      "Semantics": "Identify and define a record structure (a sequence of property names), and use that record structure definition to interpret the included values.",
+      "Reference": "[https://github.com/kriszyp/cbor-records][Kris_Zyp]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

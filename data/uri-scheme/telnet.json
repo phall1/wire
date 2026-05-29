@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/telnet",
+  "family": "uri-scheme",
+  "slug": "telnet",
+  "title": "telnet: — Reference to interactive sessions",
+  "summary": "URI scheme \"telnet:\" — Reference to interactive sessions. IANA status: Permanent. Defined in RFC4248.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "telnet",
+    "reference_rfcs": [
+      "RFC4248"
+    ],
+    "raw_columns": {
+      "URI Scheme": "telnet",
+      "Template": "",
+      "Description": "Reference to interactive sessions",
+      "Status": "Permanent",
+      "CRI Scheme Number": "10995",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4248]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

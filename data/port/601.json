@@ -1,0 +1,40 @@
+{
+  "id": "port/601",
+  "family": "port",
+  "slug": "601",
+  "title": "Port 601 — syslog-conn",
+  "summary": "Well-known port 601 (tcp/udp): Reliable Syslog Service. Service name: syslog-conn. Referenced in RFC3195.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 601,
+    "reference_rfcs": [
+      "RFC3195"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "syslog-conn",
+      "Port Number": "601",
+      "Transport Protocol": "tcp",
+      "Description": "Reliable Syslog Service",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC3195]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

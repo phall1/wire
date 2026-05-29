@@ -1,0 +1,38 @@
+{
+  "id": "port/243",
+  "family": "port",
+  "slug": "243",
+  "title": "Port 243 — sur-meas",
+  "summary": "Well-known port 243 (tcp/udp): Survey Measurement. Service name: sur-meas.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 243,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sur-meas",
+      "Port Number": "243",
+      "Transport Protocol": "tcp",
+      "Description": "Survey Measurement",
+      "Assignee": "[Dave_Clark]",
+      "Contact": "[Dave_Clark]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

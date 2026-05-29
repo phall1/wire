@@ -1,0 +1,38 @@
+{
+  "id": "port/262",
+  "family": "port",
+  "slug": "262",
+  "title": "Port 262 — arcisdms",
+  "summary": "Well-known port 262 (tcp/udp): Arcisdms. Service name: arcisdms.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 262,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "arcisdms",
+      "Port Number": "262",
+      "Transport Protocol": "tcp",
+      "Description": "Arcisdms",
+      "Assignee": "[Russell_Crook]",
+      "Contact": "[Russell_Crook]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

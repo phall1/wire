@@ -1,0 +1,38 @@
+{
+  "id": "port/281",
+  "family": "port",
+  "slug": "281",
+  "title": "Port 281 — personal-link",
+  "summary": "Well-known port 281 (tcp/udp): Personal Link. Service name: personal-link.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 281,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "personal-link",
+      "Port Number": "281",
+      "Transport Protocol": "tcp",
+      "Description": "Personal Link",
+      "Assignee": "[Dan_Cummings]",
+      "Contact": "[Dan_Cummings]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

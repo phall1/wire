@@ -1,0 +1,38 @@
+{
+  "id": "port/628",
+  "family": "port",
+  "slug": "628",
+  "title": "Port 628 — qmqp",
+  "summary": "Well-known port 628 (tcp/udp): QMQP. Service name: qmqp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 628,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "qmqp",
+      "Port Number": "628",
+      "Transport Protocol": "tcp",
+      "Description": "QMQP",
+      "Assignee": "[D_J_Bernstein]",
+      "Contact": "[D_J_Bernstein]",
+      "Registration Date": "",
+      "Modification Date": "2018-04-05",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

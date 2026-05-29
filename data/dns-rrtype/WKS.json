@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/WKS",
+  "family": "dns-rrtype",
+  "slug": "WKS",
+  "title": "WKS — a well known service description (type 11)",
+  "summary": "DNS resource record type WKS (numeric type 11): a well known service description. Defined in RFC1035.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 11,
+    "reference_rfcs": [
+      "RFC1035"
+    ],
+    "raw_columns": {
+      "TYPE": "WKS",
+      "Value": "11",
+      "Meaning": "a well known service description",
+      "Reference": "[RFC1035]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

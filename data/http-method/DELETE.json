@@ -1,0 +1,28 @@
+{
+  "id": "http-method/DELETE",
+  "family": "http-method",
+  "slug": "DELETE",
+  "title": "DELETE",
+  "summary": "HTTP request method DELETE (safe: no, idempotent: yes). Defined in RFC9110.",
+  "kind": "method",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-methods/methods.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 21 Nov 2025 20:46:23 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "DELETE",
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Method Name": "DELETE",
+      "Safe": "no",
+      "Idempotent": "yes",
+      "Reference": "[RFC9110, Section 9.3.5]"
+    }
+  },
+  "updated": "2026-05-29"
+}

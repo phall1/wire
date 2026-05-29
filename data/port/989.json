@@ -1,0 +1,38 @@
+{
+  "id": "port/989",
+  "family": "port",
+  "slug": "989",
+  "title": "Port 989 — ftps-data",
+  "summary": "Well-known port 989 (tcp/udp): ftp protocol, data, over TLS/SSL. Service name: ftps-data.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 989,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ftps-data",
+      "Port Number": "989",
+      "Transport Protocol": "tcp",
+      "Description": "ftp protocol, data, over TLS/SSL",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/go",
+  "family": "uri-scheme",
+  "slug": "go",
+  "title": "go: — go",
+  "summary": "URI scheme \"go:\" — go. IANA status: Permanent. Defined in RFC3368.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "go",
+    "reference_rfcs": [
+      "RFC3368"
+    ],
+    "raw_columns": {
+      "URI Scheme": "go",
+      "Template": "",
+      "Description": "go",
+      "Status": "Permanent",
+      "CRI Scheme Number": "5705",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3368]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

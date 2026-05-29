@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/acct",
+  "family": "uri-scheme",
+  "slug": "acct",
+  "title": "acct: — acct",
+  "summary": "URI scheme \"acct:\" — acct. IANA status: Permanent. Defined in RFC7565.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "acct",
+    "reference_rfcs": [
+      "RFC7565"
+    ],
+    "raw_columns": {
+      "URI Scheme": "acct",
+      "Template": "",
+      "Description": "acct",
+      "Status": "Permanent",
+      "CRI Scheme Number": "10229",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC7565]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

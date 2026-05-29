@@ -1,0 +1,27 @@
+{
+  "id": "http-status/421",
+  "family": "http-status",
+  "slug": "421",
+  "title": "421 Misdirected Request",
+  "summary": "HTTP status code 421 Misdirected Request. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 421,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "421",
+      "Description": "Misdirected Request",
+      "Reference": "[RFC9110, Section 15.5.20]"
+    }
+  },
+  "updated": "2026-05-29"
+}

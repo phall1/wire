@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/101",
+  "family": "cbor-tag",
+  "slug": "101",
+  "title": "CBOR tag 101 — alternatives as given by the uint + 128; see Section 9.1",
+  "summary": "CBOR tag 101 (data item: array [uint, any]): alternatives as given by the uint + 128; see Section 9.1.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 101,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "101",
+      "Data Item": "array [uint, any]",
+      "Semantics": "alternatives as given by the uint + 128; see Section 9.1",
+      "Reference": "[draft-bormann-cbor-notable-tags-07]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

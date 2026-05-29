@@ -1,0 +1,38 @@
+{
+  "id": "port/379",
+  "family": "port",
+  "slug": "379",
+  "title": "Port 379 — is99c",
+  "summary": "Well-known port 379 (tcp/udp): TIA/EIA/IS-99 modem client. Service name: is99c.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 379,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "is99c",
+      "Port Number": "379",
+      "Transport Protocol": "tcp",
+      "Description": "TIA/EIA/IS-99 modem client",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

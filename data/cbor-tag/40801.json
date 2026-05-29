@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/40801",
+  "family": "cbor-tag",
+  "slug": "40801",
+  "title": "CBOR tag 40801 — ur:ssh-public, Text format SSH public key",
+  "summary": "CBOR tag 40801 (data item: text string): ur:ssh-public, Text format SSH public key.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 40801,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "40801",
+      "Data Item": "text string",
+      "Semantics": "ur:ssh-public, Text format SSH public key",
+      "Reference": "[https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/357",
+  "family": "port",
+  "slug": "357",
+  "title": "Port 357 — bhevent",
+  "summary": "Well-known port 357 (tcp/udp): bhevent. Service name: bhevent.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 357,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "bhevent",
+      "Port Number": "357",
+      "Transport Protocol": "tcp",
+      "Description": "bhevent",
+      "Assignee": "[John_Kelly]",
+      "Contact": "[John_Kelly]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/gopher",
+  "family": "uri-scheme",
+  "slug": "gopher",
+  "title": "gopher: — The Gopher Protocol",
+  "summary": "URI scheme \"gopher:\" — The Gopher Protocol. IANA status: Permanent. Defined in RFC4266.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "gopher",
+    "reference_rfcs": [
+      "RFC4266"
+    ],
+    "raw_columns": {
+      "URI Scheme": "gopher",
+      "Template": "",
+      "Description": "The Gopher Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "8601",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4266]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

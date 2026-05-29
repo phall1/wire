@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/info",
+  "family": "uri-scheme",
+  "slug": "info",
+  "title": "info: — Information Assets with Identifiers in Public Namespaces. [RFC4452] (section 3) defines an \"info\" registry of public namespaces, which is maintained by NISO and can be accessed from [http://info-uri.info/].",
+  "summary": "URI scheme \"info:\" — Information Assets with Identifiers in Public Namespaces. [RFC4452] (section 3) defines an \"info\" registry of public namespaces, which is maintained by NISO and can be accessed from [http://info-uri.info/].. IANA status: Permanent. Defined in RFC4452.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "info",
+    "reference_rfcs": [
+      "RFC4452"
+    ],
+    "raw_columns": {
+      "URI Scheme": "info",
+      "Template": "",
+      "Description": "Information Assets with Identifiers in Public Namespaces. [RFC4452] (section 3) defines an \"info\" registry of public namespaces, which is maintained by NISO and can be accessed from [http://info-uri.info/].",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13846",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4452]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

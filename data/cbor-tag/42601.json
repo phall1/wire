@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/42601",
+  "family": "cbor-tag",
+  "slug": "42601",
+  "title": "CBOR tag 42601 — A metadata binding. The elements of the array are defined i…",
+  "summary": "CBOR tag 42601 (data item: array): A metadata binding. The elements of the array are defined in AdatP-4778.8. The tag is also used as part of the magic number in on-disk detached and encapsulating bindings..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 42601,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "42601",
+      "Data Item": "array",
+      "Semantics": "A metadata binding. The elements of the array are defined in AdatP-4778.8. The tag is also used as part of the magic number in on-disk detached and encapsulating bindings.",
+      "Reference": "[Aidan_Murdock]",
+      "Template": "template/42601"
+    }
+  },
+  "updated": "2026-05-29"
+}

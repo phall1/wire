@@ -1,0 +1,40 @@
+{
+  "id": "port/830",
+  "family": "port",
+  "slug": "830",
+  "title": "Port 830 — netconf-ssh",
+  "summary": "Well-known port 830 (tcp/udp): NETCONF over SSH. Service name: netconf-ssh. Referenced in RFC6242.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 830,
+    "reference_rfcs": [
+      "RFC6242"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "netconf-ssh",
+      "Port Number": "830",
+      "Transport Protocol": "tcp",
+      "Description": "NETCONF over SSH",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[RFC6242]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

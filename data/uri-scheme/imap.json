@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/imap",
+  "family": "uri-scheme",
+  "slug": "imap",
+  "title": "imap: — internet message access protocol",
+  "summary": "URI scheme \"imap:\" — internet message access protocol. IANA status: Permanent. Defined in RFC5092.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "imap",
+    "reference_rfcs": [
+      "RFC5092"
+    ],
+    "raw_columns": {
+      "URI Scheme": "imap",
+      "Template": "",
+      "Description": "internet message access protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "10119",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC5092]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

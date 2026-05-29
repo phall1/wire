@@ -1,0 +1,38 @@
+{
+  "id": "port/401",
+  "family": "port",
+  "slug": "401",
+  "title": "Port 401 — ups",
+  "summary": "Well-known port 401 (tcp/udp): Uninterruptible Power Supply. Service name: ups.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 401,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ups",
+      "Port Number": "401",
+      "Transport Protocol": "tcp",
+      "Description": "Uninterruptible Power Supply",
+      "Assignee": "[Charles_Bennett]",
+      "Contact": "[Charles_Bennett]",
+      "Registration Date": "2008-08-29",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dns-rrtype/AFSDB",
+  "family": "dns-rrtype",
+  "slug": "AFSDB",
+  "title": "AFSDB — for AFS Data Base location (type 18)",
+  "summary": "DNS resource record type AFSDB (numeric type 18): for AFS Data Base location. Defined in RFC1183, RFC5864.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 18,
+    "reference_rfcs": [
+      "RFC1183",
+      "RFC5864"
+    ],
+    "raw_columns": {
+      "TYPE": "AFSDB",
+      "Value": "18",
+      "Meaning": "for AFS Data Base location",
+      "Reference": "[RFC1183][RFC5864]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

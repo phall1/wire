@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/ext/terminal-escape.v1.schema.json",
+  "title": "ext_type: terminal-escape@1",
+  "description": "Extension block for terminal control sequences (OSC / CSI / DEC private modes). Byte sequences are stored in 7-bit ESC form using JSON \\u001b escapes; a *_readable sibling spells the bytes out for review. The support_matrix is pre-shaped to receive v2 behavioral-conformance results without migration.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["csi_or_osc", "terminator", "params"],
+  "properties": {
+    "csi_or_osc": { "type": "string", "enum": ["OSC", "CSI", "DEC-private-mode", "ESC"] },
+    "command_number": { "type": ["integer", "string"], "description": "The OSC/CSI command id (e.g. 133), or the canonical token for sequences without a number." },
+    "frame": {
+      "type": "object",
+      "description": "How the sequence is introduced.",
+      "properties": {
+        "introducer_7bit": { "type": "string" },
+        "introducer_7bit_readable": { "type": "string" },
+        "introducer_8bit": { "type": "string" },
+        "introducer_8bit_readable": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "terminator": {
+      "type": "string",
+      "description": "Accepted terminator(s). 'ST|BEL' records the ECMA-48-mandates-ST / xterm-also-accepts-BEL divergence.",
+      "enum": ["ST", "BEL", "ST|BEL", "none"]
+    },
+    "terminator_detail": {
+      "type": "object",
+      "properties": {
+        "canonical_ST_7bit": { "type": "string" },
+        "canonical_ST_7bit_readable": { "type": "string" },
+        "canonical_ST_8bit": { "type": "string" },
+        "canonical_ST_8bit_readable": { "type": "string" },
+        "alt_BEL": { "type": "string" },
+        "alt_BEL_readable": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "params": {
+      "type": "array",
+      "description": "Sub-facts addressed by #fragment (#A, #D, ...). For OSC 133 these are the A/B/C/D markers.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "meaning"],
+        "properties": {
+          "id": { "type": "string" },
+          "anchor": { "type": "string" },
+          "name": { "type": "string" },
+          "meaning": { "type": "string" },
+          "required": { "type": "boolean" },
+          "byte_sequence_ST": { "type": "string" },
+          "byte_sequence_ST_readable": { "type": "string" },
+          "byte_sequence_BEL": { "type": "string" },
+          "byte_sequence_BEL_readable": { "type": "string" },
+          "subparams": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "description": "Related/superset sequences (e.g. VS Code OSC 633). Cross-linked via core see_also.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "variant_of": { "type": ["string", "null"] },
+          "label": { "type": "string" },
+          "entry_id": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "support_matrix": {
+      "type": "array",
+      "description": "Per-terminal support. `level` is full|partial|none|variant. v2 behavioral conformance writes pass/fail here without schema change.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["terminal", "level"],
+        "properties": {
+          "terminal": { "type": "string" },
+          "version_added": { "type": "string" },
+          "level": { "type": "string", "enum": ["full", "partial", "none", "variant"] },
+          "variant_of": { "type": ["string", "null"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "gotchas": { "type": "array", "items": { "type": "string" } },
+    "v1_smoke_test": { "type": "object" }
+  }
+}

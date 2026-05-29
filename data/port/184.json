@@ -1,0 +1,38 @@
+{
+  "id": "port/184",
+  "family": "port",
+  "slug": "184",
+  "title": "Port 184 — ocserver",
+  "summary": "Well-known port 184 (tcp/udp): OCServer. Service name: ocserver.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 184,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ocserver",
+      "Port Number": "184",
+      "Transport Protocol": "tcp",
+      "Description": "OCServer",
+      "Assignee": "[Jerrilynn_Okamura]",
+      "Contact": "[Jerrilynn_Okamura]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

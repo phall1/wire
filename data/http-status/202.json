@@ -1,0 +1,27 @@
+{
+  "id": "http-status/202",
+  "family": "http-status",
+  "slug": "202",
+  "title": "202 Accepted",
+  "summary": "HTTP status code 202 Accepted. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 202,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "202",
+      "Description": "Accepted",
+      "Reference": "[RFC9110, Section 15.3.3]"
+    }
+  },
+  "updated": "2026-05-29"
+}

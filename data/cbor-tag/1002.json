@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/1002",
+  "family": "cbor-tag",
+  "slug": "1002",
+  "title": "CBOR tag 1002 — duration",
+  "summary": "CBOR tag 1002 (data item: map): duration. Defined in RFC9581.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1002,
+    "reference_rfcs": [
+      "RFC9581"
+    ],
+    "raw_columns": {
+      "Tag": "1002",
+      "Data Item": "map",
+      "Semantics": "duration",
+      "Reference": "[RFC9581, Section 4]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

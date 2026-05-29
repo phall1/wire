@@ -1,0 +1,38 @@
+{
+  "id": "port/434",
+  "family": "port",
+  "slug": "434",
+  "title": "Port 434 — mobileip-agent",
+  "summary": "Well-known port 434 (tcp/udp): MobileIP-Agent. Service name: mobileip-agent.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 434,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mobileip-agent",
+      "Port Number": "434",
+      "Transport Protocol": "tcp",
+      "Description": "MobileIP-Agent",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

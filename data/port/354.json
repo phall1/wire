@@ -1,0 +1,38 @@
+{
+  "id": "port/354",
+  "family": "port",
+  "slug": "354",
+  "title": "Port 354 — bh611",
+  "summary": "Well-known port 354 (tcp/udp): bh611. Service name: bh611.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 354,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "bh611",
+      "Port Number": "354",
+      "Transport Protocol": "tcp",
+      "Description": "bh611",
+      "Assignee": "[John_Kelly]",
+      "Contact": "[John_Kelly]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

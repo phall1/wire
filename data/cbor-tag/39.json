@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/39",
+  "family": "cbor-tag",
+  "slug": "39",
+  "title": "CBOR tag 39 — Identifier",
+  "summary": "CBOR tag 39 (data item: multiple): Identifier.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 39,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "39",
+      "Data Item": "multiple",
+      "Semantics": "Identifier",
+      "Reference": "[https://github.com/lucas-clemente/cbor-specs/blob/master/id.md][Lucas_Clemente]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/dict",
+  "family": "uri-scheme",
+  "slug": "dict",
+  "title": "dict: — dictionary service protocol",
+  "summary": "URI scheme \"dict:\" — dictionary service protocol. IANA status: Permanent. Defined in RFC2229.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "dict",
+    "reference_rfcs": [
+      "RFC2229"
+    ],
+    "raw_columns": {
+      "URI Scheme": "dict",
+      "Template": "",
+      "Description": "dictionary service protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "3886",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2229]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

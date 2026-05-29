@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/tn3270",
+  "family": "uri-scheme",
+  "slug": "tn3270",
+  "title": "tn3270: — Interactive 3270 emulation sessions",
+  "summary": "URI scheme \"tn3270:\" — Interactive 3270 emulation sessions. IANA status: Permanent. Defined in RFC6270.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "tn3270",
+    "reference_rfcs": [
+      "RFC6270"
+    ],
+    "raw_columns": {
+      "URI Scheme": "tn3270",
+      "Template": "",
+      "Description": "Interactive 3270 emulation sessions",
+      "Status": "Permanent",
+      "CRI Scheme Number": "14962",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6270]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/30",
+  "family": "cbor-tag",
+  "slug": "30",
+  "title": "CBOR tag 30 — Rational number",
+  "summary": "CBOR tag 30 (data item: array): Rational number.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 30,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "30",
+      "Data Item": "array",
+      "Semantics": "Rational number",
+      "Reference": "[http://peteroupc.github.io/CBOR/rational.html][Peter_Occil]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

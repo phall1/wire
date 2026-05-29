@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/rtspu",
+  "family": "uri-scheme",
+  "slug": "rtspu",
+  "title": "rtspu: — Real-Time Streaming Protocol (RTSP) over unreliable datagram transport",
+  "summary": "URI scheme \"rtspu:\" — Real-Time Streaming Protocol (RTSP) over unreliable datagram transport. IANA status: Permanent. Defined in RFC2326.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "rtspu",
+    "reference_rfcs": [
+      "RFC2326"
+    ],
+    "raw_columns": {
+      "URI Scheme": "rtspu",
+      "Template": "",
+      "Description": "Real-Time Streaming Protocol (RTSP) over unreliable datagram transport",
+      "Status": "Permanent",
+      "CRI Scheme Number": "11999",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2326]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

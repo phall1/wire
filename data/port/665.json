@@ -1,0 +1,38 @@
+{
+  "id": "port/665",
+  "family": "port",
+  "slug": "665",
+  "title": "Port 665 — sun-dr",
+  "summary": "Well-known port 665 (tcp/udp): Sun DR. Service name: sun-dr.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 665,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sun-dr",
+      "Port Number": "665",
+      "Transport Protocol": "tcp",
+      "Description": "Sun DR",
+      "Assignee": "[Harinder_Bhasin]",
+      "Contact": "[Harinder_Bhasin]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/40009",
+  "family": "cbor-tag",
+  "slug": "40009",
+  "title": "CBOR tag 40009 — ur:replacement, Envelope expression replacement identifier",
+  "summary": "CBOR tag 40009 (data item: unsigned integer or text string): ur:replacement, Envelope expression replacement identifier.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 40009,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "40009",
+      "Data Item": "unsigned integer or text string",
+      "Semantics": "ur:replacement, Envelope expression replacement identifier",
+      "Reference": "[https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

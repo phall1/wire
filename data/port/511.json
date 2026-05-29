@@ -1,0 +1,38 @@
+{
+  "id": "port/511",
+  "family": "port",
+  "slug": "511",
+  "title": "Port 511 — passgo",
+  "summary": "Well-known port 511 (tcp/udp): PassGo. Service name: passgo.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 511,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "passgo",
+      "Port Number": "511",
+      "Transport Protocol": "tcp",
+      "Description": "PassGo",
+      "Assignee": "[John_Rainford]",
+      "Contact": "[John_Rainford]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

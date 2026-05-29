@@ -1,0 +1,93 @@
+{
+  "id": "terminal-dec-private-mode/1000",
+  "family": "terminal-dec-private-mode",
+  "slug": "1000",
+  "title": "DECSET 1000 — Mouse tracking (normal / X11 button-event)",
+  "summary": "CSI ? 1000 h enables 'normal' mouse tracking: the terminal reports mouse button press and release as CSI M Cb Cx Cy, where each coordinate byte is (value + 32). CSI ? 1000 l disables it. This is the baseline X11 mouse protocol; higher modes (1002 button-motion, 1003 any-motion) and encodings (1006 SGR) build on it.",
+  "kind": "control-sequence",
+  "aliases": [
+    "mouse tracking",
+    "X11 mouse",
+    "normal mouse mode",
+    "DECSET 1000",
+    "?1000h / ?1000l",
+    "button-event tracking"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs 'Mouse Tracking': Ps = 1 0 0 0 -> Send Mouse X & Y on button press and release (X11 xterm mouse protocol). Default report is CSI M CbCxCy with each value offset by 32 (0x20)."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1006"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1000,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = 'h' (DECSET); reset = 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'. The mouse REPORTS the terminal then sends are separate CSI 'M' sequences (or SGR-encoded under mode 1006)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1000 h turns on normal (button press/release) mouse tracking. The terminal then reports clicks; with the default encoding the report is CSI M Cb Cx Cy where Cb encodes the button+modifiers and Cx,Cy are column,row, each as a single byte = (value + 32).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1000h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 0 0 h   ==  \\x1b[?1000h   (enable normal mouse tracking)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1000 l turns off mouse tracking.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1000l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 0 0 l   ==  \\x1b[?1000l   (disable mouse tracking)",
+        "subparams": []
+      },
+      {
+        "id": "report",
+        "anchor": "#report",
+        "name": "Default report format (terminal -> app)",
+        "meaning": "Under mode 1000 with the legacy encoding, a button event is reported as CSI M followed by three bytes: Cb (button + modifier bits, +32), Cx (column, +32), Cy (row, +32). Example: button 1 press at column 1, row 1 = ESC [ M space space space (0x20 0x20 0x20).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[M   ",
+        "byte_sequence_ST_readable": "ESC [ M <Cb> <Cx> <Cy>   e.g. \\x1b[M\\x20\\x20\\x20  (button1 press at col1,row1: each byte = value+32)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Legacy encoding is byte-based with a +32 offset, so coordinates above 223 (255-32) cannot be represented and bytes can collide with UTF-8 — this is exactly why the SGR encoding (mode 1006) exists. Prefer enabling 1000 (or 1002/1003) TOGETHER with 1006.",
+      "1000 reports press AND release but not motion. For drag (motion while a button is held) enable 1002; for all motion enable 1003.",
+      "Modes are layered: 1000/1002/1003 select WHICH events are reported; 1005 (UTF-8), 1006 (SGR), 1015 (urxvt) select HOW they are ENCODED. Enable one tracking mode and one encoding mode.",
+      "Always disable mouse tracking (?1000l, and the encoding mode) on exit, or the user's normal click-to-select/copy is left hijacked.",
+      "While mouse tracking is on, the terminal's own text-selection is usually suppressed; users hold a modifier (often Shift) to bypass and select normally."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Set/reset (?1000h / ?1000l) are syntactically valid DEC-private-mode CSI sequences; the example report is the byte-exact CSI M + three +32-offset bytes.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

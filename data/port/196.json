@@ -1,0 +1,38 @@
+{
+  "id": "port/196",
+  "family": "port",
+  "slug": "196",
+  "title": "Port 196 — dn6-smm-red",
+  "summary": "Well-known port 196 (tcp/udp): DNSIX Session Mgt Module Audit Redir. Service name: dn6-smm-red.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 196,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dn6-smm-red",
+      "Port Number": "196",
+      "Transport Protocol": "tcp",
+      "Description": "DNSIX Session Mgt Module Audit Redir",
+      "Assignee": "[Lawrence_Lebahn]",
+      "Contact": "[Lawrence_Lebahn]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/55799",
+  "family": "cbor-tag",
+  "slug": "55799",
+  "title": "CBOR tag 55799 — Self-described CBOR; see Section 3.4.6",
+  "summary": "CBOR tag 55799 (data item: (any)): Self-described CBOR; see Section 3.4.6. Defined in RFC8949.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 55799,
+    "reference_rfcs": [
+      "RFC8949"
+    ],
+    "raw_columns": {
+      "Tag": "55799",
+      "Data Item": "(any)",
+      "Semantics": "Self-described CBOR; see Section 3.4.6",
+      "Reference": "[RFC8949]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

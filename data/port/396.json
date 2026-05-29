@@ -1,0 +1,38 @@
+{
+  "id": "port/396",
+  "family": "port",
+  "slug": "396",
+  "title": "Port 396 — netware-ip",
+  "summary": "Well-known port 396 (tcp/udp): Novell Netware over IP. Service name: netware-ip.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 396,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "netware-ip",
+      "Port Number": "396",
+      "Transport Protocol": "tcp",
+      "Description": "Novell Netware over IP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

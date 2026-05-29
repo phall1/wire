@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/CNAME",
+  "family": "dns-rrtype",
+  "slug": "CNAME",
+  "title": "CNAME — the canonical name for an alias (type 5)",
+  "summary": "DNS resource record type CNAME (numeric type 5): the canonical name for an alias. Defined in RFC1035.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 5,
+    "reference_rfcs": [
+      "RFC1035"
+    ],
+    "raw_columns": {
+      "TYPE": "CNAME",
+      "Value": "5",
+      "Meaning": "the canonical name for an alias",
+      "Reference": "[RFC1035]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

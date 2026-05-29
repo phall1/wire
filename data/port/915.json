@@ -1,0 +1,40 @@
+{
+  "id": "port/915",
+  "family": "port",
+  "slug": "915",
+  "title": "Port 915 — rift-ties",
+  "summary": "Well-known port 915 (tcp/udp): Reserved. Service name: rift-ties. Referenced in RFC9692.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 915,
+    "reference_rfcs": [
+      "RFC9692"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "",
+      "Port Number": "915",
+      "Transport Protocol": "tcp",
+      "Description": "Reserved",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

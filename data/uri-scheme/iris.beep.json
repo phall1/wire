@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/iris.beep",
+  "family": "uri-scheme",
+  "slug": "iris.beep",
+  "title": "iris.beep: — iris.beep",
+  "summary": "URI scheme \"iris.beep:\" — iris.beep. IANA status: Permanent. Defined in RFC3983.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "iris.beep",
+    "reference_rfcs": [
+      "RFC3983"
+    ],
+    "raw_columns": {
+      "URI Scheme": "iris.beep",
+      "Template": "",
+      "Description": "iris.beep",
+      "Status": "Permanent",
+      "CRI Scheme Number": "15639",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3983]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

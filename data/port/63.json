@@ -1,0 +1,41 @@
+{
+  "id": "port/63",
+  "family": "port",
+  "slug": "63",
+  "title": "Port 63 — whoispp (+1 more)",
+  "summary": "Well-known port 63 (tcp/udp): whois++\nIANA assigned this well-formed service name as a replacement for \"whois++\".. Service names: whoispp, whois++.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 63,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "whoispp",
+      "Port Number": "63",
+      "Transport Protocol": "tcp",
+      "Description": "whois++\nIANA assigned this well-formed service name as a replacement for \"whois++\".",
+      "Assignee": "[Rickard_Schoultz]",
+      "Contact": "[Rickard_Schoultz]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "whois++"
+  ]
+}

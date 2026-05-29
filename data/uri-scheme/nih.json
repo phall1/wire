@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/nih",
+  "family": "uri-scheme",
+  "slug": "nih",
+  "title": "nih: — nih",
+  "summary": "URI scheme \"nih:\" — nih. IANA status: Permanent. Defined in RFC6920.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "nih",
+    "reference_rfcs": [
+      "RFC6920"
+    ],
+    "raw_columns": {
+      "URI Scheme": "nih",
+      "Template": "",
+      "Description": "nih",
+      "Status": "Permanent",
+      "CRI Scheme Number": "11428",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6920]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

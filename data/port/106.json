@@ -1,0 +1,38 @@
+{
+  "id": "port/106",
+  "family": "port",
+  "slug": "106",
+  "title": "Port 106 — 3com-tsmux",
+  "summary": "Well-known port 106 (tcp/udp): 3COM-TSMUX. Service name: 3com-tsmux.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 106,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "3com-tsmux",
+      "Port Number": "106",
+      "Transport Protocol": "tcp",
+      "Description": "3COM-TSMUX",
+      "Assignee": "[Jeremy_Siegel]",
+      "Contact": "[Jeremy_Siegel]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "Known Unauthorized Use on 106",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

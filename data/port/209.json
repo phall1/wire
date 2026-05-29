@@ -1,0 +1,38 @@
+{
+  "id": "port/209",
+  "family": "port",
+  "slug": "209",
+  "title": "Port 209 — qmtp",
+  "summary": "Well-known port 209 (tcp/udp): The Quick Mail Transfer Protocol. Service name: qmtp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 209,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "qmtp",
+      "Port Number": "209",
+      "Transport Protocol": "tcp",
+      "Description": "The Quick Mail Transfer Protocol",
+      "Assignee": "[D_J_Bernstein]",
+      "Contact": "[D_J_Bernstein]",
+      "Registration Date": "",
+      "Modification Date": "2018-04-05",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

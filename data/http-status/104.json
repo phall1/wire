@@ -1,0 +1,25 @@
+{
+  "id": "http-status/104",
+  "family": "http-status",
+  "slug": "104",
+  "title": "104 Upload Resumption Supported",
+  "summary": "HTTP status code 104 Upload Resumption Supported.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 104,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Value": "104",
+      "Description": "Upload Resumption Supported (TEMPORARY - registered 2024-11-13, extension registered 2025-09-15, expires 2026-11-13)",
+      "Reference": "[draft-ietf-httpbis-resumable-upload-05]"
+    }
+  },
+  "updated": "2026-05-29"
+}

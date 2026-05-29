@@ -1,0 +1,38 @@
+{
+  "id": "port/78",
+  "family": "port",
+  "slug": "78",
+  "title": "Port 78 — vettcp",
+  "summary": "Well-known port 78 (tcp/udp): vettcp. Service name: vettcp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 78,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "vettcp",
+      "Port Number": "78",
+      "Transport Protocol": "tcp",
+      "Description": "vettcp",
+      "Assignee": "[Christopher_Leong]",
+      "Contact": "[Christopher_Leong]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

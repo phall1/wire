@@ -1,0 +1,40 @@
+{
+  "id": "port/1001",
+  "family": "port",
+  "slug": "1001",
+  "title": "Port 1001 — webpush",
+  "summary": "Well-known port 1001 (tcp/udp): HTTP Web Push. Service name: webpush. Referenced in RFC8030.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1001,
+    "reference_rfcs": [
+      "RFC8030"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "webpush",
+      "Port Number": "1001",
+      "Transport Protocol": "tcp",
+      "Description": "HTTP Web Push",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "2016-11-01",
+      "Modification Date": "",
+      "Reference": "[RFC8030]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

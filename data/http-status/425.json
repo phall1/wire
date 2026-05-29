@@ -1,0 +1,27 @@
+{
+  "id": "http-status/425",
+  "family": "http-status",
+  "slug": "425",
+  "title": "425 Too Early",
+  "summary": "HTTP status code 425 Too Early. Defined in RFC8470.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 425,
+    "reference_rfcs": [
+      "RFC8470"
+    ],
+    "raw_columns": {
+      "Value": "425",
+      "Description": "Too Early",
+      "Reference": "[RFC8470]"
+    }
+  },
+  "updated": "2026-05-29"
+}

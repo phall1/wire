@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/296",
+  "family": "cbor-tag",
+  "slug": "296",
+  "title": "CBOR tag 296 — isolate shared values within this scope",
+  "summary": "CBOR tag 296 (data item: any): isolate shared values within this scope.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 296,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "296",
+      "Data Item": "any",
+      "Semantics": "isolate shared values within this scope",
+      "Reference": "[https://cbor.is4.site/sharedref-namespace][IS4]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

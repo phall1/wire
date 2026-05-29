@@ -1,0 +1,41 @@
+{
+  "id": "port/623",
+  "family": "port",
+  "slug": "623",
+  "title": "Port 623 — oob-ws-http (+1 more)",
+  "summary": "Well-known port 623 (tcp/udp): DMTF out-of-band web services management protocol. Service names: oob-ws-http, asf-rmcp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 623,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "oob-ws-http",
+      "Port Number": "623",
+      "Transport Protocol": "tcp",
+      "Description": "DMTF out-of-band web services management protocol",
+      "Assignee": "[Jim_Davis]",
+      "Contact": "[Jim_Davis]",
+      "Registration Date": "2007-06",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "asf-rmcp"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/DNAME",
+  "family": "dns-rrtype",
+  "slug": "DNAME",
+  "title": "DNAME — DNAME (type 39)",
+  "summary": "DNS resource record type DNAME (numeric type 39): DNAME. Defined in RFC6672.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 39,
+    "reference_rfcs": [
+      "RFC6672"
+    ],
+    "raw_columns": {
+      "TYPE": "DNAME",
+      "Value": "39",
+      "Meaning": "DNAME",
+      "Reference": "[RFC6672]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

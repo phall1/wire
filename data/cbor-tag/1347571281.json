@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1347571281",
+  "family": "cbor-tag",
+  "slug": "1347571281",
+  "title": "CBOR tag 1347571281 — A cryptographic pointer to a full Proof of Process Evidence…",
+  "summary": "CBOR tag 1347571281 (data item: Compact Evidence Reference): A cryptographic pointer to a full Proof of Process Evidence \nPacket, used for embedding authorship claims in space-constrained contexts \n(e.g., metadata, QR codes)..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1347571281,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1347571281",
+      "Data Item": "Compact Evidence Reference",
+      "Semantics": "A cryptographic pointer to a full Proof of Process Evidence \nPacket, used for embedding authorship claims in space-constrained contexts \n(e.g., metadata, QR codes).",
+      "Reference": "[witnessd Proof of Process Evidence Format, Version 1.3.0][David_Lee_Condrey]",
+      "Template": "template/1347571281"
+    }
+  },
+  "updated": "2026-05-29"
+}

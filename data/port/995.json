@@ -1,0 +1,40 @@
+{
+  "id": "port/995",
+  "family": "port",
+  "slug": "995",
+  "title": "Port 995 — pop3s",
+  "summary": "Well-known port 995 (tcp/udp): POP3 over TLS protocol. Service name: pop3s. Referenced in RFC8314.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 995,
+    "reference_rfcs": [
+      "RFC8314"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pop3s",
+      "Port Number": "995",
+      "Transport Protocol": "tcp",
+      "Description": "POP3 over TLS protocol",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2017-12-12",
+      "Reference": "[RFC8314]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

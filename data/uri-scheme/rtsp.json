@@ -1,0 +1,33 @@
+{
+  "id": "uri-scheme/rtsp",
+  "family": "uri-scheme",
+  "slug": "rtsp",
+  "title": "rtsp: — Real-Time Streaming Protocol (RTSP)",
+  "summary": "URI scheme \"rtsp:\" — Real-Time Streaming Protocol (RTSP). IANA status: Permanent. Defined in RFC2326, RFC7826.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "rtsp",
+    "reference_rfcs": [
+      "RFC2326",
+      "RFC7826"
+    ],
+    "raw_columns": {
+      "URI Scheme": "rtsp",
+      "Template": "",
+      "Description": "Real-Time Streaming Protocol (RTSP)",
+      "Status": "Permanent",
+      "CRI Scheme Number": "15267",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC2326][RFC7826]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

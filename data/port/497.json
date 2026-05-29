@@ -1,0 +1,38 @@
+{
+  "id": "port/497",
+  "family": "port",
+  "slug": "497",
+  "title": "Port 497 — retrospect",
+  "summary": "Well-known port 497 (tcp/udp): Retrospect backup and restore service. Service name: retrospect.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 497,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "retrospect",
+      "Port Number": "497",
+      "Transport Protocol": "tcp",
+      "Description": "Retrospect backup and restore service",
+      "Assignee": "[Retrospect_Inc]",
+      "Contact": "[JG_Heithcock]",
+      "Registration Date": "",
+      "Modification Date": "2012-02-02",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/76",
+  "family": "port",
+  "slug": "76",
+  "title": "Port 76 — deos",
+  "summary": "Well-known port 76 (tcp/udp): Distributed External Object Store. Service name: deos.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 76,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "deos",
+      "Port Number": "76",
+      "Transport Protocol": "tcp",
+      "Description": "Distributed External Object Store",
+      "Assignee": "[Robert_Ullmann]",
+      "Contact": "[Robert_Ullmann]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/413",
+  "family": "port",
+  "slug": "413",
+  "title": "Port 413 — smsp",
+  "summary": "Well-known port 413 (tcp/udp): Storage Management Services Protocol. Service name: smsp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 413,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "smsp",
+      "Port Number": "413",
+      "Transport Protocol": "tcp",
+      "Description": "Storage Management Services Protocol",
+      "Assignee": "[Murthy_Srinivas]",
+      "Contact": "[Murthy_Srinivas]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

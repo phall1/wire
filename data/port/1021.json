@@ -1,0 +1,43 @@
+{
+  "id": "port/1021",
+  "family": "port",
+  "slug": "1021",
+  "title": "Port 1021 — exp1",
+  "summary": "Well-known port 1021 (tcp/udp/sctp/dccp): RFC3692-style Experiment 1. Service name: exp1. Referenced in RFC4727, RFC6335.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1021,
+    "reference_rfcs": [
+      "RFC4727",
+      "RFC6335"
+    ],
+    "transports": [
+      "tcp",
+      "udp",
+      "sctp",
+      "dccp"
+    ],
+    "raw_columns": {
+      "Service Name": "exp1",
+      "Port Number": "1021",
+      "Transport Protocol": "tcp",
+      "Description": "RFC3692-style Experiment 1",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "[1][RFC4727][RFC6335]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

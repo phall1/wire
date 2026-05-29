@@ -1,0 +1,17 @@
+{
+  "name": "wire.phall.io",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A small, snappy, static reference for computer/network/API/terminal protocols — served for humans (rendered HTML) and agents (curlable JSON).",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "dev": "node build/build.mjs && node build/serve.mjs",
+    "test": "node --test 'test/**/*.test.mjs'",
+    "gates": "node ci/gates/run-all.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8",
+    "ajv-formats": "^3"
+  }
+}

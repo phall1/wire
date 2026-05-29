@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/NS",
+  "family": "dns-rrtype",
+  "slug": "NS",
+  "title": "NS — an authoritative name server (type 2)",
+  "summary": "DNS resource record type NS (numeric type 2): an authoritative name server. Defined in RFC1035.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 2,
+    "reference_rfcs": [
+      "RFC1035"
+    ],
+    "raw_columns": {
+      "TYPE": "NS",
+      "Value": "2",
+      "Meaning": "an authoritative name server",
+      "Reference": "[RFC1035]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

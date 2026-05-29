@@ -1,0 +1,38 @@
+{
+  "id": "port/419",
+  "family": "port",
+  "slug": "419",
+  "title": "Port 419 — ariel1",
+  "summary": "Well-known port 419 (tcp/udp): Ariel 1. Service name: ariel1.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 419,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ariel1",
+      "Port Number": "419",
+      "Transport Protocol": "tcp",
+      "Description": "Ariel 1",
+      "Assignee": "[Joel_Karafin]",
+      "Contact": "[Joel_Karafin]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

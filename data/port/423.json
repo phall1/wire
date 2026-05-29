@@ -1,0 +1,38 @@
+{
+  "id": "port/423",
+  "family": "port",
+  "slug": "423",
+  "title": "Port 423 — opc-job-start",
+  "summary": "Well-known port 423 (tcp/udp): IBM Operations Planning and Control Start. Service name: opc-job-start.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 423,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "opc-job-start",
+      "Port Number": "423",
+      "Transport Protocol": "tcp",
+      "Description": "IBM Operations Planning and Control Start",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

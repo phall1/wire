@@ -1,0 +1,38 @@
+{
+  "id": "port/374",
+  "family": "port",
+  "slug": "374",
+  "title": "Port 374 — legent-2",
+  "summary": "Well-known port 374 (tcp/udp): Legent Corporation. Service name: legent-2.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 374,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "legent-2",
+      "Port Number": "374",
+      "Transport Protocol": "tcp",
+      "Description": "Legent Corporation",
+      "Assignee": "[Keith_Boyce]",
+      "Contact": "[Keith_Boyce]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

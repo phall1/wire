@@ -1,0 +1,27 @@
+{
+  "id": "http-status/510",
+  "family": "http-status",
+  "slug": "510",
+  "title": "510 Not Extended (OBSOLETED)",
+  "summary": "HTTP status code 510 Not Extended (OBSOLETED). Defined in RFC2774.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 510,
+    "reference_rfcs": [
+      "RFC2774"
+    ],
+    "raw_columns": {
+      "Value": "510",
+      "Description": "Not Extended (OBSOLETED)",
+      "Reference": "[RFC2774][Status change of HTTP experiments to Historic]"
+    }
+  },
+  "updated": "2026-05-29"
+}

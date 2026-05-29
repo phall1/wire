@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/http",
+  "family": "uri-scheme",
+  "slug": "http",
+  "title": "http: — Hypertext Transfer Protocol",
+  "summary": "URI scheme \"http:\" — Hypertext Transfer Protocol. IANA status: Permanent. Defined in RFC9110.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "http",
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "URI Scheme": "http",
+      "Template": "",
+      "Description": "Hypertext Transfer Protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "2",
+      "Well-Known URI Support": "[RFC8615]",
+      "Reference": "[RFC9110, Section 4.2.1]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

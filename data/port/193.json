@@ -1,0 +1,38 @@
+{
+  "id": "port/193",
+  "family": "port",
+  "slug": "193",
+  "title": "Port 193 — srmp",
+  "summary": "Well-known port 193 (tcp/udp): Spider Remote Monitoring Protocol. Service name: srmp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 193,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "srmp",
+      "Port Number": "193",
+      "Transport Protocol": "tcp",
+      "Description": "Spider Remote Monitoring Protocol",
+      "Assignee": "[Ted_J_Socolofsky]",
+      "Contact": "[Ted_J_Socolofsky]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

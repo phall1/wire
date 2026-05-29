@@ -1,0 +1,90 @@
+{
+  "id": "terminal-osc/104",
+  "family": "terminal-osc",
+  "slug": "104",
+  "title": "OSC 104 — Reset color palette entry",
+  "summary": "OSC 104 ; c ST resets palette color number c back to its built-in default. With no parameter (OSC 104 ST), it resets the ENTIRE palette to defaults. The inverse of OSC 4 (which sets palette colors).",
+  "kind": "control-sequence",
+  "aliases": [
+    "reset color palette",
+    "reset ANSI colors",
+    "OSC 104",
+    "ESC ] 104"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 0 4 ; c -> Reset Color Number c. It is reset to the color specified by the corresponding X resource. With no parameter, reset all colors. (The 10x family mirrors the OSC set commands offset by 100.)"
+    }
+  ],
+  "see_also": [
+    "terminal-osc/4"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 104,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 104 is an xterm convention; the 10x reset family parallels the set commands (104 resets what 4 set)."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm also accepts BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "reset-one",
+        "anchor": "#reset-one",
+        "name": "Reset one color",
+        "meaning": "OSC 104 ; c ST resets palette index c (0–255) to its default value (the X resource / built-in default). Multiple indices may be given separated by ';'.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]104;1\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 0 4 ; 1 ESC \\   ==  \\x1b]104;1\\x1b\\\\   (reset palette color 1)",
+        "byte_sequence_BEL": "\u001b]104;1\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 0 4 ; 1 BEL   ==  \\x1b]104;1\\x07",
+        "subparams": []
+      },
+      {
+        "id": "reset-all",
+        "anchor": "#reset-all",
+        "name": "Reset all colors",
+        "meaning": "OSC 104 ST with NO parameter resets the entire color palette to defaults at once.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]104\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 0 4 ESC \\   ==  \\x1b]104\\x1b\\\\   (no parameter -> reset all)",
+        "byte_sequence_BEL": "\u001b]104\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 0 4 BEL   ==  \\x1b]104\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 104 with NO parameter resets ALL palette colors; with a parameter it resets only the listed index/indices. Be deliberate about which you emit.",
+      "OSC 104 resets indexed palette entries (the OSC 4 colors). The special colors set by OSC 10/11/12 (default fg/bg/cursor) are reset by OSC 110/111/112 respectively — 104 does NOT touch them.",
+      "'Default' means the terminal's configured/built-in default, not necessarily black-on-white; what a reset restores depends on the terminal's theme/resources.",
+      "Not every terminal that supports OSC 4 supports OSC 104; if reset has no effect, set the colors back explicitly with OSC 4."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 104 reset-one (with index) and reset-all (no parameter) forms are syntactically valid OSC strings in both ST and BEL terminator forms.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

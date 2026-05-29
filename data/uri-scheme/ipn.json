@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/ipn",
+  "family": "uri-scheme",
+  "slug": "ipn",
+  "title": "ipn: — ipn",
+  "summary": "URI scheme \"ipn:\" — ipn. IANA status: Permanent. Defined in RFC9758.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "ipn",
+    "reference_rfcs": [
+      "RFC9758"
+    ],
+    "raw_columns": {
+      "URI Scheme": "ipn",
+      "Template": "",
+      "Description": "ipn",
+      "Status": "Permanent",
+      "CRI Scheme Number": "8775",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC9758]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

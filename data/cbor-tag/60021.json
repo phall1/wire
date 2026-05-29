@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/60021",
+  "family": "cbor-tag",
+  "slug": "60021",
+  "title": "CBOR tag 60021 — The tagged CBOR array containing a set of strings expressio…",
+  "summary": "CBOR tag 60021 (data item: array): The tagged CBOR array containing a set of strings expression..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 60021,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "60021",
+      "Data Item": "array",
+      "Semantics": "The tagged CBOR array containing a set of strings expression.",
+      "Reference": "[https://github.com/nedmsmith/draft-cds-rats-intel-corim-profile/blob/main/draft-cds-rats-intel-corim-profile.md][Ned_Smith]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

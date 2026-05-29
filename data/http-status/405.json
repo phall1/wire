@@ -1,0 +1,27 @@
+{
+  "id": "http-status/405",
+  "family": "http-status",
+  "slug": "405",
+  "title": "405 Method Not Allowed",
+  "summary": "HTTP status code 405 Method Not Allowed. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 405,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "405",
+      "Description": "Method Not Allowed",
+      "Reference": "[RFC9110, Section 15.5.6]"
+    }
+  },
+  "updated": "2026-05-29"
+}

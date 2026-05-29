@@ -1,0 +1,38 @@
+{
+  "id": "port/537",
+  "family": "port",
+  "slug": "537",
+  "title": "Port 537 — nmsp",
+  "summary": "Well-known port 537 (tcp/udp): Networked Media Streaming Protocol. Service name: nmsp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 537,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "nmsp",
+      "Port Number": "537",
+      "Transport Protocol": "tcp",
+      "Description": "Networked Media Streaming Protocol",
+      "Assignee": "[Paul_Santinelli_Jr]",
+      "Contact": "[Paul_Santinelli_Jr]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

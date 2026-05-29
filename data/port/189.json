@@ -1,0 +1,38 @@
+{
+  "id": "port/189",
+  "family": "port",
+  "slug": "189",
+  "title": "Port 189 — qft",
+  "summary": "Well-known port 189 (tcp/udp): Queued File Transport. Service name: qft.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 189,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "qft",
+      "Port Number": "189",
+      "Transport Protocol": "tcp",
+      "Description": "Queued File Transport",
+      "Assignee": "[Wayne_Schroeder]",
+      "Contact": "[Wayne_Schroeder]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/108",
+  "family": "port",
+  "slug": "108",
+  "title": "Port 108 — snagas",
+  "summary": "Well-known port 108 (tcp/udp): SNA Gateway Access Server. Service name: snagas.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 108,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "snagas",
+      "Port Number": "108",
+      "Transport Protocol": "tcp",
+      "Description": "SNA Gateway Access Server",
+      "Assignee": "[Kevin_Murphy]",
+      "Contact": "[Kevin_Murphy]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

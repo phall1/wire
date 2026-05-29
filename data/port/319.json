@@ -1,0 +1,38 @@
+{
+  "id": "port/319",
+  "family": "port",
+  "slug": "319",
+  "title": "Port 319 — ptp-event",
+  "summary": "Well-known port 319 (tcp/udp): PTP Event. Service name: ptp-event.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 319,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ptp-event",
+      "Port Number": "319",
+      "Transport Protocol": "tcp",
+      "Description": "PTP Event",
+      "Assignee": "[Kang_Lee]",
+      "Contact": "[Kang_Lee]",
+      "Registration Date": "2010-07-27",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

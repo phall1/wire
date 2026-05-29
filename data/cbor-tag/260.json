@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/260",
+  "family": "cbor-tag",
+  "slug": "260",
+  "title": "CBOR tag 260 — Network Address (IPv4 or IPv6 or MAC Address) (DEPRECATED i…",
+  "summary": "CBOR tag 260 (data item: byte string): Network Address (IPv4 or IPv6 or MAC Address) (DEPRECATED in favor of 52 and 54\n        for IP addresses). Defined in RFC9164.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 260,
+    "reference_rfcs": [
+      "RFC9164"
+    ],
+    "raw_columns": {
+      "Tag": "260",
+      "Data Item": "byte string",
+      "Semantics": "Network Address (IPv4 or IPv6 or MAC Address) (DEPRECATED in favor of 52 and 54\n        for IP addresses)",
+      "Reference": "[http://www.employees.org/~ravir/cbor-network.txt][Ravi_Raju][RFC9164]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

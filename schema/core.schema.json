@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wire.phall.io/schema/core.schema.json",
+  "title": "wire.phall.io core entry",
+  "description": "The frozen core every entry carries, regardless of family. All category-specific data lives in `ext`, whose shape is declared by `ext_type`. Provenance fields are mandatory so an agent can trust a fact inline, without a second call.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "family", "slug", "title", "summary", "kind",
+    "status", "verification", "tier",
+    "source_url", "source_version", "retrieved_date",
+    "ext_type", "ext", "updated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Globally unique stable id, identical to the permalink path: '{family}[/{namespace}]/{slug}'. Primary key; never reused, never renumbered.",
+      "pattern": "^[a-z0-9-]+(/[A-Za-z0-9._-]+){1,2}$"
+    },
+    "family": {
+      "type": "string",
+      "description": "Closed, curated vocabulary segment. Decoupled from upstream IANA filenames.",
+      "enum": [
+        "terminal-osc", "terminal-csi", "terminal-dec-private-mode",
+        "http-status", "http-method", "media-type", "uri-scheme",
+        "port", "tls-param", "dns-rrtype", "cbor-tag", "encoding"
+      ]
+    },
+    "namespace": {
+      "type": "string",
+      "description": "Present ONLY for conditional-depth families with multiple colliding flat key-spaces (e.g. 'cipher-suites' within tls-param). Omitted for the common two-segment case."
+    },
+    "slug": {
+      "type": "string",
+      "description": "Family-local natural key: the number (status/port/rrtype/cbor/osc), the canonical token (method/scheme), or a kebab-cased media type (slash -> dash)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Short human/agent-readable name, e.g. 'OSC 133 — Semantic Prompts (FinalTerm shell integration)'."
+    },
+    "summary": {
+      "type": "string",
+      "description": "1-3 sentence token-budgeted plain-text description, written to be quoted verbatim by an agent."
+    },
+    "kind": {
+      "type": "string",
+      "description": "Cross-family classifier so agents can filter without parsing family semantics.",
+      "enum": [
+        "control-sequence", "status-code", "method", "media-type",
+        "scheme", "port", "parameter", "rrtype", "tag", "encoding"
+      ]
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Other names / abbreviations / historical labels. Powers search and disambiguation."
+    },
+    "status": {
+      "type": "string",
+      "description": "Standardization status of the thing itself. Distinct from `verification`.",
+      "enum": [
+        "standard", "de-facto", "proprietary", "experimental",
+        "deprecated", "obsolete", "reserved", "unassigned"
+      ]
+    },
+    "verification": {
+      "type": "string",
+      "description": "Trust state of THIS entry's data. An entry that is not `verified` is excluded from the default search index (trust beats breadth). `contested` flags cross-source disagreement rather than silently resolving it.",
+      "enum": ["verified", "unverified", "contested"]
+    },
+    "tier": {
+      "type": "string",
+      "description": "Ingestion provenance class. A = deterministic parse of a machine-readable upstream (IANA CSV/XML); B = parsed from a structured-but-curated source (xterm ctlseqs); C = human/LLM synthesis across multiple sources.",
+      "enum": ["A", "B", "C"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "PROVENANCE (mandatory). Canonical upstream URL the entry was derived from."
+    },
+    "source_version": {
+      "type": "string",
+      "description": "PROVENANCE (mandatory). Upstream version/edition/patch/etag/row-date. 'unversioned' allowed only when the upstream truly has none."
+    },
+    "retrieved_date": {
+      "type": "string",
+      "format": "date",
+      "description": "PROVENANCE (mandatory). UTC date the ingester fetched / last reconciled the source."
+    },
+    "attribution": {
+      "type": "array",
+      "description": "PROVENANCE. MANDATORY when tier=C or the entry fuses multiple sources. Per-fact citation: each row pins one claim (by #anchor / JSON pointer) to an exact source, so an agent can trust a synthesized entry without re-researching.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_ref", "source_url", "source_version"],
+        "properties": {
+          "claim_ref": { "type": "string", "description": "The claim this row supports, e.g. '#D' or 'ext.params[3].subparams[0]'." },
+          "source_url": { "type": "string", "format": "uri" },
+          "source_version": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "see_also": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Related entry ids (not full URLs, so they stay cheap and rewrap-able), e.g. 'terminal-osc/633'."
+    },
+    "ext_type": {
+      "type": "string",
+      "description": "Names the versioned schema of `ext`. Lets an agent/MCP tool request and validate only the extension shape it understands.",
+      "enum": ["terminal-escape@1", "iana-registry-row@1", "encoding@1"]
+    },
+    "ext": {
+      "type": "object",
+      "description": "Typed extension block; shape selected by `ext_type`. Where all category-specific data lives so the core stays tiny and uniform. May be {} when there is no extra structured data."
+    },
+    "updated": {
+      "type": "string",
+      "description": "Last time THIS entry's content changed (distinct from retrieved_date). Drives ETag caching and the 'what changed' feed."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "tier": { "const": "C" } } },
+      "then": {
+        "required": ["attribution"],
+        "properties": { "attribution": { "minItems": 1 } }
+      }
+    }
+  ]
+}

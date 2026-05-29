@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/session",
+  "family": "uri-scheme",
+  "slug": "session",
+  "title": "session: — session",
+  "summary": "URI scheme \"session:\" — session. IANA status: Permanent. Defined in RFC6787.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "session",
+    "reference_rfcs": [
+      "RFC6787"
+    ],
+    "raw_columns": {
+      "URI Scheme": "session",
+      "Template": "",
+      "Description": "session",
+      "Status": "Permanent",
+      "CRI Scheme Number": "4355",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC6787]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

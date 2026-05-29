@@ -1,0 +1,38 @@
+{
+  "id": "port/469",
+  "family": "port",
+  "slug": "469",
+  "title": "Port 469 — rcp",
+  "summary": "Well-known port 469 (tcp/udp): Radio Control Protocol. Service name: rcp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 469,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "rcp",
+      "Port Number": "469",
+      "Transport Protocol": "tcp",
+      "Description": "Radio Control Protocol",
+      "Assignee": "[Jim_Jennings]",
+      "Contact": "[Jim_Jennings]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

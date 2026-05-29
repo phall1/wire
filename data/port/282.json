@@ -1,0 +1,38 @@
+{
+  "id": "port/282",
+  "family": "port",
+  "slug": "282",
+  "title": "Port 282 — cableport-ax",
+  "summary": "Well-known port 282 (tcp/udp): Cable Port A/X. Service name: cableport-ax.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 282,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "cableport-ax",
+      "Port Number": "282",
+      "Transport Protocol": "tcp",
+      "Description": "Cable Port A/X",
+      "Assignee": "[Craig_Langfahl]",
+      "Contact": "[Craig_Langfahl]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

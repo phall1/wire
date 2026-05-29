@@ -1,0 +1,33 @@
+{
+  "id": "uri-scheme/msrps",
+  "family": "uri-scheme",
+  "slug": "msrps",
+  "title": "msrps: — Message Session Relay Protocol Secure",
+  "summary": "URI scheme \"msrps:\" — Message Session Relay Protocol Secure. IANA status: Permanent. Defined in RFC4975, RFC8873.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "msrps",
+    "reference_rfcs": [
+      "RFC4975",
+      "RFC8873"
+    ],
+    "raw_columns": {
+      "URI Scheme": "msrps",
+      "Template": "",
+      "Description": "Message Session Relay Protocol Secure",
+      "Status": "Permanent",
+      "CRI Scheme Number": "13440",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC4975][RFC8873]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

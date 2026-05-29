@@ -1,0 +1,33 @@
+{
+  "id": "tls-param/cipher-suites/0xc023",
+  "family": "tls-param",
+  "namespace": "cipher-suites",
+  "slug": "0xc023",
+  "title": "0xc023 — TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+  "summary": "TLS cipher suite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 (0xC0,0x23, IANA value 0xc023). IANA Recommended: N. Referenced in RFC5289.",
+  "kind": "parameter",
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/tls-parameters/tls-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Wed, 14 Jan 2026 01:16:22 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "0xc023",
+    "reference_rfcs": [
+      "RFC5289"
+    ],
+    "recommended": false,
+    "dtls_ok": true,
+    "raw_columns": {
+      "Value": "0xC0,0x23",
+      "Description": "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+      "DTLS-OK": "Y",
+      "Recommended": "N",
+      "Reference": "[RFC5289]",
+      "Comment": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

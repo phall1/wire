@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/282",
+  "family": "cbor-tag",
+  "slug": "282",
+  "title": "CBOR tag 282 — Character",
+  "summary": "CBOR tag 282 (data item: unsigned integer): Character.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 282,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "282",
+      "Data Item": "unsigned integer",
+      "Semantics": "Character",
+      "Reference": "[https://github.com/mishoo/cbor.lisp/blob/e1428a5/clext-spec.txt][Mihai_Bazon]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/im",
+  "family": "uri-scheme",
+  "slug": "im",
+  "title": "im: — Instant Messaging",
+  "summary": "URI scheme \"im:\" — Instant Messaging. IANA status: Permanent. Defined in RFC3860.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "im",
+    "reference_rfcs": [
+      "RFC3860"
+    ],
+    "raw_columns": {
+      "URI Scheme": "im",
+      "Template": "",
+      "Description": "Instant Messaging",
+      "Status": "Permanent",
+      "CRI Scheme Number": "6883",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3860]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

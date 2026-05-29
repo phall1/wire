@@ -1,0 +1,38 @@
+{
+  "id": "port/457",
+  "family": "port",
+  "slug": "457",
+  "title": "Port 457 — scohelp",
+  "summary": "Well-known port 457 (tcp/udp): scohelp. Service name: scohelp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 457,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "scohelp",
+      "Port Number": "457",
+      "Transport Protocol": "tcp",
+      "Description": "scohelp",
+      "Assignee": "[Faith_Zack]",
+      "Contact": "[Faith_Zack]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

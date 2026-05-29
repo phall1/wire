@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/41730",
+  "family": "cbor-tag",
+  "slug": "41730",
+  "title": "CBOR tag 41730 — Fraction (+NaN signals)",
+  "summary": "CBOR tag 41730 (data item: array, unsigned integer or unsigned bignum): Fraction (+NaN signals).",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 41730,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "41730",
+      "Data Item": "array, unsigned integer or unsigned bignum",
+      "Semantics": "Fraction (+NaN signals)",
+      "Reference": "[https://medyro.eu/specification/IANA/CBOR%20Tags/Fraction/][Medyro]",
+      "Template": "template/41730"
+    }
+  },
+  "updated": "2026-05-29"
+}

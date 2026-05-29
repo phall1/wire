@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/277",
+  "family": "cbor-tag",
+  "slug": "277",
+  "title": "CBOR tag 277 — Universal Geographical Area Description (GAD) shape; see Se…",
+  "summary": "CBOR tag 277 (data item: byte string): Universal Geographical Area Description (GAD) shape; see Section 5.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 277,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "277",
+      "Data Item": "byte string",
+      "Semantics": "Universal Geographical Area Description (GAD) shape; see Section 5",
+      "Reference": "[TS 23.032][Mathew_Meins]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

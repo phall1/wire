@@ -1,0 +1,38 @@
+{
+  "id": "port/111",
+  "family": "port",
+  "slug": "111",
+  "title": "Port 111 — sunrpc",
+  "summary": "Well-known port 111 (tcp/udp): SUN Remote Procedure Call. Service name: sunrpc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 111,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sunrpc",
+      "Port Number": "111",
+      "Transport Protocol": "tcp",
+      "Description": "SUN Remote Procedure Call",
+      "Assignee": "[Chuck_McManis]",
+      "Contact": "[Chuck_McManis]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

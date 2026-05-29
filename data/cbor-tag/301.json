@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/301",
+  "family": "cbor-tag",
+  "slug": "301",
+  "title": "CBOR tag 301 — Geohash String",
+  "summary": "CBOR tag 301 (data item: text string or array): Geohash String.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 301,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "301",
+      "Data Item": "text string or array",
+      "Semantics": "Geohash String",
+      "Reference": "[Fast and Readable Geographical Hashing (CTA-5009-A)][Consumer_Technology_Association]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

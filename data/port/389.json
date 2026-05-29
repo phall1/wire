@@ -1,0 +1,38 @@
+{
+  "id": "port/389",
+  "family": "port",
+  "slug": "389",
+  "title": "Port 389 — ldap",
+  "summary": "Well-known port 389 (tcp/udp): Lightweight Directory Access Protocol. Service name: ldap.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 389,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ldap",
+      "Port Number": "389",
+      "Transport Protocol": "tcp",
+      "Description": "Lightweight Directory Access Protocol",
+      "Assignee": "[Tim_Howes]",
+      "Contact": "[Tim_Howes]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

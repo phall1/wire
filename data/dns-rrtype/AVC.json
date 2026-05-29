@@ -1,0 +1,29 @@
+{
+  "id": "dns-rrtype/AVC",
+  "family": "dns-rrtype",
+  "slug": "AVC",
+  "title": "AVC — Application Visibility and Control (type 258)",
+  "summary": "DNS resource record type AVC (numeric type 258): Application Visibility and Control.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 258,
+    "reference_rfcs": [],
+    "registration_date": "2016-02-26",
+    "raw_columns": {
+      "TYPE": "AVC",
+      "Value": "258",
+      "Meaning": "Application Visibility and Control",
+      "Reference": "[Wolfgang_Riedel]",
+      "Template": "AVC/avc-completed-template",
+      "Registration Date": "2016-02-26"
+    }
+  },
+  "updated": "2026-05-29"
+}

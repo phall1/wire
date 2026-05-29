@@ -1,0 +1,38 @@
+{
+  "id": "port/388",
+  "family": "port",
+  "slug": "388",
+  "title": "Port 388 — unidata-ldm",
+  "summary": "Well-known port 388 (tcp/udp): Unidata LDM. Service name: unidata-ldm.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 388,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "unidata-ldm",
+      "Port Number": "388",
+      "Transport Protocol": "tcp",
+      "Description": "Unidata LDM",
+      "Assignee": "[University_Corporation_for_Atmospheric_Research2]",
+      "Contact": "[Steven_Emmerson2]",
+      "Registration Date": "",
+      "Modification Date": "2012-05-18",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

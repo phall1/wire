@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/601",
+  "family": "cbor-tag",
+  "slug": "601",
+  "title": "CBOR tag 601 — Unprotected CWT Claims Set [RFC9781]",
+  "summary": "CBOR tag 601 (data item: map (Claims-Set as per Appendix A of [RFC9781])): Unprotected CWT Claims Set [RFC9781]. Defined in RFC9781.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 601,
+    "reference_rfcs": [
+      "RFC9781"
+    ],
+    "raw_columns": {
+      "Tag": "601",
+      "Data Item": "map (Claims-Set as per Appendix A of [RFC9781])",
+      "Semantics": "Unprotected CWT Claims Set [RFC9781]",
+      "Reference": "[RFC9781]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

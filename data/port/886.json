@@ -1,0 +1,38 @@
+{
+  "id": "port/886",
+  "family": "port",
+  "slug": "886",
+  "title": "Port 886 — iclcnet-locate",
+  "summary": "Well-known port 886 (tcp/udp): ICL coNETion locate server. Service name: iclcnet-locate.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 886,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "iclcnet-locate",
+      "Port Number": "886",
+      "Transport Protocol": "tcp",
+      "Description": "ICL coNETion locate server",
+      "Assignee": "[Bob_Lyon]",
+      "Contact": "[Bob_Lyon]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

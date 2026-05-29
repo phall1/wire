@@ -1,0 +1,38 @@
+{
+  "id": "port/621",
+  "family": "port",
+  "slug": "621",
+  "title": "Port 621 — escp-ip",
+  "summary": "Well-known port 621 (tcp/udp): ESCP. Service name: escp-ip.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 621,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "escp-ip",
+      "Port Number": "621",
+      "Transport Protocol": "tcp",
+      "Description": "ESCP",
+      "Assignee": "[Lai_Zit_Seng]",
+      "Contact": "[Lai_Zit_Seng]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/269",
+  "family": "cbor-tag",
+  "slug": "269",
+  "title": "CBOR tag 269 — Extended bigfloat",
+  "summary": "CBOR tag 269 (data item: array): Extended bigfloat.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 269,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "269",
+      "Data Item": "array",
+      "Semantics": "Extended bigfloat",
+      "Reference": "[https://peteroupc.github.io/CBOR/extended.html][Peter_Occil]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

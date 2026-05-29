@@ -1,0 +1,94 @@
+{
+  "id": "terminal-osc/52",
+  "family": "terminal-osc",
+  "slug": "52",
+  "title": "OSC 52 — Clipboard set / query (base64)",
+  "summary": "OSC 52 ; Pc ; Pd ST manipulates the system clipboard. Pc selects which clipboard ('c' = CLIPBOARD, 'p' = PRIMARY, etc.); Pd is the base64-encoded data to set, or '?' to query (the terminal replies with the clipboard contents, base64-encoded). Lets a program running anywhere — including over ssh — copy to the local clipboard.",
+  "kind": "control-sequence",
+  "aliases": [
+    "clipboard",
+    "set clipboard",
+    "query clipboard",
+    "OSC 52",
+    "ESC ] 52",
+    "copy over ssh"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 5 2 -> Manipulate Selection Data. Pc is the clipboard(s) (c/p/q/s/0-7); Pd is base64 data, '?' to report. Default Pc selects CLIPBOARD and PRIMARY."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/4"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 52,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 52 is an xterm convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm also accepts BEL. Emit ST, accept both. Query replies are also ST/BEL terminated."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set clipboard",
+        "meaning": "OSC 52 ; Pc ; <base64> ST sets clipboard Pc to the base64-decoded bytes. Pc: 'c' = CLIPBOARD, 'p' = PRIMARY, 'q' = secondary, 's' = select, '0'-'7' = cut-buffers; empty Pc defaults to CLIPBOARD+PRIMARY. The data field is standard base64 of the raw clipboard bytes.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]52;c;aGVsbG8=\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 5 2 ; c ; a G V s b G 8 = ESC \\   ==  \\x1b]52;c;aGVsbG8=\\x1b\\\\   (base64 'aGVsbG8=' decodes to 'hello')",
+        "byte_sequence_BEL": "\u001b]52;c;aGVsbG8=\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 5 2 ; c ; a G V s b G 8 = BEL   ==  \\x1b]52;c;aGVsbG8=\\x07",
+        "subparams": []
+      },
+      {
+        "id": "query",
+        "anchor": "#query",
+        "name": "Query clipboard",
+        "meaning": "OSC 52 ; Pc ; ? ST asks the terminal to report the current contents of clipboard Pc. The terminal replies with OSC 52 ; Pc ; <base64> ST containing the base64-encoded clipboard data (if querying is enabled).",
+        "required": false,
+        "byte_sequence_ST": "\u001b]52;c;?\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 5 2 ; c ; ? ESC \\   ==  \\x1b]52;c;?\\x1b\\\\   (reply e.g. \\x1b]52;c;aGVsbG8=\\x1b\\\\)",
+        "byte_sequence_BEL": "\u001b]52;c;?\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 5 2 ; c ; ? BEL   ==  \\x1b]52;c;?\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Pd is BASE64, not raw text: you must base64-encode the bytes you want on the clipboard. A bare '?' in the data field means query, not literal data.",
+      "SECURITY: clipboard WRITE lets remote programs (e.g. over ssh) silently change your local clipboard; clipboard READ (the '?' query) lets a remote program EXFILTRATE your clipboard. xterm disables both by default (the 'allowWindowOps' / clipboard resources); many terminals disable read in particular and cap the payload size.",
+      "Some terminals impose a maximum payload length (xterm has a limit; tmux historically capped OSC 52 around 74 KB / 100 KB depending on version) — large copies may be silently truncated.",
+      "Through tmux/screen the sequence must be passed through (tmux 'set-clipboard on' and DCS pass-through); otherwise the multiplexer swallows it.",
+      "Base64 with or without trailing '=' padding: emit standard padded base64; some terminals are lenient, others strict.",
+      "There is no standard clipboard-MIME negotiation; you set/get raw bytes only."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 52 set (with base64 payload) and query ('?') forms are syntactically valid OSC strings in both ST and BEL terminator forms.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

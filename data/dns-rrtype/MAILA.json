@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/MAILA",
+  "family": "dns-rrtype",
+  "slug": "MAILA",
+  "title": "MAILA — mail agent RRs (OBSOLETE - see MX) (type 254)",
+  "summary": "DNS resource record type MAILA (numeric type 254): mail agent RRs (OBSOLETE - see MX). Defined in RFC1035.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 254,
+    "reference_rfcs": [
+      "RFC1035"
+    ],
+    "raw_columns": {
+      "TYPE": "MAILA",
+      "Value": "254",
+      "Meaning": "mail agent RRs (OBSOLETE - see MX)",
+      "Reference": "[RFC1035]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

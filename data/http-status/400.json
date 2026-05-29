@@ -1,0 +1,27 @@
+{
+  "id": "http-status/400",
+  "family": "http-status",
+  "slug": "400",
+  "title": "400 Bad Request",
+  "summary": "HTTP status code 400 Bad Request. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 400,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "400",
+      "Description": "Bad Request",
+      "Reference": "[RFC9110, Section 15.5.1]"
+    }
+  },
+  "updated": "2026-05-29"
+}

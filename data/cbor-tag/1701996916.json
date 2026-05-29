@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/1701996916",
+  "family": "cbor-tag",
+  "slug": "1701996916",
+  "title": "CBOR tag 1701996916 — ERIS-FS image header",
+  "summary": "CBOR tag 1701996916 (data item: array): ERIS-FS image header.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 1701996916,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "1701996916",
+      "Data Item": "array",
+      "Semantics": "ERIS-FS image header",
+      "Reference": "[Endo_Renberg]",
+      "Template": "template/1701996916"
+    }
+  },
+  "updated": "2026-05-29"
+}

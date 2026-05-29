@@ -1,0 +1,38 @@
+{
+  "id": "port/318",
+  "family": "port",
+  "slug": "318",
+  "title": "Port 318 — pkix-timestamp",
+  "summary": "Well-known port 318 (tcp/udp): PKIX TimeStamp. Service name: pkix-timestamp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 318,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pkix-timestamp",
+      "Port Number": "318",
+      "Transport Protocol": "tcp",
+      "Description": "PKIX TimeStamp",
+      "Assignee": "[Robert_Zuccherato]",
+      "Contact": "[Robert_Zuccherato]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "port/653",
+  "family": "port",
+  "slug": "653",
+  "title": "Port 653 — repscmd",
+  "summary": "Well-known port 653 (tcp/udp): RepCmd. Service name: repscmd.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 653,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "repscmd",
+      "Port Number": "653",
+      "Transport Protocol": "tcp",
+      "Description": "RepCmd",
+      "Assignee": "[Scott_Dale_2]",
+      "Contact": "[Scott_Dale_2]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

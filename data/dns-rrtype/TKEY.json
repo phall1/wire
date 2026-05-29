@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/TKEY",
+  "family": "dns-rrtype",
+  "slug": "TKEY",
+  "title": "TKEY — Transaction Key (type 249)",
+  "summary": "DNS resource record type TKEY (numeric type 249): Transaction Key. Defined in RFC2930.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 249,
+    "reference_rfcs": [
+      "RFC2930"
+    ],
+    "raw_columns": {
+      "TYPE": "TKEY",
+      "Value": "249",
+      "Meaning": "Transaction Key",
+      "Reference": "[RFC2930]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

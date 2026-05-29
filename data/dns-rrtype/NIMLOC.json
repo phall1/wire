@@ -1,0 +1,29 @@
+{
+  "id": "dns-rrtype/NIMLOC",
+  "family": "dns-rrtype",
+  "slug": "NIMLOC",
+  "title": "NIMLOC — Nimrod Locator (type 32)",
+  "summary": "DNS resource record type NIMLOC (numeric type 32): Nimrod Locator.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 32,
+    "reference_rfcs": [],
+    "registration_date": "1995-06",
+    "raw_columns": {
+      "TYPE": "NIMLOC",
+      "Value": "32",
+      "Meaning": "Nimrod Locator",
+      "Reference": "[1][Michael_Patton][http://ana-3.lcs.mit.edu/~jnc/nimrod/dns.txt]",
+      "Template": "",
+      "Registration Date": "1995-06"
+    }
+  },
+  "updated": "2026-05-29"
+}

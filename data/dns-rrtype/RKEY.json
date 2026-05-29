@@ -1,0 +1,29 @@
+{
+  "id": "dns-rrtype/RKEY",
+  "family": "dns-rrtype",
+  "slug": "RKEY",
+  "title": "RKEY — RKEY (type 57)",
+  "summary": "DNS resource record type RKEY (numeric type 57): RKEY.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 57,
+    "reference_rfcs": [],
+    "registration_date": "2008-01-21",
+    "raw_columns": {
+      "TYPE": "RKEY",
+      "Value": "57",
+      "Meaning": "RKEY",
+      "Reference": "[Jim_Reid]",
+      "Template": "RKEY/rkey-completed-template",
+      "Registration Date": "2008-01-21"
+    }
+  },
+  "updated": "2026-05-29"
+}

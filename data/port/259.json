@@ -1,0 +1,38 @@
+{
+  "id": "port/259",
+  "family": "port",
+  "slug": "259",
+  "title": "Port 259 — esro-gen",
+  "summary": "Well-known port 259 (tcp/udp): Efficient Short Remote Operations. Service name: esro-gen.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 259,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "esro-gen",
+      "Port Number": "259",
+      "Transport Protocol": "tcp",
+      "Description": "Efficient Short Remote Operations",
+      "Assignee": "[Mohsen_Banan]",
+      "Contact": "[Mohsen_Banan]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

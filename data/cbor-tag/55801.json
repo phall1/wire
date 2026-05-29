@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/55801",
+  "family": "cbor-tag",
+  "slug": "55801",
+  "title": "CBOR tag 55801 — indicates that the file starts with a CBOR-Labeled Non-CBOR…",
+  "summary": "CBOR tag 55801 (data item: tagged byte string): indicates that the file starts with a CBOR-Labeled Non-CBOR Data label.. Defined in RFC9277.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 55801,
+    "reference_rfcs": [
+      "RFC9277"
+    ],
+    "raw_columns": {
+      "Tag": "55801",
+      "Data Item": "tagged byte string",
+      "Semantics": "indicates that the file starts with a CBOR-Labeled Non-CBOR Data label.",
+      "Reference": "[RFC9277]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

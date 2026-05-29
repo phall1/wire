@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/284",
+  "family": "cbor-tag",
+  "slug": "284",
+  "title": "CBOR tag 284 — JSON Numeric Value, Represented as its JSON Text",
+  "summary": "CBOR tag 284 (data item: text string or byte string): JSON Numeric Value, Represented as its JSON Text.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 284,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "284",
+      "Data Item": "text string or byte string",
+      "Semantics": "JSON Numeric Value, Represented as its JSON Text",
+      "Reference": "[https://gist.github.com/theory/ef667af1c725240e6e30d525786d58e6][David_Wheeler]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

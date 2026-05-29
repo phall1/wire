@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/24",
+  "family": "cbor-tag",
+  "slug": "24",
+  "title": "CBOR tag 24 — Encoded CBOR data item; see Section 3.4.5.1",
+  "summary": "CBOR tag 24 (data item: byte string): Encoded CBOR data item; see Section 3.4.5.1. Defined in RFC8949.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 24,
+    "reference_rfcs": [
+      "RFC8949"
+    ],
+    "raw_columns": {
+      "Tag": "24",
+      "Data Item": "byte string",
+      "Semantics": "Encoded CBOR data item; see Section 3.4.5.1",
+      "Reference": "[RFC8949]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

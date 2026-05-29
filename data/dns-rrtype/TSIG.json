@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/TSIG",
+  "family": "dns-rrtype",
+  "slug": "TSIG",
+  "title": "TSIG — Transaction Signature (type 250)",
+  "summary": "DNS resource record type TSIG (numeric type 250): Transaction Signature. Defined in RFC8945.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 250,
+    "reference_rfcs": [
+      "RFC8945"
+    ],
+    "raw_columns": {
+      "TYPE": "TSIG",
+      "Value": "250",
+      "Meaning": "Transaction Signature",
+      "Reference": "[RFC8945]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

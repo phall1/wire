@@ -1,0 +1,38 @@
+{
+  "id": "port/754",
+  "family": "port",
+  "slug": "754",
+  "title": "Port 754 — tell",
+  "summary": "Well-known port 754 (tcp/udp): send. Service name: tell.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 754,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "tell",
+      "Port Number": "754",
+      "Transport Protocol": "tcp",
+      "Description": "send",
+      "Assignee": "[Josyula_R_Rao]",
+      "Contact": "[Josyula_R_Rao]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

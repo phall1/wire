@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/SSHFP",
+  "family": "dns-rrtype",
+  "slug": "SSHFP",
+  "title": "SSHFP — SSH Key Fingerprint (type 44)",
+  "summary": "DNS resource record type SSHFP (numeric type 44): SSH Key Fingerprint. Defined in RFC4255.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 44,
+    "reference_rfcs": [
+      "RFC4255"
+    ],
+    "raw_columns": {
+      "TYPE": "SSHFP",
+      "Value": "44",
+      "Meaning": "SSH Key Fingerprint",
+      "Reference": "[RFC4255]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

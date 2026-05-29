@@ -1,0 +1,38 @@
+{
+  "id": "port/574",
+  "family": "port",
+  "slug": "574",
+  "title": "Port 574 — ftp-agent",
+  "summary": "Well-known port 574 (tcp/udp): FTP Software Agent System. Service name: ftp-agent.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 574,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ftp-agent",
+      "Port Number": "574",
+      "Transport Protocol": "tcp",
+      "Description": "FTP Software Agent System",
+      "Assignee": "[Michael_S_Greenberg]",
+      "Contact": "[Michael_S_Greenberg]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

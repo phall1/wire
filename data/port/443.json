@@ -1,0 +1,42 @@
+{
+  "id": "port/443",
+  "family": "port",
+  "slug": "443",
+  "title": "Port 443 — https",
+  "summary": "Well-known port 443 (tcp/udp/sctp): http protocol over TLS/SSL. Service name: https. Referenced in RFC9110, RFC9260.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 443,
+    "reference_rfcs": [
+      "RFC9110",
+      "RFC9260"
+    ],
+    "transports": [
+      "tcp",
+      "udp",
+      "sctp"
+    ],
+    "raw_columns": {
+      "Service Name": "https",
+      "Port Number": "443",
+      "Transport Protocol": "tcp",
+      "Description": "http protocol over TLS/SSL",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "",
+      "Modification Date": "2021-10-01",
+      "Reference": "[RFC9110]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

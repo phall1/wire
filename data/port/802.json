@@ -1,0 +1,38 @@
+{
+  "id": "port/802",
+  "family": "port",
+  "slug": "802",
+  "title": "Port 802 — mbap-s",
+  "summary": "Well-known port 802 (tcp/udp): Modbus Application Protocol Secure. Service name: mbap-s.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 802,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "mbap-s",
+      "Port Number": "802",
+      "Transport Protocol": "tcp",
+      "Description": "Modbus Application Protocol Secure",
+      "Assignee": "[modbus.org]",
+      "Contact": "[Dennis_Dube]",
+      "Registration Date": "2014-06-10",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

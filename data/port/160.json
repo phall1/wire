@@ -1,0 +1,38 @@
+{
+  "id": "port/160",
+  "family": "port",
+  "slug": "160",
+  "title": "Port 160 — sgmp-traps",
+  "summary": "Well-known port 160 (tcp/udp): SGMP-TRAPS. Service name: sgmp-traps.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 160,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "sgmp-traps",
+      "Port Number": "160",
+      "Transport Protocol": "tcp",
+      "Description": "SGMP-TRAPS",
+      "Assignee": "[Marty_Schoffstahl]",
+      "Contact": "[Marty_Schoffstahl]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

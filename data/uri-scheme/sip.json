@@ -1,0 +1,32 @@
+{
+  "id": "uri-scheme/sip",
+  "family": "uri-scheme",
+  "slug": "sip",
+  "title": "sip: — session initiation protocol",
+  "summary": "URI scheme \"sip:\" — session initiation protocol. IANA status: Permanent. Defined in RFC3261.",
+  "kind": "scheme",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 21 May 2026 22:06:21 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": "sip",
+    "reference_rfcs": [
+      "RFC3261"
+    ],
+    "raw_columns": {
+      "URI Scheme": "sip",
+      "Template": "",
+      "Description": "session initiation protocol",
+      "Status": "Permanent",
+      "CRI Scheme Number": "12644",
+      "Well-Known URI Support": "-",
+      "Reference": "[RFC3261]",
+      "Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

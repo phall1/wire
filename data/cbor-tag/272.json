@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/272",
+  "family": "cbor-tag",
+  "slug": "272",
+  "title": "CBOR tag 272 — Non-UTF-8 CESU-8 string",
+  "summary": "CBOR tag 272 (data item: byte string): Non-UTF-8 CESU-8 string.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 272,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "272",
+      "Data Item": "byte string",
+      "Semantics": "Non-UTF-8 CESU-8 string",
+      "Reference": "[https://github.com/svaarala/cbor-specs/blob/master/cbor-nonutf8-string-tags.rst][Sami_Vaarala]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

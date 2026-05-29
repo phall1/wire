@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/43000",
+  "family": "cbor-tag",
+  "slug": "43000",
+  "title": "CBOR tag 43000 — Single complex number: array elements are real (I) and imag…",
+  "summary": "CBOR tag 43000 (data item: array): Single complex number: array elements are real (I) and imaginary (Q) components.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 43000,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "43000",
+      "Data Item": "array",
+      "Semantics": "Single complex number: array elements are real (I) and imaginary (Q) components",
+      "Reference": "[Saajan_Chana]",
+      "Template": "template/43000"
+    }
+  },
+  "updated": "2026-05-29"
+}

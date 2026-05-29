@@ -1,0 +1,80 @@
+{
+  "id": "terminal-osc/0",
+  "family": "terminal-osc",
+  "slug": "0",
+  "title": "OSC 0 — Set icon name and window title",
+  "summary": "OSC 0 ; text ST sets BOTH the terminal window title and the icon name (legacy X11 icon-name concept) to text. Written ESC ] 0 ; text ST (ST = ESC \\, BEL also accepted). The most widely supported of the title-setting OSCs.",
+  "kind": "control-sequence",
+  "aliases": [
+    "set window and icon title",
+    "set title",
+    "OSC 0",
+    "ESC ] 0"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs 'Operating System Commands': Ps = 0 -> Change Icon Name and Window Title to Pt."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/2",
+    "terminal-osc/7",
+    "terminal-osc/133"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 0,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. The command number 0 is an xterm convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and nearly all terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set icon name and window title",
+        "meaning": "OSC 0 ; Pt ST sets both the window title and the X11 icon name to the string Pt. On modern terminals the icon-name concept is vestigial, so OSC 0 effectively just sets the window/tab title.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]0;mytitle\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 0 ; m y t i t l e ESC \\   ==  \\x1b]0;mytitle\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]0;mytitle\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 0 ; m y t i t l e BEL   ==  \\x1b]0;mytitle\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 0 sets BOTH window title AND icon name; use OSC 2 for window title only, OSC 1 for icon name only.",
+      "The title string Pt must not contain control characters; in particular a BEL or ESC in the title will terminate the sequence early.",
+      "Some multiplexers (tmux, screen) intercept and may rewrite or pass through title sequences depending on configuration (e.g. tmux 'set-titles').",
+      "There is no query form for OSC 0/1/2 in xterm by default; title reporting is gated behind the 'allowWindowOps'/'disallowedWindowOps' resources for security reasons."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 0 set form is a syntactically valid OSC string in both ST and BEL terminator forms.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

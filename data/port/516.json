@@ -1,0 +1,38 @@
+{
+  "id": "port/516",
+  "family": "port",
+  "slug": "516",
+  "title": "Port 516 — videotex",
+  "summary": "Well-known port 516 (tcp/udp): videotex. Service name: videotex.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 516,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "videotex",
+      "Port Number": "516",
+      "Transport Protocol": "tcp",
+      "Description": "videotex",
+      "Assignee": "[Daniel_Mavrakis]",
+      "Contact": "[Daniel_Mavrakis]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

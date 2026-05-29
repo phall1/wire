@@ -1,0 +1,38 @@
+{
+  "id": "port/646",
+  "family": "port",
+  "slug": "646",
+  "title": "Port 646 — ldp",
+  "summary": "Well-known port 646 (tcp/udp): LDP. Service name: ldp.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 646,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "ldp",
+      "Port Number": "646",
+      "Transport Protocol": "tcp",
+      "Description": "LDP",
+      "Assignee": "[Bob_Thomas]",
+      "Contact": "[Bob_Thomas]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

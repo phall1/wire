@@ -1,0 +1,27 @@
+{
+  "id": "http-status/503",
+  "family": "http-status",
+  "slug": "503",
+  "title": "503 Service Unavailable",
+  "summary": "HTTP status code 503 Service Unavailable. Defined in RFC9110.",
+  "kind": "status-code",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 24 Oct 2025 07:01:38 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 503,
+    "reference_rfcs": [
+      "RFC9110"
+    ],
+    "raw_columns": {
+      "Value": "503",
+      "Description": "Service Unavailable",
+      "Reference": "[RFC9110, Section 15.6.4]"
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "dns-rrtype/UINFO",
+  "family": "dns-rrtype",
+  "slug": "UINFO",
+  "title": "UINFO (type 100)",
+  "summary": "DNS resource record type UINFO (numeric type 100).",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 100,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "TYPE": "UINFO",
+      "Value": "100",
+      "Meaning": "",
+      "Reference": "[IANA-Reserved]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

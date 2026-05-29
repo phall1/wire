@@ -1,0 +1,74 @@
+{
+  "id": "encoding/punycode",
+  "family": "encoding",
+  "slug": "punycode",
+  "title": "Punycode (RFC 3492) — the IDNA ToASCII building block",
+  "summary": "Punycode is a reversible encoding that represents a Unicode string as a host-name-safe ASCII string (the letters/digits/hyphen 'LDH' set). It is the core transformation inside IDNA's ToASCII operation: each label of an internationalized domain name is Bootstring-encoded and prefixed with the ACE marker 'xn--'. The raw Punycode of 'münchen' is 'mnchen-3ya'; the full IDNA label is 'xn--mnchen-3ya'.",
+  "kind": "encoding",
+  "aliases": [
+    "RFC 3492 punycode",
+    "Bootstring",
+    "IDNA ACE",
+    "xn-- encoding"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.rfc-editor.org/rfc/rfc3492",
+  "source_version": "RFC 3492",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "encoding/percent-encoding"
+  ],
+  "ext_type": "encoding@1",
+  "ext": {
+    "rfc": "RFC3492",
+    "charset": "Unicode",
+    "algorithm": "punycode",
+    "notes": [
+      "Punycode (RFC 3492) is a specialization of the Bootstring algorithm. It first copies all the basic (ASCII) code points, then encodes the non-ASCII code points as deltas, producing an LDH (letter/digit/hyphen) string with no information loss.",
+      "Punycode is NOT used by itself in DNS: IDNA's ToASCII (RFC 3490 / UTS-46) applies Punycode per label and prepends the ACE prefix 'xn--'. So raw Punycode('münchen') = 'mnchen-3ya', and the full DNS label = 'xn--' + 'mnchen-3ya' = 'xn--mnchen-3ya'.",
+      "Executor note: the encoding-exec gate's 'punycode' algorithm runs IDNA ToASCII/ToUnicode (WHATWG URL host parser, with a node:punycode fallback), so its outputs carry the 'xn--' prefix per label. The bare-label raw Punycode 'mnchen-3ya' (without prefix) comes from RFC 3492's encode step directly; both forms are recorded here.",
+      "ToASCII is applied label-by-label across the dots: 'münchen.de' -> 'xn--mnchen-3ya.de' (the ASCII label '.de' is left unchanged)."
+    ],
+    "test_vectors": [
+      {
+        "input": "münchen",
+        "input_form": "utf8",
+        "output": "xn--mnchen-3ya",
+        "output_form": "ascii",
+        "algorithm": "punycode",
+        "direction": "encode",
+        "note": "IDNA ToASCII of the single label 'münchen' = 'xn--mnchen-3ya'. The raw RFC 3492 Punycode (without the 'xn--' ACE prefix) is 'mnchen-3ya'."
+      },
+      {
+        "input": "münchen.de",
+        "input_form": "utf8",
+        "output": "xn--mnchen-3ya.de",
+        "output_form": "ascii",
+        "algorithm": "punycode",
+        "direction": "encode",
+        "note": "Full domain via IDNA ToASCII: only the non-ASCII label is encoded; '.de' passes through -> 'xn--mnchen-3ya.de'."
+      },
+      {
+        "input": "bücher.example",
+        "input_form": "utf8",
+        "output": "xn--bcher-kva.example",
+        "output_form": "ascii",
+        "algorithm": "punycode",
+        "direction": "encode",
+        "note": "Second domain example: 'bücher' -> 'xn--bcher-kva' (raw Punycode 'bcher-kva'), '.example' unchanged."
+      },
+      {
+        "input": "xn--mnchen-3ya.de",
+        "input_form": "ascii",
+        "output": "münchen.de",
+        "output_form": "utf8",
+        "algorithm": "punycode",
+        "direction": "decode",
+        "note": "Round-trip: IDNA ToUnicode('xn--mnchen-3ya.de') = 'münchen.de'."
+      }
+    ]
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

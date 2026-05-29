@@ -1,0 +1,38 @@
+{
+  "id": "port/622",
+  "family": "port",
+  "slug": "622",
+  "title": "Port 622 — collaborator",
+  "summary": "Well-known port 622 (tcp/udp): Collaborator. Service name: collaborator.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 622,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "collaborator",
+      "Port Number": "622",
+      "Transport Protocol": "tcp",
+      "Description": "Collaborator",
+      "Assignee": "[Johnson_Davis]",
+      "Contact": "[Johnson_Davis]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

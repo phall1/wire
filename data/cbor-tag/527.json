@@ -1,0 +1,27 @@
+{
+  "id": "cbor-tag/527",
+  "family": "cbor-tag",
+  "slug": "527",
+  "title": "CBOR tag 527 — A CBOR tag that contains either: xcorimmap, or signed-xcori…",
+  "summary": "CBOR tag 527 (data item: tagged signature block): A CBOR tag that contains either: xcorimmap, or signed-xcorim..",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 527,
+    "reference_rfcs": [],
+    "raw_columns": {
+      "Tag": "527",
+      "Data Item": "tagged signature block",
+      "Semantics": "A CBOR tag that contains either: xcorimmap, or signed-xcorim.",
+      "Reference": "[TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

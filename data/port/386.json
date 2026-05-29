@@ -1,0 +1,38 @@
+{
+  "id": "port/386",
+  "family": "port",
+  "slug": "386",
+  "title": "Port 386 — asa",
+  "summary": "Well-known port 386 (tcp/udp): ASA Message Router Object Def.. Service name: asa.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 386,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "asa",
+      "Port Number": "386",
+      "Transport Protocol": "tcp",
+      "Description": "ASA Message Router Object Def.",
+      "Assignee": "[Steve_Laitinen]",
+      "Contact": "[Steve_Laitinen]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

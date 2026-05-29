@@ -1,0 +1,38 @@
+{
+  "id": "port/671",
+  "family": "port",
+  "slug": "671",
+  "title": "Port 671 — vacdsm-app",
+  "summary": "Well-known port 671 (tcp/udp): VACDSM-APP. Service name: vacdsm-app.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 671,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "vacdsm-app",
+      "Port Number": "671",
+      "Transport Protocol": "tcp",
+      "Description": "VACDSM-APP",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

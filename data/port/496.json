@@ -1,0 +1,38 @@
+{
+  "id": "port/496",
+  "family": "port",
+  "slug": "496",
+  "title": "Port 496 — pim-rp-disc",
+  "summary": "Well-known port 496 (tcp/udp): PIM-RP-DISC. Service name: pim-rp-disc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 496,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "pim-rp-disc",
+      "Port Number": "496",
+      "Transport Protocol": "tcp",
+      "Description": "PIM-RP-DISC",
+      "Assignee": "[Dino_Farinacci]",
+      "Contact": "[Dino_Farinacci]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

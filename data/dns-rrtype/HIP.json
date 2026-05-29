@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/HIP",
+  "family": "dns-rrtype",
+  "slug": "HIP",
+  "title": "HIP — Host Identity Protocol (type 55)",
+  "summary": "DNS resource record type HIP (numeric type 55): Host Identity Protocol. Defined in RFC8005.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 55,
+    "reference_rfcs": [
+      "RFC8005"
+    ],
+    "raw_columns": {
+      "TYPE": "HIP",
+      "Value": "55",
+      "Meaning": "Host Identity Protocol",
+      "Reference": "[RFC8005]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

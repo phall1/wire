@@ -1,0 +1,42 @@
+{
+  "id": "port/775",
+  "family": "port",
+  "slug": "775",
+  "title": "Port 775 — entomb (+2 more)",
+  "summary": "Well-known port 775 (tcp/udp): IANA assigned this well-formed service name as a replacement for \"acmaint_transd\".. Service names: entomb, acmaint-transd, acmaint_transd.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 775,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "entomb",
+      "Port Number": "775",
+      "Transport Protocol": "tcp",
+      "Description": "",
+      "Assignee": "",
+      "Contact": "",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29",
+  "aliases": [
+    "acmaint-transd",
+    "acmaint_transd"
+  ]
+}

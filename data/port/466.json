@@ -1,0 +1,38 @@
+{
+  "id": "port/466",
+  "family": "port",
+  "slug": "466",
+  "title": "Port 466 — digital-vrc",
+  "summary": "Well-known port 466 (tcp/udp): digital-vrc. Service name: digital-vrc.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 466,
+    "reference_rfcs": [],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "digital-vrc",
+      "Port Number": "466",
+      "Transport Protocol": "tcp",
+      "Description": "digital-vrc",
+      "Assignee": "[Peter_Higginson]",
+      "Contact": "[Peter_Higginson]",
+      "Registration Date": "",
+      "Modification Date": "",
+      "Reference": "",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cbor-tag/5",
+  "family": "cbor-tag",
+  "slug": "5",
+  "title": "CBOR tag 5 — Bigfloat; see Section 3.4.4",
+  "summary": "CBOR tag 5 (data item: array): Bigfloat; see Section 3.4.4. Defined in RFC8949.",
+  "kind": "tag",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/cbor-tags/tags.csv",
+  "source_version": "IANA registry, Last-Modified: Thu, 02 Apr 2026 23:51:20 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 5,
+    "reference_rfcs": [
+      "RFC8949"
+    ],
+    "raw_columns": {
+      "Tag": "5",
+      "Data Item": "array",
+      "Semantics": "Bigfloat; see Section 3.4.4",
+      "Reference": "[RFC8949]",
+      "Template": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "port/854",
+  "family": "port",
+  "slug": "854",
+  "title": "Port 854 — dlep",
+  "summary": "Well-known port 854 (tcp/udp): Dynamic Link Exchange Protocol (DLEP). Service name: dlep. Referenced in RFC8175.",
+  "kind": "port",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv",
+  "source_version": "IANA registry, Last-Modified: Fri, 29 May 2026 01:11:28 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 854,
+    "reference_rfcs": [
+      "RFC8175"
+    ],
+    "transports": [
+      "tcp",
+      "udp"
+    ],
+    "raw_columns": {
+      "Service Name": "dlep",
+      "Port Number": "854",
+      "Transport Protocol": "tcp",
+      "Description": "Dynamic Link Exchange Protocol (DLEP)",
+      "Assignee": "[IESG]",
+      "Contact": "[IETF_Chair]",
+      "Registration Date": "2017-04-03",
+      "Modification Date": "",
+      "Reference": "[RFC8175]",
+      "Service Code": "",
+      "Unauthorized Use Reported": "",
+      "Assignment Notes": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

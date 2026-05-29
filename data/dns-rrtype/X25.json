@@ -1,0 +1,30 @@
+{
+  "id": "dns-rrtype/X25",
+  "family": "dns-rrtype",
+  "slug": "X25",
+  "title": "X25 — for X.25 PSDN address (type 19)",
+  "summary": "DNS resource record type X25 (numeric type 19): for X.25 PSDN address. Defined in RFC1183.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 19,
+    "reference_rfcs": [
+      "RFC1183"
+    ],
+    "raw_columns": {
+      "TYPE": "X25",
+      "Value": "19",
+      "Meaning": "for X.25 PSDN address",
+      "Reference": "[RFC1183]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}

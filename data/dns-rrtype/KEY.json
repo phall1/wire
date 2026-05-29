@@ -1,0 +1,33 @@
+{
+  "id": "dns-rrtype/KEY",
+  "family": "dns-rrtype",
+  "slug": "KEY",
+  "title": "KEY — for security key (type 25)",
+  "summary": "DNS resource record type KEY (numeric type 25): for security key. Defined in RFC2536, RFC2539, RFC3110, RFC4034.",
+  "kind": "rrtype",
+  "status": "standard",
+  "verification": "verified",
+  "tier": "A",
+  "source_url": "https://www.iana.org/assignments/dns-parameters/dns-parameters-4.csv",
+  "source_version": "IANA registry, Last-Modified: Mon, 29 Dec 2025 20:21:25 GMT",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "iana-registry-row@1",
+  "ext": {
+    "value": 25,
+    "reference_rfcs": [
+      "RFC2536",
+      "RFC2539",
+      "RFC3110",
+      "RFC4034"
+    ],
+    "raw_columns": {
+      "TYPE": "KEY",
+      "Value": "25",
+      "Meaning": "for security key",
+      "Reference": "[RFC2536][RFC2539][RFC3110][RFC4034]",
+      "Template": "",
+      "Registration Date": ""
+    }
+  },
+  "updated": "2026-05-29"
+}
