@@ -1,0 +1,92 @@
+{
+  "id": "terminal-csi/cup",
+  "family": "terminal-csi",
+  "slug": "cup",
+  "title": "CSI CUP / HVP \u2014 Cursor Position",
+  "summary": "CUP (final byte 'H') moves the cursor to row Pl, column Pc: CSI Pl ; Pc H. Both default to 1 when omitted, so 'CSI H' homes the cursor to the top-left. HVP (final byte 'f', CSI Pl ; Pc f) is the format-effector twin with identical effect in practice. Coordinates are 1-based and clamped to the screen (DEC origin mode shifts the addressable region to the scroll region).",
+  "kind": "control-sequence",
+  "aliases": [
+    "CUP",
+    "HVP",
+    "cursor position",
+    "CSI H",
+    "ESC [ H",
+    "goto xy"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps ; Ps H = Cursor Position [row;column] (CUP); CSI Ps ; Ps f = Horizontal and Vertical Position (HVP). Defaults are 1."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.21 (CUP) and 8.3.64 (HVP)",
+      "note": "ECMA-48 defines CUP (final 'H') and HVP (final 'f'); parameters are line then column, both default 1, 1-based."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/cuu",
+    "terminal-csi/cha",
+    "terminal-csi/save-restore-cursor",
+    "terminal-dec-private-mode/6"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CUP",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI self-terminates at its final byte: 'H' (0x48) for CUP, 'f' (0x66) for HVP. Parameters Pl;Pc are decimal, ';' separated, 1-based, default 1."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "cup",
+        "anchor": "#cup",
+        "name": "CUP \u2014 Cursor Position (H)",
+        "meaning": "CSI Pl ; Pc H moves the cursor to line Pl, column Pc (1-based). Omitted params default to 1; 'CSI H' homes to the top-left.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[5;10H",
+        "byte_sequence_ST_readable": "ESC [ 5 ; 1 0 H   ==  \\x1b[5;10H   (row 5, column 10); \\x1b[H = home",
+        "subparams": []
+      },
+      {
+        "id": "hvp",
+        "anchor": "#hvp",
+        "name": "HVP \u2014 Horizontal & Vertical Position (f)",
+        "meaning": "CSI Pl ; Pc f is the format-effector twin of CUP; identical effect in essentially all terminals.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[5;10f",
+        "byte_sequence_ST_readable": "ESC [ 5 ; 1 0 f   ==  \\x1b[5;10f   (row 5, column 10)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Coordinates are 1-BASED (1;1 is top-left), not 0-based \u2014 off-by-one is the most common bug.",
+      "Parameter order is ROW first then COLUMN (Pl ; Pc), the opposite of the (x,y) convention many programmers expect.",
+      "With DEC origin mode (DECSET 6) enabled, CUP addresses relative to the top margin of the scroll region (DECSTBM), not the physical screen.",
+      "Out-of-range coordinates are clamped to the screen/region bounds; they do not wrap or error.",
+      "HVP ('f') and CUP ('H') are interchangeable in practice; emit 'H' for maximum portability."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CUP ('H') and HVP ('f') forms are byte-exact CSI sequences with row;column parameters; home form 'CSI H' is recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

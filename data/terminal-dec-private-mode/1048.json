@@ -1,0 +1,83 @@
+{
+  "id": "terminal-dec-private-mode/1048",
+  "family": "terminal-dec-private-mode",
+  "slug": "1048",
+  "title": "DECSET 1048 \u2014 Save / restore cursor",
+  "summary": "CSI ? 1048 h saves the cursor position (and attributes), exactly like DECSC (ESC 7); CSI ? 1048 l restores it, like DECRC (ESC 8). It exists so the save/restore can be combined with alt-screen switching (1047) \u2014 and 1049 is precisely 1047 + 1048 in one mode.",
+  "kind": "control-sequence",
+  "aliases": [
+    "save cursor",
+    "restore cursor",
+    "DECSET 1048",
+    "?1048h / ?1048l"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 0 4 8 -> Save cursor as in DECSC (when set) / Restore cursor as in DECRC (when reset)."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/save-restore-cursor",
+    "terminal-dec-private-mode/1047",
+    "terminal-dec-private-mode/1049"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1048,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1048 h saves the cursor position and attributes (equivalent to DECSC / ESC 7).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1048h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 4 8 h   ==  \\x1b[?1048h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1048 l restores the saved cursor position and attributes (equivalent to DECRC / ESC 8).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1048l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 4 8 l   ==  \\x1b[?1048l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "1048 is functionally DECSC/DECRC (ESC 7 / ESC 8) expressed as a private mode; it saves/restores cursor position and graphic state.",
+      "1048 uses the SAME save slot as DECSC, so it can clash if you also use ESC 7/8 around it.",
+      "Combine 1048 with 1047 (alt-screen clear-on-exit) to get safe alt-screen entry/exit \u2014 or just use 1049 which is 1047+1048.",
+      "Restoring (?1048l) without a prior save behaves like DECRC with no save (typically homes the cursor).",
+      "For most TUIs, DECSET 1049 is the right single mode; 1048 is mainly a building block."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Save/restore-cursor set/reset (?1048h / ?1048l) render as byte-exact DEC-private-mode sequences; DECSC/DECRC equivalence recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

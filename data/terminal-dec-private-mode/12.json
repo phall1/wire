@@ -1,0 +1,82 @@
+{
+  "id": "terminal-dec-private-mode/12",
+  "family": "terminal-dec-private-mode",
+  "slug": "12",
+  "title": "DECSET 12 \u2014 Cursor blink (att610)",
+  "summary": "CSI ? 12 h enables text-cursor blinking; CSI ? 12 l makes the cursor steady (no blink). This is the 'att610' cursor-blink private mode popularized by xterm. It controls blink only; the cursor SHAPE is set by DECSCUSR (CSI Ps SP q), and the two can conflict.",
+  "kind": "control-sequence",
+  "aliases": [
+    "att610",
+    "cursor blink",
+    "DECSET 12",
+    "?12h / ?12l",
+    "blinking cursor"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 2 -> Start Blinking Cursor (AT&T 610). Set = blinking cursor, reset = steady cursor."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/decscusr"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 12,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 12 h turns ON cursor blinking (att610).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?12h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 2 h   ==  \\x1b[?12h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 12 l turns OFF blinking, giving a steady cursor.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?12l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 2 l   ==  \\x1b[?12l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Mode 12 controls BLINK ONLY; the cursor SHAPE (block/underline/bar) comes from DECSCUSR (CSI Ps SP q). The two interact: DECSCUSR's odd values also imply blink, so they can fight mode 12.",
+      "This is the 'att610' (AT&T 610) blink convention; not all terminals map mode 12 the same way, and some honor only DECSCUSR.",
+      "Some terminals invert the meaning or ignore mode 12 in favor of a user preference for cursor blink.",
+      "Restore the user's preferred blink state on exit rather than forcing it.",
+      "Cursor blink is sometimes globally disabled by the OS/terminal for accessibility; your ?12h may have no visible effect."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Cursor-blink set/reset (?12h / ?12l) render as byte-exact DEC-private-mode sequences; blink-vs-shape (DECSCUSR) interaction recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

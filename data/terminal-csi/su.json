@@ -1,0 +1,93 @@
+{
+  "id": "terminal-csi/su",
+  "family": "terminal-csi",
+  "slug": "su",
+  "title": "CSI SU / SD \u2014 Scroll Up / Scroll Down (pan)",
+  "summary": "SU (final 'S') scrolls the contents of the scroll region up by Pn lines (new blank lines appear at the bottom); SD (final 'T') scrolls down by Pn lines (blank lines appear at the top). The cursor position is unchanged. Both default Pn to 1.",
+  "kind": "control-sequence",
+  "aliases": [
+    "SU",
+    "SD",
+    "scroll up",
+    "scroll down",
+    "pan up",
+    "pan down",
+    "ESC [ S",
+    "ESC [ T"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps S = Scroll up Ps lines (SU); CSI Ps T = Scroll down Ps lines (SD). Default Ps = 1. (Note: CSI Ps ; Ps ; ... T with parameters is the xterm mouse highlight-tracking initiation, distinct from bare SD.)"
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.147 (SU) and 8.3.113 (SD)",
+      "note": "ECMA-48 defines SU (final 'S') and SD (final 'T') as scrolling the page/region by Pn lines, default 1."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/il",
+    "terminal-csi/decstbm",
+    "terminal-csi/ed"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "SU",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte: 'S' scroll-up (0x53), 'T' scroll-down (0x54). Pn defaults to 1; scoped to the scroll region."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "su",
+        "anchor": "#su",
+        "name": "SU \u2014 Scroll Up (S)",
+        "meaning": "CSI Pn S scrolls the scroll region up Pn lines; the top Pn lines scroll off and Pn blank lines appear at the bottom. The cursor stays put.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[2S",
+        "byte_sequence_ST_readable": "ESC [ 2 S   ==  \\x1b[2S   (scroll up 2 lines)",
+        "subparams": []
+      },
+      {
+        "id": "sd",
+        "anchor": "#sd",
+        "name": "SD \u2014 Scroll Down (T)",
+        "meaning": "CSI Pn T scrolls the scroll region down Pn lines; the bottom Pn lines scroll off and Pn blank lines appear at the top.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[2T",
+        "byte_sequence_ST_readable": "ESC [ 2 T   ==  \\x1b[2T   (scroll down 2 lines)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "BARE 'CSI Ps T' (one parameter) is SD; but 'CSI Ps ; Ps ; Ps ; Ps ; Ps T' (five parameters) is xterm's Initiate Highlight Mouse Tracking \u2014 parameter count disambiguates. Avoid emitting SD with stray extra parameters.",
+      "SU/SD pan the SCROLL REGION (DECSTBM); content outside the region is not moved.",
+      "New blank lines take the current SGR background color.",
+      "The cursor position is unchanged by SU/SD, unlike LF/RI which can move the cursor.",
+      "Pn of 0 is treated as 1."
+    ],
+    "v1_smoke_test": {
+      "asserts": "SU ('S') and SD ('T') render as byte-exact single-parameter CSI sequences; the SD-vs-mouse-highlight ambiguity is noted.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

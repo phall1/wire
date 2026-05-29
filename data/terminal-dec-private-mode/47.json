@@ -1,0 +1,84 @@
+{
+  "id": "terminal-dec-private-mode/47",
+  "family": "terminal-dec-private-mode",
+  "slug": "47",
+  "title": "DECSET 47 \u2014 Alternate screen buffer (legacy)",
+  "summary": "CSI ? 47 h switches to the alternate screen buffer; CSI ? 47 l switches back to the normal buffer. This is the original alt-screen mode: unlike 1049 it does NOT save/restore the cursor or clear the alt buffer on entry, so it is largely superseded by 1047/1048/1049.",
+  "kind": "control-sequence",
+  "aliases": [
+    "alternate screen",
+    "alt buffer",
+    "DECSET 47",
+    "?47h / ?47l",
+    "legacy alt screen"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 4 7 -> Use Alternate Screen Buffer. (This mode is the legacy form; it does not save the cursor or clear on switch, unlike 1047/1049.)"
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1047",
+    "terminal-dec-private-mode/1048",
+    "terminal-dec-private-mode/1049"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 47,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 47 h switches output to the alternate screen buffer (the normal buffer's contents are preserved but hidden). It does NOT save the cursor or clear the alt buffer.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?47h",
+        "byte_sequence_ST_readable": "ESC [ ? 4 7 h   ==  \\x1b[?47h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 47 l switches back to the normal screen buffer, revealing its preserved contents.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?47l",
+        "byte_sequence_ST_readable": "ESC [ ? 4 7 l   ==  \\x1b[?47l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Mode 47 is the LEGACY alt-screen: it does NOT save/restore the cursor (use 1048 for that) and does NOT clear the alt buffer on entry/exit (1047 clears on exit). Most programs should use 1049 instead, which combines save-cursor + clear + switch.",
+      "Switching with 47 alone can leave stale content on the alt buffer from a previous use; clear it explicitly (CSI 2 J) if needed.",
+      "Mismatched enter/leave (47 vs 1049) between a program and its children can strand you on the wrong buffer.",
+      "tmux/screen track alt-screen state; mixing 47 and 1049 inside a multiplexer can confuse it.",
+      "Prefer DECSET 1049 for new code; 47 exists mainly for compatibility with old programs."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Legacy alt-screen set/reset (?47h / ?47l) render as byte-exact DEC-private-mode sequences; no-save-no-clear distinction vs 1047/1049 recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "terminal-osc/9",
+  "family": "terminal-osc",
+  "slug": "9",
+  "title": "OSC 9 \u2014 Desktop notification (iTerm2) and progress (ConEmu / Windows Terminal)",
+  "summary": "OSC 9 is overloaded across vendors. iTerm2 uses OSC 9 ; message ST to post a simple desktop notification. ConEmu introduced OSC 9 ; 4 ; state ; progress ST to drive a taskbar progress indicator, which Windows Terminal adopted. Because the same command number carries two unrelated meanings, parsers must look at the first sub-parameter.",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 9",
+    "ESC ] 9",
+    "desktop notification",
+    "taskbar progress",
+    "ConEmu progress",
+    "OSC 9;4"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://iterm2.com/documentation-escape-codes.html",
+  "source_version": "iTerm2 docs + ConEmu docs + Microsoft Windows Terminal docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#notify",
+      "source_url": "https://iterm2.com/documentation-escape-codes.html",
+      "source_version": "iTerm2 docs, retrieved 2026-05-29",
+      "note": "iTerm2: OSC 9 ; <message> ST posts a desktop notification (Growl-style)."
+    },
+    {
+      "claim_ref": "#progress",
+      "source_url": "https://conemu.github.io/en/AnsiEscapeCodes.html",
+      "source_version": "ConEmu ANSI escape codes, retrieved 2026-05-29",
+      "note": "ConEmu: OSC 9 ; 4 ; st ; pr ST sets the taskbar progress (st = state: 0 remove, 1 normal, 2 error, 3 indeterminate, 4 paused; pr = 0..100)."
+    },
+    {
+      "claim_ref": "#progress",
+      "source_url": "https://learn.microsoft.com/en-us/windows/terminal/tutorials/progress-bar-sequences",
+      "source_version": "Microsoft Windows Terminal docs, retrieved 2026-05-29",
+      "note": "Windows Terminal adopted ConEmu's OSC 9 ; 4 ; state ; progress sequence to show progress in the taskbar/tab."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/99",
+    "terminal-osc/777",
+    "terminal-osc/133"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 9,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame (ECMA-48). Command number 9 is vendor-overloaded: iTerm2 notification vs ConEmu/Windows-Terminal progress; disambiguate by the first sub-parameter."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "notify",
+        "anchor": "#notify",
+        "name": "Notification (iTerm2)",
+        "meaning": "OSC 9 ; <message> ST posts a desktop notification with the given text (iTerm2). No sub-parameter '4'.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]9;Build finished\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 9 ; B u i l d   f i n i s h e d ESC \\   ==  \\x1b]9;Build finished\\x1b\\\\   (iTerm2 notification)",
+        "byte_sequence_BEL": "\u001b]9;Build finished\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 9 ; B u i l d   f i n i s h e d BEL",
+        "subparams": []
+      },
+      {
+        "id": "progress",
+        "anchor": "#progress",
+        "name": "Progress (ConEmu / Windows Terminal)",
+        "meaning": "OSC 9 ; 4 ; st ; pr ST sets a taskbar progress indicator: st = 0 remove, 1 normal, 2 error, 3 indeterminate, 4 paused; pr = 0..100. Adopted by Windows Terminal from ConEmu.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]9;4;1;50\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 9 ; 4 ; 1 ; 5 0 ESC \\   ==  \\x1b]9;4;1;50\\x1b\\\\   (progress 50%); \\x1b]9;4;0;0\\x1b\\\\ removes it",
+        "byte_sequence_BEL": "\u001b]9;4;1;50\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 9 ; 4 ; 1 ; 5 0 BEL",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 9 is OVERLOADED: 'OSC 9 ; text' = iTerm2 notification, 'OSC 9 ; 4 ; state ; pct' = ConEmu/Windows-Terminal progress. A receiver must inspect the first sub-parameter (literal '4') to tell them apart.",
+      "Progress state 0 (with any percent) REMOVES the indicator; always clear it (OSC 9 ; 4 ; 0 ; 0) when your task ends or it lingers on the taskbar.",
+      "iTerm2's plain OSC 9 notification has no title/options; for richer notifications use OSC 99 (kitty) or OSC 777 (urxvt) which differ in syntax.",
+      "Terminals that don't recognize the form ignore it silently \u2014 feature-detect, don't assume.",
+      "Over tmux/ssh the sequence needs passthrough to reach the outer terminal."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 9 notification and OSC 9;4 progress forms render as byte-exact OSC strings; the overload is disambiguated by the leading '4'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "terminal-csi/decstbm",
+  "family": "terminal-csi",
+  "slug": "decstbm",
+  "title": "CSI DECSTBM \u2014 Set Top and Bottom Margins (scroll region)",
+  "summary": "DECSTBM (final 'r') sets the vertical scrolling region to rows Pt (top) through Pb (bottom): CSI Pt ; Pb r. Scrolling, IL/DL, and SU/SD then act only within this region. 'CSI r' with no parameters resets the region to the full screen. After setting, the cursor moves to the home position (top-left, or top of region under origin mode).",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSTBM",
+    "scroll region",
+    "set margins",
+    "top bottom margins",
+    "ESC [ r"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://vt100.net/docs/vt510-rm/DECSTBM.html",
+  "source_version": "DEC VT510 Video Terminal Programmer Information (EK-VT510-RM), DECSTBM",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://vt100.net/docs/vt510-rm/DECSTBM.html",
+      "source_version": "DEC VT510 Programmer Reference, DECSTBM, retrieved 2026-05-29",
+      "note": "DEC VT510 manual: DECSTBM (CSI Pt ; Pb r) sets the top and bottom scrolling margins; default is the full screen; the cursor moves to home after the command."
+    },
+    {
+      "claim_ref": "ext.frame",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps ; Ps r = Set Scrolling Region [top;bottom] (default = full size of window) (DECSTBM)."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/su",
+    "terminal-csi/il",
+    "terminal-csi/cup",
+    "terminal-dec-private-mode/6"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "DECSTBM",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + Pt ; Pb + final byte 'r' (0x72). 1-based rows; omitting both resets to the full screen. Cursor homes after the command."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set scroll region",
+        "meaning": "CSI Pt ; Pb r sets the scrolling region to rows Pt..Pb (1-based, inclusive). Subsequent scrolling, IL/DL, and SU/SD are confined to this region. The cursor moves to home afterward.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[5;20r",
+        "byte_sequence_ST_readable": "ESC [ 5 ; 2 0 r   ==  \\x1b[5;20r   (region rows 5..20)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Reset to full screen",
+        "meaning": "CSI r (no parameters) resets the scrolling region to the entire screen.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[r",
+        "byte_sequence_ST_readable": "ESC [ r   ==  \\x1b[r   (full-screen region)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "After DECSTBM the cursor is moved to the home position; do not assume it stays where it was.",
+      "Pt must be less than Pb; an invalid (top >= bottom) region is ignored by VT-compatible terminals.",
+      "With DEC origin mode (DECSET 6) on, CUP/HVP coordinates become relative to the region top, and the cursor cannot leave the region.",
+      "DECSTBM sets VERTICAL margins; horizontal margins (DECSLRM, CSI Ps;Ps s) require DECLRMM (mode 69) and are far less widely supported.",
+      "Resetting with 'CSI r' is the safe way to restore full-screen scrolling before exit."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSTBM set (Pt;Pb r) and reset (bare 'r') render as byte-exact CSI sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

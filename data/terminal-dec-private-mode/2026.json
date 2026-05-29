@@ -1,0 +1,127 @@
+{
+  "id": "terminal-dec-private-mode/2026",
+  "family": "terminal-dec-private-mode",
+  "slug": "2026",
+  "title": "DECSET 2026 \u2014 Synchronized output",
+  "summary": "CSI ? 2026 h begins a synchronized update: the terminal buffers all output and does not repaint until CSI ? 2026 l ends the batch, eliminating tearing/flicker when redrawing a frame. A de-facto standard introduced by the terminal-wg / Contour effort and adopted by several terminals.",
+  "kind": "control-sequence",
+  "aliases": [
+    "synchronized output",
+    "synchronized update",
+    "DECSET 2026",
+    "?2026h / ?2026l",
+    "BSU",
+    "ESU",
+    "tear-free"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://contour-terminal.org/vt-extensions/synchronized-output/",
+  "source_version": "Contour synchronized-output spec + terminal-wg mode-2026 documentation, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://contour-terminal.org/vt-extensions/synchronized-output/",
+      "source_version": "Contour synchronized-output spec, retrieved 2026-05-29",
+      "note": "Contour: DECSET 2026 begins a synchronized (atomic) update; the terminal defers rendering until DECRST 2026, so a full frame is painted at once without tearing."
+    },
+    {
+      "claim_ref": "#adoption",
+      "source_url": "https://github.com/contour-terminal/contour/blob/master/docs/vt-extensions/synchronized-output.md",
+      "source_version": "mode 2026 spec source (terminal-wg/Contour), retrieved 2026-05-29",
+      "note": "The mode-2026 spec source defines BSU (Begin Synchronized Update, ?2026h) and ESU (End Synchronized Update, ?2026l); adopted by kitty, WezTerm, iTerm2, Ghostty and others."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1049"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 2026,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 2026 h begins a synchronized update (BSU): the terminal stops repainting and buffers subsequent output until the batch ends.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?2026h",
+        "byte_sequence_ST_readable": "ESC [ ? 2 0 2 6 h   ==  \\x1b[?2026h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 2026 l ends the synchronized update (ESU): the terminal atomically renders the buffered frame, avoiding flicker/tearing.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?2026l",
+        "byte_sequence_ST_readable": "ESC [ ? 2 0 2 6 l   ==  \\x1b[?2026l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "support_matrix": [
+      {
+        "terminal": "Contour",
+        "version_added": "spec author",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Originated/authored the synchronized-output spec."
+      },
+      {
+        "terminal": "kitty",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Implements mode 2026 synchronized updates."
+      },
+      {
+        "terminal": "WezTerm",
+        "version_added": "documented",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Implements mode 2026."
+      },
+      {
+        "terminal": "iTerm2",
+        "version_added": "3.5+",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports synchronized output."
+      },
+      {
+        "terminal": "Ghostty",
+        "version_added": "1.0",
+        "level": "full",
+        "variant_of": null,
+        "notes": "Supports mode 2026."
+      }
+    ],
+    "gotchas": [
+      "You MUST end every begin: an unmatched ?2026h leaves the terminal in a buffering state. Implementations cap the buffer with a timeout, but relying on that causes visible stalls.",
+      "Synchronized output prevents TEARING during full-screen redraws (e.g. TUIs, editors); wrap each frame in ?2026h ... ?2026l.",
+      "Terminals that don't support 2026 ignore it harmlessly, so it is safe to emit unconditionally \u2014 but you can also query support via DECRQM (CSI ? 2026 $ p).",
+      "Nesting is generally not supported; treat begin/end as a single non-reentrant batch.",
+      "Over tmux/ssh the mode needs passthrough to reach the outer terminal that actually renders."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Synchronized-output begin/end (?2026h / ?2026l) render as byte-exact DEC-private-mode sequences; BSU/ESU atomic-frame semantics recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

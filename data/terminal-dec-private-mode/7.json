@@ -1,0 +1,86 @@
+{
+  "id": "terminal-dec-private-mode/7",
+  "family": "terminal-dec-private-mode",
+  "slug": "7",
+  "title": "DECSET 7 \u2014 DECAWM (autowrap mode)",
+  "summary": "CSI ? 7 h (DECAWM set, the usual default) enables autowrap: writing a character in the last column moves the cursor to the start of the next line (with the 'pending wrap' deferred-wrap behavior). CSI ? 7 l disables autowrap, so characters at the right margin overwrite the last cell in place.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECAWM",
+    "autowrap",
+    "auto-wrap mode",
+    "DECSET 7",
+    "?7h / ?7l",
+    "line wrap"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 7 -> Auto-Wrap Mode (DECAWM). When set, text wraps to the next line at the right margin; when reset, the cursor stays at the right margin and overwrites."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://vt100.net/docs/vt510-rm/DECAWM.html",
+      "source_version": "DEC VT510 Programmer Reference, DECAWM, retrieved 2026-05-29",
+      "note": "DEC VT510 manual: DECAWM (mode 7) controls whether the cursor wraps to the next line after the rightmost column."
+    }
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 7,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 7 h enables autowrap: a glyph written in the last column sets a 'pending wrap' so the NEXT glyph appears at column 1 of the following line (the VT deferred-wrap rule).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?7h",
+        "byte_sequence_ST_readable": "ESC [ ? 7 h   ==  \\x1b[?7h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 7 l disables autowrap: glyphs written at the right margin overwrite the last column and the cursor does not advance past it.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?7l",
+        "byte_sequence_ST_readable": "ESC [ ? 7 l   ==  \\x1b[?7l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The VT 'deferred wrap' / pending-wrap rule means the cursor visually sits in the last column after filling it; the wrap happens when the NEXT printable arrives, not immediately. This trips up cursor-position math.",
+      "DECAWM is usually ON by default; programs that draw fixed layouts often turn it OFF (?7l) to avoid accidental wraps, then restore it.",
+      "With autowrap off, you cannot write to the very last cell and then move on by printing; you must reposition with CUP.",
+      "Wrapping interacts with double-width (CJK) glyphs at the right margin, which may force an early wrap.",
+      "Restore the prior autowrap state on exit; leaving ?7l set makes the shell's long lines overwrite themselves."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECAWM set/reset (?7h / ?7l) render as byte-exact DEC-private-mode sequences; deferred-wrap behavior recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

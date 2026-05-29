@@ -1,0 +1,114 @@
+{
+  "id": "terminal-csi/cuu",
+  "family": "terminal-csi",
+  "slug": "cuu",
+  "title": "CSI CUU / CUD / CUF / CUB \u2014 Relative Cursor Moves",
+  "summary": "The four relative cursor-move commands shift the cursor by Pn cells (default 1) in one direction: CUU (final 'A') up, CUD ('B') down, CUF ('C') forward/right, CUB ('D') back/left. They do not scroll and stop at the screen edge.",
+  "kind": "control-sequence",
+  "aliases": [
+    "CUU",
+    "CUD",
+    "CUF",
+    "CUB",
+    "cursor up",
+    "cursor down",
+    "cursor forward",
+    "cursor back",
+    "ESC [ A"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps A = Cursor Up Ps (CUU); CSI Ps B = Cursor Down (CUD); CSI Ps C = Cursor Forward (CUF); CSI Ps D = Cursor Backward (CUB). Default Ps = 1."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.22 (CUU), 8.3.19 (CUD), 8.3.20 (CUF), 8.3.18 (CUB)",
+      "note": "ECMA-48 defines CUU/CUD/CUF/CUB with a single Pn parameter defaulting to 1."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/cup",
+    "terminal-csi/cnl",
+    "terminal-csi/cha"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CUU",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte: 'A' up, 'B' down, 'C' forward, 'D' back. Pn defaults to 1."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "cuu",
+        "anchor": "#cuu",
+        "name": "CUU \u2014 Cursor Up (A)",
+        "meaning": "CSI Pn A moves the cursor up Pn rows (default 1). Stops at the top of the page; does not scroll.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[3A",
+        "byte_sequence_ST_readable": "ESC [ 3 A   ==  \\x1b[3A   (up 3 rows); \\x1b[A = up 1",
+        "subparams": []
+      },
+      {
+        "id": "cud",
+        "anchor": "#cud",
+        "name": "CUD \u2014 Cursor Down (B)",
+        "meaning": "CSI Pn B moves the cursor down Pn rows (default 1).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3B",
+        "byte_sequence_ST_readable": "ESC [ 3 B   ==  \\x1b[3B   (down 3 rows)",
+        "subparams": []
+      },
+      {
+        "id": "cuf",
+        "anchor": "#cuf",
+        "name": "CUF \u2014 Cursor Forward (C)",
+        "meaning": "CSI Pn C moves the cursor right Pn columns (default 1).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3C",
+        "byte_sequence_ST_readable": "ESC [ 3 C   ==  \\x1b[3C   (right 3 columns)",
+        "subparams": []
+      },
+      {
+        "id": "cub",
+        "anchor": "#cub",
+        "name": "CUB \u2014 Cursor Back (D)",
+        "meaning": "CSI Pn D moves the cursor left Pn columns (default 1).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3D",
+        "byte_sequence_ST_readable": "ESC [ 3 D   ==  \\x1b[3D   (left 3 columns)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "A Pn of 0 is treated as 1, not as a no-op, per ECMA-48 default-parameter rules.",
+      "These moves CLAMP at the screen edges and never scroll the buffer \u2014 to scroll, use SU/SD or move past the scroll region's bottom with newlines.",
+      "CUF past the last column does not wrap to the next line; the cursor sticks at the right margin.",
+      "Do not confuse CUD ('B') with index/newline: CUD never scrolls, whereas LF/IND can scroll at the bottom margin.",
+      "'CSI D' (CUB, back) is distinct from the C0 BS (0x08) backspace though both move left one cell."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CUU/CUD/CUF/CUB render as byte-exact single-parameter CSI sequences with final bytes A/B/C/D.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

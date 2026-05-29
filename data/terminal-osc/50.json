@@ -1,0 +1,98 @@
+{
+  "id": "terminal-osc/50",
+  "family": "terminal-osc",
+  "slug": "50",
+  "title": "OSC 50 \u2014 Set font",
+  "summary": "OSC 50 ; spec ST sets the terminal font at runtime. In xterm the spec is an X Logical Font Description (or '#N' to pick a numbered font from the menu); a bare '?' or empty query asks the current font back. iTerm2 also implements OSC 50 to change the session font. It is a de-facto, divergent feature across the two.",
+  "kind": "control-sequence",
+  "aliases": [
+    "set font",
+    "OSC 50",
+    "ESC ] 50",
+    "change font"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#xterm",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 5 0 -> Set/query font. Pt is a font name (XLFD) or '#N' to select font N from the configured list; a query reports the current font."
+    },
+    {
+      "claim_ref": "#iterm2",
+      "source_url": "https://iterm2.com/documentation-escape-codes.html",
+      "source_version": "iTerm2 docs, retrieved 2026-05-29",
+      "note": "iTerm2 documents OSC 50 to set the session font (e.g. OSC 50 ; <font spec> ST), with its own spec syntax distinct from xterm's XLFD."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/1337",
+    "terminal-osc/4"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 50,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame (ECMA-48). Command number 50 is a de-facto font-control number used by xterm and iTerm2 with differing spec syntax; no registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set font",
+        "meaning": "OSC 50 ; spec ST sets the font. xterm: spec is an XLFD or '#N' to select a numbered font; iTerm2: its own font-spec syntax.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]50;#3\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 5 0 ; # 3 ESC \\   ==  \\x1b]50;#3\\x1b\\\\   (xterm: select font #3)",
+        "byte_sequence_BEL": "\u001b]50;#3\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 5 0 ; # 3 BEL   ==  \\x1b]50;#3\\x07",
+        "subparams": []
+      },
+      {
+        "id": "query",
+        "anchor": "#query",
+        "name": "Query font (xterm)",
+        "meaning": "OSC 50 ; ? ST asks xterm for the current font; it replies with the font name. (iTerm2 does not necessarily support the query.)",
+        "required": false,
+        "byte_sequence_ST": "\u001b]50;?\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 5 0 ; ? ESC \\   ==  \\x1b]50;?\\x1b\\\\   (query current font)",
+        "byte_sequence_BEL": "\u001b]50;?\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 5 0 ; ? BEL   ==  \\x1b]50;?\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The SPEC SYNTAX differs: xterm expects an XLFD or '#N' index; iTerm2 uses its own font-name form. The same OSC 50 is not portable between them.",
+      "OSC 50 has also been used by some terminals (and DEC) for other purposes historically; treat support as terminal-specific and feature-detect.",
+      "The query form is an xterm convention; do not rely on iTerm2 answering it.",
+      "Changing the font may resize cells and reflow the screen; expect a resize event.",
+      "Over tmux/ssh the sequence must be passed through to the outer terminal."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 50 set (xterm '#N') and query forms render as byte-exact OSC strings; the xterm-vs-iTerm2 spec divergence is recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

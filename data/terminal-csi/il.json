@@ -1,0 +1,91 @@
+{
+  "id": "terminal-csi/il",
+  "family": "terminal-csi",
+  "slug": "il",
+  "title": "CSI IL / DL \u2014 Insert / Delete Line",
+  "summary": "IL (final 'L') inserts Pn blank lines at the cursor row, scrolling lines below downward within the scroll region; DL (final 'M') deletes Pn lines at the cursor row, scrolling lines below upward. Both default Pn to 1 and operate only within the current scroll region (DECSTBM).",
+  "kind": "control-sequence",
+  "aliases": [
+    "IL",
+    "DL",
+    "insert line",
+    "delete line",
+    "ESC [ L",
+    "ESC [ M"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps L = Insert Ps Lines (IL); CSI Ps M = Delete Ps Lines (DL). Default Ps = 1."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.67 (IL) and 8.3.32 (DL)",
+      "note": "ECMA-48 defines IL (final 'L') and DL (final 'M') operating within the scroll region, default Pn 1."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/ich",
+    "terminal-csi/su",
+    "terminal-csi/decstbm"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "IL",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte: 'L' insert-line (0x4C), 'M' delete-line (0x4D). Pn defaults to 1; scoped to the scroll region."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "il",
+        "anchor": "#il",
+        "name": "IL \u2014 Insert Line (L)",
+        "meaning": "CSI Pn L inserts Pn blank lines at the cursor row; existing lines from the cursor down scroll downward within the scroll region. Blank lines take the current background color.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[2L",
+        "byte_sequence_ST_readable": "ESC [ 2 L   ==  \\x1b[2L   (insert 2 lines)",
+        "subparams": []
+      },
+      {
+        "id": "dl",
+        "anchor": "#dl",
+        "name": "DL \u2014 Delete Line (M)",
+        "meaning": "CSI Pn M deletes Pn lines starting at the cursor row; lines below scroll upward and blank lines appear at the bottom of the scroll region.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[2M",
+        "byte_sequence_ST_readable": "ESC [ 2 M   ==  \\x1b[2M   (delete 2 lines)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "IL/DL operate within the current scroll region (DECSTBM); lines outside the region are not affected and do not move.",
+      "DL's final byte 'M' (0x4D) is unrelated to the mouse-report 'CSI M'; context (parameters/prefix) disambiguates.",
+      "Inserted/blank lines are filled with the current SGR background color.",
+      "If the cursor is outside the vertical scroll region, IL/DL have no effect.",
+      "Pn of 0 is treated as 1."
+    ],
+    "v1_smoke_test": {
+      "asserts": "IL ('L') and DL ('M') render as byte-exact single-parameter CSI sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

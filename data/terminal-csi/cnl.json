@@ -1,0 +1,90 @@
+{
+  "id": "terminal-csi/cnl",
+  "family": "terminal-csi",
+  "slug": "cnl",
+  "title": "CSI CNL / CPL \u2014 Cursor Next / Previous Line",
+  "summary": "CNL (final 'E') moves the cursor down Pn lines (default 1) AND to column 1; CPL (final 'F') moves up Pn lines and to column 1. They combine a vertical move with a carriage return, unlike CUU/CUD which preserve the column.",
+  "kind": "control-sequence",
+  "aliases": [
+    "CNL",
+    "CPL",
+    "cursor next line",
+    "cursor previous line",
+    "ESC [ E",
+    "ESC [ F"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps E = Cursor Next Line Ps (CNL); CSI Ps F = Cursor Preceding Line Ps (CPL). Both move to column 1 of the target line. Default Ps = 1."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.12 (CNL) and 8.3.13 (CPL)",
+      "note": "ECMA-48 defines CNL (final 'E') and CPL (final 'F') as line moves that also reset the active column to 1."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/cuu",
+    "terminal-csi/cha",
+    "terminal-csi/cup"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CNL",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte: 'E' next-line, 'F' previous-line. Pn defaults to 1; both reset column to 1."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "cnl",
+        "anchor": "#cnl",
+        "name": "CNL \u2014 Cursor Next Line (E)",
+        "meaning": "CSI Pn E moves the cursor down Pn lines and to the first column (default Pn = 1).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[2E",
+        "byte_sequence_ST_readable": "ESC [ 2 E   ==  \\x1b[2E   (down 2 lines, column 1)",
+        "subparams": []
+      },
+      {
+        "id": "cpl",
+        "anchor": "#cpl",
+        "name": "CPL \u2014 Cursor Preceding Line (F)",
+        "meaning": "CSI Pn F moves the cursor up Pn lines and to the first column (default Pn = 1).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[2F",
+        "byte_sequence_ST_readable": "ESC [ 2 F   ==  \\x1b[2F   (up 2 lines, column 1)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The distinguishing feature vs CUU/CUD is the implicit carriage return to column 1; if you want to keep the column, use CUU/CUD instead.",
+      "Like the relative moves, CNL/CPL clamp at the page edges and do not scroll.",
+      "A Pn of 0 is treated as 1.",
+      "CNL is NOT the same as emitting CR+LF: CNL clamps without scrolling, while LF at the bottom margin scrolls."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CNL ('E') and CPL ('F') render as byte-exact single-parameter CSI sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

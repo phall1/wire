@@ -1,0 +1,111 @@
+{
+  "id": "terminal-csi/ed",
+  "family": "terminal-csi",
+  "slug": "ed",
+  "title": "CSI ED \u2014 Erase in Display",
+  "summary": "ED (final 'J') erases part or all of the screen depending on Ps: 0 (or omitted) erase from cursor to end of screen, 1 erase from start of screen to cursor, 2 erase the entire screen, 3 (xterm) erase the scrollback buffer. The cursor position is not changed; erased cells take the current background color.",
+  "kind": "control-sequence",
+  "aliases": [
+    "ED",
+    "erase display",
+    "clear screen",
+    "CSI J",
+    "ESC [ 2 J",
+    "ESC [ 3 J"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps J = Erase in Display (ED): Ps = 0 below, 1 above, 2 all, 3 saved lines (xterm)."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clause 8.3.39 (ED)",
+      "note": "ECMA-48 defines ED (final 'J') with Ps 0 (cursor to end), 1 (start to cursor), 2 (all). Ps = 3 (scrollback) is an xterm extension."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/el",
+    "terminal-csi/cup",
+    "terminal-csi/il"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "ED",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Ps + final byte 'J' (0x4A). Ps selects the erase extent; default 0."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "0",
+        "anchor": "#0",
+        "name": "ED 0 \u2014 cursor to end of screen",
+        "meaning": "CSI 0 J (or CSI J) erases from the cursor (inclusive) to the end of the screen.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[0J",
+        "byte_sequence_ST_readable": "ESC [ 0 J   ==  \\x1b[0J   (also \\x1b[J)",
+        "subparams": []
+      },
+      {
+        "id": "1",
+        "anchor": "#1",
+        "name": "ED 1 \u2014 start of screen to cursor",
+        "meaning": "CSI 1 J erases from the start of the screen to the cursor (inclusive).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[1J",
+        "byte_sequence_ST_readable": "ESC [ 1 J   ==  \\x1b[1J",
+        "subparams": []
+      },
+      {
+        "id": "2",
+        "anchor": "#2",
+        "name": "ED 2 \u2014 entire screen",
+        "meaning": "CSI 2 J erases the whole visible screen. The cursor does NOT move (use CSI H to also home it).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[2J",
+        "byte_sequence_ST_readable": "ESC [ 2 J   ==  \\x1b[2J   (clear screen)",
+        "subparams": []
+      },
+      {
+        "id": "3",
+        "anchor": "#3",
+        "name": "ED 3 \u2014 scrollback (xterm)",
+        "meaning": "CSI 3 J erases the scrollback / saved-lines buffer (xterm extension; widely supported).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3J",
+        "byte_sequence_ST_readable": "ESC [ 3 J   ==  \\x1b[3J   (clear scrollback)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "CSI 2 J clears the screen but does NOT move the cursor; the common 'clear' is \\x1b[2J\\x1b[H (erase + home) or \\x1b[H\\x1b[2J.",
+      "Ps = 3 (erase scrollback) is an xterm extension, not in ECMA-48; most modern terminals support it but a few do not.",
+      "Erased cells are filled with the CURRENT background color (SGR background), so set background before erasing if you want a colored clear.",
+      "ED affects the whole display; to clear only the current line use EL (CSI K).",
+      "On the alternate screen buffer (DECSET 1049/47), CSI 2 J clears the alt buffer, not your scrollback."
+    ],
+    "v1_smoke_test": {
+      "asserts": "ED 0/1/2/3 render as byte-exact single-parameter CSI 'J' sequences; default-to-0 behavior recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

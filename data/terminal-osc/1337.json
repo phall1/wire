@@ -1,0 +1,119 @@
+{
+  "id": "terminal-osc/1337",
+  "family": "terminal-osc",
+  "slug": "1337",
+  "title": "OSC 1337 \u2014 iTerm2 proprietary control sequences",
+  "summary": "OSC 1337 is iTerm2's umbrella for proprietary features, taking a key=value (or key=value:base64payload) argument: OSC 1337 ; key=value ST. Notable sub-keys include SetUserVar, CurrentDir, RemoteHost, File (inline images, base64 in the payload after a ':'), and ShellIntegrationVersion. It is a single-vendor extension though several terminals have adopted parts of it.",
+  "kind": "control-sequence",
+  "aliases": [
+    "iTerm2 proprietary",
+    "OSC 1337",
+    "ESC ] 1337",
+    "inline images",
+    "imgcat",
+    "SetUserVar",
+    "CurrentDir"
+  ],
+  "status": "proprietary",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://iterm2.com/documentation-escape-codes.html",
+  "source_version": "iTerm2 Proprietary Escape Codes documentation, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://iterm2.com/documentation-escape-codes.html",
+      "source_version": "iTerm2 docs, retrieved 2026-05-29",
+      "note": "iTerm2 documents OSC 1337 as its proprietary escape-code namespace: OSC 1337 ; key=value ST. Keys include SetUserVar, CurrentDir, RemoteHost, File (inline images), ShellIntegrationVersion, and others."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/133",
+    "terminal-osc/8"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 1337,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame (ECMA-48). 1337 is iTerm2's proprietary command number; no registry. Arguments are 'key=value' (some keys carry a ':base64' payload)."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "file",
+        "anchor": "#file",
+        "name": "File \u2014 inline images / file transfer",
+        "meaning": "OSC 1337 ; File=key=value;... : <base64 data> ST renders an image inline (or transfers a file). Args include inline=1, width, height, name (base64), size.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]1337;File=inline=1:BASE64DATA\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 7 ; F i l e = i n l i n e = 1 : <base64> ESC \\   ==  \\x1b]1337;File=inline=1:<b64>\\x1b\\\\   (inline image)",
+        "byte_sequence_BEL": "\u001b]1337;File=inline=1:BASE64DATA\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 7 ; F i l e = i n l i n e = 1 : <base64> BEL",
+        "subparams": []
+      },
+      {
+        "id": "setuservar",
+        "anchor": "#setuservar",
+        "name": "SetUserVar \u2014 user variable",
+        "meaning": "OSC 1337 ; SetUserVar=name=<base64 value> ST sets a user-defined variable that iTerm2 status bars / badges can reference.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]1337;SetUserVar=git=YmFzZTY0\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 7 ; S e t U s e r V a r = g i t = <base64> ESC \\   ==  \\x1b]1337;SetUserVar=git=<b64>\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]1337;SetUserVar=git=YmFzZTY0\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 7 ; S e t U s e r V a r = g i t = <base64> BEL",
+        "subparams": []
+      },
+      {
+        "id": "currentdir",
+        "anchor": "#currentdir",
+        "name": "CurrentDir \u2014 working directory",
+        "meaning": "OSC 1337 ; CurrentDir=/path ST tells iTerm2 the shell's current directory (used for new-tab-in-same-dir, etc.). OSC 7 is the cross-terminal equivalent.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]1337;CurrentDir=/home/me\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 7 ; C u r r e n t D i r = / h o m e / m e ESC \\   ==  \\x1b]1337;CurrentDir=/home/me\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]1337;CurrentDir=/home/me\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 7 ; C u r r e n t D i r = / h o m e / m e BEL",
+        "subparams": []
+      },
+      {
+        "id": "remotehost",
+        "anchor": "#remotehost",
+        "name": "RemoteHost \u2014 user@host",
+        "meaning": "OSC 1337 ; RemoteHost=user@host ST reports the logged-in remote host so iTerm2 can show it / detect ssh sessions.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]1337;RemoteHost=me@server\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 3 3 7 ; R e m o t e H o s t = m e @ s e r v e r ESC \\   ==  \\x1b]1337;RemoteHost=me@server\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]1337;RemoteHost=me@server\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 3 3 7 ; R e m o t e H o s t = m e @ s e r v e r BEL",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 1337 is PROPRIETARY to iTerm2; do not assume other terminals implement it. WezTerm and a few others support the File (image) and SetUserVar subsets, but coverage is partial.",
+      "The File payload is base64-encoded image bytes after the ':'; values like name= are themselves base64. Get the inner encoding right or the image fails silently.",
+      "For portable inline images prefer the kitty graphics protocol or sixel where supported; for working-directory reporting prefer OSC 7 over CurrentDir.",
+      "Some keys (e.g. CurrentDir, RemoteHost) overlap with cross-terminal mechanisms (OSC 7, OSC 133); emit the portable one when you can.",
+      "Over ssh/tmux the sequence must be passed through (tmux requires the passthrough escape or it strips it)."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 1337 File/SetUserVar/CurrentDir/RemoteHost render as byte-exact OSC strings in ST and BEL forms; proprietary single-vendor status recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

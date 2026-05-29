@@ -1,0 +1,129 @@
+{
+  "id": "terminal-csi/decscusr",
+  "family": "terminal-csi",
+  "slug": "decscusr",
+  "title": "CSI DECSCUSR \u2014 Set Cursor Style",
+  "summary": "DECSCUSR (CSI Ps SP q \u2014 note the space before 'q') selects the cursor shape and blink: 0 or 1 = blinking block, 2 = steady block, 3 = blinking underline, 4 = steady underline, 5 = blinking bar, 6 = steady bar. The intermediate byte is a literal space (0x20) before the final 'q'.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSCUSR",
+    "cursor style",
+    "cursor shape",
+    "blinking bar cursor",
+    "steady block",
+    "ESC [ q"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps SP q = Set cursor style (DECSCUSR, VT520): Ps = 0/1 blinking block, 2 steady block, 3 blinking underline, 4 steady underline, 5 blinking bar, 6 steady bar. The SP is a literal space intermediate."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://vt100.net/docs/vt510-rm/DECSCUSR.html",
+      "source_version": "DEC VT510 Programmer Reference, DECSCUSR, retrieved 2026-05-29",
+      "note": "DEC VT510/VT520 manual: DECSCUSR (CSI Ps SP q) sets cursor style; values select block/underline shape and blink state; intermediate is SP (0x20), final is 'q'."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/cup"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "DECSCUSR",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + Ps + INTERMEDIATE space (0x20) + final byte 'q' (0x71). The space before 'q' is mandatory and is what distinguishes DECSCUSR from other 'q' sequences."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "blink-block",
+        "anchor": "#blink-block",
+        "name": "0/1 \u2014 blinking block",
+        "meaning": "CSI 1 SP q (or 0) selects a blinking block cursor (the default on many terminals).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[1 q",
+        "byte_sequence_ST_readable": "ESC [ 1 SP q   ==  \\x1b[1 q   (blinking block; note the space before q)",
+        "subparams": []
+      },
+      {
+        "id": "steady-block",
+        "anchor": "#steady-block",
+        "name": "2 \u2014 steady block",
+        "meaning": "CSI 2 SP q selects a steady (non-blinking) block cursor.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[2 q",
+        "byte_sequence_ST_readable": "ESC [ 2 SP q   ==  \\x1b[2 q   (steady block)",
+        "subparams": []
+      },
+      {
+        "id": "blink-underline",
+        "anchor": "#blink-underline",
+        "name": "3 \u2014 blinking underline",
+        "meaning": "CSI 3 SP q selects a blinking underline cursor.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3 q",
+        "byte_sequence_ST_readable": "ESC [ 3 SP q   ==  \\x1b[3 q",
+        "subparams": []
+      },
+      {
+        "id": "steady-underline",
+        "anchor": "#steady-underline",
+        "name": "4 \u2014 steady underline",
+        "meaning": "CSI 4 SP q selects a steady underline cursor.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[4 q",
+        "byte_sequence_ST_readable": "ESC [ 4 SP q   ==  \\x1b[4 q",
+        "subparams": []
+      },
+      {
+        "id": "blink-bar",
+        "anchor": "#blink-bar",
+        "name": "5 \u2014 blinking bar",
+        "meaning": "CSI 5 SP q selects a blinking vertical bar (I-beam) cursor.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[5 q",
+        "byte_sequence_ST_readable": "ESC [ 5 SP q   ==  \\x1b[5 q",
+        "subparams": []
+      },
+      {
+        "id": "steady-bar",
+        "anchor": "#steady-bar",
+        "name": "6 \u2014 steady bar",
+        "meaning": "CSI 6 SP q selects a steady vertical bar cursor.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[6 q",
+        "byte_sequence_ST_readable": "ESC [ 6 SP q   ==  \\x1b[6 q",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The SPACE (0x20) intermediate before 'q' is MANDATORY: \\x1b[5 q not \\x1b[5q. Omitting it produces a different (or invalid) sequence.",
+      "Ps = 0 and Ps = 1 both mean 'blinking block'; there is no separate '0' shape.",
+      "DECSCUSR is a VT520 feature; DEC-private mode 12 (att610) separately controls cursor BLINK and can interact with DECSCUSR's blink bit.",
+      "Whether a 'blinking' style actually blinks depends on the terminal's blink setting and user preferences.",
+      "Reset the cursor to the user's default on exit (often DECSCUSR 0) so you don't leave a bar cursor in their shell."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSCUSR values 0-6 render as byte-exact 'CSI Ps SP q' sequences with the mandatory space intermediate.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

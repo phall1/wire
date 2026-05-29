@@ -1,0 +1,83 @@
+{
+  "id": "terminal-dec-private-mode/1004",
+  "family": "terminal-dec-private-mode",
+  "slug": "1004",
+  "title": "DECSET 1004 \u2014 Focus reporting",
+  "summary": "CSI ? 1004 h enables focus event reporting: the terminal sends CSI I when the window gains focus and CSI O when it loses focus. CSI ? 1004 l disables it. Apps use this to pause animations, refresh on focus, or change cursor styling.",
+  "kind": "control-sequence",
+  "aliases": [
+    "focus reporting",
+    "focus events",
+    "DECSET 1004",
+    "?1004h / ?1004l",
+    "CSI I",
+    "CSI O"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 0 0 4 -> Send FocusIn/FocusOut events. The terminal reports focus gained as CSI I and focus lost as CSI O."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1004,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1004 h enables focus reporting: on focus-in the terminal sends ESC [ I (CSI I) and on focus-out ESC [ O (CSI O).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1004h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 0 4 h   ==  \\x1b[?1004h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1004 l disables focus reporting; no focus events are sent.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1004l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 0 0 4 l   ==  \\x1b[?1004l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The focus reports arrive on the INPUT stream as CSI I (in) and CSI O (out); your input parser must recognize and consume them or they leak into the application as stray keystrokes.",
+      "CSI O (focus-out) shares its final byte 'O' with SS3-style sequences in some contexts; disambiguate by the CSI (ESC [) introducer vs SS3 (ESC O).",
+      "Not all terminals/multiplexers forward focus events; feature-detect rather than assume.",
+      "Disable focus reporting (?1004l) on exit so the next program doesn't receive unexpected CSI I/O.",
+      "Over tmux, focus events require the appropriate passthrough/focus-events setting to reach the inner program."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Focus-reporting set/reset (?1004h / ?1004l) render as byte-exact DEC-private-mode sequences; CSI I / CSI O report forms recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

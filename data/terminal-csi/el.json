@@ -1,0 +1,101 @@
+{
+  "id": "terminal-csi/el",
+  "family": "terminal-csi",
+  "slug": "el",
+  "title": "CSI EL \u2014 Erase in Line",
+  "summary": "EL (final 'K') erases part or all of the current line: Ps = 0 (or omitted) from the cursor to end of line, 1 from start of line to cursor, 2 the entire line. The cursor does not move and erased cells take the current background color.",
+  "kind": "control-sequence",
+  "aliases": [
+    "EL",
+    "erase line",
+    "clear line",
+    "CSI K",
+    "ESC [ K",
+    "ESC [ 2 K"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps K = Erase in Line (EL): Ps = 0 to right, 1 to left, 2 all."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clause 8.3.41 (EL)",
+      "note": "ECMA-48 defines EL (final 'K') with Ps 0 (cursor to end), 1 (start to cursor), 2 (all of line)."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/ed",
+    "terminal-csi/cha",
+    "terminal-csi/ich"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "EL",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Ps + final byte 'K' (0x4B). Ps selects the erase extent within the current line; default 0."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "0",
+        "anchor": "#0",
+        "name": "EL 0 \u2014 cursor to end of line",
+        "meaning": "CSI 0 K (or CSI K) erases from the cursor (inclusive) to the end of the line.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[0K",
+        "byte_sequence_ST_readable": "ESC [ 0 K   ==  \\x1b[0K   (also \\x1b[K)",
+        "subparams": []
+      },
+      {
+        "id": "1",
+        "anchor": "#1",
+        "name": "EL 1 \u2014 start of line to cursor",
+        "meaning": "CSI 1 K erases from the start of the line to the cursor (inclusive).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[1K",
+        "byte_sequence_ST_readable": "ESC [ 1 K   ==  \\x1b[1K",
+        "subparams": []
+      },
+      {
+        "id": "2",
+        "anchor": "#2",
+        "name": "EL 2 \u2014 entire line",
+        "meaning": "CSI 2 K erases the whole current line. The cursor column does not change.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[2K",
+        "byte_sequence_ST_readable": "ESC [ 2 K   ==  \\x1b[2K",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The cursor does NOT move; to also return to column 1 add CR or CSI G.",
+      "Erased cells take the CURRENT SGR background color.",
+      "Default (no parameter) is Ps = 0 (erase to end of line), matching ED's default.",
+      "EL only touches the current row; for multi-line clears use ED (CSI J).",
+      "A common 'redraw this line' idiom is CR + EL 0 (\\r\\x1b[K) then reprint."
+    ],
+    "v1_smoke_test": {
+      "asserts": "EL 0/1/2 render as byte-exact single-parameter CSI 'K' sequences; default-to-0 recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

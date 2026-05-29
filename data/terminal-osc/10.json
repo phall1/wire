@@ -1,0 +1,94 @@
+{
+  "id": "terminal-osc/10",
+  "family": "terminal-osc",
+  "slug": "10",
+  "title": "OSC 10 \u2014 Set / query default foreground color",
+  "summary": "OSC 10 ; spec ST sets the terminal's default foreground (text) color; OSC 10 ; ? ST queries it, and the terminal replies OSC 10 ; rgb:RRRR/GGGG/BBBB ST. This is the default text color, distinct from the indexed palette (OSC 4). Multiple OSC 10/11/12 settings can be chained because they consume successive parameters.",
+  "kind": "control-sequence",
+  "aliases": [
+    "set foreground color",
+    "query foreground",
+    "OSC 10",
+    "ESC ] 10",
+    "default fg"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 0 -> Change VT100 text foreground color to Pt. A '?' queries the color, reported back as a control sequence. Consecutive OSC 10/11/12... consume successive color parameters."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/11",
+    "terminal-osc/12",
+    "terminal-osc/4"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 10,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 10 is an xterm/vendor convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set default foreground",
+        "meaning": "OSC 10 ; spec ST sets the default text (foreground) color, where spec is an X11 color name or rgb:RR/GG/BB / #RRGGBB form.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]10;#ffffff\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 0 ; # f f f f f f ESC \\   ==  \\x1b]10;#ffffff\\x1b\\\\   (white foreground)",
+        "byte_sequence_BEL": "\u001b]10;#ffffff\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 0 ; # f f f f f f BEL   ==  \\x1b]10;#ffffff\\x07",
+        "subparams": []
+      },
+      {
+        "id": "query",
+        "anchor": "#query",
+        "name": "Query default foreground",
+        "meaning": "OSC 10 ; ? ST asks for the current default foreground; the terminal replies OSC 10 ; rgb:RRRR/GGGG/BBBB ST (16-bit-per-channel).",
+        "required": false,
+        "byte_sequence_ST": "\u001b]10;?\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 0 ; ? ESC \\   ==  \\x1b]10;?\\x1b\\\\   (query; reply \\x1b]10;rgb:ffff/ffff/ffff\\x1b\\\\)",
+        "byte_sequence_BEL": "\u001b]10;?\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 0 ; ? BEL   ==  \\x1b]10;?\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The query REPLY uses 16-bit-per-channel rgb:RRRR/GGGG/BBBB; do not assume it matches the width you wrote when setting.",
+      "OSC 10/11/12 consume SUCCESSIVE parameters: 'OSC 10 ; fg ; bg ST' sets fg via 10 and bg via the implicit 11. To set only fg, send just one parameter.",
+      "OSC 10 is the DEFAULT foreground (used where no SGR color is active); it is NOT a palette index \u2014 use OSC 4 for indexed colors and SGR 38 for per-run colors.",
+      "Reading the query reply requires reading from the tty with a timeout, or the read blocks if the terminal doesn't answer.",
+      "Reset to defaults with OSC 110 (reset foreground); restore on exit so the user's theme isn't left altered."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 10 set and query forms render as byte-exact OSC strings in ST and BEL forms; query carries the literal '?'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

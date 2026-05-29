@@ -1,0 +1,77 @@
+{
+  "id": "terminal-csi/ech",
+  "family": "terminal-csi",
+  "slug": "ech",
+  "title": "CSI ECH \u2014 Erase Character",
+  "summary": "ECH (final 'X') erases Pn characters starting at the cursor by overwriting them with blanks (current background color), WITHOUT shifting the rest of the line. The cursor position is unchanged. Pn defaults to 1. Contrast with DCH which deletes and shifts.",
+  "kind": "control-sequence",
+  "aliases": [
+    "ECH",
+    "erase character",
+    "ESC [ X"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps X = Erase Ps Character(s) (ECH). Default Ps = 1. Erases in place without moving following characters."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clause 8.3.38 (ECH)",
+      "note": "ECMA-48 defines ECH (final 'X') as erasing Pn characters from the active position, default 1, without repositioning."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/ich",
+    "terminal-csi/el"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "ECH",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte 'X' (0x58). Pn defaults to 1. Erases in place; the cursor and following text do not move."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "ech",
+        "anchor": "#ech",
+        "name": "ECH \u2014 Erase Character (X)",
+        "meaning": "CSI Pn X erases Pn characters starting at the cursor, replacing them with blanks in the current background color. Characters after the erased run do NOT shift; the cursor does not move.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[4X",
+        "byte_sequence_ST_readable": "ESC [ 4 X   ==  \\x1b[4X   (erase 4 chars in place)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "ECH erases IN PLACE without shifting \u2014 unlike DCH (CSI P) which deletes and pulls the rest of the line left.",
+      "Erased cells take the current SGR background color.",
+      "The cursor does not move; subsequent output overwrites the erased blanks starting at the cursor.",
+      "ECH stops at the right margin; it does not wrap to the next line.",
+      "Pn of 0 is treated as 1."
+    ],
+    "v1_smoke_test": {
+      "asserts": "ECH ('X') renders as a byte-exact single-parameter CSI sequence; erase-in-place (no shift) semantics recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

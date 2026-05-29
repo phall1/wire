@@ -1,0 +1,87 @@
+{
+  "id": "terminal-osc/777",
+  "family": "terminal-osc",
+  "slug": "777",
+  "title": "OSC 777 \u2014 rxvt-unicode extension dispatch (notify)",
+  "summary": "OSC 777 is rxvt-unicode's (urxvt) generic Perl-extension dispatch: OSC 777 ; module ; args... ST. Its best-known use is 'OSC 777 ; notify ; <title> ; <body> ST' which raises a libnotify desktop notification via the notify-send extension. Other terminals (notably WezTerm) adopted the notify form for compatibility.",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 777",
+    "ESC ] 777",
+    "urxvt notify",
+    "rxvt-unicode notification",
+    "notify-send"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://man.archlinux.org/man/urxvt.7",
+  "source_version": "rxvt-unicode (urxvt) manual, OSC 777 extension dispatch, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://man.archlinux.org/man/urxvt.7",
+      "source_version": "urxvt(7) man page, retrieved 2026-05-29",
+      "note": "rxvt-unicode: OSC 777 dispatches to a Perl extension by name; the notify extension uses OSC 777 ; notify ; <title> ; <body> ST to show a desktop notification."
+    },
+    {
+      "claim_ref": "#adoption",
+      "source_url": "https://wezterm.org/escape-sequences.html",
+      "source_version": "WezTerm escape-sequences docs, retrieved 2026-05-29",
+      "note": "WezTerm documents support for the OSC 777 ; notify ; title ; body form for desktop notifications, for urxvt compatibility."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/9",
+    "terminal-osc/99"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 777,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame (ECMA-48). Command number 777 is urxvt's extension-dispatch number; the first sub-parameter names the module (e.g. 'notify')."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "notify",
+        "anchor": "#notify",
+        "name": "Notify (title + body)",
+        "meaning": "OSC 777 ; notify ; <title> ; <body> ST raises a desktop notification with the given title and body (via the urxvt notify extension; also supported by WezTerm).",
+        "required": true,
+        "byte_sequence_ST": "\u001b]777;notify;Build;Finished\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 7 7 7 ; n o t i f y ; B u i l d ; F i n i s h e d ESC \\   ==  \\x1b]777;notify;Build;Finished\\x1b\\\\",
+        "byte_sequence_BEL": "\u001b]777;notify;Build;Finished\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 7 7 7 ; n o t i f y ; B u i l d ; F i n i s h e d BEL",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 777 is an EXTENSION DISPATCH: the first sub-parameter is a module name. Only 'notify' is widely portable; other modules are urxvt-specific Perl extensions.",
+      "Argument order for notify is title THEN body; swapping them mislabels the popup.",
+      "Outside urxvt and WezTerm, support is spotty \u2014 prefer OSC 99 (kitty) or OSC 9 (iTerm2) where those terminals are in use, and feature-detect.",
+      "Semicolons inside the title/body would be parsed as parameter separators; escape or avoid them.",
+      "Over tmux/ssh the sequence needs passthrough."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 777 ; notify ; title ; body renders as a byte-exact OSC string in ST and BEL forms; extension-dispatch semantics recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

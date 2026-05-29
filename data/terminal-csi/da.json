@@ -1,0 +1,102 @@
+{
+  "id": "terminal-csi/da",
+  "family": "terminal-csi",
+  "slug": "da",
+  "title": "CSI DA \u2014 Device Attributes (primary / secondary / tertiary)",
+  "summary": "DA queries the terminal's identity. Primary DA (CSI c or CSI 0 c, final 'c') asks what the terminal is; the reply CSI ? ... c lists a model class and feature codes. Secondary DA (CSI > c) reports terminal type, firmware version, and ROM cartridge as CSI > Pp ; Pv ; Pc c. Tertiary DA (CSI = c) requests a unit ID, replied via a DCS string (DECRPTUI).",
+  "kind": "control-sequence",
+  "aliases": [
+    "DA",
+    "DA1",
+    "DA2",
+    "DA3",
+    "device attributes",
+    "primary DA",
+    "secondary DA",
+    "ESC [ c",
+    "ESC [ > c"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps c = Send Device Attributes (Primary DA); CSI > Ps c = Secondary DA (reports type;version;cartridge); CSI = Ps c = Tertiary DA (DECRPTUI unit id). Primary reply CSI ? 6 1/6 2/... ; ... c."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://vt100.net/docs/vt510-rm/DA1.html",
+      "source_version": "DEC VT510 Programmer Reference, DA1/DA2/DA3, retrieved 2026-05-29",
+      "note": "DEC VT510 manual: Primary DA (CSI c) reports the terminal's service class and supported features; Secondary DA (CSI > c) reports identification code, firmware version, and ROM cartridge."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/dsr"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "DA",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + optional prefix ('>' secondary, '=' tertiary) + Ps + final byte 'c' (0x63). Replies are CSI ? ... c (primary) or CSI > ... c (secondary)."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "primary",
+        "anchor": "#primary",
+        "name": "Primary DA (DA1) \u2014 CSI c",
+        "meaning": "CSI c (or CSI 0 c) asks the terminal to identify its class and features. A VT100-class terminal replies e.g. CSI ? 1 ; 2 c; an xterm-class one CSI ? 6 2 ; ... c (62 = VT220 level, followed by feature numbers).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[c",
+        "byte_sequence_ST_readable": "ESC [ c   ==  \\x1b[c   (also \\x1b[0c; reply \\x1b[?62;...c)",
+        "subparams": []
+      },
+      {
+        "id": "secondary",
+        "anchor": "#secondary",
+        "name": "Secondary DA (DA2) \u2014 CSI > c",
+        "meaning": "CSI > c reports terminal type, firmware version, and ROM cartridge: reply CSI > Pp ; Pv ; Pc c (e.g. Pp identifies the model, Pv the version).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[>c",
+        "byte_sequence_ST_readable": "ESC [ > c   ==  \\x1b[>c   (reply \\x1b[>0;276;0c style)",
+        "subparams": []
+      },
+      {
+        "id": "tertiary",
+        "anchor": "#tertiary",
+        "name": "Tertiary DA (DA3) \u2014 CSI = c",
+        "meaning": "CSI = c requests a unit ID; the terminal replies with a DCS report (DECRPTUI), DCS ! | <hex id> ST.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[=c",
+        "byte_sequence_ST_readable": "ESC [ = c   ==  \\x1b[=c   (reply via DCS DECRPTUI)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The DA reply arrives on the terminal's INPUT stream; read with a timeout to avoid blocking.",
+      "Primary DA is the most-used handshake: emulators report a VT220/VT320-class set of feature codes that programs use to gate capabilities. Do NOT assume a specific code list \u2014 parse defensively.",
+      "Secondary DA's 'version' field is emulator-defined (e.g. xterm reports its patch number); it is not a reliable real-firmware version.",
+      "Tertiary DA replies via a DCS (Device Control String), not a CSI, so a CSI-only parser will miss it.",
+      "CSI c with no parameter equals CSI 0 c (primary DA)."
+    ],
+    "v1_smoke_test": {
+      "asserts": "Primary (CSI c), secondary (CSI > c), and tertiary (CSI = c) DA requests render as byte-exact CSI sequences; reply shapes documented.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

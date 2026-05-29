@@ -1,0 +1,90 @@
+{
+  "id": "terminal-csi/cha",
+  "family": "terminal-csi",
+  "slug": "cha",
+  "title": "CSI CHA / HPA \u2014 Cursor Horizontal Absolute (column)",
+  "summary": "CHA (final 'G') moves the cursor to column Pn of the current row (default 1), without changing the row. HPA (final '`', backtick) is the format-effector twin with the same effect. Useful for column-aligning output without a full CUP.",
+  "kind": "control-sequence",
+  "aliases": [
+    "CHA",
+    "HPA",
+    "cursor horizontal absolute",
+    "column absolute",
+    "ESC [ G"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps G = Cursor Character Absolute [column] (CHA); CSI Ps ` = Character Position Absolute [column] (HPA). Default Ps = 1."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.9 (CHA) and 8.3.57 (HPA)",
+      "note": "ECMA-48 defines CHA (final 'G') and HPA (final '`') as absolute column positioning, 1-based, default 1."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/cup",
+    "terminal-csi/cnl",
+    "terminal-csi/cuu"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CHA",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte: 'G' (CHA, 0x47) or '`' (HPA, 0x60). Column is 1-based, default 1; the row is unchanged."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "cha",
+        "anchor": "#cha",
+        "name": "CHA \u2014 Cursor Horizontal Absolute (G)",
+        "meaning": "CSI Pn G moves the cursor to column Pn (1-based) of the current row. 'CSI G' goes to column 1.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[10G",
+        "byte_sequence_ST_readable": "ESC [ 1 0 G   ==  \\x1b[10G   (column 10, same row)",
+        "subparams": []
+      },
+      {
+        "id": "hpa",
+        "anchor": "#hpa",
+        "name": "HPA \u2014 Character Position Absolute (`)",
+        "meaning": "CSI Pn ` is the format-effector twin of CHA; same effect (absolute column).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[10`",
+        "byte_sequence_ST_readable": "ESC [ 1 0 `   ==  \\x1b[10`   (column 10)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Column is 1-BASED; column 1 is the leftmost cell.",
+      "Only the column changes; the row is preserved (unlike CUP which sets both).",
+      "Out-of-range columns clamp to the right margin.",
+      "HPA uses the backtick '`' (0x60) as its final byte \u2014 easy to typo as a quote; CHA's 'G' is the more common form.",
+      "There is a sibling VPA ('d') for absolute ROW positioning; CHA/HPA are column-only."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CHA ('G') and HPA ('`') render as byte-exact single-parameter CSI sequences; home-column form 'CSI G' is recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

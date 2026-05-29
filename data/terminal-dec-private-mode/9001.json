@@ -1,0 +1,88 @@
+{
+  "id": "terminal-dec-private-mode/9001",
+  "family": "terminal-dec-private-mode",
+  "slug": "9001",
+  "title": "DECSET 9001 \u2014 Win32 input mode (ConPTY)",
+  "summary": "CSI ? 9001 h enables Windows Terminal / ConPTY 'win32-input-mode': keyboard (and some other) input is encoded as a verbose CSI _ sequence carrying the full Win32 KEY_EVENT_RECORD (virtual key code, scan code, unicode char, key-down flag, control-key state, repeat count). CSI ? 9001 l disables it. It lets a ConPTY client receive lossless Win32 key events over a VT stream.",
+  "kind": "control-sequence",
+  "aliases": [
+    "win32-input-mode",
+    "ConPTY input",
+    "DECSET 9001",
+    "?9001h / ?9001l",
+    "Win32 input mode"
+  ],
+  "status": "proprietary",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences",
+  "source_version": "Microsoft Console VT sequences docs + microsoft/terminal win32-input-mode spec, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://github.com/microsoft/terminal/blob/main/doc/specs/%234999%20-%20Improved%20keyboard%20handling%20in%20Conpty.md",
+      "source_version": "microsoft/terminal win32-input-mode spec (issue #4999), retrieved 2026-05-29",
+      "note": "Microsoft: DECSET 9001 enables win32-input-mode; key events are sent as CSI Vk ; Sc ; Uc ; Kd ; Cs ; Rc _ encoding the Win32 KEY_EVENT_RECORD fields (virtual-key, scan code, unicode char, key-down, control-key state, repeat count)."
+    },
+    {
+      "claim_ref": "#adoption",
+      "source_url": "https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences",
+      "source_version": "Microsoft Console VT sequences docs, retrieved 2026-05-29",
+      "note": "Microsoft Console VT sequence docs reference the private mode used by ConPTY to forward Win32 input records to attached VT clients."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1004"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 9001,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 9001 h enables win32-input-mode: ConPTY forwards each input event as CSI Vk ; Sc ; Uc ; Kd ; Cs ; Rc _ (the six KEY_EVENT_RECORD fields), giving lossless Win32 key information including key-up events and modifier state.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?9001h",
+        "byte_sequence_ST_readable": "ESC [ ? 9 0 0 1 h   ==  \\x1b[?9001h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 9001 l disables win32-input-mode; input reverts to standard VT key encoding.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?9001l",
+        "byte_sequence_ST_readable": "ESC [ ? 9 0 0 1 l   ==  \\x1b[?9001l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The reported events use the final byte '_' (0x5F) on a CSI: CSI ... _ \u2014 a parser must handle this private final byte, and the six numeric fields are Win32-specific (virtual-key code, scan code, unicode codepoint, key-down flag, control-key state bitmask, repeat count).",
+      "win32-input-mode reports BOTH key-down AND key-up events and modifier-only presses, unlike normal VT input; consumers must filter to the events they care about.",
+      "It is Windows/ConPTY-specific; non-Windows terminals do not implement it. Feature-detect (it is typically negotiated by ConPTY itself, not by arbitrary apps).",
+      "Mode number 9001 is in the high private range and is specific to Microsoft's implementation; do not assume it is free elsewhere.",
+      "Disable on exit so a subsequent program isn't handed verbose Win32 input records it cannot parse."
+    ],
+    "v1_smoke_test": {
+      "asserts": "win32-input-mode set/reset (?9001h / ?9001l) render as byte-exact DEC-private-mode sequences; the CSI ... _ KEY_EVENT_RECORD report shape is recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

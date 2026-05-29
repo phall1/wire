@@ -1,0 +1,93 @@
+{
+  "id": "terminal-osc/12",
+  "family": "terminal-osc",
+  "slug": "12",
+  "title": "OSC 12 \u2014 Set / query text cursor color",
+  "summary": "OSC 12 ; spec ST sets the text cursor's color; OSC 12 ; ? ST queries it, replied as OSC 12 ; rgb:RRRR/GGGG/BBBB ST. This colors the cursor block/bar itself, independent of the default foreground (OSC 10) and background (OSC 11).",
+  "kind": "control-sequence",
+  "aliases": [
+    "set cursor color",
+    "query cursor color",
+    "OSC 12",
+    "ESC ] 12"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 2 -> Change text cursor color to Pt; '?' queries and the terminal reports it back."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/10",
+    "terminal-osc/11",
+    "terminal-csi/decscusr"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 12,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 12 is an xterm/vendor convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set cursor color",
+        "meaning": "OSC 12 ; spec ST sets the text cursor color (X11 name or rgb:/# form).",
+        "required": true,
+        "byte_sequence_ST": "\u001b]12;#ff0000\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 2 ; # f f 0 0 0 0 ESC \\   ==  \\x1b]12;#ff0000\\x1b\\\\   (red cursor)",
+        "byte_sequence_BEL": "\u001b]12;#ff0000\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 2 ; # f f 0 0 0 0 BEL   ==  \\x1b]12;#ff0000\\x07",
+        "subparams": []
+      },
+      {
+        "id": "query",
+        "anchor": "#query",
+        "name": "Query cursor color",
+        "meaning": "OSC 12 ; ? ST asks for the cursor color; reply OSC 12 ; rgb:RRRR/GGGG/BBBB ST.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]12;?\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 2 ; ? ESC \\   ==  \\x1b]12;?\\x1b\\\\   (query cursor color)",
+        "byte_sequence_BEL": "\u001b]12;?\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 2 ; ? BEL   ==  \\x1b]12;?\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 12 colors only the CURSOR; OSC 10/11 set text fg/bg. They are independent.",
+      "The cursor's SHAPE (block/underline/bar) and blink come from DECSCUSR (CSI Ps SP q) and DEC mode 12, not from OSC 12.",
+      "Query reply is 16-bit-per-channel rgb:RRRR/GGGG/BBBB; read with a timeout.",
+      "Reset with OSC 112 (reset cursor color) and restore on exit.",
+      "Some terminals invert the cell under a block cursor regardless of OSC 12, so the configured color may only show on bar/underline cursors."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 12 set and query forms render as byte-exact OSC strings; query carries the literal '?'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "terminal-csi/save-restore-cursor",
+  "family": "terminal-csi",
+  "slug": "save-restore-cursor",
+  "title": "Save / Restore Cursor \u2014 DECSC/DECRC (ESC 7/8) and SCOSC/SCORC (CSI s/u)",
+  "summary": "Two families save and restore the cursor. The DEC pair ESC 7 (DECSC) saves and ESC 8 (DECRC) restores the cursor POSITION plus attributes (SGR, charset, origin-mode, wrap state). The ANSI.SYS / SCO pair CSI s (SCOSC) and CSI u (SCORC) save/restore only the cursor position. They use different save slots and should not be mixed.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSC",
+    "DECRC",
+    "SCOSC",
+    "SCORC",
+    "save cursor",
+    "restore cursor",
+    "ESC 7",
+    "ESC 8",
+    "CSI s",
+    "CSI u"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: ESC 7 = Save Cursor (DECSC) saves cursor position, character attributes, charset, and wrap flag; ESC 8 = Restore Cursor (DECRC). CSI s = Save Cursor (SCOSC, ANSI.SYS); CSI u = Restore Cursor (SCORC)."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://vt100.net/docs/vt510-rm/DECSC.html",
+      "source_version": "DEC VT510 Programmer Reference, DECSC/DECRC, retrieved 2026-05-29",
+      "note": "DEC VT510 manual: DECSC (ESC 7) saves cursor position, graphic rendition, character set, and origin/wrap state; DECRC (ESC 8) restores them."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/cup",
+    "terminal-csi/decstbm",
+    "terminal-dec-private-mode/1048"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "ESC",
+    "command_number": "DECSC",
+    "frame": {
+      "introducer_7bit": "\u001b",
+      "introducer_7bit_readable": "ESC (0x1B) for the DEC pair; ESC [ (0x1B 0x5B) for the CSI pair",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "n/a for the ESC 7 / ESC 8 forms; 0x9B for CSI s/u",
+      "note": "DECSC = ESC 7 (0x1B 0x37), DECRC = ESC 8 (0x1B 0x38); these are two-byte ESC sequences, NOT CSI. SCOSC = CSI s, SCORC = CSI u (final bytes 's'/'u')."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "ESC 7 / ESC 8 are complete two-byte sequences. CSI s / CSI u self-terminate at 's'/'u'."
+    },
+    "params": [
+      {
+        "id": "decsc",
+        "anchor": "#decsc",
+        "name": "DECSC \u2014 Save Cursor (ESC 7)",
+        "meaning": "ESC 7 saves the cursor position AND the full graphic state: SGR attributes, selected character set (G0..G3 / GL/GR), origin mode, and the autowrap pending flag.",
+        "required": true,
+        "byte_sequence_ST": "\u001b7",
+        "byte_sequence_ST_readable": "ESC 7   ==  \\x1b7   (DEC save cursor + attributes)",
+        "subparams": []
+      },
+      {
+        "id": "decrc",
+        "anchor": "#decrc",
+        "name": "DECRC \u2014 Restore Cursor (ESC 8)",
+        "meaning": "ESC 8 restores everything DECSC saved. If nothing was saved, it homes the cursor and resets attributes.",
+        "required": true,
+        "byte_sequence_ST": "\u001b8",
+        "byte_sequence_ST_readable": "ESC 8   ==  \\x1b8   (DEC restore cursor + attributes)",
+        "subparams": []
+      },
+      {
+        "id": "scosc",
+        "anchor": "#scosc",
+        "name": "SCOSC \u2014 Save Cursor (CSI s)",
+        "meaning": "CSI s (ANSI.SYS / SCO) saves only the cursor POSITION (no attributes). Uses a separate save slot from DECSC.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[s",
+        "byte_sequence_ST_readable": "ESC [ s   ==  \\x1b[s   (SCO save cursor position)",
+        "subparams": []
+      },
+      {
+        "id": "scorc",
+        "anchor": "#scorc",
+        "name": "SCORC \u2014 Restore Cursor (CSI u)",
+        "meaning": "CSI u restores the position saved by CSI s.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[u",
+        "byte_sequence_ST_readable": "ESC [ u   ==  \\x1b[u   (SCO restore cursor position)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "ESC 7/8 (DECSC/DECRC) save/restore the FULL graphic state (SGR, charset, origin, wrap); CSI s/u (SCOSC/SCORC) save ONLY the position \u2014 do not assume equivalence.",
+      "The two families use SEPARATE save slots; saving with ESC 7 and restoring with CSI u (or vice versa) does not work.",
+      "CSI s is ambiguous: with parameters 'CSI Pl ; Pr s' it is DECSLRM (set left/right margins) when DECLRMM is enabled. Bare 'CSI s' is the save-cursor.",
+      "Restoring without a prior save typically homes the cursor; behavior across terminals varies, so always pair save/restore.",
+      "DECSET 1048 provides save/restore-cursor tied to alternate-screen switching; prefer it when entering/leaving the alt buffer."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSC/DECRC (ESC 7 / ESC 8) and SCOSC/SCORC (CSI s / CSI u) render as byte-exact sequences; the position-only vs full-state distinction is recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

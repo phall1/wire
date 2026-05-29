@@ -1,0 +1,91 @@
+{
+  "id": "terminal-csi/ich",
+  "family": "terminal-csi",
+  "slug": "ich",
+  "title": "CSI ICH / DCH \u2014 Insert / Delete Character",
+  "summary": "ICH (final '@') inserts Pn blank characters at the cursor, shifting the rest of the line right (characters pushed past the right margin are lost); DCH (final 'P') deletes Pn characters at the cursor, shifting the remainder of the line left with blanks appearing at the right margin. Both default Pn to 1 and act only on the current line.",
+  "kind": "control-sequence",
+  "aliases": [
+    "ICH",
+    "DCH",
+    "insert character",
+    "delete character",
+    "ESC [ @",
+    "ESC [ P"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: CSI Ps @ = Insert Ps (Blank) Characters (ICH); CSI Ps P = Delete Ps Characters (DCH). Default Ps = 1."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://ecma-international.org/publications-and-standards/standards/ecma-48/",
+      "source_version": "ECMA-48 5th ed. 1991 (ISO/IEC 6429), clauses 8.3.64 (ICH) and 8.3.26 (DCH)",
+      "note": "ECMA-48 defines ICH (final '@') and DCH (final 'P') operating on the active line, default Pn 1."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/ech",
+    "terminal-csi/il",
+    "terminal-csi/el"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "ICH",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "\u009b",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI + single Pn + final byte: '@' insert-char (0x40), 'P' delete-char (0x50). Pn defaults to 1; scoped to the current line."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator; the CSI sequence ends at its final byte. Parameters Ps are decimal, ';' (0x3B) separated."
+    },
+    "params": [
+      {
+        "id": "ich",
+        "anchor": "#ich",
+        "name": "ICH \u2014 Insert Character (@)",
+        "meaning": "CSI Pn @ inserts Pn blanks at the cursor; characters to the right shift right by Pn and any pushed past the right margin are lost. The cursor does not move.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[3@",
+        "byte_sequence_ST_readable": "ESC [ 3 @   ==  \\x1b[3@   (insert 3 blanks)",
+        "subparams": []
+      },
+      {
+        "id": "dch",
+        "anchor": "#dch",
+        "name": "DCH \u2014 Delete Character (P)",
+        "meaning": "CSI Pn P deletes Pn characters at the cursor; the remainder of the line shifts left and blanks (current background) appear at the right margin.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3P",
+        "byte_sequence_ST_readable": "ESC [ 3 P   ==  \\x1b[3P   (delete 3 chars)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "ICH/DCH operate within the single current line; they never affect other rows (use IL/DL for line-level edits).",
+      "Inserted/exposed cells take the current SGR background color.",
+      "Characters shifted past the right margin by ICH are discarded, not wrapped.",
+      "ICH does NOT move the cursor; the inserted blanks appear AT the cursor and the cursor stays put.",
+      "Distinct from ECH (CSI X) which erases in place WITHOUT shifting the rest of the line."
+    ],
+    "v1_smoke_test": {
+      "asserts": "ICH ('@') and DCH ('P') render as byte-exact single-parameter CSI sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

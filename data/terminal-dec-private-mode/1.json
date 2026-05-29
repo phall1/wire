@@ -1,0 +1,88 @@
+{
+  "id": "terminal-dec-private-mode/1",
+  "family": "terminal-dec-private-mode",
+  "slug": "1",
+  "title": "DECSET 1 \u2014 DECCKM (application cursor keys)",
+  "summary": "CSI ? 1 h (DECCKM set) switches the cursor (arrow) keys into 'application' mode: they send SS3-prefixed sequences (ESC O A/B/C/D) instead of the normal CSI forms (ESC [ A/B/C/D). CSI ? 1 l restores normal mode. Full-screen programs enable it so arrow keys are unambiguous.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECCKM",
+    "application cursor keys",
+    "DECSET 1",
+    "?1h / ?1l",
+    "cursor key mode"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 -> Application Cursor Keys (DECCKM). When set, cursor keys send ESC O x (SS3) instead of ESC [ x."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://vt100.net/docs/vt510-rm/DECCKM.html",
+      "source_version": "DEC VT510 Programmer Reference, DECCKM, retrieved 2026-05-29",
+      "note": "DEC VT510 manual: DECCKM (mode 1) selects application vs normal cursor-key sequences."
+    }
+  ],
+  "see_also": [
+    "terminal-dec-private-mode/1004"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1 h sets DECCKM: arrow keys now send SS3 sequences, e.g. Up = ESC O A (\\x1bOA) rather than ESC [ A.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1h",
+        "byte_sequence_ST_readable": "ESC [ ? 1 h   ==  \\x1b[?1h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1 l clears DECCKM: arrow keys send the normal CSI sequences ESC [ A/B/C/D.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1l",
+        "byte_sequence_ST_readable": "ESC [ ? 1 l   ==  \\x1b[?1l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "In APPLICATION mode arrow keys are ESC O A..D (SS3); in NORMAL mode they are ESC [ A..D (CSI). A key-parser must know the current mode or read both.",
+      "Many TUIs enable DECCKM via terminfo (smkx) on entry and disable it (rmkx) on exit; if your program crashes without resetting, the shell's arrow keys can misbehave until reset.",
+      "DECCKM affects only the cursor (arrow) keys, not the numeric keypad (that is DECKPAM/DECKPNM).",
+      "The SS3 prefix is ESC O (0x1B 0x4F), not ESC [ \u2014 easy to confuse when matching byte patterns.",
+      "Always pair set on entry with reset on exit (or rely on terminfo smkx/rmkx)."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECCKM set/reset (?1h / ?1l) render as byte-exact DEC-private-mode sequences; SS3-vs-CSI arrow-key effect recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

@@ -1,0 +1,98 @@
+{
+  "id": "terminal-osc/99",
+  "family": "terminal-osc",
+  "slug": "99",
+  "title": "OSC 99 \u2014 Desktop notifications (kitty protocol)",
+  "summary": "OSC 99 is kitty's structured desktop-notification protocol: OSC 99 ; metadata ; payload ST, where metadata is a list of key=value pairs (i= identifier, d= done flag, p= payload type such as title/body, e= base64-encoded) and payload is the (optionally base64) text. It supports multi-chunk notifications, titles+bodies, actions, and icons \u2014 far richer than OSC 9.",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 99",
+    "ESC ] 99",
+    "kitty notifications",
+    "desktop notification"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "C",
+  "source_url": "https://sw.kovidgoyal.net/kitty/desktop-notifications/",
+  "source_version": "kitty desktop-notifications protocol documentation, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://sw.kovidgoyal.net/kitty/desktop-notifications/",
+      "source_version": "kitty docs, retrieved 2026-05-29",
+      "note": "kitty: OSC 99 ; <metadata key=value pairs> ; <payload> ST. Metadata keys include i (id), d (done), p (payload type: title/body/...), e (base64 encoding flag), a (actions). Allows multi-chunk title+body notifications."
+    },
+    {
+      "claim_ref": "#adoption",
+      "source_url": "https://github.com/kovidgoyal/kitty/blob/master/docs/desktop-notifications.rst",
+      "source_version": "kitty desktop-notifications.rst (protocol spec), retrieved 2026-05-29",
+      "note": "The protocol spec source documents the escape-code grammar and the encoding/chunking rules; published for other terminals to implement."
+    }
+  ],
+  "see_also": [
+    "terminal-osc/9",
+    "terminal-osc/777"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 99,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame (ECMA-48). Command number 99 is kitty's notification protocol; metadata 'key=value' pairs precede a ';' and the payload."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "simple",
+        "anchor": "#simple",
+        "name": "Simple notification",
+        "meaning": "OSC 99 ; ; <text> ST shows a notification with the given body text (empty metadata = single-chunk, plain).",
+        "required": true,
+        "byte_sequence_ST": "\u001b]99;;Hello\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 9 9 ; ; H e l l o ESC \\   ==  \\x1b]99;;Hello\\x1b\\\\   (simple notification)",
+        "byte_sequence_BEL": "\u001b]99;;Hello\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 9 9 ; ; H e l l o BEL",
+        "subparams": []
+      },
+      {
+        "id": "titled",
+        "anchor": "#titled",
+        "name": "Title + body",
+        "meaning": "OSC 99 ; i=ID : p=title ; <title> ST then OSC 99 ; i=ID : p=body : d=1 ; <body> ST builds a multi-part notification keyed by identifier i.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]99;i=1:p=title;Build\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 9 9 ; i = 1 : p = t i t l e ; B u i l d ESC \\   ==  \\x1b]99;i=1:p=title;Build\\x1b\\\\   (title chunk; send body with d=1 to finish)",
+        "byte_sequence_BEL": "\u001b]99;i=1:p=title;Build\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 9 9 ; i = 1 : p = t i t l e ; B u i l d BEL",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "The metadata is colon-separated key=value pairs BEFORE the ';' that introduces the payload; getting the ';' vs ':' separators wrong breaks parsing.",
+      "Long or binary payloads should be base64-encoded with e=1; multi-chunk notifications share the same i= identifier and end with d=1.",
+      "OSC 99 is far richer than OSC 9 (titles, bodies, actions, icons) but only kitty (and a small set of compatible terminals) implement it \u2014 feature-detect.",
+      "Notifications can be suppressed by the OS/notification daemon; a successful escape does not guarantee a visible popup.",
+      "Over tmux/ssh the sequence needs passthrough."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 99 simple and titled (multi-chunk) forms render as byte-exact OSC strings with kitty's key=value metadata grammar.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

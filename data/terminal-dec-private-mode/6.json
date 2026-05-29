@@ -1,0 +1,89 @@
+{
+  "id": "terminal-dec-private-mode/6",
+  "family": "terminal-dec-private-mode",
+  "slug": "6",
+  "title": "DECSET 6 \u2014 DECOM (origin mode)",
+  "summary": "CSI ? 6 h (DECOM set) makes cursor addressing relative to the scroll region (DECSTBM): row 1 becomes the top margin and the cursor cannot leave the region. CSI ? 6 l restores absolute (screen-relative) addressing. Setting or resetting DECOM also homes the cursor.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECOM",
+    "origin mode",
+    "DECSET 6",
+    "?6h / ?6l",
+    "relative origin"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 6 -> Origin Mode (DECOM). When set, cursor addressing is relative to the scrolling region's top margin and the cursor is confined to the region."
+    },
+    {
+      "claim_ref": "ext.params",
+      "source_url": "https://vt100.net/docs/vt510-rm/DECOM.html",
+      "source_version": "DEC VT510 Programmer Reference, DECOM, retrieved 2026-05-29",
+      "note": "DEC VT510 manual: DECOM (mode 6) selects whether line numbers are relative to the margins; changing it moves the cursor to home."
+    }
+  ],
+  "see_also": [
+    "terminal-csi/decstbm",
+    "terminal-csi/cup"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 6,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "\u009b?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private mode (CSI with '?' private prefix). Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST). Self-terminating."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the enable/disable ends at the final byte 'h'/'l'."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 6 h sets DECOM: CUP/HVP coordinates become relative to the top margin of the scroll region, and the cursor is confined within the region. The cursor moves to the region's home.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?6h",
+        "byte_sequence_ST_readable": "ESC [ ? 6 h   ==  \\x1b[?6h   (set / DECSET)",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 6 l clears DECOM: addressing is absolute to the physical screen; the cursor moves to screen home.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?6l",
+        "byte_sequence_ST_readable": "ESC [ ? 6 l   ==  \\x1b[?6l   (reset / DECRST)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Setting OR resetting DECOM HOMES the cursor \u2014 do not assume the cursor stays put when toggling it.",
+      "Under DECOM, CUP row 1 is the scroll-region top, not the screen top; combine with DECSTBM to define the region first.",
+      "Under DECOM the cursor cannot move outside the scroll region, even with explicit CUP to an out-of-region row (it clamps).",
+      "DECOM interacts with DECSTBM: set the margins first, then enable origin mode, then address relatively.",
+      "Reset DECOM (?6l) before exit so the next program sees absolute addressing."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECOM set/reset (?6h / ?6l) render as byte-exact DEC-private-mode sequences; region-relative addressing and home-on-toggle recorded.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

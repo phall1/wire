@@ -1,0 +1,80 @@
+{
+  "id": "terminal-osc/1",
+  "family": "terminal-osc",
+  "slug": "1",
+  "title": "OSC 1 \u2014 Set icon name",
+  "summary": "OSC 1 ; text ST sets the terminal's icon name (the short label used for the minimized/taskbar/tab representation), as distinct from the full window title. OSC 2 sets the title only; OSC 0 sets both icon name and title at once.",
+  "kind": "control-sequence",
+  "aliases": [
+    "set icon name",
+    "OSC 1",
+    "ESC ] 1",
+    "icon title"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "attribution": [
+    {
+      "claim_ref": "#summary",
+      "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+      "source_version": "xterm patch #410, 2026/04/19",
+      "note": "xterm ctlseqs: Ps = 1 -> Change Icon Name to Pt. (Ps = 0 changes Icon Name AND Window Title; Ps = 2 changes Window Title only.)"
+    }
+  ],
+  "see_also": [
+    "terminal-osc/0",
+    "terminal-osc/2"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 1,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "\u009d",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC frame per ECMA-48 5th ed. 1991 / ISO 6429. Command number 1 is an xterm/vendor convention with no formal registry."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "canonical_ST_7bit_readable": "ESC \\ (0x1B 0x5C)",
+      "canonical_ST_8bit": "\u009c",
+      "canonical_ST_8bit_readable": "0x9C (single-byte ST, 8-bit C1)",
+      "alt_BEL": "\u0007",
+      "alt_BEL_readable": "BEL (0x07)",
+      "note": "ECMA-48 mandates ST; xterm and most modern terminals also accept BEL. Emit ST, accept both."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set icon name",
+        "meaning": "OSC 1 ; Pt ST sets the icon name to the string Pt. Used for the minimized/taskbar/tab label, separate from the window title (OSC 2).",
+        "required": true,
+        "byte_sequence_ST": "\u001b]1;myapp\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 ; m y a p p ESC \\   ==  \\x1b]1;myapp\\x1b\\\\   (set icon name)",
+        "byte_sequence_BEL": "\u001b]1;myapp\u0007",
+        "byte_sequence_BEL_readable": "ESC ] 1 ; m y a p p BEL   ==  \\x1b]1;myapp\\x07",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 1 sets the ICON NAME only; OSC 2 sets the WINDOW TITLE only; OSC 0 sets BOTH. Pick the right number for what you want to change.",
+      "Many modern terminals/tabs show only one string and treat icon name and title interchangeably, so OSC 1 may appear to do nothing visible.",
+      "The string is plain text terminated by ST (or BEL); embedded control bytes are not allowed.",
+      "There is no standard QUERY form for OSC 1 (unlike color OSCs); some terminals support OSC 21 to query the title-related strings.",
+      "Restore or clear the title/icon on exit if you changed it, so the user's terminal label isn't left altered."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 1 set-icon-name renders as a byte-exact OSC string in both ST and BEL terminator forms.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}
