@@ -1,6 +1,12 @@
 node_modules/
-dist/
 .wrangler/
+.dev.vars
+dist/
+.astro/
 .cache/
+.env
+.env.*
+!.env.example
 .DS_Store
 *.log
+public/_redirects

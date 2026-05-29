@@ -178,18 +178,20 @@ harness to maintain.
 
 ## 6. Architecture
 
-- **Hosting:** static-first on Cloudflare. *(Open decision: Pages Functions vs
-  Workers Static Assets — see §8.)* Build output in `dist/` is the immutable,
-  deterministic artifact: per-entry `.json`, pre-rendered HTML, `index.json`
-  manifests, `_pagefind/` search index, `/llms.txt`, `/llms-full.txt`.
-- **Dual serving** at the edge shim, resolution order: (1) redirect table →
-  301; (2) explicit suffix overrides negotiation → forced Content-Type; (3)
-  `Accept` negotiation on the bare path → same `.json` bytes or pre-rendered
-  HTML. `Vary: Accept`, `ETag` from `entry.updated`, `Cache-Control` on every
-  response so the CDN caches variants separately.
-- **Search:** Pagefind — Rust/WASM, prebuilt sharded index, fully client-side,
-  no backend, ~100–300 kB even at scale. Indexes only `verification != unverified`.
-  Agents don't use search; they enumerate manifests and fetch by constructed id.
+- **Stack:** **Astro 6 + Tailwind v4 + TypeScript (strict), built/run with Bun**,
+  deployed as a static site to **Cloudflare Pages** (matches the phall.io stack).
+  The corpus loads as an Astro content collection from `data/**/*.json` (id =
+  the entry's canonical `id` via `generateId`); pages, `.json` twins, manifests,
+  and `llms.txt` are all `getStaticPaths`/endpoint-generated into `dist/`.
+- **Dual serving:** the `.json` twin beside every page is the robust static path
+  (`/{id}.json`). A Pages Function (`functions/_middleware.ts`) adds `Accept`
+  negotiation (bare path + `Accept: application/json` → the `.json` twin), `Vary:
+  Accept`, and permissive CORS. `public/_redirects` (from `scripts/prebuild.ts`)
+  serves the 301 guesses (`/osc/133 → /terminal-osc/133`); ambiguous bare slugs
+  (`/418`) intentionally 404 to a "did you mean" disambiguation page.
+- **Search:** a tiny prebuilt `search-index.json` (verified entries only) + ~50
+  lines of vanilla client JS — no Pagefind binary, no backend. Agents don't use
+  search; they enumerate manifests and fetch by constructed id.
 - **Agent interface:** `/llms.txt` (token-lean index: purpose, family vocabulary,
   manifest links) + `/llms-full.txt` (inlined dump) + per-family `index.json`.
   Later: a **stateless MCP server** that is a thin shim over the *identical*
@@ -215,53 +217,70 @@ served content, cannot bypass the gates. Unverifiable entries ship as
 ### Repo layout (target)
 
 ```
-data/{family}/[{namespace}/]{slug}.json   source of truth, one file per entry
-schema/core.schema.json                   frozen core
-schema/ext/*.v1.schema.json               versioned extension sub-schemas
-ingest/registries.config.json             Tier-A config map {registry → url,format}
-ingest/{tier-a,tier-b,tier-c}/            adapters per tier (LLM only where needed)
-ingest/diff.ts                            reviewable-patch + change-report; opens PR
-build/build.ts                            pure: validate → JSON → manifests → HTML → pagefind → llms.txt
-ci/gates/                                 the 5 gates
-test/                                     conformance tests (e.g. osc133.smoke.test.mjs)
-mcp/server.ts                             stateless MCP shim over dist JSON
-dist/                                     immutable deploy artifact
-.github/workflows/{ingest,deploy}.yml     nightly Tier-A PRs; gates+build+deploy
+data/{family}/[{namespace}/]{slug}.json   source of truth, one JSON file per entry
+schema/core.schema.json                   frozen core (+ schema/ext/*.v1.schema.json)
+src/content.config.ts                     Astro collection loading data/ (generateId = id)
+src/layouts/BaseLayout.astro              terminal aesthetic shell
+src/lib/wire.ts                           types, family vocabulary, byte helpers
+src/pages/index.astro                     home (live search)
+src/pages/[...id].astro                   entry pages (render dispatched by ext_type)
+src/pages/[...id].json.ts                 the canonical .json twin per entry
+src/pages/[family]/index.{astro,json.ts}  family landing + manifest
+src/pages/{index.json,llms.txt,...}.ts    root manifest + agent endpoints
+src/pages/404.astro                       miss → "did you mean" disambiguation
+src/styles/global.css                     Tailwind v4 @theme (wire palette)
+functions/_middleware.ts                  Pages Fn: Accept negotiation + CORS
+scripts/prebuild.ts                       generates public/_redirects from the corpus
+scripts/gates/run-all.ts                  the 5 data-integrity gates (bun)
+test/osc133.test.ts                       integrity test (bun test)
+ingest/registries.config.json + tier-a/  Tier-A deterministic parser + runner (TS/bun)
+ingest/cli.ts                             update agent: reparse, diff, reviewable report
+.github/workflows/{ingest,deploy}.yml     nightly Tier-A PRs; gates+test+build+pages deploy
 ```
 
 ---
 
-## 7. What exists now (this commit)
+## 7. What exists now
 
-- [`data/terminal-osc/133.json`](data/terminal-osc/133.json) — the **byte-accurate
-  OSC 133 seed entry** and the exemplar every future entry is modeled on. Full
-  A/B/C/D markers (ST + BEL forms), optional `D;exitcode`, 11-terminal support
-  matrix, OSC 633 variant cross-link, gotchas, and `attribution[]` with two
-  independent agreeing sources per A/B/C/D claim (quorum satisfied → `verified`).
-- [`schema/core.schema.json`](schema/core.schema.json) and
-  [`schema/ext/terminal-escape.v1.schema.json`](schema/ext/terminal-escape.v1.schema.json).
-- [`test/osc133.smoke.test.mjs`](test/osc133.smoke.test.mjs) — v1 **data-integrity**
-  check. **Passing (12/12):** validates every stored byte sequence against a
-  strict OSC-133 grammar, confirms both terminator forms are recorded, confirms
-  `D`'s exit-code variant, and asserts a byte-exact full
-  prompt→command→output→finish cycle. (`node --test test/osc133.smoke.test.mjs`)
+A working site on the Astro + Bun + Pages stack:
+
+- **1,302 entries**, all `verified`, across 11 families (port 686, cbor-tag 260,
+  uri-scheme 99, dns-rrtype 97, http-status 64, http-method 41, tls-param 35,
+  terminal-osc 8, encoding 6, terminal-dec-private-mode 5, terminal-csi 1).
+- **Build:** `bun run build` → 1,314 static pages + 1,302 `.json` twins +
+  manifests + `llms.txt`/`llms-full.txt` + `_redirects`, in ~3.5s. Bare paths
+  serve clean 200 HTML; `Accept: application/json` (or `.json`) serves the
+  canonical bytes; `/osc/133` 301s; misses 404 with a "did you mean" page.
+- **Gates:** `bun run gates` — all 5 PASS on 1,302 entries (schema, provenance,
+  tier-A shape, **34 encoding test-vectors executed**, cross-source quorum).
+- **Tests:** `bun test` — OSC 133 integrity, 12/12 pass.
+- **Verified locally** via `wrangler pages dev`: dual-serving, redirects, CORS,
+  404 disambiguation all correct. Byte sequences render as `\xNN` — zero raw
+  control bytes leak into HTML.
+- The **OSC 133 seed** (`data/terminal-osc/133.json`) remains the byte-accurate
+  exemplar: A/B/C/D markers (ST+BEL), `D;exitcode`, 11-terminal support matrix,
+  OSC 633 cross-link, and per-claim `attribution[]` with ≥2 agreeing sources.
 
 ---
 
-## 8. Open decisions
+## 8. Decisions (resolved) + what's open
 
-1. **Hosting: Cloudflare Workers Static Assets vs Pages Functions.** Research
-   recommends **Workers Static Assets** (Cloudflare is folding Pages into Workers;
-   Workers is the only path that lets the future MCP endpoint live in the *same*
-   deploy via `run_worker_first` on `/mcp`). The architecture pass defaulted to
-   Pages Functions (more turnkey Git CI/CD). **Decide before wiring hosting.**
-2. **Data file format:** JSON (unambiguous control-byte escaping via ``,
-   used for the seed) vs YAML (nicer to hand-author). Leaning JSON for the
-   byte-bearing terminal families, YAML acceptable for prose-light IANA rows.
-3. **Build tooling / SSG:** hand-rolled TS build vs an SSG (Astro/Eleventy).
-   Affects how Pagefind, the `.json`/`.md` twins, and `llms.txt` hook in.
-4. **First non-terminal coverage after the wedge:** likely Tier-A IANA (free,
-   deterministic) — `http-status`, then the TLV family / encodings.
+Resolved during the build:
+1. ~~Hosting~~ → **Cloudflare Pages** (matches the phall.io stack; a Pages
+   Function does Accept-negotiation). An MCP endpoint can still be added later as
+   a sibling Worker over the identical static JSON.
+2. ~~Data file format~~ → **JSON** (unambiguous control-byte escaping).
+3. ~~Build tooling~~ → **Astro 6 + Tailwind v4, Bun + TypeScript** (not a
+   hand-rolled build); search is a tiny prebuilt index, not Pagefind.
+
+Still open:
+- **Deploy** — needs Cloudflare auth (`bunx wrangler pages deploy`) + attaching
+  `wire.phall.io`. Not yet pushed live.
+- **Coverage gaps** — `terminal-csi` has only SGR; the TLV family and more
+  encodings aren't in yet; `media-type` is in the vocabulary but unpopulated.
+- **Loose ends** — encoding `ext` carries both `input_form` and `algorithm`
+  (the gate keys off `algorithm`); the famous `418` teapot (RFC 2324) lives
+  outside the IANA registry and isn't annotated; an MCP server isn't built.
 
 ## 9. Top risks (from the synthesis)
 

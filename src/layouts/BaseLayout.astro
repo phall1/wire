@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+import { SITE } from "../lib/wire";
+
+interface Props {
+  title?: string;
+  description?: string;
+  jsonHref?: string;
+  status?: string;
+}
+
+const {
+  title = SITE.name,
+  description = SITE.tagline,
+  jsonHref,
+  status = "main ✓",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {jsonHref && <link rel="alternate" type="application/json" href={jsonHref} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <slot />
+
+    <footer id="statusline" aria-hidden="true">
+      <span class="seg on">{SITE.domain}</span>
+      <span class="rule"></span>
+      <span class="seg">{status}</span>
+    </footer>
+
+    <script is:inline>
+      console.log(
+        "%c ╦ ╦╦╦═╗╔═╗\n %c ║║║║╠╦╝║╣ \n %c ╚╩╝╩╩╚═╚═╝  the bytes on the wire",
+        "color:#5cc9a7;font-family:monospace",
+        "color:#5cc9a7;font-family:monospace",
+        "color:#5cc9a7;font-family:monospace",
+      );
+    </script>
+  </body>
+</html>

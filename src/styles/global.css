@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0b0d;
+  --color-fg: #d9d9dc;
+  --color-dim: #6d6d72;
+  --color-rule: #26262b;
+  --color-accent: #5cc9a7; /* phosphor / on-the-wire green */
+  --color-warn: #d8a657;
+
+  --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+body {
+  padding: 28px 28px 64px;
+  max-width: 980px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+pre,
+code {
+  margin: 0;
+  font: inherit;
+}
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.dim {
+  color: var(--color-dim);
+}
+.accent {
+  color: var(--color-accent);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* prompt-style cursor */
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  background: var(--color-accent);
+  vertical-align: -2px;
+  animation: blink 1.05s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* a byte sequence: the centerpiece datum */
+.bytes {
+  color: var(--color-accent);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4ch;
+  margin: 0.8em 0;
+}
+.badge {
+  border: 1px solid var(--color-rule);
+  padding: 1px 7px;
+  color: var(--color-dim);
+  white-space: nowrap;
+}
+.badge b {
+  color: var(--color-fg);
+  font-weight: 400;
+}
+.badge.ok b {
+  color: var(--color-accent);
+}
+.badge.warn b {
+  color: var(--color-warn);
+}
+
+/* tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.6em 0 1.4em;
+  font-size: 12.5px;
+}
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 4px 10px 4px 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+th {
+  color: var(--color-dim);
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-fg);
+}
+
+/* sections */
+section {
+  margin: 1.8em 0;
+}
+.section-h {
+  color: var(--color-dim);
+  margin: 0 0 0.6em;
+}
+.section-h::before {
+  content: "## ";
+  color: var(--color-rule);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+  margin: 2em 0;
+}
+
+ul.bare {
+  list-style: none;
+  margin: 0.4em 0 1.2em;
+  padding: 0;
+}
+ul.bare > li {
+  position: relative;
+  padding-left: 1.4em;
+  margin: 0.25em 0;
+}
+ul.bare > li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: var(--color-dim);
+}
+
+.crumb {
+  color: var(--color-dim);
+  margin: 0 0 1.4em;
+}
+.crumb a {
+  color: var(--color-dim);
+}
+
+/* home: family grid */
+.fam-list {
+  margin: 1.2em 0;
+}
+.fam-row {
+  display: flex;
+  gap: 1ch;
+  padding: 3px 0;
+}
+.fam-row .count {
+  color: var(--color-dim);
+  min-width: 5ch;
+  text-align: right;
+}
+.fam-row .name {
+  color: var(--color-accent);
+  min-width: 24ch;
+}
+.fam-row .blurb {
+  color: var(--color-dim);
+}
+
+input.q {
+  width: 100%;
+  background: #0e0e10;
+  border: 1px solid var(--color-rule);
+  color: var(--color-fg);
+  font: inherit;
+  padding: 8px 10px;
+  margin: 0.4em 0 0.2em;
+}
+input.q:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+#results {
+  margin: 0.4em 0;
+}
+#results a {
+  display: block;
+  padding: 2px 0;
+}
+
+/* fixed statusline footer */
+#statusline {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5ch;
+  padding: 6px 12px;
+  background: var(--color-bg);
+  color: var(--color-dim);
+  font-size: 12px;
+  line-height: 1.5;
+  user-select: none;
+}
+#statusline .rule {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-rule);
+}
+#statusline .rule::after {
+  content: "────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────";
+}
+#statusline .seg.on {
+  color: var(--color-accent);
+}

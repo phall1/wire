@@ -1,7 +1,7 @@
-#!/usr/bin/env node
-// ingest/cli.mjs — the update-agent CLI (minimal, real).
+#!/usr/bin/env bun
+// ingest/cli.ts — the update-agent CLI (minimal, real).
 //
-//   node ingest/cli.mjs --family <f> [--dry-run] [--json]
+//   bun run ingest/cli.ts --family <f> [--dry-run] [--json]
 //
 // For a TIER-A family it re-runs the DETERMINISTIC parser, diffs the freshly
 // parsed entries against what is stored under data/{family}/, and prints a
@@ -10,7 +10,7 @@
 // cannot merge, cannot deploy, cannot bypass the gates (DESIGN §6).
 //
 // The deterministic parsers live under ingest/tier-a/ (owned by the content
-// agent). This CLI imports ingest/tier-a/parse.mjs and DEGRADES GRACEFULLY if it
+// agent). This CLI imports ingest/tier-a/parse.ts and DEGRADES GRACEFULLY if it
 // is not there yet: it reports that the parser is unavailable and exits 0 in
 // --dry-run (nothing to do) or a clear nonzero otherwise, never inventing data.
 //
@@ -22,14 +22,46 @@ import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
+import type { Entry } from './tier-a/parse.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '..');
 const DATA_DIR = join(REPO_ROOT, 'data');
 const TODAY = '2026-05-29'; // pinned literal; never compute at runtime.
 
-function parseArgs(argv) {
-  const args = { family: null, dryRun: false, json: false };
+interface Args {
+  family: string | null;
+  dryRun: boolean;
+  json: boolean;
+  help?: boolean;
+}
+
+type ParseFamily = (family: string, opts?: { today?: string }) => Promise<Entry[]>;
+
+/** A stored entry plus the file it was loaded from. */
+interface StoredEntry {
+  entry: Entry;
+  file: string;
+}
+
+/** A flat per-leaf diff using dotted JSON paths. */
+interface FieldDiff {
+  path: string;
+  old: unknown;
+  new: unknown;
+}
+
+/** A per-id change record. */
+interface Change {
+  id: string;
+  kind: 'added' | 'removed' | 'modified' | 'unchanged';
+  fields: FieldDiff[];
+  parsed?: Entry;
+  file?: string;
+}
+
+function parseArgs(argv: string[]): Args {
+  const args: Args = { family: null, dryRun: false, json: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--family') args.family = argv[++i];
@@ -41,12 +73,12 @@ function parseArgs(argv) {
   return args;
 }
 
-const USAGE = `usage: node ingest/cli.mjs --family <f> [--dry-run] [--json]
+const USAGE = `usage: bun run ingest/cli.ts --family <f> [--dry-run] [--json]
 
 Re-runs the deterministic Tier-A parser for <f>, diffs against data/<f>/, and
 emits a reviewable change report. --dry-run never writes (default for CI poll).`;
 
-async function main() {
+async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
   if (args.help) { console.log(USAGE); process.exit(0); }
   if (!args.family) {
@@ -55,19 +87,20 @@ async function main() {
   }
 
   // Load the Tier-A parser, degrading gracefully if absent.
-  const parserPath = join(__dirname, 'tier-a', 'parse.mjs');
-  let parseFamily = null;
+  const parserPath = join(__dirname, 'tier-a', 'parse.ts');
+  let parseFamily: ParseFamily | null = null;
   if (existsSync(parserPath)) {
     try {
       const mod = await import(parserPath);
       parseFamily = mod.parseFamily ?? mod.default ?? null;
     } catch (err) {
-      reportFatal(args, `failed to import ingest/tier-a/parse.mjs: ${err.message}`);
+      const message = err instanceof Error ? err.message : String(err);
+      reportFatal(args, `failed to import ingest/tier-a/parse.ts: ${message}`);
       return;
     }
   }
   if (typeof parseFamily !== 'function') {
-    const msg = `Tier-A parser not available yet (expected ingest/tier-a/parse.mjs exporting parseFamily). Nothing to ingest for '${args.family}'.`;
+    const msg = `Tier-A parser not available yet (expected ingest/tier-a/parse.ts exporting parseFamily). Nothing to ingest for '${args.family}'.`;
     if (args.json) console.log(JSON.stringify({ family: args.family, ok: true, parser_available: false, message: msg, changes: [] }, null, 2));
     else console.log(msg);
     // Not an error in --dry-run (nothing to do). Nonzero otherwise so a real run
@@ -77,11 +110,12 @@ async function main() {
 
   // Re-parse upstream deterministically. The parser owns fetching/parsing and
   // returns an array of full core+ext entry objects keyed by id.
-  let parsed;
+  let parsed: Entry[];
   try {
     parsed = await parseFamily(args.family, { today: TODAY });
   } catch (err) {
-    reportFatal(args, `parser failed for family '${args.family}': ${err.message}`);
+    const message = err instanceof Error ? err.message : String(err);
+    reportFatal(args, `parser failed for family '${args.family}': ${message}`);
     return;
   }
   if (!Array.isArray(parsed)) {
@@ -122,26 +156,26 @@ async function main() {
   process.exit(hasDrift ? 1 : 0);
 }
 
-function reportFatal(args, message) {
+function reportFatal(args: Args, message: string): void {
   if (args.json) console.log(JSON.stringify({ family: args.family, ok: false, error: message }, null, 2));
   else console.error(`error: ${message}`);
   process.exit(2);
 }
 
-async function loadStored(family) {
+async function loadStored(family: string): Promise<Map<string, StoredEntry>> {
   const dir = join(DATA_DIR, family);
-  const map = new Map();
+  const map = new Map<string, StoredEntry>();
   if (!existsSync(dir)) return map;
   // Walk recursively so namespaced families (e.g. tls-param/cipher-suites/...)
   // are picked up, not just the top-level family dir.
-  async function walk(d) {
+  async function walk(d: string): Promise<void> {
     const ents = await readdir(d, { withFileTypes: true });
     for (const ent of ents) {
       const full = join(d, ent.name);
       if (ent.isDirectory()) { await walk(full); continue; }
       if (!ent.isFile() || !ent.name.endsWith('.json')) continue;
       const raw = await readFile(full, 'utf8');
-      const entry = JSON.parse(raw);
+      const entry = JSON.parse(raw) as Entry;
       map.set(entry.id, { entry, file: full });
     }
   }
@@ -154,9 +188,9 @@ async function loadStored(family) {
  *   { id, kind: 'added'|'removed'|'modified'|'unchanged', fields: [{path, old, new}] }
  * 'fields' is populated for 'modified' (a per-field old->new list).
  */
-function diffEntries(stored, parsed) {
-  const out = [];
-  const parsedById = new Map(parsed.map((e) => [e.id, e]));
+function diffEntries(stored: Map<string, StoredEntry>, parsed: Entry[]): Change[] {
+  const out: Change[] = [];
+  const parsedById = new Map<string, Entry>(parsed.map((e) => [e.id, e]));
 
   for (const [id, p] of parsedById) {
     const s = stored.get(id);
@@ -173,11 +207,11 @@ function diffEntries(stored, parsed) {
 }
 
 /** Flat per-leaf old->new diff using dotted JSON paths. */
-function fieldDiff(oldObj, newObj) {
+function fieldDiff(oldObj: unknown, newObj: unknown): FieldDiff[] {
   const oldFlat = flatten(oldObj);
   const newFlat = flatten(newObj);
   const keys = new Set([...Object.keys(oldFlat), ...Object.keys(newFlat)]);
-  const diffs = [];
+  const diffs: FieldDiff[] = [];
   for (const k of [...keys].sort()) {
     const a = oldFlat[k], b = newFlat[k];
     if (JSON.stringify(a) !== JSON.stringify(b)) diffs.push({ path: k, old: a ?? null, new: b ?? null });
@@ -185,20 +219,20 @@ function fieldDiff(oldObj, newObj) {
   return diffs;
 }
 
-function flatten(obj, prefix = '', out = {}) {
+function flatten(obj: unknown, prefix = '', out: Record<string, unknown> = {}): Record<string, unknown> {
   if (obj === null || typeof obj !== 'object') { out[prefix || '.'] = obj; return out; }
   if (Array.isArray(obj)) {
     obj.forEach((v, i) => flatten(v, `${prefix}[${i}]`, out));
     if (obj.length === 0) out[prefix] = [];
     return out;
   }
-  const keys = Object.keys(obj);
+  const keys = Object.keys(obj as Record<string, unknown>);
   if (keys.length === 0) out[prefix] = {};
-  for (const k of keys) flatten(obj[k], prefix ? `${prefix}.${k}` : k, out);
+  for (const k of keys) flatten((obj as Record<string, unknown>)[k], prefix ? `${prefix}.${k}` : k, out);
   return out;
 }
 
-function printTextReport(family, changes, dryRun) {
+function printTextReport(family: string, changes: Change[], dryRun: boolean): void {
   const drift = changes.filter((c) => c.kind !== 'unchanged');
   console.log(`tier-A ingest report: family '${family}'  (${dryRun ? 'DRY RUN — no writes' : 'live'})`);
   console.log('='.repeat(64));
@@ -217,11 +251,11 @@ function printTextReport(family, changes, dryRun) {
   console.log(`${drift.length} entr${drift.length === 1 ? 'y' : 'ies'} with drift.`);
 }
 
-function markFor(kind) {
+function markFor(kind: Change['kind']): string {
   return kind === 'added' ? '[+]' : kind === 'removed' ? '[-]' : '[~]';
 }
 
-async function applyChanges(family, changes) {
+async function applyChanges(family: string, changes: Change[]): Promise<void> {
   const dir = join(DATA_DIR, family);
   await mkdir(dir, { recursive: true });
   // Writes added/modified entries from the parser output. Does NOT delete files
@@ -239,6 +273,6 @@ async function applyChanges(family, changes) {
 }
 
 main().catch((err) => {
-  console.error('ingest/cli.mjs crashed:', err);
+  console.error('ingest/cli.ts crashed:', err);
   process.exit(2);
 });

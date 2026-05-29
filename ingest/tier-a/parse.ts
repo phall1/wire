@@ -1,4 +1,4 @@
-// ingest/tier-a/parse.mjs — DETERMINISTIC Tier-A parser + row->entry mapper.
+// ingest/tier-a/parse.ts — DETERMINISTIC Tier-A parser + row->entry mapper.
 //
 // No LLM is ever in the Tier-A loop (DESIGN §2). This module:
 //   1. parseCSV(text)        — an RFC4180 parser (quoted fields, embedded
@@ -9,8 +9,8 @@
 //                              is curated out (with a logged reason).
 //   3. parseRegistry(...)    — parse a CSV string for one registry into
 //                              { entries, included, excluded } with an audit log.
-//   4. parseFamily(family)   — the cli.mjs contract: read the cached CSV that
-//                              run.mjs fetched (data/.cache/tier-a/<id>.csv) and
+//   4. parseFamily(family)   — the cli.ts contract: read the cached CSV that
+//                              run.ts fetched (.cache/tier-a/<id>.csv) and
 //                              its captured Last-Modified, parse, return entries.
 //
 // Byte sequences never appear here; IANA rows are plain text. retrieved_date and
@@ -31,6 +31,80 @@ const CONFIG_PATH = join(REPO_ROOT, 'ingest', 'registries.config.json');
 export const TODAY = '2026-05-29'; // pinned literal per the build contract.
 
 // ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
+
+/** One registry entry from ingest/registries.config.json. */
+export interface RegistryConfig {
+  url: string;
+  format: string;
+  family: string;
+  namespace?: string;
+  ext_type: string;
+  slug_column: string;
+  kind?: string;
+  notes?: string;
+}
+
+/** The registries map keyed by registry id. */
+export type RegistryMap = Record<string, RegistryConfig>;
+
+/** A parsed CSV row: header -> cell, loosely shaped. */
+export type Row = Record<string, string>;
+
+/** ext block on a Tier-A iana-registry-row@1 entry. Loosely shaped per family. */
+export interface EntryExt {
+  value: number | string;
+  reference_rfcs: string[];
+  raw_columns: Record<string, string>;
+  registration_date?: string;
+  recommended?: boolean | string;
+  dtls_ok?: boolean | string;
+  transports?: string[];
+  [k: string]: unknown;
+}
+
+/** A full Tier-A core+ext entry. */
+export interface Entry {
+  id: string;
+  family: string;
+  namespace?: string;
+  slug: string;
+  title: string;
+  summary: string;
+  kind: string;
+  status: string;
+  verification: string;
+  tier: string;
+  source_url: string;
+  source_version: string;
+  retrieved_date: string;
+  ext_type: string;
+  ext: EntryExt;
+  updated: string;
+  aliases?: string[];
+}
+
+/** Result of mapping a single row: either an entry or a skip reason. */
+export type MapResult = { entry: Entry; skip?: undefined } | { entry?: undefined; skip: string };
+
+/** An excluded-row audit record. */
+export interface Excluded {
+  id?: string;
+  row?: string;
+  reason: string;
+}
+
+/** The result of parsing one registry's CSV. */
+export interface ParseResult {
+  entries: Entry[];
+  included: string[];
+  excluded: Excluded[];
+  totalRows: number;
+  consideredRows?: number;
+}
+
+// ---------------------------------------------------------------------------
 // 1. RFC4180 CSV parser
 // ---------------------------------------------------------------------------
 
@@ -43,13 +117,13 @@ export const TODAY = '2026-05-29'; // pinned literal per the build contract.
  *
  * Returns { headers: string[], rows: Array<Record<string,string>> }.
  */
-export function parseCSV(text) {
+export function parseCSV(text: string): { headers: string[]; rows: Row[] } {
   // Normalize a leading UTF-8 BOM if present.
   if (text.charCodeAt(0) === 0xfeff) text = text.slice(1);
 
-  const records = [];
+  const records: string[][] = [];
   let field = '';
-  let record = [];
+  let record: string[] = [];
   let inQuotes = false;
   let i = 0;
   const n = text.length;
@@ -95,12 +169,12 @@ export function parseCSV(text) {
 
   if (records.length === 0) return { headers: [], rows: [] };
   const headers = records[0];
-  const rows = [];
+  const rows: Row[] = [];
   for (let r = 1; r < records.length; r++) {
     const rec = records[r];
     // Skip fully-empty trailing records.
     if (rec.length === 1 && rec[0] === '') continue;
-    const obj = {};
+    const obj: Row = {};
     for (let h = 0; h < headers.length; h++) obj[headers[h]] = rec[h] ?? '';
     rows.push(obj);
   }
@@ -119,13 +193,13 @@ export function parseCSV(text) {
  * first-seen order. Drafts and personal/registrant refs are intentionally NOT
  * RFC tokens (they stay verbatim in raw_columns).
  */
-export function parseRfcRefs(refCell) {
+export function parseRfcRefs(refCell: string): string[] {
   if (!refCell) return [];
-  const out = [];
-  const seen = new Set();
+  const out: string[] = [];
+  const seen = new Set<string>();
   // Match RFC followed by digits, but NOT 'RFC-ietf-...' draft handles.
   const re = /RFC[\s-]?(\d{3,5})\b/g;
-  let m;
+  let m: RegExpExecArray | null;
   while ((m = re.exec(refCell)) !== null) {
     // Reject the draft form 'RFC-ietf-tls-...': there the char after 'RFC-' is a
     // non-digit, so the \d{3,5} would not match there anyway. Guard the hyphen
@@ -153,7 +227,7 @@ const UNASSIGNED_RE = /^(unassigned|reserved|private use|unallocated)$/i;
  *   'shttp (OBSOLETE)' -> 'shttp'      (alias 'shttp (OBSOLETE)')
  *   '*'                -> 'wildcard'   (alias '*')
  */
-export function slugifyKey(token) {
+export function slugifyKey(token: string): { slug: string; changed: boolean } | null {
   let t = String(token).trim();
   // Drop a trailing parenthetical qualifier like ' (OBSOLETE)'.
   t = t.replace(/\s*\([^)]*\)\s*$/, '').trim();
@@ -168,7 +242,7 @@ export function slugifyKey(token) {
 // a practitioner actually configures (TLS 1.3 + the standard TLS 1.2 ECDHE/DHE/
 // RSA families) rather than only the 14 the registry flags Recommended=Y. Each
 // slug is the concatenated IANA hex value (verified present in the registry).
-const TLS_CLASSIC_SLUGS = new Set([
+const TLS_CLASSIC_SLUGS = new Set<string>([
   // TLS 1.3 (RFC 8446)
   '0x1301', '0x1302', '0x1303', '0x1304', '0x1305',
   // TLS 1.2 ECDHE-ECDSA / ECDHE-RSA AEAD (GCM)
@@ -193,7 +267,7 @@ const TLS_CLASSIC_SLUGS = new Set([
  * @param row       header->cell object from parseCSV
  * @param sourceVersion  the captured HTTP Last-Modified string
  */
-export function mapRow(family, reg, row, sourceVersion) {
+export function mapRow(family: string, reg: RegistryConfig, row: Row, sourceVersion: string): MapResult {
   const refColName = pickRefColumn(row);
   const refRaw = refColName ? row[refColName] : '';
   const reference_rfcs = parseRfcRefs(refRaw);
@@ -210,7 +284,7 @@ export function mapRow(family, reg, row, sourceVersion) {
   }
 }
 
-function pickRefColumn(row) {
+function pickRefColumn(row: Row): string | null {
   // Most registries use 'Reference'; dns uses 'Reference' too. Return the first
   // present so parseRfcRefs has the right cell.
   for (const k of ['Reference', 'reference']) if (k in row) return k;
@@ -220,14 +294,27 @@ function pickRefColumn(row) {
 // Strip the verbose TEMPORARY-registration parenthetical IANA appends to some
 // descriptions, for a clean title; keep the full text in raw_columns + summary
 // fallback. Returns the cleaned leading description.
-function cleanDesc(s) {
+function cleanDesc(s: string): string {
   if (!s) return s;
   return s.replace(/\s*\(TEMPORARY[^)]*\)\s*$/i, '').trim();
 }
 
-function baseEntry({ family, namespace, slug, title, summary, kind, status, reg, sourceVersion, ext }) {
+interface BaseEntryArgs {
+  family: string;
+  namespace?: string;
+  slug: string;
+  title: string;
+  summary: string;
+  kind: string;
+  status: string;
+  reg: RegistryConfig;
+  sourceVersion: string;
+  ext: EntryExt;
+}
+
+function baseEntry({ family, namespace, slug, title, summary, kind, status, reg, sourceVersion, ext }: BaseEntryArgs): Entry {
   const id = namespace ? `${family}/${namespace}/${slug}` : `${family}/${slug}`;
-  const e = {
+  const e: Entry = {
     id,
     family,
     ...(namespace ? { namespace } : {}),
@@ -249,7 +336,7 @@ function baseEntry({ family, namespace, slug, title, summary, kind, status, reg,
 }
 
 // --- http-status ----------------------------------------------------------
-function mapHttpStatus(reg, row, sv, rfcs) {
+function mapHttpStatus(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
   const value = (row['Value'] || '').trim();
   const desc = (row['Description'] || '').trim();
   if (!value) return { skip: 'empty Value' };
@@ -258,7 +345,7 @@ function mapHttpStatus(reg, row, sv, rfcs) {
   if (!/^\d+$/.test(value)) return { skip: `non-numeric Value '${value}'` };
   const cleanedDesc = cleanDesc(desc);
   const status = 'standard';
-  const ext = {
+  const ext: EntryExt = {
     value: Number(value),
     reference_rfcs: rfcs,
     raw_columns: rawCols(row),
@@ -274,7 +361,7 @@ function mapHttpStatus(reg, row, sv, rfcs) {
 }
 
 // --- http-method -----------------------------------------------------------
-function mapHttpMethod(reg, row, sv, rfcs) {
+function mapHttpMethod(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
   const name = (row['Method Name'] || '').trim();
   if (!name) return { skip: 'empty Method Name' };
   if (UNASSIGNED_RE.test(name)) return { skip: name };
@@ -282,12 +369,12 @@ function mapHttpMethod(reg, row, sv, rfcs) {
   if (!sk) return { skip: `unslugifiable method '${name}'` };
   const safe = (row['Safe'] || '').trim();
   const idem = (row['Idempotent'] || '').trim();
-  const ext = {
+  const ext: EntryExt = {
     value: name,
     reference_rfcs: rfcs,
     raw_columns: rawCols(row),
   };
-  const props = [];
+  const props: string[] = [];
   if (safe) props.push(`safe: ${safe}`);
   if (idem) props.push(`idempotent: ${idem}`);
   const entry = baseEntry({
@@ -301,7 +388,7 @@ function mapHttpMethod(reg, row, sv, rfcs) {
 }
 
 // --- uri-scheme ------------------------------------------------------------
-function mapUriScheme(reg, row, sv, rfcs) {
+function mapUriScheme(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
   const name = (row['URI Scheme'] || '').trim();
   const status = (row['Status'] || '').trim();
   const desc = (row['Description'] || '').trim();
@@ -309,7 +396,7 @@ function mapUriScheme(reg, row, sv, rfcs) {
   if (status !== 'Permanent') return { skip: `${name} status=${status || 'none'}` };
   const sk = slugifyKey(name);
   if (!sk) return { skip: `unslugifiable scheme '${name}'` };
-  const ext = {
+  const ext: EntryExt = {
     value: name,
     reference_rfcs: rfcs,
     raw_columns: rawCols(row),
@@ -325,7 +412,7 @@ function mapUriScheme(reg, row, sv, rfcs) {
 }
 
 // --- dns-rrtype ------------------------------------------------------------
-function mapDnsRrtype(reg, row, sv, rfcs) {
+function mapDnsRrtype(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
   const type = (row['TYPE'] || '').trim();
   const value = (row['Value'] || '').trim();
   const meaning = (row['Meaning'] || '').trim();
@@ -335,7 +422,7 @@ function mapDnsRrtype(reg, row, sv, rfcs) {
   const sk = slugifyKey(type);
   if (!sk) return { skip: `unslugifiable TYPE '${type}'` };
   const regDate = (row['Registration Date'] || '').trim();
-  const ext = {
+  const ext: EntryExt = {
     value: value ? Number(value) : type,
     reference_rfcs: rfcs,
     ...(regDate ? { registration_date: regDate } : {}),
@@ -348,7 +435,7 @@ function mapDnsRrtype(reg, row, sv, rfcs) {
     kind: 'rrtype', status: 'standard', reg, sourceVersion: sv, ext,
   });
   // '*' (ANY) is conventionally queried as 'ANY'; surface both.
-  const aliases = [];
+  const aliases: string[] = [];
   if (sk.changed) aliases.push(type);
   if (type === '*') aliases.push('ANY');
   if (aliases.length) entry.aliases = aliases;
@@ -356,7 +443,7 @@ function mapDnsRrtype(reg, row, sv, rfcs) {
 }
 
 // --- cbor-tag --------------------------------------------------------------
-function mapCborTag(reg, row, sv, rfcs) {
+function mapCborTag(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
   const tag = (row['Tag'] || '').trim();
   const dataItem = (row['Data Item'] || '').trim();
   const semantics = (row['Semantics'] || '').trim();
@@ -366,7 +453,7 @@ function mapCborTag(reg, row, sv, rfcs) {
   if (UNASSIGNED_RE.test(semantics) || UNASSIGNED_RE.test(dataItem)) return { skip: `${tag} ${semantics || dataItem}` };
   if (!semantics && !dataItem) return { skip: `${tag} empty semantics` };
   const cleaned = cleanDesc(semantics) || semantics;
-  const ext = {
+  const ext: EntryExt = {
     value: Number(tag),
     reference_rfcs: rfcs,
     raw_columns: rawCols(row),
@@ -382,7 +469,7 @@ function mapCborTag(reg, row, sv, rfcs) {
 }
 
 // --- tls cipher-suites -----------------------------------------------------
-function mapTlsCipher(reg, row, sv, rfcs) {
+function mapTlsCipher(reg: RegistryConfig, row: Row, sv: string, rfcs: string[]): MapResult {
   const valRaw = (row['Value'] || '').trim();           // e.g. "0x00,0x01"
   const desc = (row['Description'] || '').trim();        // e.g. TLS_RSA_WITH_NULL_MD5
   const recommended = (row['Recommended'] || '').trim(); // Y / N / D
@@ -405,7 +492,7 @@ function mapTlsCipher(reg, row, sv, rfcs) {
 
   // status: recommended -> standard; everything else kept is de-facto/legacy.
   const status = isRecommended ? 'standard' : 'de-facto';
-  const ext = {
+  const ext: EntryExt = {
     value: slug,
     reference_rfcs: rfcs,
     recommended: recommended === 'Y' ? true : recommended === 'N' ? false : (recommended || undefined),
@@ -423,14 +510,26 @@ function mapTlsCipher(reg, row, sv, rfcs) {
 }
 
 // --- port (grouped) --------------------------------------------------------
+interface PortGroup {
+  rows: Row[];
+  transports: Set<string>;
+  names: Set<string>;
+  descs: Set<string>;
+}
+
 /**
  * Ports are per-(service, transport) upstream. Collapse to one entry per port
  * NUMBER. Curate: well-known system ports 0-1023 that have a service name on at
  * least one transport. Returns { entries, included, excluded }.
  */
-export function groupPorts(reg, rows, sourceVersion) {
-  const byPort = new Map(); // portNum -> { rows: [], transports:Set, names:Set }
-  const excluded = [];
+export function groupPorts(reg: RegistryConfig, rows: Row[], sourceVersion: string): {
+  entries: Entry[];
+  included: string[];
+  excluded: Excluded[];
+  consideredRows: number;
+} {
+  const byPort = new Map<number, PortGroup>(); // portNum -> { rows: [], transports:Set, names:Set }
+  const excluded: Excluded[] = [];
   let consideredRows = 0;
 
   for (const row of rows) {
@@ -442,7 +541,7 @@ export function groupPorts(reg, rows, sourceVersion) {
     const name = (row['Service Name'] || '').trim();
     const transport = (row['Transport Protocol'] || '').trim().toLowerCase();
     if (!byPort.has(port)) byPort.set(port, { rows: [], transports: new Set(), names: new Set(), descs: new Set() });
-    const g = byPort.get(port);
+    const g = byPort.get(port)!;
     g.rows.push(row);
     if (transport) g.transports.add(transport);
     if (name) g.names.add(name);
@@ -450,8 +549,8 @@ export function groupPorts(reg, rows, sourceVersion) {
     if (d) g.descs.add(d);
   }
 
-  const entries = [];
-  const included = [];
+  const entries: Entry[] = [];
+  const included: string[] = [];
   for (const [port, g] of [...byPort.entries()].sort((a, b) => a[0] - b[0])) {
     if (g.names.size === 0) {
       excluded.push({ id: `port/${port}`, reason: `no service name on any transport (e.g. Reserved)` });
@@ -461,12 +560,12 @@ export function groupPorts(reg, rows, sourceVersion) {
     const transports = [...g.transports].filter((t) => ['tcp', 'udp', 'sctp', 'dccp'].includes(t));
     const desc = [...g.descs][0] || primaryName;
     // Aggregate references across the grouped rows.
-    const rfcSet = new Set();
+    const rfcSet = new Set<string>();
     for (const r of g.rows) for (const t of parseRfcRefs(r['Reference'] || '')) rfcSet.add(t);
     const rfcs = [...rfcSet];
     // raw_columns: echo the primary (first) row verbatim; note grouping.
     const primaryRow = g.rows[0];
-    const ext = {
+    const ext: EntryExt = {
       value: port,
       reference_rfcs: rfcs,
       transports,
@@ -491,14 +590,14 @@ export function groupPorts(reg, rows, sourceVersion) {
 // helpers
 // ---------------------------------------------------------------------------
 
-function rawCols(row) {
+function rawCols(row: Row): Record<string, string> {
   // Verbatim header->cell map, preserving every column in source order.
-  const out = {};
+  const out: Record<string, string> = {};
   for (const [k, v] of Object.entries(row)) out[k] = v == null ? '' : String(v);
   return out;
 }
 
-function truncate(s, n) {
+function truncate(s: string, n: number): string {
   if (s.length <= n) return s;
   return s.slice(0, n - 1).trimEnd() + '…';
 }
@@ -514,7 +613,7 @@ function truncate(s, n) {
  * @param sourceVersion  captured Last-Modified
  * @returns { entries, included:[ids], excluded:[{id,reason}] }
  */
-export function parseRegistry(registryId, reg, csvText, sourceVersion) {
+export function parseRegistry(registryId: string, reg: RegistryConfig, csvText: string, sourceVersion: string): ParseResult {
   const { rows } = parseCSV(csvText);
   const family = reg.family;
 
@@ -523,9 +622,9 @@ export function parseRegistry(registryId, reg, csvText, sourceVersion) {
     return { entries: g.entries, included: g.included, excluded: g.excluded, totalRows: rows.length, consideredRows: g.consideredRows };
   }
 
-  const entries = [];
-  const included = [];
-  const excluded = [];
+  const entries: Entry[] = [];
+  const included: string[] = [];
+  const excluded: Excluded[] = [];
   for (const row of rows) {
     const res = mapRow(family, reg, row, sourceVersion);
     if (res.entry) { entries.push(res.entry); included.push(res.entry.id); }
@@ -533,8 +632,8 @@ export function parseRegistry(registryId, reg, csvText, sourceVersion) {
   }
   // Dedupe by id (defensive; registries shouldn't repeat a primary key for the
   // non-port families). Keep first.
-  const seen = new Set();
-  const deduped = [];
+  const seen = new Set<string>();
+  const deduped: Entry[] = [];
   for (const e of entries) {
     if (seen.has(e.id)) { excluded.push({ row: e.id, reason: 'duplicate id (kept first)' }); continue; }
     seen.add(e.id); deduped.push(e);
@@ -542,23 +641,23 @@ export function parseRegistry(registryId, reg, csvText, sourceVersion) {
   return { entries: deduped, included: [...seen], excluded, totalRows: rows.length };
 }
 
-function identifyRow(reg, row) {
+function identifyRow(reg: RegistryConfig, row: Row): string {
   const col = reg.slug_column;
   return (row[col] || '').trim() || JSON.stringify(row).slice(0, 60);
 }
 
 // ---------------------------------------------------------------------------
-// 5. parseFamily — the cli.mjs contract (reads run.mjs's cached CSV)
+// 5. parseFamily — the cli.ts contract (reads run.ts's cached CSV)
 // ---------------------------------------------------------------------------
 
-async function loadConfig() {
+async function loadConfig(): Promise<RegistryMap> {
   const raw = await readFile(CONFIG_PATH, 'utf8');
-  return JSON.parse(raw).registries;
+  return JSON.parse(raw).registries as RegistryMap;
 }
 
 /** Find the registry config whose family (and namespace) match the requested
- *  family string. cli.mjs passes a `family` like 'http-status' or 'tls-param'. */
-function findRegistryByFamily(registries, family) {
+ *  family string. cli.ts passes a `family` like 'http-status' or 'tls-param'. */
+function findRegistryByFamily(registries: RegistryMap, family: string): [string | null, RegistryConfig | null] {
   for (const [id, reg] of Object.entries(registries)) {
     if (reg.family === family) return [id, reg];
   }
@@ -566,22 +665,22 @@ function findRegistryByFamily(registries, family) {
 }
 
 /**
- * cli.mjs entry point: re-parse a family deterministically from the CSV that
- * run.mjs cached at data/.cache/tier-a/<registryId>.csv (+ .meta json with the
+ * cli.ts entry point: re-parse a family deterministically from the CSV that
+ * run.ts cached at .cache/tier-a/<registryId>.csv (+ .meta json with the
  * captured Last-Modified). Returns an array of full entry objects.
  *
  * If the cache is absent, throws a clear error telling the operator to run
- * ingest/tier-a/run.mjs first (cli.mjs should not fetch the network itself).
+ * ingest/tier-a/run.ts first (cli.ts should not fetch the network itself).
  */
-export async function parseFamily(family, _opts = {}) {
+export async function parseFamily(family: string, _opts: { today?: string } = {}): Promise<Entry[]> {
   const registries = await loadConfig();
   const [registryId, reg] = findRegistryByFamily(registries, family);
-  if (!reg) throw new Error(`no Tier-A registry configured for family '${family}'`);
+  if (!reg || !registryId) throw new Error(`no Tier-A registry configured for family '${family}'`);
 
   const csvPath = join(CACHE_DIR, `${registryId}.csv`);
   const metaPath = join(CACHE_DIR, `${registryId}.meta.json`);
   if (!existsSync(csvPath)) {
-    throw new Error(`no cached CSV at ${csvPath}; run 'node ingest/tier-a/run.mjs' first to fetch the registry`);
+    throw new Error(`no cached CSV at ${csvPath}; run 'bun run ingest/tier-a/run.ts' first to fetch the registry`);
   }
   const csvText = await readFile(csvPath, 'utf8');
   let sourceVersion = `${reg.url} (Last-Modified unknown)`;

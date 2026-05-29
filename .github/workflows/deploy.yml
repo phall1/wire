@@ -1,10 +1,10 @@
-# deploy.yml — gates + tests + build, then deploy to Cloudflare on push to main.
+# deploy.yml — gates + tests + build, then deploy to Cloudflare Pages on push.
 #
-# The data-integrity gates and the data-integrity tests are HARD prerequisites:
-# any gate or test failure fails the job and nothing is deployed. The build
-# (build/build.mjs) emits the immutable dist/ artifact; wrangler-action deploys
-# it to Cloudflare Workers Static Assets (see wrangler.jsonc). Requires the
-# CLOUDFLARE_API_TOKEN secret (Workers Scripts:Edit + Workers Static Assets).
+# The data-integrity gates and tests are HARD prerequisites: any failure fails
+# the job and nothing deploys. `bun run build` runs prebuild (redirects) +
+# `astro build`, emitting the static dist/ artifact, which wrangler deploys to
+# the Cloudflare Pages project "wire". Requires the CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID secrets (Pages:Edit).
 
 name: deploy
 
@@ -13,7 +13,6 @@ on:
     branches: [main]
   workflow_dispatch: {}
 
-# One in-flight deploy at a time; let a newer push supersede an older run.
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true
@@ -25,32 +24,29 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: npm
+          bun-version: latest
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install
+        run: bun install --frozen-lockfile
 
       # DATA-INTEGRITY gates — schema, provenance, tier-A shape, encoding
       # test-vector execution, cross-source quorum. Fails the job on any failure.
       - name: Gates
-        run: npm run gates
+        run: bun run gates
 
       - name: Test
-        run: npm test
+        run: bun test
 
-      - name: Build (dist/ artifact)
-        run: npm run build
+      - name: Build (static dist/)
+        run: bun run build
 
-      - name: Deploy to Cloudflare
+      - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          # dist/ is produced by the build step; wrangler.jsonc points assets there.
-          command: deploy
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./dist --project-name=wire --branch=main

@@ -1,21 +1,16 @@
 # ingest.yml — nightly Tier-A IANA poll. Self-healing for Tier A, human-gated.
 #
-# Runs the deterministic Tier-A ingester (ingest/cli.mjs) for each IANA-backed
-# family. The ingester re-parses upstream, diffs against data/, and on DRIFT
-# (exit 1) this job opens a PULL REQUEST with the reconciled data + report.
-# It NEVER commits to main directly: drift is a reviewable change, gated by the
-# same deploy workflow (gates + tests) before it can merge. No drift = no PR.
-#
-# The CLI degrades gracefully if a family's Tier-A parser is not present yet
-# (ingest/tier-a/parse.mjs), so this workflow is safe to enable before every
-# family's parser lands.
+# Runs the deterministic Tier-A ingester (ingest/cli.ts on Bun) for each
+# IANA-backed family. The ingester re-parses upstream, diffs against data/, and
+# on DRIFT (exit 1) this job opens a PULL REQUEST with the reconciled data +
+# report. It NEVER commits to main directly: drift is a reviewable change, gated
+# by the deploy workflow (gates + tests) before it can merge. No drift = no PR.
 
 name: ingest
 
 on:
   schedule:
-    # 07:11 UTC nightly (off the hour to dodge cron congestion).
-    - cron: "11 7 * * *"
+    - cron: "11 7 * * *" # 07:11 UTC nightly, off the hour
   workflow_dispatch:
     inputs:
       family:
@@ -31,34 +26,30 @@ jobs:
   ingest:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: npm
+          bun-version: latest
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install
+        run: bun install --frozen-lockfile
 
       # Re-parse each Tier-A family and reconcile data/ in the working tree.
-      # cli.mjs exits 1 on drift (not an error) — we capture per-family drift and
-      # keep going. Without --dry-run the CLI writes added/modified entries; the
-      # PR step below turns the working-tree changes into a reviewable PR.
+      # cli.ts exits 1 on drift (not an error) — capture per-family drift, keep
+      # going; the PR step turns working-tree changes into a reviewable PR.
       - name: Tier-A ingest (reconcile working tree)
         id: ingest
         run: |
           set +e
           FAMILIES="${{ github.event.inputs.family }}"
           if [ -z "$FAMILIES" ]; then
-            FAMILIES="http-status http-method media-type uri-scheme port tls-param dns-rrtype cbor-tag"
+            FAMILIES="http-status http-method uri-scheme port tls-param dns-rrtype cbor-tag"
           fi
           drift=0
           for f in $FAMILIES; do
             echo "::group::ingest $f"
-            node ingest/cli.mjs --family "$f"
+            bun run ingest/cli.ts --family "$f"
             code=$?
             echo "::endgroup::"
             if [ "$code" -eq 1 ]; then drift=1; fi
@@ -66,11 +57,9 @@ jobs:
           done
           echo "drift=$drift" >> "$GITHUB_OUTPUT"
 
-      # Re-run the gates over the reconciled tree so we never open a PR that
-      # would fail the deploy job.
       - name: Gates (post-reconcile)
         if: steps.ingest.outputs.drift == '1'
-        run: npm run gates
+        run: bun run gates
 
       - name: Open PR on drift
         if: steps.ingest.outputs.drift == '1'
@@ -81,14 +70,10 @@ jobs:
           commit-message: "chore(ingest): tier-A upstream drift (nightly)"
           title: "chore(ingest): tier-A upstream drift"
           body: |
-            Automated nightly Tier-A reconcile detected upstream drift.
-
-            The deterministic parser re-fetched the IANA registries, diffed against
-            `data/`, and wrote the reconciled rows. Review the per-field changes
-            below; the standard `deploy` gates (schema, provenance, tier-A shape,
-            encoding, quorum) + tests must pass before merge.
-
-            This PR was opened by `.github/workflows/ingest.yml`; the ingester
-            cannot merge or deploy on its own.
+            Automated nightly Tier-A reconcile detected upstream drift. The
+            deterministic parser re-fetched the IANA registries, diffed against
+            `data/`, and wrote the reconciled rows. The deploy gates (schema,
+            provenance, tier-A shape, encoding, quorum) + tests must pass before
+            merge. The ingester cannot merge or deploy on its own.
           labels: ingest, tier-a
           delete-branch: true

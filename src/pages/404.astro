@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404 · wire" status="404">
+  <pre class="accent" style="margin:0">{` ┏┓┏┓┏┓
+ ┃┃┃┃┗┫
+ ┗┛┗┛┗┛`}</pre>
+  <h1 style="margin-top:.6em">no entry on the wire here</h1>
+  <p class="dim" id="what">that path doesn't resolve to an entry.</p>
+
+  <div id="suggest"></div>
+
+  <p style="margin-top:1.6em">
+    → <a href="/">back to wire</a> · <a href="/llms.txt">llms.txt</a>
+  </p>
+
+  <script>
+    const path = location.pathname.replace(/^\/+|\/+$/g, "");
+    const last = path.split("/").pop() || "";
+    const out = document.getElementById("suggest")!;
+    document.getElementById("what")!.textContent = `no entry at /${path}`;
+    const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
+
+    fetch("/search-index.json")
+      .then((r) => r.json())
+      .then((idx: { id: string; title: string }[]) => {
+        // exact slug match across families (the ambiguous-slug case, e.g. /418)
+        const exact = idx.filter((e) => e.id.split("/").pop() === last);
+        const fuzzy = exact.length
+          ? exact
+          : idx
+              .filter((e) => last && (e.id.toLowerCase().includes(last.toLowerCase()) || e.title.toLowerCase().includes(last.toLowerCase())))
+              .slice(0, 12);
+        if (!fuzzy.length) return;
+        out.innerHTML =
+          `<p class="section-h" style="margin-top:1.4em">did you mean</p>` +
+          `<ul class="bare">` +
+          fuzzy.map((e) => `<li><a href="/${e.id}"><span class="accent">${esc(e.id)}</span></a> <span class="dim">— ${esc(e.title)}</span></li>`).join("") +
+          `</ul>`;
+      });
+  </script>
+</BaseLayout>

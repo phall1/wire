@@ -1,11 +1,11 @@
-#!/usr/bin/env node
-// ingest/tier-a/run.mjs — fetch + parse + write the Tier-A IANA corpus.
+#!/usr/bin/env bun
+// ingest/tier-a/run.ts — fetch + parse + write the Tier-A IANA corpus.
 //
-//   node ingest/tier-a/run.mjs [--family <f>] [--dry-run]
+//   bun run ingest/tier-a/run.ts [--family <f>] [--dry-run]
 //
 // For each registry in ingest/registries.config.json:
 //   1. curl -sI URL  -> capture HTTP Last-Modified (source_version)
-//   2. curl -sL URL -o <cache>/<id>.csv  -> fetch the CSV (cached so cli.mjs and
+//   2. curl -sL URL -o <cache>/<id>.csv  -> fetch the CSV (cached so cli.ts and
 //      the round-trip gate can re-parse without re-fetching)
 //   3. parseRegistry(...)  -> deterministic entries + audit log
 //   4. write data/{family}/[{namespace}/]{slug}.json (unless --dry-run)
@@ -19,7 +19,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
-import { parseRegistry } from './parse.mjs';
+import { parseRegistry, type RegistryMap, type Entry, type Excluded } from './parse.ts';
 
 const execFileP = promisify(execFile);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -29,8 +29,13 @@ const DATA_DIR = join(REPO_ROOT, 'data');
 const CACHE_DIR = join(REPO_ROOT, '.cache', 'tier-a');
 const CONFIG_PATH = join(REPO_ROOT, 'ingest', 'registries.config.json');
 
-function parseArgs(argv) {
-  const args = { family: null, dryRun: false };
+interface Args {
+  family: string | null;
+  dryRun: boolean;
+}
+
+function parseArgs(argv: string[]): Args {
+  const args: Args = { family: null, dryRun: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--family') args.family = argv[++i];
@@ -40,7 +45,7 @@ function parseArgs(argv) {
   return args;
 }
 
-async function curlHead(url) {
+async function curlHead(url: string): Promise<string | null> {
   // -sI = silent HEAD; -L follow redirects. Returns the Last-Modified value or null.
   const { stdout } = await execFileP('curl', ['-sIL', url], { maxBuffer: 1 << 20 });
   for (const line of stdout.split(/\r?\n/)) {
@@ -50,11 +55,11 @@ async function curlHead(url) {
   return null;
 }
 
-async function curlDownload(url, outPath) {
+async function curlDownload(url: string, outPath: string): Promise<void> {
   await execFileP('curl', ['-sL', '--fail', url, '-o', outPath], { maxBuffer: 1 << 20 });
 }
 
-async function fetchWithRetry(url, outPath) {
+async function fetchWithRetry(url: string, outPath: string): Promise<{ lastMod: string | null }> {
   // capture Last-Modified, then download. One retry on failure.
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
@@ -66,9 +71,11 @@ async function fetchWithRetry(url, outPath) {
       if (attempt === 2) throw err;
     }
   }
+  // Unreachable: the loop either returns or throws.
+  throw new Error('fetchWithRetry: exhausted attempts');
 }
 
-async function clearFamilyDir(family, namespace) {
+async function clearFamilyDir(family: string, namespace?: string): Promise<void> {
   // Remove existing generated entries for a clean rewrite (Tier-A is fully
   // regenerable). Only removes .json files in the target dir.
   const dir = namespace ? join(DATA_DIR, family, namespace) : join(DATA_DIR, family);
@@ -78,7 +85,7 @@ async function clearFamilyDir(family, namespace) {
   }
 }
 
-async function writeEntry(entry) {
+async function writeEntry(entry: Entry): Promise<void> {
   const rel = entry.namespace
     ? join(entry.family, entry.namespace, `${entry.slug}.json`)
     : join(entry.family, `${entry.slug}.json`);
@@ -87,25 +94,43 @@ async function writeEntry(entry) {
   await writeFile(full, JSON.stringify(entry, null, 2) + '\n', 'utf8');
 }
 
-async function main() {
+interface SummaryRow {
+  registryId: string;
+  family: string;
+  namespace: string | null;
+  totalRows: number;
+  consideredRows?: number;
+  included: number;
+  excluded: Excluded[];
+  lastMod: string | null;
+}
+
+interface FetchFailure {
+  registryId: string;
+  url: string;
+  error: string;
+}
+
+async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
-  const registries = JSON.parse(await readFile(CONFIG_PATH, 'utf8')).registries;
+  const registries: RegistryMap = JSON.parse(await readFile(CONFIG_PATH, 'utf8')).registries;
   await mkdir(CACHE_DIR, { recursive: true });
 
-  const summary = [];
-  const fetchFailures = [];
+  const summary: SummaryRow[] = [];
+  const fetchFailures: FetchFailure[] = [];
 
   for (const [registryId, reg] of Object.entries(registries)) {
     if (args.family && reg.family !== args.family) continue;
     const csvPath = join(CACHE_DIR, `${registryId}.csv`);
     const metaPath = join(CACHE_DIR, `${registryId}.meta.json`);
 
-    let lastMod = null;
+    let lastMod: string | null = null;
     try {
       ({ lastMod } = await fetchWithRetry(reg.url, csvPath));
     } catch (err) {
-      console.error(`[tier-a] FETCH FAILED (after retry): ${registryId} <- ${reg.url}: ${err.message}`);
-      fetchFailures.push({ registryId, url: reg.url, error: err.message });
+      const message = err instanceof Error ? err.message : String(err);
+      console.error(`[tier-a] FETCH FAILED (after retry): ${registryId} <- ${reg.url}: ${message}`);
+      fetchFailures.push({ registryId, url: reg.url, error: message });
       continue;
     }
 
@@ -138,7 +163,7 @@ async function main() {
     console.log(`   WRITTEN       : ${s.included}`);
     console.log(`   excluded      : ${s.excluded.length}`);
     // Summarize exclusion reasons (collapse identical reason prefixes).
-    const reasonCounts = new Map();
+    const reasonCounts = new Map<string, number>();
     for (const x of s.excluded) {
       const key = bucketReason(x.reason);
       reasonCounts.set(key, (reasonCounts.get(key) || 0) + 1);
@@ -170,7 +195,7 @@ async function main() {
   }, null, 2) + '\n', 'utf8');
 }
 
-function bucketReason(reason) {
+function bucketReason(reason: string): string {
   if (!reason) return '(unspecified)';
   if (/^range row/.test(reason)) return 'range row (e.g. 105-199)';
   if (/Unassigned/i.test(reason)) return 'Unassigned';
@@ -187,6 +212,6 @@ function bucketReason(reason) {
 }
 
 main().catch((err) => {
-  console.error('ingest/tier-a/run.mjs crashed:', err.stack || err);
+  console.error('ingest/tier-a/run.ts crashed:', err.stack || err);
   process.exit(1);
 });

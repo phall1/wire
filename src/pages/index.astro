@@ -1,0 +1,97 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { FAMILIES, SITE } from "../lib/wire";
+
+const entries = await getCollection("entries");
+const total = entries.length;
+const families = [...new Set(entries.map((e) => e.data.family))]
+  .map((f) => ({
+    family: f,
+    blurb: FAMILIES[f]?.blurb ?? f,
+    count: entries.filter((e) => e.data.family === f).length,
+  }))
+  .sort((a, b) => b.count - a.count);
+---
+
+<BaseLayout title="wire — the bytes on the wire" jsonHref="/index.json">
+  <pre class="accent" style="margin:0">{` ╦ ╦╦╦═╗╔═╗
+ ║║║║╠╦╝║╣
+ ╚╩╝╩╩╚═╚═╝`}</pre>
+  <p style="margin:.8em 0 0">{SITE.tagline}</p>
+  <p class="dim" style="margin:.2em 0 0">
+    {total} entries · {families.length} families · curlable JSON at every path ·
+    <a href="/llms.txt">llms.txt</a>
+  </p>
+
+  <hr />
+
+  <input
+    id="q"
+    class="q"
+    type="search"
+    placeholder="search the wire…  (try: osc 133, 418, base64, AAAA)"
+    autocomplete="off"
+    spellcheck="false"
+    aria-label="search"
+  />
+  <div id="results" class="dim">type to search {total} entries…</div>
+
+  <section class="fam-list">
+    <h2 class="section-h">families</h2>
+    {families.map((f) => (
+      <div class="fam-row">
+        <span class="count">{f.count}</span>
+        <a class="name" href={`/${f.family}`}>{f.family}</a>
+        <span class="blurb">{f.blurb}</span>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2 class="section-h">for agents</h2>
+    <ul class="bare">
+      <li><code class="accent">curl -H 'accept: application/json' wire.phall.io/terminal-osc/133</code></li>
+      <li><code class="accent">curl wire.phall.io/http-status/418.json</code></li>
+      <li>start from <a href="/index.json">/index.json</a> or <a href="/llms.txt">/llms.txt</a></li>
+    </ul>
+  </section>
+
+  <script>
+    interface Hit { id: string; title: string; summary: string; aliases: string[]; family: string; kind: string }
+    const q = document.getElementById("q") as HTMLInputElement;
+    const out = document.getElementById("results")!;
+    let idx: Hit[] = [];
+    fetch("/search-index.json").then((r) => r.json()).then((d) => (idx = d));
+
+    const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
+
+    function score(h: Hit, terms: string[]): number {
+      const hay = `${h.id} ${h.title} ${h.summary} ${h.aliases.join(" ")}`.toLowerCase();
+      let s = 0;
+      for (const t of terms) {
+        if (!hay.includes(t)) return -1;
+        if (h.id.toLowerCase().includes(t)) s += 3;
+        if (h.title.toLowerCase().includes(t)) s += 2;
+        s += 1;
+      }
+      return s;
+    }
+
+    function render() {
+      const terms = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      if (!terms.length) { out.className = "dim"; out.textContent = `type to search ${idx.length} entries…`; return; }
+      const hits = idx
+        .map((h) => ({ h, s: score(h, terms) }))
+        .filter((x) => x.s >= 0)
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 40);
+      out.className = "";
+      out.innerHTML = hits.length
+        ? hits.map(({ h }) => `<a href="/${h.id}"><span class="accent">${esc(h.id)}</span> <span class="dim">— ${esc(h.title)}</span></a>`).join("")
+        : `<span class="dim">no matches</span>`;
+    }
+    q.addEventListener("input", render);
+    q.focus();
+  </script>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { FAMILIES, verifBadgeClass, type Entry } from "../../lib/wire";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("entries");
+  const families = [...new Set(entries.map((e) => e.data.family))];
+  return families.map((family) => ({
+    params: { family },
+    props: {
+      family,
+      items: entries
+        .filter((e) => e.data.family === family)
+        .map((e) => e.data as Entry)
+        .sort((a, b) => a.slug.localeCompare(b.slug, undefined, { numeric: true })),
+    },
+  }));
+}
+
+const { family, items } = Astro.props as { family: string; items: Entry[] };
+const blurb = FAMILIES[family]?.blurb ?? family;
+---
+
+<BaseLayout title={`${family} · wire`} description={`${blurb} — ${items.length} entries`} jsonHref={`/${family}/index.json`}>
+  <p class="crumb"><a href="/">wire</a> / <span>{family}</span></p>
+  <h1>{family}</h1>
+  <p class="dim" style="margin:.4em 0 0">{blurb} · {items.length} entries</p>
+
+  <table style="margin-top:1.4em">
+    <thead><tr><th>id</th><th>title</th><th>status</th><th>v</th></tr></thead>
+    <tbody>
+      {items.map((e) => (
+        <tr>
+          <td><a href={`/${e.id}`}>{e.slug}</a></td>
+          <td>{e.title}</td>
+          <td class="dim">{e.status}</td>
+          <td class={verifBadgeClass(e.verification) || "dim"}>{e.verification === "verified" ? "✓" : e.verification}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</BaseLayout>

@@ -1,0 +1,184 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { showBytes, rfcLink, verifBadgeClass, type Entry } from "../lib/wire";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("entries");
+  return entries.map((e) => ({
+    params: { id: e.data.id },
+    props: { entry: e.data as Entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: Entry };
+const ext = entry.ext ?? {};
+const params = (ext.params ?? []) as any[];
+const support = (ext.support_matrix ?? []) as any[];
+const variants = (ext.variants ?? []) as any[];
+const gotchas = (ext.gotchas ?? []) as string[];
+const vectors = (ext.test_vectors ?? []) as any[];
+const raw = (ext.raw_columns ?? null) as Record<string, string> | null;
+const rfcs = (ext.reference_rfcs ?? []) as string[];
+---
+
+<BaseLayout title={`${entry.title} · wire`} description={entry.summary} jsonHref={`/${entry.id}.json`}>
+  <p class="crumb">
+    <a href="/">wire</a> / <a href={`/${entry.family}`}>{entry.family}</a> /
+    <span>{entry.slug}</span>
+  </p>
+
+  <h1>{entry.title}</h1>
+  <p style="margin:.6em 0 0">{entry.summary}</p>
+
+  <div class="badges">
+    <span class="badge"><b>{entry.family}</b></span>
+    <span class="badge">kind <b>{entry.kind}</b></span>
+    <span class="badge">status <b>{entry.status}</b></span>
+    <span class={`badge ${verifBadgeClass(entry.verification)}`}>verification <b>{entry.verification}</b></span>
+    <span class="badge">tier <b>{entry.tier}</b></span>
+    <span class="badge dim">{entry.ext_type}</span>
+  </div>
+
+  {entry.aliases?.length ? (
+    <p class="dim">aka: {entry.aliases.join(" · ")}</p>
+  ) : null}
+
+  {/* ── terminal-escape@1 ───────────────────────────────────────── */}
+  {entry.ext_type === "terminal-escape@1" && (
+    <>
+      {ext.frame && (
+        <section>
+          <h2 class="section-h">frame</h2>
+          <p>{ext.csi_or_osc} introducer: <span class="bytes">{showBytes(ext.frame.introducer_7bit)}</span> <span class="dim">{ext.frame.introducer_7bit_readable}</span></p>
+          {ext.terminator_detail && (
+            <p>terminator (<b>{ext.terminator}</b>): ST <span class="bytes">{showBytes(ext.terminator_detail.canonical_ST_7bit)}</span> · BEL <span class="bytes">{showBytes(ext.terminator_detail.alt_BEL)}</span></p>
+          )}
+        </section>
+      )}
+      {params.length > 0 && (
+        <section>
+          <h2 class="section-h">parameters / subcommands</h2>
+          <table>
+            <thead><tr><th>id</th><th>name</th><th>bytes (ST)</th><th>meaning</th></tr></thead>
+            <tbody>
+              {params.map((p: any) => (
+                <tr id={(p.anchor ?? `#${p.id}`).replace("#", "")}>
+                  <td><b>{p.id}</b></td>
+                  <td>{p.name}</td>
+                  <td class="bytes">{showBytes(p.byte_sequence_ST ?? p.byte_sequence_set ?? "")}</td>
+                  <td>{p.meaning}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+      {support.length > 0 && (
+        <section>
+          <h2 class="section-h">support matrix</h2>
+          <table>
+            <thead><tr><th>terminal</th><th>level</th><th>since</th><th>notes</th></tr></thead>
+            <tbody>
+              {support.map((s: any) => (
+                <tr><td>{s.terminal}</td><td class={s.level === "full" ? "accent" : "dim"}>{s.level}</td><td class="dim">{s.version_added}</td><td class="dim">{s.notes}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+      {variants.length > 0 && (
+        <section>
+          <h2 class="section-h">variants</h2>
+          <ul class="bare">{variants.map((v: any) => <li>{v.label}{v.entry_id ? <> — <a href={`/${v.entry_id}`}>{v.entry_id}</a></> : null} <span class="dim">{v.note}</span></li>)}</ul>
+        </section>
+      )}
+      {gotchas.length > 0 && (
+        <section>
+          <h2 class="section-h">gotchas</h2>
+          <ul class="bare">{gotchas.map((g: string) => <li>{g}</li>)}</ul>
+        </section>
+      )}
+    </>
+  )}
+
+  {/* ── iana-registry-row@1 ─────────────────────────────────────── */}
+  {entry.ext_type === "iana-registry-row@1" && (
+    <section>
+      <h2 class="section-h">registry record</h2>
+      {ext.value !== undefined && <p>value: <b>{String(ext.value)}</b></p>}
+      {rfcs.length > 0 && (
+        <p>references: {rfcs.map((r: string, i: number) => { const l = rfcLink(r); return <>{i > 0 ? ", " : ""}{l ? <a href={l.href}>{l.label}</a> : r}</>; })}</p>
+      )}
+      {raw && (
+        <table>
+          <tbody>
+            {Object.entries(raw).map(([k, v]) => (
+              <tr><th style="white-space:nowrap">{k}</th><td>{String(v)}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </section>
+  )}
+
+  {/* ── encoding@1 ──────────────────────────────────────────────── */}
+  {entry.ext_type === "encoding@1" && (
+    <section>
+      <h2 class="section-h">test vectors</h2>
+      {ext.rfc && (() => { const l = rfcLink(String(ext.rfc)); return <p class="dim">{l ? <a href={l.href}>{l.label}</a> : ext.rfc}{ext.alphabet ? ` · alphabet: ${ext.alphabet}` : ""}</p>; })()}
+      <table>
+        <thead><tr><th>input</th><th></th><th>output</th><th>note</th></tr></thead>
+        <tbody>
+          {vectors.map((v: any) => (
+            <tr>
+              <td class="bytes">{showBytes(String(v.input))} <span class="dim">{v.input_form}</span></td>
+              <td class="dim">→</td>
+              <td class="bytes">{showBytes(String(v.output))} <span class="dim">{v.output_form}</span></td>
+              <td class="dim">{v.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )}
+
+  {/* ── unknown ext_type → raw JSON ─────────────────────────────── */}
+  {!["terminal-escape@1", "iana-registry-row@1", "encoding@1"].includes(entry.ext_type) &&
+    Object.keys(ext).length > 0 && (
+      <section><h2 class="section-h">ext</h2><pre>{JSON.stringify(ext, null, 2)}</pre></section>
+    )}
+
+  {/* ── provenance (always) ─────────────────────────────────────── */}
+  <hr />
+  <section>
+    <h2 class="section-h">provenance</h2>
+    <ul class="bare">
+      <li>source: <a href={entry.source_url}>{entry.source_url}</a></li>
+      <li class="dim">version: {entry.source_version}</li>
+      <li class="dim">retrieved: {entry.retrieved_date} · updated: {entry.updated}</li>
+    </ul>
+    {entry.attribution?.length ? (
+      <>
+        <p class="dim">per-fact attribution:</p>
+        <ul class="bare">
+          {entry.attribution.map((a) => (
+            <li><span class="accent">{a.claim_ref}</span> — <a href={a.source_url}>{a.source_url}</a> <span class="dim">{a.note}</span></li>
+          ))}
+        </ul>
+      </>
+    ) : null}
+  </section>
+
+  {entry.see_also?.length ? (
+    <section>
+      <h2 class="section-h">see also</h2>
+      <ul class="bare">{entry.see_also.map((s) => <li><a href={`/${s}`}>{s}</a></li>)}</ul>
+    </section>
+  ) : null}
+
+  <p class="dim" style="margin-top:2em">
+    agent: <code>curl -H 'accept: application/json' wire.phall.io/{entry.id}</code>
+    or <a href={`/${entry.id}.json`}>/{entry.id}.json</a>
+  </p>
+</BaseLayout>
