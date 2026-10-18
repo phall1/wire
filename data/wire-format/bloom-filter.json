@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/bloom-filter",
+  "family": "wire-format",
+  "slug": "bloom-filter",
+  "title": "Bloom filter",
+  "summary": "A Bloom filter is a probabilistic data structure for set membership testing. Structure: bit array of m bits, k hash functions. Insert: set bits at positions h_1(x), h_2(x), ..., h_k(x). Query: check if all k bits are 1. False positives possible; false negatives impossible. False positive rate ≈ (1 - e^(-kn/m))^k. Optimal k = (m/n) * ln(2).",
+  "kind": "wire-format",
+  "aliases": [
+    "Bloom filter"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Bloom_filter",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Bloom filter (Burton Bloom, 1970)",
+    "summary": "A Bloom filter is a probabilistic data structure for set membership testing. Structure: bit array of m bits, k hash functions. Insert: set bits at positions h_1(x), h_2(x), ..., h_k(x). Query: check if all k bits are 1. False positives possible; false negatives impossible. False positive rate ≈ (1 - e^(-kn/m))^k. Optimal k = (m/n) * ln(2).",
+    "structure": [
+      {
+        "field": "Bit array",
+        "size": "m bits",
+        "meaning": "All bits initialized to 0."
+      },
+      {
+        "field": "Hash functions",
+        "size": "k functions",
+        "meaning": "k independent hash functions, each mapping to [0, m-1]."
+      },
+      {
+        "field": "Insert",
+        "size": "O(k)",
+        "meaning": "Set bits at h_1(x), h_2(x), ..., h_k(x) to 1."
+      },
+      {
+        "field": "Query",
+        "size": "O(k)",
+        "meaning": "Check if all bits at h_1(x), ..., h_k(x) are 1. If yes, probably in set. If any is 0, definitely not in set."
+      },
+      {
+        "field": "False positive rate",
+        "size": "formula",
+        "meaning": "P ≈ (1 - e^(-kn/m))^k. With optimal k = (m/n)ln(2), P ≈ 0.6185^(m/n)."
+      },
+      {
+        "field": "Counting Bloom filter",
+        "size": "variant",
+        "meaning": "Uses counters instead of bits. Supports deletion (decrement counters)."
+      },
+      {
+        "field": "Cuckoo filter",
+        "size": "variant",
+        "meaning": "Uses cuckoo hashing. Supports deletion and has better cache locality."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Bloom filter (placeholder)",
+    "notes": [
+      "Bloom filters are used in databases (LSM trees), caches, network routers, and spell checkers.",
+      "Bloom filters trade space for accuracy (false positives, no false negatives).",
+      "Cuckoo filters are an alternative with deletion support and better locality.",
+      "Bloom filters are used by Cassandra, HBase, Chrome (Safe Browsing), and many others.",
+      "Counting Bloom filters support deletion by using counters instead of bits."
+    ]
+  },
+  "updated": "2026-05-29"
+}

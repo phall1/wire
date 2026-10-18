@@ -1,0 +1,31 @@
+{
+  "id": "identifier/eui-48",
+  "family": "identifier",
+  "slug": "eui-48",
+  "title": "EUI-48 (MAC address)",
+  "summary": "EUI-48 (Extended Unique Identifier, 48-bit) is the standard MAC address format: 6 bytes, written as 6 hex pairs separated by colons or hyphens (e.g., 00:1A:2B:3C:4D:5E). The first 3 bytes are the OUI (Organizationally Unique Identifier, assigned by IEEE). The last 3 bytes are the NIC-specific part. Bit 0 of byte 0 = multicast (0=unicast, 1=multicast). Bit 1 of byte 0 = locally administered (0=global, 1=local).",
+  "kind": "identifier",
+  "aliases": [
+    "EUI-48 (MAC address)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "IEEE 802",
+    "example": "00:1A:2B:3C:4D:5E",
+    "notes": [
+      "6 bytes (48 bits), written as XX:XX:XX:XX:XX:XX.",
+      "First 3 bytes = OUI (assigned by IEEE to manufacturers).",
+      "Last 3 bytes = NIC-specific (assigned by manufacturer).",
+      "Bit 0 of byte 0: 0=unicast, 1=multicast.",
+      "Bit 1 of byte 0: 0=globally unique (OUI), 1=locally administered.",
+      "EUI-48 is used in Ethernet, Wi-Fi, Bluetooth, and many other protocols."
+    ]
+  },
+  "updated": "2026-05-29"
+}

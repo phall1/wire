@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/hash-table",
+  "family": "wire-format",
+  "slug": "hash-table",
+  "title": "Hash table",
+  "summary": "A hash table maps keys to values using a hash function. Structure: array of buckets, each holding a list of entries (chaining) or a single entry (open addressing). Load factor = entries/buckets. Resize when load factor exceeds threshold (typically 0.75). Hash functions: division method (h(k) = k mod m), multiplication method, universal hashing. Collision resolution: chaining (linked lists), open addressing (linear probing, quadratic probing, double hashing, Robin Hood hashing).",
+  "kind": "wire-format",
+  "aliases": [
+    "Hash table"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Hash_table",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Hash table",
+    "summary": "A hash table maps keys to values using a hash function. Structure: array of buckets, each holding a list of entries (chaining) or a single entry (open addressing). Load factor = entries/buckets. Resize when load factor exceeds threshold (typically 0.75). Hash functions: division method (h(k) = k mod m), multiplication method, universal hashing. Collision resolution: chaining (linked lists), open addressing (linear probing, quadratic probing, double hashing, Robin Hood hashing).",
+    "structure": [
+      {
+        "field": "Hash function",
+        "size": "function",
+        "meaning": "Maps key to bucket index: h(k) = k mod m (division), or h(k) = floor(m * (k * A mod 1)) (multiplication), or universal hashing."
+      },
+      {
+        "field": "Chaining",
+        "size": "collision resolution",
+        "meaning": "Each bucket is a linked list of entries. Simple but has cache-unfriendly pointer chasing."
+      },
+      {
+        "field": "Linear probing",
+        "size": "open addressing",
+        "meaning": "On collision, try (h(k)+i) mod m for i=0,1,2,... (primary clustering)."
+      },
+      {
+        "field": "Quadratic probing",
+        "size": "open addressing",
+        "meaning": "On collision, try (h(k)+i^2) mod m (reduces clustering)."
+      },
+      {
+        "field": "Double hashing",
+        "size": "open addressing",
+        "meaning": "On collision, try (h1(k) + i*h2(k)) mod m (best distribution)."
+      },
+      {
+        "field": "Robin Hood hashing",
+        "size": "open addressing",
+        "meaning": "On collision, swap if the new entry has traveled farther than the existing one. Improves worst-case."
+      },
+      {
+        "field": "Load factor",
+        "size": "ratio",
+        "meaning": "α = n/m (entries/buckets). Resize when α > threshold (0.75 for chaining, 0.5 for open addressing)."
+      },
+      {
+        "field": "Resize",
+        "size": "O(n)",
+        "meaning": "Allocate new array (2x), rehash all entries. Amortized O(1) per insert."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Hash table (placeholder)",
+    "notes": [
+      "Hash tables provide O(1) average-case lookup, insert, and delete.",
+      "Hash tables are used in caches, symbol tables, databases, and many algorithms.",
+      "Cryptographic hash functions (SHA-256) are not suitable for hash tables (too slow).",
+      "Universal hashing provides worst-case guarantees (O(1) expected).",
+      "Consistent hashing is used in distributed systems (Dynamo, Cassandra)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

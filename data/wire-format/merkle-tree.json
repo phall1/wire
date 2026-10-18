@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/merkle-tree",
+  "family": "wire-format",
+  "slug": "merkle-tree",
+  "title": "Merkle tree (hash tree)",
+  "summary": "A Merkle tree is a binary tree where each leaf is a hash of a data block, and each internal node is a hash of its children. The root hash (Merkle root) summarizes all data. Used for data integrity verification, blockchain (Bitcoin, Ethereum), Git (commit graph), and distributed systems (Cassandra, IPFS).",
+  "kind": "wire-format",
+  "aliases": [
+    "Merkle tree (hash tree)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Merkle_tree",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Merkle tree (Ralph Merkle, 1979)",
+    "summary": "A Merkle tree is a binary tree where each leaf is a hash of a data block, and each internal node is a hash of its children. The root hash (Merkle root) summarizes all data. Used for data integrity verification, blockchain (Bitcoin, Ethereum), Git (commit graph), and distributed systems (Cassandra, IPFS).",
+    "structure": [
+      {
+        "field": "Leaf node",
+        "size": "hash size",
+        "meaning": "Hash of a data block (e.g., SHA-256 of a 4KB block)."
+      },
+      {
+        "field": "Internal node",
+        "size": "hash size",
+        "meaning": "Hash of (left child hash || right child hash). For odd number of leaves, duplicate the last leaf."
+      },
+      {
+        "field": "Root (Merkle root)",
+        "size": "hash size",
+        "meaning": "Top of the tree. Summarizes all data blocks."
+      },
+      {
+        "field": "Proof of inclusion",
+        "size": "log2(n) hashes",
+        "meaning": "To prove a leaf is in the tree, provide the leaf and the sibling hashes along the path to the root (Merkle proof)."
+      },
+      {
+        "field": "Verification",
+        "size": "O(log n)",
+        "meaning": "Recompute the path from the leaf to the root using the provided siblings. Compare with the expected root."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Merkle tree (placeholder)",
+    "notes": [
+      "Merkle trees are the foundation of blockchain (Bitcoin, Ethereum).",
+      "Merkle proofs allow light clients to verify data without downloading the full chain.",
+      "Git uses a Merkle tree-like structure for its object graph (commit -> tree -> blob).",
+      "Merkle trees are used in Cassandra (anti-entropy repair), IPFS (content addressing), and Certificate Transparency.",
+      "Patricia tries (Merkle-Patricia) are used in Ethereum for state storage."
+    ]
+  },
+  "updated": "2026-05-29"
+}

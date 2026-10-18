@@ -1,0 +1,32 @@
+{
+  "id": "identifier/iccid",
+  "family": "identifier",
+  "slug": "iccid",
+  "title": "ICCID (Integrated Circuit Card Identifier)",
+  "summary": "An ICCID is a 19-20 digit number that identifies a SIM card. Format: MMCC (2 digits, Major Industry Identifier, 89 for telecom) + II (2-3 digits, Country Code) + NN (variable, Issuer Identifier) + AAA... (variable, Individual Account) + C (1 digit, Check digit, Luhn).",
+  "kind": "identifier",
+  "aliases": [
+    "ICCID (Integrated Circuit Card Identifier)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "ITU-T E.118",
+    "example": "89 01 23 4567 8901 23456 7",
+    "notes": [
+      "19-20 digits.",
+      "MM (Major Industry Identifier): 89 for telecom.",
+      "CC (Country Code): 2 digits (ITU-T E.164).",
+      "II (Issuer Identifier): 2-3 digits (assigned by ITU).",
+      "Account ID: variable length (up to 12 digits).",
+      "Check digit: 1 digit (Luhn algorithm).",
+      "ICCID is printed on the SIM card and stored in the SIM's EF (Elementary File)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/red-black-tree",
+  "family": "wire-format",
+  "slug": "red-black-tree",
+  "title": "Red-black tree",
+  "summary": "A red-black tree is a self-balancing binary search tree. Each node is red or black. Properties: (1) Every node is red or black. (2) Root is black. (3) Every leaf (NIL) is black. (4) If a node is red, both children are black (no two reds in a row). (5) Every path from root to leaf has the same number of black nodes (black-height). These properties ensure the tree is approximately balanced: height <= 2*log2(n+1).",
+  "kind": "wire-format",
+  "aliases": [
+    "Red-black tree"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Red-black_tree",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Red-black tree",
+    "summary": "A red-black tree is a self-balancing binary search tree. Each node is red or black. Properties: (1) Every node is red or black. (2) Root is black. (3) Every leaf (NIL) is black. (4) If a node is red, both children are black (no two reds in a row). (5) Every path from root to leaf has the same number of black nodes (black-height). These properties ensure the tree is approximately balanced: height <= 2*log2(n+1).",
+    "structure": [
+      {
+        "field": "Color",
+        "size": "1 bit",
+        "meaning": "Red or black."
+      },
+      {
+        "field": "Property 1",
+        "size": "invariant",
+        "meaning": "Every node is red or black."
+      },
+      {
+        "field": "Property 2",
+        "size": "invariant",
+        "meaning": "Root is black."
+      },
+      {
+        "field": "Property 3",
+        "size": "invariant",
+        "meaning": "Every leaf (NIL) is black."
+      },
+      {
+        "field": "Property 4",
+        "size": "invariant",
+        "meaning": "If a node is red, both children are black (no two consecutive reds)."
+      },
+      {
+        "field": "Property 5",
+        "size": "invariant",
+        "meaning": "Every path from root to leaf has the same number of black nodes."
+      },
+      {
+        "field": "Height bound",
+        "size": "O(log n)",
+        "meaning": "Height <= 2*log2(n+1). Ensures O(log n) search/insert/delete."
+      },
+      {
+        "field": "Rotation",
+        "size": "operation",
+        "meaning": "Left/right rotations rebalance the tree after insert/delete. O(1) per rotation."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Red-black tree (placeholder)",
+    "notes": [
+      "Red-black trees are used in the Linux kernel (CFS scheduler, epoll, timer wheel), C++ std::map/set, Java TreeMap.",
+      "Red-black trees guarantee O(log n) worst-case for search/insert/delete.",
+      "AVL trees are more strictly balanced (height <= 1.44*log2(n)) but require more rotations.",
+      "Red-black trees have fewer rotations than AVL (at most 3 per insert, 3 per delete).",
+      "Left-leaning red-black trees (Sedgewick) simplify the implementation."
+    ]
+  },
+  "updated": "2026-05-29"
+}

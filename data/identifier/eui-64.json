@@ -1,0 +1,30 @@
+{
+  "id": "identifier/eui-64",
+  "family": "identifier",
+  "slug": "eui-64",
+  "title": "EUI-64 (64-bit identifier)",
+  "summary": "EUI-64 is a 64-bit identifier used in IPv6 (interface ID), FireWire, and Zigbee. Derived from EUI-48 by inserting 0xFFFE in the middle: XX:XX:XX:FF:FE:XX:XX:XX. The U/L bit (bit 1 of byte 0) is flipped when used as an IPv6 interface ID.",
+  "kind": "identifier",
+  "aliases": [
+    "EUI-64 (64-bit identifier)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "IEEE 802",
+    "example": "00:1A:2B:FF:FE:3C:4D:5E",
+    "notes": [
+      "8 bytes (64 bits), written as XX:XX:XX:XX:XX:XX:XX:XX.",
+      "Derived from EUI-48: insert 0xFFFE in the middle (after 3 bytes).",
+      "Used in IPv6 interface IDs (with U/L bit flipped).",
+      "Used in FireWire (IEEE 1394), Zigbee, and other protocols.",
+      "EUI-64 is not globally unique in practice (privacy concerns led to randomized interface IDs)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

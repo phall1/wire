@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/lsm-tree",
+  "family": "wire-format",
+  "slug": "lsm-tree",
+  "title": "LSM tree (Log-Structured Merge tree)",
+  "summary": "An LSM tree is a data structure for write-heavy workloads. Writes go to an in-memory memtable (sorted). When full, the memtable is flushed to disk as an immutable SSTable (sorted string table). Background compaction merges SSTables to reduce read amplification. Used in LevelDB, RocksDB, Cassandra, HBase, and SQLite (LSM variant).",
+  "kind": "wire-format",
+  "aliases": [
+    "LSM tree (Log-Structured Merge tree)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Log-structured_merge-tree",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "LSM tree (Patrick O'Neil, 1996)",
+    "summary": "An LSM tree is a data structure for write-heavy workloads. Writes go to an in-memory memtable (sorted). When full, the memtable is flushed to disk as an immutable SSTable (sorted string table). Background compaction merges SSTables to reduce read amplification. Used in LevelDB, RocksDB, Cassandra, HBase, and SQLite (LSM variant).",
+    "structure": [
+      {
+        "field": "Memtable",
+        "size": "in-memory",
+        "meaning": "Sorted in-memory structure (skip list or red-black tree). All writes go here first. Also written to WAL for durability."
+      },
+      {
+        "field": "WAL (Write-Ahead Log)",
+        "size": "disk",
+        "meaning": "Append-only log of writes. Used for recovery if memtable is lost."
+      },
+      {
+        "field": "SSTable (Level 0)",
+        "size": "disk",
+        "meaning": "Flushed memtable. Multiple SSTables per level (overlapping key ranges). Bloom filter per SSTable."
+      },
+      {
+        "field": "SSTable (Level 1+)",
+        "size": "disk",
+        "meaning": "Compacted SSTables. Non-overlapping key ranges within a level. Sorted."
+      },
+      {
+        "field": "Compaction",
+        "size": "background",
+        "meaning": "Merge SSTables from one level to the next. Strategies: size-tiered (Cassandra), leveled (LevelDB/RocksDB), time-window (time-series)."
+      },
+      {
+        "field": "Read amplification",
+        "size": "metric",
+        "meaning": "Number of SSTables checked per read. Bloom filters reduce this."
+      },
+      {
+        "field": "Write amplification",
+        "size": "metric",
+        "meaning": "Number of times a key is rewritten during compaction. Leveled compaction has high write amplification."
+      },
+      {
+        "field": "Space amplification",
+        "size": "metric",
+        "meaning": "Ratio of total data size to logical data size. Size-tiered has high space amplification."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "LSM tree (placeholder)",
+    "notes": [
+      "LSM trees optimize for write throughput (sequential disk writes).",
+      "Read amplification is the tradeoff: reads may check multiple SSTables.",
+      "Bloom filters reduce read amplification by skipping SSTables that don't contain the key.",
+      "Compaction strategies: size-tiered (Cassandra, high write amp), leveled (RocksDB, high read amp), time-window (time-series).",
+      "LSM trees are used by LevelDB, RocksDB, Cassandra, HBase, and many databases."
+    ]
+  },
+  "updated": "2026-05-29"
+}

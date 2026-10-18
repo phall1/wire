@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/btree",
+  "family": "wire-format",
+  "slug": "btree",
+  "title": "B-tree (balanced search tree)",
+  "summary": "A B-tree is a self-balancing tree data structure that maintains sorted data and allows O(log n) search, insert, and delete. Each node has between t-1 and 2t-1 keys (t = minimum degree). All leaves are at the same level. Used in databases (indexes), filesystems (ext4, XFS, Btrfs), and key-value stores.",
+  "kind": "wire-format",
+  "aliases": [
+    "B-tree (balanced search tree)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/B-tree",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "B-tree (Bayer & McCreight, 1972)",
+    "summary": "A B-tree is a self-balancing tree data structure that maintains sorted data and allows O(log n) search, insert, and delete. Each node has between t-1 and 2t-1 keys (t = minimum degree). All leaves are at the same level. Used in databases (indexes), filesystems (ext4, XFS, Btrfs), and key-value stores.",
+    "structure": [
+      {
+        "field": "Node structure",
+        "size": "variable",
+        "meaning": "Each node: n keys + n+1 child pointers (for internal nodes) or n keys + n+1 record pointers (for leaf nodes). Keys are sorted."
+      },
+      {
+        "field": "Minimum degree (t)",
+        "size": "config",
+        "meaning": "Each node has at least t-1 keys (except root: at least 1) and at most 2t-1 keys. Each internal node has at least t children and at most 2t children."
+      },
+      {
+        "field": "Search",
+        "size": "O(log n)",
+        "meaning": "Binary search within node, then recurse to child. O(log_t n) node accesses."
+      },
+      {
+        "field": "Insert",
+        "size": "O(log n)",
+        "meaning": "Find leaf, insert key. If node is full (2t-1 keys), split it (median key moves up to parent). May cascade to root."
+      },
+      {
+        "field": "Delete",
+        "size": "O(log n)",
+        "meaning": "Find key, remove. If node underflows (< t-1 keys), borrow from sibling or merge with sibling. May cascade to root."
+      },
+      {
+        "field": "B+ tree",
+        "size": "variant",
+        "meaning": "All data in leaves; internal nodes only store keys for routing. Leaves linked in a doubly-linked list for range scans. Used by most databases."
+      },
+      {
+        "field": "B* tree",
+        "size": "variant",
+        "meaning": "Nodes are 2/3 full before splitting (vs 1/2 for B-tree). Reduces splits."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "B-tree (placeholder)",
+    "notes": [
+      "B-trees are the foundation of database indexes and filesystem metadata.",
+      "B+ trees store all data in leaves (linked list) for efficient range scans.",
+      "B-tree node size matches disk block size (4KB) for optimal I/O.",
+      "B-trees are used by PostgreSQL, MySQL (InnoDB), SQLite, ext4, XFS, Btrfs, and many others.",
+      "LSM trees (Log-Structured Merge) are an alternative for write-heavy workloads."
+    ]
+  },
+  "updated": "2026-05-29"
+}

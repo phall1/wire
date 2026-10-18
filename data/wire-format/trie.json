@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/trie",
+  "family": "wire-format",
+  "slug": "trie",
+  "title": "Trie (prefix tree)",
+  "summary": "A trie (prefix tree) stores strings by their prefixes. Each node represents a prefix; edges are labeled with characters. Root = empty string. A path from root to node spells the key. Used for autocomplete, spell checking, IP routing (longest prefix match), and dictionary storage. Variants: radix tree (compressed trie, merges single-child chains), Patricia trie (binary radix tree), suffix tree (all suffixes of a string).",
+  "kind": "wire-format",
+  "aliases": [
+    "Trie (prefix tree)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Trie",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Trie (prefix tree)",
+    "summary": "A trie (prefix tree) stores strings by their prefixes. Each node represents a prefix; edges are labeled with characters. Root = empty string. A path from root to node spells the key. Used for autocomplete, spell checking, IP routing (longest prefix match), and dictionary storage. Variants: radix tree (compressed trie, merges single-child chains), Patricia trie (binary radix tree), suffix tree (all suffixes of a string).",
+    "structure": [
+      {
+        "field": "Node",
+        "size": "variable",
+        "meaning": "Array of child pointers (one per alphabet symbol) + terminal flag (is this a complete word?)."
+      },
+      {
+        "field": "Edge",
+        "size": "1 character",
+        "meaning": "Each edge is labeled with a character."
+      },
+      {
+        "field": "Path",
+        "size": "variable",
+        "meaning": "Path from root to node spells the key."
+      },
+      {
+        "field": "Terminal flag",
+        "size": "1 bit",
+        "meaning": "Marks the end of a complete word."
+      },
+      {
+        "field": "Radix tree",
+        "size": "variant",
+        "meaning": "Compressed trie: merges chains of single-child nodes into a single edge with a string label."
+      },
+      {
+        "field": "Patricia trie",
+        "size": "variant",
+        "meaning": "Binary radix tree: each node has 2 children (0/1). Used for IP routing (longest prefix match)."
+      },
+      {
+        "field": "Suffix tree",
+        "size": "variant",
+        "meaning": "Trie of all suffixes of a string. O(n) construction (Ukkonen's algorithm). Used for string matching."
+      },
+      {
+        "field": "Ternary search tree",
+        "size": "variant",
+        "meaning": "Each node has 3 children: less, equal, greater. More space-efficient than standard trie."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Trie (placeholder)",
+    "notes": [
+      "Tries provide O(k) search where k = key length (independent of number of keys).",
+      "Tries are used in autocomplete, spell checkers, IP routing (longest prefix match), and DNS.",
+      "Radix trees (compressed tries) are used in the Linux kernel (idr, xarray) and IP routing.",
+      "Suffix trees enable O(n) string matching (after O(n) preprocessing).",
+      "Tries use more memory than hash tables (pointers per node)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

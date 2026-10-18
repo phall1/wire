@@ -1,0 +1,31 @@
+{
+  "id": "identifier/imei",
+  "family": "identifier",
+  "slug": "imei",
+  "title": "IMEI (International Mobile Equipment Identity)",
+  "summary": "An IMEI is a 15-digit number that uniquely identifies a mobile device. Format: TAC (8 digits, Type Allocation Code) + SNR (6 digits, Serial Number) + Check digit (1 digit, Luhn). TAC identifies the device model; SNR identifies the individual device.",
+  "kind": "identifier",
+  "aliases": [
+    "IMEI (International Mobile Equipment Identity)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "3GPP TS 23.003",
+    "example": "35-209900-176148-1",
+    "notes": [
+      "15 digits (no dashes in the actual number).",
+      "TAC (Type Allocation Code): 8 digits (identifies device model).",
+      "SNR (Serial Number): 6 digits (identifies individual device).",
+      "Check digit: 1 digit (Luhn algorithm).",
+      "IMEI is used for device identification, blacklisting stolen devices, and network access control.",
+      "IMEISV (IMEI + Software Version) is 16 digits."
+    ]
+  },
+  "updated": "2026-05-29"
+}
