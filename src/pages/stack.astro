@@ -1,0 +1,197 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/wire";
+---
+
+<BaseLayout title="stack · wire — runtimes, coordination, and everything above the substrate" description="The software stack on top of the Wire Substrate: microkernel, capability-based OS, language runtime, concurrency primitives, distributed coordination, and consensus.">
+  <pre class="accent" style="margin:0">{` ╔═╗╔╦╗╔═╗╔╦╗╦╔═╗
+ ╚═╗ ║ ╠═╣ ║ ║╠═╝
+ ╚═╝ ╩ ╩ ╩ ╩ ╩╩  `}</pre>
+  <p style="margin:.8em 0 0">the software stack on top of the wire substrate — microkernel, runtime, coordination, consensus. all the way up.</p>
+  <p class="dim" style="margin:.2em 0 0">
+    built on <a href="/substrate">/substrate</a> · <a href="/">wire</a> · <a href="/llms.txt">llms.txt</a>
+  </p>
+
+  <hr />
+
+  <h2 class="section-h">0. architecture overview</h2>
+  <p class="dim">four layers. each layer's interface is a capability. each layer can be replaced independently.</p>
+  <ul class="bare">
+    <li><span class="accent">L0: substrate</span> — hardware (ISA, memory, I/O, capabilities). see <a href="/substrate">/substrate</a>.</li>
+    <li><span class="accent">L1: microkernel</span> — minimal OS: address spaces, threads, IPC, capability management. nothing else.</li>
+    <li><span class="accent">L2: runtime</span> — language runtime: memory management, scheduling, I/O multiplexing, FFI. runs in user space.</li>
+    <li><span class="accent">L3: coordination</span> — distributed systems: consensus, replication, partitioning, service discovery.</li>
+  </ul>
+  <p class="dim" style="margin-top:.6em">the microkernel is ~10,000 lines. the runtime is ~50,000 lines. the coordination layer is ~30,000 lines. total: ~90,000 lines of code for a complete, agent-native operating system. (Linux is ~30 million lines.)</p>
+
+  <hr />
+
+  <h2 class="section-h">1. microkernel (L1)</h2>
+  <p class="dim">the smallest possible OS. only four things: address spaces, threads, IPC, capabilities. everything else is a user-space service.</p>
+
+  <h3 class="section-h" style="margin-top:1em">design: seL4-inspired, capability-based</h3>
+  <ul class="bare">
+    <li><span class="accent">formally verified.</span> like seL4, the kernel is mathematically proven correct. no buffer overflows, no null dereferences, no race conditions in the kernel. (seL4 proved this is possible.)</li>
+    <li><span class="accent">capability-based.</span> all resources (memory, I/O, CPU time) are capabilities. the kernel manages capabilities; user space uses them.</li>
+    <li><span class="accent">minimal TCB.</span> the trusted computing base is the kernel only. device drivers, filesystems, network stacks run in user space (as services).</li>
+    <li><span class="accent">no global state.</span> the kernel has no global variables. all state is in capabilities. (makes reasoning and verification trivial.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">kernel objects (5 types)</h3>
+  <ul class="bare">
+    <li><code class="accent">AddressSpace</code> — a virtual address space. capabilities can be mapped into it. created by the kernel, granted to processes.</li>
+    <li><code class="accent">Thread</code> — a schedulable execution context. has a register set, a stack, and a priority. scheduled by the kernel.</li>
+    <li><code class="accent">Endpoint</code> — an IPC endpoint. processes send/receive messages through endpoints. capabilities can be transferred through endpoints.</li>
+    <li><code class="accent">Notification</code> — a lightweight signaling mechanism. processes can wait on or signal notifications. used for interrupts and events.</li>
+    <li><code class="accent">Capability</code> — a reference to any kernel object (or user-space object). capabilities can be derived (reduced permissions), revoked, and transferred.</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">IPC (inter-process communication)</h3>
+  <ul class="bare">
+    <li><span class="accent">synchronous.</span> sender blocks until receiver accepts. no buffering. (like seL4.) this eliminates buffer management and makes reasoning about message flow trivial.</li>
+    <li><span class="accent">typed messages.</span> messages are not raw bytes — they're typed structures with a schema. the kernel validates the schema on send/receive.</li>
+    <li><span class="accent">capability transfer.</span> capabilities can be sent through endpoints. the kernel transfers the capability from sender to receiver (with permission reduction if specified).</li>
+    <li><span class="accent">fast path.</span> if sender and receiver are on the same core, IPC is a direct register transfer (no memory copy). ~10 cycles.</li>
+    <li><span class="accent">async notification.</span> for non-blocking signaling, use Notifications (not Endpoints). notifications are bitwise OR (like a condition variable with 32 bits).</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">scheduling</h3>
+  <ul class="bare">
+    <li><span class="accent">priority-based preemptive.</span> 256 priority levels (0 = highest, 255 = lowest). higher priority always runs first.</li>
+    <li><span class="accent">round-robin within priority.</span> tasks at the same priority share CPU time (configurable quantum, default 10ms).</li>
+    <li><span class="accent">real-time support.</span> SCHED_FIFO (first-in-first-out, no preemption within priority) and SCHED_RR (round-robin with time quantum).</li>
+    <li><span class="accent">CPU affinity.</span> threads can be pinned to specific cores. default is "any core."</li>
+    <li><span class="accent">bandwidth control.</span> cgroup-style: each process gets a CPU quota (e.g., 50% of one core). enforced by the scheduler.</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">memory management</h3>
+  <ul class="bare">
+    <li><span class="accent">buddy allocator.</span> kernel memory is allocated in power-of-2 pages. O(log n) allocation/deallocation. no fragmentation (external). internal fragmentation ≤ 50%.</li>
+    <li><span class="accent">slab allocator.</span> for small, frequently allocated objects (task_struct, inodes, etc.). per-type caches with object reuse. no per-object metadata.</li>
+    <li><span class="accent">virtual memory.</span> page tables managed by the kernel. user space can map/unmap pages via capabilities. no mmap() syscall — capabilities grant access.</li>
+    <li><span class="accent">copy-on-write.</span> fork() (or capability derivation) shares pages. pages are copied only on write. reduces memory usage for process creation.</li>
+    <li><span class="accent">demand paging.</span> pages are allocated on first access (page fault). reduces startup time and memory usage.</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">2. runtime (L2)</h2>
+  <p class="dim">user-space runtime: memory management, scheduling, I/O multiplexing. runs on top of the microkernel.</p>
+
+  <h3 class="section-h" style="margin-top:1em">memory management (runtime level)</h3>
+  <ul class="bare">
+    <li><span class="accent">region-based allocation.</span> memory is allocated in regions (arenas). all objects in a region are freed together (when the region is destroyed). no per-object free. (like Rust's ownership, but at runtime.)</li>
+    <li><span class="accent">generational GC (optional).</span> for languages that need it (Python, JavaScript, etc.), a generational garbage collector runs in the runtime. young generation: nursery (bump allocation, minor GC). old generation: mark-sweep-compact (major GC). (like V8, HotSpot.)</li>
+    <li><span class="accent">reference counting (optional).</span> for languages that prefer deterministic memory (Swift, Rust), reference counting with weak references. (no GC pauses.)</li>
+    <li><span class="accent">no null pointers.</span> all references are capabilities. a "null" reference is a capability with length 0 (traps on dereference). no null pointer exceptions — just capability violations.</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">scheduling (runtime level)</h3>
+  <ul class="bare">
+    <li><span class="accent">M:N threading.</span> M user-space threads (goroutines/fibers) mapped to N kernel threads. runtime schedules user threads on kernel threads. (like Go's goroutines.)</li>
+    <li><span class="accent">work-stealing.</span> each kernel thread has a local run queue. idle threads steal work from busy threads' queues. (like Java's ForkJoinPool.)</li>
+    <li><span class="accent">async/await.</span> first-class async. functions can be suspended and resumed. the runtime manages the state machine. (like Rust's async/await or C#'s Task.)</li>
+    <li><span class="accent">structured concurrency.</span> tasks form a tree. parent tasks wait for children. cancellation propagates down the tree. no orphaned tasks. (like Trio's nurseries.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">I/O multiplexing (runtime level)</h3>
+  <ul class="bare">
+    <li><span class="accent">io_uring-style ring buffers.</span> submission queue (SQ) and completion queue (CQ) shared between user space and kernel. no syscalls for I/O (just memory writes). (like Linux's io_uring.)</li>
+    <li><span class="accent">async file I/O.</span> all file operations are async. read/write return a future. (no blocking file I/O.)</li>
+    <li><span class="accent">async network I/O.</span> all network operations are async. connect/accept/send/recv return futures. (no blocking sockets.)</li>
+    <li><span class="accent">async timers.</span> sleep, timeout, periodic timers. all async.</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">FFI (foreign function interface)</h3>
+  <ul class="bare">
+    <li><span class="accent">C ABI compatibility.</span> can call C libraries. arguments passed per System V AMD64 ABI (or AAPCS on ARM). (interoperability with existing code.)</li>
+    <li><span class="accent">capability boundaries.</span> when calling C code, capabilities are converted to raw pointers (with permission checks). C code runs in a sandbox (no ambient authority). (like WebAssembly's sandboxing.)</li>
+    <li><span class="accent">zero-copy.</span> data is passed by capability (pointer + bounds), not copied. (like io_uring's fixed buffers.)</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">3. coordination (L3)</h2>
+  <p class="dim">distributed systems primitives. built on the substrate's determinism and capabilities.</p>
+
+  <h3 class="section-h" style="margin-top:1em">message passing</h3>
+  <ul class="bare">
+    <li><span class="accent">typed messages.</span> all messages have a schema (like protobuf, but built-in). no serialization/deserialization code — the runtime handles it.</li>
+    <li><span class="accent">capability transfer.</span> capabilities can be sent in messages. the receiver gets a derived capability (reduced permissions). (like seL4's capability transfer, but over the network.)</li>
+    <li><span class="accent">at-least-once delivery.</span> messages are retried until acknowledged. idempotent operations are safe. non-idempotent operations use exactly-once semantics (via deduplication).</li>
+    <li><span class="accent">ordering.</span> messages between two endpoints are FIFO (in order). across endpoints, no ordering guarantee (use logical clocks if needed).</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">actors</h3>
+  <ul class="bare">
+    <li><span class="accent">actor model.</span> each actor has a mailbox (message queue), state (private, not shared), and behavior (message handler). actors communicate only by messages. (like Erlang/Akka actors.)</li>
+    <li><span class="accent">supervision.</span> actors form a tree. parent actors supervise children. if a child crashes, the parent restarts it (or escalates). (like Erlang's supervisor trees.)</li>
+    <li><span class="accent">location transparency.</span> actors can be local or remote. the runtime handles the difference. (like Erlang's distributed actors.)</li>
+    <li><span class="accent">no shared state.</span> actors don't share memory. all communication is via messages. (eliminates data races.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">consensus (Raft)</h3>
+  <ul class="bare">
+    <li><span class="accent">leader election.</span> nodes elect a leader via majority vote. leader handles all writes. (like Raft.)</li>
+    <li><span class="accent">log replication.</span> leader appends entries to its log, replicates to followers. majority commit = applied. (like Raft.)</li>
+    <li><span class="accent">safety.</span> committed entries are never lost (as long as majority is available). (Raft's safety property.)</li>
+    <li><span class="accent">membership changes.</span> add/remove nodes via joint consensus (two-phase). (like Raft's membership change.)</li>
+    <li><span class="accent">log compaction.</span> snapshot + truncate old log entries. (like Raft's snapshotting.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">replication</h3>
+  <ul class="bare">
+    <li><span class="accent">state machine replication.</span> each node runs the same state machine. inputs are replicated via consensus. outputs are identical. (like Raft/Paxos.)</li>
+    <li><span class="accent">read scaling.</span> followers can serve reads (with consistency tradeoffs: stale reads or linearizable reads via leader).</li>
+    <li><span class="accent">write scaling.</span> shard by key range. each shard has its own consensus group. (like Spanner/CockroachDB.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">partitioning</h3>
+  <ul class="bare">
+    <li><span class="accent">consistent hashing.</span> keys are hashed to a ring. nodes own ranges of the ring. adding/removing a node moves O(1/n) of keys. (like Dynamo/Cassandra.)</li>
+    <li><span class="accent">range partitioning.</span> keys are sorted and split into ranges. each range is a shard. (like Spanner/CockroachDB.)</li>
+    <li><span class="accent">rebalancing.</span> when a node is added/removed, data is migrated in the background. no downtime. (like Cassandra's bootstrap.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">service discovery</h3>
+  <ul class="bare">
+    <li><span class="accent">registry.</span> services register themselves (name → endpoint). clients look up services by name. (like etcd/Consul.)</li>
+    <li><span class="accent">health checks.</span> services send heartbeats. unhealthy services are removed from the registry. (like Kubernetes liveness probes.)</li>
+    <li><span class="accent">DNS.</span> service names resolve to endpoints. (like Kubernetes DNS.)</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">4. what we left out (and why)</h2>
+  <p class="dim">every omission is a deliberate choice.</p>
+  <ul class="bare">
+    <li><span class="accent">no monolithic kernel.</span> microkernel only. drivers/services in user space. (Linux's monolithic design makes verification impossible.)</li>
+    <li><span class="accent">no global state in kernel.</span> all state in capabilities. (makes reasoning and verification trivial.)</li>
+    <li><span class="accent">no blocking I/O.</span> all I/O is async. (blocking I/O wastes threads and complicates reasoning.)</li>
+    <li><span class="accent">no shared memory between processes.</span> all communication via messages. (eliminates data races and makes reasoning trivial.)</li>
+    <li><span class="accent">no ambient authority.</span> every resource access requires a capability. (prevents confused deputy.)</li>
+    <li><span class="accent">no garbage collection in kernel.</span> kernel uses explicit allocation/deallocation. (GC pauses are unacceptable in kernel.)</li>
+    <li><span class="accent">no virtualization in kernel.</span> virtualization is a user-space service (like KVM but as a service). (keeps kernel minimal.)</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">5. comparison with existing systems</h2>
+  <p class="dim">what we took from each, and what we rejected.</p>
+  <ul class="bare">
+    <li><span class="accent">seL4:</span> took formal verification, capability-based security, minimal kernel. rejected: (seL4 is single-core only; we want multi-core.)</li>
+    <li><span class="accent">Linux:</span> took the VFS abstraction, io_uring, cgroup, namespace. rejected: monolithic kernel, global state, blocking I/O, ambient authority.</li>
+    <li><span class="accent">Erlang/OTP:</span> took actor model, supervision trees, location transparency. rejected: (Erlang's BEAM VM is single-threaded per scheduler; we want multi-core.)</li>
+    <li><span class="accent">Go:</span> took goroutines, work-stealing, channels. rejected: (Go's GC has pauses; we want optional GC.)</li>
+    <li><span class="accent">Rust:</span> took ownership, borrowing, zero-cost abstractions. rejected: (Rust is a language; we want a substrate.)</li>
+    <li><span class="accent">Kubernetes:</span> took service discovery, health checks, pod abstraction. rejected: (Kubernetes is a platform; we want it in the OS.)</li>
+    <li><span class="accent">Raft/Paxos:</span> took consensus algorithm. rejected: (Raft is for distributed systems; we want it built-in.)</li>
+  </ul>
+
+  <hr />
+
+  <p class="dim" style="margin-top:2em">
+    this design is a synthesis of 4,353 protocol facts from the wire corpus, plus the <a href="/substrate">substrate design</a>.
+    every decision is traceable to a specific entry. see <a href="/">wire</a> for the source data.
+  </p>
+</BaseLayout>
