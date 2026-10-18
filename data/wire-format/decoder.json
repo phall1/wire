@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/decoder",
+  "family": "wire-format",
+  "slug": "decoder",
+  "title": "Decoder / demultiplexer",
+  "summary": "A decoder converts an n-bit binary input to a one-hot output (2^n outputs, exactly one is 1). A 2:4 decoder: outputs D0-D3, where D[i] = 1 if input = i. Demultiplexer (DEMUX) routes a single input to one of 2^n outputs based on select bits. Decoders are used for address decoding, instruction decoding, and one-hot state machines.",
+  "kind": "wire-format",
+  "aliases": [
+    "Decoder / demultiplexer"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Decoder",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "A decoder converts an n-bit binary input to a one-hot output (2^n outputs, exactly one is 1). A 2:4 decoder: outputs D0-D3, where D[i] = 1 if input = i. Demultiplexer (DEMUX) routes a single input to one of 2^n outputs based on select bits. Decoders are used for address decoding, instruction decoding, and one-hot state machines.",
+    "structure": [
+      {
+        "field": "2:4 decoder",
+        "size": "2 inputs, 4 outputs",
+        "meaning": "Output i = 1 if input = i. E.g., input 10 -> D2 = 1, others 0."
+      },
+      {
+        "field": "3:8 decoder",
+        "size": "3 inputs, 8 outputs",
+        "meaning": "Output i = 1 if input = i. Used for octal selection."
+      },
+      {
+        "field": "n:2^n decoder",
+        "size": "n inputs, 2^n outputs",
+        "meaning": "General: n-bit input to 2^n one-hot outputs."
+      },
+      {
+        "field": "Decoder with enable",
+        "size": "n+1 inputs",
+        "meaning": "Enable input gates all outputs (when E=0, all outputs are 0)."
+      },
+      {
+        "field": "DEMUX",
+        "size": "1 data + n select",
+        "meaning": "Routes data input to one of 2^n outputs based on select bits."
+      },
+      {
+        "field": "Priority encoder",
+        "size": "2^n inputs, n outputs",
+        "meaning": "Reverse of decoder: outputs the binary code of the highest-priority active input. Used for interrupt priority."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Decoder (placeholder)",
+    "notes": [
+      "Decoders are used in memory address decoding (chip select), instruction decoding (control unit), and display (7-segment).",
+      "A decoder + OR gates can implement any Boolean function (sum of products).",
+      "Priority encoders are used in interrupt controllers (highest priority wins).",
+      "Decoders are the inverse of encoders (binary to one-hot vs one-hot to binary)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

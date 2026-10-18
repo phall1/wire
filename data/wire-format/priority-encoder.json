@@ -1,0 +1,53 @@
+{
+  "id": "wire-format/priority-encoder",
+  "family": "wire-format",
+  "slug": "priority-encoder",
+  "title": "Priority encoder",
+  "summary": "A priority encoder converts a one-hot (or multi-hot) input to a binary code, giving priority to the highest-numbered active input. Used in interrupt controllers (highest priority interrupt), CAM (highest-priority match), and arbiters. If multiple inputs are active, the highest-numbered (or lowest, depending on design) is encoded.",
+  "kind": "wire-format",
+  "aliases": [
+    "Priority encoder"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Priority_encoder",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "A priority encoder converts a one-hot (or multi-hot) input to a binary code, giving priority to the highest-numbered active input. Used in interrupt controllers (highest priority interrupt), CAM (highest-priority match), and arbiters. If multiple inputs are active, the highest-numbered (or lowest, depending on design) is encoded.",
+    "structure": [
+      {
+        "field": "4:2 priority encoder",
+        "size": "4 inputs, 2 outputs",
+        "meaning": "Outputs the binary code of the highest active input. E.g., inputs 1010 -> output 11 (input 3 has highest priority)."
+      },
+      {
+        "field": "8:3 priority encoder",
+        "size": "8 inputs, 3 outputs",
+        "meaning": "Outputs the binary code of the highest active input among 8."
+      },
+      {
+        "field": "Valid output",
+        "size": "1 bit",
+        "meaning": "1 if any input is active (at least one 1)."
+      },
+      {
+        "field": "Priority scheme",
+        "size": "config",
+        "meaning": "Highest number = highest priority (or lowest, depending on design)."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Priority encoder (placeholder)",
+    "notes": [
+      "Priority encoders are used in interrupt controllers (highest priority interrupt wins).",
+      "CAM uses priority encoders to select the highest-priority match.",
+      "Arbiters use priority encoders to grant access to the highest-priority requester.",
+      "A priority encoder can be built from a tree of 2:1 MUXes."
+    ]
+  },
+  "updated": "2026-05-29"
+}

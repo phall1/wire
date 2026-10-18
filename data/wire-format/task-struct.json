@@ -1,0 +1,104 @@
+{
+  "id": "wire-format/task-struct",
+  "family": "wire-format",
+  "slug": "task-struct",
+  "title": "Linux task_struct (process descriptor)",
+  "summary": "The Linux task_struct is the process descriptor, containing all information about a process/thread. Key fields: state (running, sleeping, stopped, zombie), pid (process ID), tgid (thread group ID), comm (command name, 16 chars), mm (memory descriptor), files (file descriptor table), fs (filesystem info), signal (signal handlers), sched (scheduling info: priority, policy, CPU affinity), parent (parent task), children (list of children), sibling (sibling in parent's children list), thread (thread-specific data), cred (credentials: uid, gid, capabilities), ns (namespaces: pid, net, mount, uts, ipc, user, cgroup, time).",
+  "kind": "wire-format",
+  "aliases": [
+    "Linux task_struct (process descriptor)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Process_control_block",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel",
+    "summary": "The Linux task_struct is the process descriptor, containing all information about a process/thread. Key fields: state (running, sleeping, stopped, zombie), pid (process ID), tgid (thread group ID), comm (command name, 16 chars), mm (memory descriptor), files (file descriptor table), fs (filesystem info), signal (signal handlers), sched (scheduling info: priority, policy, CPU affinity), parent (parent task), children (list of children), sibling (sibling in parent's children list), thread (thread-specific data), cred (credentials: uid, gid, capabilities), ns (namespaces: pid, net, mount, uts, ipc, user, cgroup, time).",
+    "structure": [
+      {
+        "field": "state",
+        "size": "long",
+        "meaning": "Task state: TASK_RUNNING, TASK_INTERRUPTIBLE, TASK_UNINTERRUPTIBLE, TASK_STOPPED, TASK_TRACED, EXIT_ZOMBIE, EXIT_DEAD."
+      },
+      {
+        "field": "pid",
+        "size": "pid_t",
+        "meaning": "Process ID (thread ID in kernel terms)."
+      },
+      {
+        "field": "tgid",
+        "size": "pid_t",
+        "meaning": "Thread group ID (userspace PID)."
+      },
+      {
+        "field": "comm",
+        "size": "16 bytes (char[16])",
+        "meaning": "Command name (executable name, truncated to 15 chars + NUL)."
+      },
+      {
+        "field": "mm",
+        "size": "pointer (struct mm_struct *)",
+        "meaning": "Memory descriptor: VMAs, page tables, mmap, brk, etc."
+      },
+      {
+        "field": "files",
+        "size": "pointer (struct files_struct *)",
+        "meaning": "File descriptor table."
+      },
+      {
+        "field": "fs",
+        "size": "pointer (struct fs_struct *)",
+        "meaning": "Filesystem info: root, pwd, umask."
+      },
+      {
+        "field": "signal",
+        "size": "pointer (struct signal_struct *)",
+        "meaning": "Signal handlers and pending signals."
+      },
+      {
+        "field": "sched",
+        "size": "embedded (struct sched_entity)",
+        "meaning": "Scheduling info: priority, vruntime, CPU affinity, load weight."
+      },
+      {
+        "field": "parent",
+        "size": "pointer (struct task_struct *)",
+        "meaning": "Parent process."
+      },
+      {
+        "field": "children",
+        "size": "list_head",
+        "meaning": "List of child processes."
+      },
+      {
+        "field": "cred",
+        "size": "pointer (const struct cred *)",
+        "meaning": "Credentials: uid, gid, euid, egid, capabilities, securebits."
+      },
+      {
+        "field": "ns",
+        "size": "pointer (struct nsproxy *)",
+        "meaning": "Namespaces: pid, net, mount, uts, ipc, user, cgroup, time."
+      },
+      {
+        "field": "thread",
+        "size": "embedded (struct thread_struct)",
+        "meaning": "Thread-specific: CPU registers, FPU state, TLS, etc."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "task_struct (placeholder)",
+    "notes": [
+      "task_struct is ~6-8KB in size (varies by kernel config).",
+      "task_struct is allocated from the slab allocator (or kmalloc).",
+      "The kernel uses a doubly-linked list (tasks) to traverse all processes.",
+      "Namespaces enable containerization (Docker, Kubernetes).",
+      "The scheduler uses the sched_entity for fair scheduling (CFS: Completely Fair Scheduler)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

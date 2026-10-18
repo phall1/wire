@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/ethernet-phy",
+  "family": "wire-format",
+  "slug": "ethernet-phy",
+  "title": "Ethernet PHY (Physical Layer) interface",
+  "summary": "The Ethernet PHY (Physical Layer) handles the physical transmission of Ethernet frames. MII (Media Independent Interface) connects MAC to PHY: 4-bit data path, 2.5/25/125 MHz clock. RMII (Reduced MII): 2-bit data path, 50 MHz clock. GMII (Gigabit MII): 8-bit data path, 125 MHz clock. RGMII (Reduced GMII): 4-bit data path, 125 MHz clock (double data rate). SGMII (Serial GMII): serial, 1.25 Gbps. Auto-negotiation: PHYs advertise capabilities (speed, duplex) via FLP (Fast Link Pulse) bursts.",
+  "kind": "wire-format",
+  "aliases": [
+    "Ethernet PHY (Physical Layer) interface"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Media-independent_interface",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "IEEE 802.3",
+    "summary": "The Ethernet PHY (Physical Layer) handles the physical transmission of Ethernet frames. MII (Media Independent Interface) connects MAC to PHY: 4-bit data path, 2.5/25/125 MHz clock. RMII (Reduced MII): 2-bit data path, 50 MHz clock. GMII (Gigabit MII): 8-bit data path, 125 MHz clock. RGMII (Reduced GMII): 4-bit data path, 125 MHz clock (double data rate). SGMII (Serial GMII): serial, 1.25 Gbps. Auto-negotiation: PHYs advertise capabilities (speed, duplex) via FLP (Fast Link Pulse) bursts.",
+    "structure": [
+      {
+        "field": "MII",
+        "size": "interface",
+        "meaning": "4-bit data (TXD/RXD), TX_EN, RX_DV, TX_CLK, RX_CLK, CRS, COL, MDIO, MDC. 2.5 MHz (10Mbps), 25 MHz (100Mbps)."
+      },
+      {
+        "field": "RMII",
+        "size": "interface",
+        "meaning": "2-bit data (TXD/RXD), TX_EN, CRS_DV, REF_CLK (50 MHz). Reduces pin count."
+      },
+      {
+        "field": "GMII",
+        "size": "interface",
+        "meaning": "8-bit data, 125 MHz clock. For 1000BASE-T."
+      },
+      {
+        "field": "RGMII",
+        "size": "interface",
+        "meaning": "4-bit data, 125 MHz clock (DDR: both edges). Reduces pin count for gigabit."
+      },
+      {
+        "field": "SGMII",
+        "size": "interface",
+        "meaning": "Serial: 1.25 Gbps differential pair. For 1000BASE-X (fiber) or 1000BASE-T."
+      },
+      {
+        "field": "Auto-negotiation",
+        "size": "protocol",
+        "meaning": "FLP (Fast Link Pulse) bursts advertise capabilities. Next pages for extended capabilities (10GBASE-T, etc.)."
+      },
+      {
+        "field": "MDIO/MDC",
+        "size": "interface",
+        "meaning": "Management Data I/O: serial interface for reading/writing PHY registers (clause 22 or clause 45)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Ethernet PHY (placeholder)",
+    "notes": [
+      "MII is the standard interface between MAC and PHY.",
+      "RGMII is the most common interface for gigabit Ethernet.",
+      "Auto-negotiation is essential for interoperability (speed/duplex matching).",
+      "PHYs handle encoding (8b/10b, 64b/66b), scrambling, and physical signaling.",
+      "Modern PHYs support Energy Efficient Ethernet (EEE) for power saving."
+    ]
+  },
+  "updated": "2026-05-29"
+}

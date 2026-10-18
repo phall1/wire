@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/ecc",
+  "family": "wire-format",
+  "slug": "ecc",
+  "title": "Elliptic Curve Cryptography (ECC)",
+  "summary": "ECC is a public-key cryptosystem based on the discrete logarithm problem on elliptic curves. Curve: y^2 = x^3 + ax + b (mod p) for prime curves, or y^2 + xy = x^3 + ax^2 + b (binary curves). Key pair: private key d (random scalar), public key Q = d*G (point multiplication). ECDH: shared secret = d_A * Q_B = d_B * Q_A. ECDSA: signature (r, s) where r = (k*G)_x mod n, s = k^(-1)(z + r*d) mod n.",
+  "kind": "wire-format",
+  "aliases": [
+    "Elliptic Curve Cryptography (ECC)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Elliptic-curve_cryptography",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "SEC 2 / RFC 6090",
+    "summary": "ECC is a public-key cryptosystem based on the discrete logarithm problem on elliptic curves. Curve: y^2 = x^3 + ax + b (mod p) for prime curves, or y^2 + xy = x^3 + ax^2 + b (binary curves). Key pair: private key d (random scalar), public key Q = d*G (point multiplication). ECDH: shared secret = d_A * Q_B = d_B * Q_A. ECDSA: signature (r, s) where r = (k*G)_x mod n, s = k^(-1)(z + r*d) mod n.",
+    "structure": [
+      {
+        "field": "Curve equation (prime)",
+        "size": "parameters",
+        "meaning": "y^2 = x^3 + ax + b (mod p). p = prime, a, b = curve coefficients."
+      },
+      {
+        "field": "Base point (G)",
+        "size": "2 coordinates",
+        "meaning": "Generator point on the curve. Order n (prime)."
+      },
+      {
+        "field": "Private key (d)",
+        "size": "n bits",
+        "meaning": "Random scalar in [1, n-1]."
+      },
+      {
+        "field": "Public key (Q)",
+        "size": "2 coordinates",
+        "meaning": "Q = d * G (scalar multiplication). (x, y) on the curve."
+      },
+      {
+        "field": "ECDH shared secret",
+        "size": "operation",
+        "meaning": "Shared = d_A * Q_B = d_B * Q_A (point on curve). Use x-coordinate as key material."
+      },
+      {
+        "field": "ECDSA signature",
+        "size": "2 scalars (r, s)",
+        "meaning": "r = (k*G)_x mod n. s = k^(-1)(z + r*d) mod n. (k = random nonce, z = hash of message.)"
+      },
+      {
+        "field": "ECDSA verify",
+        "size": "operation",
+        "meaning": "u1 = z * s^(-1) mod n. u2 = r * s^(-1) mod n. R = u1*G + u2*Q. Verify R_x == r mod n."
+      },
+      {
+        "field": "Common curves",
+        "size": "names",
+        "meaning": "P-256 (secp256r1), P-384, P-521 (NIST). Curve25519 (X25519 for ECDH, Ed25519 for signatures). secp256k1 (Bitcoin)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "ECC (placeholder)",
+    "notes": [
+      "ECC provides equivalent security to RSA with much smaller keys: 256-bit ECC ≈ 3072-bit RSA.",
+      "ECC is faster and uses less power than RSA (important for mobile/IoT).",
+      "X25519 (ECDH) and Ed25519 (signatures) are the modern standard (RFC 7748, RFC 8032).",
+      "ECC is quantum-vulnerable (Shor's algorithm solves the discrete log problem).",
+      "ECC is used in TLS 1.3, SSH, Bitcoin, and most modern systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

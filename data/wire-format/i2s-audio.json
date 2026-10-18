@@ -1,0 +1,68 @@
+{
+  "id": "wire-format/i2s-audio",
+  "family": "wire-format",
+  "slug": "i2s-audio",
+  "title": "I2S (Inter-IC Sound) audio interface",
+  "summary": "I2S is a serial bus for digital audio. Signals: SCK (serial clock), WS (word select / LRCLK, 0=left, 1=right), SD (serial data). Data is transmitted MSB-first, synchronized to SCK. The WS frequency = sample rate (e.g., 44.1 kHz for CD audio). SCK frequency = sample rate * bits per sample * 2 (stereo). Common: 44.1/48/96/192 kHz, 16/24/32 bits.",
+  "kind": "wire-format",
+  "aliases": [
+    "I2S (Inter-IC Sound) audio interface"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/I%C2%B2S",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "I2S specification (Philips)",
+    "summary": "I2S is a serial bus for digital audio. Signals: SCK (serial clock), WS (word select / LRCLK, 0=left, 1=right), SD (serial data). Data is transmitted MSB-first, synchronized to SCK. The WS frequency = sample rate (e.g., 44.1 kHz for CD audio). SCK frequency = sample rate * bits per sample * 2 (stereo). Common: 44.1/48/96/192 kHz, 16/24/32 bits.",
+    "structure": [
+      {
+        "field": "SCK (BCLK)",
+        "size": "clock",
+        "meaning": "Serial clock (bit clock). Frequency = sample_rate * bits_per_sample * 2 (stereo)."
+      },
+      {
+        "field": "WS (LRCLK)",
+        "size": "clock",
+        "meaning": "Word select (left/right clock). Frequency = sample rate. 0 = left channel, 1 = right channel."
+      },
+      {
+        "field": "SD (SDATA)",
+        "size": "data",
+        "meaning": "Serial data, MSB-first, 2's complement. One data line per channel (or TDM for multi-channel)."
+      },
+      {
+        "field": "MCLK (optional)",
+        "size": "clock",
+        "meaning": "Master clock (256x or 384x sample rate). Used by DAC/ADC for internal clocking."
+      },
+      {
+        "field": "Data format",
+        "size": "config",
+        "meaning": "Left-justified, right-justified (I2S standard), or TDM (time-division multiplexed for multi-channel)."
+      },
+      {
+        "field": "Sample rates",
+        "size": "config",
+        "meaning": "8, 11.025, 16, 22.05, 32, 44.1, 48, 88.2, 96, 176.4, 192 kHz."
+      },
+      {
+        "field": "Bit depths",
+        "size": "config",
+        "meaning": "16, 20, 24, 32 bits per sample."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "I2S (placeholder)",
+    "notes": [
+      "I2S is the standard interface between audio codecs and microcontrollers/SoCs.",
+      "TDM (Time Division Multiplexing) extends I2S to 8+ channels on a single data line.",
+      "I2S is used in audio DACs, ADCs, and digital microphones.",
+      "PCM (Pulse Code Modulation) is the underlying data format for I2S."
+    ]
+  },
+  "updated": "2026-05-29"
+}

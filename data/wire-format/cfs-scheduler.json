@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/cfs-scheduler",
+  "family": "wire-format",
+  "slug": "cfs-scheduler",
+  "title": "Linux CFS (Completely Fair Scheduler)",
+  "summary": "CFS is the default Linux CPU scheduler. It uses a red-black tree ordered by vruntime (virtual runtime). Each task's vruntime increases at a rate inversely proportional to its weight (priority). The scheduler picks the task with the smallest vruntime. Nice values (-20 to +19) map to weights (higher nice = lower weight = less CPU). CFS aims to give each task a fair share of CPU time.",
+  "kind": "wire-format",
+  "aliases": [
+    "Linux CFS (Completely Fair Scheduler)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Completely_Fair_Scheduler",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (CFS)",
+    "summary": "CFS is the default Linux CPU scheduler. It uses a red-black tree ordered by vruntime (virtual runtime). Each task's vruntime increases at a rate inversely proportional to its weight (priority). The scheduler picks the task with the smallest vruntime. Nice values (-20 to +19) map to weights (higher nice = lower weight = less CPU). CFS aims to give each task a fair share of CPU time.",
+    "structure": [
+      {
+        "field": "vruntime",
+        "size": "u64 (nanoseconds)",
+        "meaning": "Virtual runtime: accumulated CPU time weighted by priority. Lower = higher priority."
+      },
+      {
+        "field": "weight",
+        "size": "u32",
+        "meaning": "Task weight (from nice value). Higher weight = more CPU time. nice -20 = weight 88761, nice 0 = 1024, nice +19 = 15."
+      },
+      {
+        "field": "rb-tree",
+        "size": "data structure",
+        "meaning": "Red-black tree ordered by vruntime. The leftmost node is the next task to run."
+      },
+      {
+        "field": "sched_latency",
+        "size": "6ms (default)",
+        "meaning": "Target latency: the period in which every runnable task should get at least one time slice."
+      },
+      {
+        "field": "min_granularity",
+        "size": "0.75ms (default)",
+        "meaning": "Minimum time slice per task."
+      },
+      {
+        "field": "nice to weight",
+        "size": "mapping",
+        "meaning": "nice -20..+19 maps to weights via a lookup table (sched_prio_to_weight). Each nice level is ~10% CPU difference."
+      },
+      {
+        "field": "CFS bandwidth",
+        "size": "cgroup",
+        "meaning": "cgroup v2 CPU controller: cpu.max = 'quota period' (e.g., '100000 100000' = 1 CPU). Throttles tasks exceeding the quota."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "CFS (placeholder)",
+    "notes": [
+      "CFS replaced the O(1) scheduler in Linux 2.6.23.",
+      "CFS is O(log n) per scheduling decision (red-black tree).",
+      "Real-time scheduling: SCHED_FIFO (first-in-first-out) and SCHED_RR (round-robin) for real-time tasks.",
+      "Deadline scheduling: SCHED_DEADLINE (earliest deadline first) for real-time tasks.",
+      "CFS uses vruntime to ensure fairness: higher-priority tasks accumulate vruntime slower."
+    ]
+  },
+  "updated": "2026-05-29"
+}

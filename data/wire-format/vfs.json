@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/vfs",
+  "family": "wire-format",
+  "slug": "vfs",
+  "title": "Linux VFS (Virtual File System)",
+  "summary": "The VFS (Virtual File System) is the abstraction layer for filesystems in Linux. Key structures: superblock (filesystem metadata), inode (file metadata), dentry (directory entry, name-to-inode mapping), file (open file description). Operations: super_operations (alloc_inode, destroy_inode, read_inode, write_inode, put_super, statfs), inode_operations (lookup, create, link, unlink, symlink, mkdir, rmdir, rename, permission, getattr, setattr), file_operations (read, write, open, release, llseek, ioctl, mmap, poll, fsync, fasync, lock, splice_read, splice_write).",
+  "kind": "wire-format",
+  "aliases": [
+    "Linux VFS (Virtual File System)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Virtual_file_system",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (VFS)",
+    "summary": "The VFS (Virtual File System) is the abstraction layer for filesystems in Linux. Key structures: superblock (filesystem metadata), inode (file metadata), dentry (directory entry, name-to-inode mapping), file (open file description). Operations: super_operations (alloc_inode, destroy_inode, read_inode, write_inode, put_super, statfs), inode_operations (lookup, create, link, unlink, symlink, mkdir, rmdir, rename, permission, getattr, setattr), file_operations (read, write, open, release, llseek, ioctl, mmap, poll, fsync, fasync, lock, splice_read, splice_write).",
+    "structure": [
+      {
+        "field": "superblock",
+        "size": "struct super_block",
+        "meaning": "Filesystem-level metadata: magic, block size, root inode, operations, list of inodes, etc."
+      },
+      {
+        "field": "inode",
+        "size": "struct inode",
+        "meaning": "File metadata: mode, uid, gid, size, timestamps, block pointers, operations. Identified by inode number."
+      },
+      {
+        "field": "dentry",
+        "size": "struct dentry",
+        "meaning": "Directory entry: name, parent, inode, hash, children list. Cached in dentry cache (dcache)."
+      },
+      {
+        "field": "file",
+        "size": "struct file",
+        "meaning": "Open file description: file position (f_pos), flags, mode, dentry, operations, private data."
+      },
+      {
+        "field": "super_operations",
+        "size": "function pointers",
+        "meaning": "alloc_inode, destroy_inode, read_inode, write_inode, drop_inode, put_super, write_super, statfs, remount_fs, etc."
+      },
+      {
+        "field": "inode_operations",
+        "size": "function pointers",
+        "meaning": "lookup, create, link, unlink, symlink, mkdir, rmdir, mknod, rename, permission, getattr, setattr, etc."
+      },
+      {
+        "field": "file_operations",
+        "size": "function pointers",
+        "meaning": "llseek, read, write, read_iter, write_iter, iopoll, poll, unlocked_ioctl, compat_ioctl, mmap, open, flush, release, fsync, fasync, lock, splice_read, splice_write, etc."
+      },
+      {
+        "field": "address_space_operations",
+        "size": "function pointers",
+        "meaning": "readpage, writepage, writepages, set_page_dirty, readpages, write_begin, write_end, bmap, invalidatepage, releasepage, etc."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "VFS (placeholder)",
+    "notes": [
+      "VFS allows multiple filesystems (ext4, XFS, FAT, tmpfs, proc, sysfs) to coexist.",
+      "The dentry cache (dcache) caches name-to-inode lookups for performance.",
+      "The page cache (address_space) caches file data in memory.",
+      "VFS operations are dispatched via function pointers (polymorphism in C).",
+      "Every filesystem implements the VFS interface (super_operations, inode_operations, file_operations)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/multiplexer",
+  "family": "wire-format",
+  "slug": "multiplexer",
+  "title": "Multiplexer (MUX)",
+  "summary": "A multiplexer selects one of 2^n inputs based on an n-bit select signal. A 2:1 MUX: output = (NOT sel AND A) OR (sel AND B). An n:1 MUX uses 2^n AND gates + 1 OR gate (or tree). MUXes are used for data selection, bus sharing, and implementing Boolean functions. A MUX with n select bits and 2^n data inputs is a universal logic element (can implement any 2^n-input Boolean function).",
+  "kind": "wire-format",
+  "aliases": [
+    "Multiplexer (MUX)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Multiplexer",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "A multiplexer selects one of 2^n inputs based on an n-bit select signal. A 2:1 MUX: output = (NOT sel AND A) OR (sel AND B). An n:1 MUX uses 2^n AND gates + 1 OR gate (or tree). MUXes are used for data selection, bus sharing, and implementing Boolean functions. A MUX with n select bits and 2^n data inputs is a universal logic element (can implement any 2^n-input Boolean function).",
+    "structure": [
+      {
+        "field": "2:1 MUX",
+        "size": "1 select, 2 data",
+        "meaning": "Output = (NOT S AND A) OR (S AND B). 1 select bit chooses between A and B."
+      },
+      {
+        "field": "4:1 MUX",
+        "size": "2 select, 4 data",
+        "meaning": "Output = D[S1,S0]. 2 select bits choose among D0-D3."
+      },
+      {
+        "field": "8:1 MUX",
+        "size": "3 select, 8 data",
+        "meaning": "Output = D[S2,S1,S0]. 3 select bits choose among D0-D7."
+      },
+      {
+        "field": "n:1 MUX",
+        "size": "log2(n) select, n data",
+        "meaning": "General: n data inputs, log2(n) select bits."
+      },
+      {
+        "field": "Transmission gate MUX",
+        "size": "CMOS",
+        "meaning": "Uses transmission gates (pass transistors) instead of AND/OR. Fewer transistors but no gain restoration."
+      },
+      {
+        "field": "MUX as logic",
+        "size": "universal",
+        "meaning": "A 2:1 MUX can implement any 2-input Boolean function by connecting constants or inputs to the data inputs."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Multiplexer (placeholder)",
+    "notes": [
+      "MUXes are used in ALUs (operation selection), memory (address decoding), and bus arbitration.",
+      "A MUX is the dual of a DEMUX (demultiplexer).",
+      "MUXes can implement any Boolean function (Shannon expansion).",
+      "Transmission gate MUXes are faster and smaller but lack gain.",
+      "MUX delay = O(log n) for tree-structured MUXes."
+    ]
+  },
+  "updated": "2026-05-29"
+}

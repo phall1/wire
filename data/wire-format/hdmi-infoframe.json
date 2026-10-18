@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/hdmi-infoframe",
+  "family": "wire-format",
+  "slug": "hdmi-infoframe",
+  "title": "HDMI InfoFrame (AVI)",
+  "summary": "HDMI InfoFrames are metadata packets sent during the vertical blanking interval. The AVI (Auxiliary Video Information) InfoFrame: type (0x82), version (0x02), length (13), checksum, and data: scan info, bar data, active format, RGB/YCbCr, colorimetry, picture aspect ratio, active aspect ratio, IT content, extended colorimetry, quantization range, non-uniform picture scaling, video code (VIC), pixel repetition. Used for color space signaling and HDR.",
+  "kind": "wire-format",
+  "aliases": [
+    "HDMI InfoFrame (AVI)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/HDMI",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "HDMI 2.1 specification",
+    "summary": "HDMI InfoFrames are metadata packets sent during the vertical blanking interval. The AVI (Auxiliary Video Information) InfoFrame: type (0x82), version (0x02), length (13), checksum, and data: scan info, bar data, active format, RGB/YCbCr, colorimetry, picture aspect ratio, active aspect ratio, IT content, extended colorimetry, quantization range, non-uniform picture scaling, video code (VIC), pixel repetition. Used for color space signaling and HDR.",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "0x82 = AVI InfoFrame."
+      },
+      {
+        "field": "Version",
+        "size": "1 byte",
+        "meaning": "0x02 (HDMI 1.4+)."
+      },
+      {
+        "field": "Length",
+        "size": "1 byte",
+        "meaning": "13 (for version 2)."
+      },
+      {
+        "field": "Checksum",
+        "size": "1 byte",
+        "meaning": "Checksum (sum of all bytes including header = 0 mod 256)."
+      },
+      {
+        "field": "Data Byte 0",
+        "size": "1 byte",
+        "meaning": "Scan info (2 bits), bar data (2 bits), active format (1 bit), RGB/YCbCr (2 bits)."
+      },
+      {
+        "field": "Data Byte 1",
+        "size": "1 byte",
+        "meaning": "Colorimetry (2 bits), picture aspect ratio (2 bits), active aspect ratio (4 bits)."
+      },
+      {
+        "field": "Data Byte 2",
+        "size": "1 byte",
+        "meaning": "IT content (1 bit), extended colorimetry (3 bits), quantization range (2 bits), non-uniform picture scaling (2 bits)."
+      },
+      {
+        "field": "Data Byte 3",
+        "size": "1 byte",
+        "meaning": "Video code (VIC) (7 bits) + pixel repetition (4 bits, in byte 4)."
+      },
+      {
+        "field": "VIC",
+        "size": "1 byte",
+        "meaning": "Video Identification Code: identifies the resolution/timing (e.g., 16 = 1080p60, 97 = 4K60, 118 = 4K120)."
+      }
+    ],
+    "example_hex": "82 02 0d 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "HDMI AVI InfoFrame (type 0x82, version 2, length 13)",
+    "notes": [
+      "HDMI InfoFrames are sent in the vertical blanking interval (VBI).",
+      "AVI InfoFrame carries color space, aspect ratio, and VIC (resolution).",
+      "HDR InfoFrame (type 0x87) carries HDR metadata (static/dynamic).",
+      "Audio InfoFrame (type 0x84) carries audio channel count and coding type.",
+      "HDMI 2.1 adds Dynamic HDR, VRR (Variable Refresh Rate), and ALLM (Auto Low Latency Mode)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

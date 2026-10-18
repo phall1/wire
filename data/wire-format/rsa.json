@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/rsa",
+  "family": "wire-format",
+  "slug": "rsa",
+  "title": "RSA (Rivest-Shamir-Adleman)",
+  "summary": "RSA is a public-key cryptosystem. Key generation: choose two large primes p, q; n = p*q; φ(n) = (p-1)(q-1); choose e (public exponent, typically 65537); d = e^(-1) mod φ(n) (private exponent). Encryption: c = m^e mod n. Decryption: m = c^d mod n. Signature: s = m^d mod n. Verify: m = s^e mod n. Padding: PKCS#1 v1.5 or OAEP (encryption), PSS (signature).",
+  "kind": "wire-format",
+  "aliases": [
+    "RSA (Rivest-Shamir-Adleman)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8017 (PKCS #1)",
+    "summary": "RSA is a public-key cryptosystem. Key generation: choose two large primes p, q; n = p*q; φ(n) = (p-1)(q-1); choose e (public exponent, typically 65537); d = e^(-1) mod φ(n) (private exponent). Encryption: c = m^e mod n. Decryption: m = c^d mod n. Signature: s = m^d mod n. Verify: m = s^e mod n. Padding: PKCS#1 v1.5 or OAEP (encryption), PSS (signature).",
+    "structure": [
+      {
+        "field": "Modulus (n)",
+        "size": "2048/3072/4096 bits",
+        "meaning": "n = p * q. Product of two large primes."
+      },
+      {
+        "field": "Public exponent (e)",
+        "size": "17/32 bits",
+        "meaning": "Typically 65537 (0x10001). Must be coprime to φ(n)."
+      },
+      {
+        "field": "Private exponent (d)",
+        "size": "same as n",
+        "meaning": "d = e^(-1) mod φ(n) (or mod λ(n) for CRT optimization)."
+      },
+      {
+        "field": "Prime p",
+        "size": "half of n",
+        "meaning": "First large prime."
+      },
+      {
+        "field": "Prime q",
+        "size": "half of n",
+        "meaning": "Second large prime."
+      },
+      {
+        "field": "CRT parameters",
+        "size": "for fast decryption",
+        "meaning": "dp = d mod (p-1), dq = d mod (q-1), qinv = q^(-1) mod p. Enables 4x faster decryption."
+      },
+      {
+        "field": "Encryption",
+        "size": "operation",
+        "meaning": "c = m^e mod n (modular exponentiation)."
+      },
+      {
+        "field": "Decryption",
+        "size": "operation",
+        "meaning": "m = c^d mod n (or CRT: m1 = c^dp mod p, m2 = c^dq mod q, then CRT combine)."
+      },
+      {
+        "field": "Padding (OAEP)",
+        "size": "for encryption",
+        "meaning": "Optimal Asymmetric Encryption Padding: adds randomness and structure to prevent attacks."
+      },
+      {
+        "field": "Padding (PSS)",
+        "size": "for signature",
+        "meaning": "Probabilistic Signature Scheme: randomized padding for signatures."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "RSA (placeholder)",
+    "notes": [
+      "RSA key sizes: 2048 bits (minimum), 3072 bits (recommended), 4096 bits (high security).",
+      "RSA is quantum-vulnerable (Shor's algorithm factors n in polynomial time).",
+      "RSA encryption is slow (~1000x slower than AES). Used for key exchange and signatures, not bulk encryption.",
+      "PKCS#1 v1.5 padding is vulnerable to Bleichenbacher's attack; OAEP is preferred.",
+      "RSA is used in TLS (key exchange), SSH, code signing, and JWT (RS256)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

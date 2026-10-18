@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/linux-syscall-table",
+  "family": "wire-format",
+  "slug": "linux-syscall-table",
+  "title": "Linux syscall table (x86-64)",
+  "summary": "The Linux syscall table maps syscall numbers to kernel functions. On x86-64, the syscall number is passed in RAX, arguments in RDI, RSI, RDX, R10, R8, R9. The kernel returns the result in RAX (negative errno on error). Key syscalls: 0 read, 1 write, 2 open, 3 close, 4 stat, 5 fstat, 6 lstat, 7 poll, 8 lseek, 9 mmap, 10 mprotect, 11 munmap, 12 brk, 13 rt_sigaction, 14 rt_sigprocmask, 15 rt_sigreturn, 16 ioctl, 17 pread64, 18 pwrite64, 19 readv, 20 writev, 21 access, 22 pipe, 23 select, 24 sched_yield, 25 mremap, 32 dup, 33 dup2, 35 nanosleep, 39 getpid, 41 socket, 42 connect, 43 accept, 44 sendto, 45 recvfrom, 46 sendmsg, 47 recvmsg, 49 bind, 50 listen, 51 getsockname, 52 getpeername, 56 clone, 57 fork, 58 vfork, 59 execve, 60 exit, 61 wait4, 62 kill, 72 fcntl, 78 getdents, 79 getcwd, 80 chdir, 83 mkdir, 84 rmdir, 85 creat, 86 link, 87 unlink, 89 readlink, 90 chmod, 92 chown, 96 gettimeofday, 97 getrlimit, 102 getuid, 104 getgid, 105 setuid, 107 setgid, 108 geteuid, 110 getegid, 124 sched_getparam, 158 arch_prctl, 202 futex, 203 sched_setaffinity, 217 getdents64, 228 clock_gettime, 231 exit_group, 232 epoll_wait, 233 epoll_ctl, 234 tgkill, 257 openat, 262 newfstatat, 269 eventfd, 270 fallocate, 271 timerfd_create, 272 eventfd2, 273 epoll_create1, 274 dup3, 275 pipe2, 281 epoll_pwait, 288 accept4, 290 recvmmsg, 291 fanotify_init, 292 fanotify_mark, 293 prlimit64, 299 recvmmsg, 302 prlimit64, 318 getrandom, 319 memfd_create, 322 execveat, 323 userfaultfd, 332 statx, 334 pidfd_send_signal, 434 pidfd_open, 435 clone3, 436 close_range, 437 openat2, 438 pidfd_getfd, 439 faccessat2, 440 process_madvise, 441 epoll_pwait2, 442 mount_setattr, 443 quotactl_fd, 444 landlock_create_ruleset, 445 landlock_add_rule, 446 landlock_restrict_self, 447 memfd_secret, 448 process_mrelease, 449 futex_waitv, 450 set_mempolicy_home_node, 451 cachestat, 452 fchmodat2, 453 map_shadow_stack, 454 futex_wake, 455 futex_wait, 456 futex_requeue, 457 statmount, 458 listmount, 459 mount_setattr, 460 cache (statx), etc.",
+  "kind": "wire-format",
+  "aliases": [
+    "Linux syscall table (x86-64)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/System_call",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel",
+    "summary": "The Linux syscall table maps syscall numbers to kernel functions. On x86-64, the syscall number is passed in RAX, arguments in RDI, RSI, RDX, R10, R8, R9. The kernel returns the result in RAX (negative errno on error). Key syscalls: 0 read, 1 write, 2 open, 3 close, 4 stat, 5 fstat, 6 lstat, 7 poll, 8 lseek, 9 mmap, 10 mprotect, 11 munmap, 12 brk, 13 rt_sigaction, 14 rt_sigprocmask, 15 rt_sigreturn, 16 ioctl, 17 pread64, 18 pwrite64, 19 readv, 20 writev, 21 access, 22 pipe, 23 select, 24 sched_yield, 25 mremap, 32 dup, 33 dup2, 35 nanosleep, 39 getpid, 41 socket, 42 connect, 43 accept, 44 sendto, 45 recvfrom, 46 sendmsg, 47 recvmsg, 49 bind, 50 listen, 51 getsockname, 52 getpeername, 56 clone, 57 fork, 58 vfork, 59 execve, 60 exit, 61 wait4, 62 kill, 72 fcntl, 78 getdents, 79 getcwd, 80 chdir, 83 mkdir, 84 rmdir, 85 creat, 86 link, 87 unlink, 89 readlink, 90 chmod, 92 chown, 96 gettimeofday, 97 getrlimit, 102 getuid, 104 getgid, 105 setuid, 107 setgid, 108 geteuid, 110 getegid, 124 sched_getparam, 158 arch_prctl, 202 futex, 203 sched_setaffinity, 217 getdents64, 228 clock_gettime, 231 exit_group, 232 epoll_wait, 233 epoll_ctl, 234 tgkill, 257 openat, 262 newfstatat, 269 eventfd, 270 fallocate, 271 timerfd_create, 272 eventfd2, 273 epoll_create1, 274 dup3, 275 pipe2, 281 epoll_pwait, 288 accept4, 290 recvmmsg, 291 fanotify_init, 292 fanotify_mark, 293 prlimit64, 299 recvmmsg, 302 prlimit64, 318 getrandom, 319 memfd_create, 322 execveat, 323 userfaultfd, 332 statx, 334 pidfd_send_signal, 434 pidfd_open, 435 clone3, 436 close_range, 437 openat2, 438 pidfd_getfd, 439 faccessat2, 440 process_madvise, 441 epoll_pwait2, 442 mount_setattr, 443 quotactl_fd, 444 landlock_create_ruleset, 445 landlock_add_rule, 446 landlock_restrict_self, 447 memfd_secret, 448 process_mrelease, 449 futex_waitv, 450 set_mempolicy_home_node, 451 cachestat, 452 fchmodat2, 453 map_shadow_stack, 454 futex_wake, 455 futex_wait, 456 futex_requeue, 457 statmount, 458 listmount, 459 mount_setattr, 460 cache (statx), etc.",
+    "structure": [
+      {
+        "field": "Syscall number",
+        "size": "RAX register",
+        "meaning": "The syscall number is passed in RAX (x86-64). On ARM64, it's X8. On RISC-V, it's a7."
+      },
+      {
+        "field": "Arguments",
+        "size": "RDI, RSI, RDX, R10, R8, R9",
+        "meaning": "Up to 6 arguments in registers (x86-64). Additional args on stack."
+      },
+      {
+        "field": "Return value",
+        "size": "RAX",
+        "meaning": "Success: non-negative result. Error: negative errno (-1 to -4095)."
+      },
+      {
+        "field": "Syscall instruction",
+        "size": "2 bytes",
+        "meaning": "SYSCALL (0x0F 0x05) on x86-64. SVC #0 on ARM64. ECALL on RISC-V."
+      },
+      {
+        "field": "vDSO",
+        "size": "virtual DSO",
+        "meaning": "Virtual Dynamic Shared Object: provides fast userspace implementations of gettimeofday, clock_gettime, getcpu, etc. (avoids syscall overhead)."
+      },
+      {
+        "field": "seccomp",
+        "size": "filter",
+        "meaning": "Syscall filtering via seccomp-BPF. Can allow, deny, or trap syscalls."
+      }
+    ],
+    "example_hex": "0f 05",
+    "example_decoded": "SYSCALL instruction (0x0F 0x05) on x86-64",
+    "notes": [
+      "The syscall table is defined in arch/x86/entry/syscalls/syscall_64.tbl.",
+      "Syscall numbers are stable (never reused) for backward compatibility.",
+      "New syscalls are added at the end of the table.",
+      "The vDSO (virtual DSO) provides fast userspace implementations of common syscalls.",
+      "seccomp-BPF can filter syscalls per-process for sandboxing."
+    ]
+  },
+  "updated": "2026-05-29"
+}
