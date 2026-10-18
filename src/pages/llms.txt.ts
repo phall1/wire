@@ -39,6 +39,7 @@ export const GET: APIRoute = async () => {
     "## Optional",
     "",
     "- [Full corpus dump](/llms-full.txt): one-line-per-entry index for one-shot context loading.",
+    "- [Substrate design](/substrate): the best computation substrate from scratch — agent-native, capability-based, content-addressed, deterministic, observable.",
     "- [MCP server](https://github.com/phall1/wire/tree/main/mcp): stateless Model Context Protocol shim exposing search/get/list_families/get_family.",
     "- [Source repository](https://github.com/phall1/wire): data, gates, and ingest code.",
     "- [Design](https://github.com/phall1/wire/blob/main/DESIGN.md): source-of-truth tiers, licensing stance, permalink scheme, schema, integrity gates.",
