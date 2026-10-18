@@ -1,0 +1,53 @@
+{
+  "id": "wire-format/orc-format",
+  "family": "wire-format",
+  "slug": "orc-format",
+  "title": "Apache ORC (Optimized Row Columnar) format",
+  "summary": "ORC is a columnar storage format for Hadoop/Spark. File structure: stripes (row groups), each with index, data, and footer; file footer (schema, statistics, stripe locations); postscript (compression codec, footer length, magic 'ORC'). Magic: 'ORC' (0x4F 0x52 0x43) at the end of the file.",
+  "kind": "wire-format",
+  "aliases": [
+    "Apache ORC (Optimized Row Columnar) format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Apache ORC specification",
+    "summary": "ORC is a columnar storage format for Hadoop/Spark. File structure: stripes (row groups), each with index, data, and footer; file footer (schema, statistics, stripe locations); postscript (compression codec, footer length, magic 'ORC'). Magic: 'ORC' (0x4F 0x52 0x43) at the end of the file.",
+    "structure": [
+      {
+        "field": "Stripe",
+        "size": "variable",
+        "meaning": "Index stream (row group offsets) + data stream (column data) + footer (column statistics)."
+      },
+      {
+        "field": "File footer",
+        "size": "variable",
+        "meaning": "Header (1 byte, version), content length, stripe statistics, row index strides, schema (ProtoBuf serialized), and column statistics."
+      },
+      {
+        "field": "Postscript",
+        "size": "variable",
+        "meaning": "Compression codec (0 none, 1 zlib, 2 snappy, 3 lzo, 4 lz4, 5 zstd), footer length (variable-length), magic 'ORC' (3 bytes)."
+      },
+      {
+        "field": "Magic",
+        "size": "3 bytes",
+        "meaning": "'ORC' (0x4F 0x52 0x43) at the very end of the file."
+      }
+    ],
+    "example_hex": "4f 52 43",
+    "example_decoded": "ORC magic at end of file",
+    "notes": [
+      "ORC supports predicate pushdown (skip stripes based on min/max statistics).",
+      "Compression: zlib, snappy, lzo, lz4, zstd (per stripe).",
+      "ORC is the default format for Hive and is supported by Spark, Presto, and Trino.",
+      "ORC includes built-in indexes (row group statistics, bloom filters)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

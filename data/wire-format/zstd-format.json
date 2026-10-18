@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/zstd-format",
+  "family": "wire-format",
+  "slug": "zstd-format",
+  "title": "Zstandard (zstd) frame format",
+  "summary": "Zstandard is a fast lossless compression algorithm developed by Facebook. A zstd frame: 4-byte magic (0x28B52FFD), frame header (window size, dictionary ID, frame content size), compressed blocks (literals + sequences), and optional checksum. Blocks are either compressed (literals Huffman + FSE sequences) or raw/RLE.",
+  "kind": "wire-format",
+  "aliases": [
+    "Zstandard (zstd) frame format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8878",
+    "summary": "Zstandard is a fast lossless compression algorithm developed by Facebook. A zstd frame: 4-byte magic (0x28B52FFD), frame header (window size, dictionary ID, frame content size), compressed blocks (literals + sequences), and optional checksum. Blocks are either compressed (literals Huffman + FSE sequences) or raw/RLE.",
+    "structure": [
+      {
+        "field": "Magic number",
+        "size": "4 bytes",
+        "meaning": "0x28B52FFD (little-endian: FD 2F B5 28)."
+      },
+      {
+        "field": "Frame header descriptor",
+        "size": "1 byte",
+        "meaning": "Bit 7-6: Frame_Content_Size flag, bit 5: Single_Segment, bit 4: unused, bit 3-2: reserved, bit 1-0: Dictionary_ID flag."
+      },
+      {
+        "field": "Window descriptor",
+        "size": "0 or 1 byte",
+        "meaning": "Window size (if not single segment): exponent (5 bits) + mantissa (3 bits) -> window size = (1 << (exp+10)) + (mantissa << exp)."
+      },
+      {
+        "field": "Dictionary ID",
+        "size": "0/1/2/4 bytes",
+        "meaning": "ID of the dictionary used (if any)."
+      },
+      {
+        "field": "Frame content size",
+        "size": "0/1/2/4/8 bytes",
+        "meaning": "Size of the uncompressed data (if present)."
+      },
+      {
+        "field": "Block (repeated)",
+        "size": "variable",
+        "meaning": "Block header (3 bytes): last_block (1 bit) + block_type (2 bits: 0 compressed, 1 raw, 2 RLE, 3 reserved) + block_size (29 bits). Then block content."
+      },
+      {
+        "field": "Compressed block",
+        "size": "variable",
+        "meaning": "Literals section (Huffman-coded) + sequences section (FSE-coded: literal lengths, offsets, match lengths)."
+      },
+      {
+        "field": "Content checksum",
+        "size": "4 bytes",
+        "meaning": "Optional XXH64 checksum of the uncompressed data (if checksum flag set)."
+      }
+    ],
+    "example_hex": "28 b5 2f fd 20",
+    "example_decoded": "zstd magic + frame header descriptor (single segment, FCS 1 byte)",
+    "notes": [
+      "zstd uses Finite State Entropy (FSE) for sequence encoding and Huffman for literals.",
+      "Compression levels 1-22; higher levels use larger search windows and more thorough matching.",
+      "Dictionaries (trained on sample data) dramatically improve compression for small messages.",
+      "zstd is used by Linux kernel (module compression, btrfs, squashfs), Facebook, and many modern systems.",
+      "Skippable frames (magic 0x184D2A50) allow embedding metadata in zstd streams."
+    ]
+  },
+  "updated": "2026-05-29"
+}

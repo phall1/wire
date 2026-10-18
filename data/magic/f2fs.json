@@ -1,0 +1,38 @@
+{
+  "id": "magic/f2fs",
+  "family": "magic",
+  "slug": "f2fs",
+  "title": "F2FS (Flash-Friendly File System) signature",
+  "summary": "F2FS superblock is at byte offset 1024. The magic number is 0xF2F52010 at offset 0 of the superblock (byte offset 1024).",
+  "kind": "signature",
+  "aliases": [
+    "f2fs magic",
+    ".f2fs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "F2 F5 20 10",
+    "offset": 1024,
+    "magic_ascii": "",
+    "extensions": [
+      "f2fs"
+    ],
+    "mime": "application/x-f2fs-image",
+    "spec": "F2FS (Flash-Friendly File System)",
+    "notes": [
+      "Magic 0xF2F52010 at superblock offset 0 (byte offset 1024).",
+      "F2FS is designed for NAND flash storage (SSDs, eMMC, SD cards).",
+      "F2FS uses a log-structured approach with a node address table (NAT) and segment information table (SIT).",
+      "F2FS is the default filesystem on Android and is used in many embedded Linux systems.",
+      "F2FS supports compression (LZO, LZ4, zstd) and encryption."
+    ]
+  },
+  "updated": "2026-05-29"
+}

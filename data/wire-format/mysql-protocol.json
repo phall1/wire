@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/mysql-protocol",
+  "family": "wire-format",
+  "slug": "mysql-protocol",
+  "title": "MySQL protocol (packet structure)",
+  "summary": "MySQL's protocol is a packet-based TCP protocol. Each packet: 3-byte length (little-endian), 1-byte sequence number, then payload. The first packet from the server is the Handshake (protocol version, server version string, connection ID, auth plugin data, capabilities, status, character set). The client responds with a HandshakeResponse. Queries are sent as COM_QUERY packets (command byte 0x03 + SQL string).",
+  "kind": "wire-format",
+  "aliases": [
+    "MySQL protocol (packet structure)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MySQL Internals Manual",
+    "summary": "MySQL's protocol is a packet-based TCP protocol. Each packet: 3-byte length (little-endian), 1-byte sequence number, then payload. The first packet from the server is the Handshake (protocol version, server version string, connection ID, auth plugin data, capabilities, status, character set). The client responds with a HandshakeResponse. Queries are sent as COM_QUERY packets (command byte 0x03 + SQL string).",
+    "structure": [
+      {
+        "field": "Packet length",
+        "size": "3 bytes (little-endian)",
+        "meaning": "Length of the payload (max 16MB; larger payloads use multiple packets)."
+      },
+      {
+        "field": "Sequence number",
+        "size": "1 byte",
+        "meaning": "Packet sequence number (increments per packet in a command; resets to 0 for new commands)."
+      },
+      {
+        "field": "Payload",
+        "size": "= length",
+        "meaning": "Command byte + data, or result set, or error packet."
+      },
+      {
+        "field": "Handshake (server -> client)",
+        "size": "variable",
+        "meaning": "Protocol version (1) + server version (NUL-terminated) + connection ID (4) + auth plugin data part 1 (8) + filler (1) + capability flags (2/4) + charset (1) + status (2) + auth plugin data length (1) + reserved (10) + auth plugin data part 2 + auth plugin name (NUL-terminated)."
+      },
+      {
+        "field": "COM_QUERY",
+        "size": "variable",
+        "meaning": "Command byte 0x03 + SQL string (not NUL-terminated; length is the packet length)."
+      },
+      {
+        "field": "OK packet",
+        "size": "variable",
+        "meaning": "Header 0x00 + affected rows (varint) + last insert ID (varint) + status flags (2) + warnings (2) + info string."
+      },
+      {
+        "field": "ERR packet",
+        "size": "variable",
+        "meaning": "Header 0xFF + error code (2) + SQL state marker '#' + SQL state (5) + error message."
+      },
+      {
+        "field": "EOF packet",
+        "size": "5 bytes",
+        "meaning": "Header 0xFE + warnings (2) + status flags (2). (Deprecated in MySQL 5.7+; replaced by OK packet with 0xFE header.)"
+      }
+    ],
+    "example_hex": "13 00 00 00 03 53 45 4c 45 43 54 20 40 40 76 65 72 73 69 6f 6e",
+    "example_decoded": "MySQL COM_QUERY packet: length 19, seq 0, command 0x03, SQL 'SELECT @@version'",
+    "notes": [
+      "MySQL protocol uses little-endian byte order (unlike PostgreSQL's big-endian).",
+      "Prepared statements use COM_STMT_PREPARE (0x16) and COM_STMT_EXECUTE (0x17) with binary parameter encoding.",
+      "The binary protocol (COM_STMT_EXECUTE) sends parameters in a compact binary format with type codes.",
+      "MySQL 8.0 uses caching_sha2_password as the default auth plugin (replacing mysql_native_password).",
+      "X Protocol (MySQL 5.7+) is a separate protobuf-based protocol on port 33060."
+    ]
+  },
+  "updated": "2026-05-29"
+}

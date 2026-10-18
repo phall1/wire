@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/flatbuffers",
+  "family": "wire-format",
+  "slug": "flatbuffers",
+  "title": "FlatBuffers (flat binary serialization)",
+  "summary": "FlatBuffers is a zero-copy serialization format by Google. A FlatBuffer: root table offset (4 bytes, relative to the buffer start), then tables. Each table: vtable offset (relative, signed 32-bit), then fields. Vtables: size (2 bytes), number of fields (2 bytes), then field offsets (2 bytes each). Strings: 4-byte length + UTF-8 data + NUL padding. Vectors: 4-byte length + elements.",
+  "kind": "wire-format",
+  "aliases": [
+    "FlatBuffers (flat binary serialization)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "FlatBuffers (google.github.io/flatbuffers)",
+    "summary": "FlatBuffers is a zero-copy serialization format by Google. A FlatBuffer: root table offset (4 bytes, relative to the buffer start), then tables. Each table: vtable offset (relative, signed 32-bit), then fields. Vtables: size (2 bytes), number of fields (2 bytes), then field offsets (2 bytes each). Strings: 4-byte length + UTF-8 data + NUL padding. Vectors: 4-byte length + elements.",
+    "structure": [
+      {
+        "field": "Root table offset",
+        "size": "4 bytes (uoffset32)",
+        "meaning": "Offset from buffer start to the root table."
+      },
+      {
+        "field": "Table",
+        "size": "variable",
+        "meaning": "vtable offset (soffset32, signed) + field data (scalars, offsets to strings/vectors/tables)."
+      },
+      {
+        "field": "VTable",
+        "size": "variable",
+        "meaning": "vtable size (uint16) + number of fields (uint16) + field offsets (uint16 each, 0 = absent/default)."
+      },
+      {
+        "field": "String",
+        "size": "variable",
+        "meaning": "Length (uint32) + UTF-8 bytes + NUL terminator (padded to 4-byte alignment)."
+      },
+      {
+        "field": "Vector",
+        "size": "variable",
+        "meaning": "Length (uint32) + elements (padded to element alignment)."
+      },
+      {
+        "field": "Struct",
+        "size": "fixed",
+        "meaning": "Inline fixed-size data (no vtable, no indirection)."
+      }
+    ],
+    "example_hex": "10 00 00 00 00 00 08 00 0c 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "FlatBuffer: root offset 16, empty table with vtable",
+    "notes": [
+      "FlatBuffers requires no parsing/unpacking: access fields directly via offsets.",
+      "Vtables enable backward/forward compatibility (missing fields default to 0).",
+      "FlatBuffers is used by Android, game engines, ML (TensorFlow Lite), and high-performance systems.",
+      "Unlike protobuf, FlatBuffers does not need a schema at runtime (the vtable encodes the layout)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

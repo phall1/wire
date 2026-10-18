@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/capnproto",
+  "family": "wire-format",
+  "slug": "capnproto",
+  "title": "Cap'n Proto (zero-copy serialization)",
+  "summary": "Cap'n Proto is a zero-copy serialization format by the creator of Protocol Buffers. A Cap'n Proto message: segment table (number of segments + segment sizes), then segments (each a sequence of 64-bit words). Pointers (struct, list, text, data) are 64-bit values with type, offset, and size. Structs are fixed-size with a data section and pointer section. Lists can be of primitives, pointers, or structs.",
+  "kind": "wire-format",
+  "aliases": [
+    "Cap'n Proto (zero-copy serialization)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Cap'n Proto (capnproto.org)",
+    "summary": "Cap'n Proto is a zero-copy serialization format by the creator of Protocol Buffers. A Cap'n Proto message: segment table (number of segments + segment sizes), then segments (each a sequence of 64-bit words). Pointers (struct, list, text, data) are 64-bit values with type, offset, and size. Structs are fixed-size with a data section and pointer section. Lists can be of primitives, pointers, or structs.",
+    "structure": [
+      {
+        "field": "Segment count - 1",
+        "size": "4 bytes (uint32)",
+        "meaning": "Number of segments minus 1."
+      },
+      {
+        "field": "Padding",
+        "size": "4 bytes",
+        "meaning": "Zero padding to 8-byte alignment."
+      },
+      {
+        "field": "Segment sizes",
+        "size": "4 bytes each (uint32)",
+        "meaning": "Size of each segment in 8-byte words."
+      },
+      {
+        "field": "Segment data",
+        "size": "variable",
+        "meaning": "64-bit words: struct pointers, list pointers, text/data pointers, and primitive values."
+      },
+      {
+        "field": "Struct pointer",
+        "size": "8 bytes",
+        "meaning": "Type (2 bits) + offset (30 bits) + data size (16 bits) + pointer count (16 bits)."
+      },
+      {
+        "field": "List pointer",
+        "size": "8 bytes",
+        "meaning": "Type (2 bits) + offset (30 bits) + element size (3 bits) + element count (29 bits)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "Cap'n Proto: 1 segment, 0 words (empty message)",
+    "notes": [
+      "Cap'n Proto requires no parsing: the serialized bytes ARE the in-memory representation.",
+      "Built-in RPC protocol with promise pipelining.",
+      "Cap'n Proto is used by Cloudflare (Workers), Sandstorm, and high-performance systems.",
+      "Unlike FlatBuffers, Cap'n Proto supports complex types (unions, generics) and RPC."
+    ]
+  },
+  "updated": "2026-05-29"
+}

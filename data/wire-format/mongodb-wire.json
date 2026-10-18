@@ -1,0 +1,73 @@
+{
+  "id": "wire-format/mongodb-wire",
+  "family": "wire-format",
+  "slug": "mongodb-wire",
+  "title": "MongoDB wire protocol (OP_MSG)",
+  "summary": "MongoDB's wire protocol (since MongoDB 3.6) uses OP_MSG as the primary message type. An OP_MSG: header (standard message header: length, requestID, responseTo, opCode=2013), then flags (4 bytes), then sections. Sections: type 0 (body, a single BSON document) or type 1 (document sequence, with identifier + documents). Checksum (optional, 4 bytes CRC32C) follows.",
+  "kind": "wire-format",
+  "aliases": [
+    "MongoDB wire protocol (OP_MSG)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MongoDB wire protocol",
+    "summary": "MongoDB's wire protocol (since MongoDB 3.6) uses OP_MSG as the primary message type. An OP_MSG: header (standard message header: length, requestID, responseTo, opCode=2013), then flags (4 bytes), then sections. Sections: type 0 (body, a single BSON document) or type 1 (document sequence, with identifier + documents). Checksum (optional, 4 bytes CRC32C) follows.",
+    "structure": [
+      {
+        "field": "Message length",
+        "size": "4 bytes (int32)",
+        "meaning": "Total message size including header."
+      },
+      {
+        "field": "Request ID",
+        "size": "4 bytes (int32)",
+        "meaning": "Client-assigned request identifier."
+      },
+      {
+        "field": "Response to",
+        "size": "4 bytes (int32)",
+        "meaning": "Request ID being responded to (0 for requests)."
+      },
+      {
+        "field": "Op code",
+        "size": "4 bytes (int32)",
+        "meaning": "2013 = OP_MSG (the modern message type)."
+      },
+      {
+        "field": "Flags",
+        "size": "4 bytes (uint32)",
+        "meaning": "Bit 0 = checksumPresent, bit 1 = moreToCome, bit 16 = exhaustAllowed."
+      },
+      {
+        "field": "Section type",
+        "size": "1 byte",
+        "meaning": "0 = body (single BSON document), 1 = document sequence (identifier + count + documents)."
+      },
+      {
+        "field": "Body",
+        "size": "variable",
+        "meaning": "A single BSON document containing the command and its arguments."
+      },
+      {
+        "field": "Checksum",
+        "size": "4 bytes",
+        "meaning": "CRC32C of the message (if checksumPresent flag set)."
+      }
+    ],
+    "example_hex": "4d 00 00 00 01 00 00 00 00 00 00 00 dd 07 00 00 00 00 00 00",
+    "example_decoded": "OP_MSG header: length 77, requestID 1, responseTo 0, opCode 2013 (OP_MSG)",
+    "notes": [
+      "OP_MSG replaced the older OP_QUERY, OP_INSERT, OP_UPDATE, OP_DELETE, OP_GET_MORE, OP_KILL_CURSORS.",
+      "The body is a BSON document; the first key is the command name (e.g. 'find', 'insert', 'aggregate').",
+      "Document sequences (type 1) are used for bulk inserts.",
+      "MongoDB uses BSON (Binary JSON) for document storage and wire protocol."
+    ]
+  },
+  "updated": "2026-05-29"
+}

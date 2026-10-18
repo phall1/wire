@@ -1,0 +1,38 @@
+{
+  "id": "magic/ntfs",
+  "family": "magic",
+  "slug": "ntfs",
+  "title": "NTFS (New Technology File System) signature",
+  "summary": "NTFS volume boot record begins with a 3-byte jump instruction (EB 52 90 or EB 5B 90), followed by the 8-byte OEM ID 'NTFS    ' (0x4E 0x54 0x46 0x53 0x20 0x20 0x20 0x20) at offset 3.",
+  "kind": "signature",
+  "aliases": [
+    "ntfs magic",
+    ".ntfs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "EB 52 90 4E 54 46 53 20 20 20 20 20",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "ntfs"
+    ],
+    "mime": "application/x-ntfs-image",
+    "spec": "NTFS",
+    "notes": [
+      "Jump instruction: EB 52 90 (or EB 5B 90).",
+      "OEM ID: 'NTFS    ' (NTFS followed by 4 spaces) at offset 3.",
+      "Bytes per sector (offset 0x0B), sectors per cluster (0x0D), total sectors (0x28), MFT cluster number (0x30), MFT mirror cluster (0x38).",
+      "NTFS uses a Master File Table (MFT) with 1024-byte records per file.",
+      "NTFS supports journaling, ACLs, compression, encryption (EFS), and sparse files."
+    ]
+  },
+  "updated": "2026-05-29"
+}

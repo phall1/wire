@@ -1,0 +1,58 @@
+{
+  "id": "wire-format/hmac",
+  "family": "wire-format",
+  "slug": "hmac",
+  "title": "HMAC (Hash-based Message Authentication Code)",
+  "summary": "HMAC (RFC 2104) authenticates a message using a hash function and a secret key. HMAC(K, m) = H((K' XOR opad) || H((K' XOR ipad) || m)), where K' is the key padded to the hash's block size (with zeros or hashed if too long), ipad = 0x36 repeated, opad = 0x5C repeated.",
+  "kind": "wire-format",
+  "aliases": [
+    "HMAC (Hash-based Message Authentication Code)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 2104 / RFC 2202",
+    "summary": "HMAC (RFC 2104) authenticates a message using a hash function and a secret key. HMAC(K, m) = H((K' XOR opad) || H((K' XOR ipad) || m)), where K' is the key padded to the hash's block size (with zeros or hashed if too long), ipad = 0x36 repeated, opad = 0x5C repeated.",
+    "structure": [
+      {
+        "field": "Key K",
+        "size": "variable",
+        "meaning": "Secret key. If longer than the hash block size, hash it first. Pad to block size with zeros."
+      },
+      {
+        "field": "ipad",
+        "size": "block size",
+        "meaning": "0x36 repeated (block size = 64 for SHA-256, 128 for SHA-512)."
+      },
+      {
+        "field": "opad",
+        "size": "block size",
+        "meaning": "0x5C repeated."
+      },
+      {
+        "field": "Inner hash",
+        "size": "hash size",
+        "meaning": "H((K XOR ipad) || message)."
+      },
+      {
+        "field": "Outer hash",
+        "size": "hash size",
+        "meaning": "H((K XOR opad) || inner_hash). This is the MAC."
+      }
+    ],
+    "example_hex": "36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36",
+    "example_decoded": "HMAC-SHA256 ipad (0x36 repeated 64 times) before key XOR",
+    "notes": [
+      "HMAC is used in TLS (PRF), IPsec, JWT (HS256), and many authentication protocols.",
+      "The ipad/opad construction prevents length-extension attacks on the underlying hash.",
+      "HMAC is quantum-resistant (the hash function provides the security).",
+      "HMAC-SHA256 is the most common variant (JWT HS256, AWS Signature v4)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

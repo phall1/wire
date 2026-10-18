@@ -1,0 +1,38 @@
+{
+  "id": "magic/apfs",
+  "family": "magic",
+  "slug": "apfs",
+  "title": "APFS (Apple File System) signature",
+  "summary": "APFS (Apple File System) begins with a container superblock at block 0. The magic number is 'NXSB' (0x4E 0x58 0x53 0x42) at offset 32 within the superblock (block 0, offset 32).",
+  "kind": "signature",
+  "aliases": [
+    "apfs magic",
+    ".apfs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4E 58 53 42",
+    "offset": 32,
+    "magic_ascii": "",
+    "extensions": [
+      "apfs"
+    ],
+    "mime": "application/x-apfs-image",
+    "spec": "APFS (Apple File System)",
+    "notes": [
+      "Magic 'NXSB' (0x4E 0x58 0x53 0x42) at offset 32 of block 0.",
+      "APFS uses copy-on-write (CoW) with a container/volume architecture.",
+      "Features: snapshots, clones, encryption (per-file and per-volume), space sharing, fast directory sizing.",
+      "APFS is the default filesystem on macOS 10.13+, iOS 10.3+, and all Apple platforms.",
+      "APFS block size is typically 4096 bytes."
+    ]
+  },
+  "updated": "2026-05-29"
+}

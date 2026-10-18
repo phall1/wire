@@ -1,0 +1,68 @@
+{
+  "id": "wire-format/brotli-format",
+  "family": "wire-format",
+  "slug": "brotli-format",
+  "title": "Brotli compressed data format",
+  "summary": "Brotli is a compression format developed by Google, optimized for web content. A Brotli stream: window size (WBITS), then meta-blocks. Each meta-block: ISLAST (1 bit), ISUNCOMPRESSED (1 bit), optional data length (MLEN), then block data (literals with context modeling + backward references with a large window up to 16MB).",
+  "kind": "wire-format",
+  "aliases": [
+    "Brotli compressed data format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 7932",
+    "summary": "Brotli is a compression format developed by Google, optimized for web content. A Brotli stream: window size (WBITS), then meta-blocks. Each meta-block: ISLAST (1 bit), ISUNCOMPRESSED (1 bit), optional data length (MLEN), then block data (literals with context modeling + backward references with a large window up to 16MB).",
+    "structure": [
+      {
+        "field": "WBITS",
+        "size": "variable",
+        "meaning": "Window size: 0-15 (16-17) or 16-30 (1MB-16MB window). Encoded as a variable-length code."
+      },
+      {
+        "field": "ISLAST",
+        "size": "1 bit",
+        "meaning": "1 if this is the last meta-block."
+      },
+      {
+        "field": "ISUNCOMPRESSED",
+        "size": "1 bit",
+        "meaning": "1 if the meta-block is stored uncompressed."
+      },
+      {
+        "field": "MNIBBLES",
+        "size": "2 bits",
+        "meaning": "Number of nibbles for MLEN (0 = no MLEN, 1-3 = 1-3 nibbles)."
+      },
+      {
+        "field": "MLEN",
+        "size": "variable",
+        "meaning": "Meta-block data length (if MNIBBLES > 0)."
+      },
+      {
+        "field": "Block data",
+        "size": "variable",
+        "meaning": "Literals (context-dependent Huffman) + backward references (distance + length, with a 120-entry static dictionary for common web terms)."
+      },
+      {
+        "field": "Trailer",
+        "size": "0 bits",
+        "meaning": "No explicit trailer; the stream ends with ISLAST=1."
+      }
+    ],
+    "example_hex": "06 00",
+    "example_decoded": "Brotli: WBITS 16 (1MB window), empty stream (ISLAST=1, ISUNCOMPRESSED=0, MLEN=0)",
+    "notes": [
+      "Brotli's static dictionary contains ~13,000 common words/phrases from web content, improving compression of HTML/CSS/JS.",
+      "Window size up to 16MB (WBITS up to 30).",
+      "Brotli is used by HTTPS (Content-Encoding: br), WOFF2 fonts, and many web servers.",
+      "Compression levels 0-11; higher levels are slower but compress better."
+    ]
+  },
+  "updated": "2026-05-29"
+}

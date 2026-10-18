@@ -1,0 +1,89 @@
+{
+  "id": "wire-format/redis-resp",
+  "family": "wire-format",
+  "slug": "redis-resp",
+  "title": "Redis RESP (REdis Serialization Protocol)",
+  "summary": "Redis uses RESP (REdis Serialization Protocol), a text-based protocol. RESP3 (Redis 6+) adds new types. Types: Simple String (+...\\r\\n), Error (-...\\r\\n), Integer (:...\\r\\n), Bulk String ($len\\r\\n data \\r\\n), Array (*count\\r\\n ...), Null (_\\r\\n), Boolean (#t/f\\r\\n), Double (,...\\r\\n), Big Number (,...\\r\\n), Bulk Error (!len\\r\\n ...), Verbatim String (=len\\r\\n fmt:...), Map (%count\\r\\n), Set (~count\\r\\n), Attribute (|count\\r\\n), Push (>count\\r\\n).",
+  "kind": "wire-format",
+  "aliases": [
+    "Redis RESP (REdis Serialization Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Redis protocol specification",
+    "summary": "Redis uses RESP (REdis Serialization Protocol), a text-based protocol. RESP3 (Redis 6+) adds new types. Types: Simple String (+...\\r\\n), Error (-...\\r\\n), Integer (:...\\r\\n), Bulk String ($len\\r\\n data \\r\\n), Array (*count\\r\\n ...), Null (_\\r\\n), Boolean (#t/f\\r\\n), Double (,...\\r\\n), Big Number (,...\\r\\n), Bulk Error (!len\\r\\n ...), Verbatim String (=len\\r\\n fmt:...), Map (%count\\r\\n), Set (~count\\r\\n), Attribute (|count\\r\\n), Push (>count\\r\\n).",
+    "structure": [
+      {
+        "field": "Simple String",
+        "size": "variable",
+        "meaning": "'+' + string + '\\r\\n'. No binary data, no newlines."
+      },
+      {
+        "field": "Error",
+        "size": "variable",
+        "meaning": "'-' + error message + '\\r\\n'."
+      },
+      {
+        "field": "Integer",
+        "size": "variable",
+        "meaning": "':' + integer + '\\r\\n'."
+      },
+      {
+        "field": "Bulk String",
+        "size": "variable",
+        "meaning": "'$' + length + '\\r\\n' + data + '\\r\\n'. Length -1 = null."
+      },
+      {
+        "field": "Array",
+        "size": "variable",
+        "meaning": "'*' + count + '\\r\\n' + elements. Count -1 = null."
+      },
+      {
+        "field": "Null (RESP3)",
+        "size": "3 bytes",
+        "meaning": "'_\\r\\n'."
+      },
+      {
+        "field": "Boolean (RESP3)",
+        "size": "4 bytes",
+        "meaning": "'#t\\r\\n' or '#f\\r\\n'."
+      },
+      {
+        "field": "Double (RESP3)",
+        "size": "variable",
+        "meaning": "',' + double + '\\r\\n' (e.g. ',3.14159\\r\\n' or ',inf\\r\\n')."
+      },
+      {
+        "field": "Map (RESP3)",
+        "size": "variable",
+        "meaning": "'%' + count + '\\r\\n' + key-value pairs."
+      },
+      {
+        "field": "Set (RESP3)",
+        "size": "variable",
+        "meaning": "'~' + count + '\\r\\n' + elements."
+      },
+      {
+        "field": "Push (RESP3)",
+        "size": "variable",
+        "meaning": "'>' + count + '\\r\\n' + elements (for pub/sub messages)."
+      }
+    ],
+    "example_hex": "2a 32 0d 0a 24 34 0d 0a 50 49 4e 47 0d 0a 24 34 0d 0a 70 6f 6e 67 0d 0a",
+    "example_decoded": "RESP Array: *2\\r\\n $4\\r\\n PING\\r\\n $4\\r\\n pong\\r\\n",
+    "notes": [
+      "RESP is human-readable and easy to parse.",
+      "RESP2 (default) has 5 types: Simple String, Error, Integer, Bulk String, Array.",
+      "RESP3 (Redis 6+) adds 8 more types for richer data (Maps, Sets, Doubles, etc.).",
+      "Redis commands are sent as arrays of bulk strings: *3\\r\\n $3\\r\\n SET\\r\\n $3\\r\\n key\\r\\n $5\\r\\n value\\r\\n.",
+      "Pub/sub uses Push messages (RESP3) or inline messages (RESP2)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

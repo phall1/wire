@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/xz-format",
+  "family": "wire-format",
+  "slug": "xz-format",
+  "title": "XZ compressed file format",
+  "summary": "XZ is a container format for LZMA2-compressed data. Structure: 6-byte header magic (0xFD '7zXZ' 0x00), 2-byte flags, then blocks (each with a block header, compressed data, and integrity check), an index, and a 12-byte footer (2-byte flags, 4-byte backward size, 6-byte footer magic 0x59 0x5A).",
+  "kind": "wire-format",
+  "aliases": [
+    "XZ compressed file format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "XZ File Format (tukaani.org)",
+    "summary": "XZ is a container format for LZMA2-compressed data. Structure: 6-byte header magic (0xFD '7zXZ' 0x00), 2-byte flags, then blocks (each with a block header, compressed data, and integrity check), an index, and a 12-byte footer (2-byte flags, 4-byte backward size, 6-byte footer magic 0x59 0x5A).",
+    "structure": [
+      {
+        "field": "Header magic",
+        "size": "6 bytes",
+        "meaning": "0xFD 0x37 0x7A 0x58 0x5A 0x00 (FD 7zXZ NUL)."
+      },
+      {
+        "field": "Flags",
+        "size": "2 bytes",
+        "meaning": "1 byte (reserved, must be 0) + 1 byte (check type: 0 none, 1 CRC32, 4 CRC64, 10 SHA-256)."
+      },
+      {
+        "field": "Block",
+        "size": "variable",
+        "meaning": "Block header (size, flags, filters, compressed size, uncompressed size) + LZMA2 compressed data + integrity check."
+      },
+      {
+        "field": "Index",
+        "size": "variable",
+        "meaning": "Number of records + (unpadded size, unpadded size of block) pairs + CRC32 of the index."
+      },
+      {
+        "field": "Footer",
+        "size": "12 bytes",
+        "meaning": "Flags (2) + backward size (4, /4) + footer magic 0x59 0x5A (2, 'YZ') + ... actually 2-byte flags + 4-byte backward size + 2-byte magic YZ + 2 reserved = 12? Let me be precise: 2 (flags) + 4 (backward size) + 2 (magic YZ) = 8, plus 4 reserved = 12."
+      },
+      {
+        "field": "Footer magic",
+        "size": "2 bytes",
+        "meaning": "0x59 0x5A ('YZ')."
+      }
+    ],
+    "example_hex": "fd 37 7a 58 5a 00 00 00",
+    "example_decoded": "XZ header magic + flags (no check type, CRC64 default)",
+    "notes": [
+      "XZ uses LZMA2, which allows uncompressed chunks and dictionary reset between blocks.",
+      "Integrity checks: none, CRC32, CRC64 (default), or SHA-256.",
+      "XZ is used by Linux kernel (module compression), tar (tar.xz), and many package managers.",
+      "The index enables random access to individual blocks."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/snappy-format",
+  "family": "wire-format",
+  "slug": "snappy-format",
+  "title": "Snappy compressed data format",
+  "summary": "Snappy is Google's fast compression format. The frame format: stream identifier (chunk type 0xFF, 'snappy' magic), then chunks. Each chunk: 1-byte type (0x00 compressed, 0x01 uncompressed, 0x02 padding, 0x80-0xFD reserved, 0xFE CRC32C, 0xFF stream identifier), 3-byte length, then data. Compressed chunks use a simple LZ77-like scheme with varint lengths.",
+  "kind": "wire-format",
+  "aliases": [
+    "Snappy compressed data format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Snappy (github.com/google/snappy)",
+    "summary": "Snappy is Google's fast compression format. The frame format: stream identifier (chunk type 0xFF, 'snappy' magic), then chunks. Each chunk: 1-byte type (0x00 compressed, 0x01 uncompressed, 0x02 padding, 0x80-0xFD reserved, 0xFE CRC32C, 0xFF stream identifier), 3-byte length, then data. Compressed chunks use a simple LZ77-like scheme with varint lengths.",
+    "structure": [
+      {
+        "field": "Stream identifier chunk",
+        "size": "10 bytes",
+        "meaning": "Type 0xFF, length 6, data 'sNaPpY' (0x73 0x4E 0x61 0x50 0x70 0x59)."
+      },
+      {
+        "field": "Compressed chunk",
+        "size": "variable",
+        "meaning": "Type 0x00, 3-byte length, then: varint uncompressed length, then tagged literals/matches."
+      },
+      {
+        "field": "Uncompressed chunk",
+        "size": "variable",
+        "meaning": "Type 0x01, 3-byte length, then raw data."
+      },
+      {
+        "field": "CRC32C chunk",
+        "size": "4 bytes",
+        "meaning": "Type 0xFE, length 4, CRC32C of the uncompressed data (optional)."
+      },
+      {
+        "field": "Tagged literal",
+        "size": "variable",
+        "meaning": "Tag 00 (2 bits): literal; length in 6 bits or varint; then literal bytes."
+      },
+      {
+        "field": "Tagged copy",
+        "size": "variable",
+        "meaning": "Tag 01 (offset < 2048, len 4-11), 10 (offset < 65536, len 1-64), 11 (offset any, len 1-64): back-reference."
+      }
+    ],
+    "example_hex": "ff 06 00 00 73 4e 61 50 70 59",
+    "example_decoded": "Snappy stream identifier chunk",
+    "notes": [
+      "Snappy targets ~250 MB/s compression and ~500 MB/s decompression.",
+      "Snappy does not aim for maximum compression ratio; speed is the priority.",
+      "Used by LevelDB, RocksDB, Cassandra, Hadoop, and many databases.",
+      "The compressed format uses 2-bit tags: 00 = literal, 01 = copy with 1-byte offset, 10 = copy with 2-byte offset, 11 = copy with 4-byte offset."
+    ]
+  },
+  "updated": "2026-05-29"
+}

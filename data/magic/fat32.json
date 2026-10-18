@@ -1,0 +1,46 @@
+{
+  "id": "magic/fat32",
+  "family": "magic",
+  "slug": "fat32",
+  "title": "FAT32 (File Allocation Table) signature",
+  "summary": "A FAT32 volume boot record begins with a 3-byte jump (EB 58 90 or EB 3C 90), followed by the 8-byte OEM name. The FAT type is determined by the number of clusters: FAT12 (<4085), FAT16 (<65525), FAT32 (>=65525). The signature 0x55 0xAA at offset 510-511 identifies a valid boot sector.",
+  "kind": "signature",
+  "aliases": [
+    "fat32 magic",
+    ".fat",
+    ".fat32",
+    ".fat16",
+    ".fat12"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "EB 58 90",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "fat",
+      "fat32",
+      "fat16",
+      "fat12"
+    ],
+    "mime": "application/x-fat-image",
+    "spec": "FAT (File Allocation Table)",
+    "notes": [
+      "Jump instruction: EB 58 90 (FAT32) or EB 3C 90 (FAT12/16).",
+      "Bytes per sector at offset 0x0B (usually 512), sectors per cluster at 0x0D.",
+      "Total sectors at 0x20 (FAT32) or 0x13 (FAT12/16).",
+      "Sectors per FAT at 0x24 (FAT32) or 0x16 (FAT12/16).",
+      "Root directory cluster at 0x2C (FAT32).",
+      "Magic 0x55 0xAA at offset 510-511 (boot sector signature).",
+      "FAT is the universal filesystem for USB drives, SD cards, and UEFI system partitions."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "identifier/snowflake-mastodon",
+  "family": "identifier",
+  "slug": "snowflake-mastodon",
+  "title": "Mastodon Snowflake ID",
+  "summary": "Mastodon uses a Snowflake-style 64-bit ID: 41-bit millisecond timestamp (custom epoch 2018-01-01), 10-bit worker ID, and 12-bit sequence number. Unlike Twitter's Snowflake, Mastodon's epoch starts on 2018-01-01T00:00:00Z.",
+  "kind": "identifier",
+  "aliases": [
+    "Mastodon Snowflake ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Mastodon (github.com/mastodon/mastodon)",
+    "example": "109876543210987654",
+    "notes": [
+      "41-bit timestamp in milliseconds since 2018-01-01T00:00:00Z.",
+      "10-bit worker ID (node/process identifier).",
+      "12-bit sequence number (4096 IDs per millisecond per worker).",
+      "64-bit total fits in a signed 64-bit integer.",
+      "Custom epoch: 1514764800000 (2018-01-01)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

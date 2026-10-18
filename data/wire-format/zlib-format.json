@@ -1,0 +1,58 @@
+{
+  "id": "wire-format/zlib-format",
+  "family": "wire-format",
+  "slug": "zlib-format",
+  "title": "zlib compressed data format (RFC 1950)",
+  "summary": "zlib wraps a DEFLATE stream with a 2-byte header (CMF + FLG) and a 4-byte Adler-32 trailer. The header encodes the compression method (always 8 = DEFLATE), window size, and flags. The FLG byte's high 4 bits must make (CMF*256 + FLG) a multiple of 31.",
+  "kind": "wire-format",
+  "aliases": [
+    "zlib compressed data format (RFC 1950)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 1950",
+    "summary": "zlib wraps a DEFLATE stream with a 2-byte header (CMF + FLG) and a 4-byte Adler-32 trailer. The header encodes the compression method (always 8 = DEFLATE), window size, and flags. The FLG byte's high 4 bits must make (CMF*256 + FLG) a multiple of 31.",
+    "structure": [
+      {
+        "field": "CMF",
+        "size": "1 byte",
+        "meaning": "Compression Method and Flags: low 4 bits = CM (8 = DEFLATE), high 4 bits = CINFO (log2(window size) - 8, so 7 = 32KB window)."
+      },
+      {
+        "field": "FLG",
+        "size": "1 byte",
+        "meaning": "Flags: bits 0-4 = FCHECK (makes CMF*256+FLG divisible by 31), bit 5 = FDICT (preset dictionary), bits 6-7 = FLEVEL (compression level)."
+      },
+      {
+        "field": "Dictionary ID",
+        "size": "4 bytes",
+        "meaning": "Present only if FDICT is set; Adler-32 of the preset dictionary."
+      },
+      {
+        "field": "Compressed data",
+        "size": "variable",
+        "meaning": "DEFLATE bitstream."
+      },
+      {
+        "field": "Adler-32",
+        "size": "4 bytes",
+        "meaning": "Adler-32 checksum of the uncompressed data (big-endian)."
+      }
+    ],
+    "example_hex": "78 9c 03 00 00 00 00 01",
+    "example_decoded": "zlib header (CMF=0x78 DEFLATE/32KB, FLG=0x9C) + empty stored block + Adler-32 of empty (0x00000001)",
+    "notes": [
+      "zlib is used by HTTP (Content-Encoding: deflate), PNG (IDAT uses zlib), PDF, and many protocols.",
+      "Adler-32 is faster than CRC-32 but less robust for error detection.",
+      "Preset dictionaries (FDICT) improve compression for small, similar messages.",
+      "Compression levels 0-9 map to FLEVEL: 0=fastest, 1=fast, 2=default, 3=best."
+    ]
+  },
+  "updated": "2026-05-29"
+}

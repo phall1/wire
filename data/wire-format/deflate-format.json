@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/deflate-format",
+  "family": "wire-format",
+  "slug": "deflate-format",
+  "title": "DEFLATE compressed data format (RFC 1951)",
+  "summary": "DEFLATE is the core compression algorithm used by gzip, zlib, and ZIP. It combines LZ77 (sliding window, 32KB) with Huffman coding. The bitstream consists of blocks: each block has a 3-bit header (BFINAL, BTYPE) followed by either stored data, fixed Huffman codes, or dynamic Huffman codes with a code-length alphabet.",
+  "kind": "wire-format",
+  "aliases": [
+    "DEFLATE compressed data format (RFC 1951)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 1951",
+    "summary": "DEFLATE is the core compression algorithm used by gzip, zlib, and ZIP. It combines LZ77 (sliding window, 32KB) with Huffman coding. The bitstream consists of blocks: each block has a 3-bit header (BFINAL, BTYPE) followed by either stored data, fixed Huffman codes, or dynamic Huffman codes with a code-length alphabet.",
+    "structure": [
+      {
+        "field": "BFINAL",
+        "size": "1 bit",
+        "meaning": "1 if this is the last block."
+      },
+      {
+        "field": "BTYPE",
+        "size": "2 bits",
+        "meaning": "00 = stored (uncompressed), 01 = fixed Huffman, 10 = dynamic Huffman, 11 = reserved (error)."
+      },
+      {
+        "field": "Stored block",
+        "size": "variable",
+        "meaning": "If BTYPE=00: LEN (2 bytes) + NLEN (2 bytes, one's complement) + LEN bytes of literal data."
+      },
+      {
+        "field": "Fixed Huffman",
+        "size": "variable",
+        "meaning": "If BTYPE=01: literals 0-143 = 8 bits, 144-255 = 9 bits, 256-279 = 7 bits, 280-287 = 8 bits; distances 0-31 = 5 bits."
+      },
+      {
+        "field": "Dynamic Huffman",
+        "size": "variable",
+        "meaning": "If BTYPE=10: code length counts (5 bits each for 286 lit/len + 30 dist codes), then code lengths for the code-length alphabet, then the actual lit/len and distance code lengths, then the compressed data."
+      },
+      {
+        "field": "LZ77 match",
+        "size": "variable",
+        "meaning": "A back-reference: <length (3-258), distance (1-32768)> encoded as (length code, extra bits) + (distance code, extra bits)."
+      },
+      {
+        "field": "End of block",
+        "size": "variable",
+        "meaning": "Literal 256 (end-of-block symbol) terminates each block."
+      }
+    ],
+    "example_hex": "03 00",
+    "example_decoded": "Minimal empty DEFLATE stream (BFINAL=1, BTYPE=00 stored, LEN=0)",
+    "notes": [
+      "LZ77 window size is 32768 bytes (32KB).",
+      "Huffman codes are canonical: shorter codes for more frequent symbols.",
+      "Distance codes 0-29 map to distances 1-32768 with extra bits for larger ranges.",
+      "Length codes 257-285 map to lengths 3-258.",
+      "DEFLATE is used by gzip, zlib, ZIP, PNG (IDAT), PDF, and many others."
+    ]
+  },
+  "updated": "2026-05-29"
+}

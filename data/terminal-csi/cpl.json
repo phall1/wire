@@ -1,0 +1,57 @@
+{
+  "id": "terminal-csi/cpl",
+  "family": "terminal-csi",
+  "slug": "cpl",
+  "title": "CSI CPL — Cursor Previous Line",
+  "summary": "CSI Pn F moves the cursor to the beginning of the Pn-th previous line (default 1). Equivalent to CSI Pn A followed by CSI 1 G (cursor column 1).",
+  "kind": "control-sequence",
+  "aliases": [
+    "CPL",
+    "CSI CPL — Cursor Previous Line"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CPL",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'F'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "cpl",
+        "anchor": "#cpl",
+        "name": "CPL",
+        "meaning": "CSI Pn F moves the cursor to column 1 of the Pn-th line above.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[1F",
+        "byte_sequence_ST_readable": "ESC [ 1 F (previous line)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Pn defaults to 1.",
+      "CPL does not scroll; it clamps at the top of the screen.",
+      "Equivalent to CUU + CHA(1)."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'F'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

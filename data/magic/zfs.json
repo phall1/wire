@@ -1,0 +1,38 @@
+{
+  "id": "magic/zfs",
+  "family": "magic",
+  "slug": "zfs",
+  "title": "ZFS (Zettabyte File System) signature",
+  "summary": "ZFS pool labels are located at the beginning and end of each vdev (disk). The label contains a 4KB block with magic 0x00BAB10C at offset 0 (the uberblock magic). The pool name and configuration are stored in the label's nvlist.",
+  "kind": "signature",
+  "aliases": [
+    "zfs magic",
+    ".zfs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "00 BA B1 0C",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "zfs"
+    ],
+    "mime": "application/x-zfs-image",
+    "spec": "ZFS",
+    "notes": [
+      "Uberblock magic: 0x00BAB10C (little-endian: 0C B1 BA 00).",
+      "Labels are at offsets 0, 1 * 256KB, 2 * 256KB, 3 * 256KB from the start, and symmetrically from the end.",
+      "ZFS is a copy-on-write filesystem with built-in RAID (RAID-Z), snapshots, clones, compression, and checksums.",
+      "ZFS uses 256-bit checksums (Fletcher4 or SHA-256) for all data and metadata.",
+      "ZFS is used by FreeBSD, Linux (OpenZFS), and Illumos."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "wire-format/poly1305",
+  "family": "wire-format",
+  "slug": "poly1305",
+  "title": "Poly1305 one-time MAC",
+  "summary": "Poly1305 is a one-time MAC (RFC 8439) that authenticates a message using a 256-bit one-time key. The key is split into r (128 bits, clamped) and s (128 bits). The message is processed in 16-byte blocks, each interpreted as a little-endian integer and multiplied by r modulo 2^130-5. The final tag is (accumulator + s) mod 2^128.",
+  "kind": "wire-format",
+  "aliases": [
+    "Poly1305 one-time MAC"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8439",
+    "summary": "Poly1305 is a one-time MAC (RFC 8439) that authenticates a message using a 256-bit one-time key. The key is split into r (128 bits, clamped) and s (128 bits). The message is processed in 16-byte blocks, each interpreted as a little-endian integer and multiplied by r modulo 2^130-5. The final tag is (accumulator + s) mod 2^128.",
+    "structure": [
+      {
+        "field": "One-time key",
+        "size": "32 bytes",
+        "meaning": "r (16 bytes, clamped: r &= 0x0ffffffc0ffffffc0ffffffc0fffffff) + s (16 bytes)."
+      },
+      {
+        "field": "Message block",
+        "size": "16 bytes",
+        "meaning": "Each 16-byte chunk interpreted as a little-endian integer, with a 0x01 byte appended (for the final partial block, pad with zeros then 0x01)."
+      },
+      {
+        "field": "Accumulator",
+        "size": "17 bytes (136 bits)",
+        "meaning": "Running sum mod 2^130-5. Initialized to 0."
+      },
+      {
+        "field": "Tag",
+        "size": "16 bytes",
+        "meaning": "Final tag = (accumulator + s) mod 2^128 (low 128 bits)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "Poly1305 one-time key (all zeros, for illustration)",
+    "notes": [
+      "Poly1305 is always used with a nonce-based cipher (ChaCha20, AES) to derive the one-time key.",
+      "The clamping of r ensures the multiplication is safe (no carry overflow).",
+      "Poly1305 processes ~1-2 GB/s in software.",
+      "ChaCha20-Poly1305 is the AEAD used by TLS 1.3, WireGuard, and SSH."
+    ]
+  },
+  "updated": "2026-05-29"
+}

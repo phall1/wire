@@ -1,0 +1,73 @@
+{
+  "id": "wire-format/lz4-frame",
+  "family": "wire-format",
+  "slug": "lz4-frame",
+  "title": "LZ4 frame format",
+  "summary": "LZ4 is an extremely fast compression algorithm. The LZ4 frame format: 4-byte magic (0x184D2204), frame descriptor (flags + optional content size + dictionary ID + content checksum flag), then blocks (each with a 4-byte size, compressed or uncompressed), then an end mark (0x00000000) and optional content checksum.",
+  "kind": "wire-format",
+  "aliases": [
+    "LZ4 frame format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "LZ4 frame format (github.com/lz4/lz4)",
+    "summary": "LZ4 is an extremely fast compression algorithm. The LZ4 frame format: 4-byte magic (0x184D2204), frame descriptor (flags + optional content size + dictionary ID + content checksum flag), then blocks (each with a 4-byte size, compressed or uncompressed), then an end mark (0x00000000) and optional content checksum.",
+    "structure": [
+      {
+        "field": "Magic number",
+        "size": "4 bytes",
+        "meaning": "0x184D2204 (little-endian)."
+      },
+      {
+        "field": "FLG",
+        "size": "1 byte",
+        "meaning": "Bit 7-6: version (01), bit 5: block independence, bit 4: block checksum, bit 3: content size, bit 2: content checksum, bit 1-0: reserved (0)."
+      },
+      {
+        "field": "BD",
+        "size": "1 byte",
+        "meaning": "Block max size: 4 (64KB), 5 (256KB), 6 (1MB), 7 (4MB)."
+      },
+      {
+        "field": "Content size",
+        "size": "0 or 8 bytes",
+        "meaning": "Size of uncompressed content (if FLG content size flag set)."
+      },
+      {
+        "field": "Dictionary ID",
+        "size": "0 or 4 bytes",
+        "meaning": "ID of the dictionary (if FLG reserved/dict flag set)."
+      },
+      {
+        "field": "HC",
+        "size": "1 byte",
+        "meaning": "Header checksum (XXH32 of the header bytes, low byte)."
+      },
+      {
+        "field": "Block",
+        "size": "variable",
+        "meaning": "4-byte block size (MSB = uncompressed flag) + block data. Size 0 = end mark."
+      },
+      {
+        "field": "Content checksum",
+        "size": "0 or 4 bytes",
+        "meaning": "XXH32 of the uncompressed content (if FLG content checksum flag set)."
+      }
+    ],
+    "example_hex": "04 22 4d 18 40 40 00 00 00 00",
+    "example_decoded": "LZ4 magic + frame descriptor (version 1, 64KB blocks, no content size/checksum)",
+    "notes": [
+      "LZ4 achieves ~500 MB/s+ compression and ~2 GB/s+ decompression.",
+      "Block independence: each block can be decompressed independently (random access).",
+      "LZ4 is used by ZFS, Linux kernel (module compression), Hadoop, and many databases.",
+      "The raw LZ4 block format (without frame) is simpler: token (4 bits literal length + 4 bits match length) + literals + offset + extra lengths."
+    ]
+  },
+  "updated": "2026-05-29"
+}

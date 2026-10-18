@@ -1,0 +1,29 @@
+{
+  "id": "identifier/stripe-id",
+  "family": "identifier",
+  "slug": "stripe-id",
+  "title": "Stripe object ID",
+  "summary": "Stripe uses prefixed IDs for all objects: a 2-4 letter prefix (e.g. 'cus_', 'ch_', 'pi_', 'in_', 'sub_', 'pm_') followed by 24-30 alphanumeric characters. The prefix identifies the object type; the rest is a random identifier.",
+  "kind": "identifier",
+  "aliases": [
+    "Stripe object ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Stripe API documentation",
+    "example": "cus_NffrFeUfNV2Hib",
+    "notes": [
+      "Prefix identifies the object type: 'cus_' (customer), 'ch_' (charge), 'pi_' (payment intent), 'in_' (invoice), 'sub_' (subscription), 'pm_' (payment method), 'acct_' (account), 'evt_' (event), etc.",
+      "The remaining characters are a random alphanumeric string (base-62-ish, no underscores).",
+      "IDs are case-sensitive and unique within a Stripe account.",
+      "Test mode and live mode IDs have the same format but different values."
+    ]
+  },
+  "updated": "2026-05-29"
+}

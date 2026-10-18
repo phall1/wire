@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/aes-block",
+  "family": "wire-format",
+  "slug": "aes-block",
+  "title": "AES (Advanced Encryption Standard) block structure",
+  "summary": "AES is a symmetric block cipher with a 128-bit block size and key sizes of 128, 192, or 256 bits. A 128-bit block is a 4x4 matrix of bytes (state). Encryption: initial AddRoundKey, then (Nr-1) rounds of SubBytes (S-box), ShiftRows, MixColumns, AddRoundKey, then a final round without MixColumns. Nr = 10 (128-bit key), 12 (192-bit), or 14 (256-bit).",
+  "kind": "wire-format",
+  "aliases": [
+    "AES (Advanced Encryption Standard) block structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "FIPS 197 (AES)",
+    "summary": "AES is a symmetric block cipher with a 128-bit block size and key sizes of 128, 192, or 256 bits. A 128-bit block is a 4x4 matrix of bytes (state). Encryption: initial AddRoundKey, then (Nr-1) rounds of SubBytes (S-box), ShiftRows, MixColumns, AddRoundKey, then a final round without MixColumns. Nr = 10 (128-bit key), 12 (192-bit), or 14 (256-bit).",
+    "structure": [
+      {
+        "field": "State",
+        "size": "16 bytes (128 bits)",
+        "meaning": "4x4 matrix of bytes, column-major order. Input plaintext block."
+      },
+      {
+        "field": "SubBytes",
+        "size": "in-place",
+        "meaning": "Each byte replaced by S-box lookup (non-linear substitution, 256-entry table)."
+      },
+      {
+        "field": "ShiftRows",
+        "size": "in-place",
+        "meaning": "Row i shifted left by i bytes (row 0: 0, row 1: 1, row 2: 2, row 3: 3)."
+      },
+      {
+        "field": "MixColumns",
+        "size": "in-place",
+        "meaning": "Each column multiplied by a fixed 4x4 matrix over GF(2^8) (polynomial 0x11B)."
+      },
+      {
+        "field": "AddRoundKey",
+        "size": "16 bytes",
+        "meaning": "XOR state with the round key (128 bits, derived by key schedule)."
+      },
+      {
+        "field": "Key schedule",
+        "size": "11/13/15 round keys",
+        "meaning": "Expands the cipher key into (Nr+1) round keys using RotWord, SubWord (S-box), and Rcon (round constant)."
+      }
+    ],
+    "example_hex": "00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff",
+    "example_decoded": "AES input block (plaintext) in column-major order",
+    "notes": [
+      "AES operates on 128-bit (16-byte) blocks regardless of key size.",
+      "Modes of operation: ECB (insecure, don't use), CBC, CTR, GCM (authenticated), CCM.",
+      "AES-NI instructions (Intel/AMD) accelerate SubBytes and MixColumns.",
+      "GCM (Galois/Counter Mode) is the most common authenticated encryption mode (TLS, IPsec, etc.).",
+      "AES-256 is quantum-resistant (Grover's algorithm halves the effective key length to 128 bits)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

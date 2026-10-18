@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/postgres-protocol",
+  "family": "wire-format",
+  "slug": "postgres-protocol",
+  "title": "PostgreSQL frontend/backend protocol",
+  "summary": "PostgreSQL's wire protocol is a message-based TCP protocol. Each message: 1-byte type (for frontend messages; backend messages have a type byte too), 4-byte length (including itself), then payload. Startup: SSL request (optional), StartupMessage (protocol version 3.0 + parameters), Authentication (md5/scram), then ReadyForQuery. Queries: SimpleQuery ('Q' + SQL string) or Extended Query (Parse/Bind/Execute/Sync).",
+  "kind": "wire-format",
+  "aliases": [
+    "PostgreSQL frontend/backend protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "PostgreSQL documentation (protocol)",
+    "summary": "PostgreSQL's wire protocol is a message-based TCP protocol. Each message: 1-byte type (for frontend messages; backend messages have a type byte too), 4-byte length (including itself), then payload. Startup: SSL request (optional), StartupMessage (protocol version 3.0 + parameters), Authentication (md5/scram), then ReadyForQuery. Queries: SimpleQuery ('Q' + SQL string) or Extended Query (Parse/Bind/Execute/Sync).",
+    "structure": [
+      {
+        "field": "Message type",
+        "size": "1 byte",
+        "meaning": "Frontend: 'Q' (query), 'P' (parse), 'B' (bind), 'E' (execute), 'S' (sync), 'X' (terminate), 'p' (password). Backend: 'R' (auth), 'S' (parameter status), 'K' (backend key), 'Z' (ready for query), 'T' (row description), 'D' (data row), 'C' (command complete), 'E' (error), 'N' (notice)."
+      },
+      {
+        "field": "Length",
+        "size": "4 bytes (int32)",
+        "meaning": "Message length including the length field itself (big-endian)."
+      },
+      {
+        "field": "Payload",
+        "size": "= length - 4",
+        "meaning": "Message-specific data (SQL string, bind parameters, row values, etc.)."
+      },
+      {
+        "field": "StartupMessage",
+        "size": "variable",
+        "meaning": "Protocol version (0x00030000 for v3.0) + null-terminated key-value pairs (user, database, application_name, ...)."
+      },
+      {
+        "field": "DataRow",
+        "size": "variable",
+        "meaning": "Number of columns (int16) + for each: column length (int32, -1 for NULL) + column data bytes."
+      },
+      {
+        "field": "AuthenticationSASL",
+        "size": "variable",
+        "meaning": "SASL mechanism names (e.g. 'SCRAM-SHA-256') + NUL. Followed by SASL challenge/response."
+      }
+    ],
+    "example_hex": "51 00 00 00 0c 53 45 4c 45 43 54 20 31 00",
+    "example_decoded": "PostgreSQL SimpleQuery: 'Q' + length 12 + 'SELECT 1\\x00'",
+    "notes": [
+      "PostgreSQL uses a binary protocol with type OIDs for column values.",
+      "Extended query protocol (Parse/Bind/Execute) supports prepared statements and parameter binding.",
+      "COPY protocol (COPY IN/OUT) streams bulk data in a binary or text format.",
+      "SCRAM-SHA-256 is the default authentication method (replacing md5).",
+      "Logical replication uses a separate protocol (pgoutput) over replication slots."
+    ]
+  },
+  "updated": "2026-05-29"
+}

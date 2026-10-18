@@ -1,0 +1,83 @@
+{
+  "id": "wire-format/thrift-binary",
+  "family": "wire-format",
+  "slug": "thrift-binary",
+  "title": "Thrift binary protocol",
+  "summary": "Apache Thrift's binary protocol encodes each field as: 1-byte type, 2-byte field ID (big-endian), then the value. A struct is a sequence of fields terminated by a STOP (type 0). Types: 0 STOP, 1 VOID, 2 BOOL, 3 BYTE, 4 I16, 5 I32, 6 I64, 7 DOUBLE, 8 STRING (4-byte length + bytes), 9 MAP, 10 SET, 11 LIST, 12 STRUCT, 13 UUID (16 bytes).",
+  "kind": "wire-format",
+  "aliases": [
+    "Thrift binary protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Apache Thrift",
+    "summary": "Apache Thrift's binary protocol encodes each field as: 1-byte type, 2-byte field ID (big-endian), then the value. A struct is a sequence of fields terminated by a STOP (type 0). Types: 0 STOP, 1 VOID, 2 BOOL, 3 BYTE, 4 I16, 5 I32, 6 I64, 7 DOUBLE, 8 STRING (4-byte length + bytes), 9 MAP, 10 SET, 11 LIST, 12 STRUCT, 13 UUID (16 bytes).",
+    "structure": [
+      {
+        "field": "Field type",
+        "size": "1 byte",
+        "meaning": "0 STOP, 1 VOID, 2 BOOL, 3 BYTE, 4 I16, 5 I32, 6 I64, 7 DOUBLE, 8 STRING, 9 MAP, 10 SET, 11 LIST, 12 STRUCT, 13 UUID."
+      },
+      {
+        "field": "Field ID",
+        "size": "2 bytes (int16, big-endian)",
+        "meaning": "Field identifier from the Thrift IDL."
+      },
+      {
+        "field": "Value",
+        "size": "variable",
+        "meaning": "Type-specific encoding (see below)."
+      },
+      {
+        "field": "BOOL",
+        "size": "1 byte",
+        "meaning": "0x00 = false, 0x01 = true."
+      },
+      {
+        "field": "I16/I32/I64",
+        "size": "2/4/8 bytes",
+        "meaning": "Signed integer, big-endian."
+      },
+      {
+        "field": "DOUBLE",
+        "size": "8 bytes",
+        "meaning": "IEEE 754 double, big-endian."
+      },
+      {
+        "field": "STRING/BINARY",
+        "size": "4 bytes (int32) + data",
+        "meaning": "Length-prefixed UTF-8 string or binary blob."
+      },
+      {
+        "field": "MAP",
+        "size": "variable",
+        "meaning": "1-byte key type, 1-byte value type, 4-byte count, then key-value pairs."
+      },
+      {
+        "field": "LIST/SET",
+        "size": "variable",
+        "meaning": "1-byte element type, 4-byte count, then elements."
+      },
+      {
+        "field": "STRUCT",
+        "size": "variable",
+        "meaning": "Nested fields (same format), terminated by STOP (0x00 type + 0x0000 field ID)."
+      }
+    ],
+    "example_hex": "00 00 00",
+    "example_decoded": "Empty struct: STOP (type 0, field ID 0)",
+    "notes": [
+      "Thrift supports multiple protocols: binary (default), compact (zigzag + varint, smaller), JSON, and simple JSON.",
+      "Thrift includes an IDL (Interface Definition Language) and code generators for 20+ languages.",
+      "Thrift is used by Facebook, Twitter, Uber, and many microservice architectures.",
+      "The compact protocol uses zigzag encoding and varints for smaller payloads."
+    ]
+  },
+  "updated": "2026-05-29"
+}
