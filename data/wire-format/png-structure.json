@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/png-structure",
+  "family": "wire-format",
+  "slug": "png-structure",
+  "title": "PNG file structure",
+  "summary": "A PNG file starts with an 8-byte signature, then a sequence of chunks. Each chunk: 4-byte length (big-endian), 4-byte type (ASCII), length bytes of data, 4-byte CRC-32 (over type+data). Critical chunks: IHDR (image header), PLTE (palette), IDAT (image data), IEND (end). Ancillary chunks: tEXt/zTXt/iTXt (metadata), gAMA, cHRM, sRGB, pHYs, tIME, bKGD, etc.",
+  "kind": "wire-format",
+  "aliases": [
+    "PNG file structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "W3C PNG specification (ISO/IEC 15948)",
+    "summary": "A PNG file starts with an 8-byte signature, then a sequence of chunks. Each chunk: 4-byte length (big-endian), 4-byte type (ASCII), length bytes of data, 4-byte CRC-32 (over type+data). Critical chunks: IHDR (image header), PLTE (palette), IDAT (image data), IEND (end). Ancillary chunks: tEXt/zTXt/iTXt (metadata), gAMA, cHRM, sRGB, pHYs, tIME, bKGD, etc.",
+    "structure": [
+      {
+        "field": "PNG signature",
+        "size": "8 bytes",
+        "meaning": "0x89 0x50 0x4E 0x47 0x0D 0x0A 0x1A 0x0A."
+      },
+      {
+        "field": "Chunk length",
+        "size": "4 bytes",
+        "meaning": "Length of the chunk data field (big-endian). Max 2^31-1."
+      },
+      {
+        "field": "Chunk type",
+        "size": "4 bytes",
+        "meaning": "ASCII type code (e.g. 'IHDR', 'IDAT', 'IEND', 'PLTE', 'tEXt')."
+      },
+      {
+        "field": "Chunk data",
+        "size": "= length",
+        "meaning": "The chunk's payload (structure depends on type)."
+      },
+      {
+        "field": "Chunk CRC",
+        "size": "4 bytes",
+        "meaning": "CRC-32 (IEEE) over chunk type + chunk data."
+      },
+      {
+        "field": "IHDR data",
+        "size": "13 bytes",
+        "meaning": "Width (4), Height (4), Bit depth (1), Color type (1), Compression (1, always 0), Filter (1, always 0), Interlace (1, 0/1)."
+      }
+    ],
+    "example_hex": "89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 01 00 00 00 01 08 02 00 00 00 90 77 53 de",
+    "example_decoded": "PNG signature + IHDR for a 1x1 8-bit RGB image",
+    "notes": [
+      "Signature bytes: 0x89 (high bit set, catches 7-bit stripping), 'PNG', CRLF (line-ending detection), 0x1A (stops display), LF.",
+      "Critical chunks must appear in order: IHDR first, then PLTE (if color type 3), then IDAT(s), then IEND last.",
+      "Ancillary chunks can appear anywhere between IHDR and IEND.",
+      "Color types: 0 grayscale, 2 RGB, 3 indexed, 4 grayscale+alpha, 6 RGBA.",
+      "IDAT contains zlib-compressed (DEFLATE) scanlines, each prefixed by a filter byte (0-4)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

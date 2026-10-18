@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/arp-packet",
+  "family": "wire-format",
+  "slug": "arp-packet",
+  "title": "ARP packet (RFC 826)",
+  "summary": "An ARP (Address Resolution Protocol) packet resolves an IPv4 address to a MAC address (and reverse). Layout: hardware type (2), protocol type (2), hardware address length (1), protocol address length (1), operation (2: 1 request, 2 reply), sender hardware address (6), sender protocol address (4), target hardware address (6), target protocol address (4). Total 28 bytes for Ethernet/IPv4.",
+  "kind": "wire-format",
+  "aliases": [
+    "ARP packet (RFC 826)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 826",
+    "summary": "An ARP (Address Resolution Protocol) packet resolves an IPv4 address to a MAC address (and reverse). Layout: hardware type (2), protocol type (2), hardware address length (1), protocol address length (1), operation (2: 1 request, 2 reply), sender hardware address (6), sender protocol address (4), target hardware address (6), target protocol address (4). Total 28 bytes for Ethernet/IPv4.",
+    "structure": [
+      {
+        "field": "Hardware type",
+        "size": "2 bytes",
+        "meaning": "1 = Ethernet (0x0001)."
+      },
+      {
+        "field": "Protocol type",
+        "size": "2 bytes",
+        "meaning": "0x0800 = IPv4."
+      },
+      {
+        "field": "Hardware address length",
+        "size": "1 byte",
+        "meaning": "6 for Ethernet (MAC)."
+      },
+      {
+        "field": "Protocol address length",
+        "size": "1 byte",
+        "meaning": "4 for IPv4."
+      },
+      {
+        "field": "Operation",
+        "size": "2 bytes",
+        "meaning": "1 = request, 2 = reply, 3 = RARP request, 4 = RARP reply."
+      },
+      {
+        "field": "Sender hardware address",
+        "size": "6 bytes",
+        "meaning": "Sender's MAC address."
+      },
+      {
+        "field": "Sender protocol address",
+        "size": "4 bytes",
+        "meaning": "Sender's IPv4 address."
+      },
+      {
+        "field": "Target hardware address",
+        "size": "6 bytes",
+        "meaning": "Target's MAC (zero in a request)."
+      },
+      {
+        "field": "Target protocol address",
+        "size": "4 bytes",
+        "meaning": "Target's IPv4 address."
+      }
+    ],
+    "example_hex": "00 01 08 00 06 04 00 01 aa bb cc dd ee ff c0 a8 01 01 00 00 00 00 00 00 c0 a8 01 02",
+    "example_decoded": "ARP request: who has 192.168.1.2? Tell 192.168.1.1 (aa:bb:cc:dd:ee:ff)",
+    "notes": [
+      "ARP request is broadcast (dst MAC FF:FF:FF:FF:FF:FF); reply is unicast.",
+      "Gratuitous ARP: sender and target IP are the same, used for IP conflict detection and cache updates.",
+      "ARP cache entries expire (typically 1-20 minutes); stale entries cause brief packet loss.",
+      "RARP (operation 3/4) is obsolete; DHCP replaced it.",
+      "Proxy ARP: a router answers ARP on behalf of another host."
+    ]
+  },
+  "updated": "2026-05-29"
+}

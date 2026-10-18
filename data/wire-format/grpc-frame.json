@@ -1,0 +1,49 @@
+{
+  "id": "wire-format/grpc-frame",
+  "family": "wire-format",
+  "slug": "grpc-frame",
+  "title": "gRPC length-prefixed message frame",
+  "summary": "gRPC messages on the wire are framed with a 5-byte prefix: 1 byte compression flag (0 = uncompressed, 1 = compressed) followed by a 4-byte big-endian message length, then the (possibly compressed) serialized protobuf message. Used over HTTP/2 DATA frames.",
+  "kind": "wire-format",
+  "aliases": [
+    "gRPC length-prefixed message frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "gRPC over HTTP/2 (grpc.github.io)",
+    "summary": "gRPC messages on the wire are framed with a 5-byte prefix: 1 byte compression flag (0 = uncompressed, 1 = compressed) followed by a 4-byte big-endian message length, then the (possibly compressed) serialized protobuf message. Used over HTTP/2 DATA frames.",
+    "structure": [
+      {
+        "field": "Compression flag",
+        "size": "1 byte",
+        "meaning": "0 = message is not compressed, 1 = message is compressed (per grpc-encoding header)."
+      },
+      {
+        "field": "Message length",
+        "size": "4 bytes",
+        "meaning": "Length of the message payload in bytes (big-endian, max 2^32-1, default limit 4 MiB)."
+      },
+      {
+        "field": "Message payload",
+        "size": "= length",
+        "meaning": "Serialized protobuf (or other codec) bytes; compressed if flag = 1."
+      }
+    ],
+    "example_hex": "00 00 00 00 0a 0a 08 48 65 6c 6c 6f 20 67 52 50 43",
+    "example_decoded": "Uncompressed frame, 10-byte payload 'Hello gRPC' (protobuf string field)",
+    "notes": [
+      "gRPC uses HTTP/2 streams: one stream per RPC call.",
+      "Trailers (HTTP/2 HEADERS with END_STREAM) carry the status code (grpc-status) and message.",
+      "Default max message size is 4 MiB (grpc.max_receive_message_length).",
+      "Streaming RPCs send multiple length-prefixed messages on the same stream.",
+      "The compression flag refers to per-message compression (gzip), distinct from HTTP/2 header compression (HPACK)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

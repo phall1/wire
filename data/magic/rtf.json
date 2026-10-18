@@ -1,0 +1,37 @@
+{
+  "id": "magic/rtf",
+  "family": "magic",
+  "slug": "rtf",
+  "title": "RTF (Rich Text Format) signature",
+  "summary": "An RTF document begins with the 5-byte signature {\\rtf followed by a version number (e.g. {\\rtf1).",
+  "kind": "signature",
+  "aliases": [
+    "rtf magic",
+    ".rtf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "7B 5C 72 74 66",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "rtf"
+    ],
+    "mime": "application/rtf",
+    "spec": "RTF specification (Microsoft)",
+    "notes": [
+      "Signature: '{\\rtf' (0x7B 0x5C 0x72 0x74 0x66).",
+      "Immediately followed by a version number: {\\rtf1 (version 1, the only version).",
+      "Then optional character set declaration: \\ansi, \\mac, \\pc, \\pca.",
+      "RTF is a 7-bit ASCII format with backslash-escaped control words and curly-brace groups."
+    ]
+  },
+  "updated": "2026-05-29"
+}

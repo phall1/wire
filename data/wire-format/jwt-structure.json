@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/jwt-structure",
+  "family": "wire-format",
+  "slug": "jwt-structure",
+  "title": "JSON Web Token (JWT) structure",
+  "summary": "A JWT is three Base64url-encoded parts separated by dots: header.payload.signature. The header declares the algorithm (alg) and token type (typ). The payload carries claims (iss, sub, aud, exp, iat, nbf, jti, plus custom). The signature is computed over 'header.payload' using the declared algorithm (HMAC, RSA, ECDSA, EdDSA, or none).",
+  "kind": "wire-format",
+  "aliases": [
+    "JSON Web Token (JWT) structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 7519 (JWT), RFC 7515 (JWS), RFC 7516 (JWE)",
+    "summary": "A JWT is three Base64url-encoded parts separated by dots: header.payload.signature. The header declares the algorithm (alg) and token type (typ). The payload carries claims (iss, sub, aud, exp, iat, nbf, jti, plus custom). The signature is computed over 'header.payload' using the declared algorithm (HMAC, RSA, ECDSA, EdDSA, or none).",
+    "structure": [
+      {
+        "field": "Header",
+        "size": "variable",
+        "meaning": "Base64url(JSON) object: {\"alg\":\"HS256\",\"typ\":\"JWT\"}."
+      },
+      {
+        "field": "Separator",
+        "size": "1 byte",
+        "meaning": "'.' (0x2E)."
+      },
+      {
+        "field": "Payload",
+        "size": "variable",
+        "meaning": "Base64url(JSON) object with registered/public/private claims."
+      },
+      {
+        "field": "Separator",
+        "size": "1 byte",
+        "meaning": "'.' (0x2E)."
+      },
+      {
+        "field": "Signature",
+        "size": "variable",
+        "meaning": "Base64url of the signature over ASCII('header.payload') using alg."
+      }
+    ],
+    "example_hex": "65 79 4a 68 62 47 63 69 4f 69 4a 49 55 7a 49 31 4e 69 49 73 2e 65 79 4a 70 63 33 4d 69 4f 69 4a 42 51 6b 4e 45 51 53 49 73",
+    "example_decoded": "Base64url of '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"sub\":\"1234567890\"}' prefix",
+    "notes": [
+      "JWS Compact Serialization: Base64url(header) + '.' + Base64url(payload) + '.' + Base64url(signature).",
+      "alg 'none' means no signature (insecure; must be rejected by verifiers unless explicitly allowed).",
+      "Registered claims: iss (issuer), sub (subject), aud (audience), exp (expiration), nbf (not before), iat (issued at), jti (JWT ID).",
+      "JWE (RFC 7516) uses 5 parts: header.encryptedKey.iv.ciphertext.tag for encrypted tokens.",
+      "Base64url = Base64 with '+'->'-', '/'->'_', and no '=' padding (RFC 4648 §5)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

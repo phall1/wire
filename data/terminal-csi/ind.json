@@ -1,0 +1,57 @@
+{
+  "id": "terminal-csi/ind",
+  "family": "terminal-csi",
+  "slug": "ind",
+  "title": "CSI IND — Index (line feed)",
+  "summary": "ESC D (IND) moves the cursor down one line, scrolling the screen up if the cursor is at the bottom of the scroll region. Equivalent to LF but without the carriage return.",
+  "kind": "control-sequence",
+  "aliases": [
+    "IND",
+    "CSI IND — Index (line feed)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "IND",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'D'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "ind",
+        "anchor": "#ind",
+        "name": "IND",
+        "meaning": "ESC D moves the cursor down one line; scrolls up if at the bottom margin.",
+        "required": true,
+        "byte_sequence_ST": "\u001bD",
+        "byte_sequence_ST_readable": "ESC D (index)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "IND is ESC D (a C1 control).",
+      "LF (0x0A) often behaves like IND + CR depending on the terminal's LNM (line feed/new line mode).",
+      "IND respects the scroll region set by DECSTBM (CSI r)."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'D'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

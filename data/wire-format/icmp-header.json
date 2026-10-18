@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/icmp-header",
+  "family": "wire-format",
+  "slug": "icmp-header",
+  "title": "ICMPv4 header",
+  "summary": "An ICMPv4 message begins with an 8-byte header: type (1 byte), code (1 byte), checksum (2 bytes), then type-specific data (4 bytes, e.g. identifier + sequence number for echo). Common types: 0 echo reply, 3 destination unreachable, 8 echo request, 11 time exceeded.",
+  "kind": "wire-format",
+  "aliases": [
+    "ICMPv4 header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 792",
+    "summary": "An ICMPv4 message begins with an 8-byte header: type (1 byte), code (1 byte), checksum (2 bytes), then type-specific data (4 bytes, e.g. identifier + sequence number for echo). Common types: 0 echo reply, 3 destination unreachable, 8 echo request, 11 time exceeded.",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "Message type: 0 echo reply, 3 dest unreachable, 5 redirect, 8 echo request, 11 time exceeded, 12 parameter problem."
+      },
+      {
+        "field": "Code",
+        "size": "1 byte",
+        "meaning": "Sub-type (e.g. 3/0 = net unreachable, 3/1 = host unreachable, 11/0 = TTL exceeded in transit)."
+      },
+      {
+        "field": "Checksum",
+        "size": "2 bytes",
+        "meaning": "ICMP checksum (one's complement of one's complement sum of the whole ICMP message)."
+      },
+      {
+        "field": "Rest of header",
+        "size": "4 bytes",
+        "meaning": "Type-specific: for echo (type 0/8) = identifier (2) + sequence number (2); for others = unused/zero."
+      },
+      {
+        "field": "Data",
+        "size": "variable",
+        "meaning": "Payload (echo data, or the original IP header + 8 bytes of the offending datagram for errors)."
+      }
+    ],
+    "example_hex": "08 00 f7 ff 00 01 00 01 48 65 6c 6c 6f",
+    "example_decoded": "Echo request (type 8), code 0, id 1, seq 1, payload 'Hello'",
+    "notes": [
+      "ICMP rides directly on IP (protocol 1), not on TCP/UDP.",
+      "Echo request/reply (ping) uses type 8/0 with matching identifier and sequence number.",
+      "Destination unreachable (type 3) includes the original IP header + first 8 bytes of the offending datagram.",
+      "Checksum covers the ICMP message only (not the IP header, unlike TCP/UDP which include a pseudo-header).",
+      "Path MTU discovery uses type 3 code 4 (fragmentation needed) with the MTU in the rest-of-header field."
+    ]
+  },
+  "updated": "2026-05-29"
+}

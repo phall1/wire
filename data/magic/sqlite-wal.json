@@ -1,0 +1,37 @@
+{
+  "id": "magic/sqlite-wal",
+  "family": "magic",
+  "slug": "sqlite-wal",
+  "title": "SQLite WAL (Write-Ahead Log) signature",
+  "summary": "A SQLite Write-Ahead Log file begins with the 8-byte magic 0x37 0x7F 0x06 0x82 0x83 0x88 0x6F 0xF7 (big-endian) or 0x37 0x7F 0x06 0x83 (the salt follows).",
+  "kind": "signature",
+  "aliases": [
+    "sqlite-wal magic",
+    ".wal"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "37 7F 06 82 83 88 6F F7",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "wal"
+    ],
+    "mime": "application/vnd.sqlite3",
+    "spec": "SQLite Write-Ahead Logging",
+    "notes": [
+      "Magic: 0x377F068283886FFF7 (8 bytes, big-endian).",
+      "Followed by file format version (3007000), page size, checkpoint sequence, salt-1, salt-2, checksum-1, checksum-2.",
+      "WAL mode allows concurrent readers with a single writer.",
+      "The -wal file is checkpointed into the main .db file periodically."
+    ]
+  },
+  "updated": "2026-05-29"
+}

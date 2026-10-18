@@ -1,0 +1,73 @@
+{
+  "id": "wire-format/macho-header",
+  "family": "wire-format",
+  "slug": "macho-header",
+  "title": "Mach-O 64-bit header",
+  "summary": "A Mach-O 64-bit file (macOS/iOS) begins with a 32-byte header: magic (0xFEEDFACF for 64-bit little-endian), CPU type/subtype, file type (object/executable/dylib/bundle/core), number of load commands, size of load commands, and flags.",
+  "kind": "wire-format",
+  "aliases": [
+    "Mach-O 64-bit header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Apple Mach-O File Format Reference",
+    "summary": "A Mach-O 64-bit file (macOS/iOS) begins with a 32-byte header: magic (0xFEEDFACF for 64-bit little-endian), CPU type/subtype, file type (object/executable/dylib/bundle/core), number of load commands, size of load commands, and flags.",
+    "structure": [
+      {
+        "field": "magic",
+        "size": "4 bytes",
+        "meaning": "0xFEEDFACF (64-bit LE) or 0xCFFAEDFE (swapped). 32-bit: 0xFEEDFACE."
+      },
+      {
+        "field": "cputype",
+        "size": "4 bytes",
+        "meaning": "CPU family: 7 x86, 12 ARM, 16808692 (0x01000007) x86_64, 16777228 (0x0100000C) ARM64."
+      },
+      {
+        "field": "cpusubtype",
+        "size": "4 bytes",
+        "meaning": "CPU subtype (e.g. 3 for x86 ALL, 0 for ARM64 ALL)."
+      },
+      {
+        "field": "filetype",
+        "size": "4 bytes",
+        "meaning": "1 object, 2 execute, 3 FVMLIB, 4 core, 5 preload, 6 dylib, 7 dylinker, 8 bundle, 9 dylib stub, 10 dSYM, 11 kext."
+      },
+      {
+        "field": "ncmds",
+        "size": "4 bytes",
+        "meaning": "Number of load commands following the header."
+      },
+      {
+        "field": "sizeofcmds",
+        "size": "4 bytes",
+        "meaning": "Total size in bytes of all load commands."
+      },
+      {
+        "field": "flags",
+        "size": "4 bytes",
+        "meaning": "MH_NOUNDEFS, MH_DYLDLINK, MH_PIE, MH_ALLOW_STACK_EXECUTION, ... (e.g. 0x00200085 for a PIE executable)."
+      },
+      {
+        "field": "reserved",
+        "size": "4 bytes",
+        "meaning": "Reserved (must be 0) in 64-bit."
+      }
+    ],
+    "example_hex": "cf fa ed fe 07 00 00 01 03 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "Mach-O 64-bit little-endian magic + cputype 7 (x86) + subtype 3",
+    "notes": [
+      "Magic 0xFEEDFACF read as bytes CF FA ED FE (little-endian).",
+      "Load commands (LC_SEGMENT_64, LC_SYMTAB, LC_DYLD_INFO, LC_MAIN, ...) follow the 32-byte header.",
+      "Universal (fat) binaries start with magic 0xCAFEBABE and a list of Mach-O headers per architecture.",
+      "Dylib id is given by LC_ID_DYLIB; dependencies by LC_LOAD_DYLIB."
+    ]
+  },
+  "updated": "2026-05-29"
+}

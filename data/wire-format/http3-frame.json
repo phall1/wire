@@ -1,0 +1,49 @@
+{
+  "id": "wire-format/http3-frame",
+  "family": "wire-format",
+  "slug": "http3-frame",
+  "title": "HTTP/3 frame",
+  "summary": "HTTP/3 (over QUIC) frames use a variable-length integer (QUIC varint) for both type and length, followed by a payload. Frame types: DATA (0x00), HEADERS (0x01), CANCEL_PUSH (0x03), SETTINGS (0x04), PUSH_PROMISE (0x05), GOAWAY (0x07), MAX_PUSH_ID (0x0D). Unlike HTTP/2, frames are not tied to streams by a frame header field; the QUIC stream itself provides the stream context.",
+  "kind": "wire-format",
+  "aliases": [
+    "HTTP/3 frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 9114",
+    "summary": "HTTP/3 (over QUIC) frames use a variable-length integer (QUIC varint) for both type and length, followed by a payload. Frame types: DATA (0x00), HEADERS (0x01), CANCEL_PUSH (0x03), SETTINGS (0x04), PUSH_PROMISE (0x05), GOAWAY (0x07), MAX_PUSH_ID (0x0D). Unlike HTTP/2, frames are not tied to streams by a frame header field; the QUIC stream itself provides the stream context.",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "varint",
+        "meaning": "Frame type (QUIC variable-length integer, 1-8 bytes)."
+      },
+      {
+        "field": "Length",
+        "size": "varint",
+        "meaning": "Payload length in bytes (QUIC varint)."
+      },
+      {
+        "field": "Payload",
+        "size": "= Length",
+        "meaning": "Frame-specific data (HEADERS carries QPACK-encoded headers, DATA carries body, ...)."
+      }
+    ],
+    "example_hex": "00 05 48 65 6c 6c 6f",
+    "example_decoded": "DATA frame (type 0), length 5, payload 'Hello'",
+    "notes": [
+      "QUIC varints use the top 2 bits of the first byte to indicate length: 00 = 1 byte (6-bit value), 01 = 2 bytes, 10 = 4 bytes, 11 = 8 bytes.",
+      "HTTP/3 removes HTTP/2's stream-id field from the frame header; QUIC streams provide the context.",
+      "QPACK (RFC 9204) replaces HPACK for header compression, with encoder/decoder streams.",
+      "SETTINGS are sent as frames on the control stream (stream 2 for client, 3 for server).",
+      "MAX_DATA / MAX_STREAM_DATA flow control is handled by QUIC, not HTTP/3."
+    ]
+  },
+  "updated": "2026-05-29"
+}

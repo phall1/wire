@@ -1,0 +1,57 @@
+{
+  "id": "terminal-csi/nel",
+  "family": "terminal-csi",
+  "slug": "nel",
+  "title": "CSI NEL — Next Line",
+  "summary": "ESC E (NEL) moves the cursor to the beginning of the next line (carriage return + line feed). Equivalent to CR + LF.",
+  "kind": "control-sequence",
+  "aliases": [
+    "NEL",
+    "CSI NEL — Next Line"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "NEL",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'E'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "nel",
+        "anchor": "#nel",
+        "name": "NEL",
+        "meaning": "ESC E moves the cursor to column 1 of the next line.",
+        "required": true,
+        "byte_sequence_ST": "\u001bE",
+        "byte_sequence_ST_readable": "ESC E (next line)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "NEL is ESC E (a C1 control).",
+      "Equivalent to CR (0x0D) followed by LF (0x0A) / IND.",
+      "Respects the scroll region at the bottom margin."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'E'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

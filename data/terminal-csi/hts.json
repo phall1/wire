@@ -1,0 +1,57 @@
+{
+  "id": "terminal-csi/hts",
+  "family": "terminal-csi",
+  "slug": "hts",
+  "title": "CSI HTS — Horizontal Tab Set",
+  "summary": "CSI s (or ESC H) sets a tab stop at the current cursor column.",
+  "kind": "control-sequence",
+  "aliases": [
+    "HTS",
+    "CSI HTS — Horizontal Tab Set"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "HTS",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 's'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "hts",
+        "anchor": "#hts",
+        "name": "HTS",
+        "meaning": "CSI s sets a tab stop at the current column.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[s",
+        "byte_sequence_ST_readable": "ESC [ s (set tab stop)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "HTS sets a tab stop at the current column; HT (TAB, 0x09) advances to the next tab stop.",
+      "Tab stops can be cleared with TBC (CSI 0g or CSI 3g).",
+      "Some terminals use ESC H instead of CSI s."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 's'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

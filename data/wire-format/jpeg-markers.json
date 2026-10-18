@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/jpeg-markers",
+  "family": "wire-format",
+  "slug": "jpeg-markers",
+  "title": "JPEG marker structure",
+  "summary": "A JPEG file is a sequence of segments, each starting with a marker: 0xFF followed by a non-zero, non-0xFF byte. Standalone markers (SOI 0xFFD8, EOI 0xFFD9, RSTn 0xFFD0-0xFFD7) have no length. All others carry a 2-byte big-endian length (including the length field itself) followed by that many bytes of payload. Common markers: SOF0 (0xFFC0 baseline DCT), DHT (0xFFC4 Huffman table), DQT (0xFFDB quantization table), SOS (0xFFDA start of scan), APP0 (0xFFE0 JFIF), APP1 (0xFFE1 Exif).",
+  "kind": "wire-format",
+  "aliases": [
+    "JPEG marker structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ITU-T T.81 / ISO/IEC 10918-1",
+    "summary": "A JPEG file is a sequence of segments, each starting with a marker: 0xFF followed by a non-zero, non-0xFF byte. Standalone markers (SOI 0xFFD8, EOI 0xFFD9, RSTn 0xFFD0-0xFFD7) have no length. All others carry a 2-byte big-endian length (including the length field itself) followed by that many bytes of payload. Common markers: SOF0 (0xFFC0 baseline DCT), DHT (0xFFC4 Huffman table), DQT (0xFFDB quantization table), SOS (0xFFDA start of scan), APP0 (0xFFE0 JFIF), APP1 (0xFFE1 Exif).",
+    "structure": [
+      {
+        "field": "Marker prefix",
+        "size": "1 byte",
+        "meaning": "0xFF."
+      },
+      {
+        "field": "Marker code",
+        "size": "1 byte",
+        "meaning": "0x00 (stuffed byte) or 0x01 (TEM) or 0xD0-0xD9 (standalone) or 0xC0-0xCF/0xDA-0xFE (with length)."
+      },
+      {
+        "field": "Length",
+        "size": "2 bytes",
+        "meaning": "Payload length + 2, big-endian (only for markers with payload)."
+      },
+      {
+        "field": "Payload",
+        "size": "= length - 2",
+        "meaning": "Marker-specific data (SOF dimensions, DQT tables, SOS component specs, APP metadata, ...)."
+      },
+      {
+        "field": "Entropy-coded data",
+        "size": "variable",
+        "meaning": "After SOS, the entropy-coded segment runs until the next 0xFF 0x00-stuffed or 0xFF (non-zero) marker; 0xFF 0x00 is a stuffed zero."
+      }
+    ],
+    "example_hex": "ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00",
+    "example_decoded": "SOI + APP0 (JFIF) + DQT (quantization table) start",
+    "notes": [
+      "SOI = 0xFFD8 (start of image), EOI = 0xFFD9 (end of image).",
+      "0xFF 0x00 in entropy data is a stuffed zero (not a marker); decoders skip it.",
+      "SOF0 (0xFFC0) = baseline sequential DCT; SOF2 (0xFFC2) = progressive DCT.",
+      "Restart markers (RST0-RST7, 0xFFD0-0xFFD7) reset the DC coefficient prediction every N MCUs.",
+      "JFIF (APP0) and Exif (APP1) are the two common metadata containers."
+    ]
+  },
+  "updated": "2026-05-29"
+}

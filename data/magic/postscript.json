@@ -1,0 +1,39 @@
+{
+  "id": "magic/postscript",
+  "family": "magic",
+  "slug": "postscript",
+  "title": "PostScript signature (%!PS)",
+  "summary": "A PostScript file begins with the 2-byte signature %! followed by an optional 'PS' and version (e.g. %!PS-Adobe-3.0).",
+  "kind": "signature",
+  "aliases": [
+    "postscript magic",
+    ".ps",
+    ".eps"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "25 21",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "ps",
+      "eps"
+    ],
+    "mime": "application/postscript",
+    "spec": "PostScript Language Reference (Adobe)",
+    "notes": [
+      "Signature: '%!' (0x25 0x21).",
+      "Common header: '%!PS-Adobe-3.0' (0x25 0x21 0x50 0x53 0x2D 0x41 0x64 0x6F 0x62 0x65 0x2D 0x33 0x2E 0x30).",
+      "EPS (Encapsulated PostScript) adds '%%BoundingBox:' and is often wrapped in a 32-byte DOS EPS binary header.",
+      "PostScript is a Turing-complete page description language."
+    ]
+  },
+  "updated": "2026-05-29"
+}

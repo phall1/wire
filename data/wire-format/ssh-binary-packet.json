@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/ssh-binary-packet",
+  "family": "wire-format",
+  "slug": "ssh-binary-packet",
+  "title": "SSH binary packet protocol",
+  "summary": "An SSH (RFC 4253) binary packet: 4-byte packet length (big-endian, not including the length field itself or MAC), 1 byte padding length, payload (max 32768 bytes, typically 35000 with extensions), random padding (4-255 bytes, total packet length multiple of cipher block size or 8), then an optional MAC (if not using AEAD).",
+  "kind": "wire-format",
+  "aliases": [
+    "SSH binary packet protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 4253 (SSH Transport Layer)",
+    "summary": "An SSH (RFC 4253) binary packet: 4-byte packet length (big-endian, not including the length field itself or MAC), 1 byte padding length, payload (max 32768 bytes, typically 35000 with extensions), random padding (4-255 bytes, total packet length multiple of cipher block size or 8), then an optional MAC (if not using AEAD).",
+    "structure": [
+      {
+        "field": "Packet length",
+        "size": "4 bytes",
+        "meaning": "Length of (padding length + payload + padding) in bytes, big-endian. Does not include itself or the MAC."
+      },
+      {
+        "field": "Padding length",
+        "size": "1 byte",
+        "meaning": "Number of padding bytes (4-255, or 0 with AEAD ciphers)."
+      },
+      {
+        "field": "Payload",
+        "size": "variable",
+        "meaning": "The SSH message (key exchange, service request, user auth, channel data, ...)."
+      },
+      {
+        "field": "Random padding",
+        "size": "= padding length",
+        "meaning": "Random bytes to fill to a block boundary; also hides message length."
+      },
+      {
+        "field": "MAC",
+        "size": "variable",
+        "meaning": "Message authentication code (HMAC-SHA1/SHA2) over sequence number + unencrypted packet; omitted with AEAD (chacha20-poly1305, aes-gcm)."
+      }
+    ],
+    "example_hex": "00 00 00 0c 05 0a 01 00 00 00 04 74 65 73 74 00 00 00 00",
+    "example_decoded": "Packet length 12, padding 5, payload = SSH_MSG_KEXINIT-ish (shortened)",
+    "notes": [
+      "Max packet size is 35000 bytes by default (RFC 4253 §6.1), 32768 for the payload.",
+      "Padding makes the total (length field excluded) a multiple of the cipher block size (8 for 3DES/Blowfish, 16 for AES).",
+      "Each packet has an implicit 32-bit sequence number (per direction) used in the MAC and not transmitted.",
+      "AEAD ciphers (chacha20-poly1305@openssh.com, aes128-gcm@openssh.com) fold the MAC into the ciphertext and set padding length to 0.",
+      "Compression (zlib@openssh.com) is applied to the payload before encryption if negotiated."
+    ]
+  },
+  "updated": "2026-05-29"
+}

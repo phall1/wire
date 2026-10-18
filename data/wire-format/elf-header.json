@@ -1,0 +1,136 @@
+{
+  "id": "wire-format/elf-header",
+  "family": "wire-format",
+  "slug": "elf-header",
+  "title": "ELF64 header (Executable and Linkable Format)",
+  "summary": "The ELF64 header is the first 64 bytes of every ELF object/executable/shared object/core dump. It identifies the file (magic \\x7fELF), declares the class (32/64-bit), endianness, OS/ABI, type (relocatable/executable/shared/core), machine architecture, and offsets to the program and section header tables.",
+  "kind": "wire-format",
+  "aliases": [
+    "ELF64 header (Executable and Linkable Format)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "System V ABI / ELF-64 Object File Format specification",
+    "summary": "The ELF64 header is the first 64 bytes of every ELF object/executable/shared object/core dump. It identifies the file (magic \\x7fELF), declares the class (32/64-bit), endianness, OS/ABI, type (relocatable/executable/shared/core), machine architecture, and offsets to the program and section header tables.",
+    "structure": [
+      {
+        "field": "Magic",
+        "size": "4 bytes",
+        "meaning": "0x7F 'E' 'L' 'F' (0x7F 0x45 0x4C 0x46)."
+      },
+      {
+        "field": "EI_CLASS",
+        "size": "1 byte",
+        "meaning": "1 = 32-bit (ELF32), 2 = 64-bit (ELF64)."
+      },
+      {
+        "field": "EI_DATA",
+        "size": "1 byte",
+        "meaning": "1 = little-endian, 2 = big-endian."
+      },
+      {
+        "field": "EI_VERSION",
+        "size": "1 byte",
+        "meaning": "ELF version (always 1)."
+      },
+      {
+        "field": "EI_OSABI",
+        "size": "1 byte",
+        "meaning": "Target OS/ABI (0 System V, 3 Linux, 6 Solaris, 9 FreeBSD, 12 OpenBSD, ...)."
+      },
+      {
+        "field": "EI_ABIVERSION",
+        "size": "1 byte",
+        "meaning": "ABI version (usually 0)."
+      },
+      {
+        "field": "Padding",
+        "size": "7 bytes",
+        "meaning": "Zero padding to 16-byte boundary."
+      },
+      {
+        "field": "e_type",
+        "size": "2 bytes",
+        "meaning": "Object type: 1 relocatable, 2 executable, 3 shared object (DSO), 4 core."
+      },
+      {
+        "field": "e_machine",
+        "size": "2 bytes",
+        "meaning": "Architecture: 0x03 x86, 0x28 ARM, 0x3E x86-64, 0xB7 AArch64, 0xF3 RISC-V."
+      },
+      {
+        "field": "e_version",
+        "size": "4 bytes",
+        "meaning": "Object version (always 1)."
+      },
+      {
+        "field": "e_entry",
+        "size": "8 bytes",
+        "meaning": "Virtual address of entry point (0 if none)."
+      },
+      {
+        "field": "e_phoff",
+        "size": "8 bytes",
+        "meaning": "File offset to program header table."
+      },
+      {
+        "field": "e_shoff",
+        "size": "8 bytes",
+        "meaning": "File offset to section header table."
+      },
+      {
+        "field": "e_flags",
+        "size": "4 bytes",
+        "meaning": "Processor-specific flags."
+      },
+      {
+        "field": "e_ehsize",
+        "size": "2 bytes",
+        "meaning": "ELF header size (64 for ELF64)."
+      },
+      {
+        "field": "e_phentsize",
+        "size": "2 bytes",
+        "meaning": "Program header entry size (56 for ELF64)."
+      },
+      {
+        "field": "e_phnum",
+        "size": "2 bytes",
+        "meaning": "Number of program header entries."
+      },
+      {
+        "field": "e_shentsize",
+        "size": "2 bytes",
+        "meaning": "Section header entry size (64 for ELF64)."
+      },
+      {
+        "field": "e_shnum",
+        "size": "2 bytes",
+        "meaning": "Number of section header entries."
+      },
+      {
+        "field": "e_shstrndx",
+        "size": "2 bytes",
+        "meaning": "Section name string table index."
+      }
+    ],
+    "example_hex": "7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 02 00 3e 00 01 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 38 00 01 00 00 00 00 00 00 00",
+    "example_decoded": "ELF64 little-endian executable for x86-64",
+    "notes": [
+      "Magic 0x7F 0x45 0x4C 0x46 = '\\x7fELF'.",
+      "EI_CLASS 0x02 = 64-bit.",
+      "e_type 0x0002 = ET_EXEC (executable).",
+      "e_machine 0x003E = EM_X86_64.",
+      "Program headers describe segments (PT_LOAD, PT_INTERP, PT_DYNAMIC, ...).",
+      "Section headers describe sections (.text, .data, .symtab, ...).",
+      "Core dumps set e_type = ET_CORE (4) and carry register state in PT_NOTE segments."
+    ]
+  },
+  "updated": "2026-05-29"
+}

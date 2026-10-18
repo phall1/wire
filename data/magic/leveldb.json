@@ -1,0 +1,39 @@
+{
+  "id": "magic/leveldb",
+  "family": "magic",
+  "slug": "leveldb",
+  "title": "LevelDB / RocksDB table file signature",
+  "summary": "A LevelDB (and RocksDB) SSTable file begins with a 48-byte (or 32-byte for legacy) footer. The last 8 bytes of the file are the magic number 0x57FB808B (little-endian) for LevelDB, or 0x88E241B6 for RocksDB.",
+  "kind": "signature",
+  "aliases": [
+    "leveldb magic",
+    ".ldb",
+    ".sst"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "57 FB 80 8B",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "ldb",
+      "sst"
+    ],
+    "mime": "application/x-leveldb",
+    "spec": "LevelDB file format",
+    "notes": [
+      "Magic 0x57FB808B is at the END of the file (last 8 bytes), not the beginning.",
+      "The footer also contains metaindex and index block handles.",
+      "RocksDB uses a different magic: 0x88E241B6.",
+      "SSTables are immutable sorted string tables; compaction merges them."
+    ]
+  },
+  "updated": "2026-05-29"
+}

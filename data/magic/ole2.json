@@ -1,0 +1,45 @@
+{
+  "id": "magic/ole2",
+  "family": "magic",
+  "slug": "ole2",
+  "title": "OLE2 Compound Document (MS Office legacy)",
+  "summary": "Legacy Microsoft Office files (.doc, .xls, .ppt, .msg) use the OLE2 Compound Document Format, which begins with the 8-byte signature 0xD0 0xCF 0x11 0xE0 0xA1 0xB1 0x1A 0xE1 (the 'double negative' magic).",
+  "kind": "signature",
+  "aliases": [
+    "ole2 magic",
+    ".doc",
+    ".xls",
+    ".ppt",
+    ".msg",
+    ".msi"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "D0 CF 11 E0 A1 B1 1A E1",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "doc",
+      "xls",
+      "ppt",
+      "msg",
+      "msi"
+    ],
+    "mime": "application/x-ole-storage",
+    "spec": "Microsoft OLE2 / Compound File Binary Format",
+    "notes": [
+      "Signature: 0xD0CF11E0A1B11AE1 (8 bytes).",
+      "Followed by a 512-byte (or 4096-byte for v4) header sector with FAT (File Allocation Table) pointers.",
+      "The format is a mini-filesystem: streams and storages with a directory tree.",
+      "Superseded by OOXML (zip-based) in Office 2007+, but still common for .msg (email) and legacy docs."
+    ]
+  },
+  "updated": "2026-05-29"
+}

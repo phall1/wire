@@ -1,0 +1,47 @@
+{
+  "id": "magic/ooxml",
+  "family": "magic",
+  "slug": "ooxml",
+  "title": "OOXML (Office Open XML) signature",
+  "summary": "Modern Microsoft Office files (.docx, .xlsx, .pptx) are ZIP archives containing XML parts. The magic is the standard ZIP signature 0x50 0x4B 0x03 0x04; the content type is determined by [Content_Types].xml inside.",
+  "kind": "signature",
+  "aliases": [
+    "ooxml magic",
+    ".docx",
+    ".xlsx",
+    ".pptx",
+    ".docm",
+    ".xlsm",
+    ".pptm"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "50 4B 03 04",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "docx",
+      "xlsx",
+      "pptx",
+      "docm",
+      "xlsm",
+      "pptm"
+    ],
+    "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "spec": "ECMA-376 / ISO/IEC 29500 (OOXML)",
+    "notes": [
+      "Same ZIP magic as any .zip file (50 4B 03 04).",
+      "Distinguish from generic ZIP by the presence of [Content_Types].xml and word/document.xml (or xl/workbook.xml, ppt/presentation.xml).",
+      "OOXML is a zipped collection of XML parts with relationships (.rels files).",
+      "Macro-enabled variants use .docm/.xlsm/.pptm and contain vbaProject.bin."
+    ]
+  },
+  "updated": "2026-05-29"
+}

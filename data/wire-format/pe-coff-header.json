@@ -1,0 +1,109 @@
+{
+  "id": "wire-format/pe-coff-header",
+  "family": "wire-format",
+  "slug": "pe-coff-header",
+  "title": "PE/COFF header (Windows executable)",
+  "summary": "A Windows PE (Portable Executable) file begins with a DOS stub (MZ header + 'This program cannot be run in DOS mode'), then at the PE header offset (e_lfanew) a 4-byte signature 'PE\\x00\\x00' followed by a 20-byte COFF file header and an optional header (PE32 or PE32+).",
+  "kind": "wire-format",
+  "aliases": [
+    "PE/COFF header (Windows executable)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Microsoft PE/COFF specification",
+    "summary": "A Windows PE (Portable Executable) file begins with a DOS stub (MZ header + 'This program cannot be run in DOS mode'), then at the PE header offset (e_lfanew) a 4-byte signature 'PE\\x00\\x00' followed by a 20-byte COFF file header and an optional header (PE32 or PE32+).",
+    "structure": [
+      {
+        "field": "DOS MZ signature",
+        "size": "2 bytes",
+        "meaning": "'MZ' (0x4D 0x5A) at file offset 0."
+      },
+      {
+        "field": "e_lfanew",
+        "size": "4 bytes",
+        "meaning": "File offset (at DOS header offset 0x3C) to the PE signature."
+      },
+      {
+        "field": "PE signature",
+        "size": "4 bytes",
+        "meaning": "'PE\\x00\\x00' (0x50 0x45 0x00 0x00)."
+      },
+      {
+        "field": "Machine",
+        "size": "2 bytes",
+        "meaning": "Target CPU: 0x014C i386, 0x8664 x86-64, 0x01C0 ARM, 0xAA64 ARM64."
+      },
+      {
+        "field": "NumberOfSections",
+        "size": "2 bytes",
+        "meaning": "Count of section headers following the optional header."
+      },
+      {
+        "field": "TimeDateStamp",
+        "size": "4 bytes",
+        "meaning": "Unix timestamp of link time."
+      },
+      {
+        "field": "PointerToSymbolTable",
+        "size": "4 bytes",
+        "meaning": "Offset to COFF symbol table (0 if stripped)."
+      },
+      {
+        "field": "NumberOfSymbols",
+        "size": "4 bytes",
+        "meaning": "Number of symbols in the symbol table."
+      },
+      {
+        "field": "SizeOfOptionalHeader",
+        "size": "2 bytes",
+        "meaning": "Size of the optional header (224 for PE32, 240 for PE32+)."
+      },
+      {
+        "field": "Characteristics",
+        "size": "2 bytes",
+        "meaning": "Flags: executable image, DLL, large address aware, ... (e.g. 0x0002 EXECUTABLE_IMAGE, 0x2000 DLL)."
+      },
+      {
+        "field": "Magic (optional header)",
+        "size": "2 bytes",
+        "meaning": "0x10B PE32 (32-bit), 0x20B PE32+ (64-bit), 0x107 ROM."
+      },
+      {
+        "field": "AddressOfEntryPoint",
+        "size": "4 bytes",
+        "meaning": "RVA of the entry point (relative to image base)."
+      },
+      {
+        "field": "ImageBase",
+        "size": "4/8 bytes",
+        "meaning": "Preferred load address (PE32 4 bytes, PE32+ 8 bytes)."
+      },
+      {
+        "field": "SectionAlignment",
+        "size": "4 bytes",
+        "meaning": "Alignment of sections in memory (usually 0x1000)."
+      },
+      {
+        "field": "FileAlignment",
+        "size": "4 bytes",
+        "meaning": "Alignment of sections in the file (usually 0x200)."
+      }
+    ],
+    "example_hex": "4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00 b8 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 00",
+    "example_decoded": "MZ DOS stub prefix (first 64 bytes)",
+    "notes": [
+      "'MZ' = Mark Zbikowski, the DOS header designer.",
+      "e_lfanew at offset 0x3C points to the PE signature; typically 0x80 or 0xE8.",
+      "Section headers follow the optional header: Name (8 bytes), VirtualSize, VirtualAddress, SizeOfRawData, PointerToRawData, ..., Characteristics.",
+      "PE32+ (0x20B) drops BaseOfData and widens ImageBase/SizeOfStackReserve/SizeOfStackCommit/SizeOfHeapReserve/SizeOfHeapCommit to 8 bytes.",
+      "Common sections: .text, .data, .rdata, .rsrc, .reloc, .pdata (x64 unwind)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

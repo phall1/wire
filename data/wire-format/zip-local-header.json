@@ -1,0 +1,99 @@
+{
+  "id": "wire-format/zip-local-header",
+  "family": "wire-format",
+  "slug": "zip-local-header",
+  "title": "ZIP local file header",
+  "summary": "Each file in a ZIP archive begins with a 30-byte (minimum) local file header: signature 0x04034B50, version needed, flags, compression method, modtime, CRC-32, compressed/uncompressed sizes, filename length, extra field length, then the filename and extra field, then the (possibly compressed) file data.",
+  "kind": "wire-format",
+  "aliases": [
+    "ZIP local file header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "PKWARE APPNOTE.TXT (ZIP format)",
+    "summary": "Each file in a ZIP archive begins with a 30-byte (minimum) local file header: signature 0x04034B50, version needed, flags, compression method, modtime, CRC-32, compressed/uncompressed sizes, filename length, extra field length, then the filename and extra field, then the (possibly compressed) file data.",
+    "structure": [
+      {
+        "field": "Signature",
+        "size": "4 bytes",
+        "meaning": "0x04034B50 ('PK\\x03\\x04')."
+      },
+      {
+        "field": "Version needed",
+        "size": "2 bytes",
+        "meaning": "Minimum PKZIP version to extract (e.g. 20 = 2.0, 45 = 4.5 with ZIP64)."
+      },
+      {
+        "field": "General purpose bit flag",
+        "size": "2 bytes",
+        "meaning": "Bit 0 = encrypted, bit 3 = data descriptor follows, bit 11 = UTF-8 filename, ... ."
+      },
+      {
+        "field": "Compression method",
+        "size": "2 bytes",
+        "meaning": "0 = stored, 8 = DEFLATE, 12 = BZIP2, 14 = LZMA, 98 = PPMd."
+      },
+      {
+        "field": "Last mod time",
+        "size": "2 bytes",
+        "meaning": "MS-DOS time (5/6/5 bits for hour/min/sec*2)."
+      },
+      {
+        "field": "Last mod date",
+        "size": "2 bytes",
+        "meaning": "MS-DOS date (7/4/5 bits for year-1980/month/day)."
+      },
+      {
+        "field": "CRC-32",
+        "size": "4 bytes",
+        "meaning": "CRC-32 of uncompressed data (0 if data descriptor used)."
+      },
+      {
+        "field": "Compressed size",
+        "size": "4 bytes",
+        "meaning": "Size of compressed data (0 if data descriptor used)."
+      },
+      {
+        "field": "Uncompressed size",
+        "size": "4 bytes",
+        "meaning": "Size of uncompressed data (0 if data descriptor used)."
+      },
+      {
+        "field": "Filename length",
+        "size": "2 bytes",
+        "meaning": "Length of the filename that follows."
+      },
+      {
+        "field": "Extra field length",
+        "size": "2 bytes",
+        "meaning": "Length of the extra field that follows."
+      },
+      {
+        "field": "Filename",
+        "size": "variable",
+        "meaning": "The file's path/name (UTF-8 if flag bit 11 set)."
+      },
+      {
+        "field": "Extra field",
+        "size": "variable",
+        "meaning": "Tagged extra data blocks (ZIP64, Unix uid/gid, NTFS timestamps, ...)."
+      }
+    ],
+    "example_hex": "50 4b 03 04 14 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 00 1c 00 68 65 6c 6c 6f 2e 74 78 74",
+    "example_decoded": "Local header for 'hello.txt', stored (method 0), empty extra",
+    "notes": [
+      "Signature 0x04034B50 = 'PK\\x03\\x04'.",
+      "Central directory entries (0x02014B50) at the end of the archive list every file with offsets.",
+      "End of central directory record (0x06054B50) gives the offset to the central directory.",
+      "ZIP64 (version 4.5) uses 0xFFFFFFFF sentinels and an extra field for large sizes.",
+      "Data descriptor (flag bit 3) is used when CRC/size are not known before compression (streaming)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

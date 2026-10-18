@@ -1,0 +1,57 @@
+{
+  "id": "terminal-csi/cbt",
+  "family": "terminal-csi",
+  "slug": "cbt",
+  "title": "CSI CBT — Cursor Backward Tabulation",
+  "summary": "CSI Pn Z moves the cursor backward Pn tab stops (default 1). The counterpart of CHT (forward tab).",
+  "kind": "control-sequence",
+  "aliases": [
+    "CBT",
+    "CSI CBT — Cursor Backward Tabulation"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CBT",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'Z'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "cbt",
+        "anchor": "#cbt",
+        "name": "CBT",
+        "meaning": "CSI Pn Z moves the cursor to the Pn-th previous tab stop.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[1Z",
+        "byte_sequence_ST_readable": "ESC [ 1 Z (back 1 tab)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Pn defaults to 1.",
+      "Tab stops are set by HTS (CSI g) and cleared by TBC (CSI 3g).",
+      "Default tab stops are every 8 columns."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'Z'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

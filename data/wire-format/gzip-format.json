@@ -1,0 +1,94 @@
+{
+  "id": "wire-format/gzip-format",
+  "family": "wire-format",
+  "slug": "gzip-format",
+  "title": "gzip file format (RFC 1952)",
+  "summary": "A gzip file consists of a 10-byte header, optional original filename/comment/extra fields, the DEFLATE-compressed payload, and an 8-byte trailer (CRC-32 of the uncompressed data + uncompressed size mod 2^32).",
+  "kind": "wire-format",
+  "aliases": [
+    "gzip file format (RFC 1952)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 1952",
+    "summary": "A gzip file consists of a 10-byte header, optional original filename/comment/extra fields, the DEFLATE-compressed payload, and an 8-byte trailer (CRC-32 of the uncompressed data + uncompressed size mod 2^32).",
+    "structure": [
+      {
+        "field": "Magic",
+        "size": "2 bytes",
+        "meaning": "0x1F 0x8B."
+      },
+      {
+        "field": "CM",
+        "size": "1 byte",
+        "meaning": "Compression method: 8 = DEFLATE."
+      },
+      {
+        "field": "FLG",
+        "size": "1 byte",
+        "meaning": "Flags: FTEXT, FHCRC, FEXTRA, FNAME, FCOMMENT."
+      },
+      {
+        "field": "MTIME",
+        "size": "4 bytes",
+        "meaning": "Modification time (Unix seconds), or 0 if unknown."
+      },
+      {
+        "field": "XFL",
+        "size": "1 byte",
+        "meaning": "Extra flags: 2 = compressor used max, 4 = fastest."
+      },
+      {
+        "field": "OS",
+        "size": "1 byte",
+        "meaning": "OS: 0 FAT, 3 Unix, 7 Macintosh, 11 Windows NT, 255 unknown."
+      },
+      {
+        "field": "FNAME",
+        "size": "variable",
+        "meaning": "Original filename, NUL-terminated (if FLG.FNAME set)."
+      },
+      {
+        "field": "FCOMMENT",
+        "size": "variable",
+        "meaning": "Comment, NUL-terminated (if FLG.FCOMMENT set)."
+      },
+      {
+        "field": "FHCRC",
+        "size": "2 bytes",
+        "meaning": "CRC-16 of header (if FLG.FHCRC set)."
+      },
+      {
+        "field": "Compressed data",
+        "size": "variable",
+        "meaning": "DEFLATE bitstream."
+      },
+      {
+        "field": "CRC-32",
+        "size": "4 bytes",
+        "meaning": "CRC-32 of the uncompressed data (little-endian)."
+      },
+      {
+        "field": "ISIZE",
+        "size": "4 bytes",
+        "meaning": "Uncompressed size mod 2^32 (little-endian)."
+      }
+    ],
+    "example_hex": "1f 8b 08 00 00 00 00 00 00 ff 03 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "Minimal empty gzip stream (10-byte header + empty DEFLATE block + 8-byte trailer)",
+    "notes": [
+      "Magic 0x1F 0x8B identifies gzip.",
+      "CM = 8 means DEFLATE (RFC 1951).",
+      "FLG = 0 means no optional fields.",
+      "The trailer's CRC-32 and ISIZE let a reader verify integrity without decompressing.",
+      "gzip wraps a single DEFLATE stream; zip wraps many."
+    ]
+  },
+  "updated": "2026-05-29"
+}

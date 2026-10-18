@@ -1,0 +1,54 @@
+{
+  "id": "wire-format/x509-certificate",
+  "family": "wire-format",
+  "slug": "x509-certificate",
+  "title": "X.509 certificate (DER) structure",
+  "summary": "An X.509 v3 certificate is a DER-encoded (ASN.1) structure: TBSCertificate (to-be-signed: version, serial number, signature algorithm, issuer, validity, subject, subject public key info, extensions), signature algorithm identifier, and the signature value. The whole is wrapped in a SEQUENCE.",
+  "kind": "wire-format",
+  "aliases": [
+    "X.509 certificate (DER) structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 5280 (X.509 PKIX)",
+    "summary": "An X.509 v3 certificate is a DER-encoded (ASN.1) structure: TBSCertificate (to-be-signed: version, serial number, signature algorithm, issuer, validity, subject, subject public key info, extensions), signature algorithm identifier, and the signature value. The whole is wrapped in a SEQUENCE.",
+    "structure": [
+      {
+        "field": "Certificate SEQUENCE",
+        "size": "variable",
+        "meaning": "Outer SEQUENCE wrapping tbsCertificate, signatureAlgorithm, signatureValue."
+      },
+      {
+        "field": "tbsCertificate",
+        "size": "variable",
+        "meaning": "SEQUENCE: version [0] (v3), serialNumber INTEGER, signature AlgorithmIdentifier, issuer Name, validity (notBefore, notAfter), subject Name, subjectPublicKeyInfo, issuerUniqueID [1], subjectUniqueID [2], extensions [3]."
+      },
+      {
+        "field": "signatureAlgorithm",
+        "size": "variable",
+        "meaning": "AlgorithmIdentifier (OID + parameters) for the signature (e.g. sha256WithRSAEncryption 1.2.840.113549.1.1.11)."
+      },
+      {
+        "field": "signatureValue",
+        "size": "variable",
+        "meaning": "BIT STRING containing the signature bytes."
+      }
+    ],
+    "example_hex": "30 82 03 00 30 82 02 00 a0 03 02 01 02 02 01 01 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00",
+    "example_decoded": "DER prefix: SEQUENCE { SEQUENCE { [0] version v3, serial 1, sig alg sha256WithRSAEncryption ... } }",
+    "notes": [
+      "DER is the canonical subset of BER (X.690) used for certificates and signatures.",
+      "Serial number must be positive (high bit cleared) and unique per issuer.",
+      "Subject/issuer are Distinguished Names (DN) as RDNSequence (C, O, OU, CN, ...).",
+      "Extensions: subjectAltName (SAN), keyUsage, extendedKeyUsage, basicConstraints (CA:TRUE/FALSE), authorityKeyIdentifier, subjectKeyIdentifier.",
+      "Signature covers the DER encoding of tbsCertificate."
+    ]
+  },
+  "updated": "2026-05-29"
+}

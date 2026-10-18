@@ -1,0 +1,49 @@
+{
+  "id": "wire-format/bson-document",
+  "family": "wire-format",
+  "slug": "bson-document",
+  "title": "BSON document structure",
+  "summary": "BSON (Binary JSON) documents are a sequence of typed elements followed by a null terminator. Each element: 1-byte type code, NUL-terminated field name (cstring), then the value (encoding depends on type). The document is prefixed by a 4-byte little-endian total size (including itself and the terminator).",
+  "kind": "wire-format",
+  "aliases": [
+    "BSON document structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "BSON specification (bsonspec.org)",
+    "summary": "BSON (Binary JSON) documents are a sequence of typed elements followed by a null terminator. Each element: 1-byte type code, NUL-terminated field name (cstring), then the value (encoding depends on type). The document is prefixed by a 4-byte little-endian total size (including itself and the terminator).",
+    "structure": [
+      {
+        "field": "Document size",
+        "size": "4 bytes",
+        "meaning": "Total size of the document in bytes, including this field and the trailing 0x00. Little-endian."
+      },
+      {
+        "field": "Element (repeated)",
+        "size": "variable",
+        "meaning": "1-byte type + cstring field name + value (type-specific encoding)."
+      },
+      {
+        "field": "Terminator",
+        "size": "1 byte",
+        "meaning": "0x00."
+      }
+    ],
+    "example_hex": "16 00 00 00 02 6e 61 6d 65 00 06 00 00 00 4a 6f 68 6e 00 00",
+    "example_decoded": "Document {\"name\": \"John\"}: size 22, type 0x02 string, field 'name', value 'John'",
+    "notes": [
+      "Type codes: 0x01 double, 0x02 string (int32 length + UTF-8 + NUL), 0x03 document, 0x04 array, 0x05 binary (subtype + int32 length + bytes), 0x06 undefined (deprecated), 0x07 ObjectId (12 bytes), 0x08 bool (1 byte), 0x09 datetime (int64 ms), 0x0A null, 0x0B regex (cstring pattern + cstring options), 0x0D JavaScript code, 0x10 int32, 0x12 int64, 0x13 decimal128.",
+      "Arrays are documents with keys '0', '1', '2', ... .",
+      "Max document size is 16 MiB (MongoDB limit).",
+      "Field names must not contain '.' or start with '$' (MongoDB restriction).",
+      "Binary subtype 0x04 is UUID (old), subtype 0x03 is UUID (new, RFC 4122)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

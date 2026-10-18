@@ -1,0 +1,66 @@
+{
+  "id": "terminal-csi/tbc",
+  "family": "terminal-csi",
+  "slug": "tbc",
+  "title": "CSI TBC — Tab Clear",
+  "summary": "CSI Ps g clears tab stops: Ps=0 (default) clears the tab stop at the current column; Ps=3 clears all tab stops.",
+  "kind": "control-sequence",
+  "aliases": [
+    "TBC",
+    "CSI TBC — Tab Clear"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "TBC",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'g'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "clear-current",
+        "anchor": "#clear-current",
+        "name": "Clear current tab stop",
+        "meaning": "CSI 0 g (or CSI g) clears the tab stop at the current column.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[g",
+        "byte_sequence_ST_readable": "ESC [ g (clear tab stop at cursor)",
+        "subparams": []
+      },
+      {
+        "id": "clear-all",
+        "anchor": "#clear-all",
+        "name": "Clear all tab stops",
+        "meaning": "CSI 3 g clears all tab stops.",
+        "required": false,
+        "byte_sequence_ST": "\u001b[3g",
+        "byte_sequence_ST_readable": "ESC [ 3 g (clear all tab stops)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "After clearing all tab stops, TAB (0x09) may not advance the cursor (or advances to the screen edge).",
+      "Re-set default 8-column tabs with CSI 8 ; 0 ; 0 ; 0 ; 0 t (DECST8C) in some terminals."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'g'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "magic/protobuf-wire",
+  "family": "magic",
+  "slug": "protobuf-wire",
+  "title": "Protocol Buffers wire format (field tag)",
+  "summary": "A protobuf-encoded message is a sequence of fields, each encoded as (field_number << 3) | wire_type followed by the value. Wire types: 0 varint, 1 64-bit, 2 length-delimited, 3 start group (deprecated), 4 end group (deprecated), 5 32-bit.",
+  "kind": "signature",
+  "aliases": [
+    "protobuf-wire magic",
+    ".pb"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "08",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "pb"
+    ],
+    "mime": "application/x-protobuf",
+    "spec": "Protocol Buffers encoding (developers.google.com/protocol-buffers)",
+    "notes": [
+      "Wire type 0 (varint): zigzag-encoded signed ints, bools, enums.",
+      "Wire type 1 (64-bit): fixed64, sfixed64, double.",
+      "Wire type 2 (length-delimited): strings, bytes, embedded messages, packed repeated fields.",
+      "Wire type 5 (32-bit): fixed32, sfixed32, float.",
+      "Field tag = (field_number << 3) | wire_type; field numbers 1-15 use 1 byte, 16+ use 2 bytes.",
+      "No self-describing schema: the .proto definition is needed to decode."
+    ]
+  },
+  "updated": "2026-05-29"
+}

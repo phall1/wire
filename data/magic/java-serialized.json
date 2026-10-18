@@ -1,0 +1,38 @@
+{
+  "id": "magic/java-serialized",
+  "family": "magic",
+  "slug": "java-serialized",
+  "title": "Java serialized object stream",
+  "summary": "A Java serialized object stream begins with the 2-byte magic 0xAC 0xED followed by the stream version 0x00 0x05.",
+  "kind": "signature",
+  "aliases": [
+    "java-serialized magic",
+    ".ser"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "AC ED 00 05",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "ser"
+    ],
+    "mime": "application/x-java-serialized-object",
+    "spec": "Java Object Serialization Specification",
+    "notes": [
+      "Magic 0xACED = STREAM_MAGIC.",
+      "Version 0x0005 = STREAM_VERSION.",
+      "Followed by TC_OBJECT (0x73) + class descriptor + field data.",
+      "Deserialization of untrusted streams is a known RCE vector (e.g. Apache Commons Collections).",
+      "ObjectOutputStream.writeObject() produces this format."
+    ]
+  },
+  "updated": "2026-05-29"
+}
