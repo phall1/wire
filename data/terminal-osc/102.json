@@ -1,0 +1,58 @@
+{
+  "id": "terminal-osc/102",
+  "family": "terminal-osc",
+  "slug": "102",
+  "title": "OSC 102 — Reset foreground/background (rxvt)",
+  "summary": "OSC 102 resets foreground and background colors (rxvt extension).",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 102",
+    "OSC 102 — Reset foreground/background (rxvt)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 102,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC 102 ; ... ST."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "alt_BEL": "\u0007",
+      "note": "ECMA-48 mandates ST; BEL is widely accepted."
+    },
+    "params": [
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Reset fg/bg",
+        "meaning": "OSC 102 ST resets foreground and background colors.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]102\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 0 2 ST",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 102 is an rxvt extension.",
+      "Use OSC 110/111 for standard reset."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 102 renders as a byte-exact ST-terminated OSC sequence.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "magic/macho",
+  "family": "magic",
+  "slug": "macho",
+  "title": "Mach-O signature",
+  "summary": "A Mach-O file begins with a 4-byte magic: 0xFEEDFACE (32-bit), 0xFEEDFACF (64-bit), 0xCEFAEDFE (32-bit swapped), or 0xCFFAEDFE (64-bit swapped).",
+  "kind": "signature",
+  "aliases": [
+    "macho magic",
+    ".macho",
+    ".dylib",
+    ".bundle"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FE ED FA CF",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "macho",
+      "dylib",
+      "bundle"
+    ],
+    "mime": "application/x-mach-binary",
+    "spec": "Mach-O (Apple)",
+    "notes": [
+      "Magic: 0xFEEDFACE (32-bit LE), 0xFEEDFACF (64-bit LE), 0xCEFAEDFE (32-bit BE), 0xCFFAEDFE (64-bit BE).",
+      "cputype: 7 (x86), 12 (ARM), 0x01000007 (x86-64), 0x0100000C (ARM64).",
+      "filetype: 1 (object), 2 (execute), 3 (FVMLIB), 4 (core), 5 (preload), 6 (dylib), 7 (dylinker), 8 (bundle), 9 (dylib stub), 10 (dSYM), 11 (kext)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

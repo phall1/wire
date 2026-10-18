@@ -1,0 +1,79 @@
+{
+  "id": "terminal-osc/21",
+  "family": "terminal-osc",
+  "slug": "21",
+  "title": "OSC 21 — Color scheme (dark/light) notification",
+  "summary": "OSC 21 is sent by the terminal to report color scheme changes: OSC 21 ; dark ST or OSC 21 ; light ST. Applications can query with OSC 21 ; ? ST.",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 21",
+    "OSC 21 — Color scheme (dark/light) notification"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 21,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC 21 ; ... ST."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "alt_BEL": "\u0007",
+      "note": "ECMA-48 mandates ST; BEL is widely accepted."
+    },
+    "params": [
+      {
+        "id": "dark",
+        "anchor": "#dark",
+        "name": "Dark mode",
+        "meaning": "OSC 21 ; dark ST reports dark mode.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]21;dark\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 2 1 ; dark ST",
+        "subparams": []
+      },
+      {
+        "id": "light",
+        "anchor": "#light",
+        "name": "Light mode",
+        "meaning": "OSC 21 ; light ST reports light mode.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]21;light\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 2 1 ; light ST",
+        "subparams": []
+      },
+      {
+        "id": "query",
+        "anchor": "#query",
+        "name": "Query scheme",
+        "meaning": "OSC 21 ; ? ST queries the current color scheme.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]21;?\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 2 1 ; ? ST",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 21 is triggered by DECSET 2031 (color scheme reporting).",
+      "Supported by iTerm2, kitty, WezTerm, Windows Terminal.",
+      "TUIs can use this to adapt their palette without polling."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 21 renders as a byte-exact ST-terminated OSC sequence.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "terminal-csi/ch",
+  "family": "terminal-csi",
+  "slug": "ch",
+  "title": "CSI CH — Cursor Character Absolute (HPA)",
+  "summary": "CSI Pn G (CHA) / CSI Pn ` (HPA) moves the cursor to column Pn (default 1) of the current row. HPA uses final byte '`' (0x60); CHA uses 'G'.",
+  "kind": "control-sequence",
+  "aliases": [
+    "CH",
+    "CSI CH — Cursor Character Absolute (HPA)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "CH",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte '`'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "hpa",
+        "anchor": "#hpa",
+        "name": "HPA (Horizontal Position Absolute)",
+        "meaning": "CSI Pn ` moves the cursor to column Pn (1-based).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[10`",
+        "byte_sequence_ST_readable": "ESC [ 1 0 ` (column 10)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Pn defaults to 1.",
+      "HPA (0x60) and CHA (0x47, 'G') are equivalent.",
+      "Does not change the row."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte '`'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

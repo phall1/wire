@@ -1,0 +1,58 @@
+{
+  "id": "terminal-osc/20",
+  "family": "terminal-osc",
+  "slug": "20",
+  "title": "OSC 20 — Set icon label (Sun)",
+  "summary": "OSC 20 sets the icon label (Sun terminal extension).",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 20",
+    "OSC 20 — Set icon label (Sun)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 20,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC 20 ; ... ST."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "alt_BEL": "\u0007",
+      "note": "ECMA-48 mandates ST; BEL is widely accepted."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set icon label",
+        "meaning": "OSC 20 ; label ST sets the icon label.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]20;Terminal\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 2 0 ; Terminal ST",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 20 is a Sun terminal extension.",
+      "Prefer OSC 1 for icon name."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 20 renders as a byte-exact ST-terminated OSC sequence.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

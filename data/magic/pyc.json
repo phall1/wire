@@ -1,0 +1,39 @@
+{
+  "id": "magic/pyc",
+  "family": "magic",
+  "slug": "pyc",
+  "title": "Python bytecode (.pyc) signature",
+  "summary": "A Python 3.7+ bytecode file begins with a 16-byte header: a 4-byte magic number (version-specific), a 4-byte flags field, a 4-byte timestamp or hash, and a 4-byte source size or hash.",
+  "kind": "signature",
+  "aliases": [
+    "pyc magic",
+    ".pyc",
+    ".pyo"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "CB 0D 0D F3",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "pyc",
+      "pyo"
+    ],
+    "mime": "application/x-python-code",
+    "spec": "Python import system",
+    "notes": [
+      "Magic number varies by Python version (e.g., 0xCB0D0DF3 for 3.11).",
+      "Flags: 0 = timestamp-based, 1 = hash-based (PEP 552).",
+      "The marshal module serializes the code object after the header.",
+      "pyc files are cached in __pycache__/ directories."
+    ]
+  },
+  "updated": "2026-05-29"
+}

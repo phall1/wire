@@ -1,0 +1,58 @@
+{
+  "id": "terminal-osc/6",
+  "family": "terminal-osc",
+  "slug": "6",
+  "title": "OSC 6 — Current working directory (iTerm2)",
+  "summary": "OSC 6 reports the current working directory to iTerm2 (iTerm2-specific variant of OSC 7).",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 6",
+    "OSC 6 — Current working directory (iTerm2)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 6,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC 6 ; ... ST."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "alt_BEL": "\u0007",
+      "note": "ECMA-48 mandates ST; BEL is widely accepted."
+    },
+    "params": [
+      {
+        "id": "report",
+        "anchor": "#report",
+        "name": "Report cwd (iTerm2)",
+        "meaning": "OSC 6 ; file://hostname/path ST reports the current working directory.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]6;file://localhost/home/user\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 ; file://localhost/home/user ST",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 6 is iTerm2-specific; OSC 7 is the freedesktop standard.",
+      "Prefer OSC 7 for cross-terminal compatibility."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 6 renders as a byte-exact ST-terminated OSC sequence.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

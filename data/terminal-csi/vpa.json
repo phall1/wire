@@ -1,0 +1,56 @@
+{
+  "id": "terminal-csi/vpa",
+  "family": "terminal-csi",
+  "slug": "vpa",
+  "title": "CSI VPA — Vertical Position Absolute",
+  "summary": "CSI Pn d moves the cursor to row Pn (default 1) of the current column.",
+  "kind": "control-sequence",
+  "aliases": [
+    "VPA",
+    "CSI VPA — Vertical Position Absolute"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "VPA",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'd'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "vpa",
+        "anchor": "#vpa",
+        "name": "VPA (Vertical Position Absolute)",
+        "meaning": "CSI Pn d moves the cursor to row Pn (1-based).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[5d",
+        "byte_sequence_ST_readable": "ESC [ 5 d (row 5)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Pn defaults to 1.",
+      "VPA does not change the column."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'd'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

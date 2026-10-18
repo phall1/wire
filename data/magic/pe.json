@@ -1,0 +1,44 @@
+{
+  "id": "magic/pe",
+  "family": "magic",
+  "slug": "pe",
+  "title": "PE (Portable Executable) signature",
+  "summary": "A PE file begins with the DOS header 'MZ' (0x4D 0x5A) at offset 0, and the PE signature 'PE\\x00\\x00' (0x50 0x45 0x00 0x00) at the offset specified by e_lfanew (at offset 0x3C).",
+  "kind": "signature",
+  "aliases": [
+    "pe magic",
+    ".exe",
+    ".dll",
+    ".sys",
+    ".ocx"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4D 5A",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "exe",
+      "dll",
+      "sys",
+      "ocx"
+    ],
+    "mime": "application/x-msdownload",
+    "spec": "PE/COFF (Microsoft)",
+    "notes": [
+      "DOS header: 'MZ' (0x4D 0x5A) at offset 0.",
+      "e_lfanew at offset 0x3C points to the PE signature.",
+      "PE signature: 'PE\\x00\\x00' (0x50 0x45 0x00 0x00).",
+      "COFF header: Machine (2), NumberOfSections (2), TimeDateStamp (4), PointerToSymbolTable (4), NumberOfSymbols (4), SizeOfOptionalHeader (2), Characteristics (2).",
+      "Machine: 0x014C (i386), 0x8664 (x86-64), 0x01C0 (ARM), 0xAA64 (ARM64)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

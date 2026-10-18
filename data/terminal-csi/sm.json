@@ -1,0 +1,67 @@
+{
+  "id": "terminal-csi/sm",
+  "family": "terminal-csi",
+  "slug": "sm",
+  "title": "CSI SM — Set Mode",
+  "summary": "CSI Ps h sets terminal modes: Ps=4 (IRM, insert/replace mode), Ps=20 (LNM, line feed/new line mode).",
+  "kind": "control-sequence",
+  "aliases": [
+    "SM",
+    "CSI SM — Set Mode"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "SM",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'h'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "irm",
+        "anchor": "#irm",
+        "name": "IRM (Insert/Replace Mode)",
+        "meaning": "CSI 4 h enables insert mode (characters inserted, not overwritten).",
+        "required": true,
+        "byte_sequence_ST": "\u001b[4h",
+        "byte_sequence_ST_readable": "ESC [ 4 h (insert mode)",
+        "subparams": []
+      },
+      {
+        "id": "lnm",
+        "anchor": "#lnm",
+        "name": "LNM (Line Feed/New Line Mode)",
+        "meaning": "CSI 20 h enables LNM (LF also does CR).",
+        "required": false,
+        "byte_sequence_ST": "\u001b[20h",
+        "byte_sequence_ST_readable": "ESC [ 2 0 h (LNM on)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "IRM: when enabled, characters are inserted (pushing existing text right); when disabled, characters overwrite.",
+      "LNM: when enabled, LF also performs CR (newline); when disabled, LF only moves down.",
+      "SM/DECSET both use 'h'; DEC private modes use '?h'."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'h'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

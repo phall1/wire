@@ -1,0 +1,68 @@
+{
+  "id": "terminal-dec-private-mode/1007",
+  "family": "terminal-dec-private-mode",
+  "slug": "1007",
+  "title": "DECSET 1007 — Alternate scroll (wheel to arrow keys)",
+  "summary": "CSI ? 1007 h enables alternate scroll: on the alternate screen, scroll wheel sends arrow keys. CSI ? 1007 l disables it.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSET 1007",
+    "DECRST 1007",
+    "?1007"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1007,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private modes are CSI sequences with a leading '?' (0x3F) private-parameter prefix. Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST)."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: a DEC private mode is a CSI sequence ending at its final byte ('h' to set, 'l' to reset)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1007 h alternate scroll (wheel -> arrows)",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1007h",
+        "byte_sequence_ST_readable": "ESC [ ? 1007 h",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1007 l disables the mode.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1007l",
+        "byte_sequence_ST_readable": "ESC [ ? 1007 l",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "When enabled, scroll wheel events on the alt screen are converted to arrow key presses.",
+      "Useful for TUIs that don't handle mouse scroll events.",
+      "Supported by xterm, iTerm2, and others."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSET/DECRST 1007 render as byte-exact CSI ? 1007 h/l sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

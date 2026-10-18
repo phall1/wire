@@ -1,0 +1,37 @@
+{
+  "id": "magic/dex",
+  "family": "magic",
+  "slug": "dex",
+  "title": "Android DEX (Dalvik Executable) signature",
+  "summary": "An Android DEX file begins with the 8-byte signature 'dex\\n035\\0' (0x64 0x65 0x78 0x0A 0x30 0x33 0x35 0x00) or 'dex\\n037\\0' or 'dex\\n038\\0' or 'dex\\n039\\0' depending on the version.",
+  "kind": "signature",
+  "aliases": [
+    "dex magic",
+    ".dex"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "64 65 78 0A 30 33 35 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "dex"
+    ],
+    "mime": "application/x-dex",
+    "spec": "Dalvik/ART (Android)",
+    "notes": [
+      "Signature: 'dex\\n035\\0' (0x64 0x65 0x78 0x0A 0x30 0x33 0x35 0x00) for DEX 035.",
+      "Versions: 035 (Android 4.4+), 037 (Android 5.0+), 038 (Android 6.0+), 039 (Android 7.0+).",
+      "Followed by SHA-1 checksum (20 bytes) and Adler-32 checksum (4 bytes).",
+      "DEX files are executed by the Android Runtime (ART) or Dalvik VM."
+    ]
+  },
+  "updated": "2026-05-29"
+}

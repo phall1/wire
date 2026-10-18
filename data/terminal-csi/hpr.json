@@ -1,0 +1,56 @@
+{
+  "id": "terminal-csi/hpr",
+  "family": "terminal-csi",
+  "slug": "hpr",
+  "title": "CSI HPR — Horizontal Position Relative",
+  "summary": "CSI Pn a moves the cursor right Pn columns (default 1). Equivalent to CUF but does not stop at the right margin (may wrap or be ignored depending on terminal).",
+  "kind": "control-sequence",
+  "aliases": [
+    "HPR",
+    "CSI HPR — Horizontal Position Relative"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "CSI",
+    "command_number": "HPR",
+    "frame": {
+      "introducer_7bit": "\u001b[",
+      "introducer_7bit_readable": "ESC [ (0x1B 0x5B)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9B (single-byte CSI, 8-bit C1)",
+      "note": "CSI sequence with final byte 'a'."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: the CSI sequence ends at its final byte."
+    },
+    "params": [
+      {
+        "id": "hpr",
+        "anchor": "#hpr",
+        "name": "HPR (Horizontal Position Relative)",
+        "meaning": "CSI Pn a moves the cursor right Pn columns.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[3a",
+        "byte_sequence_ST_readable": "ESC [ 3 a (right 3)",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Pn defaults to 1.",
+      "HPR and CUF ('C') are similar; CUF is more widely supported."
+    ],
+    "v1_smoke_test": {
+      "asserts": "CSI sequence renders as a byte-exact sequence with final byte 'a'.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}
