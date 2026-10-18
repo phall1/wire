@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/cpu-pipeline",
+  "family": "wire-format",
+  "slug": "cpu-pipeline",
+  "title": "CPU pipeline stages (classic 5-stage)",
+  "summary": "The classic 5-stage RISC pipeline: IF (Instruction Fetch), ID (Instruction Decode + Register Read), EX (Execute/ALU), MEM (Memory Access), WB (Write Back). Each stage takes one clock cycle. Hazards: structural (resource conflict), data (RAW/WAR/WAW dependencies), control (branch). Solutions: forwarding/bypassing, stalling, branch prediction, out-of-order execution.",
+  "kind": "wire-format",
+  "aliases": [
+    "CPU pipeline stages (classic 5-stage)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Instruction_pipelining",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Computer architecture",
+    "summary": "The classic 5-stage RISC pipeline: IF (Instruction Fetch), ID (Instruction Decode + Register Read), EX (Execute/ALU), MEM (Memory Access), WB (Write Back). Each stage takes one clock cycle. Hazards: structural (resource conflict), data (RAW/WAR/WAW dependencies), control (branch). Solutions: forwarding/bypassing, stalling, branch prediction, out-of-order execution.",
+    "structure": [
+      {
+        "field": "IF (Instruction Fetch)",
+        "size": "stage 1",
+        "meaning": "Fetch instruction from memory (I-cache). Compute next PC (PC+4 or branch target)."
+      },
+      {
+        "field": "ID (Instruction Decode)",
+        "size": "stage 2",
+        "meaning": "Decode instruction. Read source registers from register file. Sign-extend immediate."
+      },
+      {
+        "field": "EX (Execute)",
+        "size": "stage 3",
+        "meaning": "ALU operation. Compute branch target. Evaluate branch condition."
+      },
+      {
+        "field": "MEM (Memory Access)",
+        "size": "stage 4",
+        "meaning": "Load/store to data cache. (NOP for non-memory instructions.)"
+      },
+      {
+        "field": "WB (Write Back)",
+        "size": "stage 5",
+        "meaning": "Write result to register file. (NOP for stores and branches.)"
+      },
+      {
+        "field": "RAW hazard",
+        "size": "data hazard",
+        "meaning": "Read After Write: instruction needs a result that hasn't been written yet. Solved by forwarding or stalling."
+      },
+      {
+        "field": "WAR hazard",
+        "size": "data hazard",
+        "meaning": "Write After Read: less common in in-order pipelines. Solved by register renaming in OoO."
+      },
+      {
+        "field": "WAW hazard",
+        "size": "data hazard",
+        "meaning": "Write After Write: two instructions write the same register. Solved by register renaming in OoO."
+      },
+      {
+        "field": "Control hazard",
+        "size": "control hazard",
+        "meaning": "Branch outcome unknown until EX stage. Solved by branch prediction and flushing on misprediction."
+      },
+      {
+        "field": "Structural hazard",
+        "size": "resource hazard",
+        "meaning": "Two instructions need the same resource (e.g., single-ported memory). Solved by duplicating resources or stalling."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "CPU pipeline stages (placeholder)",
+    "notes": [
+      "Modern CPUs use deeper pipelines (10-20+ stages) and out-of-order execution.",
+      "Out-of-order execution: instructions execute when their operands are ready, not in program order.",
+      "Register renaming eliminates WAR and WAW hazards by mapping architectural registers to physical registers.",
+      "Reorder buffer (ROB) ensures in-order commit for precise exceptions.",
+      "Superscalar: multiple instructions issued per cycle (2-8+)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

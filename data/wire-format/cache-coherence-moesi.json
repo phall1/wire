@@ -1,0 +1,67 @@
+{
+  "id": "wire-format/cache-coherence-moesi",
+  "family": "wire-format",
+  "slug": "cache-coherence-moesi",
+  "title": "MOESI cache coherence protocol",
+  "summary": "MOESI extends MESI with an Owned (O) state: Modified (M), Owned (O), Exclusive (E), Shared (S), Invalid (I). Owned state: line is dirty and shared (this cache is responsible for writing back; others have read-only copies). Reduces write-backs compared to MESI (which requires M->I transition on snoop write, forcing a write-back).",
+  "kind": "wire-format",
+  "aliases": [
+    "MOESI cache coherence protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/MOESI_protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MOESI (cache coherence)",
+    "summary": "MOESI extends MESI with an Owned (O) state: Modified (M), Owned (O), Exclusive (E), Shared (S), Invalid (I). Owned state: line is dirty and shared (this cache is responsible for writing back; others have read-only copies). Reduces write-backs compared to MESI (which requires M->I transition on snoop write, forcing a write-back).",
+    "structure": [
+      {
+        "field": "Modified (M)",
+        "size": "state",
+        "meaning": "Dirty and exclusive. Write back on eviction."
+      },
+      {
+        "field": "Owned (O)",
+        "size": "state",
+        "meaning": "Dirty and shared. This cache owns the line (responsible for write-back). Others have read-only (S) copies."
+      },
+      {
+        "field": "Exclusive (E)",
+        "size": "state",
+        "meaning": "Clean and exclusive."
+      },
+      {
+        "field": "Shared (S)",
+        "size": "state",
+        "meaning": "Clean and shared (read-only)."
+      },
+      {
+        "field": "Invalid (I)",
+        "size": "state",
+        "meaning": "Not valid."
+      },
+      {
+        "field": "M->O transition",
+        "size": "snoop read",
+        "meaning": "When another cache reads a Modified line, it transitions to Owned (instead of Shared in MESI), keeping the dirty data in this cache."
+      },
+      {
+        "field": "O->I transition",
+        "size": "snoop write",
+        "meaning": "On a snoop write, Owned transitions to Invalid (write back first)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "MOESI states (placeholder)",
+    "notes": [
+      "MOESI reduces memory traffic by keeping dirty data in cache longer.",
+      "Used by AMD (Opteron) and some ARM implementations.",
+      "MESIF (Intel) uses Forward instead of Owned for efficient sharing."
+    ]
+  },
+  "updated": "2026-05-29"
+}

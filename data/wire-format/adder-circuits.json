@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/adder-circuits",
+  "family": "wire-format",
+  "slug": "adder-circuits",
+  "title": "Adder circuits (half, full, ripple, lookahead)",
+  "summary": "Adders are combinational circuits for binary addition. Half adder: sum = A XOR B, carry = A AND B. Full adder: sum = A XOR B XOR Cin, carry = (A AND B) OR (Cin AND (A XOR B)). Ripple carry adder: chains full adders (carry propagates, O(n) delay). Carry lookahead adder (CLA): computes carry in parallel using generate (G = A AND B) and propagate (P = A XOR B) signals, O(log n) delay.",
+  "kind": "wire-format",
+  "aliases": [
+    "Adder circuits (half, full, ripple, lookahead)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Adder_(electronics)",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "Adders are combinational circuits for binary addition. Half adder: sum = A XOR B, carry = A AND B. Full adder: sum = A XOR B XOR Cin, carry = (A AND B) OR (Cin AND (A XOR B)). Ripple carry adder: chains full adders (carry propagates, O(n) delay). Carry lookahead adder (CLA): computes carry in parallel using generate (G = A AND B) and propagate (P = A XOR B) signals, O(log n) delay.",
+    "structure": [
+      {
+        "field": "Half adder",
+        "size": "2 inputs, 2 outputs",
+        "meaning": "Sum = A XOR B. Carry = A AND B. No carry input."
+      },
+      {
+        "field": "Full adder",
+        "size": "3 inputs, 2 outputs",
+        "meaning": "Sum = A XOR B XOR Cin. Carry = (A AND B) OR (Cin AND (A XOR B))."
+      },
+      {
+        "field": "Ripple carry adder",
+        "size": "n full adders",
+        "meaning": "Chain n full adders. Carry out of bit i feeds carry in of bit i+1. Delay = O(n) (carry ripples through all bits)."
+      },
+      {
+        "field": "Carry lookahead (CLA)",
+        "size": "n bits",
+        "meaning": "Generate: G_i = A_i AND B_i. Propagate: P_i = A_i XOR B_i. Carry: C_{i+1} = G_i OR (P_i AND C_i). Parallel computation of all carries. Delay = O(log n)."
+      },
+      {
+        "field": "Carry select adder",
+        "size": "n bits",
+        "meaning": "Compute both possible sums (with carry 0 and carry 1) for each block, then select based on actual carry. Faster than ripple, slower than CLA."
+      },
+      {
+        "field": "Prefix adder (Kogge-Stone)",
+        "size": "n bits",
+        "meaning": "Tree-based carry computation. Delay = O(log n). Used in high-performance CPUs."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Adder circuits (placeholder)",
+    "notes": [
+      "Half adder uses 1 XOR + 1 AND gate (5 transistors in CMOS).",
+      "Full adder uses 2 XOR + 2 AND + 1 OR (or 9 NAND gates).",
+      "Ripple carry adder is simple but slow (n * gate delay).",
+      "CLA is used in most modern ALUs for speed.",
+      "Addition is the basis of subtraction (two's complement), multiplication (shift and add), and division."
+    ]
+  },
+  "updated": "2026-05-29"
+}

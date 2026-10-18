@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/cache-structure",
+  "family": "wire-format",
+  "slug": "cache-structure",
+  "title": "CPU cache structure (set-associative)",
+  "summary": "A CPU cache is organized into sets, each containing ways (lines). Address decomposition: tag (high bits) | set index (middle bits) | block offset (low bits). On access: compute set index, check all ways in that set for a tag match. Hit: return data. Miss: fetch from next level. Replacement policies: LRU, pseudo-LRU, random, FIFO. Write policies: write-through (write to cache and memory) or write-back (write to cache only, dirty bit marks modified lines).",
+  "kind": "wire-format",
+  "aliases": [
+    "CPU cache structure (set-associative)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/CPU_cache",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "CPU cache design",
+    "summary": "A CPU cache is organized into sets, each containing ways (lines). Address decomposition: tag (high bits) | set index (middle bits) | block offset (low bits). On access: compute set index, check all ways in that set for a tag match. Hit: return data. Miss: fetch from next level. Replacement policies: LRU, pseudo-LRU, random, FIFO. Write policies: write-through (write to cache and memory) or write-back (write to cache only, dirty bit marks modified lines).",
+    "structure": [
+      {
+        "field": "Block offset",
+        "size": "log2(line size) bits",
+        "meaning": "Low bits: offset within the cache line. E.g., 6 bits for 64-byte lines."
+      },
+      {
+        "field": "Set index",
+        "size": "log2(num sets) bits",
+        "meaning": "Middle bits: which set. E.g., 6 bits for 64 sets."
+      },
+      {
+        "field": "Tag",
+        "size": "remaining bits",
+        "meaning": "High bits: identifies which memory block is in this line."
+      },
+      {
+        "field": "Cache line",
+        "size": "line size (32/64/128 bytes)",
+        "meaning": "The unit of transfer between cache levels and memory."
+      },
+      {
+        "field": "Associativity",
+        "size": "ways per set",
+        "meaning": "1 = direct-mapped, 2/4/8 = set-associative, N = fully associative."
+      },
+      {
+        "field": "MESI protocol",
+        "size": "4 states",
+        "meaning": "Modified (dirty, exclusive), Exclusive (clean, exclusive), Shared (clean, may be in other caches), Invalid (not valid). Used for cache coherence in multi-core systems."
+      },
+      {
+        "field": "Write-back",
+        "size": "policy",
+        "meaning": "Write to cache only; mark line dirty. Write to memory only on eviction. Faster but requires dirty bit."
+      },
+      {
+        "field": "Write-through",
+        "size": "policy",
+        "meaning": "Write to cache and memory simultaneously. Simpler but slower."
+      },
+      {
+        "field": "Inclusive vs exclusive",
+        "size": "policy",
+        "meaning": "Inclusive: L2 contains all L1 data. Exclusive: L2 and L1 are disjoint (more total capacity)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Cache structure (placeholder)",
+    "notes": [
+      "L1 cache: small (32-64KB), fast (1-4 cycles), per-core.",
+      "L2 cache: medium (256KB-1MB), slower (4-12 cycles), per-core or shared.",
+      "L3 cache: large (4-64MB), slower (12-40 cycles), shared across cores.",
+      "Cache misses are the primary performance bottleneck in modern CPUs.",
+      "MESI (Modified, Exclusive, Shared, Invalid) is the standard cache coherence protocol."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/branch-prediction",
+  "family": "wire-format",
+  "slug": "branch-prediction",
+  "title": "Branch prediction (hardware)",
+  "summary": "Branch prediction predicts the outcome of conditional branches to keep the pipeline full. Static prediction: always taken/not-taken, backward taken/forward not-taken. Dynamic prediction: 1-bit (last outcome), 2-bit saturating counter (strongly/weakly taken/not-taken), gshare (global history XOR PC), tournament (local + global), TAGE (tagged geometric history length). Branch target buffer (BTB) caches branch targets. Return address stack (RAS) predicts return addresses.",
+  "kind": "wire-format",
+  "aliases": [
+    "Branch prediction (hardware)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Branch_predictor",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Branch prediction",
+    "summary": "Branch prediction predicts the outcome of conditional branches to keep the pipeline full. Static prediction: always taken/not-taken, backward taken/forward not-taken. Dynamic prediction: 1-bit (last outcome), 2-bit saturating counter (strongly/weakly taken/not-taken), gshare (global history XOR PC), tournament (local + global), TAGE (tagged geometric history length). Branch target buffer (BTB) caches branch targets. Return address stack (RAS) predicts return addresses.",
+    "structure": [
+      {
+        "field": "1-bit predictor",
+        "size": "1 bit per branch",
+        "meaning": "Predicts the same as the last outcome. Fails on alternating patterns."
+      },
+      {
+        "field": "2-bit saturating counter",
+        "size": "2 bits per branch",
+        "meaning": "States: 00 (strongly not-taken), 01 (weakly not-taken), 10 (weakly taken), 11 (strongly taken). Increment on taken, decrement on not-taken."
+      },
+      {
+        "field": "gshare",
+        "size": "global history + PC",
+        "meaning": "XOR global branch history with PC to index the prediction table. Captures correlations between branches."
+      },
+      {
+        "field": "TAGE",
+        "size": "multiple tables",
+        "meaning": "Tagged Geometric History Length: multiple prediction tables with increasing history lengths. Uses partial tags for confidence."
+      },
+      {
+        "field": "BTB",
+        "size": "cache",
+        "meaning": "Branch Target Buffer: caches the target address of branches. On a hit, the pipeline redirects to the target."
+      },
+      {
+        "field": "RAS",
+        "size": "stack",
+        "meaning": "Return Address Stack: pushes return address on CALL, pops on RET. Predicts return targets."
+      },
+      {
+        "field": "Misprediction penalty",
+        "size": "10-20 cycles",
+        "meaning": "Cost of a mispredicted branch: flush the pipeline and restart from the correct path."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Branch prediction (placeholder)",
+    "notes": [
+      "Branch prediction is critical for out-of-order and deeply pipelined CPUs.",
+      "Modern CPUs achieve >95% prediction accuracy.",
+      "TAGE (used by AMD/Intel) is one of the most accurate predictors.",
+      "Branch misprediction is a major source of performance loss in branchy code.",
+      "Speculative execution (based on prediction) can leak data via side channels (Spectre)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

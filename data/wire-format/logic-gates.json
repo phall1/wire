@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/logic-gates",
+  "family": "wire-format",
+  "slug": "logic-gates",
+  "title": "Logic gates (Boolean algebra)",
+  "summary": "The fundamental logic gates: AND (output 1 if all inputs 1), OR (output 1 if any input 1), NOT (inverter), NAND (NOT AND), NOR (NOT OR), XOR (exclusive OR, output 1 if inputs differ), XNOR (equivalence, output 1 if inputs same). NAND and NOR are universal gates (can implement any Boolean function). De Morgan's laws: NOT(A AND B) = NOT A OR NOT B; NOT(A OR B) = NOT A AND NOT B.",
+  "kind": "wire-format",
+  "aliases": [
+    "Logic gates (Boolean algebra)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Logic_gate",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Boolean algebra",
+    "summary": "The fundamental logic gates: AND (output 1 if all inputs 1), OR (output 1 if any input 1), NOT (inverter), NAND (NOT AND), NOR (NOT OR), XOR (exclusive OR, output 1 if inputs differ), XNOR (equivalence, output 1 if inputs same). NAND and NOR are universal gates (can implement any Boolean function). De Morgan's laws: NOT(A AND B) = NOT A OR NOT B; NOT(A OR B) = NOT A AND NOT B.",
+    "structure": [
+      {
+        "field": "AND",
+        "size": "2+ inputs",
+        "meaning": "Output = 1 iff all inputs are 1. Truth table: 00->0, 01->0, 10->0, 11->1."
+      },
+      {
+        "field": "OR",
+        "size": "2+ inputs",
+        "meaning": "Output = 1 iff any input is 1. Truth table: 00->0, 01->1, 10->1, 11->1."
+      },
+      {
+        "field": "NOT",
+        "size": "1 input",
+        "meaning": "Output = NOT input. Truth table: 0->1, 1->0."
+      },
+      {
+        "field": "NAND",
+        "size": "2+ inputs",
+        "meaning": "Output = NOT (A AND B). Universal gate. Truth table: 00->1, 01->1, 10->1, 11->0."
+      },
+      {
+        "field": "NOR",
+        "size": "2+ inputs",
+        "meaning": "Output = NOT (A OR B). Universal gate. Truth table: 00->1, 01->0, 10->0, 11->0."
+      },
+      {
+        "field": "XOR",
+        "size": "2 inputs",
+        "meaning": "Output = 1 iff inputs differ. Truth table: 00->0, 01->1, 10->1, 11->0. (A XOR B = A'B + AB')"
+      },
+      {
+        "field": "XNOR",
+        "size": "2 inputs",
+        "meaning": "Output = 1 iff inputs same (equivalence). Truth table: 00->1, 01->0, 10->0, 11->1."
+      },
+      {
+        "field": "De Morgan's laws",
+        "size": "identity",
+        "meaning": "NOT(A AND B) = NOT A OR NOT B. NOT(A OR B) = NOT A AND NOT B."
+      },
+      {
+        "field": "Absorption",
+        "size": "identity",
+        "meaning": "A AND (A OR B) = A. A OR (A AND B) = A."
+      },
+      {
+        "field": "Distributive",
+        "size": "identity",
+        "meaning": "A AND (B OR C) = (A AND B) OR (A AND C). A OR (B AND C) = (A OR B) AND (A OR C)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Logic gate truth tables (placeholder)",
+    "notes": [
+      "NAND and NOR are universal: any Boolean function can be built from NANDs (or NORs) alone.",
+      "XOR is used for parity, checksums, and addition (sum bit).",
+      "In CMOS: NAND is faster than AND (fewer transistors in the pull-down network).",
+      "A NOT gate is an inverter: 1 PMOS + 1 NMOS transistor.",
+      "Boolean algebra is the mathematical foundation of all digital logic."
+    ]
+  },
+  "updated": "2026-05-29"
+}

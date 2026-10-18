@@ -1,0 +1,94 @@
+{
+  "id": "wire-format/mesi-protocol",
+  "family": "wire-format",
+  "slug": "mesi-protocol",
+  "title": "MESI cache coherence protocol",
+  "summary": "MESI is a cache coherence protocol for multi-core systems. Four states: Modified (M): line is dirty and exclusive to this cache. Exclusive (E): line is clean and exclusive. Shared (S): line is clean and may be in other caches. Invalid (I): line is not valid. State transitions on read/write/hit/miss/snoop. Bus snooping: caches monitor (snoop) the bus for writes to shared lines.",
+  "kind": "wire-format",
+  "aliases": [
+    "MESI cache coherence protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/MESI_protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MESI (cache coherence)",
+    "summary": "MESI is a cache coherence protocol for multi-core systems. Four states: Modified (M): line is dirty and exclusive to this cache. Exclusive (E): line is clean and exclusive. Shared (S): line is clean and may be in other caches. Invalid (I): line is not valid. State transitions on read/write/hit/miss/snoop. Bus snooping: caches monitor (snoop) the bus for writes to shared lines.",
+    "structure": [
+      {
+        "field": "Modified (M)",
+        "size": "state",
+        "meaning": "Line is dirty (modified) and exclusive to this cache. Must write back on eviction. No other cache has it."
+      },
+      {
+        "field": "Exclusive (E)",
+        "size": "state",
+        "meaning": "Line is clean and exclusive to this cache. No other cache has it. Can transition to M on write (no bus transaction needed)."
+      },
+      {
+        "field": "Shared (S)",
+        "size": "state",
+        "meaning": "Line is clean and may be in other caches. Read-only. Must invalidate others on write (transition to M)."
+      },
+      {
+        "field": "Invalid (I)",
+        "size": "state",
+        "meaning": "Line is not valid. Must fetch from memory or another cache on access."
+      },
+      {
+        "field": "Read hit (M/E/S)",
+        "size": "transition",
+        "meaning": "M: stay M. E: stay E. S: stay S."
+      },
+      {
+        "field": "Read miss (I)",
+        "size": "transition",
+        "meaning": "I -> S (if other caches have it) or I -> E (if no other cache has it)."
+      },
+      {
+        "field": "Write hit (M)",
+        "size": "transition",
+        "meaning": "M: stay M."
+      },
+      {
+        "field": "Write hit (E)",
+        "size": "transition",
+        "meaning": "E -> M (no bus transaction)."
+      },
+      {
+        "field": "Write hit (S)",
+        "size": "transition",
+        "meaning": "S -> M (invalidate other caches)."
+      },
+      {
+        "field": "Write miss (I)",
+        "size": "transition",
+        "meaning": "I -> M (fetch and invalidate others)."
+      },
+      {
+        "field": "Snoop (read)",
+        "size": "transition",
+        "meaning": "M -> S (write back first). E -> S. S: stay S."
+      },
+      {
+        "field": "Snoop (write)",
+        "size": "transition",
+        "meaning": "M -> I (write back). E -> I. S -> I."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "MESI states (placeholder)",
+    "notes": [
+      "MESI is the standard cache coherence protocol for multi-core CPUs.",
+      "MOESI adds an Owned (O) state for dirty shared lines (reduces write-backs).",
+      "MESIF adds a Forward (F) state for efficient sharing (Intel).",
+      "MESI requires bus snooping or a directory-based coherence protocol.",
+      "Cache coherence is essential for multi-core correctness."
+    ]
+  },
+  "updated": "2026-05-29"
+}

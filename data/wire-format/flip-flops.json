@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/flip-flops",
+  "family": "wire-format",
+  "slug": "flip-flops",
+  "title": "Flip-flops and latches (sequential logic)",
+  "summary": "Flip-flops are bistable circuits (1-bit memory). Types: SR latch (set/reset), D latch (data), D flip-flop (edge-triggered), JK flip-flop (toggle), T flip-flop (toggle). Latches are level-sensitive; flip-flops are edge-triggered. Setup time, hold time, and clock-to-Q delay are key timing parameters.",
+  "kind": "wire-format",
+  "aliases": [
+    "Flip-flops and latches (sequential logic)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Flip-flop_(electronics)",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Sequential logic design",
+    "summary": "Flip-flops are bistable circuits (1-bit memory). Types: SR latch (set/reset), D latch (data), D flip-flop (edge-triggered), JK flip-flop (toggle), T flip-flop (toggle). Latches are level-sensitive; flip-flops are edge-triggered. Setup time, hold time, and clock-to-Q delay are key timing parameters.",
+    "structure": [
+      {
+        "field": "SR latch",
+        "size": "2 inputs (S, R)",
+        "meaning": "Set (S=1, R=0): Q=1. Reset (S=0, R=1): Q=0. Invalid: S=1, R=1. (S=R=0: hold.)"
+      },
+      {
+        "field": "D latch",
+        "size": "2 inputs (D, E)",
+        "meaning": "When E=1 (enable): Q=D. When E=0: hold. Transparent latch."
+      },
+      {
+        "field": "D flip-flop",
+        "size": "2 inputs (D, CLK)",
+        "meaning": "On rising edge of CLK: Q=D. Edge-triggered. Master-slave or pulse-triggered."
+      },
+      {
+        "field": "JK flip-flop",
+        "size": "3 inputs (J, K, CLK)",
+        "meaning": "J=K=0: hold. J=1, K=0: set. J=0, K=1: reset. J=K=1: toggle."
+      },
+      {
+        "field": "T flip-flop",
+        "size": "2 inputs (T, CLK)",
+        "meaning": "T=0: hold. T=1: toggle. (T flip-flop = JK with J=K=T.)"
+      },
+      {
+        "field": "Setup time (t_su)",
+        "size": "timing",
+        "meaning": "Minimum time data must be stable before the clock edge."
+      },
+      {
+        "field": "Hold time (t_h)",
+        "size": "timing",
+        "meaning": "Minimum time data must be stable after the clock edge."
+      },
+      {
+        "field": "Clock-to-Q (t_cq)",
+        "size": "timing",
+        "meaning": "Time from clock edge to output change."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Flip-flop types (placeholder)",
+    "notes": [
+      "D flip-flop is the most common (used in registers, pipelines).",
+      "JK flip-flop is universal (can implement any flip-flop type).",
+      "Edge-triggered flip-flops are preferred over latches in synchronous design.",
+      "Setup/hold violations cause metastability (unpredictable output).",
+      "Flip-flops are the basis of registers, counters, state machines, and pipelines."
+    ]
+  },
+  "updated": "2026-05-29"
+}
