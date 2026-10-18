@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/finite-state-machine",
+  "family": "wire-format",
+  "slug": "finite-state-machine",
+  "title": "Finite state machine (Mealy and Moore)",
+  "summary": "A finite state machine (FSM) has states, inputs, outputs, and transitions. Mealy machine: output depends on current state AND input. Moore machine: output depends only on current state. State encoding: binary (minimum bits), one-hot (one bit per state, simpler logic), Gray code (adjacent states differ by one bit, reduces glitches).",
+  "kind": "wire-format",
+  "aliases": [
+    "Finite state machine (Mealy and Moore)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Finite-state_machine",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "A finite state machine (FSM) has states, inputs, outputs, and transitions. Mealy machine: output depends on current state AND input. Moore machine: output depends only on current state. State encoding: binary (minimum bits), one-hot (one bit per state, simpler logic), Gray code (adjacent states differ by one bit, reduces glitches).",
+    "structure": [
+      {
+        "field": "Mealy machine",
+        "size": "model",
+        "meaning": "Output = f(state, input). Output can change immediately on input change (faster). More outputs possible."
+      },
+      {
+        "field": "Moore machine",
+        "size": "model",
+        "meaning": "Output = f(state). Output changes only on state transition (simpler, no glitches). Fewer outputs."
+      },
+      {
+        "field": "State register",
+        "size": "n bits",
+        "meaning": "Holds the current state. n = ceil(log2(num_states)) for binary encoding."
+      },
+      {
+        "field": "Next state logic",
+        "size": "combinational",
+        "meaning": "Computes next state from current state + inputs."
+      },
+      {
+        "field": "Output logic",
+        "size": "combinational",
+        "meaning": "Mealy: f(state, input). Moore: f(state)."
+      },
+      {
+        "field": "One-hot encoding",
+        "size": "num_states bits",
+        "meaning": "One bit per state. Simpler next-state logic (fewer gates) but more flip-flops."
+      },
+      {
+        "field": "Binary encoding",
+        "size": "ceil(log2(n)) bits",
+        "meaning": "Minimum flip-flops but complex next-state logic."
+      },
+      {
+        "field": "Gray code",
+        "size": "ceil(log2(n)) bits",
+        "meaning": "Adjacent states differ by one bit. Reduces glitches in asynchronous outputs."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "FSM (placeholder)",
+    "notes": [
+      "FSMs are the basis of control units, protocols, and sequential logic.",
+      "Mealy machines can have glitches (output changes before clock edge).",
+      "Moore machines are safer for synchronous design.",
+      "State minimization reduces the number of states (and flip-flops).",
+      "FSM design: state diagram -> state table -> state assignment -> logic minimization -> implementation."
+    ]
+  },
+  "updated": "2026-05-29"
+}

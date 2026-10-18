@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/dram-cell",
+  "family": "wire-format",
+  "slug": "dram-cell",
+  "title": "DRAM cell (1T1C)",
+  "summary": "A DRAM cell stores 1 bit in a capacitor (1T1C: 1 transistor + 1 capacitor). The transistor (access) connects the capacitor to the bit line when the word line is asserted. Read: precharge bit line, assert word line, sense the charge sharing (destructive read). Write: drive bit line to desired value, assert word line (charges/discharges capacitor). Refresh required every ~64ms (capacitor leaks).",
+  "kind": "wire-format",
+  "aliases": [
+    "DRAM cell (1T1C)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Dynamic_random-access_memory",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "DRAM design",
+    "summary": "A DRAM cell stores 1 bit in a capacitor (1T1C: 1 transistor + 1 capacitor). The transistor (access) connects the capacitor to the bit line when the word line is asserted. Read: precharge bit line, assert word line, sense the charge sharing (destructive read). Write: drive bit line to desired value, assert word line (charges/discharges capacitor). Refresh required every ~64ms (capacitor leaks).",
+    "structure": [
+      {
+        "field": "Storage capacitor",
+        "size": "1 capacitor",
+        "meaning": "Stores charge (1 = charged, 0 = discharged). Capacitance ~10-30 fF."
+      },
+      {
+        "field": "Access transistor",
+        "size": "1 NMOS",
+        "meaning": "Connects capacitor to bit line when word line is asserted."
+      },
+      {
+        "field": "Word line (WL)",
+        "size": "1 wire",
+        "meaning": "Controls access transistor."
+      },
+      {
+        "field": "Bit line (BL)",
+        "size": "1 wire",
+        "meaning": "Used for read (sense) and write (drive)."
+      },
+      {
+        "field": "Read (destructive)",
+        "size": "access",
+        "meaning": "Precharge BL, assert WL, sense charge sharing. Capacitor is discharged (must rewrite)."
+      },
+      {
+        "field": "Write",
+        "size": "access",
+        "meaning": "Drive BL to desired value, assert WL. Capacitor charges/discharges."
+      },
+      {
+        "field": "Refresh",
+        "size": "every 64ms",
+        "meaning": "Capacitor leaks; must read and rewrite every ~64ms (typically 8192 refreshes per 64ms)."
+      },
+      {
+        "field": "Sense amplifier",
+        "size": "per column",
+        "meaning": "Differential amplifier that senses the small voltage change on the bit line."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "DRAM 1T1C cell (placeholder)",
+    "notes": [
+      "1T1C DRAM is the standard for main memory (dense: 1 transistor per bit).",
+      "DRAM is volatile (loses data when power is off).",
+      "DRAM access time: 10-20ns (row access), 50-100ns (random access).",
+      "DDR (Double Data Rate) transfers on both clock edges (2x bandwidth).",
+      "DRAM refresh consumes ~5-10% of bandwidth."
+    ]
+  },
+  "updated": "2026-05-29"
+}

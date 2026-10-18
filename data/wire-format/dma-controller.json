@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/dma-controller",
+  "family": "wire-format",
+  "slug": "dma-controller",
+  "title": "DMA (Direct Memory Access) controller",
+  "summary": "A DMA controller transfers data between memory and peripherals without CPU involvement. The CPU programs the DMA controller with: source address, destination address, transfer count, transfer mode (single, block, demand, cascade), and direction (memory-to-memory, memory-to-I/O, I/O-to-memory). The DMA controller then performs the transfer and interrupts the CPU on completion.",
+  "kind": "wire-format",
+  "aliases": [
+    "DMA (Direct Memory Access) controller"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Direct_memory_access",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "DMA controller (8237)",
+    "summary": "A DMA controller transfers data between memory and peripherals without CPU involvement. The CPU programs the DMA controller with: source address, destination address, transfer count, transfer mode (single, block, demand, cascade), and direction (memory-to-memory, memory-to-I/O, I/O-to-memory). The DMA controller then performs the transfer and interrupts the CPU on completion.",
+    "structure": [
+      {
+        "field": "Source address",
+        "size": "2-4 bytes",
+        "meaning": "Starting address of the source (memory or I/O port)."
+      },
+      {
+        "field": "Destination address",
+        "size": "2-4 bytes",
+        "meaning": "Starting address of the destination (memory or I/O port)."
+      },
+      {
+        "field": "Transfer count",
+        "size": "2-4 bytes",
+        "meaning": "Number of bytes/words to transfer (minus 1)."
+      },
+      {
+        "field": "Mode register",
+        "size": "1 byte",
+        "meaning": "Transfer mode (single, block, demand, cascade), direction (read/write/verify), auto-initialize, address increment/decrement."
+      },
+      {
+        "field": "Status register",
+        "size": "1 byte",
+        "meaning": "Terminal count, request, service, and channel status bits."
+      },
+      {
+        "field": "Command register",
+        "size": "1 byte",
+        "meaning": "Enable/disable DMA, memory-to-memory, controller priority, timing, etc."
+      },
+      {
+        "field": "Request register",
+        "size": "1 byte",
+        "meaning": "Software DMA request (for memory-to-memory transfers)."
+      },
+      {
+        "field": "Mask register",
+        "size": "1 byte",
+        "meaning": "Mask (disable) individual DMA channels."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "DMA controller (placeholder)",
+    "notes": [
+      "DMA frees the CPU to do other work during data transfers.",
+      "8237 DMA controller: 4 channels, 8/16-bit transfers.",
+      "Modern systems use bus-mastering DMA (device initiates transfer) instead of a separate DMA controller.",
+      "DMA is essential for high-throughput I/O (disk, network, audio).",
+      "IOMMU (I/O Memory Management Unit) provides address translation and protection for DMA."
+    ]
+  },
+  "updated": "2026-05-29"
+}

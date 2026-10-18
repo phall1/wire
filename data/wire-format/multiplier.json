@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/multiplier",
+  "family": "wire-format",
+  "slug": "multiplier",
+  "title": "Hardware multiplier (shift-and-add, Booth, Wallace tree)",
+  "summary": "A hardware multiplier computes the product of two n-bit integers. Methods: shift-and-add (O(n^2) gate delay), Booth's algorithm (handles signed, reduces partial products), Wallace tree (parallel reduction of partial products, O(log n) delay), Dadda tree (similar, fewer gates). Modern CPUs use modified Booth encoding + Wallace/Dadda tree + carry-propagate adder.",
+  "kind": "wire-format",
+  "aliases": [
+    "Hardware multiplier (shift-and-add, Booth, Wallace tree)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Binary_multiplier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital arithmetic",
+    "summary": "A hardware multiplier computes the product of two n-bit integers. Methods: shift-and-add (O(n^2) gate delay), Booth's algorithm (handles signed, reduces partial products), Wallace tree (parallel reduction of partial products, O(log n) delay), Dadda tree (similar, fewer gates). Modern CPUs use modified Booth encoding + Wallace/Dadda tree + carry-propagate adder.",
+    "structure": [
+      {
+        "field": "Partial products",
+        "size": "n x n",
+        "meaning": "n partial products, each shifted by its position. E.g., for 4-bit: 4 partial products of 4 bits."
+      },
+      {
+        "field": "Shift-and-add",
+        "size": "O(n) iterations",
+        "meaning": "Iterative: if multiplier bit is 1, add multiplicand to accumulator; shift right. O(n) cycles."
+      },
+      {
+        "field": "Booth's algorithm",
+        "size": "O(n) iterations",
+        "meaning": "Encodes pairs of multiplier bits: 00/11 -> 0, 01 -> +multiplicand, 10 -> -multiplicand. Reduces partial products for signed multiplication."
+      },
+      {
+        "field": "Modified Booth (radix-4)",
+        "size": "O(n/2) iterations",
+        "meaning": "Encodes triples of multiplier bits. Fewer partial products (n/2 instead of n). Most common in modern CPUs."
+      },
+      {
+        "field": "Wallace tree",
+        "size": "O(log n) delay",
+        "meaning": "Parallel reduction: 3:2 compressors (full adders) reduce partial products in a tree structure. Fast but area-intensive."
+      },
+      {
+        "field": "Dadda tree",
+        "size": "O(log n) delay",
+        "meaning": "Similar to Wallace but minimizes the number of adders. Slightly slower but smaller."
+      },
+      {
+        "field": "Result",
+        "size": "2n bits",
+        "meaning": "Product of two n-bit integers is 2n bits."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Multiplier (placeholder)",
+    "notes": [
+      "Multiplication is the most expensive integer operation (tens of cycles).",
+      "Modern CPUs use modified Booth encoding + Wallace tree + carry-propagate adder.",
+      "Fused multiply-add (FMA) computes (a*b)+c in one instruction with single rounding.",
+      "Floating-point multiplication uses mantissa multiplication + exponent addition.",
+      "SIMD multipliers operate on multiple elements in parallel."
+    ]
+  },
+  "updated": "2026-05-29"
+}

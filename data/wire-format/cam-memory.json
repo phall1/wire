@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/cam-memory",
+  "family": "wire-format",
+  "slug": "cam-memory",
+  "title": "CAM (Content-Addressable Memory)",
+  "summary": "CAM (Content-Addressable Memory) is a special memory that searches all entries in parallel for a match. Each cell is an SRAM cell with a comparison circuit (XNOR + match line). On a search, the search key is broadcast to all rows; matching rows pull their match line low. Priority encoder selects the highest-priority match. Used in TLBs, caches (tag lookup), and network routers (forwarding tables).",
+  "kind": "wire-format",
+  "aliases": [
+    "CAM (Content-Addressable Memory)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Content-addressable_memory",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "CAM design",
+    "summary": "CAM (Content-Addressable Memory) is a special memory that searches all entries in parallel for a match. Each cell is an SRAM cell with a comparison circuit (XNOR + match line). On a search, the search key is broadcast to all rows; matching rows pull their match line low. Priority encoder selects the highest-priority match. Used in TLBs, caches (tag lookup), and network routers (forwarding tables).",
+    "structure": [
+      {
+        "field": "CAM cell",
+        "size": "9-10 transistors",
+        "meaning": "SRAM cell (6T) + comparison circuit (2-4 transistors: XNOR + pass transistor)."
+      },
+      {
+        "field": "Search key",
+        "size": "n bits",
+        "meaning": "Broadcast to all rows in parallel."
+      },
+      {
+        "field": "Match line",
+        "size": "1 wire per row",
+        "meaning": "Precharged high; pulled low if any bit mismatches."
+      },
+      {
+        "field": "Priority encoder",
+        "size": "n-to-log2(n)",
+        "meaning": "Selects the highest-priority matching row."
+      },
+      {
+        "field": "Valid bit",
+        "size": "1 bit per row",
+        "meaning": "Indicates if the entry is valid (not empty)."
+      },
+      {
+        "field": "Mask",
+        "size": "n bits",
+        "meaning": "Ternary CAM (TCAM): each bit can be 0, 1, or don't-care (X). Used for IP routing (subnet masks)."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "CAM (placeholder)",
+    "notes": [
+      "CAM is O(1) search (vs O(n) for RAM).",
+      "TCAM (Ternary CAM) supports don't-care bits (for subnet matching).",
+      "CAM is used in TLBs (fast address translation), cache tag lookup, and network routers.",
+      "CAM is expensive (area and power): 9-10 transistors per bit vs 1 for DRAM.",
+      "CAM search is parallel (all rows simultaneously)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

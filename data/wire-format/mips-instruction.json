@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/mips-instruction",
+  "family": "wire-format",
+  "slug": "mips-instruction",
+  "title": "MIPS instruction encoding",
+  "summary": "MIPS (Microprocessor without Interlocked Pipeline Stages) is a RISC ISA. 32-bit instructions, 4-byte aligned. Three formats: R (register), I (immediate), J (jump). R-type: opcode(6) | rs(5) | rt(5) | rd(5) | shamt(5) | funct(6). I-type: opcode(6) | rs(5) | rt(5) | immediate(16). J-type: opcode(6) | address(26). 32 registers ($0-$31), $0 is hardwired to 0.",
+  "kind": "wire-format",
+  "aliases": [
+    "MIPS instruction encoding"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/MIPS_architecture",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MIPS32 Architecture",
+    "summary": "MIPS (Microprocessor without Interlocked Pipeline Stages) is a RISC ISA. 32-bit instructions, 4-byte aligned. Three formats: R (register), I (immediate), J (jump). R-type: opcode(6) | rs(5) | rt(5) | rd(5) | shamt(5) | funct(6). I-type: opcode(6) | rs(5) | rt(5) | immediate(16). J-type: opcode(6) | address(26). 32 registers ($0-$31), $0 is hardwired to 0.",
+    "structure": [
+      {
+        "field": "R-type",
+        "size": "4 bytes",
+        "meaning": "opcode[31:26] | rs[25:21] | rt[20:16] | rd[15:11] | shamt[10:6] | funct[5:0]. E.g., ADD rd, rs, rt."
+      },
+      {
+        "field": "I-type",
+        "size": "4 bytes",
+        "meaning": "opcode[31:26] | rs[25:21] | rt[20:16] | immediate[15:0]. E.g., ADDI rt, rs, imm."
+      },
+      {
+        "field": "J-type",
+        "size": "4 bytes",
+        "meaning": "opcode[31:26] | address[25:0]. E.g., J target, JAL target."
+      },
+      {
+        "field": "Registers",
+        "size": "32",
+        "meaning": "$0 (zero), $1 (at), $2-$3 (v0-v1), $4-$7 (a0-a3), $8-$15 (t0-t7), $16-$23 (s0-s7), $24-$25 (t8-t9), $26-$27 (k0-k1), $28 (gp), $29 (sp), $30 (fp), $31 (ra)."
+      },
+      {
+        "field": "Branch delay slot",
+        "size": "1 instruction",
+        "meaning": "The instruction after a branch is always executed (delay slot). MIPS has no branch prediction in the base ISA."
+      },
+      {
+        "field": "Load delay slot",
+        "size": "1 instruction",
+        "meaning": "The instruction after a load cannot use the loaded value (load delay). (Removed in MIPS32r2+.)"
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "MIPS instruction (placeholder)",
+    "notes": [
+      "MIPS is a classic RISC ISA (Stanford, 1981).",
+      "MIPS uses branch delay slots (the instruction after a branch always executes).",
+      "MIPS has no condition codes; comparisons set a register to 0 or 1.",
+      "MIPS is used in networking (routers), embedded systems, and PlayStation.",
+      "MIPS64 extends to 64-bit."
+    ]
+  },
+  "updated": "2026-05-29"
+}

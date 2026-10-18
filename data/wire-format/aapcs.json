@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/aapcs",
+  "family": "wire-format",
+  "slug": "aapcs",
+  "title": "AAPCS (ARM Architecture Procedure Call Standard)",
+  "summary": "AAPCS is the standard calling convention for ARM (32-bit and 64-bit). AArch64: integer args in x0-x7 (first 8), float args in v0-v7, return in x0/v0. Callee-saved: x19-x28, x29 (FP), x30 (LR). AArch32: r0-r3 (args), r0-r1 (return), r4-r11 (callee-saved), r12 (IP), r13 (SP), r14 (LR), r15 (PC). Stack: 8-byte aligned (AArch32) or 16-byte aligned (AArch64).",
+  "kind": "wire-format",
+  "aliases": [
+    "AAPCS (ARM Architecture Procedure Call Standard)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Calling_convention",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ARM Architecture Procedure Call Standard",
+    "summary": "AAPCS is the standard calling convention for ARM (32-bit and 64-bit). AArch64: integer args in x0-x7 (first 8), float args in v0-v7, return in x0/v0. Callee-saved: x19-x28, x29 (FP), x30 (LR). AArch32: r0-r3 (args), r0-r1 (return), r4-r11 (callee-saved), r12 (IP), r13 (SP), r14 (LR), r15 (PC). Stack: 8-byte aligned (AArch32) or 16-byte aligned (AArch64).",
+    "structure": [
+      {
+        "field": "AArch64 integer args",
+        "size": "8 registers",
+        "meaning": "x0-x7 (first 8). Additional args on stack."
+      },
+      {
+        "field": "AArch64 float args",
+        "size": "8 registers",
+        "meaning": "v0-v7 (first 8). Additional args on stack."
+      },
+      {
+        "field": "AArch64 return",
+        "size": "x0/v0",
+        "meaning": "Integer return in x0 (and x1 for 128-bit). Float return in v0."
+      },
+      {
+        "field": "AArch64 callee-saved",
+        "size": "registers",
+        "meaning": "x19-x28, x29 (FP), x30 (LR). x0-x18 are caller-saved."
+      },
+      {
+        "field": "AArch32 args",
+        "size": "4 registers",
+        "meaning": "r0-r3 (first 4). Additional args on stack."
+      },
+      {
+        "field": "AArch32 return",
+        "size": "r0-r1",
+        "meaning": "Integer return in r0 (and r1 for 64-bit). Float return in s0/d0."
+      },
+      {
+        "field": "AArch32 callee-saved",
+        "size": "registers",
+        "meaning": "r4-r11. r0-r3, r12 are caller-saved."
+      },
+      {
+        "field": "Stack alignment",
+        "size": "8/16 bytes",
+        "meaning": "8-byte (AArch32) or 16-byte (AArch64) aligned."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "AAPCS (placeholder)",
+    "notes": [
+      "AAPCS is the standard for ARM Linux, Android, and iOS.",
+      "AArch64 (ARM 64-bit) uses x0-x7 for args (vs 6 for x86-64).",
+      "AArch64 has 31 general-purpose registers (vs 16 for x86-64).",
+      "Link register (LR/x30) holds the return address (not on stack by default).",
+      "Frame pointer (FP/x29) is optional in AArch64 (can be omitted for leaf functions)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

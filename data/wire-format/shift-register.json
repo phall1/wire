@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/shift-register",
+  "family": "wire-format",
+  "slug": "shift-register",
+  "title": "Shift register",
+  "summary": "A shift register is a cascade of flip-flops that shifts data by one position per clock cycle. Types: SISO (serial in, serial out), SIPO (serial in, parallel out), PISO (parallel in, serial out), PIPO (parallel in, parallel out). Used for serial-parallel conversion, delay lines, and pseudo-random number generation (LFSR).",
+  "kind": "wire-format",
+  "aliases": [
+    "Shift register"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Shift_register",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "A shift register is a cascade of flip-flops that shifts data by one position per clock cycle. Types: SISO (serial in, serial out), SIPO (serial in, parallel out), PISO (parallel in, serial out), PIPO (parallel in, parallel out). Used for serial-parallel conversion, delay lines, and pseudo-random number generation (LFSR).",
+    "structure": [
+      {
+        "field": "SISO",
+        "size": "n flip-flops",
+        "meaning": "Serial In, Serial Out: data enters one bit at a time and exits one bit at a time. Delay = n cycles."
+      },
+      {
+        "field": "SIPO",
+        "size": "n flip-flops",
+        "meaning": "Serial In, Parallel Out: data enters serially, all bits available in parallel after n cycles."
+      },
+      {
+        "field": "PISO",
+        "size": "n flip-flops",
+        "meaning": "Parallel In, Serial Out: load all bits in parallel, shift out serially."
+      },
+      {
+        "field": "PIPO",
+        "size": "n flip-flops",
+        "meaning": "Parallel In, Parallel Out: load and output in parallel. (This is just a register.)"
+      },
+      {
+        "field": "LFSR",
+        "size": "n flip-flops",
+        "meaning": "Linear Feedback Shift Register: XOR of selected bits fed back to input. Generates pseudo-random sequences. Used for CRC, scrambling, and BIST."
+      },
+      {
+        "field": "Universal shift register",
+        "size": "n flip-flops + muxes",
+        "meaning": "Can shift left or right, or load in parallel, based on control signals."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Shift register (placeholder)",
+    "notes": [
+      "Shift registers are used for serial communication (SPI, UART), data conversion, and delay.",
+      "LFSR is used for CRC computation, pseudo-random number generation, and built-in self-test (BIST).",
+      "A 32-bit LFSR can generate 2^32-1 pseudo-random bits before repeating.",
+      "Universal shift registers are building blocks for ALUs and communication interfaces."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/barrel-shifter",
+  "family": "wire-format",
+  "slug": "barrel-shifter",
+  "title": "Barrel shifter",
+  "summary": "A barrel shifter shifts/rotates an n-bit value by any amount in a single cycle. It uses log2(n) stages of 2:1 multiplexers. Stage i shifts by 2^i if the corresponding bit of the shift amount is 1. Supports: SHL (shift left logical), SHR (shift right logical), SAR (shift right arithmetic), ROL (rotate left), ROR (rotate right).",
+  "kind": "wire-format",
+  "aliases": [
+    "Barrel shifter"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Barrel_shifter",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "A barrel shifter shifts/rotates an n-bit value by any amount in a single cycle. It uses log2(n) stages of 2:1 multiplexers. Stage i shifts by 2^i if the corresponding bit of the shift amount is 1. Supports: SHL (shift left logical), SHR (shift right logical), SAR (shift right arithmetic), ROL (rotate left), ROR (rotate right).",
+    "structure": [
+      {
+        "field": "Stage 0",
+        "size": "n 2:1 muxes",
+        "meaning": "Shift by 0 or 1 bit (controlled by shift_amount[0])."
+      },
+      {
+        "field": "Stage 1",
+        "size": "n 2:1 muxes",
+        "meaning": "Shift by 0 or 2 bits (controlled by shift_amount[1])."
+      },
+      {
+        "field": "Stage i",
+        "size": "n 2:1 muxes",
+        "meaning": "Shift by 0 or 2^i bits (controlled by shift_amount[i])."
+      },
+      {
+        "field": "Total stages",
+        "size": "log2(n)",
+        "meaning": "For 32-bit: 5 stages. For 64-bit: 6 stages."
+      },
+      {
+        "field": "Total muxes",
+        "size": "n * log2(n)",
+        "meaning": "For 32-bit: 32 * 5 = 160 muxes."
+      },
+      {
+        "field": "Shift amount",
+        "size": "log2(n) bits",
+        "meaning": "For 32-bit: 5 bits (0-31). For 64-bit: 6 bits (0-63)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Barrel shifter (placeholder)",
+    "notes": [
+      "Barrel shifter operates in a single cycle (combinational).",
+      "Used in ALU for shift/rotate instructions.",
+      "Arithmetic shift right (SAR) sign-extends (fills with sign bit).",
+      "Logical shift right (SHR) zero-fills.",
+      "Rotate (ROL/ROR) wraps around."
+    ]
+  },
+  "updated": "2026-05-29"
+}

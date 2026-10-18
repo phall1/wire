@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/alu",
+  "family": "wire-format",
+  "slug": "alu",
+  "title": "ALU (Arithmetic Logic Unit)",
+  "summary": "The ALU performs arithmetic and logical operations on integer operands. Typical operations: ADD, SUB, AND, OR, XOR, NOT, SHL (shift left), SHR (shift right), SAR (arithmetic shift right), ROL (rotate left), ROR (rotate right), CMP (compare, sets flags), TEST (AND without storing result). Flags: ZF (zero), SF (sign), CF (carry), OF (overflow), PF (parity).",
+  "kind": "wire-format",
+  "aliases": [
+    "ALU (Arithmetic Logic Unit)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Arithmetic_logic_unit",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Computer architecture",
+    "summary": "The ALU performs arithmetic and logical operations on integer operands. Typical operations: ADD, SUB, AND, OR, XOR, NOT, SHL (shift left), SHR (shift right), SAR (arithmetic shift right), ROL (rotate left), ROR (rotate right), CMP (compare, sets flags), TEST (AND without storing result). Flags: ZF (zero), SF (sign), CF (carry), OF (overflow), PF (parity).",
+    "structure": [
+      {
+        "field": "Operation select",
+        "size": "4-6 bits",
+        "meaning": "Selects the ALU operation (ADD, SUB, AND, OR, XOR, etc.)."
+      },
+      {
+        "field": "Operand A",
+        "size": "n bits",
+        "meaning": "First operand (from register or immediate)."
+      },
+      {
+        "field": "Operand B",
+        "size": "n bits",
+        "meaning": "Second operand (from register or immediate)."
+      },
+      {
+        "field": "Result",
+        "size": "n bits",
+        "meaning": "Operation result."
+      },
+      {
+        "field": "Carry out",
+        "size": "1 bit",
+        "meaning": "Carry/borrow out of the most significant bit."
+      },
+      {
+        "field": "Zero flag (ZF)",
+        "size": "1 bit",
+        "meaning": "1 if result is zero."
+      },
+      {
+        "field": "Sign flag (SF)",
+        "size": "1 bit",
+        "meaning": "1 if result is negative (MSB=1)."
+      },
+      {
+        "field": "Overflow flag (OF)",
+        "size": "1 bit",
+        "meaning": "1 if signed overflow occurred."
+      },
+      {
+        "field": "Carry flag (CF)",
+        "size": "1 bit",
+        "meaning": "1 if unsigned carry/borrow occurred."
+      },
+      {
+        "field": "Parity flag (PF)",
+        "size": "1 bit",
+        "meaning": "1 if even number of 1 bits in low byte."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "ALU (placeholder)",
+    "notes": [
+      "The ALU is the computational core of the CPU.",
+      "Modern ALUs are pipelined and can execute multiple operations per cycle.",
+      "SIMD ALUs operate on multiple data elements in parallel (SSE, AVX, NEON).",
+      "The ALU result feeds the flags register, which controls conditional branches.",
+      "ALU operations are typically combinational (no clock needed, just propagation delay)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

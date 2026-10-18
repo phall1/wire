@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/dwarf-debug",
+  "family": "wire-format",
+  "slug": "dwarf-debug",
+  "title": "DWARF debug information format",
+  "summary": "DWARF is the standard debug information format for ELF (and other) binaries. It provides source-level debugging: line number tables (mapping PC to source line), variable locations (register/stack), type information, and call frame information (CFI) for unwinding. DWARF uses sections: .debug_info (DIEs - Debugging Information Entries), .debug_line (line number program), .debug_str (string table), .debug_abbrev (abbreviation table), .debug_frame/.eh_frame (call frame info).",
+  "kind": "wire-format",
+  "aliases": [
+    "DWARF debug information format"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/DWARF",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "DWARF 5 specification",
+    "summary": "DWARF is the standard debug information format for ELF (and other) binaries. It provides source-level debugging: line number tables (mapping PC to source line), variable locations (register/stack), type information, and call frame information (CFI) for unwinding. DWARF uses sections: .debug_info (DIEs - Debugging Information Entries), .debug_line (line number program), .debug_str (string table), .debug_abbrev (abbreviation table), .debug_frame/.eh_frame (call frame info).",
+    "structure": [
+      {
+        "field": ".debug_info",
+        "size": "variable",
+        "meaning": "DIEs (Debugging Information Entries): tree of tagged entries describing types, variables, functions, scopes."
+      },
+      {
+        "field": "DIE tag",
+        "size": "ULEB128",
+        "meaning": "Tag: DW_TAG_compile_unit, DW_TAG_subprogram, DW_TAG_variable, DW_TAG_base_type, DW_TAG_pointer_type, etc."
+      },
+      {
+        "field": "DIE attributes",
+        "size": "variable",
+        "meaning": "Attributes: DW_AT_name, DW_AT_type, DW_AT_location, DW_AT_low_pc, DW_AT_high_pc, DW_AT_decl_file, DW_AT_decl_line, etc."
+      },
+      {
+        "field": ".debug_line",
+        "size": "variable",
+        "meaning": "Line number program: state machine mapping addresses to source lines (file, line, column)."
+      },
+      {
+        "field": ".debug_abbrev",
+        "size": "variable",
+        "meaning": "Abbreviation table: templates for DIEs (which attributes each tag has)."
+      },
+      {
+        "field": ".eh_frame",
+        "size": "variable",
+        "meaning": "Call Frame Information (CFI): unwind rules for each function (how to restore registers and SP)."
+      },
+      {
+        "field": "LEB128",
+        "size": "variable",
+        "meaning": "Little-Endian Base 128: variable-length integer encoding (7 bits per byte, MSB = continue)."
+      },
+      {
+        "field": "Location expressions",
+        "size": "variable",
+        "meaning": "DW_OP_reg0 (register), DW_OP_fbreg (frame base + offset), DW_OP_addr (absolute address), DW_OP_deref (dereference)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "DWARF (placeholder)",
+    "notes": [
+      "DWARF is used by GDB, LLDB, and all major debuggers.",
+      "DWARF 5 is the latest version (2017).",
+      "CFI (.eh_frame) is used for stack unwinding (backtraces) even in optimized (no frame pointer) code.",
+      "DWARF supports inlined functions, templates (C++), and optimized code.",
+      "Location lists (DW_AT_location with ranges) handle variables that move during execution."
+    ]
+  },
+  "updated": "2026-05-29"
+}

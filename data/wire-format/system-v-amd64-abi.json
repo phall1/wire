@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/system-v-amd64-abi",
+  "family": "wire-format",
+  "slug": "system-v-amd64-abi",
+  "title": "System V AMD64 ABI (calling convention)",
+  "summary": "The System V AMD64 ABI is the standard calling convention for x86-64 on Linux, macOS, and most Unix systems. Integer/pointer arguments: RDI, RSI, RDX, RCX, R8, R9 (first 6), then stack. Floating-point arguments: XMM0-XMM7 (first 8), then stack. Return value: RAX (integer), XMM0 (float). Caller-saved: RAX, RCX, RDX, RSI, RDI, R8-R11. Callee-saved: RBX, RBP, R12-R15. Stack: 16-byte aligned before CALL. Red zone: 128 bytes below RSP (not clobbered by signal handlers).",
+  "kind": "wire-format",
+  "aliases": [
+    "System V AMD64 ABI (calling convention)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/X86_calling_conventions",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "System V Application Binary Interface (AMD64)",
+    "summary": "The System V AMD64 ABI is the standard calling convention for x86-64 on Linux, macOS, and most Unix systems. Integer/pointer arguments: RDI, RSI, RDX, RCX, R8, R9 (first 6), then stack. Floating-point arguments: XMM0-XMM7 (first 8), then stack. Return value: RAX (integer), XMM0 (float). Caller-saved: RAX, RCX, RDX, RSI, RDI, R8-R11. Callee-saved: RBX, RBP, R12-R15. Stack: 16-byte aligned before CALL. Red zone: 128 bytes below RSP (not clobbered by signal handlers).",
+    "structure": [
+      {
+        "field": "Integer args",
+        "size": "6 registers",
+        "meaning": "RDI, RSI, RDX, RCX, R8, R9 (in order). Additional args on stack (right-to-left)."
+      },
+      {
+        "field": "Float args",
+        "size": "8 registers",
+        "meaning": "XMM0-XMM7. Additional args on stack."
+      },
+      {
+        "field": "Integer return",
+        "size": "RAX",
+        "meaning": "Return value in RAX (and RDX for 128-bit)."
+      },
+      {
+        "field": "Float return",
+        "size": "XMM0",
+        "meaning": "Return value in XMM0 (and XMM1 for complex/long double)."
+      },
+      {
+        "field": "Caller-saved",
+        "size": "registers",
+        "meaning": "RAX, RCX, RDX, RSI, RDI, R8-R11. Caller must save if needed across calls."
+      },
+      {
+        "field": "Callee-saved",
+        "size": "registers",
+        "meaning": "RBX, RBP, R12-R15. Callee must save/restore if used."
+      },
+      {
+        "field": "Stack alignment",
+        "size": "16 bytes",
+        "meaning": "RSP must be 16-byte aligned before a CALL instruction."
+      },
+      {
+        "field": "Red zone",
+        "size": "128 bytes",
+        "meaning": "128 bytes below RSP are not clobbered by signal handlers or interrupt handlers. Leaf functions can use this without adjusting RSP."
+      },
+      {
+        "field": "Varargs",
+        "size": "AL register",
+        "meaning": "For variadic functions, AL = number of XMM registers used (0-8)."
+      }
+    ],
+    "example_hex": "55 48 89 e5",
+    "example_decoded": "Function prologue: PUSH rbp; MOV rbp, rsp",
+    "notes": [
+      "System V AMD64 ABI is used by Linux, macOS, FreeBSD, and most Unix systems.",
+      "Windows x64 uses a different ABI: RCX, RDX, R8, R9 for integer args; XMM0-XMM3 for float args.",
+      "The red zone is a unique feature of the System V ABI (not in Windows).",
+      "Stack grows downward (toward lower addresses).",
+      "Functions must preserve RBX, RBP, R12-R15 (callee-saved)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

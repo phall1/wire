@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/sram-cell",
+  "family": "wire-format",
+  "slug": "sram-cell",
+  "title": "SRAM cell (6T)",
+  "summary": "A 6-transistor (6T) SRAM cell stores 1 bit. Structure: two cross-coupled inverters (4 transistors: 2 PMOS + 2 NMOS) forming a bistable latch, plus two access transistors (NMOS) controlled by the word line. Bit lines (BL, BL_bar) are used for read/write. Read: precharge BL/BL_bar, assert word line, sense differential. Write: drive BL/BL_bar to the desired value, assert word line.",
+  "kind": "wire-format",
+  "aliases": [
+    "SRAM cell (6T)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Static_random-access_memory",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "SRAM design",
+    "summary": "A 6-transistor (6T) SRAM cell stores 1 bit. Structure: two cross-coupled inverters (4 transistors: 2 PMOS + 2 NMOS) forming a bistable latch, plus two access transistors (NMOS) controlled by the word line. Bit lines (BL, BL_bar) are used for read/write. Read: precharge BL/BL_bar, assert word line, sense differential. Write: drive BL/BL_bar to the desired value, assert word line.",
+    "structure": [
+      {
+        "field": "Storage inverters",
+        "size": "4 transistors",
+        "meaning": "2 cross-coupled CMOS inverters (2 PMOS + 2 NMOS). Bistable: holds 0 or 1."
+      },
+      {
+        "field": "Access transistors",
+        "size": "2 NMOS",
+        "meaning": "Connect the cell to bit lines (BL, BL_bar) when word line is asserted."
+      },
+      {
+        "field": "Word line (WL)",
+        "size": "1 wire",
+        "meaning": "Controls access transistors. Asserted to read/write."
+      },
+      {
+        "field": "Bit lines (BL, BL_bar)",
+        "size": "2 wires",
+        "meaning": "Differential pair for read (sense) and write (drive)."
+      },
+      {
+        "field": "Read operation",
+        "size": "access",
+        "meaning": "Precharge BL/BL_bar to VDD, assert WL, sense the differential. Cell must not flip (read stability)."
+      },
+      {
+        "field": "Write operation",
+        "size": "access",
+        "meaning": "Drive BL to desired value, BL_bar to complement, assert WL. Cell flips to new value."
+      },
+      {
+        "field": "Read stability",
+        "size": "design param",
+        "meaning": "Cell ratio (pull-down vs access transistor strength) must ensure read doesn't flip the cell."
+      },
+      {
+        "field": "Write ability",
+        "size": "design param",
+        "meaning": "Access transistor must be strong enough to overpower the inverter during write."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "SRAM 6T cell (placeholder)",
+    "notes": [
+      "6T SRAM is the standard for L1/L2/L3 caches (fast, but large area).",
+      "8T SRAM (6T + 2 read transistors) improves read stability for low voltage.",
+      "SRAM is volatile (loses data when power is off).",
+      "SRAM access time: 1-4 cycles (L1), 4-12 cycles (L2).",
+      "SRAM density: ~1 transistor per bit (6T cell = 6 transistors per bit)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

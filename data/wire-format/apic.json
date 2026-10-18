@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/apic",
+  "family": "wire-format",
+  "slug": "apic",
+  "title": "APIC (Advanced Programmable Interrupt Controller)",
+  "summary": "The APIC (Local APIC + I/O APIC) is the modern interrupt controller for x86 multi-core systems. Local APIC: per-CPU, handles local interrupts (timer, thermal, performance monitoring) and receives IPIs (inter-processor interrupts). I/O APIC: routes external interrupts to CPUs. Key registers: ICR (interrupt command register, for IPIs), LVT (local vector table, for timer/LINT/thermal/PMI), TPR (task priority register), EOI register.",
+  "kind": "wire-format",
+  "aliases": [
+    "APIC (Advanced Programmable Interrupt Controller)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Advanced_Programmable_Interrupt_Controller",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 64 and IA-32 Architectures Software Developer's Manual",
+    "summary": "The APIC (Local APIC + I/O APIC) is the modern interrupt controller for x86 multi-core systems. Local APIC: per-CPU, handles local interrupts (timer, thermal, performance monitoring) and receives IPIs (inter-processor interrupts). I/O APIC: routes external interrupts to CPUs. Key registers: ICR (interrupt command register, for IPIs), LVT (local vector table, for timer/LINT/thermal/PMI), TPR (task priority register), EOI register.",
+    "structure": [
+      {
+        "field": "Local APIC ID",
+        "size": "1 byte",
+        "meaning": "Unique ID for each CPU's local APIC (0-255)."
+      },
+      {
+        "field": "ICR (Interrupt Command Register)",
+        "size": "8 bytes (2 dwords)",
+        "meaning": "Sends IPIs: vector (8 bits), delivery mode (3 bits: fixed, lowest priority, SMI, NMI, INIT, startup), destination mode (physical/logical), level (assert/deassert), trigger (edge/level), destination shorthand, destination ID."
+      },
+      {
+        "field": "LVT Timer",
+        "size": "4 bytes",
+        "meaning": "Local vector table entry for the APIC timer: vector, delivery mode, mask, timer mode (one-shot/periodic/TSC-deadline)."
+      },
+      {
+        "field": "LVT LINT0/LINT1",
+        "size": "2 x 4 bytes",
+        "meaning": "Local vector table for LINT0 and LINT1 (external interrupts from 8259 or I/O APIC)."
+      },
+      {
+        "field": "TPR (Task Priority Register)",
+        "size": "4 bytes",
+        "meaning": "Task priority (0-15). Interrupts with priority <= TPR are masked."
+      },
+      {
+        "field": "EOI Register",
+        "size": "4 bytes",
+        "meaning": "Write to signal end of interrupt processing."
+      },
+      {
+        "field": "I/O APIC RTE",
+        "size": "8 bytes each",
+        "meaning": "Redirection Table Entry: vector, delivery mode, destination mode, polarity, trigger, mask, destination."
+      },
+      {
+        "field": "I/O APIC ID",
+        "size": "4 bytes",
+        "meaning": "I/O APIC identifier."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "APIC (placeholder)",
+    "notes": [
+      "APIC replaces the 8259 PIC in modern x86 systems.",
+      "Local APIC is per-CPU; I/O APIC is shared (routes external interrupts).",
+      "IPIs (Inter-Processor Interrupts) enable SMP communication (TLB shootdown, rescheduling).",
+      "APIC timer supports one-shot, periodic, and TSC-deadline modes.",
+      "x2APIC extends the APIC to support more than 255 CPUs (using MSR access instead of MMIO)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

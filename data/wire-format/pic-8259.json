@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/pic-8259",
+  "family": "wire-format",
+  "slug": "pic-8259",
+  "title": "8259 PIC (Programmable Interrupt Controller)",
+  "summary": "The 8259 PIC manages hardware interrupts for x86. It has 8 interrupt request lines (IRQ0-IRQ7). Multiple PICs can be cascaded (master + slave) for 15 IRQs. Key registers: ICW1-ICW4 (initialization), OCW1 (interrupt mask), OCW2 (end of interrupt), OCW3 (read status). The PIC prioritizes interrupts (lowest number = highest priority) and provides a vector number to the CPU.",
+  "kind": "wire-format",
+  "aliases": [
+    "8259 PIC (Programmable Interrupt Controller)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Intel_8259",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 8259A datasheet",
+    "summary": "The 8259 PIC manages hardware interrupts for x86. It has 8 interrupt request lines (IRQ0-IRQ7). Multiple PICs can be cascaded (master + slave) for 15 IRQs. Key registers: ICW1-ICW4 (initialization), OCW1 (interrupt mask), OCW2 (end of interrupt), OCW3 (read status). The PIC prioritizes interrupts (lowest number = highest priority) and provides a vector number to the CPU.",
+    "structure": [
+      {
+        "field": "ICW1",
+        "size": "1 byte",
+        "meaning": "Initialization: ICW4 needed, single/cascade, edge/level triggered, vector address A7-A5."
+      },
+      {
+        "field": "ICW2",
+        "size": "1 byte",
+        "meaning": "Base vector address (bits 7-3). E.g., 0x20 for IRQ0 = vector 0x20."
+      },
+      {
+        "field": "ICW3",
+        "size": "1 byte",
+        "meaning": "Cascade configuration: master (which IRQ is connected to slave) or slave (slave ID)."
+      },
+      {
+        "field": "ICW4",
+        "size": "1 byte",
+        "meaning": "Mode: 8086/8088, auto EOI, buffered mode, special fully nested."
+      },
+      {
+        "field": "OCW1 (IMR)",
+        "size": "1 byte",
+        "meaning": "Interrupt Mask Register: bit i = 1 masks IRQ i."
+      },
+      {
+        "field": "OCW2",
+        "size": "1 byte",
+        "meaning": "End of interrupt (EOI), rotate priority, set/clear priority."
+      },
+      {
+        "field": "OCW3",
+        "size": "1 byte",
+        "meaning": "Read IRR (interrupt request register), read ISR (in-service register), poll command."
+      },
+      {
+        "field": "IRR",
+        "size": "1 byte",
+        "meaning": "Interrupt Request Register: bit i = 1 means IRQ i is pending."
+      },
+      {
+        "field": "ISR",
+        "size": "1 byte",
+        "meaning": "In-Service Register: bit i = 1 means IRQ i is being serviced."
+      }
+    ],
+    "example_hex": "20 20",
+    "example_decoded": "8259 PIC: ICW1 (edge-triggered, ICW4 needed) to port 0x20",
+    "notes": [
+      "The 8259 PIC is legacy (replaced by APIC in modern systems).",
+      "Master PIC: IRQ0-7. Slave PIC: IRQ8-15 (connected to master IRQ2).",
+      "Total: 15 IRQs (IRQ2 is used for cascade, not available).",
+      "EOI (End of Interrupt) must be sent to the PIC after servicing an interrupt.",
+      "APIC (Advanced PIC) replaces 8259 in modern multi-core systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

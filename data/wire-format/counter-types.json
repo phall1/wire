@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/counter-types",
+  "family": "wire-format",
+  "slug": "counter-types",
+  "title": "Counter circuits (binary, BCD, Johnson, ring)",
+  "summary": "Counters are sequential circuits that count pulses. Types: binary counter (counts 0 to 2^n-1, then wraps), BCD counter (counts 0-9, then resets), Johnson counter (shift register with feedback, 2n states), ring counter (shift register with one 1, n states), up/down counter (can increment or decrement).",
+  "kind": "wire-format",
+  "aliases": [
+    "Counter circuits (binary, BCD, Johnson, ring)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Counter_(digital)",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Digital logic design",
+    "summary": "Counters are sequential circuits that count pulses. Types: binary counter (counts 0 to 2^n-1, then wraps), BCD counter (counts 0-9, then resets), Johnson counter (shift register with feedback, 2n states), ring counter (shift register with one 1, n states), up/down counter (can increment or decrement).",
+    "structure": [
+      {
+        "field": "Binary counter",
+        "size": "n flip-flops",
+        "meaning": "Counts 0, 1, 2, ..., 2^n-1, 0. Uses T flip-flops with carry chain."
+      },
+      {
+        "field": "BCD counter",
+        "size": "4 flip-flops",
+        "meaning": "Counts 0-9, then resets to 0. Detects 1010 and resets."
+      },
+      {
+        "field": "Johnson counter",
+        "size": "n flip-flops",
+        "meaning": "Shift register with inverted feedback. Counts 2n states: 000...0, 100...0, 110...0, ..., 111...1, 011...1, ..., 000...1."
+      },
+      {
+        "field": "Ring counter",
+        "size": "n flip-flops",
+        "meaning": "Shift register with one 1. Counts n states: 100...0, 010...0, ..., 000...1."
+      },
+      {
+        "field": "Up/down counter",
+        "size": "n flip-flops",
+        "meaning": "Counts up or down based on a direction input. Uses adder/subtractor logic."
+      },
+      {
+        "field": "Synchronous counter",
+        "size": "n flip-flops",
+        "meaning": "All flip-flops clocked simultaneously. Faster than ripple (asynchronous) counter."
+      },
+      {
+        "field": "Asynchronous (ripple) counter",
+        "size": "n flip-flops",
+        "meaning": "Each flip-flop clocks the next. Simpler but slower (carry ripples)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Counter types (placeholder)",
+    "notes": [
+      "Binary counters are used for address generation, timers, and frequency division.",
+      "Johnson counters are used for phase generation and sequencers.",
+      "Ring counters are used for one-hot state machines.",
+      "Counters are the basis of timers, PWM, and frequency synthesizers.",
+      "Synchronous counters are preferred for high-speed designs."
+    ]
+  },
+  "updated": "2026-05-29"
+}
