@@ -1,0 +1,83 @@
+{
+  "id": "wire-format/vsock-header",
+  "family": "wire-format",
+  "slug": "vsock-header",
+  "title": "VSOCK (VM sockets) packet header",
+  "summary": "VSOCK provides socket-based communication between a host and a guest VM (or between guests) without a network stack. The packet header: 4-byte src CID, 4-byte dst CID, 4-byte src port, 4-byte dst port, 4-byte type (stream/dgram/seqpacket), 2-byte op, 2-byte flags, 8-byte length, 8-byte socket ID (src/dst).",
+  "kind": "wire-format",
+  "aliases": [
+    "VSOCK (VM sockets) packet header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (vsock)",
+    "summary": "VSOCK provides socket-based communication between a host and a guest VM (or between guests) without a network stack. The packet header: 4-byte src CID, 4-byte dst CID, 4-byte src port, 4-byte dst port, 4-byte type (stream/dgram/seqpacket), 2-byte op, 2-byte flags, 8-byte length, 8-byte socket ID (src/dst).",
+    "structure": [
+      {
+        "field": "src_cid",
+        "size": "4 bytes (__u32)",
+        "meaning": "Source context ID (VM ID; 2 = host, 3+ = guest)."
+      },
+      {
+        "field": "dst_cid",
+        "size": "4 bytes (__u32)",
+        "meaning": "Destination context ID."
+      },
+      {
+        "field": "src_port",
+        "size": "4 bytes (__u32)",
+        "meaning": "Source port (ephemeral or well-known; 9p, etc.)."
+      },
+      {
+        "field": "dst_port",
+        "size": "4 bytes (__u32)",
+        "meaning": "Destination port."
+      },
+      {
+        "field": "type",
+        "size": "2 bytes (__u16)",
+        "meaning": "Socket type: 1 stream, 2 dgram, 3 seqpacket."
+      },
+      {
+        "field": "op",
+        "size": "2 bytes (__u16)",
+        "meaning": "Operation: REQUEST, RESPONSE, RST, SHUTDOWN, RW, CREDIT_UPDATE, CREDIT_REQUEST."
+      },
+      {
+        "field": "flags",
+        "size": "4 bytes (__u32)",
+        "meaning": "Op-specific flags."
+      },
+      {
+        "field": "len",
+        "size": "8 bytes (__u64)",
+        "meaning": "Payload length."
+      },
+      {
+        "field": "fwd_cnt",
+        "size": "4 bytes (__u32)",
+        "meaning": "Forward count (credit-based flow control)."
+      },
+      {
+        "field": "buf_alloc",
+        "size": "4 bytes (__u32)",
+        "meaning": "Buffer allocation (credit-based flow control)."
+      }
+    ],
+    "example_hex": "02 00 00 00 03 00 00 00 00 10 00 00 00 20 00 00 01 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "VSOCK packet: src CID 2 (host) -> dst CID 3 (guest), ports 4096->8192, stream, RW op",
+    "notes": [
+      "VSOCK uses CID (context ID) to identify VMs; CID 0 = hypervisor, 1 = local (loopback), 2 = host, 3+ = guests.",
+      "Well-known ports: 52 (vsock) is not standardized; applications choose ports (e.g. 9p over vsock uses 9p port).",
+      "Firecracker exposes vsock as a device with a Unix socket on the host side (vsock.sock).",
+      "Credit-based flow control prevents buffer overflow between host and guest."
+    ]
+  },
+  "updated": "2026-05-29"
+}

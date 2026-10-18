@@ -1,0 +1,37 @@
+{
+  "id": "magic/xfs",
+  "family": "magic",
+  "slug": "xfs",
+  "title": "XFS superblock signature (XFSB)",
+  "summary": "XFS superblock begins at byte offset 0 of the filesystem. The magic number is 'XFSB' (0x58 0x46 0x53 0x42) at offset 0.",
+  "kind": "signature",
+  "aliases": [
+    "xfs magic",
+    ".xfs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "58 46 53 42",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "xfs"
+    ],
+    "mime": "application/x-xfs-image",
+    "spec": "XFS",
+    "notes": [
+      "Magic 'XFSB' (0x58 0x46 0x53 0x42) at offset 0.",
+      "Superblock: magic (4), blocksize (4), datablocks (8), rtextents (8), uuid (16), logstart (8), rootino (8), rbmino (8), rsumino (8), rextents (8), rextsize (4), agblocks (4), agcount (4), rbmblocks (4), logblocks (4), versionnum (2), sectsize (2), inodesize (2), inopblock (2), ... .",
+      "XFS is a high-performance 64-bit journaling filesystem, default on RHEL.",
+      "XFS uses allocation groups (AGs) for scalability; each AG has its own superblock copy."
+    ]
+  },
+  "updated": "2026-05-29"
+}

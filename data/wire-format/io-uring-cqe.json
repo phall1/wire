@@ -1,0 +1,48 @@
+{
+  "id": "wire-format/io-uring-cqe",
+  "family": "wire-format",
+  "slug": "io-uring-cqe",
+  "title": "io_uring Completion Queue Entry (CQE)",
+  "summary": "An io_uring CQE is a 16-byte (or 32-byte with CQE32) structure written by the kernel into the completion queue ring. It carries the user_data from the SQE, the result (bytes transferred or negative errno), and flags (more completions pending, buffer id used).",
+  "kind": "wire-format",
+  "aliases": [
+    "io_uring Completion Queue Entry (CQE)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (io_uring)",
+    "summary": "An io_uring CQE is a 16-byte (or 32-byte with CQE32) structure written by the kernel into the completion queue ring. It carries the user_data from the SQE, the result (bytes transferred or negative errno), and flags (more completions pending, buffer id used).",
+    "structure": [
+      {
+        "field": "user_data",
+        "size": "8 bytes (__u64)",
+        "meaning": "Echoed from the SQE; identifies which operation completed."
+      },
+      {
+        "field": "res",
+        "size": "4 bytes (__s32)",
+        "meaning": "Result: bytes transferred on success, negative errno on failure (-EINVAL, -EAGAIN, ...)."
+      },
+      {
+        "field": "flags",
+        "size": "4 bytes (__u32)",
+        "meaning": "IORING_CQE_F_BUFFER (buffer id in bits 16-31), IORING_CQE_F_MORE (more completions coming), IORING_CQE_F_SOCK_NONEMPTY."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00",
+    "example_decoded": "CQE: user_data=0, res=5 (5 bytes read), no flags",
+    "notes": [
+      "CQEs are 16 bytes by default; IORING_SETUP_CQE32 makes them 32 bytes (extra 16 for big_cqe).",
+      "The CQ ring is single-producer (kernel) / single-consumer (application).",
+      "IORING_CQE_F_MORE indicates a multishot operation (e.g. multishot accept/recv) will produce more CQEs.",
+      "Buffer id (from IORING_CQE_F_BUFFER) tells which registered buffer was used for IOSQE_BUFFER_SELECT."
+    ]
+  },
+  "updated": "2026-05-29"
+}

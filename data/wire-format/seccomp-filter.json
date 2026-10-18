@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/seccomp-filter",
+  "family": "wire-format",
+  "slug": "seccomp-filter",
+  "title": "seccomp BPF filter (sock_filter / seccomp_data)",
+  "summary": "A seccomp filter is a BPF program (array of sock_filter instructions) that inspects each syscall via a seccomp_data structure. Each 8-byte sock_filter: code (2 bytes), jt (1 byte), jf (1 byte), k (4 bytes). The filter returns SECCOMP_RET_KILL_PROCESS, SECCOMP_RET_KILL_THREAD, SECCOMP_RET_TRAP, SECCOMP_RET_ERRNO, SECCOMP_RET_TRACE, SECCOMP_RET_LOG, or SECCOMP_RET_ALLOW.",
+  "kind": "wire-format",
+  "aliases": [
+    "seccomp BPF filter (sock_filter / seccomp_data)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (seccomp)",
+    "summary": "A seccomp filter is a BPF program (array of sock_filter instructions) that inspects each syscall via a seccomp_data structure. Each 8-byte sock_filter: code (2 bytes), jt (1 byte), jf (1 byte), k (4 bytes). The filter returns SECCOMP_RET_KILL_PROCESS, SECCOMP_RET_KILL_THREAD, SECCOMP_RET_TRAP, SECCOMP_RET_ERRNO, SECCOMP_RET_TRACE, SECCOMP_RET_LOG, or SECCOMP_RET_ALLOW.",
+    "structure": [
+      {
+        "field": "seccomp_data.nr",
+        "size": "4 bytes (__s32)",
+        "meaning": "System call number."
+      },
+      {
+        "field": "seccomp_data.arch",
+        "size": "4 bytes (__u32)",
+        "meaning": "Architecture (AUDIT_ARCH_X86_64, AUDIT_ARCH_AARCH64, ...)."
+      },
+      {
+        "field": "seccomp_data.instruction_pointer",
+        "size": "8 bytes (__u64)",
+        "meaning": "IP at the time of the syscall."
+      },
+      {
+        "field": "seccomp_data.args[0..5]",
+        "size": "6 x 8 bytes (__u64)",
+        "meaning": "The six syscall arguments."
+      },
+      {
+        "field": "sock_filter.code",
+        "size": "2 bytes (__u16)",
+        "meaning": "BPF instruction code (BPF_LD, BPF_JMP, BPF_RET, ...)."
+      },
+      {
+        "field": "sock_filter.jt",
+        "size": "1 byte (__u8)",
+        "meaning": "Jump if true (offset)."
+      },
+      {
+        "field": "sock_filter.jf",
+        "size": "1 byte (__u8)",
+        "meaning": "Jump if false (offset)."
+      },
+      {
+        "field": "sock_filter.k",
+        "size": "4 bytes (__u32)",
+        "meaning": "Constant / address offset."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "seccomp_data (64 bytes) + empty filter",
+    "notes": [
+      "Classic BPF (cBPF) is used for seccomp; eBPF is used for tracing/profiling.",
+      "SECCOMP_RET_ERRNO returns an errno without killing the process.",
+      "SECCOMP_RET_TRACE notifies a tracer (ptrace) and lets it modify the syscall.",
+      "Filters are applied per-thread; SECCOMP_SET_MODE_FILTER applies to the calling thread and its children.",
+      "seccomp is the foundation of container sandboxing (Docker, gVisor, Firecracker's jailer)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

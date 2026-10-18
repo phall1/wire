@@ -1,0 +1,54 @@
+{
+  "id": "wire-format/virtio-descriptor",
+  "family": "wire-format",
+  "slug": "virtio-descriptor",
+  "title": "VirtIO descriptor (16 bytes)",
+  "summary": "A VirtIO device's virtqueue is an array of 16-byte descriptors. Each descriptor: 8-byte guest-physical address of the buffer, 4-byte length, 2-byte flags (NEXT, WRITE, INDIRECT), 2-byte next descriptor index (if NEXT or INDIRECT).",
+  "kind": "wire-format",
+  "aliases": [
+    "VirtIO descriptor (16 bytes)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "VirtIO specification (OASIS)",
+    "summary": "A VirtIO device's virtqueue is an array of 16-byte descriptors. Each descriptor: 8-byte guest-physical address of the buffer, 4-byte length, 2-byte flags (NEXT, WRITE, INDIRECT), 2-byte next descriptor index (if NEXT or INDIRECT).",
+    "structure": [
+      {
+        "field": "addr",
+        "size": "8 bytes (le64)",
+        "meaning": "Guest-physical address of the buffer."
+      },
+      {
+        "field": "len",
+        "size": "4 bytes (le32)",
+        "meaning": "Length of the buffer in bytes."
+      },
+      {
+        "field": "flags",
+        "size": "2 bytes (le16)",
+        "meaning": "VRING_DESC_F_NEXT (1): next field is valid. VRING_DESC_F_WRITE (2): buffer is device-writable. VRING_DESC_F_INDIRECT (4): buffer contains a list of descriptors."
+      },
+      {
+        "field": "next",
+        "size": "2 bytes (le16)",
+        "meaning": "Index of the next descriptor (if NEXT) or number of descriptors (if INDIRECT)."
+      }
+    ],
+    "example_hex": "00 00 10 00 00 00 00 00 00 10 00 00 03 00 01 00",
+    "example_decoded": "Descriptor: addr=0x100000, len=0x1000, flags=3 (NEXT|WRITE), next=1",
+    "notes": [
+      "Virtqueues are split into descriptor table, available ring, and used ring.",
+      "Available ring: driver writes descriptor chain heads; device reads them.",
+      "Used ring: device writes completed descriptor heads + bytes written; driver reads them.",
+      "Indirect descriptors allow a single request to reference many buffers (up to 2^15).",
+      "VirtIO is the standard paravirtual I/O interface for KVM/QEMU, Firecracker, Cloud Hypervisor, crosvm, etc."
+    ]
+  },
+  "updated": "2026-05-29"
+}

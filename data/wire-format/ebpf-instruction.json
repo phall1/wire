@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/ebpf-instruction",
+  "family": "wire-format",
+  "slug": "ebpf-instruction",
+  "title": "eBPF instruction (8 bytes)",
+  "summary": "An eBPF program is a sequence of 8-byte instructions. Each instruction: 1-byte opcode (class + op), 1-byte dst/src registers (4 bits each), 2-byte offset (signed), 4-byte immediate. Classes: 0 LD, 1 LDX, 2 ST, 3 STX, 4 ALU, 5 JMP, 6 JMP32, 7 ALU64.",
+  "kind": "wire-format",
+  "aliases": [
+    "eBPF instruction (8 bytes)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (eBPF)",
+    "summary": "An eBPF program is a sequence of 8-byte instructions. Each instruction: 1-byte opcode (class + op), 1-byte dst/src registers (4 bits each), 2-byte offset (signed), 4-byte immediate. Classes: 0 LD, 1 LDX, 2 ST, 3 STX, 4 ALU, 5 JMP, 6 JMP32, 7 ALU64.",
+    "structure": [
+      {
+        "field": "opcode",
+        "size": "1 byte",
+        "meaning": "Instruction class (low 3 bits) + operation. LD/LDX/ST/STX/ALU/JMP/JMP32/ALU64."
+      },
+      {
+        "field": "dst_reg",
+        "size": "4 bits (high nibble of byte 1)",
+        "meaning": "Destination register (r0-r10; r10 is read-only frame pointer)."
+      },
+      {
+        "field": "src_reg",
+        "size": "4 bits (low nibble of byte 1)",
+        "meaning": "Source register."
+      },
+      {
+        "field": "off",
+        "size": "2 bytes (signed)",
+        "meaning": "Offset for loads/stores/jumps."
+      },
+      {
+        "field": "imm",
+        "size": "4 bytes (signed)",
+        "meaning": "Immediate value; for 64-bit loads, a second instruction carries the high 32 bits."
+      }
+    ],
+    "example_hex": "07 01 00 00 2a 00 00 00",
+    "example_decoded": "r1 += 42 (ALU64 ADD immediate): opcode 0x07, dst r1, src 0, off 0, imm 42",
+    "notes": [
+      "11 registers: r0 (return value), r1-r5 (args), r6-r9 (callee-saved), r10 (frame pointer, read-only).",
+      "eBPF programs are verified by the kernel's BPF verifier before execution (no unbounded loops, bounded memory access, type safety).",
+      "Maps are key-value stores shared between BPF programs and userspace.",
+      "BPF programs attach to kprobes, tracepoints, XDP, cgroup, socket filters, LSM hooks, etc.",
+      "Classic BPF (cBPF) is the older 32-bit filter format used by seccomp and tcpdump; eBPF is the modern 64-bit VM."
+    ]
+  },
+  "updated": "2026-05-29"
+}

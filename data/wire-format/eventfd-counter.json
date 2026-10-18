@@ -1,0 +1,38 @@
+{
+  "id": "wire-format/eventfd-counter",
+  "family": "wire-format",
+  "slug": "eventfd-counter",
+  "title": "eventfd 8-byte counter",
+  "summary": "An eventfd file descriptor holds a 64-bit counter. read(2) returns the counter (and resets it to 0 unless EFD_SEMAPHORE); write(2) adds to it; poll(2) signals readability when the counter is nonzero. The on-the-wire representation is just the 8-byte little-endian counter value.",
+  "kind": "wire-format",
+  "aliases": [
+    "eventfd 8-byte counter"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (eventfd)",
+    "summary": "An eventfd file descriptor holds a 64-bit counter. read(2) returns the counter (and resets it to 0 unless EFD_SEMAPHORE); write(2) adds to it; poll(2) signals readability when the counter is nonzero. The on-the-wire representation is just the 8-byte little-endian counter value.",
+    "structure": [
+      {
+        "field": "counter",
+        "size": "8 bytes (__u64)",
+        "meaning": "The counter value (little-endian). read returns this and resets to 0 (or decrements by 1 with EFD_SEMAPHORE). write adds the written value to the counter."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "eventfd counter = 0 (not readable)",
+    "notes": [
+      "eventfd is used as a lightweight event notification primitive (e.g. for io_uring, timerfd, signalfd integration).",
+      "EFD_SEMAPHORE makes read decrement by 1 instead of resetting (semaphore semantics).",
+      "EFD_NONBLOCK makes read/write non-blocking.",
+      "The counter can overflow (EAGAIN on write if it would exceed UINT64_MAX - 1)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

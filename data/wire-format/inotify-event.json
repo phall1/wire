@@ -1,0 +1,58 @@
+{
+  "id": "wire-format/inotify-event",
+  "family": "wire-format",
+  "slug": "inotify-event",
+  "title": "inotify event structure",
+  "summary": "An inotify event returned by read(2) on an inotify file descriptor: wd (watch descriptor), mask (event mask), cookie (for rename pairing), len (length of the name field), then a NUL-terminated filename (if the watched path is a directory).",
+  "kind": "wire-format",
+  "aliases": [
+    "inotify event structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (inotify)",
+    "summary": "An inotify event returned by read(2) on an inotify file descriptor: wd (watch descriptor), mask (event mask), cookie (for rename pairing), len (length of the name field), then a NUL-terminated filename (if the watched path is a directory).",
+    "structure": [
+      {
+        "field": "wd",
+        "size": "4 bytes (__s32)",
+        "meaning": "Watch descriptor (identifies which inotify_add_watch)."
+      },
+      {
+        "field": "mask",
+        "size": "4 bytes (__u32)",
+        "meaning": "Event mask: IN_ACCESS, IN_MODIFY, IN_ATTRIB, IN_CLOSE_WRITE, IN_CLOSE_NOWRITE, IN_OPEN, IN_MOVED_FROM, IN_MOVED_TO, IN_CREATE, IN_DELETE, IN_DELETE_SELF, IN_MOVE_SELF, IN_UNMOUNT, IN_Q_OVERFLOW, IN_IGNORED."
+      },
+      {
+        "field": "cookie",
+        "size": "4 bytes (__u32)",
+        "meaning": "Cookie for pairing IN_MOVED_FROM and IN_MOVED_TO events."
+      },
+      {
+        "field": "len",
+        "size": "4 bytes (__u32)",
+        "meaning": "Length of the name field (including NUL padding to sizeof(struct inotify_event) + len)."
+      },
+      {
+        "field": "name",
+        "size": "= len",
+        "meaning": "Filename (NUL-terminated, padded to 4-byte alignment). Present only if the watched path is a directory."
+      }
+    ],
+    "example_hex": "01 00 00 00 00 08 00 00 00 00 00 00 08 00 00 00 66 6f 6f 00 00 00 00 00",
+    "example_decoded": "inotify event: wd 1, mask IN_CREATE (0x00000100), cookie 0, len 8, name 'foo'",
+    "notes": [
+      "Multiple events can be read in a single read(2) call.",
+      "IN_Q_OVERFLOW indicates events were dropped due to queue overflow.",
+      "inotify does not recurse into subdirectories; each directory needs its own watch.",
+      "fanotify is the newer, more powerful alternative (mount/fs notifications, permission events)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

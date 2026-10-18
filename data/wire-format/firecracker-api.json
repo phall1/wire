@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/firecracker-api",
+  "family": "wire-format",
+  "slug": "firecracker-api",
+  "title": "Firecracker microVM REST API (over Unix socket)",
+  "summary": "Firecracker is a VMM (Virtual Machine Monitor) for microVMs, written in Rust, used by AWS Lambda and Fargate. Its control API is a REST API over a Unix domain socket. Endpoints: PUT /machine-config, PUT /boot-source, PUT /drives/{id}, PUT /network-interfaces/{id}, PUT /vsock, PUT /actions (InstanceStart, SendCtrlAltDel, Pause, Resume, CreateSnapshot, LoadSnapshot, ...), GET /vm, GET /mmds, ... .",
+  "kind": "wire-format",
+  "aliases": [
+    "Firecracker microVM REST API (over Unix socket)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Firecracker (firecracker-microvm.github.io)",
+    "summary": "Firecracker is a VMM (Virtual Machine Monitor) for microVMs, written in Rust, used by AWS Lambda and Fargate. Its control API is a REST API over a Unix domain socket. Endpoints: PUT /machine-config, PUT /boot-source, PUT /drives/{id}, PUT /network-interfaces/{id}, PUT /vsock, PUT /actions (InstanceStart, SendCtrlAltDel, Pause, Resume, CreateSnapshot, LoadSnapshot, ...), GET /vm, GET /mmds, ... .",
+    "structure": [
+      {
+        "field": "Transport",
+        "size": "Unix domain socket",
+        "meaning": "API listens on a Unix socket (path given by --api-sock). No TCP port."
+      },
+      {
+        "field": "Machine config",
+        "size": "JSON",
+        "meaning": "PUT /machine-config: {\"vcpu_count\": N, \"mem_size_mib\": M, \"smt\": bool, \"track_dirty_pages\": bool}."
+      },
+      {
+        "field": "Boot source",
+        "size": "JSON",
+        "meaning": "PUT /boot-source: {\"kernel_image_path\": \"...\", \"boot_args\": \"...\", \"initrd_path\": \"...\"}."
+      },
+      {
+        "field": "Drive",
+        "size": "JSON",
+        "meaning": "PUT /drives/{id}: {\"drive_id\": \"...\", \"path_on_host\": \"...\", \"is_root_device\": bool, \"is_read_only\": bool, \"partuuid\": \"...\"}."
+      },
+      {
+        "field": "Network interface",
+        "size": "JSON",
+        "meaning": "PUT /network-interfaces/{id}: {\"iface_id\": \"...\", \"guest_mac\": \"...\", \"host_dev_name\": \"...\"}."
+      },
+      {
+        "field": "VSOCK",
+        "size": "JSON",
+        "meaning": "PUT /vsock: {\"guest_cid\": N, \"uds_path\": \"...\", \"vsock_id\": \"...\"}."
+      },
+      {
+        "field": "Action",
+        "size": "JSON",
+        "meaning": "PUT /actions: {\"action_type\": \"InstanceStart\" | \"SendCtrlAltDel\" | \"Pause\" | \"Resume\" | \"CreateSnapshot\" | \"LoadSnapshot\" | \"FlushMetrics\"}."
+      },
+      {
+        "field": "MMDS",
+        "size": "JSON",
+        "meaning": "MicroVM Metadata Service: GET/PUT /mmds (IMDSv2-like metadata for the guest, fetched via 169.254.169.254 inside the guest)."
+      }
+    ],
+    "example_hex": "7b 22 61 63 74 69 6f 6e 5f 74 79 70 65 22 3a 22 49 6e 73 74 61 6e 63 65 53 74 61 72 74 22 7d",
+    "example_decoded": "JSON: {\"action_type\":\"InstanceStart\"}",
+    "notes": [
+      "Firecracker boots a microVM in ~125ms with <5MB memory overhead.",
+      "The jailer (firecracker-jailer) sets up a chroot, cgroup, and seccomp filter before exec'ing Firecracker.",
+      "Snapshot/restore enables sub-5ms cold starts by resuming from a saved state.",
+      "MMDS (MicroVM Metadata Service) is the guest-facing metadata endpoint (169.254.169.254), like AWS EC2 IMDS.",
+      "Firecracker uses KVM for hardware virtualization and virtio for I/O (net, blk, vsock, balloon, rng)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

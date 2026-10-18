@@ -1,0 +1,37 @@
+{
+  "id": "magic/btrfs",
+  "family": "magic",
+  "slug": "btrfs",
+  "title": "Btrfs superblock signature (_BHRfS_M)",
+  "summary": "Btrfs (B-tree filesystem) stores its superblock at byte offset 65536 (64 KiB) from the start of the device. The magic number is the 8-byte string '_BHRfS_M' (0x5F 0x42 0x48 0x52 0x66 0x53 0x5F 0x4D) at offset 64 within the superblock (device offset 65600).",
+  "kind": "signature",
+  "aliases": [
+    "btrfs magic",
+    ".btrfs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "5F 42 48 52 66 53 5F 4D",
+    "offset": 65600,
+    "magic_ascii": "",
+    "extensions": [
+      "btrfs"
+    ],
+    "mime": "application/x-btrfs-image",
+    "spec": "Btrfs",
+    "notes": [
+      "Magic '_BHRfS_M' at device offset 65600 (superblock offset 64).",
+      "Superblock contains: csum (32 bytes, CRC32C), fsid (16 bytes), bytenr (8), flags (8), magic (8), generation (8), root (8), chunk_root (8), log_root (8), log_root_transid (8), total_bytes (8), bytes_used (8), root_dir_objectid (8), num_devices (8), sectorsize (4), nodesize (4), leafsize (4), stripesize (4), sys_chunk_array_size (4), chunk_root_generation (8), compat_flags (8), incompat_flags (8), csum_type (2), ... .",
+      "Btrfs is a copy-on-write filesystem with built-in RAID, snapshots, and checksums.",
+      "The superblock is mirrored at offsets 65536, 268435456 (256 MiB), and 274877906944 (256 GiB) for recovery."
+    ]
+  },
+  "updated": "2026-05-29"
+}

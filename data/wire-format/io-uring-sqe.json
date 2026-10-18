@@ -1,0 +1,104 @@
+{
+  "id": "wire-format/io-uring-sqe",
+  "family": "wire-format",
+  "slug": "io-uring-sqe",
+  "title": "io_uring Submission Queue Entry (SQE)",
+  "summary": "An io_uring SQE is a 64-byte structure submitted to the kernel via the submission queue ring. It encodes the operation (opcode), flags, file descriptor, offset, buffer address/length, and user data. The kernel reads SQEs from the SQ ring and completes them into CQEs.",
+  "kind": "wire-format",
+  "aliases": [
+    "io_uring Submission Queue Entry (SQE)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (io_uring)",
+    "summary": "An io_uring SQE is a 64-byte structure submitted to the kernel via the submission queue ring. It encodes the operation (opcode), flags, file descriptor, offset, buffer address/length, and user data. The kernel reads SQEs from the SQ ring and completes them into CQEs.",
+    "structure": [
+      {
+        "field": "opcode",
+        "size": "1 byte",
+        "meaning": "Operation: 0 NOP, 1 READV, 2 WRITEV, 3 FSYNC, 4 READ_FIXED, 5 WRITE_FIXED, 5 IORING_OP_POLL_ADD, 6 POLL_REMOVE, 7 SYNC_FILE_RANGE, 8 SENDMSG, 9 RECVMSG, 10 TIMEOUT, 11 TIMEOUT_REMOVE, 12 ACCEPT, 13 ASYNC_CANCEL, 14 LINK_TIMEOUT, 15 CONNECT, 16 FALLOCATE, 17 OPENAT, 18 CLOSE, 19 FILES_UPDATE, 20 STATX, 21 READ, 22 WRITE, 23 FADVISE, 24 MADVISE, 25 SEND, 26 RECV, 27 OPENAT2, 28 EPOLL_CTL, 29 SPLICE, 30 PROVIDE_BUFFERS, 31 REMOVE_BUFFERS, 32 TEE, 33 SHUTDOWN, 34 RENAMEAT, 35 UNLINKAT, 36 MKDIRAT, 37 SYMLINKAT, 38 LINKAT, 39 MSG_RING, 40 FSETXATTR, 41 SETXATTR, 42 FGETXATTR, 43 GETXATTR, 44 SOCKET, 45 ... ."
+      },
+      {
+        "field": "flags",
+        "size": "1 byte",
+        "meaning": "IOSQE_FIXED_FILE (1<<0), IOSQE_IO_DRAIN (1<<1), IOSQE_IO_LINK (1<<2), IOSQE_IO_HARDLINK (1<<3), IOSQE_ASYNC (1<<4), IOSQE_BUFFER_SELECT (1<<5), IOSQE_CQE_SKIP_SUCCESS (1<<6)."
+      },
+      {
+        "field": "ioprio",
+        "size": "2 bytes",
+        "meaning": "I/O priority (ioprio_set(2) encoding)."
+      },
+      {
+        "field": "fd",
+        "size": "4 bytes (int)",
+        "meaning": "File descriptor (or fixed-file index if IOSQE_FIXED_FILE)."
+      },
+      {
+        "field": "off / addr2",
+        "size": "8 bytes (__u64)",
+        "meaning": "File offset for read/write; or secondary address for some ops."
+      },
+      {
+        "field": "addr",
+        "size": "8 bytes (__u64)",
+        "meaning": "Pointer to buffer / iovec array / pathname, depending on opcode."
+      },
+      {
+        "field": "len",
+        "size": "4 bytes (__u32)",
+        "meaning": "Buffer length or iovec count."
+      },
+      {
+        "field": "rw_flags / poll_events / ...",
+        "size": "4 bytes (__u32)",
+        "meaning": "Op-specific flags (e.g. read/write flags, poll events, accept flags)."
+      },
+      {
+        "field": "user_data",
+        "size": "8 bytes (__u64)",
+        "meaning": "Opaque value echoed back in the CQE; used to correlate completions."
+      },
+      {
+        "field": "buf_index / buf_group",
+        "size": "2 bytes (__u16)",
+        "meaning": "Fixed buffer index or buffer group for IOSQE_BUFFER_SELECT."
+      },
+      {
+        "field": "personality",
+        "size": "2 bytes (__u16)",
+        "meaning": "Registered personality (credentials) index, or 0 for current."
+      },
+      {
+        "field": "splice_fd_in",
+        "size": "4 bytes (int)",
+        "meaning": "Source fd for splice/tee operations."
+      },
+      {
+        "field": "addr3",
+        "size": "8 bytes (__u64)",
+        "meaning": "Third address (renameat new path, xattr name, etc.)."
+      },
+      {
+        "field": "__pad2[1]",
+        "size": "8 bytes",
+        "meaning": "Padding to 64 bytes."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "NOP SQE (opcode 0), all zeros except user_data",
+    "notes": [
+      "SQEs are 64 bytes; the kernel reads them from the SQ ring (mmap'd).",
+      "The SQ ring is a single-producer (application) / single-consumer (kernel) ring buffer.",
+      "IORING_SETUP_SQE128 doubles SQE size to 128 bytes for larger operations.",
+      "Fixed files (IORING_REGISTER_FILES) avoid repeated fdget/fdput overhead.",
+      "Buffer selection (IOSQE_BUFFER_SELECT) lets the kernel pick a buffer from a registered group for recv/read."
+    ]
+  },
+  "updated": "2026-05-29"
+}

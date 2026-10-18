@@ -1,0 +1,40 @@
+{
+  "id": "magic/squashfs",
+  "family": "magic",
+  "slug": "squashfs",
+  "title": "SquashFS signature (sqsh / hsqs)",
+  "summary": "SquashFS is a read-only compressed filesystem used in Live CDs, embedded systems, and container images. The superblock begins with a 4-byte magic: 'sqsh' (0x73717368, little-endian) or 'hsqs' (0x68737173, big-endian, for big-endian systems).",
+  "kind": "signature",
+  "aliases": [
+    "squashfs magic",
+    ".squashfs",
+    ".sqsh"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "73 71 73 68",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "squashfs",
+      "sqsh"
+    ],
+    "mime": "application/x-squashfs-image",
+    "spec": "SquashFS",
+    "notes": [
+      "Magic 'sqsh' (0x73 0x71 0x73 0x68) for little-endian.",
+      "Magic 'hsqs' (0x68 0x73 0x71 0x73) for big-endian.",
+      "Superblock: magic (4), inode_count (4), mod_time (4), block_size (4), frag_count (4), compressor (2), block_log (2), flags (2), id_count (2), version_major (2), version_minor (2), root_inode (8), bytes_used (8), ... .",
+      "Common compressors: gzip, lzma, lzo, xz, zstd.",
+      "SquashFS is the base layer format for many container images (Docker/OCI uses overlayfs on top of squashfs or ext4)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

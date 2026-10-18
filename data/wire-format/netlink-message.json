@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/netlink-message",
+  "family": "wire-format",
+  "slug": "netlink-message",
+  "title": "Netlink message header",
+  "summary": "Netlink is the Linux kernel's socket-based IPC mechanism for network configuration, routing, firewall, and (via generic netlink) many subsystems. Every netlink message starts with a 16-byte header: length (including header and padding), type, flags, sequence number, and port ID (PID).",
+  "kind": "wire-format",
+  "aliases": [
+    "Netlink message header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (netlink)",
+    "summary": "Netlink is the Linux kernel's socket-based IPC mechanism for network configuration, routing, firewall, and (via generic netlink) many subsystems. Every netlink message starts with a 16-byte header: length (including header and padding), type, flags, sequence number, and port ID (PID).",
+    "structure": [
+      {
+        "field": "nlmsg_len",
+        "size": "4 bytes (__u32)",
+        "meaning": "Total length of the message including header and padding to NLMSG_ALIGN (4 bytes)."
+      },
+      {
+        "field": "nlmsg_type",
+        "size": "2 bytes (__u16)",
+        "meaning": "Message type: NLMSG_NOOP, NLMSG_ERROR, NLMSG_DONE, NLMSG_OVERRUN, or subsystem-specific (RTM_NEWLINK, RTM_NEWADDR, ...)."
+      },
+      {
+        "field": "nlmsg_flags",
+        "size": "2 bytes (__u16)",
+        "meaning": "Flags: NLM_F_REQUEST, NLM_F_MULTI, NLM_F_ACK, NLM_F_ECHO, NLM_F_ROOT, NLM_F_MATCH, NLM_F_ATOMIC, NLM_F_DUMP, ... ."
+      },
+      {
+        "field": "nlmsg_seq",
+        "size": "4 bytes (__u32)",
+        "meaning": "Sequence number for matching requests to responses."
+      },
+      {
+        "field": "nlmsg_pid",
+        "size": "4 bytes (__u32)",
+        "meaning": "Port ID of the sender (usually the process PID; 0 for kernel)."
+      }
+    ],
+    "example_hex": "3c 00 00 00 10 00 05 00 01 00 00 00 00 00 00 00",
+    "example_decoded": "Netlink message: length 60, type 0x0010 (RTM_GETLINK), flags 0x0005 (REQUEST|ACK), seq 1, pid 0",
+    "notes": [
+      "Netlink messages are padded to 4-byte boundaries (NLMSG_ALIGN).",
+      "NLMSG_DONE signals the end of a multi-part dump.",
+      "NLMSG_ERROR carries an errno in the payload.",
+      "Generic Netlink (GENL) adds a family ID and command, enabling arbitrary kernel subsystems to expose APIs.",
+      "Common families: rtnetlink (routing/links/addresses), nfnetlink (netfilter), audit, uevent, sock_diag."
+    ]
+  },
+  "updated": "2026-05-29"
+}

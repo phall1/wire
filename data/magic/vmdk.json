@@ -1,0 +1,38 @@
+{
+  "id": "magic/vmdk",
+  "family": "magic",
+  "slug": "vmdk",
+  "title": "VMDK (VMware Virtual Disk) signature",
+  "summary": "A VMDK (VMware Virtual Disk) file begins with the 4-byte magic 'KDMV' (0x4B 0x44 0x4D 0x56) for sparse (monolithic) VMDKs, or 'COWD' (0x43 0x4F 0x57 0x44) for older (COW) format.",
+  "kind": "signature",
+  "aliases": [
+    "vmdk magic",
+    ".vmdk"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4B 44 4D 56",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "vmdk"
+    ],
+    "mime": "application/x-vmdk",
+    "spec": "VMDK (VMware)",
+    "notes": [
+      "Magic 'KDMV' (0x4B 0x44 0x4D 0x56) for sparse extent files.",
+      "Magic 'COWD' (0x43 0x4F 0x57 0x44) for older COW (copy-on-write) format.",
+      "Sparse VMDK header: magic (4), version (4), flags (4), capacity (8), grain size (8), descriptor offset (8), descriptor size (8), ... .",
+      "VMDK supports split (2GB chunks), sparse, and flat (raw) variants.",
+      "Used by VMware Workstation/ESXi and supported by QEMU/KVM."
+    ]
+  },
+  "updated": "2026-05-29"
+}

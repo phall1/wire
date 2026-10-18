@@ -1,0 +1,138 @@
+{
+  "id": "wire-format/signalfd-siginfo",
+  "family": "wire-format",
+  "slug": "signalfd-siginfo",
+  "title": "signalfd siginfo structure",
+  "summary": "A signalfd file descriptor delivers signals as structured data. Each read(2) returns one or more signalfd_siginfo structures (128 bytes), containing the signal number, sender PID/UID, faulting address, timer ID, etc.",
+  "kind": "wire-format",
+  "aliases": [
+    "signalfd siginfo structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (signalfd)",
+    "summary": "A signalfd file descriptor delivers signals as structured data. Each read(2) returns one or more signalfd_siginfo structures (128 bytes), containing the signal number, sender PID/UID, faulting address, timer ID, etc.",
+    "structure": [
+      {
+        "field": "ssi_signo",
+        "size": "4 bytes (__u32)",
+        "meaning": "Signal number."
+      },
+      {
+        "field": "ssi_errno",
+        "size": "4 bytes (__s32)",
+        "meaning": "Error number (for SIGSEGV/SIGBUS/SIGFPE/SIGTRAP)."
+      },
+      {
+        "field": "ssi_code",
+        "size": "4 bytes (__s32)",
+        "meaning": "Signal code (SI_USER, SI_KERNEL, SI_QUEUE, SI_TIMER, SI_MESGQ, SI_ASYNCIO, SI_SIGIO, SI_TKILL, ...)."
+      },
+      {
+        "field": "ssi_pid",
+        "size": "4 bytes (__u32)",
+        "meaning": "Sending process ID."
+      },
+      {
+        "field": "ssi_uid",
+        "size": "4 bytes (__u32)",
+        "meaning": "Sending user ID."
+      },
+      {
+        "field": "ssi_fd",
+        "size": "4 bytes (__s32)",
+        "meaning": "File descriptor (for SIGIO/SIGPOLL)."
+      },
+      {
+        "field": "ssi_tid",
+        "size": "4 bytes (__u32)",
+        "meaning": "Kernel timer ID (for SIGEV_THREAD_ID timers)."
+      },
+      {
+        "field": "ssi_band",
+        "size": "4 bytes (__u32)",
+        "meaning": "Band event (for SIGIO/SIGPOLL)."
+      },
+      {
+        "field": "ssi_overrun",
+        "size": "4 bytes (__u32)",
+        "meaning": "Overrun count (for timers)."
+      },
+      {
+        "field": "ssi_trapno",
+        "size": "4 bytes (__u32)",
+        "meaning": "Trap number (for SIGTRAP/SIGSEGV)."
+      },
+      {
+        "field": "ssi_status",
+        "size": "4 bytes (__s32)",
+        "meaning": "Exit status (for SIGCHLD)."
+      },
+      {
+        "field": "ssi_int",
+        "size": "4 bytes (__s32)",
+        "meaning": "Integer sent by sigqueue(3)."
+      },
+      {
+        "field": "ssi_ptr",
+        "size": "8 bytes (void *)",
+        "meaning": "Pointer sent by sigqueue(3)."
+      },
+      {
+        "field": "ssi_utime",
+        "size": "8 bytes (__u64)",
+        "meaning": "User CPU time consumed (SIGCHLD)."
+      },
+      {
+        "field": "ssi_stime",
+        "size": "8 bytes (__u64)",
+        "meaning": "System CPU time consumed (SIGCHLD)."
+      },
+      {
+        "field": "ssi_addr",
+        "size": "8 bytes (void *)",
+        "meaning": "Faulting address (SIGSEGV/SIGBUS/SIGFPE/SIGTRAP/SIGILL)."
+      },
+      {
+        "field": "ssi_addr_lsb",
+        "size": "2 bytes (__u16)",
+        "meaning": "LSB of the faulting address."
+      },
+      {
+        "field": "ssi_syscall",
+        "size": "2 bytes (__s16)",
+        "meaning": "Syscall number that triggered (seccomp). "
+      },
+      {
+        "field": "ssi_call_addr",
+        "size": "8 bytes (void *)",
+        "meaning": "Address of the syscall instruction (seccomp)."
+      },
+      {
+        "field": "ssi_arch",
+        "size": "4 bytes (__u32)",
+        "meaning": "Architecture (seccomp)."
+      },
+      {
+        "field": "padding",
+        "size": "to 128 bytes",
+        "meaning": "Padding to 128 bytes."
+      }
+    ],
+    "example_hex": "02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "signalfd_siginfo for SIGINT (signal 2) from a user process",
+    "notes": [
+      "signalfd replaces signal handlers with a file descriptor, enabling event-loop integration (epoll/select).",
+      "Multiple signals can be read in a single read(2).",
+      "The fd must be created with signalfd(2) after blocking the signals with sigprocmask(2).",
+      "signalfd is the foundation of self-pipe tricks and modern event loops."
+    ]
+  },
+  "updated": "2026-05-29"
+}

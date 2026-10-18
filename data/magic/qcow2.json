@@ -1,0 +1,40 @@
+{
+  "id": "magic/qcow2",
+  "family": "magic",
+  "slug": "qcow2",
+  "title": "QCOW2 (QEMU Copy-On-Write v2) signature",
+  "summary": "QCOW2 is QEMU's native disk image format. The header begins with the 4-byte magic 'QFI\\xfb' (0x51 0x46 0x49 0xFB) followed by the version number (2 or 3).",
+  "kind": "signature",
+  "aliases": [
+    "qcow2 magic",
+    ".qcow2",
+    ".qcow"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "51 46 49 FB",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "qcow2",
+      "qcow"
+    ],
+    "mime": "application/x-qcow2",
+    "spec": "QCOW2 (QEMU)",
+    "notes": [
+      "Magic 'QFI\\xFB' (0x51 0x46 0x49 0xFB) at offset 0.",
+      "Version: 2 (QCOW2) or 3 (QCOW3, with extended L2 entries and subclusters).",
+      "Header: magic (4), version (4), backing_file_offset (8), backing_file_size (4), cluster_bits (4), size (8), crypt_method (4), l1_size (4), l1_table_offset (8), refcount_table_offset (8), refcount_table_clusters (4), nb_snapshots (4), snapshots_offset (8), ... .",
+      "QCOW2 supports copy-on-write, snapshots, compression (zlib/zstd), encryption (LUKS/AES), and thin provisioning.",
+      "Widely used by QEMU, KVM, libvirt, OpenStack, and cloud platforms."
+    ]
+  },
+  "updated": "2026-05-29"
+}

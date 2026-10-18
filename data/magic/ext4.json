@@ -1,0 +1,41 @@
+{
+  "id": "magic/ext4",
+  "family": "magic",
+  "slug": "ext4",
+  "title": "ext2/ext3/ext4 superblock signature",
+  "summary": "The ext2/ext3/ext4 superblock is located at byte offset 1024 from the start of the partition. Its magic number is 0x53EF at offset 56 within the superblock (byte offset 1080 from the partition start).",
+  "kind": "signature",
+  "aliases": [
+    "ext4 magic",
+    ".ext2",
+    ".ext3",
+    ".ext4"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "53 EF",
+    "offset": 1080,
+    "magic_ascii": "",
+    "extensions": [
+      "ext2",
+      "ext3",
+      "ext4"
+    ],
+    "mime": "application/x-ext4-image",
+    "spec": "ext4 (Fourth Extended Filesystem)",
+    "notes": [
+      "Magic 0x53EF at superblock offset 56 (partition offset 1024+56 = 1080).",
+      "Superblock contains: total inodes, total blocks, reserved blocks, free blocks, free inodes, first data block, block size (log2), blocks per group, inodes per group, magic, state (clean/error), revision level, ... .",
+      "ext4 adds extents (replacing indirect blocks), journaling (from ext3), 64-bit block numbers, nanosecond timestamps.",
+      "The superblock is backed up in block groups 0, 1, and powers of 3,5,7 for recovery."
+    ]
+  },
+  "updated": "2026-05-29"
+}

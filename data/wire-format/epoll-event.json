@@ -1,0 +1,43 @@
+{
+  "id": "wire-format/epoll-event",
+  "family": "wire-format",
+  "slug": "epoll-event",
+  "title": "epoll_event structure",
+  "summary": "An epoll_event is the structure used with epoll_ctl(2) and epoll_wait(2). It contains an events bitmask (EPOLLIN, EPOLLOUT, EPOLLERR, EPOLLHUP, EPOLLET, EPOLLONESHOT, ...) and a 64-bit user data field (usually a pointer or fd).",
+  "kind": "wire-format",
+  "aliases": [
+    "epoll_event structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (epoll)",
+    "summary": "An epoll_event is the structure used with epoll_ctl(2) and epoll_wait(2). It contains an events bitmask (EPOLLIN, EPOLLOUT, EPOLLERR, EPOLLHUP, EPOLLET, EPOLLONESHOT, ...) and a 64-bit user data field (usually a pointer or fd).",
+    "structure": [
+      {
+        "field": "events",
+        "size": "4 bytes (__u32)",
+        "meaning": "Event bitmask: EPOLLIN (0x001), EPOLLOUT (0x004), EPOLLERR (0x008), EPOLLHUP (0x010), EPOLLRDHUP (0x2000), EPOLLET (0x80000000, edge-triggered), EPOLLONESHOT (0x40000000), EPOLLWAKEUP (0x20000000)."
+      },
+      {
+        "field": "data",
+        "size": "8 bytes (epoll_data union)",
+        "meaning": "User data: pointer, fd, u32, or u64. Echoed back in epoll_wait results."
+      }
+    ],
+    "example_hex": "01 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00",
+    "example_decoded": "epoll_event: events=EPOLLIN, data.fd=3",
+    "notes": [
+      "epoll is Linux's scalable I/O event notification (O(n) setup, O(1) wait).",
+      "Level-triggered (default) vs edge-triggered (EPOLLET): edge-triggered requires draining the fd.",
+      "EPOLLONESHOT disables the fd after one event; re-arm with EPOLL_CTL_MOD.",
+      "epoll is the basis of high-performance servers (nginx, Redis, Node.js libuv on Linux)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/kvm-run",
+  "family": "wire-format",
+  "slug": "kvm-run",
+  "title": "KVM (Kernel Virtual Machine) ioctl interface",
+  "summary": "KVM exposes a /dev/kvm character device. The VMM (QEMU, Firecracker, Cloud Hypervisor) uses ioctls: KVM_CREATE_VM, KVM_CREATE_VCPU, KVM_SET_USER_MEMORY_REGION, KVM_RUN (enters guest mode), KVM_GET_REGS/KVM_SET_REGS, KVM_GET_SREGS, KVM_TRANSLATE, KVM_INTERRUPT, KVM_SIGNAL_MASK, KVM_IRQ_LINE, etc. The VMM maps guest memory into its address space and handles VM exits (I/O, MMIO, hypercalls, interrupts).",
+  "kind": "wire-format",
+  "aliases": [
+    "KVM (Kernel Virtual Machine) ioctl interface"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.kernel.org/doc/html/latest/",
+  "source_version": "Linux kernel docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (KVM)",
+    "summary": "KVM exposes a /dev/kvm character device. The VMM (QEMU, Firecracker, Cloud Hypervisor) uses ioctls: KVM_CREATE_VM, KVM_CREATE_VCPU, KVM_SET_USER_MEMORY_REGION, KVM_RUN (enters guest mode), KVM_GET_REGS/KVM_SET_REGS, KVM_GET_SREGS, KVM_TRANSLATE, KVM_INTERRUPT, KVM_SIGNAL_MASK, KVM_IRQ_LINE, etc. The VMM maps guest memory into its address space and handles VM exits (I/O, MMIO, hypercalls, interrupts).",
+    "structure": [
+      {
+        "field": "KVM_CREATE_VM",
+        "size": "ioctl",
+        "meaning": "Creates a VM; returns a VM fd. Arg: type (0 = default, 1 = TDX, ...)."
+      },
+      {
+        "field": "KVM_CREATE_VCPU",
+        "size": "ioctl",
+        "meaning": "Creates a vCPU; arg = vCPU id. Returns a vCPU fd."
+      },
+      {
+        "field": "KVM_SET_USER_MEMORY_REGION",
+        "size": "ioctl + struct",
+        "meaning": "Maps guest physical memory: {slot, flags, guest_phys_addr, memory_size, userspace_addr}."
+      },
+      {
+        "field": "KVM_RUN",
+        "size": "ioctl",
+        "meaning": "Enters guest mode; returns on VM exit. The vCPU fd's mmap'd kvm_run structure describes the exit reason."
+      },
+      {
+        "field": "kvm_run.exit_reason",
+        "size": "4 bytes (__u32)",
+        "meaning": "Exit reason: 0 (unknown), 2 (exception), 3 (I/O), 4 (hypercall), 5 (debug), 6 (HLT), 7 (MMIO), 8 (IRQ window open), 9 (shutdown), 10 (fail entry), 11 (intr), 12 (set TPR), 13 (TPR access), 14 (S390 SIEIC), 15 (S390 reset), 16 (DFC), 17 (PAPR hcall), 18 (S390 UCTRL), 19 (ROP (watchdog)), 20 (X86 RDMSR), 21 (X86 WRMSR), 22 (dirty ring full), 23 (APIC write), 24 (HV (Hyper-V)), 25 (ARM NISV), 26 (X86 BUS_LOCK), 27 (XEN), 28 (RISC-V SBI), 29 (RISC-V CSR), 30 (NOTIFY)."
+      },
+      {
+        "field": "kvm_run.io",
+        "size": "struct",
+        "meaning": "For KVM_EXIT_IO: direction (in/out), size (1/2/4), port, count, data_offset."
+      },
+      {
+        "field": "kvm_run.mmio",
+        "size": "struct",
+        "meaning": "For KVM_EXIT_MMIO: phys_addr, data (8 bytes), len, is_write."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "kvm_run structure header (exit_reason=0 unknown)",
+    "notes": [
+      "KVM requires hardware virtualization support (Intel VT-x / AMD-V).",
+      "The VMM runs in userspace; KVM runs in kernel mode for guest execution.",
+      "VM exits (vmexits) transfer control from guest to host; the VMM handles them and re-enters the guest.",
+      "Nested virtualization allows running KVM inside a guest.",
+      "KVM is the foundation of QEMU, Firecracker, Cloud Hypervisor, and crosvm."
+    ]
+  },
+  "updated": "2026-05-29"
+}

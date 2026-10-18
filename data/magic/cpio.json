@@ -1,0 +1,38 @@
+{
+  "id": "magic/cpio",
+  "family": "magic",
+  "slug": "cpio",
+  "title": "cpio archive (initramfs) signature",
+  "summary": "cpio is the archive format used for Linux initramfs (initial RAM filesystem). The 'newc' format (used by the kernel) begins with the 6-byte ASCII magic '070701' (or '070702' for CRC variant).",
+  "kind": "signature",
+  "aliases": [
+    "cpio magic",
+    ".cpio"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "30 37 30 37 30 31",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "cpio"
+    ],
+    "mime": "application/x-cpio",
+    "spec": "cpio (Linux initramfs)",
+    "notes": [
+      "Magic '070701' (0x30 0x37 0x30 0x37 0x30 0x31) for the 'newc' format.",
+      "Magic '070702' for the 'crc' variant (adds a CRC-32 per file).",
+      "Each entry: magic (6), ino (8), mode (8), uid (8), gid (8), nlink (8), mtime (8), filesize (8), devmajor (8), devminor (8), rdevmajor (8), rdevminor (8), namesize (8), check (8), then the filename (namesize bytes, NUL-terminated, padded to 4), then the file data (filesize bytes, padded to 4).",
+      "The kernel unpacks the initramfs into a tmpfs (rootfs) during early boot.",
+      "initramfs contains the early userspace (modules, firmware, init) needed to mount the real root filesystem."
+    ]
+  },
+  "updated": "2026-05-29"
+}
