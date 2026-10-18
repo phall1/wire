@@ -57,6 +57,14 @@ const families = [...new Set(entries.map((e) => e.data.family))]
     </ul>
   </section>
 
+  <section>
+    <h2 class="section-h">substrate</h2>
+    <ul class="bare">
+      <li>design for the best computation substrate from scratch: <a href="/substrate">/substrate</a></li>
+      <li>agent-native · capability-based · content-addressed · deterministic · observable</li>
+    </ul>
+  </section>
+
   <script>
     interface Hit { id: string; title: string; summary: string; aliases: string[]; family: string; kind: string }
     const q = document.getElementById("q") as HTMLInputElement;

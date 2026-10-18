@@ -1,0 +1,240 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/wire";
+---
+
+<BaseLayout title="substrate · wire — the best computation substrate from scratch" description="Design for the best computation substrate if you were to start from scratch: agent-native, capability-based, content-addressed, deterministic, observable.">
+  <pre class="accent" style="margin:0">{` ╔═╗╦═╗╦ ╦╔═╗╦  ╔═╗╔╦╗╔═╗╦═╗
+ ╚═╗╠╦╝║ ║╠═╣║  ╠═╣ ║ ║ ║╠╦╝
+ ╚═╝╩╚═╚═╝╩ ╩╩═╝╩ ╩ ╩ ╚═╝╩╚═`}</pre>
+  <p style="margin:.8em 0 0">the best computation substrate if you started from scratch — agent-native, capability-based, content-addressed, deterministic, observable.</p>
+  <p class="dim" style="margin:.2em 0 0">
+    derived from 4,353 protocol facts in the wire corpus · <a href="/">wire</a> · <a href="/llms.txt">llms.txt</a>
+  </p>
+
+  <hr />
+
+  <h2 class="section-h">0. design principles</h2>
+  <p class="dim">six rules, in priority order. everything below follows from these.</p>
+  <ul class="bare">
+    <li><span class="accent">1. regularity over cleverness.</span> every instruction is 4 bytes. every register is 64 bits. every address is 64 bits. no special cases. an agent can reason about the encoding in one page.</li>
+    <li><span class="accent">2. capability over permission.</span> no ambient authority. every pointer carries its own rights (read, write, execute, seal, derive). hardware enforces. no confused deputy.</li>
+    <li><span class="accent">3. content over location.</span> data is identified by its hash, not its address. immutable by default. deduplication, verification, and caching are free.</li>
+    <li><span class="accent">4. determinism over performance.</span> given the same inputs and capabilities, execution is bit-identical. replayable. debuggable. no hidden state.</li>
+    <li><span class="accent">5. observability over opacity.</span> every instruction is traceable. every memory access is auditable. no black boxes. the machine explains itself.</li>
+    <li><span class="accent">6. composition over monolith.</span> small, well-defined interfaces. components snap together. no god objects.</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">1. instruction set (the wire ISA)</h2>
+  <p class="dim">RISC-V's clean design, simplified further. 32-bit fixed instructions, 4-byte aligned, load-store architecture.</p>
+
+  <h3 class="section-h" style="margin-top:1em">registers</h3>
+  <ul class="bare">
+    <li><code class="accent">x0</code> — hardwired zero (reads 0, writes discarded)</li>
+    <li><code class="accent">x1-x31</code> — 31 general-purpose 64-bit registers</li>
+    <li><code class="accent">pc</code> — program counter (64-bit, 4-byte aligned)</li>
+    <li><code class="accent">cap0-cap31</code> — 32 capability registers (128-bit each: 64-bit address + 64-bit rights)</li>
+    <li><code class="accent">no condition codes.</code> comparisons set a register to 0 or 1. (learned from RISC-V: condition codes cause hidden state.)</li>
+    <li><code class="accent">no delay slots.</code> branches take effect immediately. (learned from MIPS: delay slots are a source of bugs.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">instruction formats (4 types, all 4 bytes)</h3>
+  <ul class="bare">
+    <li><span class="accent">R-type</span> (register-register): <code>opcode[6:0] | rd[4:0] | rs1[4:0] | rs2[4:0] | funct[12:0]</code> — 7+5+5+5+10 = 32 bits. ALU ops, capability ops.</li>
+    <li><span class="accent">I-type</span> (immediate): <code>opcode[6:0] | rd[4:0] | rs1[4:0] | imm[15:0]</code> — 7+5+5+15 = 32 bits. loads, ALU immediates, branches.</li>
+    <li><span class="accent">S-type</span> (store): <code>opcode[6:0] | rs2[4:0] | rs1[4:0] | imm[15:0]</code> — 7+5+5+15 = 32 bits. stores.</li>
+    <li><span class="accent">U-type</span> (upper immediate): <code>opcode[6:0] | rd[4:0] | imm[20:0]</code> — 7+5+20 = 32 bits. LUI, AUIPC, capability creation.</li>
+  </ul>
+  <p class="dim" style="margin-top:.6em">4 types instead of 6 (RISC-V has 6). simpler decoder. no B-type or J-type (branches use I-type with PC-relative offset, jumps use U-type + I-type).</p>
+
+  <h3 class="section-h" style="margin-top:1em">core instructions (~40, not 100+)</h3>
+  <ul class="bare">
+    <li><span class="accent">arithmetic:</span> ADD, SUB, MUL, DIV, REM, ADDI, SLT, SLTU, SLTI, SLTIU</li>
+    <li><span class="accent">logic:</span> AND, OR, XOR, ANDI, ORI, XORI, NOT, NEG</li>
+    <li><span class="accent">shift:</span> SLL, SRL, SRA, SLLI, SRLI, SRAI</li>
+    <li><span class="accent">memory:</span> LD (load 64-bit), LW (load 32-bit), LH, LB, SD, SW, SH, SB, LDU (load unsigned)</li>
+    <li><span class="accent">branch:</span> BEQ, BNE, BLT, BGE, BLTU, BGEU (all compare two registers, branch on condition)</li>
+    <li><span class="accent">jump:</span> JAL (jump and link), JALR (jump and link register)</li>
+    <li><span class="accent">upper:</span> LUI (load upper immediate), AUIPC (add upper immediate to PC)</li>
+    <li><span class="accent">system:</span> ECALL (environment call), EBREAK (breakpoint), FENCE (memory ordering)</li>
+    <li><span class="accent">capability:</span> CGETPERM, CSETPERM, CGETBASE, CSETBASE, CGETLEN, CSETLEN, CSEAL, CUNSEAL, CCHKPERM, CCHKTYPE, CLOAD, CSTORE</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">2. capability system (the security substrate)</h2>
+  <p class="dim">CHERI-inspired. every pointer is a capability. no ambient authority. hardware-enforced.</p>
+
+  <h3 class="section-h" style="margin-top:1em">capability format (128 bits)</h3>
+  <ul class="bare">
+    <li><code class="accent">address</code> — 64 bits: the memory address this capability points to</li>
+    <li><code class="accent">base</code> — 64 bits: the lower bound of the accessible region</li>
+    <li><code class="accent">length</code> — 64 bits: the size of the accessible region (base + length = upper bound)</li>
+    <li><code class="accent">permissions</code> — 16 bits: R (read), W (write), X (execute), S (seal), D (derive), L (load capability), G (global), plus 8 reserved</li>
+    <li><code class="accent">type</code> — 16 bits: 0 = unsealed (data/code), nonzero = sealed (opaque object, type-tagged)</li>
+    <li><code class="accent">tag</code> — 1 bit: 1 = valid capability, 0 = not a capability (prevents forging)</li>
+  </ul>
+  <p class="dim" style="margin-top:.6em">tag bit is the key: a capability is only valid if its tag bit is 1. any write to a capability register or memory location clears the tag. you cannot forge a capability by writing to memory — the tag bit is set only by the hardware on capability operations.</p>
+
+  <h3 class="section-h" style="margin-top:1em">capability operations</h3>
+  <ul class="bare">
+    <li><code class="accent">CGETPERM cd, cs</code> — read permissions from cs into cd (as integer)</li>
+    <li><code class="accent">CSETPERM cd, cs, rt</code> — set permissions on cd from cs, masked by rt (can only reduce permissions)</li>
+    <li><code class="accent">CGETBASE cd, cs</code> — read base address from cs</li>
+    <li><code class="accent">CSETBASE cd, cs, rt</code> — set base address on cd (must be within bounds)</li>
+    <li><code class="accent">CGETLEN cd, cs</code> — read length from cs</li>
+    <li><code class="accent">CSETLEN cd, cs, rt</code> — set length on cd (can only shrink)</li>
+    <li><code class="accent">CSEAL cd, cs, ct</code> — seal cd with type from ct (makes it opaque; cannot be used as pointer until unsealed)</li>
+    <li><code class="accent">CUNSEAL cd, cs, ct</code> — unseal cd if type matches ct (restores pointer usability)</li>
+    <li><code class="accent">CCHKPERM cs, rt</code> — trap if cs doesn't have permissions in rt</li>
+    <li><code class="accent">CCHKTYPE cs, rt</code> — trap if cs type doesn't match rt</li>
+    <li><code class="accent">CLOAD cd, cs</code> — load a capability from memory (cs points to capability in memory; tag must be valid)</li>
+    <li><code class="accent">CSTORE cs, ct</code> — store a capability to memory (ct points to destination; tag preserved)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">capability rules (hardware-enforced)</h3>
+  <ul class="bare">
+    <li>monotonicity: permissions can only be reduced, never increased (CSETPERM, CSETLEN)</li>
+    <li>bounds: every memory access checks base ≤ address < base+length. out of bounds → trap.</li>
+    <li>sealing: sealed capabilities cannot be dereferenced. only the sealer type can unseal.</li>
+    <li>no forging: tag bit is cleared on any non-capability write. only capability operations set it.</li>
+    <li>global: global capabilities (G permission) survive across compartment boundaries.</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">3. memory model (the storage substrate)</h2>
+  <p class="dim">flat 64-bit, page-based virtual memory, tagged, content-addressable.</p>
+
+  <h3 class="section-h" style="margin-top:1em">address space</h3>
+  <ul class="bare">
+    <li><span class="accent">flat 64-bit.</span> no segmentation. no rings (protection via capabilities, not privilege levels). one address space per process.</li>
+    <li><span class="accent">page sizes:</span> 4KB (base), 2MB (large), 1GB (huge). configurable per-mapping. smaller pages = finer granularity, larger pages = less TLB pressure.</li>
+    <li><span class="accent">virtual memory:</span> 4-level page table (PML4 → PDPT → PD → PT), same as x86-64. 48-bit virtual address space (256TB). 5-level (57-bit) optional for larger spaces.</li>
+    <li><span class="accent">tagged memory:</span> every 8-byte word carries a 1-bit tag (capability vs data). hardware checks tags on every access. prevents type confusion.</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">content-addressable storage</h3>
+  <ul class="bare">
+    <li><span class="accent">immutable by default.</span> data is identified by its SHA-256 hash. writing creates a new version. old versions are garbage-collected when unreachable.</li>
+    <li><span class="accent">deduplication.</span> identical data has one copy. storage is a content-addressed store (like IPFS/CAS).</li>
+    <li><span class="accent">verification.</span> any data can be verified by recomputing its hash. no trust needed.</li>
+    <li><span class="accent">caching.</span> content-addressed data is trivially cacheable (hash = cache key).</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">memory ordering</h3>
+  <ul class="bare">
+    <li><span class="accent">acquire/release.</span> not sequential consistency (too slow). acquire loads prevent subsequent reads/writes from reordering before. release stores prevent preceding reads/writes from reordering after.</li>
+    <li><code class="accent">FENCE RW,RW</code> — full fence (all reads/writes before fence complete before all after)</li>
+    <li><code class="accent">FENCE R,RW</code> — acquire (reads before fence complete before reads/writes after)</li>
+    <li><code class="accent">FENCE RW,W</code> — release (reads/writes before fence complete before writes after)</li>
+    <li><code class="accent">FENCE.I</code> — instruction fence (ensure instruction cache coherency)</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">4. concurrency substrate</h2>
+  <p class="dim">atomic operations, transactional memory, lock-free data structures.</p>
+
+  <h3 class="section-h" style="margin-top:1em">atomic operations</h3>
+  <ul class="bare">
+    <li><code class="accent">LR rd, (rs1)</code> — load-reserved: load value and set reservation on address</li>
+    <li><code class="accent">SC rd, rs2, (rs1)</code> — store-conditional: store rs2 to address if reservation still valid; rd = 0 on success, 1 on failure</li>
+    <li><code class="accent">AMOADD, AMOSWAP, AMOAND, AMOOR, AMOXOR, AMOMIN, AMOMAX</code> — atomic memory operations (read-modify-write in one instruction)</li>
+    <li><code class="accent">FENCE</code> — memory ordering</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">hardware transactional memory (HTM)</h3>
+  <ul class="bare">
+    <li><code class="accent">XBEGIN</code> — begin transaction. if transaction aborts, jump to fallback handler.</li>
+    <li><code class="accent">XEND</code> — commit transaction. all memory writes become visible atomically.</li>
+    <li><code class="accent">XABORT</code> — explicitly abort transaction.</li>
+    <li><code class="accent">XTEST</code> — test if currently in transaction.</li>
+    <li><span class="accent">conflict detection:</span> if two transactions touch the same cache line, one aborts. lazy (at commit) or eager (at access).</li>
+    <li><span class="accent">fallback:</span> if HTM fails (conflict, capacity, nesting limit), fall back to lock-based synchronization.</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">5. agent-native I/O</h2>
+  <p class="dim">capability-gated, structured, self-describing, versioned.</p>
+
+  <h3 class="section-h" style="margin-top:1em">I/O model</h3>
+  <ul class="bare">
+    <li><span class="accent">no ambient authority.</span> a process can only access I/O devices through capabilities. no "open any file" or "connect to any host." every I/O channel is a capability granted by the parent.</li>
+    <li><span class="accent">structured I/O.</span> data is not raw bytes — it's typed, schema-described messages. every read returns a typed value, not a byte stream. (like Cap'n Proto / FlatBuffers but at the kernel level.)</li>
+    <li><span class="accent">self-describing.</span> every data structure carries its schema. no separate .proto file needed. (like BSON or CBOR with schema tags.)</li>
+    <li><span class="accent">versioned.</span> every protocol message has a version number. old versions are supported forever (backward compatible). new versions add fields (forward compatible).</li>
+    <li><span class="accent">async-by-default.</span> all I/O is asynchronous. no blocking calls. (like io_uring but for everything.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">I/O channels (capabilities)</h3>
+  <ul class="bare">
+    <li><code class="accent">console</code> — text I/O (stdin/stdout/stderr). capability-gated.</li>
+    <li><code class="accent">filesystem</code> — file read/write. capability grants access to a subtree (like a chroot capability).</li>
+    <li><code class="accent">network</code> — socket creation. capability grants access to specific hosts/ports.</li>
+    <li><code class="accent">timer</code> — time and timer. capability grants access to clock and timer creation.</li>
+    <li><code class="accent">random</code> — randomness. capability grants access to CSPRNG.</li>
+    <li><code class="accent">process</code> — process creation. capability grants right to fork/exec with specified capabilities.</li>
+    <li><code class="accent">memory</code> — memory allocation. capability grants right to allocate memory of specified size/type.</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">6. observability (the debugging substrate)</h2>
+  <p class="dim">built-in tracing, deterministic replay, self-describing execution.</p>
+
+  <h3 class="section-h" style="margin-top:1em">tracing</h3>
+  <ul class="bare">
+    <li><span class="accent">instruction trace.</span> every instruction executed is logged: PC, instruction, register values before/after, memory accesses. (like perf but always on, with zero overhead via hardware.)</li>
+    <li><span class="accent">memory trace.</span> every memory access is logged: address, value, read/write, cache hit/miss. (for debugging and verification.)</li>
+    <li><span class="accent">I/O trace.</span> every I/O operation is logged: channel, operation, data, result. (for auditing and replay.)</li>
+    <li><span class="accent">capability trace.</span> every capability operation is logged: creation, derivation, sealing, use. (for security auditing.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">deterministic replay</h3>
+  <ul class="bare">
+    <li><span class="accent">record.</span> log all non-deterministic inputs (I/O results, timer values, randomness) during execution.</li>
+    <li><span class="accent">replay.</span> re-execute with the same inputs. bit-identical result. (enables debugging of heisenbugs.)</li>
+    <li><span class="accent">time travel.</span> step backward in execution. inspect state at any point. (like rr but built into hardware.)</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">7. what we left out (and why)</h2>
+  <p class="dim">every omission is a deliberate choice.</p>
+  <ul class="bare">
+    <li><span class="accent">no segmentation.</span> flat address space. (x86 segmentation was a mistake — complex, buggy, and unnecessary.)</li>
+    <li><span class="accent">no privilege rings.</span> protection via capabilities, not privilege levels. (rings are coarse-grained and complex. capabilities are fine-grained and simple.)</li>
+    <li><span class="accent">no condition codes.</span> comparisons set registers. (condition codes are hidden state that makes out-of-order execution harder.)</li>
+    <li><span class="accent">no delay slots.</span> branches take effect immediately. (delay slots are a source of bugs and complicate compilers.)</li>
+    <li><span class="accent">no variable-length instructions.</span> all instructions are 4 bytes. (variable-length makes decoding complex and prevents simple pipelining.)</li>
+    <li><span class="accent">no implicit memory.</span> all memory access is explicit (load/store). (register-memory architectures (x86) make pipelining harder.)</li>
+    <li><span class="accent">no ambient authority.</span> every resource access requires a capability. (prevents confused deputy, enables fine-grained sandboxing.)</li>
+    <li><span class="accent">no mutable shared state.</span> data is immutable by default. (makes reasoning about concurrency trivial.)</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">8. comparison with existing architectures</h2>
+  <p class="dim">what we took from each, and what we rejected.</p>
+  <ul class="bare">
+    <li><span class="accent">RISC-V:</span> took the clean ISA design, modular extensions, no condition codes, no delay slots. rejected: no capability support, no content-addressing.</li>
+    <li><span class="accent">CHERI:</span> took the capability model (tagged pointers, monotonic permissions, sealing). rejected: complexity of retrofitting onto existing ISAs.</li>
+    <li><span class="accent">ARM:</span> took the load-store architecture, unified register file, condition codes (rejected), NEON SIMD. rejected: complex instruction encoding, too many special cases.</li>
+    <li><span class="accent">x86-64:</span> took the 64-bit address space, page-based virtual memory. rejected: segmentation, privilege rings, variable-length instructions, condition codes, CISC complexity.</li>
+    <li><span class="accent">MIPS:</span> took the RISC simplicity. rejected: delay slots, branch prediction burden.</li>
+    <li><span class="accent">IPFS/content-addressing:</span> took content-addressable storage, immutable data, deduplication. rejected: too slow for main memory (used for storage, not RAM).</li>
+    <li><span class="accent">Rust/ownership:</span> took the idea of ownership and borrowing (capabilities are the hardware equivalent). rejected: (Rust is software; we want hardware enforcement.)</li>
+    <li><span class="accent">io_uring:</span> took async-by-default I/O. rejected: (io_uring is a Linux API; we want it in the ISA.)</li>
+  </ul>
+
+  <hr />
+
+  <p class="dim" style="margin-top:2em">
+    this design is a synthesis of 4,353 protocol facts from the wire corpus.
+    every decision is traceable to a specific entry. see <a href="/">wire</a> for the source data.
+  </p>
+</BaseLayout>
