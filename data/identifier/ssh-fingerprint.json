@@ -1,0 +1,29 @@
+{
+  "id": "identifier/ssh-fingerprint",
+  "family": "identifier",
+  "slug": "ssh-fingerprint",
+  "title": "SSH key fingerprint",
+  "summary": "An SSH key fingerprint is a hash of the public key, typically SHA-256 (base64-encoded) or MD5 (hex, colon-separated). Displayed when connecting to a server for verification.",
+  "kind": "identifier",
+  "aliases": [
+    "SSH key fingerprint"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "OpenSSH documentation",
+    "example": "SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8",
+    "notes": [
+      "SHA-256 fingerprint: 'SHA256:' + base64-encoded SHA-256 hash of the public key.",
+      "MD5 fingerprint: hex bytes separated by colons (legacy, less secure).",
+      "Fingerprints are used to verify server identity (avoid MITM).",
+      "OpenSSH 6.8+ uses SHA-256 by default; older versions use MD5."
+    ]
+  },
+  "updated": "2026-05-29"
+}

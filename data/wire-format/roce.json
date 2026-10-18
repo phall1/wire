@@ -1,0 +1,68 @@
+{
+  "id": "wire-format/roce",
+  "family": "wire-format",
+  "slug": "roce",
+  "title": "RoCE (RDMA over Converged Ethernet) v2",
+  "summary": "RoCE v2 encapsulates InfiniBand transport (BTH) over UDP/IP/Ethernet. The packet: Ethernet header, IP header, UDP header (port 4791), then BTH, then payload. RoCE v2 uses standard IP routing, unlike RoCE v1 which uses Ethernet (not routable).",
+  "kind": "wire-format",
+  "aliases": [
+    "RoCE (RDMA over Converged Ethernet) v2"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RoCE (InfiniBand Trade Association)",
+    "summary": "RoCE v2 encapsulates InfiniBand transport (BTH) over UDP/IP/Ethernet. The packet: Ethernet header, IP header, UDP header (port 4791), then BTH, then payload. RoCE v2 uses standard IP routing, unlike RoCE v1 which uses Ethernet (not routable).",
+    "structure": [
+      {
+        "field": "Ethernet header",
+        "size": "14 bytes",
+        "meaning": "Dst MAC, Src MAC, EtherType 0x0800 (IPv4) or 0x86DD (IPv6)."
+      },
+      {
+        "field": "IP header",
+        "size": "20 bytes (IPv4) or 40 bytes (IPv6)",
+        "meaning": "Standard IP header."
+      },
+      {
+        "field": "UDP header",
+        "size": "8 bytes",
+        "meaning": "Src port (ephemeral), Dst port 4791, length, checksum."
+      },
+      {
+        "field": "BTH",
+        "size": "12 bytes",
+        "meaning": "InfiniBand Base Transport Header."
+      },
+      {
+        "field": "Payload",
+        "size": "variable",
+        "meaning": "RDMA operation payload."
+      },
+      {
+        "field": "ICRC",
+        "size": "4 bytes",
+        "meaning": "Invariant CRC (over BTH + payload)."
+      },
+      {
+        "field": "FCS",
+        "size": "4 bytes",
+        "meaning": "Frame Check Sequence (Ethernet CRC)."
+      }
+    ],
+    "example_hex": "ff ff ff ff ff ff 00 00 00 00 00 00 08 00",
+    "example_decoded": "RoCE v2: Ethernet header with EtherType 0x0800 (IPv4)",
+    "notes": [
+      "RoCE v2 uses UDP port 4791.",
+      "RoCE v2 is routable (unlike RoCE v1 which is Ethernet-only).",
+      "RoCE requires lossless Ethernet (PFC, ECN) for reliable transport.",
+      "RoCE is used by cloud providers (AWS EFA, Azure, GCP) for high-performance networking."
+    ]
+  },
+  "updated": "2026-05-29"
+}

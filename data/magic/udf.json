@@ -1,0 +1,37 @@
+{
+  "id": "magic/udf",
+  "family": "magic",
+  "slug": "udf",
+  "title": "UDF (Universal Disk Format) signature",
+  "summary": "A UDF filesystem has the signature 'BEA01' (0x42 0x45 0x41 0x30 0x31) at sector 32 (offset 65536) in the beginning extended area descriptor.",
+  "kind": "signature",
+  "aliases": [
+    "udf magic",
+    ".udf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "42 45 41 30 31",
+    "offset": 65536,
+    "magic_ascii": "",
+    "extensions": [
+      "udf"
+    ],
+    "mime": "application/x-udf-image",
+    "spec": "UDF (ECMA-167/ISO 13346)",
+    "notes": [
+      "'BEA01' (Beginning Extended Area Descriptor) at sector 32.",
+      "UDF is used for DVD, Blu-ray, and optical media.",
+      "UDF supports large files (>4GB), long filenames, and packet writing.",
+      "UDF is the successor to ISO 9660 for optical media."
+    ]
+  },
+  "updated": "2026-05-29"
+}

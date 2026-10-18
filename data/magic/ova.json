@@ -1,0 +1,39 @@
+{
+  "id": "magic/ova",
+  "family": "magic",
+  "slug": "ova",
+  "title": "OVA (Open Virtual Appliance) signature",
+  "summary": "An OVA file is a tar archive containing an OVF (Open Virtualization Format) descriptor and disk images. The magic is the tar signature (ustar) at offset 257.",
+  "kind": "signature",
+  "aliases": [
+    "ova magic",
+    ".ova",
+    ".ovf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "75 73 74 61 72",
+    "offset": 257,
+    "magic_ascii": "",
+    "extensions": [
+      "ova",
+      "ovf"
+    ],
+    "mime": "application/x-ova",
+    "spec": "OVF (DMTF)",
+    "notes": [
+      "OVA is a tar archive with OVF descriptor + disk images.",
+      "OVF descriptor is an XML file describing the VM (CPU, memory, disks, network).",
+      "OVA is the standard format for distributing virtual appliances.",
+      "Supported by VMware, VirtualBox, and cloud platforms."
+    ]
+  },
+  "updated": "2026-05-29"
+}

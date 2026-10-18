@@ -1,0 +1,37 @@
+{
+  "id": "magic/vhdx",
+  "family": "magic",
+  "slug": "vhdx",
+  "title": "VHDX (Virtual Hard Disk v2) signature",
+  "summary": "A VHDX file begins with the 8-byte signature 'vhdxfile' (0x76 0x68 0x64 0x78 0x66 0x69 0x6C 0x65) at offset 0.",
+  "kind": "signature",
+  "aliases": [
+    "vhdx magic",
+    ".vhdx"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "76 68 64 78 66 69 6C 65",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "vhdx"
+    ],
+    "mime": "application/x-vhdx",
+    "spec": "VHDX (Microsoft)",
+    "notes": [
+      "Signature: 'vhdxfile' (0x76 0x68 0x64 0x78 0x66 0x69 0x6C 0x65).",
+      "VHDX supports up to 64TB (vs VHD's 2TB limit).",
+      "VHDX supports 4KB logical sector sizes and larger block sizes.",
+      "VHDX is the default format for Hyper-V on Windows 8+."
+    ]
+  },
+  "updated": "2026-05-29"
+}

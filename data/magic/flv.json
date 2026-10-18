@@ -1,0 +1,37 @@
+{
+  "id": "magic/flv",
+  "family": "magic",
+  "slug": "flv",
+  "title": "Flash Video (FLV) signature",
+  "summary": "An FLV file begins with the 3-byte signature 'FLV' (0x46 0x4C 0x56) followed by 0x01 (version 1) and a 4-byte flags field (audio/video presence).",
+  "kind": "signature",
+  "aliases": [
+    "flv magic",
+    ".flv"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "46 4C 56 01",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "flv"
+    ],
+    "mime": "video/x-flv",
+    "spec": "FLV (Adobe)",
+    "notes": [
+      "Signature: 'FLV' (0x46 0x4C 0x56) + version (0x01) + flags (4 bytes).",
+      "FLV is a container format for audio/video used by Flash Player.",
+      "FLV uses AMF (Action Message Format) for metadata.",
+      "Largely superseded by MP4 and WebM."
+    ]
+  },
+  "updated": "2026-05-29"
+}

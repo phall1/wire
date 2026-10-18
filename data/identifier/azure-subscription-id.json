@@ -1,0 +1,29 @@
+{
+  "id": "identifier/azure-subscription-id",
+  "family": "identifier",
+  "slug": "azure-subscription-id",
+  "title": "Azure subscription ID",
+  "summary": "An Azure subscription ID is a GUID that uniquely identifies an Azure subscription. It appears in resource IDs, ARM templates, and Azure CLI commands.",
+  "kind": "identifier",
+  "aliases": [
+    "Azure subscription ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Azure documentation",
+    "example": "12345678-1234-1234-1234-123456789012",
+    "notes": [
+      "GUID (UUID v4 format).",
+      "Used in resource IDs: /subscriptions/{id}/resourceGroups/...",
+      "A tenant can have multiple subscriptions.",
+      "Subscription IDs are globally unique."
+    ]
+  },
+  "updated": "2026-05-29"
+}

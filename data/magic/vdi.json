@@ -1,0 +1,37 @@
+{
+  "id": "magic/vdi",
+  "family": "magic",
+  "slug": "vdi",
+  "title": "VDI (VirtualBox Disk Image) signature",
+  "summary": "A VDI file begins with the 4-byte magic 0x7F 0x10 0xD0 0xBA at offset 64 (0x40), following a 64-byte header with version and type information.",
+  "kind": "signature",
+  "aliases": [
+    "vdi magic",
+    ".vdi"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "7F 10 D0 BA",
+    "offset": 64,
+    "magic_ascii": "",
+    "extensions": [
+      "vdi"
+    ],
+    "mime": "application/x-vdi",
+    "spec": "VDI (Oracle VirtualBox)",
+    "notes": [
+      "Magic 0x7F10D0BA at offset 64.",
+      "VDI header: magic (4), version (4), header size (4), image type (4), flags (4), description (256), offset blocks (4), offset data (4), cylinders (4), heads (4), sectors (4), sector size (4), unused (4), disk size (8), block size (4), block extra (4), blocks allocated (4), UUID (16), parent UUID (16), etc.",
+      "VDI supports fixed and dynamic (sparse) disks.",
+      "VirtualBox's native format."
+    ]
+  },
+  "updated": "2026-05-29"
+}

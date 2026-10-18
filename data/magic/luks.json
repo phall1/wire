@@ -1,0 +1,38 @@
+{
+  "id": "magic/luks",
+  "family": "magic",
+  "slug": "luks",
+  "title": "LUKS (Linux Unified Key Setup) signature",
+  "summary": "A LUKS-encrypted volume begins with the 6-byte signature 'LUKS\\xBA\\xBE' (0x4C 0x55 0x4B 0x53 0xBA 0xBE) at offset 0.",
+  "kind": "signature",
+  "aliases": [
+    "luks magic",
+    ".luks"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4C 55 4B 53 BA BE",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "luks"
+    ],
+    "mime": "application/x-luks",
+    "spec": "LUKS (Linux)",
+    "notes": [
+      "Signature: 'LUKS\\xBA\\xBE' (0x4C 0x55 0x4B 0x53 0xBA 0xBE).",
+      "Version: LUKS1 (0x0001) or LUKS2 (0x0002).",
+      "LUKS header contains cipher, mode, hash, key slots, and the encrypted master key.",
+      "LUKS is the standard for disk encryption on Linux.",
+      "LUKS2 adds support for larger headers, tokens, and integrity protection."
+    ]
+  },
+  "updated": "2026-05-29"
+}

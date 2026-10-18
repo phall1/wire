@@ -1,0 +1,89 @@
+{
+  "id": "wire-format/infiniband-bth",
+  "family": "wire-format",
+  "slug": "infiniband-bth",
+  "title": "InfiniBand Base Transport Header (BTH)",
+  "summary": "The InfiniBand BTH (Base Transport Header) is a 12-byte header for reliable/ unreliable transport. Fields: opcode (1 byte), solicited event (1 bit), migration request (1 bit), pad count (2 bits), transport header version (4 bits), partition key (2 bytes), reserved (1 byte), destination QP (3 bytes), ACK request (1 bit), reserved (7 bits), PSN (3 bytes).",
+  "kind": "wire-format",
+  "aliases": [
+    "InfiniBand Base Transport Header (BTH)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "InfiniBand Architecture Specification",
+    "summary": "The InfiniBand BTH (Base Transport Header) is a 12-byte header for reliable/ unreliable transport. Fields: opcode (1 byte), solicited event (1 bit), migration request (1 bit), pad count (2 bits), transport header version (4 bits), partition key (2 bytes), reserved (1 byte), destination QP (3 bytes), ACK request (1 bit), reserved (7 bits), PSN (3 bytes).",
+    "structure": [
+      {
+        "field": "Opcode",
+        "size": "1 byte",
+        "meaning": "Operation code: 0x00 SEND, 0x01 SEND_IMM, 0x02 RDMA_WRITE, 0x03 RDMA_WRITE_IMM, 0x04 RDMA_READ_REQUEST, 0x05 RDMA_READ_RESPONSE, 0x06 ACK, 0x07 ATOMIC_ACK, 0x08 COMPARE_SWAP, 0x09 FETCH_ADD, ... ."
+      },
+      {
+        "field": "Solicited Event (SE)",
+        "size": "1 bit",
+        "meaning": "1 = generate a solicited completion event."
+      },
+      {
+        "field": "Migration Request (M)",
+        "size": "1 bit",
+        "meaning": "1 = migration request."
+      },
+      {
+        "field": "Pad Count",
+        "size": "2 bits",
+        "meaning": "Number of pad bytes in the payload (0-3)."
+      },
+      {
+        "field": "Transport Header Version",
+        "size": "4 bits",
+        "meaning": "Always 0."
+      },
+      {
+        "field": "Partition Key (P_Key)",
+        "size": "2 bytes",
+        "meaning": "Partition key (subnet isolation)."
+      },
+      {
+        "field": "Reserved",
+        "size": "1 byte",
+        "meaning": "Reserved."
+      },
+      {
+        "field": "Destination QP",
+        "size": "3 bytes",
+        "meaning": "Destination Queue Pair number."
+      },
+      {
+        "field": "ACK Request",
+        "size": "1 bit",
+        "meaning": "1 = request an ACK."
+      },
+      {
+        "field": "Reserved",
+        "size": "7 bits",
+        "meaning": "Reserved."
+      },
+      {
+        "field": "Packet Sequence Number (PSN)",
+        "size": "3 bytes (24 bits)",
+        "meaning": "Packet sequence number for reliable transport."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "InfiniBand BTH: opcode 0 (SEND), PSN 0",
+    "notes": [
+      "BTH is the base transport header for all InfiniBand operations.",
+      "Queue Pairs (QPs) are the communication endpoints (like sockets).",
+      "Reliable Connected (RC) transport provides reliable, ordered delivery.",
+      "Unreliable Datagram (UD) transport provides unreliable, unordered delivery.",
+      "PSN wraps around at 2^24."
+    ]
+  },
+  "updated": "2026-05-29"
+}

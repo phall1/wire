@@ -1,0 +1,37 @@
+{
+  "id": "magic/dmg",
+  "family": "magic",
+  "slug": "dmg",
+  "title": "Apple Disk Image (DMG) signature",
+  "summary": "An Apple Disk Image (DMG) begins with the 4-byte magic 0x78 0x01 0x73 0x0D (zlib-compressed UDIF) or has 'koly' (0x6B 0x6F 0x6C 0x79) at the end of the file (trailer).",
+  "kind": "signature",
+  "aliases": [
+    "dmg magic",
+    ".dmg"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "78 01 73 0D",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "dmg"
+    ],
+    "mime": "application/x-apple-diskimage",
+    "spec": "UDIF (Apple)",
+    "notes": [
+      "Magic at start: 0x78 0x01 0x73 0x0D (zlib-compressed UDIF).",
+      "Magic at end: 'koly' (0x6B 0x6F 0x6C 0x79) in the trailer (last 512 bytes).",
+      "DMG is the standard disk image format for macOS.",
+      "DMG supports compression, encryption, and code signing."
+    ]
+  },
+  "updated": "2026-05-29"
+}

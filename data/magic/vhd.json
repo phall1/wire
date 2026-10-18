@@ -1,0 +1,37 @@
+{
+  "id": "magic/vhd",
+  "family": "magic",
+  "slug": "vhd",
+  "title": "VHD (Virtual Hard Disk) signature",
+  "summary": "A VHD file begins with the 8-byte signature 'conectix' (0x63 0x6F 0x6E 0x65 0x63 0x74 0x69 0x78) at offset 0 (footer) or has the signature at the end of the file.",
+  "kind": "signature",
+  "aliases": [
+    "vhd magic",
+    ".vhd"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "63 6F 6E 65 63 74 69 78",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "vhd"
+    ],
+    "mime": "application/x-vhd",
+    "spec": "VHD (Microsoft)",
+    "notes": [
+      "Signature: 'conectix' (0x63 0x6F 0x6E 0x65 0x63 0x74 0x69 0x78).",
+      "VHD is the older virtual disk format (used by Virtual PC, Hyper-V).",
+      "VHD supports fixed, dynamic, and differencing disks.",
+      "Superseded by VHDX for newer Hyper-V."
+    ]
+  },
+  "updated": "2026-05-29"
+}

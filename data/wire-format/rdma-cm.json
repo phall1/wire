@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/rdma-cm",
+  "family": "wire-format",
+  "slug": "rdma-cm",
+  "title": "RDMA Connection Manager (RDMA CM) message",
+  "summary": "RDMA CM (Connection Manager) provides connection establishment for RDMA (InfiniBand, RoCE, iWARP). Messages are exchanged over a well-known port (7200 for IW_CM, 7201 for RDMA_CM). The RDMA CM message header: service ID (8 bytes), DREQ/DREP/DREQ (request/reply), SIDR (service ID resolution) request/reply, and MRA (multipath RNR).",
+  "kind": "wire-format",
+  "aliases": [
+    "RDMA Connection Manager (RDMA CM) message"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RDMA CM (librdmacm)",
+    "summary": "RDMA CM (Connection Manager) provides connection establishment for RDMA (InfiniBand, RoCE, iWARP). Messages are exchanged over a well-known port (7200 for IW_CM, 7201 for RDMA_CM). The RDMA CM message header: service ID (8 bytes), DREQ/DREP/DREQ (request/reply), SIDR (service ID resolution) request/reply, and MRA (multipath RNR).",
+    "structure": [
+      {
+        "field": "Service ID",
+        "size": "8 bytes (uint64)",
+        "meaning": "Service ID (well-known port mapped to 64-bit ID)."
+      },
+      {
+        "field": "DREQ (disconnect request)",
+        "size": "variable",
+        "meaning": "Disconnect request message."
+      },
+      {
+        "field": "DREP (disconnect reply)",
+        "size": "variable",
+        "meaning": "Disconnect reply message."
+      },
+      {
+        "field": "SIDR_REQ (service ID resolution request)",
+        "size": "variable",
+        "meaning": "Request to resolve a service ID to a QP."
+      },
+      {
+        "field": "SIDR_REP (service ID resolution reply)",
+        "size": "variable",
+        "meaning": "Reply with QP number and status."
+      },
+      {
+        "field": "MRA (multipath RNR)",
+        "size": "variable",
+        "meaning": "RNR (Receiver Not Ready) retry message."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "RDMA CM: service ID 0 (well-known)",
+    "notes": [
+      "RDMA CM uses the RDMA CM kernel module (rdma_cm) for connection management.",
+      "RDMA (Remote Direct Memory Access) allows direct memory access between machines without CPU involvement.",
+      "RDMA transports: InfiniBand, RoCE (RDMA over Converged Ethernet), iWARP (RDMA over TCP).",
+      "RDMA is used by high-performance computing, storage (NVMe-oF), and databases."
+    ]
+  },
+  "updated": "2026-05-29"
+}

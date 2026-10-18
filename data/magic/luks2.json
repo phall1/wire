@@ -1,0 +1,37 @@
+{
+  "id": "magic/luks2",
+  "family": "magic",
+  "slug": "luks2",
+  "title": "LUKS2 signature",
+  "summary": "A LUKS2-encrypted volume begins with 'LUKS\\xBA\\xBE' followed by version 2 (0x0002). The LUKS2 header is larger (16MB) and supports JSON metadata.",
+  "kind": "signature",
+  "aliases": [
+    "luks2 magic",
+    ".luks2"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4C 55 4B 53 BA BE 00 02",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "luks2"
+    ],
+    "mime": "application/x-luks2",
+    "spec": "LUKS2",
+    "notes": [
+      "Signature: 'LUKS\\xBA\\xBE' + version 0x0002.",
+      "LUKS2 header is 16MB (vs LUKS1's 592 bytes).",
+      "LUKS2 supports JSON metadata, larger key slots, and integrity protection.",
+      "LUKS2 is the default on modern Linux distributions."
+    ]
+  },
+  "updated": "2026-05-29"
+}

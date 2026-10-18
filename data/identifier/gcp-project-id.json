@@ -1,0 +1,30 @@
+{
+  "id": "identifier/gcp-project-id",
+  "family": "identifier",
+  "slug": "gcp-project-id",
+  "title": "GCP project ID",
+  "summary": "A GCP project ID is a globally unique string that identifies a Google Cloud project. It must be 6-30 characters, lowercase letters, digits, and hyphens, starting with a letter.",
+  "kind": "identifier",
+  "aliases": [
+    "GCP project ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Google Cloud documentation",
+    "example": "my-project-123456",
+    "notes": [
+      "6-30 characters.",
+      "Lowercase letters, digits, and hyphens.",
+      "Must start with a letter.",
+      "Globally unique across all of GCP.",
+      "Cannot be changed after creation."
+    ]
+  },
+  "updated": "2026-05-29"
+}

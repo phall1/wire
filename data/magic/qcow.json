@@ -1,0 +1,37 @@
+{
+  "id": "magic/qcow",
+  "family": "magic",
+  "slug": "qcow",
+  "title": "QCOW (QEMU Copy-On-Write v1) signature",
+  "summary": "A QCOW v1 file begins with the 4-byte magic 'QFI\\xFB' (0x51 0x46 0x49 0xFB) with version 1.",
+  "kind": "signature",
+  "aliases": [
+    "qcow magic",
+    ".qcow"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "51 46 49 FB",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "qcow"
+    ],
+    "mime": "application/x-qcow",
+    "spec": "QCOW (QEMU)",
+    "notes": [
+      "Magic 'QFI\\xFB' (0x51 0x46 0x49 0xFB) at offset 0.",
+      "Version 1 (QCOW1) or 2 (QCOW2) or 3 (QCOW3).",
+      "QCOW1 is obsolete; QCOW2 is the standard.",
+      "QCOW supports copy-on-write, snapshots, and compression."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "magic/msi",
+  "family": "magic",
+  "slug": "msi",
+  "title": "MSI (Windows Installer) signature",
+  "summary": "An MSI file is an OLE2 compound document with the CLSID {000C1084-0000-0000-C000-000000000046}. The OLE2 signature (D0 CF 11 E0 A1 B1 1A E1) is followed by a specific CLSID in the header.",
+  "kind": "signature",
+  "aliases": [
+    "msi magic",
+    ".msi",
+    ".msp",
+    ".mst"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "D0 CF 11 E0 A1 B1 1A E1",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "msi",
+      "msp",
+      "mst"
+    ],
+    "mime": "application/x-msi",
+    "spec": "Windows Installer (Microsoft)",
+    "notes": [
+      "OLE2 signature: 0xD0CF11E0A1B11AE1.",
+      "CLSID at offset 8: {000C1084-0000-0000-C000-000000000046} for MSI.",
+      "MSI files are OLE2 compound documents containing installation databases.",
+      "MSI supports transactions, rollback, and patching."
+    ]
+  },
+  "updated": "2026-05-29"
+}

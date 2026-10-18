@@ -1,0 +1,29 @@
+{
+  "id": "identifier/aws-account-id",
+  "family": "identifier",
+  "slug": "aws-account-id",
+  "title": "AWS account ID",
+  "summary": "An AWS account ID is a 12-digit number that uniquely identifies an AWS account. It appears in ARNs, IAM policies, and CloudTrail logs.",
+  "kind": "identifier",
+  "aliases": [
+    "AWS account ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "AWS documentation",
+    "example": "123456789012",
+    "notes": [
+      "12-digit numeric string.",
+      "Used in ARNs: arn:aws:iam::123456789012:user/...",
+      "Account IDs are globally unique.",
+      "The root user email is the account's primary identity."
+    ]
+  },
+  "updated": "2026-05-29"
+}

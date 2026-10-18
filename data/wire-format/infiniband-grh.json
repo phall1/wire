@@ -1,0 +1,73 @@
+{
+  "id": "wire-format/infiniband-grh",
+  "family": "wire-format",
+  "slug": "infiniband-grh",
+  "title": "InfiniBand Global Route Header (GRH)",
+  "summary": "The InfiniBand GRH (Global Route Header) is a 40-byte header for routed packets (between subnets). Fields: IP version (4 bits), traffic class (8), flow label (20), payload length (16), next header (8), hop limit (8), source GID (16 bytes), destination GID (16 bytes).",
+  "kind": "wire-format",
+  "aliases": [
+    "InfiniBand Global Route Header (GRH)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "InfiniBand Architecture Specification",
+    "summary": "The InfiniBand GRH (Global Route Header) is a 40-byte header for routed packets (between subnets). Fields: IP version (4 bits), traffic class (8), flow label (20), payload length (16), next header (8), hop limit (8), source GID (16 bytes), destination GID (16 bytes).",
+    "structure": [
+      {
+        "field": "IP version",
+        "size": "4 bits",
+        "meaning": "Always 6 (IPv6-style)."
+      },
+      {
+        "field": "Traffic class",
+        "size": "8 bits",
+        "meaning": "Traffic class (like IPv6)."
+      },
+      {
+        "field": "Flow label",
+        "size": "20 bits",
+        "meaning": "Flow label (like IPv6)."
+      },
+      {
+        "field": "Payload length",
+        "size": "2 bytes (uint16)",
+        "meaning": "Length of the payload (including the InfiniBand headers)."
+      },
+      {
+        "field": "Next header",
+        "size": "1 byte",
+        "meaning": "Next header type (e.g., 0x1B for BTH)."
+      },
+      {
+        "field": "Hop limit",
+        "size": "1 byte",
+        "meaning": "Hop limit (decremented per hop)."
+      },
+      {
+        "field": "Source GID",
+        "size": "16 bytes",
+        "meaning": "Source Global Identifier (GUID + subnet prefix)."
+      },
+      {
+        "field": "Destination GID",
+        "size": "16 bytes",
+        "meaning": "Destination Global Identifier."
+      }
+    ],
+    "example_hex": "60 00 00 00 00 00 1b 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "InfiniBand GRH: version 6, next header 0x1B (BTH), hop limit 64",
+    "notes": [
+      "InfiniBand uses GIDs (Global Identifiers) for routing between subnets.",
+      "GID = subnet prefix (64 bits) + GUID (64 bits).",
+      "InfiniBand is used in HPC, AI training clusters, and high-performance storage.",
+      "RoCE (RDMA over Converged Ethernet) uses the same GRH over Ethernet."
+    ]
+  },
+  "updated": "2026-05-29"
+}
