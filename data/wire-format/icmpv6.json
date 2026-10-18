@@ -1,0 +1,53 @@
+{
+  "id": "wire-format/icmpv6",
+  "family": "wire-format",
+  "slug": "icmpv6",
+  "title": "ICMPv6 header",
+  "summary": "ICMPv6 is the IPv6 equivalent of ICMP. Header: type (1 byte), code (1 byte), checksum (2 bytes), then type-specific data. Common types: 128 echo request, 129 echo reply, 133 router solicitation, 134 router advertisement, 135 neighbor solicitation, 136 neighbor advertisement, 137 redirect.",
+  "kind": "wire-format",
+  "aliases": [
+    "ICMPv6 header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 4443",
+    "summary": "ICMPv6 is the IPv6 equivalent of ICMP. Header: type (1 byte), code (1 byte), checksum (2 bytes), then type-specific data. Common types: 128 echo request, 129 echo reply, 133 router solicitation, 134 router advertisement, 135 neighbor solicitation, 136 neighbor advertisement, 137 redirect.",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "128 echo request, 129 echo reply, 133 router solicitation, 134 router advertisement, 135 neighbor solicitation, 136 neighbor advertisement, 137 redirect, 1 (dest unreachable), 2 (packet too big), 3 (time exceeded), 4 (parameter problem)."
+      },
+      {
+        "field": "Code",
+        "size": "1 byte",
+        "meaning": "Sub-type (e.g., 0 = no route, 1 = admin prohibited, 2 = beyond scope, 3 = address unreachable, 4 = port unreachable for dest unreachable)."
+      },
+      {
+        "field": "Checksum",
+        "size": "2 bytes",
+        "meaning": "ICMPv6 checksum (covers the ICMPv6 message + IPv6 pseudo-header)."
+      },
+      {
+        "field": "Body",
+        "size": "variable",
+        "meaning": "Type-specific data (e.g., identifier + sequence number for echo, or neighbor address for NS/NA)."
+      }
+    ],
+    "example_hex": "80 00 00 00 00 01 00 01 48 65 6c 6c 6f",
+    "example_decoded": "ICMPv6 echo request (type 128), code 0, id 1, seq 1, payload 'Hello'",
+    "notes": [
+      "ICMPv6 is required for IPv6 (no ARP; uses NDP for neighbor resolution).",
+      "Neighbor Discovery Protocol (NDP) replaces ARP in IPv6.",
+      "Router Solicitation/Advertisement (RS/RA) replaces DHCP for router discovery.",
+      "ICMPv6 checksum includes the IPv6 pseudo-header (src addr, dst addr, length, next header)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

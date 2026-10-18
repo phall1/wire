@@ -1,0 +1,30 @@
+{
+  "id": "identifier/gcp-resource-name",
+  "family": "identifier",
+  "slug": "gcp-resource-name",
+  "title": "GCP resource name",
+  "summary": "A Google Cloud resource name identifies a resource hierarchically: //service.googleapis.com/projects/{project}/locations/{location}/{resource-type}/{resource-id}. Short form: projects/{project}/locations/{location}/{resource-type}/{resource-id}.",
+  "kind": "identifier",
+  "aliases": [
+    "GCP resource name"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Google Cloud documentation",
+    "example": "//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-vm",
+    "notes": [
+      "Full form: //{service}.googleapis.com/{resource-path}.",
+      "Short form: {collection}/{resource} or projects/{project}/... .",
+      "Resource names are case-sensitive and must be unique within their parent.",
+      "Used in IAM, Cloud Asset Inventory, and API calls.",
+      "GCP also uses 'unique resource identifiers' (URIs) for some resources."
+    ]
+  },
+  "updated": "2026-05-29"
+}

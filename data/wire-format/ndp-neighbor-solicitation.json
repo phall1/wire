@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/ndp-neighbor-solicitation",
+  "family": "wire-format",
+  "slug": "ndp-neighbor-solicitation",
+  "title": "NDP Neighbor Solicitation (ICMPv6 type 135)",
+  "summary": "NDP Neighbor Solicitation is ICMPv6 type 135. It resolves an IPv6 address to a MAC address (replacing ARP). Format: type (135), code (0), checksum (2), reserved (4), target address (16 bytes), then options (source link-layer address, etc.).",
+  "kind": "wire-format",
+  "aliases": [
+    "NDP Neighbor Solicitation (ICMPv6 type 135)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 4861",
+    "summary": "NDP Neighbor Solicitation is ICMPv6 type 135. It resolves an IPv6 address to a MAC address (replacing ARP). Format: type (135), code (0), checksum (2), reserved (4), target address (16 bytes), then options (source link-layer address, etc.).",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "135 (Neighbor Solicitation)."
+      },
+      {
+        "field": "Code",
+        "size": "1 byte",
+        "meaning": "0."
+      },
+      {
+        "field": "Checksum",
+        "size": "2 bytes",
+        "meaning": "ICMPv6 checksum."
+      },
+      {
+        "field": "Reserved",
+        "size": "4 bytes",
+        "meaning": "Must be 0."
+      },
+      {
+        "field": "Target Address",
+        "size": "16 bytes",
+        "meaning": "The IPv6 address being resolved."
+      },
+      {
+        "field": "Options",
+        "size": "variable",
+        "meaning": "Source Link-Layer Address (type 1), etc."
+      }
+    ],
+    "example_hex": "87 00 00 00 00 00 00 00 20 01 0d b8 00 00 00 00 00 00 00 00 00 00 00 02",
+    "example_decoded": "NDP NS: type 135, target 2001:db8::2",
+    "notes": [
+      "NDP NS is the IPv6 equivalent of ARP request.",
+      "The target address is the IPv6 address being resolved.",
+      "Source link-layer address option carries the sender's MAC.",
+      "NS is sent to the solicited-node multicast address (ff02::1:ff00:0/104 + last 24 bits of target)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

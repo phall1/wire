@@ -1,0 +1,32 @@
+{
+  "id": "identifier/azure-resource-id",
+  "family": "identifier",
+  "slug": "azure-resource-id",
+  "title": "Azure resource ID",
+  "summary": "An Azure resource ID identifies a resource hierarchically: /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/{provider-namespace}/{resource-type}/{resource-name}.",
+  "kind": "identifier",
+  "aliases": [
+    "Azure resource ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Azure documentation",
+    "example": "/subscriptions/12345678-1234-1234-1234-123456789012/resourceGroups/my-rg/providers/Microsoft.Compute/virtualMachines/my-vm",
+    "notes": [
+      "Format: /subscriptions/{sub}/resourceGroups/{rg}/providers/{ns}/{type}/{name}.",
+      "subscription-id: GUID.",
+      "resource-group: name of the resource group.",
+      "provider-namespace: Microsoft.Compute, Microsoft.Storage, etc.",
+      "resource-type: virtualMachines, storageAccounts, etc.",
+      "resource-name: name of the resource.",
+      "Used in RBAC, ARM templates, and API calls."
+    ]
+  },
+  "updated": "2026-05-29"
+}

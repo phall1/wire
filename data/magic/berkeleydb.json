@@ -1,0 +1,38 @@
+{
+  "id": "magic/berkeleydb",
+  "family": "magic",
+  "slug": "berkeleydb",
+  "title": "Berkeley DB signature",
+  "summary": "A Berkeley DB file begins with the 4-byte magic 0x00061561 (little-endian: 61 15 06 00) for Btree, or 0x00053162 for Hash, or 0x00042253 for Queue, or 0x00040988 for Recno.",
+  "kind": "signature",
+  "aliases": [
+    "berkeleydb magic",
+    ".db",
+    ".bdb"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "61 15 06 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "db",
+      "bdb"
+    ],
+    "mime": "application/x-berkeleydb",
+    "spec": "Berkeley DB",
+    "notes": [
+      "Magic varies by access method: 0x00061561 (Btree), 0x00053162 (Hash), 0x00042253 (Queue), 0x00040988 (Recno).",
+      "Berkeley DB is an embedded key-value database.",
+      "Used by many applications (RPM, Postfix, etc.)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

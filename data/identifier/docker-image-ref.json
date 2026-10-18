@@ -1,0 +1,32 @@
+{
+  "id": "identifier/docker-image-ref",
+  "family": "identifier",
+  "slug": "docker-image-ref",
+  "title": "Docker image reference",
+  "summary": "A Docker image reference identifies an image: [registry/][repository/]name[:tag][@digest]. Registry defaults to Docker Hub (docker.io). Tag defaults to 'latest'. Digest is sha256:... for content-addressable references.",
+  "kind": "identifier",
+  "aliases": [
+    "Docker image reference"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Docker documentation",
+    "example": "docker.io/library/nginx:1.25.3@sha256:abc123...",
+    "notes": [
+      "Format: [registry/][namespace/]name[:tag][@digest].",
+      "registry: hostname (default docker.io).",
+      "namespace: organization (default library for official images).",
+      "name: image name.",
+      "tag: version label (default latest).",
+      "digest: sha256:... for immutable references.",
+      "Docker Hub official images omit the namespace (library is implicit)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

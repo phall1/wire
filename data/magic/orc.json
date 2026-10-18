@@ -1,0 +1,36 @@
+{
+  "id": "magic/orc",
+  "family": "magic",
+  "slug": "orc",
+  "title": "Apache ORC signature",
+  "summary": "An ORC file ends with the 3-byte magic 'ORC' (0x4F 0x52 0x43) in the postscript.",
+  "kind": "signature",
+  "aliases": [
+    "orc magic",
+    ".orc"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4F 52 43",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "orc"
+    ],
+    "mime": "application/x-orc",
+    "spec": "Apache ORC",
+    "notes": [
+      "Magic 'ORC' (0x4F 0x52 0x43) at the very end of the file.",
+      "ORC is a columnar storage format for Hadoop/Spark.",
+      "ORC supports predicate pushdown and built-in indexes."
+    ]
+  },
+  "updated": "2026-05-29"
+}

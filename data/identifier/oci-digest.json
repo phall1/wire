@@ -1,0 +1,30 @@
+{
+  "id": "identifier/oci-digest",
+  "family": "identifier",
+  "slug": "oci-digest",
+  "title": "OCI digest (content-addressable identifier)",
+  "summary": "An OCI (Open Container Initiative) digest is a content-addressable identifier: algorithm:hex (e.g., sha256:abc123...). Used to identify container images, layers, and manifests immutably.",
+  "kind": "identifier",
+  "aliases": [
+    "OCI digest (content-addressable identifier)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "OCI Image Specification",
+    "example": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "notes": [
+      "Format: algorithm:hex-digest.",
+      "algorithm: sha256 (required), sha512 (optional).",
+      "hex-digest: lowercase hex string of the specified length (64 for sha256, 128 for sha512).",
+      "Digests are computed over the canonical JSON of the manifest or the tar+gzip of the layer.",
+      "Content-addressable: the digest uniquely identifies the content."
+    ]
+  },
+  "updated": "2026-05-29"
+}

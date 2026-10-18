@@ -1,0 +1,39 @@
+{
+  "id": "magic/dicom",
+  "family": "magic",
+  "slug": "dicom",
+  "title": "DICOM (Digital Imaging and Communications in Medicine) signature",
+  "summary": "A DICOM file begins with a 128-byte preamble (usually zeros) followed by the 4-byte signature 'DICM' (0x44 0x49 0x43 0x4D) at offset 128.",
+  "kind": "signature",
+  "aliases": [
+    "dicom magic",
+    ".dcm",
+    ".dicom"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "44 49 43 4D",
+    "offset": 128,
+    "magic_ascii": "",
+    "extensions": [
+      "dcm",
+      "dicom"
+    ],
+    "mime": "application/dicom",
+    "spec": "DICOM (NEMA)",
+    "notes": [
+      "Preamble: 128 bytes (usually zeros).",
+      "Signature: 'DICM' (0x44 0x49 0x43 0x4D) at offset 128.",
+      "Followed by DICOM data elements (tag, VR, length, value).",
+      "DICOM is the standard for medical imaging (X-ray, CT, MRI, ultrasound)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

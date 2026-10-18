@@ -1,0 +1,32 @@
+{
+  "id": "identifier/aws-arn",
+  "family": "identifier",
+  "slug": "aws-arn",
+  "title": "AWS ARN (Amazon Resource Name)",
+  "summary": "An AWS ARN uniquely identifies a resource: arn:partition:service:region:account-id:resource-id (or arn:partition:service:region:account-id:resource-type/resource-id). Partitions: aws (standard), aws-cn (China), aws-us-gov (GovCloud), aws-iso (ISO), aws-iso-b (ISO-B).",
+  "kind": "identifier",
+  "aliases": [
+    "AWS ARN (Amazon Resource Name)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "AWS documentation",
+    "example": "arn:aws:s3:::my-bucket",
+    "notes": [
+      "Format: arn:partition:service:region:account-id:resource.",
+      "partition: aws, aws-cn, aws-us-gov, aws-iso, aws-iso-b.",
+      "service: s3, ec2, iam, lambda, dynamodb, etc.",
+      "region: us-east-1, eu-west-1, etc. (empty for global services like IAM and S3).",
+      "account-id: 12-digit AWS account ID (empty for some resources).",
+      "resource: resource-type/resource-id or just resource-id.",
+      "ARNs are used in IAM policies, CloudFormation, and API calls."
+    ]
+  },
+  "updated": "2026-05-29"
+}

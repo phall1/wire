@@ -1,0 +1,39 @@
+{
+  "id": "magic/fits",
+  "family": "magic",
+  "slug": "fits",
+  "title": "FITS (Flexible Image Transport System) signature",
+  "summary": "A FITS file begins with the 80-byte ASCII string 'SIMPLE  =                    T' (the SIMPLE keyword card) or 'XTENSION= ' for extensions.",
+  "kind": "signature",
+  "aliases": [
+    "fits magic",
+    ".fits",
+    ".fit"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "53 49 4D 50 4C 45 20 20 3D 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 54",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "fits",
+      "fit"
+    ],
+    "mime": "application/fits",
+    "spec": "FITS (NASA/IAU)",
+    "notes": [
+      "Header: 80-byte ASCII cards (keyword = value / comment).",
+      "First card: 'SIMPLE  = T' (primary) or 'XTENSION= ...' (extension).",
+      "FITS is the standard format for astronomical data (images, tables, spectra).",
+      "FITS supports multiple HDUs (Header Data Units)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

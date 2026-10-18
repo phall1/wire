@@ -1,0 +1,36 @@
+{
+  "id": "magic/rocksdb",
+  "family": "magic",
+  "slug": "rocksdb",
+  "title": "RocksDB table signature",
+  "summary": "A RocksDB SSTable file has the magic 0x88E241B6 at the END of the file (last 8 bytes).",
+  "kind": "signature",
+  "aliases": [
+    "rocksdb magic",
+    ".sst"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "88 E2 41 B6",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "sst"
+    ],
+    "mime": "application/x-rocksdb",
+    "spec": "RocksDB",
+    "notes": [
+      "Magic 0x88E241B6 at the END of the file (last 8 bytes).",
+      "RocksDB is a fork of LevelDB with more features (column families, transactions, etc.).",
+      "RocksDB is used by CockroachDB, TiDB, and many other databases."
+    ]
+  },
+  "updated": "2026-05-29"
+}

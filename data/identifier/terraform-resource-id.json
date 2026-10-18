@@ -1,0 +1,31 @@
+{
+  "id": "identifier/terraform-resource-id",
+  "family": "identifier",
+  "slug": "terraform-resource-id",
+  "title": "Terraform resource ID",
+  "summary": "A Terraform resource ID is a provider-specific string that uniquely identifies a managed resource. Format varies by provider: AWS uses ARNs, Azure uses Azure resource IDs, GCP uses GCP resource names, etc. Terraform stores the ID in state for import and updates.",
+  "kind": "identifier",
+  "aliases": [
+    "Terraform resource ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Terraform documentation",
+    "example": "i-0123456789abcdef0",
+    "notes": [
+      "Format is provider-specific (no universal format).",
+      "AWS: ARN (arn:aws:...).",
+      "Azure: Azure resource ID (/subscriptions/...).",
+      "GCP: GCP resource name (projects/...).",
+      "The ID is used for import (terraform import) and for detecting drift.",
+      "Terraform state maps resource addresses (e.g., aws_instance.web) to resource IDs."
+    ]
+  },
+  "updated": "2026-05-29"
+}

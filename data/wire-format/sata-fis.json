@@ -1,0 +1,93 @@
+{
+  "id": "wire-format/sata-fis",
+  "family": "wire-format",
+  "slug": "sata-fis",
+  "title": "SATA FIS (Frame Information Structure)",
+  "summary": "A SATA FIS is the unit of communication between host and device. Types: Register H2D (0x27), Register D2H (0x34), DMA Activate (0x39), DMA Setup (0x41), Data (0x46), BIST (0x58), PIO Setup (0x5F), Set Device Bits (0xA1). The most common is Register H2D (host to device): 20 bytes containing command, features, LBA, device, count, etc.",
+  "kind": "wire-format",
+  "aliases": [
+    "SATA FIS (Frame Information Structure)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "SATA 3.5 specification",
+    "summary": "A SATA FIS is the unit of communication between host and device. Types: Register H2D (0x27), Register D2H (0x34), DMA Activate (0x39), DMA Setup (0x41), Data (0x46), BIST (0x58), PIO Setup (0x5F), Set Device Bits (0xA1). The most common is Register H2D (host to device): 20 bytes containing command, features, LBA, device, count, etc.",
+    "structure": [
+      {
+        "field": "FIS type",
+        "size": "1 byte",
+        "meaning": "0x27 Register H2D, 0x34 Register D2H, 0x39 DMA Activate, 0x41 DMA Setup, 0x46 Data, 0x58 BIST, 0x5F PIO Setup, 0xA1 Set Device Bits."
+      },
+      {
+        "field": "Flags (C)",
+        "size": "1 bit (bit 7 of byte 1)",
+        "meaning": "Command bit: 1 = command, 0 = control (for H2D)."
+      },
+      {
+        "field": "Features (7:0)",
+        "size": "1 byte",
+        "meaning": "Features low byte."
+      },
+      {
+        "field": "Command",
+        "size": "1 byte",
+        "meaning": "ATA command (0x25 READ DMA EXT, 0x35 WRITE DMA EXT, 0xEC IDENTIFY DEVICE, 0xEF SET FEATURES, 0xF8 READ NATIVE MAX ADDRESS EXT, ...)."
+      },
+      {
+        "field": "Device",
+        "size": "1 byte",
+        "meaning": "Device/head register (LBA mode bit, etc.)."
+      },
+      {
+        "field": "LBA (low/mid/high)",
+        "size": "3 bytes",
+        "meaning": "LBA bytes 0-2 (for 28-bit) or bytes 0-2 of 48-bit LBA."
+      },
+      {
+        "field": "Features (15:8)",
+        "size": "1 byte",
+        "meaning": "Features high byte (for 48-bit commands)."
+      },
+      {
+        "field": "LBA (low/mid/high ext)",
+        "size": "3 bytes",
+        "meaning": "LBA bytes 3-5 (for 48-bit commands)."
+      },
+      {
+        "field": "Count (low)",
+        "size": "1 byte",
+        "meaning": "Sector count low byte."
+      },
+      {
+        "field": "Count (high)",
+        "size": "1 byte",
+        "meaning": "Sector count high byte (for 48-bit commands)."
+      },
+      {
+        "field": "Reserved",
+        "size": "1 byte",
+        "meaning": "Reserved (must be 0)."
+      },
+      {
+        "field": "Control",
+        "size": "1 byte",
+        "meaning": "Control register (IEN, SRST, HOB)."
+      }
+    ],
+    "example_hex": "27 80 00 25 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00",
+    "example_decoded": "SATA Register H2D FIS: command 0x25 (READ DMA EXT), LBA 0, count 1",
+    "notes": [
+      "SATA FISes are transmitted over the SATA link (differential signaling).",
+      "AHCI (Advanced Host Controller Interface) is the standard SATA host controller.",
+      "NCQ (Native Command Queuing) allows up to 32 outstanding commands.",
+      "SATA speeds: 1.5 Gbps (Gen 1), 3 Gbps (Gen 2), 6 Gbps (Gen 3)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

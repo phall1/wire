@@ -1,0 +1,37 @@
+{
+  "id": "magic/pcapng",
+  "family": "magic",
+  "slug": "pcapng",
+  "title": "pcapng (next-generation pcap) signature",
+  "summary": "A pcapng file begins with a Section Header Block: 0x0A0D0D0A (byte-order magic) followed by block length, byte-order magic (0x1A2B3C4D), major/minor version, and section length.",
+  "kind": "signature",
+  "aliases": [
+    "pcapng magic",
+    ".pcapng"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "0A 0D 0D 0A",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "pcapng"
+    ],
+    "mime": "application/x-pcapng",
+    "spec": "pcapng",
+    "notes": [
+      "Block type 0x0A0D0D0A (Section Header Block).",
+      "Byte-order magic: 0x1A2B3C4D (little-endian) or 0x4D3C2B1A (big-endian).",
+      "pcapng supports multiple interfaces, comments, and custom blocks.",
+      "pcapng is the successor to classic pcap."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "magic/ext2",
+  "family": "magic",
+  "slug": "ext2",
+  "title": "ext2/ext3/ext4 superblock signature",
+  "summary": "The ext2/ext3/ext4 superblock is at byte offset 1024. Magic 0x53EF at offset 56 within the superblock (byte offset 1080).",
+  "kind": "signature",
+  "aliases": [
+    "ext2 magic",
+    ".ext2",
+    ".ext3",
+    ".ext4"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "53 EF",
+    "offset": 1080,
+    "magic_ascii": "",
+    "extensions": [
+      "ext2",
+      "ext3",
+      "ext4"
+    ],
+    "mime": "application/x-ext4-image",
+    "spec": "ext (Extended Filesystem)",
+    "notes": [
+      "Magic 0x53EF at superblock offset 56 (partition offset 1080).",
+      "ext2: no journaling. ext3: adds journaling. ext4: adds extents, 64-bit, nanosecond timestamps.",
+      "Superblock backed up in block groups for recovery.",
+      "ext is the default filesystem on most Linux distributions."
+    ]
+  },
+  "updated": "2026-05-29"
+}

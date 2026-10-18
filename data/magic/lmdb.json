@@ -1,0 +1,39 @@
+{
+  "id": "magic/lmdb",
+  "family": "magic",
+  "slug": "lmdb",
+  "title": "LMDB (Lightning Memory-Mapped Database) signature",
+  "summary": "An LMDB database file begins with a 4KB page. The meta page (page 0) contains the magic 0xBEEFC0DE at offset 0 (or 0x00010000 for the environment).",
+  "kind": "signature",
+  "aliases": [
+    "lmdb magic",
+    ".mdb",
+    ".lmdb"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "BE EF C0 DE",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "mdb",
+      "lmdb"
+    ],
+    "mime": "application/x-lmdb",
+    "spec": "LMDB",
+    "notes": [
+      "Magic 0xBEEFC0DE at offset 0 (meta page).",
+      "LMDB is a B+ tree-based key-value store with memory-mapped I/O.",
+      "LMDB is used by OpenLDAP, and many embedded systems.",
+      "LMDB supports multiple readers with a single writer (MVCC)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

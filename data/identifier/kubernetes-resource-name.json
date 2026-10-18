@@ -1,0 +1,31 @@
+{
+  "id": "identifier/kubernetes-resource-name",
+  "family": "identifier",
+  "slug": "kubernetes-resource-name",
+  "title": "Kubernetes resource name",
+  "summary": "A Kubernetes resource name is a DNS subdomain name (RFC 1123): lowercase alphanumeric and hyphens, max 253 characters, must start and end with alphanumeric. Resource names are unique within a namespace.",
+  "kind": "identifier",
+  "aliases": [
+    "Kubernetes resource name"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Kubernetes documentation",
+    "example": "my-deployment-abc123",
+    "notes": [
+      "DNS subdomain name: lowercase, alphanumeric, hyphens.",
+      "Max 253 characters.",
+      "Must start and end with alphanumeric.",
+      "Unique within a namespace (for namespaced resources).",
+      "Some resources (Nodes, PersistentVolumes) are cluster-scoped (unique cluster-wide).",
+      "Generated names (e.g., ReplicaSets) append a random suffix (pod-template-hash)."
+    ]
+  },
+  "updated": "2026-05-29"
+}
