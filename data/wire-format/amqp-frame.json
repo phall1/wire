@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/amqp-frame",
+  "family": "wire-format",
+  "slug": "amqp-frame",
+  "title": "AMQP 0-9-1 frame",
+  "summary": "AMQP (Advanced Message Queuing Protocol) 0-9-1 frames: 1-byte type (1 method, 2 header, 3 body, 4 heartbeat), 2-byte channel (big-endian), 4-byte size (big-endian), payload, 1-byte frame end (0xCE). Method frames contain a class ID (2 bytes) and method ID (2 bytes) plus arguments.",
+  "kind": "wire-format",
+  "aliases": [
+    "AMQP 0-9-1 frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "AMQP 0-9-1 specification",
+    "summary": "AMQP (Advanced Message Queuing Protocol) 0-9-1 frames: 1-byte type (1 method, 2 header, 3 body, 4 heartbeat), 2-byte channel (big-endian), 4-byte size (big-endian), payload, 1-byte frame end (0xCE). Method frames contain a class ID (2 bytes) and method ID (2 bytes) plus arguments.",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "1 method, 2 content header, 3 content body, 4 heartbeat, 8 (used by some implementations)."
+      },
+      {
+        "field": "Channel",
+        "size": "2 bytes (uint16, big-endian)",
+        "meaning": "Channel number (0 for connection-level methods)."
+      },
+      {
+        "field": "Size",
+        "size": "4 bytes (uint32, big-endian)",
+        "meaning": "Size of the payload (excluding the frame end byte)."
+      },
+      {
+        "field": "Payload",
+        "size": "= size",
+        "meaning": "Method arguments, content header properties, or body data."
+      },
+      {
+        "field": "Frame end",
+        "size": "1 byte",
+        "meaning": "0xCE (frame delimiter)."
+      },
+      {
+        "field": "Method frame payload",
+        "size": "variable",
+        "meaning": "Class ID (2 bytes) + Method ID (2 bytes) + method-specific arguments."
+      },
+      {
+        "field": "Content header",
+        "size": "variable",
+        "meaning": "Class ID (2) + weight (2) + body size (8) + property flags (2) + property values."
+      }
+    ],
+    "example_hex": "01 00 00 00 00 00 08 00 0a 00 00 00 00 00 00 00 ce",
+    "example_decoded": "AMQP method frame: type 1, channel 0, size 8, class 10 (connection), method 10 (start-ok)",
+    "notes": [
+      "AMQP 0-9-1 is used by RabbitMQ (the most popular implementation).",
+      "AMQP 1.0 (OASIS standard) is a different protocol with a different frame format.",
+      "Channels multiplex multiple logical connections over a single TCP connection.",
+      "Content headers carry message properties (content type, delivery mode, priority, correlation ID, reply-to, expiration, etc.).",
+      "AMQP supports exchanges (direct, fanout, topic, headers) and queues with bindings."
+    ]
+  },
+  "updated": "2026-05-29"
+}

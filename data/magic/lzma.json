@@ -1,0 +1,38 @@
+{
+  "id": "magic/lzma",
+  "family": "magic",
+  "slug": "lzma",
+  "title": "LZMA (alone) signature",
+  "summary": "An LZMA-alone file begins with a 1-byte properties (lc/lp/pb), 4-byte dictionary size, and 8-byte uncompressed size. The magic is the properties byte (0x5D for default settings: lc=3, lp=0, pb=2).",
+  "kind": "signature",
+  "aliases": [
+    "lzma magic",
+    ".lzma"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "5D 00 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "lzma"
+    ],
+    "mime": "application/x-lzma",
+    "spec": "LZMA",
+    "notes": [
+      "Properties byte: 0x5D = lc=3, lp=0, pb=2 (defaults).",
+      "Dictionary size: 4 bytes (little-endian).",
+      "Uncompressed size: 8 bytes (little-endian, 0xFFFFFFFFFFFFFFFF for unknown).",
+      "LZMA uses a range coder + LZ77 with a large dictionary (up to 4GB).",
+      "LZMA is the basis of 7z, XZ, and many other formats."
+    ]
+  },
+  "updated": "2026-05-29"
+}

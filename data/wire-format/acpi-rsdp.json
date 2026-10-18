@@ -1,0 +1,78 @@
+{
+  "id": "wire-format/acpi-rsdp",
+  "family": "wire-format",
+  "slug": "acpi-rsdp",
+  "title": "ACPI RSDP (Root System Description Pointer)",
+  "summary": "The ACPI RSDP is located in the BIOS/UEFI memory (searched in EBDA and 0xE0000-0xFFFFF). It points to the RSDT (ACPI 1.0) or XSDT (ACPI 2.0+). Structure (ACPI 1.0, 20 bytes): signature 'RSD PTR ' (8 bytes), checksum (1), OEM ID (6), revision (1), RsdtAddress (4). ACPI 2.0+ extends to 36 bytes with XsdtAddress (8), extended checksum (1), reserved (3).",
+  "kind": "wire-format",
+  "aliases": [
+    "ACPI RSDP (Root System Description Pointer)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ACPI specification",
+    "summary": "The ACPI RSDP is located in the BIOS/UEFI memory (searched in EBDA and 0xE0000-0xFFFFF). It points to the RSDT (ACPI 1.0) or XSDT (ACPI 2.0+). Structure (ACPI 1.0, 20 bytes): signature 'RSD PTR ' (8 bytes), checksum (1), OEM ID (6), revision (1), RsdtAddress (4). ACPI 2.0+ extends to 36 bytes with XsdtAddress (8), extended checksum (1), reserved (3).",
+    "structure": [
+      {
+        "field": "Signature",
+        "size": "8 bytes",
+        "meaning": "'RSD PTR ' (0x52 0x53 0x44 0x20 0x50 0x54 0x52 0x20)."
+      },
+      {
+        "field": "Checksum",
+        "size": "1 byte",
+        "meaning": "Sum of all bytes in the RSDP (ACPI 1.0) must be 0 mod 256."
+      },
+      {
+        "field": "OEM ID",
+        "size": "6 bytes",
+        "meaning": "OEM identifier (ASCII)."
+      },
+      {
+        "field": "Revision",
+        "size": "1 byte",
+        "meaning": "0 for ACPI 1.0, 2 for ACPI 2.0+."
+      },
+      {
+        "field": "RsdtAddress",
+        "size": "4 bytes",
+        "meaning": "32-bit physical address of the RSDT (ACPI 1.0)."
+      },
+      {
+        "field": "Length",
+        "size": "4 bytes (ACPI 2.0+)",
+        "meaning": "Length of the RSDP (36 for ACPI 2.0+)."
+      },
+      {
+        "field": "XsdtAddress",
+        "size": "8 bytes (ACPI 2.0+)",
+        "meaning": "64-bit physical address of the XSDT."
+      },
+      {
+        "field": "Extended checksum",
+        "size": "1 byte (ACPI 2.0+)",
+        "meaning": "Sum of all bytes in the extended RSDP (36 bytes) must be 0 mod 256."
+      },
+      {
+        "field": "Reserved",
+        "size": "3 bytes (ACPI 2.0+)",
+        "meaning": "Must be 0."
+      }
+    ],
+    "example_hex": "52 53 44 20 50 54 52 20 00 41 4d 49 20 20 20 20 02 00 00 00 00",
+    "example_decoded": "ACPI 2.0 RSDP: signature 'RSD PTR ', revision 2",
+    "notes": [
+      "ACPI (Advanced Configuration and Power Interface) is the standard for OS-directed power management and hardware enumeration.",
+      "RSDT/XSDT point to other ACPI tables: MADT (APIC), FADT (fixed ACPI), DSDT (differentiated system description), SSDT (secondary), MCFG (PCIe MMCONFIG), HPET, etc.",
+      "ACPI tables are written in AML (ACPI Machine Language) and interpreted by the OS.",
+      "ACPI is essential for booting modern x86/ARM systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "magic/zstd",
+  "family": "magic",
+  "slug": "zstd",
+  "title": "Zstandard signature",
+  "summary": "A Zstandard file begins with the 4-byte magic 0x28 0xB5 0x2F 0xFD (little-endian: 0xFD2FB528).",
+  "kind": "signature",
+  "aliases": [
+    "zstd magic",
+    ".zst",
+    ".zstd"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "28 B5 2F FD",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "zst",
+      "zstd"
+    ],
+    "mime": "application/zstd",
+    "spec": "Zstandard (RFC 8878)",
+    "notes": [
+      "Magic: 0x28 0xB5 0x2F 0xFD (little-endian).",
+      "Zstandard is a fast compression algorithm developed by Facebook.",
+      "Compression levels 1-22; dictionaries for small data.",
+      "Used by Linux kernel, Btrfs, SquashFS, and many modern systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "wire-format/can-frame",
+  "family": "wire-format",
+  "slug": "can-frame",
+  "title": "CAN (Controller Area Network) frame",
+  "summary": "A CAN 2.0 frame: 11-bit (or 29-bit extended) identifier, RTR bit, IDE bit, DLC (data length code, 0-8), then 0-8 bytes of data, CRC-15, ACK, EOF. CAN FD extends DLC to 0-64 bytes with a different CRC. CAN is used in automotive, industrial, and aerospace systems.",
+  "kind": "wire-format",
+  "aliases": [
+    "CAN (Controller Area Network) frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ISO 11898-1 (CAN)",
+    "summary": "A CAN 2.0 frame: 11-bit (or 29-bit extended) identifier, RTR bit, IDE bit, DLC (data length code, 0-8), then 0-8 bytes of data, CRC-15, ACK, EOF. CAN FD extends DLC to 0-64 bytes with a different CRC. CAN is used in automotive, industrial, and aerospace systems.",
+    "structure": [
+      {
+        "field": "SOF",
+        "size": "1 bit",
+        "meaning": "Start of Frame (dominant)."
+      },
+      {
+        "field": "Identifier",
+        "size": "11 bits (standard) or 29 bits (extended)",
+        "meaning": "Message identifier (also determines priority; lower = higher priority)."
+      },
+      {
+        "field": "RTR",
+        "size": "1 bit",
+        "meaning": "Remote Transmission Request (1 = request data from a node with this ID)."
+      },
+      {
+        "field": "IDE",
+        "size": "1 bit",
+        "meaning": "Identifier Extension (0 = standard 11-bit, 1 = extended 29-bit)."
+      },
+      {
+        "field": "r0",
+        "size": "1 bit",
+        "meaning": "Reserved (must be dominant/0)."
+      },
+      {
+        "field": "DLC",
+        "size": "4 bits",
+        "meaning": "Data Length Code: 0-8 bytes (CAN 2.0), or 0-15 (CAN FD: 0-8, 12, 16, 20, 24, 32, 48, 64)."
+      },
+      {
+        "field": "Data",
+        "size": "0-8 bytes (CAN 2.0) or 0-64 bytes (CAN FD)",
+        "meaning": "Payload (up to 8 bytes for CAN 2.0, up to 64 for CAN FD)."
+      },
+      {
+        "field": "CRC",
+        "size": "15 bits (CAN 2.0) or 17/21 bits (CAN FD)",
+        "meaning": "Cyclic redundancy check."
+      },
+      {
+        "field": "ACK",
+        "size": "2 bits",
+        "meaning": "ACK slot (dominant = at least one receiver accepted) + ACK delimiter (recessive)."
+      },
+      {
+        "field": "EOF",
+        "size": "7 bits",
+        "meaning": "End of Frame (all recessive)."
+      },
+      {
+        "field": "IFS",
+        "size": "3 bits",
+        "meaning": "Inter-Frame Space (all recessive)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "CAN 2.0 standard frame (simplified bit-level; shown as byte-aligned for illustration)",
+    "notes": [
+      "CAN is a multi-master, message-broadcast bus with collision detection and arbitration.",
+      "CAN FD (Flexible Data-rate) supports up to 64 bytes per frame and higher bit rates (up to 8 Mbps).",
+      "CAN is used in automotive (OBD-II, CAN bus), industrial automation, medical devices, and aerospace.",
+      "CANopen and J1939 are higher-level protocols built on CAN.",
+      "ISO-TP (ISO 15765-2) segments larger messages over multiple CAN frames."
+    ]
+  },
+  "updated": "2026-05-29"
+}

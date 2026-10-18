@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/bgp-message",
+  "family": "wire-format",
+  "slug": "bgp-message",
+  "title": "BGP (Border Gateway Protocol) message",
+  "summary": "BGP is the routing protocol of the Internet. BGP messages are carried over TCP (port 179). Four message types: OPEN (1), UPDATE (2), NOTIFICATION (3), KEEPALIVE (4). All BGP messages: 16-byte marker (all 0xFF), 2-byte length, 1-byte type.",
+  "kind": "wire-format",
+  "aliases": [
+    "BGP (Border Gateway Protocol) message"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 4271",
+    "summary": "BGP is the routing protocol of the Internet. BGP messages are carried over TCP (port 179). Four message types: OPEN (1), UPDATE (2), NOTIFICATION (3), KEEPALIVE (4). All BGP messages: 16-byte marker (all 0xFF), 2-byte length, 1-byte type.",
+    "structure": [
+      {
+        "field": "Marker",
+        "size": "16 bytes",
+        "meaning": "All 0xFF (authentication, or just a marker in modern BGP)."
+      },
+      {
+        "field": "Length",
+        "size": "2 bytes (uint16)",
+        "meaning": "Total message length including header (19-4096 bytes)."
+      },
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "1 OPEN, 2 UPDATE, 3 NOTIFICATION, 4 KEEPALIVE."
+      },
+      {
+        "field": "OPEN body",
+        "size": "variable",
+        "meaning": "Version (1), My Autonomous System (2/4 bytes), Hold Time (2), BGP Identifier (4), Optional Parameters (variable: type, length, value)."
+      },
+      {
+        "field": "UPDATE body",
+        "size": "variable",
+        "meaning": "Withdrawn Routes Length (2) + Withdrawn Routes (variable) + Total Path Attribute Length (2) + Path Attributes (variable) + NLRI (variable)."
+      },
+      {
+        "field": "NOTIFICATION body",
+        "size": "variable",
+        "meaning": "Error Code (1), Error Subcode (1), Data (variable)."
+      },
+      {
+        "field": "KEEPALIVE body",
+        "size": "0 bytes",
+        "meaning": "No body (length = 19)."
+      }
+    ],
+    "example_hex": "ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 13 04",
+    "example_decoded": "BGP KEEPALIVE message (length 19, type 4)",
+    "notes": [
+      "BGP uses TCP port 179.",
+      "BGP-4 is the current version (RFC 4271).",
+      "Path attributes: ORIGIN, AS_PATH, NEXT_HOP, MULTI_EXIT_DISC, LOCAL_PREF, ATOMIC_AGGREGATE, AGGREGATOR, COMMUNITIES, MP_REACH_NLRI (IPv6), ... .",
+      "BGP route selection: highest LOCAL_PREF, shortest AS_PATH, lowest ORIGIN, lowest MED, eBGP over iBGP, lowest IGP metric, lowest router ID.",
+      "BGP is the protocol that holds the Internet together (inter-domain routing)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

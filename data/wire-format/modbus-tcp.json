@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/modbus-tcp",
+  "family": "wire-format",
+  "slug": "modbus-tcp",
+  "title": "Modbus TCP frame",
+  "summary": "Modbus TCP wraps a Modbus RTU PDU in a 7-byte MBAP (Modbus Application Protocol) header. MBAP: transaction ID (2), protocol ID (2, always 0), length (2, bytes following), unit ID (1). Then the PDU: function code (1 byte) + data. Common function codes: 0x01 read coils, 0x02 read discrete inputs, 0x03 read holding registers, 0x04 read input registers, 0x05 write single coil, 0x06 write single register, 0x0F write multiple coils, 0x10 write multiple registers.",
+  "kind": "wire-format",
+  "aliases": [
+    "Modbus TCP frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Modbus TCP specification",
+    "summary": "Modbus TCP wraps a Modbus RTU PDU in a 7-byte MBAP (Modbus Application Protocol) header. MBAP: transaction ID (2), protocol ID (2, always 0), length (2, bytes following), unit ID (1). Then the PDU: function code (1 byte) + data. Common function codes: 0x01 read coils, 0x02 read discrete inputs, 0x03 read holding registers, 0x04 read input registers, 0x05 write single coil, 0x06 write single register, 0x0F write multiple coils, 0x10 write multiple registers.",
+    "structure": [
+      {
+        "field": "Transaction ID",
+        "size": "2 bytes (uint16, big-endian)",
+        "meaning": "Transaction identifier (echoed by the server)."
+      },
+      {
+        "field": "Protocol ID",
+        "size": "2 bytes (uint16, big-endian)",
+        "meaning": "Always 0 for Modbus."
+      },
+      {
+        "field": "Length",
+        "size": "2 bytes (uint16, big-endian)",
+        "meaning": "Number of bytes following (unit ID + PDU)."
+      },
+      {
+        "field": "Unit ID",
+        "size": "1 byte",
+        "meaning": "Slave address (1-247; 0 for TCP gateway, 255 for broadcast)."
+      },
+      {
+        "field": "Function code",
+        "size": "1 byte",
+        "meaning": "0x01 read coils, 0x02 read discrete inputs, 0x03 read holding registers, 0x04 read input registers, 0x05 write single coil, 0x06 write single register, 0x0F write multiple coils, 0x10 write multiple registers, 0x17 read/write multiple registers."
+      },
+      {
+        "field": "Data",
+        "size": "variable",
+        "meaning": "Function-specific parameters (address, count, values)."
+      }
+    ],
+    "example_hex": "00 01 00 00 00 06 01 03 00 00 00 0a",
+    "example_decoded": "Modbus TCP: transaction 1, protocol 0, length 6, unit 1, function 0x03 (read holding registers), address 0, count 10",
+    "notes": [
+      "Modbus TCP uses port 502.",
+      "Modbus is the most common industrial protocol (PLCs, SCADA, sensors).",
+      "Modbus RTU (serial) uses CRC-16; Modbus TCP uses TCP's reliability (no CRC).",
+      "Register addresses are 16-bit (0-65535); a read can return up to 125 registers (250 bytes).",
+      "Modbus ASCII uses LRC checksum and is human-readable."
+    ]
+  },
+  "updated": "2026-05-29"
+}

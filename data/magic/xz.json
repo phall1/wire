@@ -1,0 +1,38 @@
+{
+  "id": "magic/xz",
+  "family": "magic",
+  "slug": "xz",
+  "title": "XZ signature",
+  "summary": "An XZ file begins with the 6-byte magic 0xFD 0x37 0x7A 0x58 0x5A 0x00 ('\\xFD7zXZ\\x00').",
+  "kind": "signature",
+  "aliases": [
+    "xz magic",
+    ".xz",
+    ".txz"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FD 37 7A 58 5A 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "xz",
+      "txz"
+    ],
+    "mime": "application/x-xz",
+    "spec": "XZ format",
+    "notes": [
+      "Magic: 0xFD 0x37 0x7A 0x58 0x5A 0x00.",
+      "XZ uses LZMA2 compression with integrity checks (CRC32, CRC64, or SHA-256).",
+      "XZ is used by Linux kernel module compression, tar, and package managers."
+    ]
+  },
+  "updated": "2026-05-29"
+}

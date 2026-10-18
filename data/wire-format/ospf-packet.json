@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/ospf-packet",
+  "family": "wire-format",
+  "slug": "ospf-packet",
+  "title": "OSPF (Open Shortest Path First) packet",
+  "summary": "OSPF is an interior gateway protocol (IGP) using link-state routing. OSPF packets are carried directly over IP (protocol 89). Common packet types: Hello (1), Database Description (2), Link State Request (3), Link State Update (4), Link State Ack (5). Header: version (1), type (1), packet length (2), router ID (4), area ID (4), checksum (2), auth type (2), authentication (8).",
+  "kind": "wire-format",
+  "aliases": [
+    "OSPF (Open Shortest Path First) packet"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 2328 (OSPFv2)",
+    "summary": "OSPF is an interior gateway protocol (IGP) using link-state routing. OSPF packets are carried directly over IP (protocol 89). Common packet types: Hello (1), Database Description (2), Link State Request (3), Link State Update (4), Link State Ack (5). Header: version (1), type (1), packet length (2), router ID (4), area ID (4), checksum (2), auth type (2), authentication (8).",
+    "structure": [
+      {
+        "field": "Version",
+        "size": "1 byte",
+        "meaning": "OSPF version (2 for OSPFv2, 3 for OSPFv3)."
+      },
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "1 Hello, 2 Database Description, 3 Link State Request, 4 Link State Update, 5 Link State Ack."
+      },
+      {
+        "field": "Packet length",
+        "size": "2 bytes (uint16)",
+        "meaning": "Total packet length including header."
+      },
+      {
+        "field": "Router ID",
+        "size": "4 bytes (uint32)",
+        "meaning": "32-bit router identifier (usually the highest IP address or loopback)."
+      },
+      {
+        "field": "Area ID",
+        "size": "4 bytes (uint32)",
+        "meaning": "Area the packet belongs to (0.0.0.0 = backbone area 0)."
+      },
+      {
+        "field": "Checksum",
+        "size": "2 bytes (uint16)",
+        "meaning": "Standard IP checksum of the entire packet (excluding authentication field for OSPFv2)."
+      },
+      {
+        "field": "Auth type",
+        "size": "2 bytes (uint16)",
+        "meaning": "0 null, 1 simple password, 2 cryptographic (MD5/SHA)."
+      },
+      {
+        "field": "Authentication",
+        "size": "8 bytes",
+        "meaning": "Auth data (password, or MD5 digest + key ID)."
+      },
+      {
+        "field": "Hello body",
+        "size": "variable",
+        "meaning": "Network mask (4), Hello interval (2), Options (1), Router priority (1), Router dead interval (4), Designated Router (4), Backup Designated Router (4), Neighbors (4 each)."
+      }
+    ],
+    "example_hex": "02 01 00 2c 0a 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "OSPF Hello packet: version 2, type 1, length 44, router ID 10.0.0.1, area 0",
+    "notes": [
+      "OSPF uses IP protocol 89 (not TCP or UDP).",
+      "OSPF areas reduce LSDB size; area 0 (backbone) connects all areas.",
+      "Designated Router (DR) and Backup DR (BDR) are elected on multi-access networks.",
+      "Link State Advertisements (LSAs): Type 1 (Router), Type 2 (Network), Type 3 (Summary), Type 4 (ASBR Summary), Type 5 (External), Type 7 (NSSA External).",
+      "OSPFv3 (RFC 5340) supports IPv6 and uses link-local addresses."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "magic/macho-fat",
+  "family": "magic",
+  "slug": "macho-fat",
+  "title": "Mach-O universal (fat) binary signature",
+  "summary": "A Mach-O universal (fat) binary begins with the magic 0xCAFEBABE (big-endian) followed by the number of architectures (nfat_arch), then an array of fat_arch structures (cputype, cpusubtype, offset, size, align).",
+  "kind": "signature",
+  "aliases": [
+    "macho-fat magic",
+    ".fat",
+    ".universal"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "CA FE BA BE",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "fat",
+      "universal"
+    ],
+    "mime": "application/x-mach-binary",
+    "spec": "Apple Universal Binary",
+    "notes": [
+      "Magic 0xCAFEBABE (big-endian).",
+      "nfat_arch: number of architectures (uint32).",
+      "Each fat_arch: cputype (4), cpusubtype (4), offset (4/8), size (4/8), align (4).",
+      "Universal binaries contain multiple Mach-O slices (e.g., x86_64 + arm64) for cross-architecture support.",
+      "Also used by Java class files (same magic) - distinguished by context."
+    ]
+  },
+  "updated": "2026-05-29"
+}

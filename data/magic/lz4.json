@@ -1,0 +1,36 @@
+{
+  "id": "magic/lz4",
+  "family": "magic",
+  "slug": "lz4",
+  "title": "LZ4 frame signature",
+  "summary": "An LZ4 frame begins with the 4-byte magic 0x04 0x22 0x4D 0x18 (little-endian: 0x184D2204).",
+  "kind": "signature",
+  "aliases": [
+    "lz4 magic",
+    ".lz4"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "04 22 4D 18",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "lz4"
+    ],
+    "mime": "application/x-lz4",
+    "spec": "LZ4",
+    "notes": [
+      "Magic: 0x04 0x22 0x4D 0x18 (little-endian).",
+      "LZ4 is an extremely fast compression algorithm.",
+      "Used by ZFS, Linux kernel, Hadoop, and many databases."
+    ]
+  },
+  "updated": "2026-05-29"
+}

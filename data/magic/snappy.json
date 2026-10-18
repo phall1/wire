@@ -1,0 +1,36 @@
+{
+  "id": "magic/snappy",
+  "family": "magic",
+  "slug": "snappy",
+  "title": "Snappy (framed) signature",
+  "summary": "A framed Snappy file begins with the stream identifier chunk: 0xFF 0x06 0x00 0x00 + 'sNaPpY'.",
+  "kind": "signature",
+  "aliases": [
+    "snappy magic",
+    ".snappy"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FF 06 00 00 73 4E 61 50 70 59",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "snappy"
+    ],
+    "mime": "application/x-snappy-framed",
+    "spec": "Snappy",
+    "notes": [
+      "Stream identifier: 0xFF 0x06 0x00 0x00 + 'sNaPpY'.",
+      "Snappy is Google's fast compression format.",
+      "Used by LevelDB, RocksDB, Cassandra, and Hadoop."
+    ]
+  },
+  "updated": "2026-05-29"
+}

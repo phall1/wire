@@ -1,0 +1,44 @@
+{
+  "id": "magic/matroska",
+  "family": "magic",
+  "slug": "matroska",
+  "title": "Matroska / WebM (EBML) signature",
+  "summary": "Matroska (MKV) and WebM files begin with the EBML (Extensible Binary Meta Language) header: 0x1A 0x45 0xDF 0xA3 followed by the EBML version and DocType ('matroska' or 'webm').",
+  "kind": "signature",
+  "aliases": [
+    "matroska magic",
+    ".mkv",
+    ".webm",
+    ".mka",
+    ".mks"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "1A 45 DF A3",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "mkv",
+      "webm",
+      "mka",
+      "mks"
+    ],
+    "mime": "video/x-matroska",
+    "spec": "Matroska / EBML (RFC 8794)",
+    "notes": [
+      "EBML header ID: 0x1A45DFA3 (4 bytes).",
+      "EBML is a binary XML-like format: elements have an ID (variable-length), size (variable-length), and data.",
+      "DocType element (0x4282) contains 'matroska' or 'webm'.",
+      "WebM is a subset of Matroska using VP8/VP9/AV1 video and Vorbis/Opus audio.",
+      "Matroska supports multiple tracks, chapters, attachments, and tags."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/nvme-command",
+  "family": "wire-format",
+  "slug": "nvme-command",
+  "title": "NVMe (NVM Express) command structure",
+  "summary": "NVMe commands are 64-byte structures submitted via submission queues (SQ). The command: opcode (1 byte), flags (1 byte), command ID (2 bytes), NSID (4 bytes), reserved (4 bytes), metadata pointer (8 bytes), data pointers (PRP1, PRP2, 8 bytes each), and 24 bytes of command-specific (CDW10-CDW15). Common opcodes: 0x00 Flush, 0x01 Write, 0x02 Read, 0x04 Write Uncorrectable, 0x05 Compare, 0x06 Write Zeroes, 0x08 Dataset Management, 0x09 Verify, 0x0C Copy.",
+  "kind": "wire-format",
+  "aliases": [
+    "NVMe (NVM Express) command structure"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "NVMe 2.0 specification",
+    "summary": "NVMe commands are 64-byte structures submitted via submission queues (SQ). The command: opcode (1 byte), flags (1 byte), command ID (2 bytes), NSID (4 bytes), reserved (4 bytes), metadata pointer (8 bytes), data pointers (PRP1, PRP2, 8 bytes each), and 24 bytes of command-specific (CDW10-CDW15). Common opcodes: 0x00 Flush, 0x01 Write, 0x02 Read, 0x04 Write Uncorrectable, 0x05 Compare, 0x06 Write Zeroes, 0x08 Dataset Management, 0x09 Verify, 0x0C Copy.",
+    "structure": [
+      {
+        "field": "Opcode",
+        "size": "1 byte",
+        "meaning": "0x00 Flush, 0x01 Write, 0x02 Read, 0x04 Write Uncorrectable, 0x05 Compare, 0x06 Write Zeroes, 0x08 Dataset Management, 0x09 Verify, 0x0C Copy. Admin commands: 0x00 Delete I/O Submission Queue, 0x01 Create I/O Submission Queue, 0x02 Get Log Page, 0x04 Delete I/O Completion Queue, 0x05 Create I/O Completion Queue, 0x06 Identify, 0x08 Abort, 0x09 Set Features, 0x0A Get Features, 0x0C Asynchronous Event Request, 0x10 Firmware Commit, 0x11 Firmware Image Download, 0x14 Keep Alive, 0x18 Directive Send, 0x19 Directive Receive, 0x1C Virtualization Management, 0x1D NVMe-MI Send, 0x1E NVMe-MI Receive."
+      },
+      {
+        "field": "Flags (FUSE)",
+        "size": "1 byte",
+        "meaning": "Bit 0: FUSE (fused operation), bits 1-2: reserved, bits 3-7: PSDT (PRP/SGL data transfer type)."
+      },
+      {
+        "field": "Command ID",
+        "size": "2 bytes (uint16)",
+        "meaning": "Command identifier (echoed in the completion queue entry)."
+      },
+      {
+        "field": "NSID",
+        "size": "4 bytes (uint32)",
+        "meaning": "Namespace ID (1-based; 0xFFFFFFFF for all namespaces)."
+      },
+      {
+        "field": "Reserved",
+        "size": "4 bytes",
+        "meaning": "Reserved (must be 0)."
+      },
+      {
+        "field": "Metadata pointer (MPTR)",
+        "size": "8 bytes (uint64)",
+        "meaning": "Physical address of metadata (for end-to-end data protection)."
+      },
+      {
+        "field": "PRP1",
+        "size": "8 bytes (uint64)",
+        "meaning": "Physical Region Page entry 1 (data buffer address, page-aligned)."
+      },
+      {
+        "field": "PRP2 / SGL",
+        "size": "8 bytes (uint64)",
+        "meaning": "PRP2 (second page) or SGL descriptor (if PSDT indicates SGL)."
+      },
+      {
+        "field": "CDW10-CDW15",
+        "size": "24 bytes (6 x uint32)",
+        "meaning": "Command-specific: for Read/Write: starting LBA (CDW10-11), number of logical blocks (CDW12), ... ."
+      }
+    ],
+    "example_hex": "02 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "NVMe Read command (opcode 0x02), command ID 0, NSID 1",
+    "notes": [
+      "NVMe uses PCIe for transport (or TCP for NVMe-oF).",
+      "Submission queues and completion queues are in host memory (memory-mapped).",
+      "NVMe supports up to 65535 I/O queues (1 admin + up to 65534 I/O).",
+      "NVMe 2.0 adds Zoned Namespaces (ZNS), Key-Value (KV), and other command sets.",
+      "NVMe-oF (over Fabrics) extends NVMe over RDMA, TCP, or Fibre Channel."
+    ]
+  },
+  "updated": "2026-05-29"
+}

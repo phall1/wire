@@ -1,0 +1,39 @@
+{
+  "id": "magic/bzip2",
+  "family": "magic",
+  "slug": "bzip2",
+  "title": "bzip2 signature",
+  "summary": "A bzip2 file begins with the 3-byte signature 'BZh' (0x42 0x5A 0x68) followed by the block size digit ('1'-'9', 0x31-0x39).",
+  "kind": "signature",
+  "aliases": [
+    "bzip2 magic",
+    ".bz2",
+    ".bzip2"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "42 5A 68",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "bz2",
+      "bzip2"
+    ],
+    "mime": "application/x-bzip2",
+    "spec": "bzip2",
+    "notes": [
+      "Signature: 'BZh' (0x42 0x5A 0x68) + block size digit ('1'-'9').",
+      "bzip2 uses the Burrows-Wheeler transform (BWT) + move-to-front + Huffman coding.",
+      "Block sizes: 100KB-900KB (digit 1-9).",
+      "bzip2 is slower than gzip but compresses better."
+    ]
+  },
+  "updated": "2026-05-29"
+}

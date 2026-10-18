@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/coap-message",
+  "family": "wire-format",
+  "slug": "coap-message",
+  "title": "CoAP (Constrained Application Protocol) message",
+  "summary": "CoAP is a lightweight REST protocol for constrained IoT devices (RFC 7252). Messages are carried over UDP. Header: version (2 bits), type (2 bits: confirmable, non-confirmable, acknowledgment, reset), token length (4 bits), code (1 byte: class.method), message ID (2 bytes). Then token, options (TLV), payload (preceded by 0xFF marker).",
+  "kind": "wire-format",
+  "aliases": [
+    "CoAP (Constrained Application Protocol) message"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 7252",
+    "summary": "CoAP is a lightweight REST protocol for constrained IoT devices (RFC 7252). Messages are carried over UDP. Header: version (2 bits), type (2 bits: confirmable, non-confirmable, acknowledgment, reset), token length (4 bits), code (1 byte: class.method), message ID (2 bytes). Then token, options (TLV), payload (preceded by 0xFF marker).",
+    "structure": [
+      {
+        "field": "Version",
+        "size": "2 bits",
+        "meaning": "CoAP version (always 1)."
+      },
+      {
+        "field": "Type",
+        "size": "2 bits",
+        "meaning": "0 CON (confirmable), 1 NON (non-confirmable), 2 ACK (acknowledgment), 3 RST (reset)."
+      },
+      {
+        "field": "Token length",
+        "size": "4 bits",
+        "meaning": "Length of the token (0-8 bytes)."
+      },
+      {
+        "field": "Code",
+        "size": "1 byte",
+        "meaning": "Class (3 bits) . Method (5 bits): 0.00 empty, 0.01 GET, 0.02 POST, 0.03 PUT, 0.04 DELETE, 2.xx success, 4.xx client error, 5.xx server error."
+      },
+      {
+        "field": "Message ID",
+        "size": "2 bytes (uint16)",
+        "meaning": "Message identifier for matching requests to responses."
+      },
+      {
+        "field": "Token",
+        "size": "0-8 bytes",
+        "meaning": "Token for matching requests to responses (independent of message ID)."
+      },
+      {
+        "field": "Options",
+        "size": "variable",
+        "meaning": "TLV options: delta-encoded option number, length, value. Options: Uri-Host, Uri-Port, Uri-Path, Uri-Query, Content-Format, Accept, ... ."
+      },
+      {
+        "field": "Payload marker",
+        "size": "1 byte",
+        "meaning": "0xFF (if payload present)."
+      },
+      {
+        "field": "Payload",
+        "size": "variable",
+        "meaning": "The message body (e.g., JSON, CBOR, or raw bytes)."
+      }
+    ],
+    "example_hex": "40 01 00 01 b4 54 65 73 74",
+    "example_decoded": "CoAP CON GET request: version 1, type 0 (CON), token length 0, code 0.01 (GET), message ID 1",
+    "notes": [
+      "CoAP uses UDP (default port 5683, 5684 for DTLS).",
+      "Confirmable messages require an ACK; non-confirmable do not.",
+      "Observe option (RFC 7641) enables pub/sub for resource changes.",
+      "Block-wise transfer (RFC 7959) splits large payloads into smaller blocks.",
+      "CoAP can be proxied to HTTP and vice versa (RFC 8075)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

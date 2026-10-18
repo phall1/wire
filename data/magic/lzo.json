@@ -1,0 +1,36 @@
+{
+  "id": "magic/lzo",
+  "family": "magic",
+  "slug": "lzo",
+  "title": "LZO signature",
+  "summary": "An LZO-compressed file does not have a standard magic number; LZO is typically used as a raw codec within containers (like LZO in PDF or SquashFS). The LZO1X format starts with a literal run.",
+  "kind": "signature",
+  "aliases": [
+    "lzo magic",
+    ".lzo"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "F0",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "lzo"
+    ],
+    "mime": "application/x-lzo",
+    "spec": "LZO",
+    "notes": [
+      "LZO does not define a standard file format; it's a codec used within containers.",
+      "LZO1X is the most common variant.",
+      "LZO is used in SquashFS, PDF (DCTDecode is JPEG, not LZO), and Linux kernel (module compression)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

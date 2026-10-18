@@ -1,0 +1,37 @@
+{
+  "id": "magic/cab",
+  "family": "magic",
+  "slug": "cab",
+  "title": "Cabinet (CAB) signature",
+  "summary": "A Microsoft Cabinet (CAB) file begins with the 4-byte signature 'MSCF' (0x4D 0x53 0x43 0x46) followed by 4 reserved bytes, total size (4), first file offset (4), and 3 reserved bytes.",
+  "kind": "signature",
+  "aliases": [
+    "cab magic",
+    ".cab"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4D 53 43 46",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "cab"
+    ],
+    "mime": "application/vnd.ms-cab-compressed",
+    "spec": "Cabinet (Microsoft)",
+    "notes": [
+      "Signature: 'MSCF' (0x4D 0x53 0x43 0x46).",
+      "CAB files use LZX or MSZIP compression.",
+      "CAB is used for Windows installers, drivers, and updates.",
+      "CAB supports spanning (split across multiple files)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

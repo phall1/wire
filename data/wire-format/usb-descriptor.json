@@ -1,0 +1,104 @@
+{
+  "id": "wire-format/usb-descriptor",
+  "family": "wire-format",
+  "slug": "usb-descriptor",
+  "title": "USB device descriptor",
+  "summary": "A USB device descriptor is the first descriptor retrieved by the host during enumeration. It describes the device's USB version, class, subclass, protocol, max packet size, vendor/product IDs, and number of configurations. The descriptor is 18 bytes: bLength (1), bDescriptorType (1, = 0x01 for device), bcdUSB (2), bDeviceClass (1), bDeviceSubClass (1), bDeviceProtocol (1), bMaxPacketSize0 (1), idVendor (2), idProduct (2), bcdDevice (2), iManufacturer (1), iProduct (1), iSerialNumber (1), bNumConfigurations (1).",
+  "kind": "wire-format",
+  "aliases": [
+    "USB device descriptor"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "USB 2.0 specification",
+    "summary": "A USB device descriptor is the first descriptor retrieved by the host during enumeration. It describes the device's USB version, class, subclass, protocol, max packet size, vendor/product IDs, and number of configurations. The descriptor is 18 bytes: bLength (1), bDescriptorType (1, = 0x01 for device), bcdUSB (2), bDeviceClass (1), bDeviceSubClass (1), bDeviceProtocol (1), bMaxPacketSize0 (1), idVendor (2), idProduct (2), bcdDevice (2), iManufacturer (1), iProduct (1), iSerialNumber (1), bNumConfigurations (1).",
+    "structure": [
+      {
+        "field": "bLength",
+        "size": "1 byte",
+        "meaning": "Size of this descriptor (18)."
+      },
+      {
+        "field": "bDescriptorType",
+        "size": "1 byte",
+        "meaning": "0x01 (DEVICE)."
+      },
+      {
+        "field": "bcdUSB",
+        "size": "2 bytes (BCD)",
+        "meaning": "USB specification version (e.g. 0x0200 for USB 2.0, 0x0300 for USB 3.0, 0x0310 for USB 3.1)."
+      },
+      {
+        "field": "bDeviceClass",
+        "size": "1 byte",
+        "meaning": "Device class (0 = use interface descriptors, 0x02 = CDC, 0x03 = HID, 0x08 = Mass Storage, 0x09 = Hub, 0x0E = Video, 0xE0 = Wireless, 0xEF = Miscellaneous)."
+      },
+      {
+        "field": "bDeviceSubClass",
+        "size": "1 byte",
+        "meaning": "Subclass (class-specific)."
+      },
+      {
+        "field": "bDeviceProtocol",
+        "size": "1 byte",
+        "meaning": "Protocol (class-specific)."
+      },
+      {
+        "field": "bMaxPacketSize0",
+        "size": "1 byte",
+        "meaning": "Max packet size for endpoint 0 (8, 16, 32, or 64 for USB 2.0; 9 for USB 3.0)."
+      },
+      {
+        "field": "idVendor",
+        "size": "2 bytes",
+        "meaning": "Vendor ID (assigned by USB-IF)."
+      },
+      {
+        "field": "idProduct",
+        "size": "2 bytes",
+        "meaning": "Product ID (assigned by vendor)."
+      },
+      {
+        "field": "bcdDevice",
+        "size": "2 bytes (BCD)",
+        "meaning": "Device release number."
+      },
+      {
+        "field": "iManufacturer",
+        "size": "1 byte",
+        "meaning": "Index of manufacturer string descriptor (0 = none)."
+      },
+      {
+        "field": "iProduct",
+        "size": "1 byte",
+        "meaning": "Index of product string descriptor."
+      },
+      {
+        "field": "iSerialNumber",
+        "size": "1 byte",
+        "meaning": "Index of serial number string descriptor."
+      },
+      {
+        "field": "bNumConfigurations",
+        "size": "1 byte",
+        "meaning": "Number of possible configurations."
+      }
+    ],
+    "example_hex": "12 01 00 02 00 00 00 40 00 00 00 00 00 00 00 00 00 01",
+    "example_decoded": "USB device descriptor: 18 bytes, USB 2.0, max packet 64, 1 configuration",
+    "notes": [
+      "USB descriptors are retrieved via control transfers on endpoint 0.",
+      "Configuration descriptor (type 0x02) lists interfaces and endpoints.",
+      "Interface descriptor (type 0x04) describes a function (e.g., HID, CDC, Mass Storage).",
+      "Endpoint descriptor (type 0x05) describes a data endpoint (address, type, max packet size, interval).",
+      "String descriptors (type 0x03) are UTF-16LE encoded."
+    ]
+  },
+  "updated": "2026-05-29"
+}

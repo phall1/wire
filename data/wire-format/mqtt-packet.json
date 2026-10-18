@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/mqtt-packet",
+  "family": "wire-format",
+  "slug": "mqtt-packet",
+  "title": "MQTT packet (fixed header)",
+  "summary": "MQTT (Message Queuing Telemetry Transport) packets: fixed header (1 byte: packet type 4 bits + flags 4 bits, then variable-length remaining length), then variable header (packet ID, topic name, etc.), then payload. Packet types: 1 CONNECT, 2 CONNACK, 3 PUBLISH, 4 PUBACK, 5 PUBREC, 6 PUBREL, 7 PUBCOMP, 8 SUBSCRIBE, 9 SUBACK, 10 UNSUBSCRIBE, 11 UNSUBACK, 12 PINGREQ, 13 PINGRESP, 14 DISCONNECT, 15 AUTH.",
+  "kind": "wire-format",
+  "aliases": [
+    "MQTT packet (fixed header)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "OASIS MQTT 5.0",
+    "summary": "MQTT (Message Queuing Telemetry Transport) packets: fixed header (1 byte: packet type 4 bits + flags 4 bits, then variable-length remaining length), then variable header (packet ID, topic name, etc.), then payload. Packet types: 1 CONNECT, 2 CONNACK, 3 PUBLISH, 4 PUBACK, 5 PUBREC, 6 PUBREL, 7 PUBCOMP, 8 SUBSCRIBE, 9 SUBACK, 10 UNSUBSCRIBE, 11 UNSUBACK, 12 PINGREQ, 13 PINGRESP, 14 DISCONNECT, 15 AUTH.",
+    "structure": [
+      {
+        "field": "Packet type",
+        "size": "4 bits (high nibble of byte 0)",
+        "meaning": "1 CONNECT, 2 CONNACK, 3 PUBLISH, 4 PUBACK, 5 PUBREC, 6 PUBREL, 7 PUBCOMP, 8 SUBSCRIBE, 9 SUBACK, 10 UNSUBSCRIBE, 11 UNSUBACK, 12 PINGREQ, 13 PINGRESP, 14 DISCONNECT, 15 AUTH."
+      },
+      {
+        "field": "Flags",
+        "size": "4 bits (low nibble of byte 0)",
+        "meaning": "PUBLISH: DUP (bit 3), QoS (bits 1-2), RETAIN (bit 0). Others: reserved (must be 0) except PUBREL/SUBSCRIBE/UNSUBSCRIBE (must be 2)."
+      },
+      {
+        "field": "Remaining length",
+        "size": "1-4 bytes (variable-length encoding)",
+        "meaning": "Number of bytes remaining in the packet (max 268,435,455). Each byte: 7 bits of data + 1 continuation bit."
+      },
+      {
+        "field": "Variable header",
+        "size": "variable",
+        "meaning": "CONNECT: protocol name, version, flags, keep alive, properties. PUBLISH: topic name, packet ID (if QoS > 0), properties."
+      },
+      {
+        "field": "Payload",
+        "size": "variable",
+        "meaning": "CONNECT: client ID, will topic, will payload, username, password. PUBLISH: application message. SUBSCRIBE: topic filters + QoS."
+      }
+    ],
+    "example_hex": "10 10 00 04 4d 51 54 54 05 02 00 3c 00 00 00 00",
+    "example_decoded": "MQTT CONNECT packet: type 1, remaining length 16, protocol 'MQTT', version 5, clean start, keep alive 60",
+    "notes": [
+      "MQTT uses TCP (port 1883) or TLS (port 8883).",
+      "MQTT 5.0 adds properties, reason codes, shared subscriptions, and topic aliases.",
+      "QoS levels: 0 (at most once), 1 (at least once), 2 (exactly once).",
+      "Retained messages are stored by the broker and delivered to new subscribers.",
+      "MQTT is the standard for IoT messaging (sensors, actuators, telemetry)."
+    ]
+  },
+  "updated": "2026-05-29"
+}
