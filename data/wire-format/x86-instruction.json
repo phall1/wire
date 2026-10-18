@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/x86-instruction",
+  "family": "wire-format",
+  "slug": "x86-instruction",
+  "title": "x86-64 instruction encoding (basics)",
+  "summary": "x86-64 instructions are variable-length (1-15 bytes). Structure: optional prefixes (1-4 bytes: REX, operand-size, address-size, segment, lock, repeat), opcode (1-3 bytes), ModR/M byte (1 byte: mod(2) + reg(3) + r/m(3)), optional SIB byte, optional displacement (1/2/4/8 bytes), optional immediate (1/2/4/8 bytes). REX prefix (0x40-0x4F) extends registers to 16 (r8-r15) and operand size to 64-bit.",
+  "kind": "wire-format",
+  "aliases": [
+    "x86-64 instruction encoding (basics)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 64 and IA-32 Architectures Software Developer's Manual",
+    "summary": "x86-64 instructions are variable-length (1-15 bytes). Structure: optional prefixes (1-4 bytes: REX, operand-size, address-size, segment, lock, repeat), opcode (1-3 bytes), ModR/M byte (1 byte: mod(2) + reg(3) + r/m(3)), optional SIB byte, optional displacement (1/2/4/8 bytes), optional immediate (1/2/4/8 bytes). REX prefix (0x40-0x4F) extends registers to 16 (r8-r15) and operand size to 64-bit.",
+    "structure": [
+      {
+        "field": "Prefixes",
+        "size": "0-4 bytes",
+        "meaning": "REX (0x40-0x4F), operand-size override (0x66), address-size override (0x67), segment override (0x26/0x2E/0x36/0x3E/0x64/0x65), lock (0xF0), repeat (0xF2/F3)."
+      },
+      {
+        "field": "REX prefix",
+        "size": "1 byte (0x40-0x4F)",
+        "meaning": "Bit 3 (W): 64-bit operand size. Bit 2 (R): extends ModR/M reg field. Bit 1 (X): extends SIB index. Bit 0 (B): extends ModR/M r/m or opcode reg."
+      },
+      {
+        "field": "Opcode",
+        "size": "1-3 bytes",
+        "meaning": "Primary opcode. 1-byte (0x00-0xFF), 2-byte (0x0F + second), 3-byte (0x0F 0x38/0x3A + third)."
+      },
+      {
+        "field": "ModR/M",
+        "size": "1 byte",
+        "meaning": "mod(2 bits) + reg/opcode(3 bits) + r/m(3 bits). mod=00: memory (no disp or disp32), 01: memory+disp8, 10: memory+disp32, 11: register."
+      },
+      {
+        "field": "SIB",
+        "size": "0 or 1 byte",
+        "meaning": "scale(2) + index(3) + base(3). Used for indexed addressing (e.g., [base + index*scale + disp])."
+      },
+      {
+        "field": "Displacement",
+        "size": "0/1/2/4/8 bytes",
+        "meaning": "Memory offset (signed, sign-extended)."
+      },
+      {
+        "field": "Immediate",
+        "size": "0/1/2/4/8 bytes",
+        "meaning": "Constant value for the instruction."
+      },
+      {
+        "field": "Registers",
+        "size": "16 (64-bit)",
+        "meaning": "rax, rcx, rdx, rbx, rsp, rbp, rsi, rdi, r8-r15. Plus rip (instruction pointer), rflags (status). In 32-bit mode: eax, ecx, edx, ebx, esp, ebp, esi, edi."
+      }
+    ],
+    "example_hex": "55 48 89 e5",
+    "example_decoded": "x86-64: PUSH rbp; MOV rbp, rsp (function prologue)",
+    "notes": [
+      "x86-64 is the 64-bit extension of x86 (AMD64/Intel 64).",
+      "Variable-length instructions make decoding complex (need to parse prefixes, opcode, ModR/M, etc.).",
+      "x86 has condition codes (flags): ZF (zero), SF (sign), CF (carry), OF (overflow), PF (parity), AF (auxiliary carry).",
+      "x86-64 has 16 general-purpose registers (vs 8 in 32-bit mode).",
+      "SSE/AVX provide SIMD (128/256/512-bit) vector operations."
+    ]
+  },
+  "updated": "2026-05-29"
+}

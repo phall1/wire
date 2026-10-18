@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/ieee754-float",
+  "family": "wire-format",
+  "slug": "ieee754-float",
+  "title": "IEEE 754 floating-point (binary32/binary64)",
+  "summary": "IEEE 754 is the standard for floating-point arithmetic. Binary32 (float): 1 sign bit, 8 exponent bits (bias 127), 23 mantissa bits (24 with implicit leading 1). Binary64 (double): 1 sign, 11 exponent (bias 1023), 52 mantissa (53 with implicit). Special values: 0 (exp=0, mant=0), subnormal (exp=0, mant!=0), infinity (exp=all 1s, mant=0), NaN (exp=all 1s, mant!=0).",
+  "kind": "wire-format",
+  "aliases": [
+    "IEEE 754 floating-point (binary32/binary64)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "IEEE 754-2019",
+    "summary": "IEEE 754 is the standard for floating-point arithmetic. Binary32 (float): 1 sign bit, 8 exponent bits (bias 127), 23 mantissa bits (24 with implicit leading 1). Binary64 (double): 1 sign, 11 exponent (bias 1023), 52 mantissa (53 with implicit). Special values: 0 (exp=0, mant=0), subnormal (exp=0, mant!=0), infinity (exp=all 1s, mant=0), NaN (exp=all 1s, mant!=0).",
+    "structure": [
+      {
+        "field": "Sign",
+        "size": "1 bit",
+        "meaning": "0 = positive, 1 = negative."
+      },
+      {
+        "field": "Exponent (binary32)",
+        "size": "8 bits",
+        "meaning": "Biased exponent. Bias = 127. Actual exponent = stored - 127. Range: -126 to +127 (0 and 255 reserved)."
+      },
+      {
+        "field": "Exponent (binary64)",
+        "size": "11 bits",
+        "meaning": "Biased exponent. Bias = 1023. Actual exponent = stored - 1023. Range: -1022 to +1023."
+      },
+      {
+        "field": "Mantissa (binary32)",
+        "size": "23 bits",
+        "meaning": "Fractional part. Implicit leading 1 for normal numbers (24-bit precision). Subnormals have no implicit 1."
+      },
+      {
+        "field": "Mantissa (binary64)",
+        "size": "52 bits",
+        "meaning": "Fractional part. Implicit leading 1 for normal numbers (53-bit precision)."
+      },
+      {
+        "field": "Zero",
+        "size": "special",
+        "meaning": "Exponent=0, mantissa=0. Signed zero: +0 (0x00000000) and -0 (0x80000000)."
+      },
+      {
+        "field": "Subnormal",
+        "size": "special",
+        "meaning": "Exponent=0, mantissa!=0. Value = (-1)^sign * 2^(-126) * (mantissa/2^23) for binary32."
+      },
+      {
+        "field": "Infinity",
+        "size": "special",
+        "meaning": "Exponent=all 1s, mantissa=0. Signed: +inf and -inf."
+      },
+      {
+        "field": "NaN",
+        "size": "special",
+        "meaning": "Exponent=all 1s, mantissa!=0. Quiet NaN (MSB of mantissa=1) vs Signaling NaN (MSB=0)."
+      }
+    ],
+    "example_hex": "40 49 0f db",
+    "example_decoded": "binary32: +3.14159265 (pi) = 0x40490FDB",
+    "notes": [
+      "IEEE 754 is implemented by virtually all modern hardware (x87, SSE, AVX, ARM NEON).",
+      "Rounding modes: round-to-nearest (default), round-toward-zero, round-toward-+inf, round-toward--inf.",
+      "Fused multiply-add (FMA) computes (a*b)+c with a single rounding.",
+      "NaN propagation: any operation with NaN returns NaN (except comparisons).",
+      "Subnormals (denormals) enable gradual underflow but are slow on some hardware."
+    ]
+  },
+  "updated": "2026-05-29"
+}

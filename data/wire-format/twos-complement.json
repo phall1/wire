@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/twos-complement",
+  "family": "wire-format",
+  "slug": "twos-complement",
+  "title": "Two's complement (signed integer representation)",
+  "summary": "Two's complement is the standard representation for signed integers. An n-bit two's complement number: the most significant bit is the sign bit (0 = non-negative, 1 = negative). Negative value of x = (2^n - x) = invert all bits of x and add 1. Range: -2^(n-1) to 2^(n-1)-1. Addition and subtraction use the same hardware as unsigned (overflow wraps).",
+  "kind": "wire-format",
+  "aliases": [
+    "Two's complement (signed integer representation)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Two's complement (standard)",
+    "summary": "Two's complement is the standard representation for signed integers. An n-bit two's complement number: the most significant bit is the sign bit (0 = non-negative, 1 = negative). Negative value of x = (2^n - x) = invert all bits of x and add 1. Range: -2^(n-1) to 2^(n-1)-1. Addition and subtraction use the same hardware as unsigned (overflow wraps).",
+    "structure": [
+      {
+        "field": "Sign bit",
+        "size": "1 bit (MSB)",
+        "meaning": "0 = non-negative, 1 = negative."
+      },
+      {
+        "field": "Magnitude",
+        "size": "n-1 bits",
+        "meaning": "For non-negative: the value. For negative: 2^n - |value|."
+      },
+      {
+        "field": "Negation",
+        "size": "n bits",
+        "meaning": "Negate x: ~x + 1 (invert all bits, add 1). Or: 2^n - x."
+      },
+      {
+        "field": "Range (n-bit)",
+        "size": "n bits",
+        "meaning": "-2^(n-1) to 2^(n-1)-1. E.g., 8-bit: -128 to 127. 32-bit: -2^31 to 2^31-1. 64-bit: -2^63 to 2^63-1."
+      },
+      {
+        "field": "Zero",
+        "size": "n bits",
+        "meaning": "Only one representation of zero (all zeros). (Unlike sign-magnitude which has +0 and -0.)"
+      },
+      {
+        "field": "Overflow",
+        "size": "n bits",
+        "meaning": "Overflow occurs when the result exceeds the range. Detected by: sign of operands same, sign of result different."
+      }
+    ],
+    "example_hex": "ff ff ff ff",
+    "example_decoded": "32-bit two's complement: -1 = 0xFFFFFFFF",
+    "notes": [
+      "Two's complement is used by all modern CPUs (x86, ARM, RISC-V).",
+      "Addition and subtraction use the same circuitry as unsigned (modular arithmetic).",
+      "Multiplication requires sign extension (Booth's algorithm or similar).",
+      "Two's complement simplifies hardware: no separate subtraction circuit needed.",
+      "The name 'two's complement' comes from the operation: complement (invert) then add 2 (i.e., +1 to the one's complement)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

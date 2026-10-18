@@ -1,0 +1,89 @@
+{
+  "id": "wire-format/pcie-config-space",
+  "family": "wire-format",
+  "slug": "pcie-config-space",
+  "title": "PCIe configuration space (Type 0 header)",
+  "summary": "PCIe configuration space is 4KB per device (256 bytes for legacy PCI). The Type 0 header (for endpoints): Vendor ID (2), Device ID (2), Command (2), Status (2), Revision ID (1), Class Code (3), Cache Line Size (1), Latency Timer (1), Header Type (1), BIST (1), BAR0-5 (6 x 4 bytes), CardBus CIS Pointer (4), Subsystem Vendor ID (2), Subsystem ID (2), Expansion ROM Base Address (4), Capabilities Pointer (1), Reserved (3), Interrupt Line (1), Interrupt Pin (1), Min Grant (1), Max Latency (1).",
+  "kind": "wire-format",
+  "aliases": [
+    "PCIe configuration space (Type 0 header)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "PCI Express Base Specification",
+    "summary": "PCIe configuration space is 4KB per device (256 bytes for legacy PCI). The Type 0 header (for endpoints): Vendor ID (2), Device ID (2), Command (2), Status (2), Revision ID (1), Class Code (3), Cache Line Size (1), Latency Timer (1), Header Type (1), BIST (1), BAR0-5 (6 x 4 bytes), CardBus CIS Pointer (4), Subsystem Vendor ID (2), Subsystem ID (2), Expansion ROM Base Address (4), Capabilities Pointer (1), Reserved (3), Interrupt Line (1), Interrupt Pin (1), Min Grant (1), Max Latency (1).",
+    "structure": [
+      {
+        "field": "Vendor ID",
+        "size": "2 bytes",
+        "meaning": "Vendor identifier (assigned by PCI-SIG). 0xFFFF = no device."
+      },
+      {
+        "field": "Device ID",
+        "size": "2 bytes",
+        "meaning": "Device identifier (assigned by vendor)."
+      },
+      {
+        "field": "Command",
+        "size": "2 bytes",
+        "meaning": "Bus master, memory/IO space enable, interrupt disable, etc."
+      },
+      {
+        "field": "Status",
+        "size": "2 bytes",
+        "meaning": "Capabilities list, 66MHz capable, fast B2B, DEVSEL timing, etc."
+      },
+      {
+        "field": "Revision ID",
+        "size": "1 byte",
+        "meaning": "Device revision."
+      },
+      {
+        "field": "Class Code",
+        "size": "3 bytes",
+        "meaning": "Base class (1) + subclass (1) + programming interface (1). E.g., 0x02 0x00 0x00 = network controller (Ethernet)."
+      },
+      {
+        "field": "Header Type",
+        "size": "1 byte",
+        "meaning": "0x00 = endpoint, 0x01 = bridge, 0x02 = CardBus bridge. Bit 7 = multi-function."
+      },
+      {
+        "field": "BAR0-5",
+        "size": "6 x 4 bytes",
+        "meaning": "Base Address Registers: memory or I/O space, size, and prefetchable flag."
+      },
+      {
+        "field": "Capabilities Pointer",
+        "size": "1 byte",
+        "meaning": "Offset to the capabilities list (in config space)."
+      },
+      {
+        "field": "Interrupt Line",
+        "size": "1 byte",
+        "meaning": "Interrupt line (IRQ) routed to the device."
+      },
+      {
+        "field": "Interrupt Pin",
+        "size": "1 byte",
+        "meaning": "Interrupt pin (INTA#-INTD#) used by the device."
+      }
+    ],
+    "example_hex": "86 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "PCIe config space: Vendor ID 0x8086 (Intel), Device ID 0x0000",
+    "notes": [
+      "PCIe uses memory-mapped configuration space (MMCONFIG) at a base address (MCFG ACPI table).",
+      "BARs are sized by writing all 1s and reading back the mask.",
+      "Capabilities include: Power Management, MSI/MSI-X, PCIe (link status, speed), VPD, etc.",
+      "PCIe is the standard for high-speed peripherals (GPU, NVMe, network cards).",
+      "PCIe speeds: Gen1 2.5 GT/s, Gen2 5 GT/s, Gen3 8 GT/s, Gen4 16 GT/s, Gen5 32 GT/s, Gen6 64 GT/s."
+    ]
+  },
+  "updated": "2026-05-29"
+}

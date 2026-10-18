@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/arm-instruction",
+  "family": "wire-format",
+  "slug": "arm-instruction",
+  "title": "ARM AArch64 (ARMv8) instruction encoding",
+  "summary": "AArch64 (ARM 64-bit) instructions are 4 bytes, 4-byte aligned. Major classes: data processing (immediate/register), load/store, branch, system. Encoding: bits 28-31 often indicate the class. Data processing (register): 11010110 (RET) etc. Load/store: 11100100 (STUR) etc. Branch: 000101 (B) etc. 31 registers (x0-x30) + SP + XZR (zero register).",
+  "kind": "wire-format",
+  "aliases": [
+    "ARM AArch64 (ARMv8) instruction encoding"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ARM Architecture Reference Manual (ARMv8)",
+    "summary": "AArch64 (ARM 64-bit) instructions are 4 bytes, 4-byte aligned. Major classes: data processing (immediate/register), load/store, branch, system. Encoding: bits 28-31 often indicate the class. Data processing (register): 11010110 (RET) etc. Load/store: 11100100 (STUR) etc. Branch: 000101 (B) etc. 31 registers (x0-x30) + SP + XZR (zero register).",
+    "structure": [
+      {
+        "field": "Data processing (immediate)",
+        "size": "4 bytes",
+        "meaning": "sf(1) | op(1) | S(1) | 100010 | sh(1) | imm12(12) | Rn(5) | Rd(5). E.g., ADDI, SUBI, ANDI, ORRI."
+      },
+      {
+        "field": "Data processing (register)",
+        "size": "4 bytes",
+        "meaning": "sf(1) | op(1) | S(1) | 01010 | shift(2) | 0 | Rm(5) | imm6(6) | Rn(5) | Rd(5). E.g., ADD, SUB, AND, ORR, EOR."
+      },
+      {
+        "field": "Load/Store (register offset)",
+        "size": "4 bytes",
+        "meaning": "size(2) | 111 | V(1) | 00 | opc(2) | 1 | Rm(5) | option(3) | S(1) | 10 | Rn(5) | Rt(5). E.g., LDR, STR, LDP, STP."
+      },
+      {
+        "field": "Load/Store (immediate)",
+        "size": "4 bytes",
+        "meaning": "size(2) | 111 | V(1) | 00 | opc(2) | 0 | imm9(9) | 01 | Rn(5) | Rt(5). E.g., LDR (immediate offset)."
+      },
+      {
+        "field": "Branch (unconditional)",
+        "size": "4 bytes",
+        "meaning": "000101 | imm26(26). B (branch) or BL (branch with link)."
+      },
+      {
+        "field": "Branch (conditional)",
+        "size": "4 bytes",
+        "meaning": "01010100 | imm19(19) | 0 | cond(4). B.cond (BEQ, BNE, BLT, etc.)."
+      },
+      {
+        "field": "Branch (register)",
+        "size": "4 bytes",
+        "meaning": "1101011 | opc(3) | 000000 | Rn(5) | 00000. BR, BLR, RET, ERET."
+      },
+      {
+        "field": "System",
+        "size": "4 bytes",
+        "meaning": "1101010100 | op1(3) | CRn(4) | CRm(4) | op2(3) | Rt(5). MRS, MSR, SVC, HVC, SMC."
+      },
+      {
+        "field": "Registers",
+        "size": "31 + SP + XZR",
+        "meaning": "x0-x30 (general-purpose), SP (stack pointer), XZR (zero register, read-as-zero). w0-w30 are 32-bit views. v0-v31 are 128-bit SIMD/FP registers."
+      }
+    ],
+    "example_hex": "c0 03 5f d6",
+    "example_decoded": "AArch64: RET (return from subroutine) = 0xD65F03C0",
+    "notes": [
+      "AArch64 (ARM 64-bit) is the 64-bit execution state of ARMv8+.",
+      "AArch32 (ARM 32-bit) is the 32-bit execution state (ARMv7 compatibility).",
+      "ARM uses condition codes (EQ, NE, CS, CC, MI, PL, VS, VC, HI, LS, GE, LT, GT, LE, AL) on many instructions.",
+      "ARM has 31 general-purpose registers + SP + PC (not directly accessible).",
+      "NEON (SIMD) provides 128-bit vector operations."
+    ]
+  },
+  "updated": "2026-05-29"
+}

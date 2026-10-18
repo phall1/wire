@@ -1,0 +1,99 @@
+{
+  "id": "wire-format/arm-page-table-entry",
+  "family": "wire-format",
+  "slug": "arm-page-table-entry",
+  "title": "AArch64 page table entry (descriptor)",
+  "summary": "An AArch64 (ARM 64-bit) page table descriptor is 8 bytes (64 bits). Block descriptor (for large pages): bits 0 = valid, bit 1 = table/block (0=block), bits 2-4 = attribute index, bit 5 = non-secure, bit 6 = access permission (AP), bit 7 = shareability, bit 8 = access flag (AF), bit 9 = not global (nG), bit 10 = reserved, bits 11 = contiguous, bits 12-47 = output address (OA), bits 48-50 = reserved, bit 51 = PXN (privileged execute never), bit 52 = XN (execute never), bits 53-54 = reserved, bits 55-58 = software use, bits 59-60 = reserved, bit 61 = DBM (dirty bit modifier), bit 62 = contiguous, bit 63 = software use. Table descriptor: bit 0 = valid, bit 1 = table, bits 2-47 = next level table address.",
+  "kind": "wire-format",
+  "aliases": [
+    "AArch64 page table entry (descriptor)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ARM Architecture Reference Manual (ARMv8)",
+    "summary": "An AArch64 (ARM 64-bit) page table descriptor is 8 bytes (64 bits). Block descriptor (for large pages): bits 0 = valid, bit 1 = table/block (0=block), bits 2-4 = attribute index, bit 5 = non-secure, bit 6 = access permission (AP), bit 7 = shareability, bit 8 = access flag (AF), bit 9 = not global (nG), bit 10 = reserved, bits 11 = contiguous, bits 12-47 = output address (OA), bits 48-50 = reserved, bit 51 = PXN (privileged execute never), bit 52 = XN (execute never), bits 53-54 = reserved, bits 55-58 = software use, bits 59-60 = reserved, bit 61 = DBM (dirty bit modifier), bit 62 = contiguous, bit 63 = software use. Table descriptor: bit 0 = valid, bit 1 = table, bits 2-47 = next level table address.",
+    "structure": [
+      {
+        "field": "Valid",
+        "size": "1 bit (bit 0)",
+        "meaning": "1 = descriptor is valid."
+      },
+      {
+        "field": "Table/Block",
+        "size": "1 bit (bit 1)",
+        "meaning": "0 = block descriptor (leaf), 1 = table descriptor (points to next level)."
+      },
+      {
+        "field": "Attribute Index",
+        "size": "3 bits (2-4)",
+        "meaning": "Index into MAIR (Memory Attribute Indirection Register)."
+      },
+      {
+        "field": "Non-Secure",
+        "size": "1 bit (bit 5)",
+        "meaning": "1 = non-secure (for TrustZone)."
+      },
+      {
+        "field": "Access Permission (AP)",
+        "size": "2 bits (6-7)",
+        "meaning": "00 = RW (privileged), 01 = RW (all), 10 = R (privileged), 11 = R (all)."
+      },
+      {
+        "field": "Shareability",
+        "size": "2 bits (8-9)",
+        "meaning": "00 = non-shareable, 01 = reserved, 10 = outer shareable, 11 = inner shareable."
+      },
+      {
+        "field": "Access Flag (AF)",
+        "size": "1 bit (bit 10)",
+        "meaning": "Set by hardware on access. Used for page replacement."
+      },
+      {
+        "field": "Not Global (nG)",
+        "size": "1 bit (bit 11)",
+        "meaning": "1 = not global (ASID-tagged, flushed on context switch)."
+      },
+      {
+        "field": "Output Address (OA)",
+        "size": "36 bits (12-47)",
+        "meaning": "Physical address of the block/table (aligned to page size)."
+      },
+      {
+        "field": "PXN",
+        "size": "1 bit (bit 51)",
+        "meaning": "Privileged Execute Never."
+      },
+      {
+        "field": "XN",
+        "size": "1 bit (bit 52)",
+        "meaning": "Execute Never (for user)."
+      },
+      {
+        "field": "Contiguous",
+        "size": "1 bit (bit 52 for table, 52 for block)",
+        "meaning": "Hint that this entry is contiguous with the next (for TLB optimization)."
+      },
+      {
+        "field": "DBM",
+        "size": "1 bit (bit 61)",
+        "meaning": "Dirty Bit Modifier: hardware sets the dirty bit (AP[1]) on write instead of raising a fault."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "AArch64 PTE: all zeros (invalid)",
+    "notes": [
+      "AArch64 uses 4-level paging (L0 -> L1 -> L2 -> L3) by default, or 3-level with 64KB pages.",
+      "Page sizes: 4KB (L3), 2MB (L2 block), 1GB (L1 block), 512MB (L1 block with 64KB granule).",
+      "TTBR0 (user) and TTBR1 (kernel) hold the base addresses of the page tables.",
+      "ASID (Address Space ID) tags TLB entries to avoid flushes on context switch.",
+      "ARM uses MAIR for memory attribute indirection (cache policy, shareability)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

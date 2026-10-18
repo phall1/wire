@@ -1,0 +1,53 @@
+{
+  "id": "wire-format/bcd",
+  "family": "wire-format",
+  "slug": "bcd",
+  "title": "BCD (Binary-Coded Decimal)",
+  "summary": "BCD (Binary-Coded Decimal) encodes each decimal digit (0-9) as a 4-bit nibble. Packed BCD: two digits per byte (high nibble = tens, low nibble = ones). Unpacked BCD: one digit per byte (low nibble = digit, high nibble = 0 or zone). Used in financial calculations, real-time clocks, and legacy systems.",
+  "kind": "wire-format",
+  "aliases": [
+    "BCD (Binary-Coded Decimal)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "BCD (Binary-Coded Decimal)",
+    "summary": "BCD (Binary-Coded Decimal) encodes each decimal digit (0-9) as a 4-bit nibble. Packed BCD: two digits per byte (high nibble = tens, low nibble = ones). Unpacked BCD: one digit per byte (low nibble = digit, high nibble = 0 or zone). Used in financial calculations, real-time clocks, and legacy systems.",
+    "structure": [
+      {
+        "field": "Packed BCD",
+        "size": "1 byte per 2 digits",
+        "meaning": "High nibble = tens digit, low nibble = ones digit. E.g., 0x42 = decimal 42."
+      },
+      {
+        "field": "Unpacked BCD",
+        "size": "1 byte per digit",
+        "meaning": "Low nibble = digit, high nibble = 0 (or zone nibble 0x3 for ASCII). E.g., 0x04 = digit 4."
+      },
+      {
+        "field": "Sign",
+        "size": "1 nibble",
+        "meaning": "For signed BCD: the last nibble can be 0xC (+), 0xD (-), or 0xF (unsigned)."
+      },
+      {
+        "field": "Range (packed, n bytes)",
+        "size": "n bytes",
+        "meaning": "2n decimal digits. E.g., 4 bytes = 8 digits (0-99999999)."
+      }
+    ],
+    "example_hex": "42",
+    "example_decoded": "Packed BCD: 0x42 = decimal 42",
+    "notes": [
+      "BCD is used in financial calculations (exact decimal arithmetic), RTCs (real-time clocks), and legacy mainframes.",
+      "BCD wastes space (4 bits per digit vs 3.32 bits for binary) but avoids binary-decimal conversion errors.",
+      "x86 has BCD instructions: DAA (decimal adjust after addition), DAS (after subtraction), AAA, AAS, AAM, AAD.",
+      "Packed BCD is used in the RTC (CMOS) for storing time/date."
+    ]
+  },
+  "updated": "2026-05-29"
+}

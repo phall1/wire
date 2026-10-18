@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/uart-frame",
+  "family": "wire-format",
+  "slug": "uart-frame",
+  "title": "UART frame (asynchronous serial)",
+  "summary": "A UART (Universal Asynchronous Receiver/Transmitter) frame: start bit (low), 5-9 data bits (LSB first), optional parity bit, 1-2 stop bits (high). No clock line; baud rate must be agreed upon. Common: 8 data bits, no parity, 1 stop bit (8N1) at 9600/115200 baud.",
+  "kind": "wire-format",
+  "aliases": [
+    "UART frame (asynchronous serial)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "UART (asynchronous serial)",
+    "summary": "A UART (Universal Asynchronous Receiver/Transmitter) frame: start bit (low), 5-9 data bits (LSB first), optional parity bit, 1-2 stop bits (high). No clock line; baud rate must be agreed upon. Common: 8 data bits, no parity, 1 stop bit (8N1) at 9600/115200 baud.",
+    "structure": [
+      {
+        "field": "Start bit",
+        "size": "1 bit",
+        "meaning": "Always 0 (low). Signals the beginning of a frame."
+      },
+      {
+        "field": "Data bits",
+        "size": "5-9 bits",
+        "meaning": "Data, LSB first. Common: 8 bits."
+      },
+      {
+        "field": "Parity bit",
+        "size": "0 or 1 bit",
+        "meaning": "Optional: even/odd/mark/space parity for error detection."
+      },
+      {
+        "field": "Stop bits",
+        "size": "1-2 bits",
+        "meaning": "Always 1 (high). Signals the end of a frame."
+      },
+      {
+        "field": "Baud rate",
+        "size": "config",
+        "meaning": "Bits per second: 9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600, etc."
+      },
+      {
+        "field": "8N1",
+        "size": "10 bits",
+        "meaning": "8 data + no parity + 1 stop = 10 bits per byte. Most common configuration."
+      }
+    ],
+    "example_hex": "00 80 80 80 80 80 80 80 80 01",
+    "example_decoded": "UART 8N1 frame for byte 0x00: start(0) + 8 data bits(0) + stop(1)",
+    "notes": [
+      "UART is asynchronous: no shared clock; both sides must agree on baud rate.",
+      "UART is used for serial consoles, GPS, Bluetooth modules, and many embedded systems.",
+      "RS-232 (voltage levels ±3-15V) and TTL (0-3.3V/5V) are common physical layers.",
+      "Flow control: hardware (RTS/CTS) or software (XON/XOFF).",
+      "UART is the simplest and most universal serial interface."
+    ]
+  },
+  "updated": "2026-05-29"
+}

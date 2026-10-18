@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/i2c-protocol",
+  "family": "wire-format",
+  "slug": "i2c-protocol",
+  "title": "I2C (Inter-Integrated Circuit) protocol",
+  "summary": "I2C is a two-wire serial bus (SDA data, SCL clock) for connecting low-speed peripherals. Communication: START condition (SDA high->low while SCL high), 7-bit (or 10-bit) address + R/W bit, ACK/NACK, data bytes, STOP condition (SDA low->high while SCL high). Clock stretching allows slaves to slow down the master.",
+  "kind": "wire-format",
+  "aliases": [
+    "I2C (Inter-Integrated Circuit) protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "I2C specification (NXP)",
+    "summary": "I2C is a two-wire serial bus (SDA data, SCL clock) for connecting low-speed peripherals. Communication: START condition (SDA high->low while SCL high), 7-bit (or 10-bit) address + R/W bit, ACK/NACK, data bytes, STOP condition (SDA low->high while SCL high). Clock stretching allows slaves to slow down the master.",
+    "structure": [
+      {
+        "field": "START",
+        "size": "1 condition",
+        "meaning": "SDA transitions high->low while SCL is high. Signals the beginning of a transaction."
+      },
+      {
+        "field": "Address + R/W",
+        "size": "1 byte (7-bit addr + 1 bit R/W)",
+        "meaning": "7-bit slave address (bits 7-1) + read/write bit (bit 0: 0=write, 1=read)."
+      },
+      {
+        "field": "ACK",
+        "size": "1 bit",
+        "meaning": "Receiver pulls SDA low during the 9th clock pulse to acknowledge."
+      },
+      {
+        "field": "NACK",
+        "size": "1 bit",
+        "meaning": "Receiver leaves SDA high during the 9th clock pulse (no device at address, or end of read)."
+      },
+      {
+        "field": "Data byte",
+        "size": "8 bits",
+        "meaning": "Data byte, MSB first. Followed by ACK/NACK."
+      },
+      {
+        "field": "STOP",
+        "size": "1 condition",
+        "meaning": "SDA transitions low->high while SCL is high. Signals the end of a transaction."
+      },
+      {
+        "field": "Repeated START",
+        "size": "1 condition",
+        "meaning": "START without a preceding STOP. Used to change direction (write then read) without releasing the bus."
+      },
+      {
+        "field": "10-bit address",
+        "size": "2 bytes",
+        "meaning": "10-bit addressing: first byte = 11110XX0 (where XX are the top 2 bits of the address), then the low 8 bits."
+      }
+    ],
+    "example_hex": "08 00 00",
+    "example_decoded": "I2C: START, address 0x04 (write), ACK, STOP",
+    "notes": [
+      "I2C uses two wires: SDA (data) and SCL (clock).",
+      "Standard mode: 100 kbps. Fast mode: 400 kbps. Fast mode plus: 1 Mbps. High speed: 3.4 Mbps. Ultra fast: 5 Mbps.",
+      "I2C supports multi-master and multi-slave configurations.",
+      "Clock stretching: slave holds SCL low to slow down the master.",
+      "I2C is used for sensors, EEPROMs, RTCs, and many low-speed peripherals."
+    ]
+  },
+  "updated": "2026-05-29"
+}

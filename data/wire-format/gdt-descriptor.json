@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/gdt-descriptor",
+  "family": "wire-format",
+  "slug": "gdt-descriptor",
+  "title": "x86-64 GDT (Global Descriptor Table) entry",
+  "summary": "An x86-64 GDT entry is 8 bytes (64 bits) for a code/data segment, or 16 bytes for a system segment (TSS, LDT, gate). Code/data segment: base (32 bits, split), limit (20 bits, split), access byte (8 bits: present, DPL, S, type), flags (4 bits: granularity, default size, long mode, available). In long mode (64-bit), base and limit are mostly ignored (flat model).",
+  "kind": "wire-format",
+  "aliases": [
+    "x86-64 GDT (Global Descriptor Table) entry"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 64 and IA-32 Architectures Software Developer's Manual",
+    "summary": "An x86-64 GDT entry is 8 bytes (64 bits) for a code/data segment, or 16 bytes for a system segment (TSS, LDT, gate). Code/data segment: base (32 bits, split), limit (20 bits, split), access byte (8 bits: present, DPL, S, type), flags (4 bits: granularity, default size, long mode, available). In long mode (64-bit), base and limit are mostly ignored (flat model).",
+    "structure": [
+      {
+        "field": "Limit (low)",
+        "size": "2 bytes (bits 0-15)",
+        "meaning": "Low 16 bits of the segment limit."
+      },
+      {
+        "field": "Base (low)",
+        "size": "2 bytes (bits 16-31)",
+        "meaning": "Low 16 bits of the base address."
+      },
+      {
+        "field": "Base (middle)",
+        "size": "1 byte (bits 32-39)",
+        "meaning": "Bits 16-23 of the base address."
+      },
+      {
+        "field": "Access byte",
+        "size": "1 byte (bits 40-47)",
+        "meaning": "Bit 7 = Present, bits 5-6 = DPL, bit 4 = S (1=code/data, 0=system), bits 0-3 = Type (code: execute/read, data: read/write, etc.)."
+      },
+      {
+        "field": "Limit (high) + Flags",
+        "size": "1 byte (bits 48-55)",
+        "meaning": "Bits 0-3 = Limit bits 16-19, bit 4 = Available, bit 5 = Long mode (L), bit 6 = Default size (D/B), bit 7 = Granularity (G, 0=byte, 1=4KB)."
+      },
+      {
+        "field": "Base (high)",
+        "size": "1 byte (bits 56-63)",
+        "meaning": "Bits 24-31 of the base address."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "x86-64 GDT entry: all zeros (null descriptor)",
+    "notes": [
+      "In 64-bit long mode, segmentation is mostly flat (base=0, limit=2^64-1).",
+      "GDT must have at least 3 entries: null, code segment, data segment.",
+      "TSS (Task State Segment) descriptor is 16 bytes (two 8-byte entries).",
+      "LDT (Local Descriptor Table) is rarely used in modern OSes.",
+      "GDT is loaded via LGDT instruction (points to GDTR)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

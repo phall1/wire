@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/fixed-point",
+  "family": "wire-format",
+  "slug": "fixed-point",
+  "title": "Fixed-point number representation",
+  "summary": "Fixed-point represents real numbers with a fixed number of digits after the radix point. An n-bit fixed-point number with f fractional bits: value = integer / 2^f. Range: -2^(n-f-1) to 2^(n-f-1) - 2^(-f). Common formats: Q15 (16-bit, 15 frac), Q31 (32-bit, 31 frac), Q1.15, Q1.31. Used in DSP, embedded systems, and financial calculations where floating-point is too slow or non-deterministic.",
+  "kind": "wire-format",
+  "aliases": [
+    "Fixed-point number representation"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Fixed-point arithmetic",
+    "summary": "Fixed-point represents real numbers with a fixed number of digits after the radix point. An n-bit fixed-point number with f fractional bits: value = integer / 2^f. Range: -2^(n-f-1) to 2^(n-f-1) - 2^(-f). Common formats: Q15 (16-bit, 15 frac), Q31 (32-bit, 31 frac), Q1.15, Q1.31. Used in DSP, embedded systems, and financial calculations where floating-point is too slow or non-deterministic.",
+    "structure": [
+      {
+        "field": "Integer part",
+        "size": "n-f bits",
+        "meaning": "The whole number part (including sign bit for signed)."
+      },
+      {
+        "field": "Fractional part",
+        "size": "f bits",
+        "meaning": "The fractional part, scaled by 2^f."
+      },
+      {
+        "field": "Format Qm.n",
+        "size": "m+n+1 bits",
+        "meaning": "Qm.n: m integer bits, n fractional bits, 1 sign bit. Total = m+n+1."
+      },
+      {
+        "field": "Q15 (16-bit)",
+        "size": "16 bits",
+        "meaning": "1 sign + 0 integer + 15 fractional. Range: -1.0 to 0.99997. Resolution: 2^-15."
+      },
+      {
+        "field": "Q31 (32-bit)",
+        "size": "32 bits",
+        "meaning": "1 sign + 0 integer + 31 fractional. Range: -1.0 to 0.9999999995. Resolution: 2^-31."
+      },
+      {
+        "field": "Q8.24 (32-bit)",
+        "size": "32 bits",
+        "meaning": "8 integer + 24 fractional. Range: -128 to 127.99999994. Resolution: 2^-24."
+      }
+    ],
+    "example_hex": "00 00 80 00",
+    "example_decoded": "Q15 fixed-point: 0.5 = 0x4000, 1.0 = 0x7FFF (max), -1.0 = 0x8000 (min)",
+    "notes": [
+      "Fixed-point is used in DSP (audio processing, filters), embedded systems (no FPU), and financial calculations.",
+      "Multiplication of two Qm.n numbers gives Q2m.2n; need to shift right by n to get Qm.n.",
+      "Overflow must be handled explicitly (saturation or wraparound).",
+      "Fixed-point is deterministic (no rounding mode ambiguity), unlike floating-point."
+    ]
+  },
+  "updated": "2026-05-29"
+}

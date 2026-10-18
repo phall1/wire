@@ -1,0 +1,104 @@
+{
+  "id": "wire-format/x86-page-table-entry",
+  "family": "wire-format",
+  "slug": "x86-page-table-entry",
+  "title": "x86-64 page table entry (PTE)",
+  "summary": "An x86-64 page table entry (PTE) is 8 bytes (64 bits). For a 4-level paging (PML4 -> PDPT -> PD -> PT), each entry: bit 0 = Present (P), bit 1 = Read/Write (R/W), bit 2 = User/Supervisor (U/S), bit 3 = Write-Through (PWT), bit 4 = Cache Disable (PCD), bit 5 = Accessed (A), bit 6 = Dirty (D, only for leaf entries), bit 7 = Page Size (PS, for large pages), bits 8 = Global (G), bits 9-11 = Available (for OS use), bits 12-51 = Physical Frame Number (PFN), bits 52-58 = Available (for OS use), bit 59 = Protection Key (PK), bit 60 = Execute Disable (XD/NX).",
+  "kind": "wire-format",
+  "aliases": [
+    "x86-64 page table entry (PTE)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 64 and IA-32 Architectures Software Developer's Manual",
+    "summary": "An x86-64 page table entry (PTE) is 8 bytes (64 bits). For a 4-level paging (PML4 -> PDPT -> PD -> PT), each entry: bit 0 = Present (P), bit 1 = Read/Write (R/W), bit 2 = User/Supervisor (U/S), bit 3 = Write-Through (PWT), bit 4 = Cache Disable (PCD), bit 5 = Accessed (A), bit 6 = Dirty (D, only for leaf entries), bit 7 = Page Size (PS, for large pages), bits 8 = Global (G), bits 9-11 = Available (for OS use), bits 12-51 = Physical Frame Number (PFN), bits 52-58 = Available (for OS use), bit 59 = Protection Key (PK), bit 60 = Execute Disable (XD/NX).",
+    "structure": [
+      {
+        "field": "Present (P)",
+        "size": "1 bit (bit 0)",
+        "meaning": "1 = page is present in memory. 0 = not present (page fault on access)."
+      },
+      {
+        "field": "Read/Write (R/W)",
+        "size": "1 bit (bit 1)",
+        "meaning": "0 = read-only, 1 = read/write. Only effective if CR0.WP=1 for supervisor."
+      },
+      {
+        "field": "User/Supervisor (U/S)",
+        "size": "1 bit (bit 2)",
+        "meaning": "0 = supervisor only, 1 = user accessible."
+      },
+      {
+        "field": "Write-Through (PWT)",
+        "size": "1 bit (bit 3)",
+        "meaning": "1 = write-through caching, 0 = write-back."
+      },
+      {
+        "field": "Cache Disable (PCD)",
+        "size": "1 bit (bit 4)",
+        "meaning": "1 = caching disabled for this page."
+      },
+      {
+        "field": "Accessed (A)",
+        "size": "1 bit (bit 5)",
+        "meaning": "Set by hardware on read/write. Used by OS for page replacement."
+      },
+      {
+        "field": "Dirty (D)",
+        "size": "1 bit (bit 6)",
+        "meaning": "Set by hardware on write. Only for leaf (PT) entries."
+      },
+      {
+        "field": "Page Size (PS)",
+        "size": "1 bit (bit 7)",
+        "meaning": "1 = large page (2MB in PD, 1GB in PDPT). Only for non-leaf entries."
+      },
+      {
+        "field": "Global (G)",
+        "size": "1 bit (bit 8)",
+        "meaning": "1 = global page (not flushed on CR3 reload). Requires CR4.PGE=1."
+      },
+      {
+        "field": "Available (OS)",
+        "size": "3 bits (9-11)",
+        "meaning": "Available for OS use."
+      },
+      {
+        "field": "Physical Frame Number (PFN)",
+        "size": "40 bits (12-51)",
+        "meaning": "Physical page frame number (address bits 12-51). Page size determines alignment."
+      },
+      {
+        "field": "Available (OS)",
+        "size": "7 bits (52-58)",
+        "meaning": "Available for OS use (if not using protection keys)."
+      },
+      {
+        "field": "Protection Key (PK)",
+        "size": "4 bits (59-62)",
+        "meaning": "Memory protection key (MPK). Requires CR4.PKE=1."
+      },
+      {
+        "field": "Execute Disable (XD/NX)",
+        "size": "1 bit (bit 63)",
+        "meaning": "1 = execute disable (no-execute). Requires EFER.NXE=1."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "x86-64 PTE: all zeros (not present)",
+    "notes": [
+      "x86-64 uses 4-level paging (PML4 -> PDPT -> PD -> PT) by default, or 5-level with LA57.",
+      "Page sizes: 4KB (PT), 2MB (PD with PS=1), 1GB (PDPT with PS=1).",
+      "CR3 holds the physical address of the PML4 table.",
+      "TLB caches recent translations; INVLPG invalidates a single entry.",
+      "PCID (Process-Context Identifier) avoids TLB flushes on context switch."
+    ]
+  },
+  "updated": "2026-05-29"
+}

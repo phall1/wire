@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/riscv-instruction",
+  "family": "wire-format",
+  "slug": "riscv-instruction",
+  "title": "RISC-V instruction encoding",
+  "summary": "RISC-V is an open ISA. Base 32-bit instructions are 4 bytes, aligned to 4 bytes. Six formats: R (register-register), I (immediate), S (store), B (branch), U (upper immediate), J (jump). All instructions have a 7-bit opcode (bits 0-6) and, for R/I/S/B, a 3-bit funct3 (bits 12-14). R-type also has 7-bit funct7 (bits 25-31).",
+  "kind": "wire-format",
+  "aliases": [
+    "RISC-V instruction encoding"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RISC-V specification (riscv.org)",
+    "summary": "RISC-V is an open ISA. Base 32-bit instructions are 4 bytes, aligned to 4 bytes. Six formats: R (register-register), I (immediate), S (store), B (branch), U (upper immediate), J (jump). All instructions have a 7-bit opcode (bits 0-6) and, for R/I/S/B, a 3-bit funct3 (bits 12-14). R-type also has 7-bit funct7 (bits 25-31).",
+    "structure": [
+      {
+        "field": "R-type",
+        "size": "4 bytes",
+        "meaning": "funct7[31:25] | rs2[24:20] | rs1[19:15] | funct3[14:12] | rd[11:7] | opcode[6:0]. E.g., ADD rd, rs1, rs2."
+      },
+      {
+        "field": "I-type",
+        "size": "4 bytes",
+        "meaning": "imm[31:20] | rs1[19:15] | funct3[14:12] | rd[11:7] | opcode[6:0]. E.g., ADDI rd, rs1, imm."
+      },
+      {
+        "field": "S-type",
+        "size": "4 bytes",
+        "meaning": "imm[31:25] | rs2[24:20] | rs1[19:15] | funct3[14:12] | imm[11:7] | opcode[6:0]. E.g., SW rs2, offset(rs1)."
+      },
+      {
+        "field": "B-type",
+        "size": "4 bytes",
+        "meaning": "imm[12] | imm[10:5] | rs2[24:20] | rs1[19:15] | funct3[14:12] | imm[4:1] | imm[11] | opcode[6:0]. E.g., BEQ rs1, rs2, offset."
+      },
+      {
+        "field": "U-type",
+        "size": "4 bytes",
+        "meaning": "imm[31:12] | rd[11:7] | opcode[6:0]. E.g., LUI rd, imm."
+      },
+      {
+        "field": "J-type",
+        "size": "4 bytes",
+        "meaning": "imm[20] | imm[10:1] | imm[11] | imm[19:12] | rd[11:7] | opcode[6:0]. E.g., JAL rd, offset."
+      },
+      {
+        "field": "Compressed (RVC)",
+        "size": "2 bytes",
+        "meaning": "16-bit compressed instructions (C prefix) for code density. Quadrants 0-3 based on bits 1-0."
+      },
+      {
+        "field": "Registers",
+        "size": "32",
+        "meaning": "x0 (zero), x1 (ra), x2 (sp), x3 (gp), x4 (tp), x5-x7 (t0-t2), x8 (s0/fp), x9 (s1), x10-x17 (a0-a7), x18-x27 (s2-s11), x28-x31 (t3-t6). x0 is hardwired to 0."
+      }
+    ],
+    "example_hex": "33 00 80 00",
+    "example_decoded": "RISC-V: ADD x0, x1, x2 (R-type: funct7=0, rs2=2, rs1=1, funct3=0, rd=0, opcode=0x33)",
+    "notes": [
+      "RISC-V is an open, royalty-free ISA (Berkeley, 2010).",
+      "Base ISA: RV32I (32-bit) or RV64I (64-bit) or RV128I (128-bit).",
+      "Standard extensions: M (multiply/divide), A (atomic), F (single-precision float), D (double-precision float), C (compressed), V (vector), Zicsr (CSR), Zifencei (instruction fence).",
+      "RISC-V has no condition codes (flags); comparisons set a register to 0 or 1.",
+      "RISC-V is used by SiFive, Alibaba (XuanTie), and many embedded/IoT chips."
+    ]
+  },
+  "updated": "2026-05-29"
+}

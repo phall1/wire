@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/interrupt-descriptor-table",
+  "family": "wire-format",
+  "slug": "interrupt-descriptor-table",
+  "title": "x86-64 Interrupt Descriptor Table (IDT) entry",
+  "summary": "An x86-64 IDT entry is 16 bytes (128 bits). Fields: offset (64-bit, split into low 16, middle 16, high 32), segment selector (16 bits), IST (Interrupt Stack Table, 3 bits), reserved (5 bits), type/attributes (8 bits: gate type, DPL, present), reserved (32 bits). Gate types: 0xE = interrupt gate, 0xF = trap gate, 0x5 = task gate (legacy).",
+  "kind": "wire-format",
+  "aliases": [
+    "x86-64 Interrupt Descriptor Table (IDT) entry"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 64 and IA-32 Architectures Software Developer's Manual",
+    "summary": "An x86-64 IDT entry is 16 bytes (128 bits). Fields: offset (64-bit, split into low 16, middle 16, high 32), segment selector (16 bits), IST (Interrupt Stack Table, 3 bits), reserved (5 bits), type/attributes (8 bits: gate type, DPL, present), reserved (32 bits). Gate types: 0xE = interrupt gate, 0xF = trap gate, 0x5 = task gate (legacy).",
+    "structure": [
+      {
+        "field": "Offset (low)",
+        "size": "2 bytes (bits 0-15)",
+        "meaning": "Low 16 bits of the handler address."
+      },
+      {
+        "field": "Segment selector",
+        "size": "2 bytes",
+        "meaning": "Code segment selector for the handler."
+      },
+      {
+        "field": "IST",
+        "size": "3 bits (bits 0-2 of byte 4)",
+        "meaning": "Interrupt Stack Table index (0 = use current stack, 1-7 = IST entry)."
+      },
+      {
+        "field": "Reserved",
+        "size": "5 bits (bits 3-7 of byte 4)",
+        "meaning": "Reserved (must be 0)."
+      },
+      {
+        "field": "Type",
+        "size": "4 bits (bits 0-3 of byte 5)",
+        "meaning": "0xE = interrupt gate (IF cleared on entry), 0xF = trap gate (IF unchanged), 0x5 = task gate (legacy)."
+      },
+      {
+        "field": "DPL",
+        "size": "2 bits (bits 5-6 of byte 5)",
+        "meaning": "Descriptor Privilege Level (0-3). Ring level required to invoke via INT instruction."
+      },
+      {
+        "field": "Present (P)",
+        "size": "1 bit (bit 7 of byte 5)",
+        "meaning": "1 = entry is valid."
+      },
+      {
+        "field": "Offset (middle)",
+        "size": "2 bytes",
+        "meaning": "Bits 16-31 of the handler address."
+      },
+      {
+        "field": "Offset (high)",
+        "size": "4 bytes",
+        "meaning": "Bits 32-63 of the handler address."
+      },
+      {
+        "field": "Reserved",
+        "size": "4 bytes (bits 96-127)",
+        "meaning": "Reserved (must be 0)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "x86-64 IDT entry: all zeros (invalid/not present)",
+    "notes": [
+      "The IDT is loaded via LIDT instruction (points to IDTR).",
+      "256 entries (0-255): 0-31 are exceptions (divide error, page fault, etc.), 32-255 are interrupts.",
+      "Interrupt gate clears IF (disables interrupts) on entry; trap gate does not.",
+      "IST (Interrupt Stack Table) provides dedicated stacks for critical handlers (double fault, NMI, machine check).",
+      "Exceptions: 0 #DE (divide error), 1 #DB (debug), 2 NMI, 3 #BP (breakpoint), 4 #OF (overflow), 5 #BR (bound range), 6 #UD (invalid opcode), 7 #NM (device not available), 8 #DF (double fault), 10 #TS (invalid TSS), 11 #NP (segment not present), 12 #SS (stack segment fault), 13 #GP (general protection), 14 #PF (page fault), 16 #MF (x87 FPU error), 17 #AC (alignment check), 18 #MC (machine check), 19 #XM (SIMD exception)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

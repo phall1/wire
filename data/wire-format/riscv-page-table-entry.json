@@ -1,0 +1,89 @@
+{
+  "id": "wire-format/riscv-page-table-entry",
+  "family": "wire-format",
+  "slug": "riscv-page-table-entry",
+  "title": "RISC-V page table entry (PTE)",
+  "summary": "A RISC-V Sv39 (39-bit virtual address) page table entry is 8 bytes (64 bits). Fields: V (valid, bit 0), R (read, bit 1), W (write, bit 2), X (execute, bit 3), U (user, bit 4), G (global, bit 5), A (accessed, bit 6), D (dirty, bit 7), RSW (bits 8-9, reserved for software), PPN (physical page number, bits 10-53), reserved (bits 54-63). Sv48 and Sv57 extend the virtual address space with additional levels.",
+  "kind": "wire-format",
+  "aliases": [
+    "RISC-V page table entry (PTE)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RISC-V specification (riscv.org)",
+    "summary": "A RISC-V Sv39 (39-bit virtual address) page table entry is 8 bytes (64 bits). Fields: V (valid, bit 0), R (read, bit 1), W (write, bit 2), X (execute, bit 3), U (user, bit 4), G (global, bit 5), A (accessed, bit 6), D (dirty, bit 7), RSW (bits 8-9, reserved for software), PPN (physical page number, bits 10-53), reserved (bits 54-63). Sv48 and Sv57 extend the virtual address space with additional levels.",
+    "structure": [
+      {
+        "field": "Valid (V)",
+        "size": "1 bit (bit 0)",
+        "meaning": "1 = PTE is valid."
+      },
+      {
+        "field": "Read (R)",
+        "size": "1 bit (bit 1)",
+        "meaning": "1 = page is readable."
+      },
+      {
+        "field": "Write (W)",
+        "size": "1 bit (bit 2)",
+        "meaning": "1 = page is writable."
+      },
+      {
+        "field": "Execute (X)",
+        "size": "1 bit (bit 3)",
+        "meaning": "1 = page is executable."
+      },
+      {
+        "field": "User (U)",
+        "size": "1 bit (bit 4)",
+        "meaning": "1 = page is accessible in user mode."
+      },
+      {
+        "field": "Global (G)",
+        "size": "1 bit (bit 5)",
+        "meaning": "1 = global mapping (not flushed on satp change). Requires SFENCE.VMA with rs1=x0, rs2!=x0."
+      },
+      {
+        "field": "Accessed (A)",
+        "size": "1 bit (bit 6)",
+        "meaning": "Set by hardware (or software, if not supported) on read."
+      },
+      {
+        "field": "Dirty (D)",
+        "size": "1 bit (bit 7)",
+        "meaning": "Set by hardware (or software) on write."
+      },
+      {
+        "field": "RSW",
+        "size": "2 bits (8-9)",
+        "meaning": "Reserved for software use."
+      },
+      {
+        "field": "Physical Page Number (PPN)",
+        "size": "44 bits (10-53)",
+        "meaning": "Physical page number. For leaf entries, the page size determines which bits are part of the PPN vs. the page offset."
+      },
+      {
+        "field": "Reserved",
+        "size": "10 bits (54-63)",
+        "meaning": "Reserved (must be 0)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "RISC-V Sv39 PTE: all zeros (invalid)",
+    "notes": [
+      "RISC-V Sv39: 39-bit virtual address, 3-level paging (L2 -> L1 -> L0).",
+      "RISC-V Sv48: 48-bit virtual address, 4-level paging.",
+      "RISC-V Sv57: 57-bit virtual address, 5-level paging.",
+      "satp (Supervisor Address Translation and Protection) register holds the page table base and ASID.",
+      "RISC-V has no hardware dirty bit in early versions (software must emulate A/D bits)."
+    ]
+  },
+  "updated": "2026-05-29"
+}
