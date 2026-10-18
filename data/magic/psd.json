@@ -1,0 +1,37 @@
+{
+  "id": "magic/psd",
+  "family": "magic",
+  "slug": "psd",
+  "title": "Photoshop document signature (8BPS)",
+  "summary": "An Adobe Photoshop (PSD) document begins with the 4-byte signature '8BPS'.",
+  "kind": "signature",
+  "aliases": [
+    "psd magic",
+    ".psd"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "38 42 50 53",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "psd"
+    ],
+    "mime": "image/vnd.adobe.photoshop",
+    "spec": "Adobe Photoshop File Formats",
+    "notes": [
+      "Bytes 0-3: '8BPS' (0x38 0x42 0x50 0x53).",
+      "Bytes 4-5: version (1 for PSD, 2 for PSB).",
+      "Bytes 6-11: reserved (zeros).",
+      "Bytes 12-15: number of channels (big-endian)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

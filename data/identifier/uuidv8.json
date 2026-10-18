@@ -1,0 +1,29 @@
+{
+  "id": "identifier/uuidv8",
+  "family": "identifier",
+  "slug": "uuidv8",
+  "title": "UUIDv8 (custom/experimental)",
+  "summary": "UUID version 8 reserves the version and variant bits but leaves all other bits free for application-defined data. Use it for custom, time-ordered, or domain-specific 128-bit ids that still want UUID shape.",
+  "kind": "identifier",
+  "aliases": [
+    "UUIDv8 (custom/experimental)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562",
+    "example": "00000000-0000-8000-8000-000000000000",
+    "notes": [
+      "Version = 8; variant = RFC 4122 (10x).",
+      "All other 122 bits are application-defined.",
+      "No standardized time or node semantics; the application chooses.",
+      "Useful for migrating proprietary 128-bit ids into UUID-shaped values."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "magic/parquet",
+  "family": "magic",
+  "slug": "parquet",
+  "title": "Apache Parquet signature (PAR1)",
+  "summary": "A Parquet file begins and ends with the 4-byte magic 'PAR1'.",
+  "kind": "signature",
+  "aliases": [
+    "parquet magic",
+    ".parquet"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "50 41 52 31",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "parquet"
+    ],
+    "mime": "application/vnd.apache.parquet",
+    "spec": "Apache Parquet format",
+    "notes": [
+      "Bytes 0-3: 'PAR1' (0x50 0x41 0x52 0x31).",
+      "The same 4 bytes appear at the very end of the file (footer follows).",
+      "Between them: row groups, column chunks, and the Thrift-encoded footer."
+    ]
+  },
+  "updated": "2026-05-29"
+}

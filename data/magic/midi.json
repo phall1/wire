@@ -1,0 +1,41 @@
+{
+  "id": "magic/midi",
+  "family": "magic",
+  "slug": "midi",
+  "title": "MIDI file signature (MThd)",
+  "summary": "A Standard MIDI File (SMF) begins with the 4-byte chunk id 'MThd' followed by a 4-byte big-endian chunk size (always 6 for the header chunk).",
+  "kind": "signature",
+  "aliases": [
+    "midi magic",
+    ".mid",
+    ".midi",
+    ".smf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4D 54 68 64",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "mid",
+      "midi",
+      "smf"
+    ],
+    "mime": "audio/midi",
+    "spec": "MIDI 1.0 / SMF specification",
+    "notes": [
+      "Bytes 0-3: 'MThd' (0x4D 0x54 0x68 0x64).",
+      "Bytes 4-7: header chunk length, big-endian, always 0x00000006.",
+      "Bytes 8-9: format (0, 1, or 2).",
+      "Bytes 10-11: number of tracks. Bytes 12-13: division (ticks per quarter note or SMPTE)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "identifier/mongo-objectid",
+  "family": "identifier",
+  "slug": "mongo-objectid",
+  "title": "MongoDB ObjectId",
+  "summary": "A MongoDB ObjectId is a 12-byte (96-bit) identifier: a 4-byte Unix timestamp (seconds), a 5-byte random value per process, and a 3-byte incrementing counter. Rendered as 24 lowercase hex characters.",
+  "kind": "identifier",
+  "aliases": [
+    "MongoDB ObjectId"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "MongoDB BSON specification",
+    "example": "507f1f77bcf86cd799439011",
+    "notes": [
+      "timestamp: 4 bytes, big-endian Unix seconds.",
+      "random: 5 bytes, generated once per process.",
+      "counter: 3 bytes, big-endian, incremented per id.",
+      "Total 12 bytes -> 24 hex chars; roughly time-sortable."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -34,11 +34,12 @@ bun run ingest -- --family http-status --dry-run   # Tier-A update agent
 
 ## Corpus
 
-1,302 entries across 11 families (HTTP status/methods, URI schemes, ports, DNS
-record types, CBOR tags, TLS cipher suites, terminal OSC/CSI/DEC sequences,
-encodings). Tier-A families are regenerated deterministically from the IANA
-registries by `ingest/`; terminal entries are sourced from xterm ctlseqs / the
-Semantic Prompts proposal with inline `attribution[]`.
+4,097 entries across 18 families (HTTP status/methods/headers, URI schemes, ports,
+DNS record types, CBOR tags, TLS cipher suites, terminal OSC/CSI/DEC sequences,
+encodings, media types, link relations, well-known URIs, identifiers, magic
+numbers, wire formats). Tier-A families are regenerated deterministically from
+the IANA registries by `ingest/`; terminal, identifier, magic and wire-format
+entries carry inline `attribution[]` / `source_url` provenance.
 
 ## The idea in one line
 

@@ -1,0 +1,58 @@
+{
+  "id": "wire-format/ethernet-frame",
+  "family": "wire-format",
+  "slug": "ethernet-frame",
+  "title": "Ethernet II frame",
+  "summary": "An Ethernet II (DIX) frame: 6-byte destination MAC, 6-byte source MAC, 2-byte EtherType, payload (46-1500 bytes), and a 4-byte FCS (CRC-32).",
+  "kind": "wire-format",
+  "aliases": [
+    "Ethernet II frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "IEEE 802.3",
+    "summary": "An Ethernet II (DIX) frame: 6-byte destination MAC, 6-byte source MAC, 2-byte EtherType, payload (46-1500 bytes), and a 4-byte FCS (CRC-32).",
+    "structure": [
+      {
+        "field": "Destination MAC",
+        "size": "6 bytes",
+        "meaning": "Target MAC address (or broadcast FF:FF:FF:FF:FF:FF)."
+      },
+      {
+        "field": "Source MAC",
+        "size": "6 bytes",
+        "meaning": "Sender MAC address."
+      },
+      {
+        "field": "EtherType",
+        "size": "2 bytes",
+        "meaning": "Payload protocol: 0x0800 IPv4, 0x0806 ARP, 0x86DD IPv6, 0x8100 VLAN tag, ... (values >= 0x0600)."
+      },
+      {
+        "field": "Payload",
+        "size": "46-1500 bytes",
+        "meaning": "Upper-layer data; padded to 46 bytes minimum."
+      },
+      {
+        "field": "FCS",
+        "size": "4 bytes",
+        "meaning": "CRC-32 over dst+src+type+payload."
+      }
+    ],
+    "example_hex": "ff ff ff ff ff ff 00 11 22 33 44 55 08 00",
+    "example_decoded": "Broadcast dst, src 00:11:22:33:44:55, EtherType 0x0800 (IPv4)",
+    "notes": [
+      "Minimum frame (without FCS) is 64 bytes; max 1518 (1522 with VLAN).",
+      "802.1Q inserts a 4-byte VLAN tag (TPID 0x8100) between src and EtherType.",
+      "Jumbo frames extend payload up to 9000+ bytes.",
+      "FCS is appended by the NIC and not part of the software-visible frame on receive."
+    ]
+  },
+  "updated": "2026-05-29"
+}

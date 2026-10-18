@@ -1,0 +1,29 @@
+{
+  "id": "identifier/firebase-push",
+  "family": "identifier",
+  "slug": "firebase-push",
+  "title": "Firebase Push ID",
+  "summary": "A Firebase Realtime Database push key is a 20-character, chronologically sortable string built from an 8-byte timestamp (milliseconds since epoch, base64-ish) followed by 12 bytes of randomness.",
+  "kind": "identifier",
+  "aliases": [
+    "Firebase Push ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Firebase documentation",
+    "example": "-KtH_-xjQKxJqgqJqgqJq",
+    "notes": [
+      "8 bytes of timestamp (milliseconds) encoded as 8 chars of a URL-safe alphabet.",
+      "12 bytes of randomness encoded as 12 chars.",
+      "Total 20 characters; lexicographically sortable by time.",
+      "Alphabet: -0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz (Firebase's custom base64)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

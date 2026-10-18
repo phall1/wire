@@ -1,0 +1,38 @@
+{
+  "id": "magic/heic",
+  "family": "magic",
+  "slug": "heic",
+  "title": "HEIC/HEIF signature (ftyp heic)",
+  "summary": "A HEIC image is an ISOBMFF file whose ftyp major brand is 'heic' (or 'heix', 'hevc', 'hevx').",
+  "kind": "signature",
+  "aliases": [
+    "heic magic",
+    ".heic",
+    ".heif"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "66 74 79 70 68 65 69 63",
+    "offset": 4,
+    "magic_ascii": "",
+    "extensions": [
+      "heic",
+      "heif"
+    ],
+    "mime": "image/heic",
+    "spec": "HEIF / ISO/IEC 23008-12",
+    "notes": [
+      "Bytes 4-7: 'ftyp'.",
+      "Bytes 8-11: major brand 'heic' (0x68 0x65 0x69 0x63).",
+      "Compatible brands list other supported profiles."
+    ]
+  },
+  "updated": "2026-05-29"
+}

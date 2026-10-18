@@ -1,0 +1,63 @@
+{
+  "id": "wire-format/quic-packet",
+  "family": "wire-format",
+  "slug": "quic-packet",
+  "title": "QUIC long/short header",
+  "summary": "QUIC packets use a variable-length header. Long headers (initial/handshake/0-RTT/retry) carry version and connection IDs; short headers (1-RTT) carry only the destination connection ID and packet number.",
+  "kind": "wire-format",
+  "aliases": [
+    "QUIC long/short header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 9000",
+    "summary": "QUIC packets use a variable-length header. Long headers (initial/handshake/0-RTT/retry) carry version and connection IDs; short headers (1-RTT) carry only the destination connection ID and packet number.",
+    "structure": [
+      {
+        "field": "Header Form",
+        "size": "1 bit",
+        "meaning": "1 = long header, 0 = short header."
+      },
+      {
+        "field": "Fixed Bit",
+        "size": "1 bit",
+        "meaning": "Always 1 (distinguishes QUIC from other protocols sharing the port)."
+      },
+      {
+        "field": "Long: Type",
+        "size": "2 bits",
+        "meaning": "00 initial, 01 0-RTT, 10 handshake, 11 retry."
+      },
+      {
+        "field": "Version",
+        "size": "4 bytes",
+        "meaning": "QUIC version (0x00000001 for v1); 0x00000000 for version negotiation."
+      },
+      {
+        "field": "DCID/SCID Length + IDs",
+        "size": "variable",
+        "meaning": "Connection IDs (0-20 bytes each) with length prefixes (long header only)."
+      },
+      {
+        "field": "Packet Number",
+        "size": "1-4 bytes",
+        "meaning": "Encrypted/protected packet number; length signalled in flags (short) or derived (long)."
+      }
+    ],
+    "example_hex": "c0 00 00 00 01 08 00 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00 00",
+    "example_decoded": "Long header, initial, version 1, empty DCID/SCID, token length 0",
+    "notes": [
+      "QUIC runs over UDP; port 443 by default.",
+      "All packets after the initial are authenticated/encrypted with AEAD (TLS 1.3 keys).",
+      "Connection IDs allow migration across IP addresses.",
+      "Packet numbers are monotonically increasing per packet-number space (initial/handshake/application)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

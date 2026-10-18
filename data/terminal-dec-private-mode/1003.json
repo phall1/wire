@@ -1,0 +1,68 @@
+{
+  "id": "terminal-dec-private-mode/1003",
+  "family": "terminal-dec-private-mode",
+  "slug": "1003",
+  "title": "DECSET 1003 — Any-event mouse tracking",
+  "summary": "CSI ? 1003 h enables any-event mouse tracking: the terminal reports all motion, even with no button held. CSI ? 1003 l disables it.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSET 1003",
+    "DECRST 1003",
+    "?1003"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 1003,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private modes are CSI sequences with a leading '?' (0x3F) private-parameter prefix. Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST)."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: a DEC private mode is a CSI sequence ending at its final byte ('h' to set, 'l' to reset)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 1003 h Mouse tracking; all motion events.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1003h",
+        "byte_sequence_ST_readable": "ESC [ ? 1003 h",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 1003 l disables the mode.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?1003l",
+        "byte_sequence_ST_readable": "ESC [ ? 1003 l",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Any-event mode is very noisy (reports every cell the pointer crosses); use sparingly.",
+      "Combine with 1006 (SGR encoding) for coordinates beyond 223 columns/rows.",
+      "Always disable on exit."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSET/DECRST 1003 render as byte-exact CSI ? 1003 h/l sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "wire-format/ipv6-header",
+  "family": "wire-format",
+  "slug": "ipv6-header",
+  "title": "IPv6 fixed header",
+  "summary": "The IPv6 fixed header is 40 bytes: version (4 bits) + traffic class (8) + flow label (20), payload length (16), next header (8), hop limit (8), source address (128), destination address (128).",
+  "kind": "wire-format",
+  "aliases": [
+    "IPv6 fixed header"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8200",
+    "summary": "The IPv6 fixed header is 40 bytes: version (4 bits) + traffic class (8) + flow label (20), payload length (16), next header (8), hop limit (8), source address (128), destination address (128).",
+    "structure": [
+      {
+        "field": "Version",
+        "size": "4 bits",
+        "meaning": "Always 6."
+      },
+      {
+        "field": "Traffic Class",
+        "size": "8 bits",
+        "meaning": "DSCP (6) + ECN (2)."
+      },
+      {
+        "field": "Flow Label",
+        "size": "20 bits",
+        "meaning": "Flow identifier for QoS; 0 means no flow."
+      },
+      {
+        "field": "Payload Length",
+        "size": "16 bits",
+        "meaning": "Length of everything after the 40-byte fixed header."
+      },
+      {
+        "field": "Next Header",
+        "size": "8 bits",
+        "meaning": "Protocol of the next header (6 TCP, 17 UDP, 58 ICMPv6, 43 routing, ...)."
+      },
+      {
+        "field": "Hop Limit",
+        "size": "8 bits",
+        "meaning": "Decremented per hop; packet discarded at 0."
+      },
+      {
+        "field": "Source Address",
+        "size": "128 bits",
+        "meaning": "Sender IPv6 address."
+      },
+      {
+        "field": "Destination Address",
+        "size": "128 bits",
+        "meaning": "Receiver IPv6 address."
+      }
+    ],
+    "example_hex": "60 00 00 00 00 00 06 40 20 01 0d b8 00 00 00 00 00 00 00 00 00 00 00 01 20 01 0d b8 00 00 00 00 00 00 00 00 00 00 00 02",
+    "example_decoded": "Version 6, no traffic class/flow, payload length 0, next header 6 (TCP), hop limit 64, src/dest 2001:db8::1 -> 2001:db8::2",
+    "notes": [
+      "Fixed 40-byte header; extension headers (hop-by-hop, routing, fragment, ...) follow via Next Header chaining.",
+      "No header checksum (unlike IPv4).",
+      "Minimum MTU 1280 bytes.",
+      "Addresses are 128 bits; flow label supports per-flow QoS without deep packet inspection."
+    ]
+  },
+  "updated": "2026-05-29"
+}

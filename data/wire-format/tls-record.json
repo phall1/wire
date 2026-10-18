@@ -1,0 +1,48 @@
+{
+  "id": "wire-format/tls-record",
+  "family": "wire-format",
+  "slug": "tls-record",
+  "title": "TLS 1.3 record layer",
+  "summary": "A TLS record consists of a 5-byte header (content type 1 byte, legacy version 2 bytes, length 2 bytes) followed by the (possibly encrypted) fragment. In TLS 1.3 the real content type moves into the encrypted payload (inner content type).",
+  "kind": "wire-format",
+  "aliases": [
+    "TLS 1.3 record layer"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8446",
+    "summary": "A TLS record consists of a 5-byte header (content type 1 byte, legacy version 2 bytes, length 2 bytes) followed by the (possibly encrypted) fragment. In TLS 1.3 the real content type moves into the encrypted payload (inner content type).",
+    "structure": [
+      {
+        "field": "Content Type",
+        "size": "1 byte",
+        "meaning": "Outer type: 0x17 application data (all TLS 1.3 records), or 0x14 change cipher spec, 0x15 alert, 0x16 handshake for legacy."
+      },
+      {
+        "field": "Legacy Version",
+        "size": "2 bytes",
+        "meaning": "0x0303 (TLS 1.2) for compatibility; ignored in TLS 1.3."
+      },
+      {
+        "field": "Length",
+        "size": "2 bytes",
+        "meaning": "Fragment length in octets (max 2^14 + 256)."
+      }
+    ],
+    "example_hex": "17 03 03 00 05 48 65 6c 6c 6f",
+    "example_decoded": "Application data record, TLS 1.2 legacy version, 5-byte fragment 'Hello'",
+    "notes": [
+      "TLS 1.3 encrypts the entire fragment including an inner content type byte and optional padding.",
+      "Record size limit 2^14+256 bytes; larger messages split across records.",
+      "TLS 1.3 removes compression and stream ciphers.",
+      "AEAD (AES-GCM, ChaCha20-Poly1305) authenticates the header's AAD."
+    ]
+  },
+  "updated": "2026-05-29"
+}

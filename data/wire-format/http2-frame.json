@@ -1,0 +1,53 @@
+{
+  "id": "wire-format/http2-frame",
+  "family": "wire-format",
+  "slug": "http2-frame",
+  "title": "HTTP/2 frame",
+  "summary": "Every HTTP/2 connection is a sequence of frames. Each frame has a 9-byte header (length 24 bits, type 8 bits, flags 8 bits, R 1 bit + stream id 31 bits) followed by a payload of `length` bytes.",
+  "kind": "wire-format",
+  "aliases": [
+    "HTTP/2 frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 9113",
+    "summary": "Every HTTP/2 connection is a sequence of frames. Each frame has a 9-byte header (length 24 bits, type 8 bits, flags 8 bits, R 1 bit + stream id 31 bits) followed by a payload of `length` bytes.",
+    "structure": [
+      {
+        "field": "Length",
+        "size": "3 bytes",
+        "meaning": "Payload length in octets (max 2^14 default, up to 2^24-1 with SETTINGS_MAX_FRAME_SIZE)."
+      },
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "Frame type (DATA=0x00, HEADERS=0x01, PRIORITY=0x02, RST_STREAM=0x03, SETTINGS=0x04, PUSH_PROMISE=0x05, PING=0x06, GOAWAY=0x07, WINDOW_UPDATE=0x08, CONTINUATION=0x09)."
+      },
+      {
+        "field": "Flags",
+        "size": "1 byte",
+        "meaning": "Type-specific flags (END_STREAM, END_HEADERS, PADDED, PRIORITY, ACK, ...)."
+      },
+      {
+        "field": "R + Stream Identifier",
+        "size": "4 bytes",
+        "meaning": "Reserved bit (must be 0) + 31-bit stream id (0 for connection-level frames)."
+      }
+    ],
+    "example_hex": "00 00 00 04 00 00 00 00 00",
+    "example_decoded": "SETTINGS frame, stream 0, no flags, empty payload",
+    "notes": [
+      "Frame header is always exactly 9 bytes.",
+      "Maximum frame size defaults to 16384 octets; negotiated via SETTINGS_MAX_FRAME_SIZE.",
+      "Stream id 0 is the connection; odd ids are client-initiated, even are server-initiated (push).",
+      "HPACK (RFC 7541) compresses headers into HEADERS/CONTINUATION payloads."
+    ]
+  },
+  "updated": "2026-05-29"
+}

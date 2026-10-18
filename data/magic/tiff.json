@@ -1,0 +1,39 @@
+{
+  "id": "magic/tiff",
+  "family": "magic",
+  "slug": "tiff",
+  "title": "TIFF signature (II* / MM*)",
+  "summary": "A TIFF image begins with a byte-order mark: II (0x49 0x49) for little-endian or MM (0x4D 0x4D) for big-endian, followed by the magic number 42 (0x2A 0x00 little-endian or 0x00 0x2A big-endian).",
+  "kind": "signature",
+  "aliases": [
+    "tiff magic",
+    ".tif",
+    ".tiff"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "49 49 2A 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "tif",
+      "tiff"
+    ],
+    "mime": "image/tiff",
+    "spec": "TIFF 6.0 specification",
+    "notes": [
+      "Bytes 0-1: byte order ('II' little-endian, 'MM' big-endian).",
+      "Bytes 2-3: magic number 42 (0x002A), byte-order dependent.",
+      "Byte 4 onward: offset to the first Image File Directory (IFD).",
+      "Big-endian variant uses 'MM' followed by 0x00 0x2A."
+    ]
+  },
+  "updated": "2026-05-29"
+}

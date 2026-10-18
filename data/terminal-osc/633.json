@@ -1,0 +1,113 @@
+{
+  "id": "terminal-osc/633",
+  "family": "terminal-osc",
+  "slug": "633",
+  "title": "OSC 633 — VS Code shell integration",
+  "summary": "OSC 633 marks shell-integration boundaries for VS Code's terminal: prompt start, command start, command executed, and command finished (with exit code and optional duration). It parallels OSC 133 but adds VS Code-specific properties such as the current working directory and an explicit 'E' (command line) marker.",
+  "kind": "control-sequence",
+  "aliases": [
+    "VS Code shell integration",
+    "OSC 633",
+    "VSCODE shell integration"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://code.visualstudio.com/docs/terminal/shell-integration",
+  "source_version": "VS Code docs, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [
+    "terminal-osc/133",
+    "terminal-osc/7"
+  ],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 633,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC 633 ; <command> ST, where <command> is A/B/C/D/E. ST (ESC \\) or BEL terminates."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "alt_BEL": "\u0007",
+      "note": "ECMA-48 mandates ST; BEL is widely accepted."
+    },
+    "params": [
+      {
+        "id": "A",
+        "anchor": "#A",
+        "name": "Prompt start (A)",
+        "meaning": "OSC 633 ; A ST marks the start of a prompt.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]633;A\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 3 3 ; A ST",
+        "subparams": []
+      },
+      {
+        "id": "B",
+        "anchor": "#B",
+        "name": "Command start (B)",
+        "meaning": "OSC 633 ; B ST marks the start of the command line (end of prompt).",
+        "required": true,
+        "byte_sequence_ST": "\u001b]633;B\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 3 3 ; B ST",
+        "subparams": []
+      },
+      {
+        "id": "C",
+        "anchor": "#C",
+        "name": "Command executed (C)",
+        "meaning": "OSC 633 ; C ST marks the start of command output (end of command line).",
+        "required": true,
+        "byte_sequence_ST": "\u001b]633;C\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 3 3 ; C ST",
+        "subparams": []
+      },
+      {
+        "id": "D",
+        "anchor": "#D",
+        "name": "Command finished (D)",
+        "meaning": "OSC 633 ; D [; exitcode] [; duration] ST marks command completion, optionally carrying the exit code and duration in ms.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]633;D;0\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 3 3 ; D ; 0 ST (exit 0)",
+        "subparams": []
+      },
+      {
+        "id": "E",
+        "anchor": "#E",
+        "name": "Command line (E)",
+        "meaning": "OSC 633 ; E ; <commandline> ST reports the command line text to the terminal.",
+        "required": false,
+        "byte_sequence_ST": "\u001b]633;E;ls -la\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 3 3 ; E ; ls -la ST",
+        "subparams": []
+      },
+      {
+        "id": "P",
+        "anchor": "#P",
+        "name": "Property (P)",
+        "meaning": "OSC 633 ; P ; <key>=<value> ST sets a property such as Cwd (current working directory).",
+        "required": false,
+        "byte_sequence_ST": "\u001b]633;P;Cwd=/home/user\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 6 3 3 ; P ; Cwd=/home/user ST",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "VS Code's shell integration also relies on OSC 7 (cwd) and OSC 133 in some setups; 633 is the VS Code-native variant.",
+      "D's exit code and duration are optional but recommended for the terminal's command navigation UI.",
+      "Command lines reported via E may contain sensitive data; terminals should not persist them without consent."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 633 subcommands A-E and P render as byte-exact ST-terminated OSC sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29T00:00:00Z"
+}

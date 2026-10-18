@@ -1,0 +1,36 @@
+{
+  "id": "magic/woff",
+  "family": "magic",
+  "slug": "woff",
+  "title": "WOFF 1.0 font signature (wOFF)",
+  "summary": "A WOFF (Web Open Font Format) 1.0 file begins with the 4-byte signature 'wOFF'.",
+  "kind": "signature",
+  "aliases": [
+    "woff magic",
+    ".woff"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "77 4F 46 46",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "woff"
+    ],
+    "mime": "font/woff",
+    "spec": "WOFF 1.0 (W3C)",
+    "notes": [
+      "Bytes 0-3: 'wOFF' (0x77 0x4F 0x46 0x46).",
+      "Bytes 4-7: flavor (the original font's scaler type, e.g. 0x00010000 or 'OTTO').",
+      "Followed by total length, numTables, and the table directory."
+    ]
+  },
+  "updated": "2026-05-29"
+}

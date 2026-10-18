@@ -1,0 +1,29 @@
+{
+  "id": "identifier/cuid",
+  "family": "identifier",
+  "slug": "cuid",
+  "title": "CUID (v1)",
+  "summary": "CUID (collision-resistant unique id) v1 is a 25-character, URL-safe, monotonically increasing-ish identifier built from a timestamp, a counter, a fingerprint, and randomness, prefixed with 'c'.",
+  "kind": "identifier",
+  "aliases": [
+    "CUID (v1)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "github.com/paralleldrive/cuid",
+    "example": "ckopqwo9q000001e0f5q4g5q4",
+    "notes": [
+      "Prefix 'c' marks a CUID.",
+      "Timestamp (base-36, milliseconds) + counter + fingerprint + randomness.",
+      "25 characters, lowercase, URL-safe.",
+      "Largely superseded by CUID2 for security-sensitive contexts."
+    ]
+  },
+  "updated": "2026-05-29"
+}

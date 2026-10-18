@@ -1,0 +1,37 @@
+{
+  "id": "magic/arrow",
+  "family": "magic",
+  "slug": "arrow",
+  "title": "Apache Arrow IPC file signature (ARROW1)",
+  "summary": "An Arrow IPC (Feather v2) file begins with the 6-byte magic 'ARROW1'.",
+  "kind": "signature",
+  "aliases": [
+    "arrow magic",
+    ".arrow",
+    ".feather"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "41 52 52 4F 57 31",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "arrow",
+      "feather"
+    ],
+    "mime": "application/vnd.apache.arrow.file",
+    "spec": "Apache Arrow IPC format",
+    "notes": [
+      "Bytes 0-5: 'ARROW1' (0x41 0x52 0x52 0x4F 0x57 0x31).",
+      "Followed by padding to an 8-byte boundary, then the Arrow IPC stream of record batches."
+    ]
+  },
+  "updated": "2026-05-29"
+}

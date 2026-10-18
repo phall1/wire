@@ -1,0 +1,37 @@
+{
+  "id": "magic/pcap",
+  "family": "magic",
+  "slug": "pcap",
+  "title": "libpcap capture file signature (microsecond timestamps)",
+  "summary": "A classic libpcap capture file begins with the magic number 0xA1B2C3D4 (stored little-endian as D4 C3 B2 A1) for microsecond-resolution timestamps.",
+  "kind": "signature",
+  "aliases": [
+    "pcap magic",
+    ".pcap"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "D4 C3 B2 A1",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "pcap"
+    ],
+    "mime": "application/vnd.tcpdump.pcap",
+    "spec": "libpcap file format",
+    "notes": [
+      "Bytes 0-3: magic 0xA1B2C3D4 (microsecond) little-endian, or 0x4D3CB2A1 (nanosecond).",
+      "Bytes 4-5: major version (2). Bytes 6-7: minor version (4).",
+      "Bytes 8-11: thiszone (GMT offset). Bytes 12-15: sigfigs. Bytes 16-19: snaplen. Bytes 20-23: network (link-layer type).",
+      "Big-endian file uses the byte-swapped magic A1 B2 C3 D4."
+    ]
+  },
+  "updated": "2026-05-29"
+}

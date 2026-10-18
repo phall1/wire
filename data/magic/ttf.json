@@ -1,0 +1,36 @@
+{
+  "id": "magic/ttf",
+  "family": "magic",
+  "slug": "ttf",
+  "title": "TrueType font signature (0x00010000)",
+  "summary": "A TrueType font file begins with the 4-byte scaler type 0x00010000 (often read as the version tag).",
+  "kind": "signature",
+  "aliases": [
+    "ttf magic",
+    ".ttf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "00 01 00 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "ttf"
+    ],
+    "mime": "font/ttf",
+    "spec": "TrueType (Apple/Microsoft)",
+    "notes": [
+      "Bytes 0-3: scaler type 0x00010000.",
+      "Followed by numTables (uint16), searchRange, entrySelector, rangeShift.",
+      "Contrast with OpenType (OTTO) and TrueType collections (ttcf)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

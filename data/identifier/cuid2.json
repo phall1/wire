@@ -1,0 +1,29 @@
+{
+  "id": "identifier/cuid2",
+  "family": "identifier",
+  "slug": "cuid2",
+  "title": "CUID2",
+  "summary": "CUID2 is the secure, modern replacement for CUID v1: a variable-length (default 24) URL-safe string derived from a hash of entropy, a timestamp, and a counter, with no monotonic prefix leaked.",
+  "kind": "identifier",
+  "aliases": [
+    "CUID2"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "github.com/paralleldrive/cuid2",
+    "example": "tz4a98xxat96iws9zmbrgj3a",
+    "notes": [
+      "Default length 24 characters.",
+      "No timestamp prefix exposed (avoids leaking creation time).",
+      "URL-safe alphabet (a-z, 0-9).",
+      "Collision-resistant via hashing of entropy + counter."
+    ]
+  },
+  "updated": "2026-05-29"
+}

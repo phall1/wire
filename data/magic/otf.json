@@ -1,0 +1,35 @@
+{
+  "id": "magic/otf",
+  "family": "magic",
+  "slug": "otf",
+  "title": "OpenType font signature (OTTO)",
+  "summary": "An OpenType font with CFF outlines begins with the 4-byte tag 'OTTO'.",
+  "kind": "signature",
+  "aliases": [
+    "otf magic",
+    ".otf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4F 54 54 4F",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "otf"
+    ],
+    "mime": "font/otf",
+    "spec": "OpenType specification",
+    "notes": [
+      "Bytes 0-3: 'OTTO' (0x4F 0x54 0x54 0x4F).",
+      "Shares the TrueType table directory layout; the 'OTTO' tag signals CFF (PostScript) outlines instead of TrueType glyf."
+    ]
+  },
+  "updated": "2026-05-29"
+}

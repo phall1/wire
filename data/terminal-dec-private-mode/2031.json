@@ -1,0 +1,68 @@
+{
+  "id": "terminal-dec-private-mode/2031",
+  "family": "terminal-dec-private-mode",
+  "slug": "2031",
+  "title": "DECSET 2031 — Color scheme updates (dark/light)",
+  "summary": "CSI ? 2031 h asks the terminal to send OSC 21 (color scheme change) notifications when the system switches between dark and light mode. CSI ? 2031 l disables them.",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSET 2031",
+    "DECRST 2031",
+    "?2031"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 2031,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private modes are CSI sequences with a leading '?' (0x3F) private-parameter prefix. Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST)."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: a DEC private mode is a CSI sequence ending at its final byte ('h' to set, 'l' to reset)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 2031 h Color scheme change notifications.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?2031h",
+        "byte_sequence_ST_readable": "ESC [ ? 2031 h",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 2031 l disables the mode.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?2031l",
+        "byte_sequence_ST_readable": "ESC [ ? 2031 l",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "When enabled, the terminal emits OSC 21 ; dark or OSC 21 ; light on a scheme change.",
+      "Lets TUIs adapt their palette without polling.",
+      "Support is growing but not universal; fall back to querying with OSC 11/10."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSET/DECRST 2031 render as byte-exact CSI ? 2031 h/l sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

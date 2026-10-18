@@ -1,0 +1,43 @@
+{
+  "id": "wire-format/http1-request",
+  "family": "wire-format",
+  "slug": "http1-request",
+  "title": "HTTP/1.1 request message",
+  "summary": "An HTTP/1.1 request is a start-line, header fields, an empty line, then an optional message body. The start-line is 'METHOD SP request-target SP HTTP-version CRLF'.",
+  "kind": "wire-format",
+  "aliases": [
+    "HTTP/1.1 request message"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://www.rfc-editor.org/",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 9112",
+    "summary": "An HTTP/1.1 request is a start-line, header fields, an empty line, then an optional message body. The start-line is 'METHOD SP request-target SP HTTP-version CRLF'.",
+    "structure": [
+      {
+        "field": "request-target",
+        "size": "variable",
+        "meaning": "origin-form / absolute-form / authority-form / asterisk-form (RFC 9112 §3.2)."
+      },
+      {
+        "field": "HTTP-version",
+        "size": "8 bytes",
+        "meaning": "'HTTP/1.1' (or 'HTTP/1.0', 'HTTP/2')."
+      }
+    ],
+    "example_hex": "47 45 54 20 2f 20 48 54 54 50 2f 31 2e 31 0d 0a",
+    "example_decoded": "GET / HTTP/1.1\\r\\n",
+    "notes": [
+      "Start-line: METHOD SP request-target SP HTTP-version CRLF.",
+      "Header section: field-name ':' OWS field-value OWS, each terminated by CRLF; empty line (CRLF) ends headers.",
+      "Message body length determined by Transfer-Encoding (chunked) or Content-Length.",
+      "Connection semantics: keep-alive by default in HTTP/1.1."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "magic/avro",
+  "family": "magic",
+  "slug": "avro",
+  "title": "Apache Avro object container signature (Obj\\x01)",
+  "summary": "An Avro object container file begins with the 4-byte magic 'Obj\\x01'.",
+  "kind": "signature",
+  "aliases": [
+    "avro magic",
+    ".avro"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4F 62 6A 01",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "avro"
+    ],
+    "mime": "application/avro",
+    "spec": "Apache Avro specification",
+    "notes": [
+      "Bytes 0-3: 'Obj\\x01' (0x4F 0x62 0x6A 0x01).",
+      "Followed by a 16-byte sync marker, then a metadata map (including the Avro schema) and data blocks."
+    ]
+  },
+  "updated": "2026-05-29"
+}

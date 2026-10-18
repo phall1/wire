@@ -1,0 +1,35 @@
+{
+  "id": "magic/woff2",
+  "family": "magic",
+  "slug": "woff2",
+  "title": "WOFF 2.0 font signature (wOF2)",
+  "summary": "A WOFF 2.0 file begins with the 4-byte signature 'wOF2'.",
+  "kind": "signature",
+  "aliases": [
+    "woff2 magic",
+    ".woff2"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "77 4F 46 32",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "woff2"
+    ],
+    "mime": "font/woff2",
+    "spec": "WOFF 2.0 (W3C)",
+    "notes": [
+      "Bytes 0-3: 'wOF2' (0x77 0x4F 0x46 0x32).",
+      "Uses Brotli compression of font tables; otherwise mirrors WOFF 1.0 structure."
+    ]
+  },
+  "updated": "2026-05-29"
+}

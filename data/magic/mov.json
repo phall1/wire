@@ -1,0 +1,36 @@
+{
+  "id": "magic/mov",
+  "family": "magic",
+  "slug": "mov",
+  "title": "QuickTime MOV signature (ftyp qt  )",
+  "summary": "A QuickTime .mov file is an ISOBMFF file whose ftyp major brand is 'qt  ' (QuickTime).",
+  "kind": "signature",
+  "aliases": [
+    "mov magic",
+    ".mov"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "66 74 79 70 71 74 20 20",
+    "offset": 4,
+    "magic_ascii": "",
+    "extensions": [
+      "mov"
+    ],
+    "mime": "video/quicktime",
+    "spec": "QuickTime File Format (Apple)",
+    "notes": [
+      "Bytes 4-7: 'ftyp'.",
+      "Bytes 8-11: major brand 'qt  ' (0x71 0x74 0x20 0x20).",
+      "Otherwise the same ISOBMFF box structure as MP4."
+    ]
+  },
+  "updated": "2026-05-29"
+}

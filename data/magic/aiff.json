@@ -1,0 +1,41 @@
+{
+  "id": "magic/aiff",
+  "family": "magic",
+  "slug": "aiff",
+  "title": "AIFF signature (FORM....AIFF)",
+  "summary": "An AIFF audio file is an IFF container: 'FORM', a 4-byte big-endian size, then the form type 'AIFF'.",
+  "kind": "signature",
+  "aliases": [
+    "aiff magic",
+    ".aif",
+    ".aiff",
+    ".aifc"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "46 4F 52 4D",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "aif",
+      "aiff",
+      "aifc"
+    ],
+    "mime": "audio/aiff",
+    "spec": "AIFF (Apple)",
+    "notes": [
+      "Bytes 0-3: 'FORM' (0x46 0x4F 0x52 0x4D).",
+      "Bytes 4-7: file size minus 8, big-endian.",
+      "Bytes 8-11: 'AIFF' (0x41 0x49 0x46 0x46) or 'AIFC'.",
+      "Followed by 'COMM' and 'SSND' chunks."
+    ]
+  },
+  "updated": "2026-05-29"
+}

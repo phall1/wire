@@ -1,0 +1,29 @@
+{
+  "id": "identifier/uuidv2",
+  "family": "identifier",
+  "slug": "uuidv2",
+  "title": "UUIDv2 (DCE Security)",
+  "summary": "UUID version 2 (DCE Security) reuses the v1 layout but replaces the low 32 bits of the timestamp with a POSIX UID or GID, and the clock sequence high bits with the ID type (UID/GID/group). It is rarely used and largely superseded by v7.",
+  "kind": "identifier",
+  "aliases": [
+    "UUIDv2 (DCE Security)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "DCE Security (OSF) / RFC 9562",
+    "example": "000003e8-232a-2000-8000-000000000000",
+    "notes": [
+      "time_low holds a POSIX UID or GID instead of the low 32 bits of the timestamp.",
+      "Version field = 2; variant = DCE (10x).",
+      "Clock sequence high bits encode the ID type (0 = user, 1 = group, 2 = org).",
+      "Largely obsolete; prefer UUIDv7 for new systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

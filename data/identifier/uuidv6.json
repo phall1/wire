@@ -1,0 +1,29 @@
+{
+  "id": "identifier/uuidv6",
+  "family": "identifier",
+  "slug": "uuidv6",
+  "title": "UUIDv6 (reordered time, RFC 9562)",
+  "summary": "UUID version 6 reorders the v1 timestamp into big-endian, time-ordered form so that UUIDs sort chronologically. It keeps the v1 node/clock fields for compatibility.",
+  "kind": "identifier",
+  "aliases": [
+    "UUIDv6 (reordered time, RFC 9562)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "RFC 9562",
+    "example": "1ec9414c-232a-6b00-b3c8-9e6bdeced846",
+    "notes": [
+      "time_high (32) + time_mid (16) + time_low (12) reordered to a 60-bit Unix timestamp in 100-ns units.",
+      "Version = 6; variant = RFC 4122 (10x).",
+      "Clock sequence (14 bits) + node (48 bits) as in v1.",
+      "Lexicographically sortable by creation time; drop-in for systems keyed on v1."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "identifier/xid",
+  "family": "identifier",
+  "slug": "xid",
+  "title": "XID (globally unique, sortable)",
+  "summary": "An XID is a 12-byte, 20-character base32 (Crockford) identifier: a 4-byte Unix timestamp (seconds), a 3-byte machine id, a 2-byte process id, and a 3-byte counter. Designed as a Mongo ObjectId alternative.",
+  "kind": "identifier",
+  "aliases": [
+    "XID (globally unique, sortable)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "github.com/rs/xid",
+    "example": "9m4e2mr0ui3e8a215n4g",
+    "notes": [
+      "timestamp: 4 bytes (big-endian seconds).",
+      "machine: 3 bytes.",
+      "pid: 2 bytes.",
+      "counter: 3 bytes (big-endian).",
+      "Encoded as 20 Crockford base32 chars; URL-safe and sortable."
+    ]
+  },
+  "updated": "2026-05-29"
+}

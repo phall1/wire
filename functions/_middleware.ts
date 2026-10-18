@@ -38,5 +38,12 @@ export const onRequest = async (context: Ctx): Promise<Response> => {
   const headers = new Headers(res.headers);
   headers.set("access-control-allow-origin", "*");
   headers.append("vary", "Accept");
+  // AI-agent discovery hints (llms.txt spec): point every response at the
+  // site's llms.txt via the standard `describedby` link relation.
+  const links = ['</llms.txt>; rel="describedby"'];
+  if (isBareEntry && !accept.includes("application/json")) {
+    links.push(`<${path}.json>; rel="alternate"; type="application/json"`);
+  }
+  headers.append("link", links.join(", "));
   return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
 };

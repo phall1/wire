@@ -1,0 +1,42 @@
+{
+  "id": "magic/mp4",
+  "family": "magic",
+  "slug": "mp4",
+  "title": "MP4 / ISOBMFF signature (ftyp box)",
+  "summary": "An MP4 file begins with an ISOBMFF box whose type is 'ftyp' (file type box), usually preceded by a 4-byte box size.",
+  "kind": "signature",
+  "aliases": [
+    "mp4 magic",
+    ".mp4",
+    ".m4a",
+    ".m4v"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "66 74 79 70",
+    "offset": 4,
+    "magic_ascii": "",
+    "extensions": [
+      "mp4",
+      "m4a",
+      "m4v"
+    ],
+    "mime": "video/mp4",
+    "spec": "ISO/IEC 14496-12 (ISOBMFF)",
+    "notes": [
+      "Bytes 0-3: box size (big-endian), commonly 0x00000020 (32) or 0x0000001C (28).",
+      "Bytes 4-7: 'ftyp' (0x66 0x74 0x79 0x70).",
+      "Bytes 8-11: major brand (e.g. 'isom', 'mp41', 'mp42', 'M4V ').",
+      "Bytes 12-15: minor version (usually 0x00000000).",
+      "Remainder of ftyp: compatible brands."
+    ]
+  },
+  "updated": "2026-05-29"
+}

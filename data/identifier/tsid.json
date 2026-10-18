@@ -1,0 +1,29 @@
+{
+  "id": "identifier/tsid",
+  "family": "identifier",
+  "slug": "tsid",
+  "title": "TSID (Time-Sorted ID)",
+  "summary": "A TSID is a 64-bit time-sortable identifier: a 42-bit millisecond timestamp (custom epoch) plus a 22-bit random node/counter, encoded as 13 Crockford base32 characters.",
+  "kind": "identifier",
+  "aliases": [
+    "TSID (Time-Sorted ID)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "github.com/f4b6a3/tsid-creator",
+    "example": "0H8X7Y5F6J2K4M3N1P0Q9R8",
+    "notes": [
+      "42-bit timestamp in milliseconds (epoch configurable, default 2020-01-01).",
+      "22-bit node/counter (or node + sequence).",
+      "64-bit total -> 13 Crockford base32 characters.",
+      "Sortable, URL-safe, and fits in a signed 64-bit integer."
+    ]
+  },
+  "updated": "2026-05-29"
+}

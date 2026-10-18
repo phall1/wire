@@ -1,0 +1,36 @@
+{
+  "id": "magic/webm",
+  "family": "magic",
+  "slug": "webm",
+  "title": "WebM / Matroska EBML header (already matroska-webm)",
+  "summary": "WebM uses the same EBML header as Matroska: 0x1A 0x45 0xDF 0xA3 at offset 0, with DocType 'webm'.",
+  "kind": "signature",
+  "aliases": [
+    "webm magic",
+    ".webm"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "1A 45 DF A3",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "webm"
+    ],
+    "mime": "video/webm",
+    "spec": "WebM / Matroska",
+    "notes": [
+      "Bytes 0-3: EBML header id 0x1A45DFA3.",
+      "DocType element (0x4282) contains 'webm' instead of 'matroska'.",
+      "See magic/matroska-webm for the shared container details."
+    ]
+  },
+  "updated": "2026-05-29"
+}
