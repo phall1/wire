@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/crc",
+  "family": "wire-format",
+  "slug": "crc",
+  "title": "CRC (Cyclic Redundancy Check)",
+  "summary": "CRC is an error-detecting code based on polynomial division. Data is treated as a polynomial; divided by a generator polynomial; remainder is the CRC. Common CRCs: CRC-8 (0x07), CRC-16-CCITT (0x1021), CRC-32 (0x04C11DB7, used in Ethernet, ZIP, PNG), CRC-64 (0x000000000000001B). Properties: detects all single-bit errors, all double-bit errors (for CRC width ≥ 2), all odd-bit errors (if generator has factor x+1), burst errors up to width bits.",
+  "kind": "wire-format",
+  "aliases": [
+    "CRC (Cyclic Redundancy Check)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Cyclic_redundancy_check",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "CRC (Peterson, 1961)",
+    "summary": "CRC is an error-detecting code based on polynomial division. Data is treated as a polynomial; divided by a generator polynomial; remainder is the CRC. Common CRCs: CRC-8 (0x07), CRC-16-CCITT (0x1021), CRC-32 (0x04C11DB7, used in Ethernet, ZIP, PNG), CRC-64 (0x000000000000001B). Properties: detects all single-bit errors, all double-bit errors (for CRC width ≥ 2), all odd-bit errors (if generator has factor x+1), burst errors up to width bits.",
+    "structure": [
+      {
+        "field": "Generator polynomial",
+        "size": "degree+1 bits",
+        "meaning": "The divisor polynomial. E.g., CRC-32: x^32 + x^26 + x^23 + x^22 + x^16 + x^12 + x^11 + x^10 + x^8 + x^7 + x^5 + x^4 + x^2 + x + 1 (0x04C11DB7)."
+      },
+      {
+        "field": "CRC computation",
+        "size": "O(n) with lookup table",
+        "meaning": "Process data byte by byte. For each byte, XOR with CRC register, look up in table, shift. O(n) with table, O(n*w) without."
+      },
+      {
+        "field": "CRC-32",
+        "size": "4 bytes",
+        "meaning": "Polynomial 0x04C11DB7. Used in Ethernet (FCS), ZIP, PNG, gzip, and many other formats."
+      },
+      {
+        "field": "CRC-16-CCITT",
+        "size": "2 bytes",
+        "meaning": "Polynomial 0x1021. Used in X.25, HDLC, and many telecom protocols."
+      },
+      {
+        "field": "CRC-8",
+        "size": "1 byte",
+        "meaning": "Polynomial 0x07. Used in SMBus, I2C, and small packets."
+      },
+      {
+        "field": "Detection capability",
+        "size": "properties",
+        "meaning": "Detects: all single-bit errors, all double-bit errors (width ≥ 2), all odd-bit errors (if gen has x+1 factor), burst errors ≤ width bits."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "CRC (placeholder)",
+    "notes": [
+      "CRC is not a cryptographic hash (easily forged). Used for error detection, not security.",
+      "CRC-32 is the most common (Ethernet FCS, ZIP, PNG, gzip).",
+      "Table-driven CRC is O(n) with a 256-entry lookup table.",
+      "Bit-by-bit CRC is O(n*w) but needs no table.",
+      "CRCs are linear: CRC(a XOR b) = CRC(a) XOR CRC(b) (for same length). This property is used in attacks."
+    ]
+  },
+  "updated": "2026-05-29"
+}

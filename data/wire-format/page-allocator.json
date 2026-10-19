@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/page-allocator",
+  "family": "wire-format",
+  "slug": "page-allocator",
+  "title": "Linux page allocator (buddy system)",
+  "summary": "The Linux page allocator uses the buddy system for physical page allocation. Memory is divided into blocks of power-of-2 pages (order 0 = 1 page, order 1 = 2 pages, ..., order 10 = 1024 pages = 4MB). Free blocks are kept in per-order free lists. Allocation: find smallest free block >= requested size, split if larger (buddy). Deallocation: coalesce with buddy if free. Per-zone (DMA, DMA32, Normal, Movable, Device) and per-node (NUMA).",
+  "kind": "wire-format",
+  "aliases": [
+    "Linux page allocator (buddy system)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Buddy_memory_allocation",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (buddy allocator)",
+    "summary": "The Linux page allocator uses the buddy system for physical page allocation. Memory is divided into blocks of power-of-2 pages (order 0 = 1 page, order 1 = 2 pages, ..., order 10 = 1024 pages = 4MB). Free blocks are kept in per-order free lists. Allocation: find smallest free block >= requested size, split if larger (buddy). Deallocation: coalesce with buddy if free. Per-zone (DMA, DMA32, Normal, Movable, Device) and per-node (NUMA).",
+    "structure": [
+      {
+        "field": "Order",
+        "size": "0-10 (or higher)",
+        "meaning": "Order n = 2^n pages. Order 0 = 1 page (4KB), order 10 = 1024 pages (4MB)."
+      },
+      {
+        "field": "Free list",
+        "size": "per order, per zone",
+        "meaning": "Doubly-linked list of free blocks of each order."
+      },
+      {
+        "field": "Allocation",
+        "size": "O(log n)",
+        "meaning": "Find smallest free block >= requested. If larger, split (buddy). May allocate from higher order."
+      },
+      {
+        "field": "Deallocation",
+        "size": "O(log n)",
+        "meaning": "Free block. Check if buddy is free; if so, coalesce. Repeat."
+      },
+      {
+        "field": "Zones",
+        "size": "per node",
+        "meaning": "DMA (0-16MB), DMA32 (0-4GB), Normal (4GB+), Movable, Device. Each zone has its own free lists."
+      },
+      {
+        "field": "NUMA",
+        "size": "per node",
+        "meaning": "Each NUMA node has its own zones. Allocation prefers local node."
+      },
+      {
+        "field": "Fragmentation",
+        "size": "metric",
+        "meaning": "External fragmentation: free memory split into small blocks. Compaction (memory compaction) defragments."
+      },
+      {
+        "field": "Watermarks",
+        "size": "per zone",
+        "meaning": "min, low, high watermarks. When free memory drops below 'low', kswapd (reclaim) starts. Below 'min', direct reclaim (blocking)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Buddy allocator (placeholder)",
+    "notes": [
+      "Buddy allocator is O(log n) for both allocation and deallocation.",
+      "External fragmentation is managed by compaction (migrating pages to create contiguous free blocks).",
+      "Slab allocator sits on top of buddy allocator for small objects (kmalloc, kmem_cache).",
+      "Page allocator handles large allocations (vmalloc, ioremap, large pages).",
+      "Memory hotplug: add/remove memory at runtime (for VMs, containers)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

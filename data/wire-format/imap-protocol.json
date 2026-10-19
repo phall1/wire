@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/imap-protocol",
+  "family": "wire-format",
+  "slug": "imap-protocol",
+  "title": "IMAP (Internet Message Access Protocol)",
+  "summary": "IMAP is a protocol for accessing email on a server. Unlike POP3, IMAP keeps messages on the server and supports folders, search, and partial fetch. Commands: LOGIN, SELECT, EXAMINE, CREATE, DELETE, RENAME, SUBSCRIBE, LIST, LSUB, STATUS, APPEND, CHECK, CLOSE, EXPUNGE, SEARCH, FETCH, STORE, COPY, UID, IDLE, NAMESPACE, CAPABILITY, LOGOUT. Responses: OK, NO, BAD, PREAUTH, BYE.",
+  "kind": "wire-format",
+  "aliases": [
+    "IMAP (Internet Message Access Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 9051 (IMAP4rev2)",
+    "summary": "IMAP is a protocol for accessing email on a server. Unlike POP3, IMAP keeps messages on the server and supports folders, search, and partial fetch. Commands: LOGIN, SELECT, EXAMINE, CREATE, DELETE, RENAME, SUBSCRIBE, LIST, LSUB, STATUS, APPEND, CHECK, CLOSE, EXPUNGE, SEARCH, FETCH, STORE, COPY, UID, IDLE, NAMESPACE, CAPABILITY, LOGOUT. Responses: OK, NO, BAD, PREAUTH, BYE.",
+    "structure": [
+      {
+        "field": "LOGIN",
+        "size": "command",
+        "meaning": "Authenticate: LOGIN username password."
+      },
+      {
+        "field": "SELECT",
+        "size": "command",
+        "meaning": "Select a mailbox: SELECT INBOX. Returns mailbox status (exists, recent, unseen, uidnext, uidvalidity)."
+      },
+      {
+        "field": "FETCH",
+        "size": "command",
+        "meaning": "Fetch message data: FETCH 1:10 (FLAGS BODY[HEADER]). Returns message content."
+      },
+      {
+        "field": "SEARCH",
+        "size": "command",
+        "meaning": "Search messages: SEARCH UNSEEN, SEARCH FROM sender, SEARCH SINCE date, SEARCH TEXT keyword."
+      },
+      {
+        "field": "STORE",
+        "size": "command",
+        "meaning": "Change message flags: STORE 1 +FLAGS (\\Seen), STORE 1 -FLAGS (\\Deleted)."
+      },
+      {
+        "field": "IDLE",
+        "size": "command",
+        "meaning": "Wait for new messages. Server pushes notifications. Client sends DONE to exit."
+      },
+      {
+        "field": "UID",
+        "size": "command",
+        "meaning": "UID-based variants: UID FETCH, UID SEARCH, UID STORE, UID COPY, UID MOVE."
+      },
+      {
+        "field": "CAPABILITY",
+        "size": "command",
+        "meaning": "List server capabilities: IMAP4rev2, STARTTLS, AUTH=PLAIN, IDLE, MOVE, etc."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "IMAP (placeholder)",
+    "notes": [
+      "IMAP uses TCP port 143 (plain) or 993 (IMAPS/TLS).",
+      "IMAP keeps messages on the server (unlike POP3 which downloads and deletes).",
+      "IMAP supports multiple mailboxes (folders) and hierarchical folder structure.",
+      "IDLE command enables push notifications for new mail.",
+      "IMAP4rev2 (RFC 9051) is the latest version, obsoleting IMAP4rev1."
+    ]
+  },
+  "updated": "2026-05-29"
+}

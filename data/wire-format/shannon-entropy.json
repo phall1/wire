@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/shannon-entropy",
+  "family": "wire-format",
+  "slug": "shannon-entropy",
+  "title": "Shannon entropy",
+  "summary": "H(X) = -Σ p(x) log2 p(x). Measures average information content in bits. Minimum bits to encode a random variable. Source coding theorem: can compress to H(X) bits per symbol (lossless) or H(X|Y) with side info.",
+  "kind": "wire-format",
+  "aliases": [
+    "Shannon entropy"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Entropy_(information_theory)",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Shannon information theory (1948)",
+    "summary": "H(X) = -Σ p(x) log2 p(x). Measures average information content in bits. Minimum bits to encode a random variable. Source coding theorem: can compress to H(X) bits per symbol (lossless) or H(X|Y) with side info.",
+    "structure": [
+      {
+        "field": "Entropy H(X)",
+        "size": "bits",
+        "meaning": "H(X) = -Σ p(x) log2 p(x). Uniform distribution maximizes entropy: H = log2(n) for n symbols."
+      },
+      {
+        "field": "Joint entropy H(X,Y)",
+        "size": "bits",
+        "meaning": "H(X,Y) = -Σ p(x,y) log2 p(x,y). H(X,Y) ≤ H(X)+H(Y)."
+      },
+      {
+        "field": "Conditional entropy H(X|Y)",
+        "size": "bits",
+        "meaning": "H(X|Y) = H(X,Y) - H(Y). Information X provides given Y."
+      },
+      {
+        "field": "Mutual information I(X;Y)",
+        "size": "bits",
+        "meaning": "I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X). Symmetric measure of dependence."
+      },
+      {
+        "field": "Channel capacity",
+        "size": "bits/use",
+        "meaning": "C = max I(X;Y) over input distributions. Shannon's channel coding theorem: can achieve any rate R < C with arbitrarily low error."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Shannon entropy (placeholder)",
+    "notes": [
+      "Shannon's 1948 paper 'A Mathematical Theory of Communication' founded information theory.",
+      "Entropy is the fundamental limit of lossless compression.",
+      "Channel capacity is the fundamental limit of reliable communication.",
+      "Kolmogorov complexity K(x) = minimum program length to produce x. K(x) ≤ H(x) + O(1).",
+      "Mutual information is used in feature selection, clustering, and dependency analysis."
+    ]
+  },
+  "updated": "2026-05-29"
+}

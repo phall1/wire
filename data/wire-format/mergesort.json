@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/mergesort",
+  "family": "wire-format",
+  "slug": "mergesort",
+  "title": "Mergesort",
+  "summary": "Divide-and-conquer sorting: split array in half, sort each half, merge. Guaranteed O(n log n) (best, average, worst). Stable (equal elements preserve order). Requires O(n) extra space. Used in Java's Arrays.sort() for objects, Python's sorted(), and external sorting.",
+  "kind": "wire-format",
+  "aliases": [
+    "Mergesort"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Merge_sort",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Mergesort (von Neumann, 1945)",
+    "summary": "Divide-and-conquer sorting: split array in half, sort each half, merge. Guaranteed O(n log n) (best, average, worst). Stable (equal elements preserve order). Requires O(n) extra space. Used in Java's Arrays.sort() for objects, Python's sorted(), and external sorting.",
+    "structure": [
+      {
+        "field": "Divide",
+        "size": "O(1)",
+        "meaning": "Split array into two halves."
+      },
+      {
+        "field": "Conquer",
+        "size": "2 * T(n/2)",
+        "meaning": "Recursively sort each half."
+      },
+      {
+        "field": "Merge",
+        "size": "O(n)",
+        "meaning": "Merge two sorted halves into one sorted array. Uses temporary buffer."
+      },
+      {
+        "field": "Bottom-up mergesort",
+        "size": "variant",
+        "meaning": "Iterative: start with size-1 runs, merge to size-2, size-4, etc. No recursion. Better cache locality."
+      },
+      {
+        "field": "Timsort",
+        "size": "variant",
+        "meaning": "Hybrid of mergesort and insertion sort. Finds natural runs, merges them. Used in Python and Java. O(n) for already-sorted data."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Mergesort (placeholder)",
+    "notes": [
+      "Mergesort is stable (preserves order of equal elements).",
+      "Mergesort requires O(n) extra space (not in-place).",
+      "Timsort (Python, Java) is a hybrid that exploits natural runs.",
+      "Mergesort is preferred for linked lists (no random access needed).",
+      "External mergesort is used for sorting data larger than memory."
+    ]
+  },
+  "updated": "2026-05-29"
+}

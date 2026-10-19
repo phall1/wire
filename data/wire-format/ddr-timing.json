@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/ddr-timing",
+  "family": "wire-format",
+  "slug": "ddr-timing",
+  "title": "DDR (Double Data Rate) memory timing",
+  "summary": "DDR memory timing parameters define the timing of memory operations. Key parameters: CAS latency (CL, column address strobe), RAS to CAS delay (tRCD), Row Precharge time (tRP), Row Active time (tRAS), Row Cycle time (tRC = tRAS + tRP). DDR transfers data on both clock edges (rising and falling), doubling bandwidth. DDR4: 2133-3200 MT/s. DDR5: 4800-8400 MT/s.",
+  "kind": "wire-format",
+  "aliases": [
+    "DDR (Double Data Rate) memory timing"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/DDR4_SDRAM",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "DDR4/DDR5 specification (JEDEC)",
+    "summary": "DDR memory timing parameters define the timing of memory operations. Key parameters: CAS latency (CL, column address strobe), RAS to CAS delay (tRCD), Row Precharge time (tRP), Row Active time (tRAS), Row Cycle time (tRC = tRAS + tRP). DDR transfers data on both clock edges (rising and falling), doubling bandwidth. DDR4: 2133-3200 MT/s. DDR5: 4800-8400 MT/s.",
+    "structure": [
+      {
+        "field": "CAS latency (CL)",
+        "size": "cycles",
+        "meaning": "Column Address Strobe latency: time from column address to data available. E.g., CL16 = 16 cycles."
+      },
+      {
+        "field": "tRCD (RAS to CAS delay)",
+        "size": "cycles",
+        "meaning": "Time from row activation to column access. Typically equal to CL."
+      },
+      {
+        "field": "tRP (Row Precharge time)",
+        "size": "cycles",
+        "meaning": "Time to precharge (close) a row before opening a new one. Typically equal to CL."
+      },
+      {
+        "field": "tRAS (Row Active time)",
+        "size": "cycles",
+        "meaning": "Minimum time a row must be active. tRAS = tRCD + tCAS + tBURST (typically 30-40 cycles)."
+      },
+      {
+        "field": "tRC (Row Cycle time)",
+        "size": "cycles",
+        "meaning": "tRC = tRAS + tRP. Minimum time between row activations."
+      },
+      {
+        "field": "DDR (Double Data Rate)",
+        "size": "transfer",
+        "meaning": "Data transferred on both rising and falling clock edges. 2x bandwidth vs SDR."
+      },
+      {
+        "field": "Burst length",
+        "size": "BL8",
+        "meaning": "8 data beats per access (BL8). Each beat = 64 bits (8 bytes). Total = 64 bytes = cache line size."
+      },
+      {
+        "field": "Prefetch",
+        "size": "8n (DDR4), 16n (DDR5)",
+        "meaning": "DDR4: 8n prefetch (8 beats fetched per access). DDR5: 16n prefetch (16 beats)."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "DDR timing (placeholder)",
+    "notes": [
+      "DDR4: 2133-3200 MT/s, 1.2V. DDR5: 4800-8400 MT/s, 1.1V.",
+      "DDR5 has two 32-bit channels per DIMM (vs DDR4's single 64-bit channel).",
+      "Memory latency = CL / (frequency/2) in nanoseconds. E.g., CL16 @ 3200 MT/s = 16 / 1600 = 10ns.",
+      "Row buffer (page) hit: ~10ns. Row miss: ~30ns (activate + read).",
+      "DDR is the main memory in virtually all computers."
+    ]
+  },
+  "updated": "2026-05-29"
+}

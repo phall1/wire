@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/huffman-coding",
+  "family": "wire-format",
+  "slug": "huffman-coding",
+  "title": "Huffman coding",
+  "summary": "Optimal prefix code: assign shorter codes to more frequent symbols. Algorithm: build a binary tree by repeatedly merging the two least frequent nodes. The code for each symbol is the path from root to leaf (0=left, 1=right). Huffman codes are optimal (minimum expected length) among prefix codes. Average length ≤ H(X) + 1.",
+  "kind": "wire-format",
+  "aliases": [
+    "Huffman coding"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Huffman_coding",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Huffman (1952)",
+    "summary": "Optimal prefix code: assign shorter codes to more frequent symbols. Algorithm: build a binary tree by repeatedly merging the two least frequent nodes. The code for each symbol is the path from root to leaf (0=left, 1=right). Huffman codes are optimal (minimum expected length) among prefix codes. Average length ≤ H(X) + 1.",
+    "structure": [
+      {
+        "field": "Build tree",
+        "size": "O(n log n)",
+        "meaning": "Priority queue of symbols by frequency. Repeatedly extract two min, merge, insert back. Continue until one node."
+      },
+      {
+        "field": "Code assignment",
+        "size": "O(n)",
+        "meaning": "Traverse tree from root. Left edge = 0, right edge = 1. Code = path bits."
+      },
+      {
+        "field": "Expected length",
+        "size": "bits/symbol",
+        "meaning": "L = Σ p(x) * len(code(x)). H(X) ≤ L < H(X) + 1."
+      },
+      {
+        "field": "Canonical Huffman",
+        "size": "variant",
+        "meaning": "Sort codes by length, then assign lexicographically. Enables efficient decoding with a lookup table."
+      },
+      {
+        "field": "Adaptive Huffman",
+        "size": "variant",
+        "meaning": "Update tree dynamically as symbols are processed. No need to transmit the tree."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Huffman coding (placeholder)",
+    "notes": [
+      "Huffman coding is used in JPEG, MP3, DEFLATE, and many other formats.",
+      "Arithmetic coding achieves closer to H(X) (no +1 overhead) but is slower.",
+      "Huffman codes are prefix-free: no code is a prefix of another. Enables unambiguous decoding.",
+      "Canonical Huffman codes can be decoded with a single lookup table.",
+      "Adaptive Huffman (FGK, Vitter) updates the tree on the fly."
+    ]
+  },
+  "updated": "2026-05-29"
+}

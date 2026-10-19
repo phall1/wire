@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/usb-protocol",
+  "family": "wire-format",
+  "slug": "usb-protocol",
+  "title": "USB protocol (enumeration and transfers)",
+  "summary": "USB (Universal Serial Bus) is a host-controlled serial bus. Enumeration: device connects → host detects (via pull-up on D+/D-) → host sends reset → host reads device descriptor → host assigns address → host reads configuration descriptor → host loads driver → device ready. Transfer types: Control (setup + data + status, for enumeration/config), Bulk (large data, error-checked, no timing guarantee), Interrupt (small data, periodic, guaranteed latency), Isochronous (streaming, guaranteed bandwidth, no retry).",
+  "kind": "wire-format",
+  "aliases": [
+    "USB protocol (enumeration and transfers)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/USB",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "USB 2.0/3.0 specification",
+    "summary": "USB (Universal Serial Bus) is a host-controlled serial bus. Enumeration: device connects → host detects (via pull-up on D+/D-) → host sends reset → host reads device descriptor → host assigns address → host reads configuration descriptor → host loads driver → device ready. Transfer types: Control (setup + data + status, for enumeration/config), Bulk (large data, error-checked, no timing guarantee), Interrupt (small data, periodic, guaranteed latency), Isochronous (streaming, guaranteed bandwidth, no retry).",
+    "structure": [
+      {
+        "field": "Enumeration",
+        "size": "process",
+        "meaning": "1. Device connects (pull-up on D+/D-). 2. Host detects, sends reset. 3. Host reads device descriptor (address 0). 4. Host assigns address (SET_ADDRESS). 5. Host reads config descriptor. 6. Host sets configuration (SET_CONFIGURATION). 7. Device ready."
+      },
+      {
+        "field": "Control transfer",
+        "size": "3 stages",
+        "meaning": "Setup (8 bytes: bmRequestType, bRequest, wValue, wIndex, wLength) + Data (optional, wLength bytes) + Status (zero-length packet, opposite direction)."
+      },
+      {
+        "field": "Bulk transfer",
+        "size": "variable",
+        "meaning": "Large data, error-checked (CRC16), retried on error. No timing guarantee. Used for storage, printers."
+      },
+      {
+        "field": "Interrupt transfer",
+        "size": "small, periodic",
+        "meaning": "Small data, periodic (polling interval), guaranteed latency. Used for keyboards, mice."
+      },
+      {
+        "field": "Isochronous transfer",
+        "size": "streaming",
+        "meaning": "Guaranteed bandwidth, no retry (errors not corrected). Used for audio, video."
+      },
+      {
+        "field": "Endpoints",
+        "size": "0-15 per direction",
+        "meaning": "Endpoint 0 = control. Endpoints 1-15 = data (IN/OUT). Each endpoint has a type and max packet size."
+      },
+      {
+        "field": "Speeds",
+        "size": "config",
+        "meaning": "Low (1.5 Mbps), Full (12 Mbps), High (480 Mbps), Super (5 Gbps), Super+ (10 Gbps), Super++ (20 Gbps)."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "USB protocol (placeholder)",
+    "notes": [
+      "USB is host-controlled: the host initiates all transfers.",
+      "USB devices are identified by vendor ID (VID) and product ID (PID) (assigned by USB-IF).",
+      "USB hubs enable tree topology (up to 127 devices per host controller).",
+      "USB-C is the latest connector (reversible, up to 40 Gbps with Thunderbolt 4).",
+      "USB is the universal peripheral interface (keyboards, mice, storage, cameras, etc.)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/virtual-memory-management",
+  "family": "wire-format",
+  "slug": "virtual-memory-management",
+  "title": "Virtual memory management (Linux)",
+  "summary": "Linux virtual memory: each process has a virtual address space (mm_struct) containing VMAs (Virtual Memory Areas). VMAs describe contiguous regions of virtual memory (code, data, heap, stack, mmap'd files). Page tables map virtual pages to physical frames. Page faults trigger: minor (page in page cache) or major (disk I/O). Swap: anonymous pages can be swapped to disk. OOM killer: kills processes when memory is exhausted.",
+  "kind": "wire-format",
+  "aliases": [
+    "Virtual memory management (Linux)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Virtual_memory",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (mm)",
+    "summary": "Linux virtual memory: each process has a virtual address space (mm_struct) containing VMAs (Virtual Memory Areas). VMAs describe contiguous regions of virtual memory (code, data, heap, stack, mmap'd files). Page tables map virtual pages to physical frames. Page faults trigger: minor (page in page cache) or major (disk I/O). Swap: anonymous pages can be swapped to disk. OOM killer: kills processes when memory is exhausted.",
+    "structure": [
+      {
+        "field": "mm_struct",
+        "size": "struct",
+        "meaning": "Memory descriptor: list of VMAs, page table root (pgd), mmap base, brk (heap end), start/end of code/data/stack, etc."
+      },
+      {
+        "field": "VMA (vm_area_struct)",
+        "size": "struct",
+        "meaning": "Virtual memory area: start/end addresses, flags (read/write/exec/shared), file backing (if mmap'd), operations (fault, page_mkwrite, etc.)."
+      },
+      {
+        "field": "Page fault",
+        "size": "handler",
+        "meaning": "Minor fault: page in page cache (fast). Major fault: read from disk (slow). Invalid access: SIGSEGV."
+      },
+      {
+        "field": "Anonymous pages",
+        "size": "memory",
+        "meaning": "Heap, stack, anonymous mmap. Backed by swap (if configured) or zero page."
+      },
+      {
+        "field": "File-backed pages",
+        "size": "memory",
+        "meaning": "mmap'd files. Backed by page cache (file content in memory). Dirty pages written back to file."
+      },
+      {
+        "field": "Swap",
+        "size": "disk",
+        "meaning": "Anonymous pages can be swapped to disk (swap partition/file). LRU-based eviction."
+      },
+      {
+        "field": "OOM killer",
+        "size": "mechanism",
+        "meaning": "When memory is exhausted, kills the process with highest 'badness' score (memory usage, runtime, niceness)."
+      },
+      {
+        "field": "mmap",
+        "size": "syscall",
+        "meaning": "Map files or anonymous memory into address space. Flags: MAP_SHARED, MAP_PRIVATE, MAP_ANONYMOUS, MAP_FIXED."
+      },
+      {
+        "field": "mprotect",
+        "size": "syscall",
+        "meaning": "Change protection (read/write/exec) of a memory region."
+      },
+      {
+        "field": "brk/sbrk",
+        "size": "syscall",
+        "meaning": "Extend/shrink the heap (program break)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Virtual memory (placeholder)",
+    "notes": [
+      "Virtual memory provides isolation between processes and overcommitment of physical memory.",
+      "Page tables are managed by the kernel; user space accesses memory through virtual addresses.",
+      "Copy-on-write (COW) shares pages between processes until one writes (then copies).",
+      "Transparent huge pages (THP) automatically use 2MB pages for large allocations.",
+      "Memory overcommit: kernel allows allocating more virtual memory than physical RAM (OOM killer handles exhaustion)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

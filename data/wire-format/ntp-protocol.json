@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/ntp-protocol",
+  "family": "wire-format",
+  "slug": "ntp-protocol",
+  "title": "NTP (Network Time Protocol)",
+  "summary": "NTP synchronizes clocks over the network. Packet format (48 bytes): LI (leap indicator, 2 bits), VN (version, 3 bits), Mode (3 bits), Stratum (1 byte), Poll (1 byte), Precision (1 byte), Root Delay (4 bytes), Root Dispersion (4 bytes), Reference ID (4 bytes), Reference Timestamp (8 bytes), Origin Timestamp (8 bytes), Receive Timestamp (8 bytes), Transmit Timestamp (8 bytes). NTP uses UDP port 123.",
+  "kind": "wire-format",
+  "aliases": [
+    "NTP (Network Time Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Network_Time_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 5905",
+    "summary": "NTP synchronizes clocks over the network. Packet format (48 bytes): LI (leap indicator, 2 bits), VN (version, 3 bits), Mode (3 bits), Stratum (1 byte), Poll (1 byte), Precision (1 byte), Root Delay (4 bytes), Root Dispersion (4 bytes), Reference ID (4 bytes), Reference Timestamp (8 bytes), Origin Timestamp (8 bytes), Receive Timestamp (8 bytes), Transmit Timestamp (8 bytes). NTP uses UDP port 123.",
+    "structure": [
+      {
+        "field": "LI (Leap Indicator)",
+        "size": "2 bits",
+        "meaning": "0 = no leap, 1 = 61 seconds (leap added), 2 = 59 seconds (leap removed), 3 = alarm (clock not synchronized)."
+      },
+      {
+        "field": "VN (Version)",
+        "size": "3 bits",
+        "meaning": "NTP version (3 or 4)."
+      },
+      {
+        "field": "Mode",
+        "size": "3 bits",
+        "meaning": "0 = reserved, 1 = symmetric active, 2 = symmetric passive, 3 = client, 4 = server, 5 = broadcast, 6 = NTP control, 7 = private."
+      },
+      {
+        "field": "Stratum",
+        "size": "1 byte",
+        "meaning": "Clock stratum: 0 = unspecified, 1 = primary (atomic clock/GPS), 2-15 = secondary (synced to stratum-1), 16 = unsynchronized."
+      },
+      {
+        "field": "Poll",
+        "size": "1 byte (signed)",
+        "meaning": "Poll interval in log2 seconds (e.g., 6 = 64 seconds, 10 = 1024 seconds)."
+      },
+      {
+        "field": "Precision",
+        "size": "1 byte (signed)",
+        "meaning": "Clock precision in log2 seconds (e.g., -20 = ~1 microsecond)."
+      },
+      {
+        "field": "Root Delay",
+        "size": "4 bytes (fixed-point)",
+        "meaning": "Total round-trip delay to the primary reference source."
+      },
+      {
+        "field": "Root Dispersion",
+        "size": "4 bytes (fixed-point)",
+        "meaning": "Maximum error of the local clock relative to the primary source."
+      },
+      {
+        "field": "Reference ID",
+        "size": "4 bytes",
+        "meaning": "Identifier of the reference source (IP address for stratum 2+, or ASCII code for stratum 1: GPS, PPS, etc.)."
+      },
+      {
+        "field": "Timestamps",
+        "size": "4 x 8 bytes",
+        "meaning": "Reference, Origin, Receive, Transmit timestamps (64-bit: 32-bit seconds + 32-bit fraction, epoch 1900-01-01)."
+      }
+    ],
+    "example_hex": "1b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "NTP client request (mode 3, version 4, stratum 0)",
+    "notes": [
+      "NTP uses UDP port 123.",
+      "NTP achieves sub-millisecond accuracy on LANs, tens of milliseconds on WANs.",
+      "NTP hierarchy: stratum 0 (atomic clock/GPS) → stratum 1 (directly connected) → stratum 2+ (synced to lower stratum).",
+      "NTP uses Marzullo's algorithm to select the best time source from multiple servers.",
+      "Chrony is a modern NTP implementation with better accuracy and faster convergence."
+    ]
+  },
+  "updated": "2026-05-29"
+}

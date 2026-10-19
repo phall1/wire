@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/diffie-hellman",
+  "family": "wire-format",
+  "slug": "diffie-hellman",
+  "title": "Diffie-Hellman key exchange",
+  "summary": "Diffie-Hellman (DH) is a key exchange protocol. Two parties agree on a public prime p and generator g. Alice sends A = g^a mod p. Bob sends B = g^b mod p. Both compute shared secret s = B^a = A^b = g^(ab) mod p. Eavesdropper sees g, p, A, B but cannot compute s (discrete logarithm problem). Finite field DH (FFDHE) and elliptic curve DH (ECDH/X25519) are the modern variants.",
+  "kind": "wire-format",
+  "aliases": [
+    "Diffie-Hellman key exchange"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Diffie-Hellman (1976)",
+    "summary": "Diffie-Hellman (DH) is a key exchange protocol. Two parties agree on a public prime p and generator g. Alice sends A = g^a mod p. Bob sends B = g^b mod p. Both compute shared secret s = B^a = A^b = g^(ab) mod p. Eavesdropper sees g, p, A, B but cannot compute s (discrete logarithm problem). Finite field DH (FFDHE) and elliptic curve DH (ECDH/X25519) are the modern variants.",
+    "structure": [
+      {
+        "field": "Prime (p)",
+        "size": "variable (2048+ bits)",
+        "meaning": "Large prime modulus. Must be a safe prime (p = 2q+1 where q is also prime) for security."
+      },
+      {
+        "field": "Generator (g)",
+        "size": "variable",
+        "meaning": "Generator of the multiplicative group mod p. Usually 2 or 5."
+      },
+      {
+        "field": "Alice's private key (a)",
+        "size": "variable",
+        "meaning": "Random secret (256+ bits)."
+      },
+      {
+        "field": "Alice's public key (A)",
+        "size": "variable",
+        "meaning": "A = g^a mod p. Sent to Bob."
+      },
+      {
+        "field": "Bob's private key (b)",
+        "size": "variable",
+        "meaning": "Random secret (256+ bits)."
+      },
+      {
+        "field": "Bob's public key (B)",
+        "size": "variable",
+        "meaning": "B = g^b mod p. Sent to Alice."
+      },
+      {
+        "field": "Shared secret (s)",
+        "size": "variable",
+        "meaning": "s = B^a = A^b = g^(ab) mod p. Used as key material (after KDF)."
+      },
+      {
+        "field": "X25519 (ECDH)",
+        "size": "variant",
+        "meaning": "Elliptic curve DH on Curve25519. 32-byte keys, 32-byte shared secret. Faster and simpler than FFDHE."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Diffie-Hellman (placeholder)",
+    "notes": [
+      "DH is the foundation of TLS key exchange, SSH, and IPSec.",
+      "FFDHE (Finite Field DH) uses large primes (2048+ bits). ECDH (X25519) uses elliptic curves (256 bits, equivalent security).",
+      "DH is vulnerable to man-in-the-middle (no authentication). Use with certificates (TLS) or pre-shared keys.",
+      "Quantum computers can solve the discrete logarithm problem (Shor's algorithm). Post-quantum alternatives: Kyber (lattice-based).",
+      "DH provides forward secrecy: past sessions are secure even if long-term keys are compromised."
+    ]
+  },
+  "updated": "2026-05-29"
+}

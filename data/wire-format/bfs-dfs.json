@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/bfs-dfs",
+  "family": "wire-format",
+  "slug": "bfs-dfs",
+  "title": "BFS and DFS (graph traversal)",
+  "summary": "BFS (Breadth-First Search) explores vertices level by level using a queue. Finds shortest path (in unweighted graphs). DFS (Depth-First Search) explores as deep as possible using a stack/recursion. Used for: connected components, topological sort, cycle detection, strongly connected components (Tarjan/Kosaraju).",
+  "kind": "wire-format",
+  "aliases": [
+    "BFS and DFS (graph traversal)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Graph_traversal",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Graph traversal",
+    "summary": "BFS (Breadth-First Search) explores vertices level by level using a queue. Finds shortest path (in unweighted graphs). DFS (Depth-First Search) explores as deep as possible using a stack/recursion. Used for: connected components, topological sort, cycle detection, strongly connected components (Tarjan/Kosaraju).",
+    "structure": [
+      {
+        "field": "BFS",
+        "size": "O(V+E)",
+        "meaning": "Queue-based. Explores all neighbors of current vertex before moving to next level. Finds shortest path in unweighted graphs."
+      },
+      {
+        "field": "DFS (recursive)",
+        "size": "O(V+E)",
+        "meaning": "Recursively visit unvisited neighbors. Uses call stack (O(V) space in worst case)."
+      },
+      {
+        "field": "DFS (iterative)",
+        "size": "O(V+E)",
+        "meaning": "Explicit stack. Avoids recursion depth limits."
+      },
+      {
+        "field": "Topological sort",
+        "size": "O(V+E)",
+        "meaning": "DFS-based: push vertex to stack after all descendants visited. Or BFS (Kahn's algorithm): repeatedly remove vertices with in-degree 0."
+      },
+      {
+        "field": "SCC (Tarjan)",
+        "size": "O(V+E)",
+        "meaning": "Single DFS pass with low-link values. Finds strongly connected components in directed graphs."
+      },
+      {
+        "field": "Cycle detection",
+        "size": "O(V+E)",
+        "meaning": "DFS: if you reach a vertex that's in the current path (back edge), there's a cycle."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "BFS/DFS (placeholder)",
+    "notes": [
+      "BFS finds shortest path in unweighted graphs (minimum number of edges).",
+      "DFS is used for topological sort, cycle detection, and connected components.",
+      "BFS uses a queue (FIFO); DFS uses a stack (LIFO).",
+      "Both are O(V+E) time and O(V) space.",
+      "Iterative deepening DFS combines BFS's optimality with DFS's space efficiency."
+    ]
+  },
+  "updated": "2026-05-29"
+}

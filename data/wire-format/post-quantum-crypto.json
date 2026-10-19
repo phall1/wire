@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/post-quantum-crypto",
+  "family": "wire-format",
+  "slug": "post-quantum-crypto",
+  "title": "Post-quantum cryptography (Kyber, Dilithium)",
+  "summary": "Post-quantum cryptography (PQC) provides security against quantum computers. NIST standardized: Kyber (ML-KEM, key encapsulation), Dilithium (ML-DSA, signatures), SPHINCS+ (SLH-DSA, hash-based signatures). Kyber uses module lattices (LWE problem). Dilithium uses module lattices (SIS problem). SPHINCS+ uses hash trees (no lattice assumption).",
+  "kind": "wire-format",
+  "aliases": [
+    "Post-quantum cryptography (Kyber, Dilithium)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Post-quantum_cryptography",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "NIST PQC (2024)",
+    "summary": "Post-quantum cryptography (PQC) provides security against quantum computers. NIST standardized: Kyber (ML-KEM, key encapsulation), Dilithium (ML-DSA, signatures), SPHINCS+ (SLH-DSA, hash-based signatures). Kyber uses module lattices (LWE problem). Dilithium uses module lattices (SIS problem). SPHINCS+ uses hash trees (no lattice assumption).",
+    "structure": [
+      {
+        "field": "ML-KEM (Kyber)",
+        "size": "KEM",
+        "meaning": "Key Encapsulation Mechanism. Public key (1184 bytes for Kyber-768), ciphertext (1088 bytes), shared secret (32 bytes). Based on module-LWE."
+      },
+      {
+        "field": "ML-DSA (Dilithium)",
+        "size": "signature",
+        "meaning": "Digital signature. Public key (1952 bytes), secret key (4000 bytes), signature (3293 bytes). Based on module-SIS."
+      },
+      {
+        "field": "SLH-DSA (SPHINCS+)",
+        "size": "signature",
+        "meaning": "Hash-based signature. Public key (32-64 bytes), signature (7856-49856 bytes). No lattice assumption (only hash security)."
+      },
+      {
+        "field": "Security levels",
+        "size": "NIST levels",
+        "meaning": "Level 1 = AES-128 (128-bit), Level 3 = AES-192 (192-bit), Level 5 = AES-256 (256-bit)."
+      },
+      {
+        "field": "Hybrid mode",
+        "size": "transition",
+        "meaning": "Combine PQC with classical crypto (e.g., X25519 + Kyber) for defense in depth during transition."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Post-quantum crypto (placeholder)",
+    "notes": [
+      "NIST standardized ML-KEM (Kyber), ML-DSA (Dilithium), SLH-DSA (SPHINCS+) in 2024.",
+      "Kyber is used in TLS 1.3 (X25519Kyber768Draft00) and Signal Protocol.",
+      "PQC keys and signatures are much larger than classical (Kyber public key: 1184 bytes vs X25519: 32 bytes).",
+      "Post-quantum migration is the biggest cryptographic transition in history.",
+      "Hybrid mode (classical + PQC) is recommended during the transition period."
+    ]
+  },
+  "updated": "2026-05-29"
+}

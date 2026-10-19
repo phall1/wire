@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/smtp-protocol",
+  "family": "wire-format",
+  "slug": "smtp-protocol",
+  "title": "SMTP (Simple Mail Transfer Protocol)",
+  "summary": "SMTP is the protocol for sending email. Commands: HELO/EHLO, MAIL FROM, RCPT TO, DATA, RSET, NOOP, QUIT, VRFY, EXPN. Responses: 3-digit codes (220 service ready, 250 OK, 354 start mail input, 421 service not available, 450 mailbox unavailable, 550 mailbox not found). ESMTP extensions: STARTTLS (upgrade to TLS), AUTH (authentication), SIZE (message size limit), PIPELINING (batch commands), 8BITMIME, SMTPUTF8.",
+  "kind": "wire-format",
+  "aliases": [
+    "SMTP (Simple Mail Transfer Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 5321",
+    "summary": "SMTP is the protocol for sending email. Commands: HELO/EHLO, MAIL FROM, RCPT TO, DATA, RSET, NOOP, QUIT, VRFY, EXPN. Responses: 3-digit codes (220 service ready, 250 OK, 354 start mail input, 421 service not available, 450 mailbox unavailable, 550 mailbox not found). ESMTP extensions: STARTTLS (upgrade to TLS), AUTH (authentication), SIZE (message size limit), PIPELINING (batch commands), 8BITMIME, SMTPUTF8.",
+    "structure": [
+      {
+        "field": "HELO/EHLO",
+        "size": "command",
+        "meaning": "Identify the client. EHLO enables ESMTP extensions."
+      },
+      {
+        "field": "MAIL FROM",
+        "size": "command",
+        "meaning": "Specify sender address. MAIL FROM:<sender@example.com>."
+      },
+      {
+        "field": "RCPT TO",
+        "size": "command",
+        "meaning": "Specify recipient. RCPT TO:<recipient@example.com>. Can be repeated."
+      },
+      {
+        "field": "DATA",
+        "size": "command",
+        "meaning": "Start message body. Server responds 354. Client sends headers + blank line + body, terminated by \\.\\r\\n."
+      },
+      {
+        "field": "STARTTLS",
+        "size": "EHLO extension",
+        "meaning": "Upgrade connection to TLS. Server responds 220. Client sends TLS ClientHello."
+      },
+      {
+        "field": "AUTH",
+        "size": "EHLO extension",
+        "meaning": "Authentication: AUTH PLAIN, AUTH LOGIN, AUTH XOAUTH2. Client sends credentials."
+      },
+      {
+        "field": "Response codes",
+        "size": "3 digits",
+        "meaning": "220 service ready, 250 OK, 354 start mail input, 421 service not available, 450 mailbox unavailable, 550 mailbox not found, 552 exceeded storage, 554 transaction failed."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "SMTP (placeholder)",
+    "notes": [
+      "SMTP uses TCP port 25 (relay), 587 (submission), 465 (SMTPS).",
+      "SMTP is a push protocol: sender pushes email to recipient's server.",
+      "IMAP/POP3 are pull protocols: recipient pulls email from server.",
+      "DKIM, SPF, DMARC are email authentication mechanisms.",
+      "SMTPUTF8 (RFC 6531) supports Unicode in addresses and headers."
+    ]
+  },
+  "updated": "2026-05-29"
+}

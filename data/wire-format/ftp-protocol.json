@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/ftp-protocol",
+  "family": "wire-format",
+  "slug": "ftp-protocol",
+  "title": "FTP (File Transfer Protocol)",
+  "summary": "FTP is a client-server protocol for file transfer. Control connection (port 21, text commands): USER, PASS, CWD, PWD, LIST, RETR, STOR, DELE, MKD, RMD, QUIT, PASV, PORT, TYPE, MODE, STRU. Data connection (port 20 or passive port): transfers file data. Two modes: active (server connects to client) and passive (client connects to server).",
+  "kind": "wire-format",
+  "aliases": [
+    "FTP (File Transfer Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/File_Transfer_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 959",
+    "summary": "FTP is a client-server protocol for file transfer. Control connection (port 21, text commands): USER, PASS, CWD, PWD, LIST, RETR, STOR, DELE, MKD, RMD, QUIT, PASV, PORT, TYPE, MODE, STRU. Data connection (port 20 or passive port): transfers file data. Two modes: active (server connects to client) and passive (client connects to server).",
+    "structure": [
+      {
+        "field": "Control connection",
+        "size": "TCP port 21",
+        "meaning": "Text-based command/response. Commands: USER, PASS, CWD, PWD, LIST, RETR, STOR, DELE, MKD, RMD, QUIT, PASV, PORT, TYPE (A/I), MODE (S/B/C), STRU (F/R/P)."
+      },
+      {
+        "field": "Data connection",
+        "size": "TCP port 20 (active) or passive",
+        "meaning": "Transfers file data. Active: server connects to client's port. Passive: client connects to server's port (PASV response gives IP+port)."
+      },
+      {
+        "field": "Response codes",
+        "size": "3 digits",
+        "meaning": "1xx preliminary, 2xx success, 3xx intermediate, 4xx transient error, 5xx permanent error. E.g., 220 (service ready), 230 (logged in), 226 (transfer complete), 530 (not logged in)."
+      },
+      {
+        "field": "Transfer types",
+        "size": "config",
+        "meaning": "TYPE A (ASCII, converts line endings), TYPE I (Image/binary, no conversion)."
+      },
+      {
+        "field": "Passive mode",
+        "size": "PASV",
+        "meaning": "Client sends PASV; server responds with IP and port (h1,h2,h3,h4,p1,p2). Client connects to that address."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "FTP (placeholder)",
+    "notes": [
+      "FTP uses two TCP connections: control (port 21) and data (port 20 or passive).",
+      "Active mode: server connects to client (problematic with NAT/firewalls).",
+      "Passive mode: client connects to server (firewall-friendly).",
+      "FTPS (FTP over TLS) adds encryption. SFTP (SSH File Transfer Protocol) is a different protocol over SSH.",
+      "FTP is largely superseded by SFTP/SCP for security."
+    ]
+  },
+  "updated": "2026-05-29"
+}

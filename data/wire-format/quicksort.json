@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/quicksort",
+  "family": "wire-format",
+  "slug": "quicksort",
+  "title": "Quicksort",
+  "summary": "Divide-and-conquer sorting: pick a pivot, partition into elements < pivot and > pivot, recurse. Average O(n log n), worst case O(n^2) (sorted input with naive pivot). In-place (O(log n) stack). Not stable. Randomized pivot gives expected O(n log n). Three-way partition (Dutch national flag) handles duplicates.",
+  "kind": "wire-format",
+  "aliases": [
+    "Quicksort"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Quicksort",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Quicksort (Hoare, 1961)",
+    "summary": "Divide-and-conquer sorting: pick a pivot, partition into elements < pivot and > pivot, recurse. Average O(n log n), worst case O(n^2) (sorted input with naive pivot). In-place (O(log n) stack). Not stable. Randomized pivot gives expected O(n log n). Three-way partition (Dutch national flag) handles duplicates.",
+    "structure": [
+      {
+        "field": "Partition",
+        "size": "O(n)",
+        "meaning": "Rearrange array so elements < pivot are left, > pivot are right. Pivot in final position."
+      },
+      {
+        "field": "Recurse",
+        "size": "O(log n) depth",
+        "meaning": "Recursively sort left and right partitions."
+      },
+      {
+        "field": "Pivot selection",
+        "size": "strategy",
+        "meaning": "First/last element (bad for sorted data). Random (expected O(n log n)). Median-of-three (good in practice)."
+      },
+      {
+        "field": "Three-way partition",
+        "size": "variant",
+        "meaning": "Partition into < pivot, = pivot, > pivot. Handles duplicates efficiently (O(n) for all-equal input)."
+      },
+      {
+        "field": "Introsort",
+        "size": "variant",
+        "meaning": "Quicksort + heapsort fallback. Switches to heapsort if recursion depth exceeds 2*log2(n). Used in C++ std::sort."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Quicksort (placeholder)",
+    "notes": [
+      "Quicksort is the fastest general-purpose sorting algorithm in practice.",
+      "Introsort (quicksort + heapsort) is used in C++ std::sort and .NET.",
+      "Quicksort is not stable (equal elements may be reordered).",
+      "Dual-pivot quicksort (Yaroslavskiy) is used in Java's Arrays.sort().",
+      "Quicksort's cache efficiency makes it faster than mergesort despite same complexity."
+    ]
+  },
+  "updated": "2026-05-29"
+}

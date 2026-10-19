@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/reed-solomon",
+  "family": "wire-format",
+  "slug": "reed-solomon",
+  "title": "Reed-Solomon error correction",
+  "summary": "Reed-Solomon (RS) codes are block-based error-correcting codes. RS(n,k): n total symbols, k data symbols, n-k parity symbols. Can correct up to t = (n-k)/2 errors (or n-k erasures). Used in QR codes, CDs/DVDs, RAID, deep space communication, and digital TV.",
+  "kind": "wire-format",
+  "aliases": [
+    "Reed-Solomon error correction"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Reed-Solomon (1960)",
+    "summary": "Reed-Solomon (RS) codes are block-based error-correcting codes. RS(n,k): n total symbols, k data symbols, n-k parity symbols. Can correct up to t = (n-k)/2 errors (or n-k erasures). Used in QR codes, CDs/DVDs, RAID, deep space communication, and digital TV.",
+    "structure": [
+      {
+        "field": "Parameters",
+        "size": "n, k",
+        "meaning": "n = total codeword length, k = data length, n-k = parity length. Usually n = 2^m - 1 (e.g., 255 for 8-bit symbols)."
+      },
+      {
+        "field": "Error correction",
+        "size": "t = (n-k)/2",
+        "meaning": "Can correct up to t symbol errors. Or n-k erasures (known positions)."
+      },
+      {
+        "field": "Encoding",
+        "size": "O(nk)",
+        "meaning": "Multiply data polynomial by generator polynomial. Or use systematic form: data + parity."
+      },
+      {
+        "field": "Decoding",
+        "size": "O(n^2) or O(n log n)",
+        "meaning": "Berlekamp-Massey algorithm for error locator polynomial. Chien search for error positions. Forney algorithm for error values."
+      },
+      {
+        "field": "RS(255,223)",
+        "size": "common",
+        "meaning": "255 total, 223 data, 32 parity. Corrects 16 errors. Used in many systems."
+      },
+      {
+        "field": "RS(255,239)",
+        "size": "common",
+        "meaning": "255 total, 239 data, 16 parity. Corrects 8 errors. Used in QR codes."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Reed-Solomon (placeholder)",
+    "notes": [
+      "Reed-Solomon codes are maximum distance separable (MDS): d_min = n-k+1 (optimal).",
+      "RS codes are used in QR codes (correct up to 30% damage), CDs (CIRC), DVDs, Blu-ray, RAID-6, and deep space (Voyager, Mars rovers).",
+      "RS codes work over Galois fields (GF(2^m)). Common: GF(2^8) for byte-level codes.",
+      "Concatenated codes (RS + convolutional) are used in deep space communication.",
+      "Reed-Solomon is the basis of most modern error correction."
+    ]
+  },
+  "updated": "2026-05-29"
+}

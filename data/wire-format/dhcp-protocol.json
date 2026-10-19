@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/dhcp-protocol",
+  "family": "wire-format",
+  "slug": "dhcp-protocol",
+  "title": "DHCP (Dynamic Host Configuration Protocol)",
+  "summary": "DHCP automatically assigns IP addresses and network configuration. Process: DISCOVER (client broadcasts), OFFER (server responds with IP), REQUEST (client requests the offered IP), ACK (server confirms). DHCP options: subnet mask (1), router (3), DNS (6), domain name (15), lease time (51), server ID (54), requested IP (50), message type (53). DHCP uses UDP ports 67 (server) and 68 (client).",
+  "kind": "wire-format",
+  "aliases": [
+    "DHCP (Dynamic Host Configuration Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 2131",
+    "summary": "DHCP automatically assigns IP addresses and network configuration. Process: DISCOVER (client broadcasts), OFFER (server responds with IP), REQUEST (client requests the offered IP), ACK (server confirms). DHCP options: subnet mask (1), router (3), DNS (6), domain name (15), lease time (51), server ID (54), requested IP (50), message type (53). DHCP uses UDP ports 67 (server) and 68 (client).",
+    "structure": [
+      {
+        "field": "DISCOVER",
+        "size": "broadcast",
+        "meaning": "Client broadcasts DHCPDISCOVER to find servers."
+      },
+      {
+        "field": "OFFER",
+        "size": "unicast/broadcast",
+        "meaning": "Server responds with DHCPOFFER: offered IP, lease time, options."
+      },
+      {
+        "field": "REQUEST",
+        "size": "broadcast",
+        "meaning": "Client broadcasts DHCPREQUEST: accepts the offered IP, rejects others."
+      },
+      {
+        "field": "ACK",
+        "size": "unicast/broadcast",
+        "meaning": "Server responds with DHCPACK: confirms the IP assignment."
+      },
+      {
+        "field": "NAK",
+        "size": "unicast/broadcast",
+        "meaning": "Server responds with DHCPNAK: rejects the request (e.g., IP no longer available)."
+      },
+      {
+        "field": "RELEASE",
+        "size": "unicast",
+        "meaning": "Client releases the IP (optional)."
+      },
+      {
+        "field": "DECLINE",
+        "size": "broadcast",
+        "meaning": "Client declines the IP (e.g., ARP probe found conflict)."
+      },
+      {
+        "field": "Options",
+        "size": "variable",
+        "meaning": "TLV options: type (1 byte), length (1 byte), value. Option 53 = DHCP message type, 1 = subnet mask, 3 = router, 6 = DNS, 15 = domain name, 51 = lease time, 54 = server ID, 50 = requested IP, 255 = end."
+      },
+      {
+        "field": "Magic cookie",
+        "size": "4 bytes",
+        "meaning": "0x63 0x82 0x53 0x63 (DHCP magic cookie in options field)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "DHCP (placeholder)",
+    "notes": [
+      "DHCP uses UDP ports 67 (server) and 68 (client).",
+      "DHCP lease time is typically 24 hours to 7 days.",
+      "DHCP relay (IP helper) forwards requests across subnets.",
+      "DHCPv6 is used for IPv6 (different protocol, different port 546/547).",
+      "DHCP can provide PXE boot information (next-server, boot filename)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

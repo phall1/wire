@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/eddsa",
+  "family": "wire-format",
+  "slug": "eddsa",
+  "title": "EdDSA (Edwards-curve Digital Signature Algorithm)",
+  "summary": "EdDSA is a digital signature scheme using twisted Edwards curves. Ed25519 (RFC 8032) uses Curve25519. Signing: hash the message with the private key, derive a nonce, compute R = r*G, S = r + H(R||A||M)*a mod l. Signature = (R, S) (64 bytes). Verification: check S*G == R + H(R||A||M)*A. Deterministic (no random nonce needed).",
+  "kind": "wire-format",
+  "aliases": [
+    "EdDSA (Edwards-curve Digital Signature Algorithm)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/EdDSA",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8032",
+    "summary": "EdDSA is a digital signature scheme using twisted Edwards curves. Ed25519 (RFC 8032) uses Curve25519. Signing: hash the message with the private key, derive a nonce, compute R = r*G, S = r + H(R||A||M)*a mod l. Signature = (R, S) (64 bytes). Verification: check S*G == R + H(R||A||M)*A. Deterministic (no random nonce needed).",
+    "structure": [
+      {
+        "field": "Private key",
+        "size": "32 bytes",
+        "meaning": "Random 32 bytes. Hashed to derive scalar a and nonce prefix."
+      },
+      {
+        "field": "Public key",
+        "size": "32 bytes",
+        "meaning": "A = a*G (point on Curve25519). Compressed (x-coordinate only)."
+      },
+      {
+        "field": "Signature",
+        "size": "64 bytes",
+        "meaning": "R (32 bytes, compressed point) + S (32 bytes, scalar). R = r*G, S = (r + H(R||A||M)*a) mod l."
+      },
+      {
+        "field": "Hash",
+        "size": "SHA-512",
+        "meaning": "H = SHA-512. Used for both nonce derivation and signature computation."
+      },
+      {
+        "field": "Nonce (r)",
+        "size": "derived",
+        "meaning": "r = SHA-512(private_key_prefix || message) mod l. Deterministic (no RNG needed for signing)."
+      },
+      {
+        "field": "Verification",
+        "size": "operation",
+        "meaning": "Check S*G == R + H(R||A||M)*A. If equal, signature is valid."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "EdDSA (placeholder)",
+    "notes": [
+      "Ed25519 is the most common EdDSA variant (RFC 8032).",
+      "EdDSA is deterministic: no random nonce needed for signing (unlike ECDSA).",
+      "Ed25519 is faster than ECDSA (no modular inverse needed).",
+      "Ed25519 signatures are 64 bytes (vs 70-72 bytes for ECDSA P-256).",
+      "EdDSA is used in SSH, TLS 1.3, Signal, and many modern systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

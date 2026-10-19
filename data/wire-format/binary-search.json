@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/binary-search",
+  "family": "wire-format",
+  "slug": "binary-search",
+  "title": "Binary search",
+  "summary": "Search in a sorted array by repeatedly halving the search space. Compare target with middle element; if equal, found; if less, search left half; if greater, search right half. O(log n) comparisons. Requires sorted array. Variants: lower_bound (first ≥ target), upper_bound (first > target), binary search on answer (monotonic predicate).",
+  "kind": "wire-format",
+  "aliases": [
+    "Binary search"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Binary_search_algorithm",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Binary search",
+    "summary": "Search in a sorted array by repeatedly halving the search space. Compare target with middle element; if equal, found; if less, search left half; if greater, search right half. O(log n) comparisons. Requires sorted array. Variants: lower_bound (first ≥ target), upper_bound (first > target), binary search on answer (monotonic predicate).",
+    "structure": [
+      {
+        "field": "Comparison",
+        "size": "O(1)",
+        "meaning": "Compare target with middle element."
+      },
+      {
+        "field": "Halving",
+        "size": "O(log n) iterations",
+        "meaning": "Each iteration halves the search space."
+      },
+      {
+        "field": "Lower bound",
+        "size": "variant",
+        "meaning": "Find first element ≥ target. Returns insertion point."
+      },
+      {
+        "field": "Upper bound",
+        "size": "variant",
+        "meaning": "Find first element > target. Returns insertion point."
+      },
+      {
+        "field": "Binary search on answer",
+        "size": "variant",
+        "meaning": "Search for the smallest x such that predicate(x) is true. Requires monotonic predicate."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Binary search (placeholder)",
+    "notes": [
+      "Binary search is O(log n) comparisons.",
+      "Binary search requires a sorted array (or monotonic predicate).",
+      "Off-by-one errors are the most common bug (use lo + (hi-lo)/2 to avoid overflow).",
+      "Binary search on answer is used for optimization problems (minimize/maximize with monotonic constraint).",
+      "Interpolation search achieves O(log log n) for uniformly distributed data."
+    ]
+  },
+  "updated": "2026-05-29"
+}

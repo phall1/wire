@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/snmp-protocol",
+  "family": "wire-format",
+  "slug": "snmp-protocol",
+  "title": "SNMP (Simple Network Management Protocol)",
+  "summary": "SNMP is a protocol for network management. Managers query agents on devices. Operations: Get (read), GetNext (read next), GetBulk (read many), Set (write), Trap (unsolicited notification), Inform (acknowledged notification). Data is organized in a MIB (Management Information Base) tree of OIDs (Object Identifiers). SNMPv3 adds authentication and encryption.",
+  "kind": "wire-format",
+  "aliases": [
+    "SNMP (Simple Network Management Protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 3411-3418 (SNMPv3)",
+    "summary": "SNMP is a protocol for network management. Managers query agents on devices. Operations: Get (read), GetNext (read next), GetBulk (read many), Set (write), Trap (unsolicited notification), Inform (acknowledged notification). Data is organized in a MIB (Management Information Base) tree of OIDs (Object Identifiers). SNMPv3 adds authentication and encryption.",
+    "structure": [
+      {
+        "field": "Get",
+        "size": "PDU",
+        "meaning": "Read a value: Get(varbind list). Returns the values."
+      },
+      {
+        "field": "GetNext",
+        "size": "PDU",
+        "meaning": "Read the next value in the MIB tree (lexicographic). Used for walking tables."
+      },
+      {
+        "field": "GetBulk",
+        "size": "PDU (v2c/v3)",
+        "meaning": "Read many values at once. More efficient than repeated GetNext."
+      },
+      {
+        "field": "Set",
+        "size": "PDU",
+        "meaning": "Write a value: Set(varbind list). Returns confirmation."
+      },
+      {
+        "field": "Trap",
+        "size": "PDU",
+        "meaning": "Unsolicited notification from agent to manager. E.g., linkDown, coldStart, authenticationFailure."
+      },
+      {
+        "field": "Inform",
+        "size": "PDU (v2c/v3)",
+        "meaning": "Acknowledged notification. Manager sends response."
+      },
+      {
+        "field": "OID",
+        "size": "variable",
+        "meaning": "Object Identifier: dotted decimal (e.g., 1.3.6.1.2.1.1.1.0 = sysDescr.0). Hierarchical tree."
+      },
+      {
+        "field": "Varbind",
+        "size": "variable",
+        "meaning": "Variable binding: OID + value (or NULL for Get). Value types: integer, string, counter, gauge, timeticks, OID, IP address, etc."
+      },
+      {
+        "field": "Community string",
+        "size": "v1/v2c",
+        "meaning": "Shared secret for authentication (plaintext, sent in every packet). 'public' is the default (insecure)."
+      },
+      {
+        "field": "USM",
+        "size": "v3",
+        "meaning": "User-based Security Model: username + auth protocol (MD5/SHA) + priv protocol (DES/AES). Replaces community strings."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "SNMP (placeholder)",
+    "notes": [
+      "SNMP uses UDP port 161 (queries) and 162 (traps).",
+      "SNMPv1 (1988), v2c (1996), v3 (2002). v3 adds authentication and encryption.",
+      "MIB (Management Information Base) defines the OID tree for each device type.",
+      "SNMP is the standard for network device management (routers, switches, servers).",
+      "SNMP is being superseded by NETCONF/YANG for modern network automation."
+    ]
+  },
+  "updated": "2026-05-29"
+}

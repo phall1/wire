@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/dijkstra",
+  "family": "wire-format",
+  "slug": "dijkstra",
+  "title": "Dijkstra's shortest path algorithm",
+  "summary": "Dijkstra finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights. Uses a priority queue (min-heap) of (distance, vertex). Greedy: always process the vertex with smallest tentative distance. Relax edges: if dist[u] + w(u,v) < dist[v], update dist[v]. O((V+E) log V) with binary heap, O(E + V log V) with Fibonacci heap.",
+  "kind": "wire-format",
+  "aliases": [
+    "Dijkstra's shortest path algorithm"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Dijkstra (1956)",
+    "summary": "Dijkstra finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights. Uses a priority queue (min-heap) of (distance, vertex). Greedy: always process the vertex with smallest tentative distance. Relax edges: if dist[u] + w(u,v) < dist[v], update dist[v]. O((V+E) log V) with binary heap, O(E + V log V) with Fibonacci heap.",
+    "structure": [
+      {
+        "field": "Priority queue",
+        "size": "min-heap",
+        "meaning": "Extracts the vertex with smallest distance. O(log V) per extract/insert."
+      },
+      {
+        "field": "Relaxation",
+        "size": "O(1) per edge",
+        "meaning": "If dist[u] + w(u,v) < dist[v], update dist[v] and set predecessor."
+      },
+      {
+        "field": "Complexity (binary heap)",
+        "size": "O((V+E) log V)",
+        "meaning": "V extract-min + E decrease-key, each O(log V)."
+      },
+      {
+        "field": "Complexity (Fibonacci heap)",
+        "size": "O(E + V log V)",
+        "meaning": "Amortized O(1) decrease-key, O(log V) extract-min."
+      },
+      {
+        "field": "A* (variant)",
+        "size": "heuristic",
+        "meaning": "A* adds a heuristic h(v) to the priority: f(v) = g(v) + h(v). Admissible heuristic (h(v) ≤ actual cost) guarantees optimality."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "Dijkstra (placeholder)",
+    "notes": [
+      "Dijkstra requires non-negative edge weights. Negative weights need Bellman-Ford.",
+      "Dijkstra is used in GPS navigation, network routing (OSPF), and game AI.",
+      "A* is Dijkstra with a heuristic. Used in pathfinding (games, robotics).",
+      "Bidirectional Dijkstra searches from both source and target. Faster in practice.",
+      "Fibonacci heap gives better theoretical complexity but is slower in practice due to constant factors."
+    ]
+  },
+  "updated": "2026-05-29"
+}
