@@ -9,18 +9,20 @@ import { SITE } from "../lib/wire";
  ╚═╝╩╚═╚═╝╩ ╩╩═╝╩ ╩ ╩ ╚═╝╩╚═`}</pre>
   <p style="margin:.8em 0 0">the best computation substrate if you started from scratch — agent-native, capability-based, content-addressed, deterministic, observable.</p>
   <p class="dim" style="margin:.2em 0 0">
-    derived from 4,353 protocol facts in the wire corpus · <a href="/">wire</a> · <a href="/llms.txt">llms.txt</a>
+    exploratory hardware sketch · <a href="/stack">source-backed runtime proposal</a> · <a href="/">wire</a>
   </p>
 
   <hr />
 
+  <p><strong>Not an implemented or verified architecture.</strong> This earlier hardware sketch remains speculative. The <a href="/stack">revised stack</a> starts on existing hardware and defines authority, replay, effects, and failure tests. Instruction encodings, capability compression, revocation, concurrency semantics, and performance need a formal specification and experiments before implementation.</p>
+
   <h2 class="section-h">0. design principles</h2>
   <p class="dim">six rules, in priority order. everything below follows from these.</p>
   <ul class="bare">
-    <li><span class="accent">1. regularity over cleverness.</span> every instruction is 4 bytes. every register is 64 bits. every address is 64 bits. no special cases. an agent can reason about the encoding in one page.</li>
+    <li><span class="accent">1. regularity over cleverness.</span> proposed instructions are 4 bytes; integer registers and addresses are 64 bits. capability registers need a separate representation.</li>
     <li><span class="accent">2. capability over permission.</span> no ambient authority. every pointer carries its own rights (read, write, execute, seal, derive). hardware enforces. no confused deputy.</li>
-    <li><span class="accent">3. content over location.</span> data is identified by its hash, not its address. immutable by default. deduplication, verification, and caching are free.</li>
-    <li><span class="accent">4. determinism over performance.</span> given the same inputs and capabilities, execution is bit-identical. replayable. debuggable. no hidden state.</li>
+    <li><span class="accent">3. content over location.</span> persistent immutable artifacts may be identified by hash; RAM remains conventionally addressed. Hashing, deduplication, and retention have real costs.</li>
+    <li><span class="accent">4. explicit replay scope.</span> reproducibility requires controlled or recorded nondeterminism, scheduling, numeric semantics, and initial state—not just identical external inputs.</li>
     <li><span class="accent">5. observability over opacity.</span> every instruction is traceable. every memory access is auditable. no black boxes. the machine explains itself.</li>
     <li><span class="accent">6. composition over monolith.</span> small, well-defined interfaces. components snap together. no god objects.</li>
   </ul>
@@ -35,17 +37,17 @@ import { SITE } from "../lib/wire";
     <li><code class="accent">x0</code> — hardwired zero (reads 0, writes discarded)</li>
     <li><code class="accent">x1-x31</code> — 31 general-purpose 64-bit registers</li>
     <li><code class="accent">pc</code> — program counter (64-bit, 4-byte aligned)</li>
-    <li><code class="accent">cap0-cap31</code> — 32 capability registers (128-bit each: 64-bit address + 64-bit rights)</li>
+    <li><code class="accent">cap0-cap31</code> — proposed capability registers; width and compressed representation remain unspecified</li>
     <li><code class="accent">no condition codes.</code> comparisons set a register to 0 or 1. (learned from RISC-V: condition codes cause hidden state.)</li>
     <li><code class="accent">no delay slots.</code> branches take effect immediately. (learned from MIPS: delay slots are a source of bugs.)</li>
   </ul>
 
   <h3 class="section-h" style="margin-top:1em">instruction formats (4 types, all 4 bytes)</h3>
   <ul class="bare">
-    <li><span class="accent">R-type</span> (register-register): <code>opcode[6:0] | rd[4:0] | rs1[4:0] | rs2[4:0] | funct[12:0]</code> — 7+5+5+5+10 = 32 bits. ALU ops, capability ops.</li>
-    <li><span class="accent">I-type</span> (immediate): <code>opcode[6:0] | rd[4:0] | rs1[4:0] | imm[15:0]</code> — 7+5+5+15 = 32 bits. loads, ALU immediates, branches.</li>
-    <li><span class="accent">S-type</span> (store): <code>opcode[6:0] | rs2[4:0] | rs1[4:0] | imm[15:0]</code> — 7+5+5+15 = 32 bits. stores.</li>
-    <li><span class="accent">U-type</span> (upper immediate): <code>opcode[6:0] | rd[4:0] | imm[20:0]</code> — 7+5+20 = 32 bits. LUI, AUIPC, capability creation.</li>
+    <li><span class="accent">R-type</span> conceptual fields: <code>opcode(7) | rd(5) | rs1(5) | rs2(5) | funct(10)</code> = 32 bits.</li>
+    <li><span class="accent">I-type</span> conceptual fields: <code>opcode(7) | rd(5) | rs1(5) | imm(15)</code> = 32 bits.</li>
+    <li><span class="accent">S-type</span> conceptual fields: <code>opcode(7) | rs2(5) | rs1(5) | imm(15)</code> = 32 bits.</li>
+    <li><span class="accent">U-type</span> conceptual fields: <code>opcode(7) | rd(5) | imm(20)</code> = 32 bits. These are not assigned opcodes or an assembler specification; two-register branches still require a defined operand layout.</li>
   </ul>
   <p class="dim" style="margin-top:.6em">4 types instead of 6 (RISC-V has 6). simpler decoder. no B-type or J-type (branches use I-type with PC-relative offset, jumps use U-type + I-type).</p>
 
@@ -67,7 +69,7 @@ import { SITE } from "../lib/wire";
   <h2 class="section-h">2. capability system (the security substrate)</h2>
   <p class="dim">CHERI-inspired. every pointer is a capability. no ambient authority. hardware-enforced.</p>
 
-  <h3 class="section-h" style="margin-top:1em">capability format (128 bits)</h3>
+  <h3 class="section-h" style="margin-top:1em">capability fields (224 bits plus a validity tag, uncompressed)</h3>
   <ul class="bare">
     <li><code class="accent">address</code> — 64 bits: the memory address this capability points to</li>
     <li><code class="accent">base</code> — 64 bits: the lower bound of the accessible region</li>
@@ -97,7 +99,7 @@ import { SITE } from "../lib/wire";
   <h3 class="section-h" style="margin-top:1em">capability rules (hardware-enforced)</h3>
   <ul class="bare">
     <li>monotonicity: permissions can only be reduced, never increased (CSETPERM, CSETLEN)</li>
-    <li>bounds: every memory access checks base ≤ address < base+length. out of bounds → trap.</li>
+    <li>bounds: check the entire access width, alignment, permissions, validity and sealing state using overflow-safe bounds arithmetic. Checking only the starting address is insufficient.</li>
     <li>sealing: sealed capabilities cannot be dereferenced. only the sealer type can unseal.</li>
     <li>no forging: tag bit is cleared on any non-capability write. only capability operations set it.</li>
     <li>global: global capabilities (G permission) survive across compartment boundaries.</li>
@@ -188,7 +190,7 @@ import { SITE } from "../lib/wire";
 
   <h3 class="section-h" style="margin-top:1em">tracing</h3>
   <ul class="bare">
-    <li><span class="accent">instruction trace.</span> every instruction executed is logged: PC, instruction, register values before/after, memory accesses. (like perf but always on, with zero overhead via hardware.)</li>
+    <li><span class="accent">instruction trace.</span> optional privileged diagnostic tracing. Bandwidth, storage, execution overhead, and secret exposure must be measured; zero overhead is not claimed.</li>
     <li><span class="accent">memory trace.</span> every memory access is logged: address, value, read/write, cache hit/miss. (for debugging and verification.)</li>
     <li><span class="accent">I/O trace.</span> every I/O operation is logged: channel, operation, data, result. (for auditing and replay.)</li>
     <li><span class="accent">capability trace.</span> every capability operation is logged: creation, derivation, sealing, use. (for security auditing.)</li>
@@ -197,7 +199,7 @@ import { SITE } from "../lib/wire";
   <h3 class="section-h" style="margin-top:1em">deterministic replay</h3>
   <ul class="bare">
     <li><span class="accent">record.</span> log all non-deterministic inputs (I/O results, timer values, randomness) during execution.</li>
-    <li><span class="accent">replay.</span> re-execute with the same inputs. bit-identical result. (enables debugging of heisenbugs.)</li>
+    <li><span class="accent">replay.</span> supply recorded effect results without repeating live writes. Whole-machine replay additionally needs controlled or recorded scheduling, interrupts, relevant memory interleavings, atomic outcomes, and transaction aborts.</li>
     <li><span class="accent">time travel.</span> step backward in execution. inspect state at any point. (like rr but built into hardware.)</li>
   </ul>
 
@@ -234,7 +236,6 @@ import { SITE } from "../lib/wire";
   <hr />
 
   <p class="dim" style="margin-top:2em">
-    this design is a synthesis of 4,353 protocol facts from the wire corpus.
-    every decision is traceable to a specific entry. see <a href="/">wire</a> for the source data.
+    This sketch is a proposal, not a consequence proven by the corpus. See the <a href="/stack">revised stack</a> for primary sources, explicit boundaries, and acceptance experiments.
   </p>
 </BaseLayout>

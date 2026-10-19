@@ -7,15 +7,18 @@ interface Props {
   title?: string;
   description?: string;
   jsonHref?: string;
+  markdownHref?: string;
   status?: string;
+  frontmatter?: { title?: string; description?: string; markdownHref?: string };
 }
 
 const {
   title = SITE.name,
   description = SITE.tagline,
   jsonHref,
+  markdownHref,
   status = "main ✓",
-} = Astro.props;
+} = { ...Astro.props, ...Astro.props.frontmatter };
 ---
 
 <!doctype html>
@@ -29,11 +32,14 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     {jsonHref && <link rel="alternate" type="application/json" href={jsonHref} />}
+    {markdownHref && <link rel="alternate" type="text/markdown" href={markdownHref} />}
     <link rel="describedby" type="text/plain" href="/llms.txt" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <slot />
+    {Astro.props.frontmatter
+      ? <article class="markdown-document"><slot /></article>
+      : <slot />}
 
     <Palette />
 
@@ -47,6 +53,40 @@ const {
     </footer>
 
     <style>
+      .markdown-document :global(h1) {
+        font-size: 1.6em;
+        color: var(--color-accent);
+        margin-bottom: 1em;
+      }
+      .markdown-document :global(h2) {
+        margin: 2em 0 1em;
+        border-top: 1px solid var(--color-rule);
+        padding-top: 1em;
+        color: var(--color-accent);
+      }
+      .markdown-document :global(p),
+      .markdown-document :global(pre),
+      .markdown-document :global(ul),
+      .markdown-document :global(ol) {
+        margin: 1em 0;
+      }
+      .markdown-document :global(ul) { list-style: disc; padding-left: 1.6em; }
+      .markdown-document :global(ol) { list-style: decimal; padding-left: 1.6em; }
+      .markdown-document :global(li) { margin: .6em 0; }
+      .markdown-document :global(pre) {
+        padding: 1em;
+        border: 1px solid var(--color-rule);
+        overflow-wrap: anywhere;
+      }
+      .markdown-document { overflow-x: auto; }
+      .markdown-document :global(table) { width: 100%; border-collapse: collapse; }
+      .markdown-document :global(th),
+      .markdown-document :global(td) {
+        padding: .6em;
+        border-bottom: 1px solid var(--color-rule);
+        text-align: left;
+        vertical-align: top;
+      }
       #statusline .search-k {
         cursor: pointer;
       }
