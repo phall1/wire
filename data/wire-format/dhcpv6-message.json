@@ -1,0 +1,59 @@
+{
+  "id": "wire-format/dhcpv6-message",
+  "family": "wire-format",
+  "slug": "dhcpv6-message",
+  "title": "DHCPv6 message",
+  "summary": "DHCPv6 is the IPv6 version of DHCP. Message types: 1 Solicit, 2 Advertise, 3 Request, 4 Confirm, 5 Renew, 6 Rebind, 7 Reply, 8 Release, 9 Decline, 10 Reconfigure, 11 Information-request, 12 Relay-forward, 13 Relay-reply. Uses UDP ports 546 (client) and 547 (server). DHCPv6 uses DUID (DHCP Unique Identifier) instead of MAC address.",
+  "kind": "wire-format",
+  "aliases": [
+    "DHCPv6 message"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/DHCPv6",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 8415",
+    "summary": "DHCPv6 is the IPv6 version of DHCP. Message types: 1 Solicit, 2 Advertise, 3 Request, 4 Confirm, 5 Renew, 6 Rebind, 7 Reply, 8 Release, 9 Decline, 10 Reconfigure, 11 Information-request, 12 Relay-forward, 13 Relay-reply. Uses UDP ports 546 (client) and 547 (server). DHCPv6 uses DUID (DHCP Unique Identifier) instead of MAC address.",
+    "structure": [
+      {
+        "field": "Message type",
+        "size": "1 byte",
+        "meaning": "1 Solicit, 2 Advertise, 3 Request, 4 Confirm, 5 Renew, 6 Rebind, 7 Reply, 8 Release, 9 Decline, 10 Reconfigure, 11 Information-request, 12 Relay-forward, 13 Relay-reply."
+      },
+      {
+        "field": "Transaction ID",
+        "size": "3 bytes",
+        "meaning": "Transaction identifier (matches request to response)."
+      },
+      {
+        "field": "Options",
+        "size": "variable",
+        "meaning": "TLV options: option code (2 bytes), option length (2 bytes), option data. Key options: Client ID (1), Server ID (2), IA_NA (3, Identity Association for Non-temporary Addresses), IA_TA (4, Temporary Addresses), IAADDR (5, IPv6 address), Option Request (6), Preference (7), Elapsed Time (8), Relay Message (9), Authentication (11), Server Unicast (12), Status Code (13), Rapid Commit (14), User Class (15), Vendor Class (16), Vendor-specific (17), Interface ID (18), Reconfigure Message (19), Reconfigure Accept (20)."
+      },
+      {
+        "field": "DUID",
+        "size": "variable",
+        "meaning": "DHCP Unique Identifier: DUID-LLT (link-layer + time), DUID-EN (enterprise number), DUID-LL (link-layer), DUID-UUID."
+      },
+      {
+        "field": "IA_NA (Identity Association)",
+        "size": "variable",
+        "meaning": "Container for IPv6 addresses: IAID (4 bytes) + T1 (4) + T2 (4) + IAADDR options (address, preferred lifetime, valid lifetime)."
+      }
+    ],
+    "example_hex": "01 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "DHCPv6 Solicit message (type 1)",
+    "notes": [
+      "DHCPv6 uses UDP ports 546 (client) and 547 (server).",
+      "DHCPv6 uses DUID (not MAC address) for client identification.",
+      "DHCPv6-PD (Prefix Delegation) delegates IPv6 prefixes to routers.",
+      "Stateless DHCPv6 (Information-request) provides DNS/NTP without address assignment.",
+      "DHCPv6 is used in IPv6 networks (SLAAC is the alternative for address assignment)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

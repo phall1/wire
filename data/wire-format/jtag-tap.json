@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/jtag-tap",
+  "family": "wire-format",
+  "slug": "jtag-tap",
+  "title": "JTAG TAP (Test Access Port)",
+  "summary": "JTAG (IEEE 1149.1) provides a serial interface for testing and debugging. TAP controller: 16-state FSM controlled by TMS (Test Mode Select) and TCK (Test Clock). Registers: IR (Instruction Register), DR (Data Register, includes IDCODE, BYPASS, BOUNDARY SCAN). Operations: shift instructions into IR, then shift data through DR. Used for boundary scan testing, flash programming, and CPU debugging.",
+  "kind": "wire-format",
+  "aliases": [
+    "JTAG TAP (Test Access Port)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/JTAG",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "IEEE 1149.1 (JTAG)",
+    "summary": "JTAG (IEEE 1149.1) provides a serial interface for testing and debugging. TAP controller: 16-state FSM controlled by TMS (Test Mode Select) and TCK (Test Clock). Registers: IR (Instruction Register), DR (Data Register, includes IDCODE, BYPASS, BOUNDARY SCAN). Operations: shift instructions into IR, then shift data through DR. Used for boundary scan testing, flash programming, and CPU debugging.",
+    "structure": [
+      {
+        "field": "TMS (Test Mode Select)",
+        "size": "1 bit",
+        "meaning": "Controls the TAP state machine. Sampled on rising TCK edge."
+      },
+      {
+        "field": "TCK (Test Clock)",
+        "size": "clock",
+        "meaning": "Test clock (typically 1-10 MHz)."
+      },
+      {
+        "field": "TDI (Test Data In)",
+        "size": "1 bit",
+        "meaning": "Serial data input. Shifted into IR or DR."
+      },
+      {
+        "field": "TDO (Test Data Out)",
+        "size": "1 bit",
+        "meaning": "Serial data output. Shifted out of IR or DR."
+      },
+      {
+        "field": "TRST (Test Reset)",
+        "size": "1 bit (optional)",
+        "meaning": "Asynchronous reset for TAP controller."
+      },
+      {
+        "field": "IR (Instruction Register)",
+        "size": "2-32 bits",
+        "meaning": "Holds the current instruction. Common: IDCODE (read device ID), BYPASS (1-bit pass-through), SAMPLE/PRELOAD (boundary scan), EXTEST (external test)."
+      },
+      {
+        "field": "DR (Data Register)",
+        "size": "variable",
+        "meaning": "Data register selected by IR. IDCODE (32 bits: version (4) + part number (16) + manufacturer (11) + 1), BYPASS (1 bit), BOUNDARY SCAN (chain of boundary scan cells)."
+      },
+      {
+        "field": "TAP states",
+        "size": "16 states",
+        "meaning": "Test-Logic-Reset, Run-Test/Idle, Select-DR-Scan, Capture-DR, Shift-DR, Exit1-DR, Pause-DR, Exit2-DR, Update-DR, Select-IR-Scan, Capture-IR, Shift-IR, Exit1-IR, Pause-IR, Exit2-IR, Update-IR."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "JTAG TAP (placeholder)",
+    "notes": [
+      "JTAG is used for hardware debugging, flash programming, and boundary scan testing.",
+      "JTAG is the primary interface for debugging embedded systems and SoCs.",
+      "Boundary scan tests PCB connections by shifting test patterns through boundary scan cells.",
+      "JTAG can be used to program flash memory (e.g., SPI flash via JTAG).",
+      "SWD (Serial Wire Debug) is ARM's 2-wire alternative to JTAG."
+    ]
+  },
+  "updated": "2026-05-29"
+}

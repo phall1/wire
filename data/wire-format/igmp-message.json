@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/igmp-message",
+  "family": "wire-format",
+  "slug": "igmp-message",
+  "title": "IGMP (Internet Group Management Protocol) message",
+  "summary": "IGMP is used by hosts to report multicast group memberships to routers. Message types: 0x11 (Membership Query), 0x12 (Version 1 Membership Report), 0x16 (Version 2 Membership Report), 0x17 (Leave Group), 0x22 (Version 3 Membership Report). IGMPv3 supports source filtering (include/exclude sources). IGMP messages are carried in IP (protocol 2).",
+  "kind": "wire-format",
+  "aliases": [
+    "IGMP (Internet Group Management Protocol) message"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 3376 (IGMPv3)",
+    "summary": "IGMP is used by hosts to report multicast group memberships to routers. Message types: 0x11 (Membership Query), 0x12 (Version 1 Membership Report), 0x16 (Version 2 Membership Report), 0x17 (Leave Group), 0x22 (Version 3 Membership Report). IGMPv3 supports source filtering (include/exclude sources). IGMP messages are carried in IP (protocol 2).",
+    "structure": [
+      {
+        "field": "Type",
+        "size": "1 byte",
+        "meaning": "0x11 Membership Query, 0x12 V1 Report, 0x16 V2 Report, 0x17 Leave Group, 0x22 V3 Report."
+      },
+      {
+        "field": "Max Response Time",
+        "size": "1 byte",
+        "meaning": "For queries: max time (in 1/10 seconds) for hosts to respond. 0 for reports."
+      },
+      {
+        "field": "Checksum",
+        "size": "2 bytes",
+        "meaning": "Standard IP checksum of the IGMP message."
+      },
+      {
+        "field": "Group Address",
+        "size": "4 bytes",
+        "meaning": "For queries: multicast group to query (0.0.0.0 = general query). For reports: group being reported."
+      },
+      {
+        "field": "V3 Report",
+        "size": "variable",
+        "meaning": "Number of group records + group records (record type, aux data length, number of sources, multicast address, source addresses)."
+      },
+      {
+        "field": "Group Record Types",
+        "size": "1 byte",
+        "meaning": "1 = MODE_IS_INCLUDE, 2 = MODE_IS_EXCLUDE, 3 = CHANGE_TO_INCLUDE_MODE, 4 = CHANGE_TO_EXCLUDE_MODE, 5 = ALLOW_NEW_SOURCES, 6 = BLOCK_OLD_SOURCES."
+      }
+    ],
+    "example_hex": "11 00 00 00 e0 00 00 01",
+    "example_decoded": "IGMP Membership Query: type 0x11, group 224.0.0.1",
+    "notes": [
+      "IGMP is used for multicast group management (IPTV, video conferencing, etc.).",
+      "IGMPv1 (RFC 1112), v2 (RFC 2236), v3 (RFC 3376).",
+      "IGMPv3 supports source-specific multicast (SSM).",
+      "IGMP snooping: switches learn multicast group memberships to avoid flooding.",
+      "MLD (Multicast Listener Discovery) is the IPv6 equivalent of IGMP."
+    ]
+  },
+  "updated": "2026-05-29"
+}

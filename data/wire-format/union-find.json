@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/union-find",
+  "family": "wire-format",
+  "slug": "union-find",
+  "title": "Union-Find (Disjoint Set Union)",
+  "summary": "Union-Find (DSU) manages a partition of elements into disjoint sets. Operations: find(x) returns the representative of x's set, union(x,y) merges the sets of x and y. Optimizations: path compression (flatten tree during find), union by rank/size (attach smaller tree to larger). Amortized O(α(n)) per operation (α = inverse Ackermann, effectively constant).",
+  "kind": "wire-format",
+  "aliases": [
+    "Union-Find (Disjoint Set Union)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Disjoint-set_data_structure",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Union-Find (DSU)",
+    "summary": "Union-Find (DSU) manages a partition of elements into disjoint sets. Operations: find(x) returns the representative of x's set, union(x,y) merges the sets of x and y. Optimizations: path compression (flatten tree during find), union by rank/size (attach smaller tree to larger). Amortized O(α(n)) per operation (α = inverse Ackermann, effectively constant).",
+    "structure": [
+      {
+        "field": "Parent array",
+        "size": "n elements",
+        "meaning": "parent[i] = parent of element i. Root has parent[i] = i (or -1)."
+      },
+      {
+        "field": "Rank/size array",
+        "size": "n elements",
+        "meaning": "rank[i] = height of tree rooted at i (or size of set). Used for union by rank/size."
+      },
+      {
+        "field": "Find (with path compression)",
+        "size": "O(α(n)) amortized",
+        "meaning": "Recursively find root. Path compression: set parent of each visited node to root."
+      },
+      {
+        "field": "Union (by rank)",
+        "size": "O(α(n)) amortized",
+        "meaning": "Find roots of x and y. If different, attach shorter tree to taller tree. If equal rank, increment rank."
+      },
+      {
+        "field": "Union (by size)",
+        "size": "O(α(n)) amortized",
+        "meaning": "Attach smaller set to larger set. Update size of larger set."
+      },
+      {
+        "field": "Inverse Ackermann α(n)",
+        "size": "function",
+        "meaning": "α(n) ≤ 4 for all practical n (n ≤ 2^2^2^2^2^2^2...). Effectively constant."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Union-Find (placeholder)",
+    "notes": [
+      "Union-Find is used in Kruskal's MST algorithm, connected components, and network connectivity.",
+      "Path compression + union by rank gives amortized O(α(n)) per operation.",
+      "Union-Find is not a tree (it's a forest with path compression).",
+      "Persistent Union-Find supports rollback (used in offline algorithms).",
+      "Weighted Union-Find tracks additional data (e.g., parity, distance)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

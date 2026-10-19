@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/hkdf",
+  "family": "wire-format",
+  "slug": "hkdf",
+  "title": "HKDF (HMAC-based Key Derivation Function)",
+  "summary": "HKDF (RFC 5869) derives keys from a shared secret. Two phases: Extract (PRK = HMAC-Hash(salt, IKM)) and Expand (OKM = T_1 || T_2 || ... where T_i = HMAC-Hash(PRK, T_{i-1} || info || i)). Used in TLS 1.3, Signal Protocol, and many modern protocols.",
+  "kind": "wire-format",
+  "aliases": [
+    "HKDF (HMAC-based Key Derivation Function)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/HKDF",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "RFC 5869",
+    "summary": "HKDF (RFC 5869) derives keys from a shared secret. Two phases: Extract (PRK = HMAC-Hash(salt, IKM)) and Expand (OKM = T_1 || T_2 || ... where T_i = HMAC-Hash(PRK, T_{i-1} || info || i)). Used in TLS 1.3, Signal Protocol, and many modern protocols.",
+    "structure": [
+      {
+        "field": "Extract",
+        "size": "function",
+        "meaning": "PRK = HMAC-Hash(salt, IKM). Extracts a pseudorandom key from input key material."
+      },
+      {
+        "field": "Expand",
+        "size": "function",
+        "meaning": "OKM = T_1 || T_2 || ... || T_N. T_i = HMAC-Hash(PRK, T_{i-1} || info || i). Each T_i is HashLen bytes."
+      },
+      {
+        "field": "Salt",
+        "size": "optional",
+        "meaning": "Optional salt (recommended for better security). If not provided, zeros."
+      },
+      {
+        "field": "IKM",
+        "size": "variable",
+        "meaning": "Input Key Material (shared secret from DH, etc.)."
+      },
+      {
+        "field": "Info",
+        "size": "variable",
+        "meaning": "Context/application-specific info (e.g., 'tls13 key', 'tls13 iv')."
+      },
+      {
+        "field": "OKM length",
+        "size": "variable",
+        "meaning": "Output Key Material length (up to 255 * HashLen)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "HKDF (placeholder)",
+    "notes": [
+      "HKDF is used in TLS 1.3 (key schedule), Signal Protocol (Double Ratchet), and many modern protocols.",
+      "HKDF is not for passwords (use Argon2/scrypt for passwords).",
+      "HKDF provides defense in depth: even if IKM is weak, the output is pseudorandom.",
+      "TLS 1.3 uses HKDF-Expand-Label with a label prefix ('tls13 ' + label).",
+      "HKDF is quantum-safe (relies on the hash function, not asymmetric crypto)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

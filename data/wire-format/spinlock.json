@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/spinlock",
+  "family": "wire-format",
+  "slug": "spinlock",
+  "title": "Spinlock (busy-wait lock)",
+  "summary": "A spinlock is a lock where the acquiring thread busy-waits (spins) until the lock is available. Implementation: atomic test-and-set (TAS) or compare-and-swap (CAS). On contention, the thread spins (wastes CPU) but avoids context switch overhead. Used for short critical sections (< 100ns). Variants: ticket lock (FIFO fairness), MCS lock (queue-based, cache-friendly), CLH lock (list-based).",
+  "kind": "wire-format",
+  "aliases": [
+    "Spinlock (busy-wait lock)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Spinlock",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Spinlock",
+    "summary": "A spinlock is a lock where the acquiring thread busy-waits (spins) until the lock is available. Implementation: atomic test-and-set (TAS) or compare-and-swap (CAS). On contention, the thread spins (wastes CPU) but avoids context switch overhead. Used for short critical sections (< 100ns). Variants: ticket lock (FIFO fairness), MCS lock (queue-based, cache-friendly), CLH lock (list-based).",
+    "structure": [
+      {
+        "field": "Test-and-set (TAS)",
+        "size": "atomic",
+        "meaning": "Atomically set lock to 1 and return old value. If old value was 0, lock acquired. If 1, spin."
+      },
+      {
+        "field": "Compare-and-swap (CAS)",
+        "size": "atomic",
+        "meaning": "Atomically compare lock with expected value; if equal, set to new value. Returns success/failure."
+      },
+      {
+        "field": "Ticket lock",
+        "size": "variant",
+        "meaning": "FIFO fairness: each thread gets a ticket number. Threads acquire lock in ticket order. Prevents starvation."
+      },
+      {
+        "field": "MCS lock",
+        "size": "variant",
+        "meaning": "Queue-based: each thread spins on its own cache line (not a shared variable). Cache-friendly. Used in Linux kernel."
+      },
+      {
+        "field": "CLH lock",
+        "size": "variant",
+        "meaning": "List-based: each thread spins on its predecessor's node. Simpler than MCS."
+      },
+      {
+        "field": "Adaptive spinlock",
+        "size": "variant",
+        "meaning": "Spin for a while, then sleep (yield to OS). Balances latency and CPU usage."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Spinlock (placeholder)",
+    "notes": [
+      "Spinlocks are used for very short critical sections (< 100ns).",
+      "Spinlocks waste CPU on contention (busy-waiting).",
+      "MCS locks are cache-friendly (each thread spins on its own cache line).",
+      "Ticket locks provide FIFO fairness (prevent starvation).",
+      "Linux kernel uses spinlocks (with preemption disabled) for short critical sections."
+    ]
+  },
+  "updated": "2026-05-29"
+}

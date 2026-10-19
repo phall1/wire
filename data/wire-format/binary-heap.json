@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/binary-heap",
+  "family": "wire-format",
+  "slug": "binary-heap",
+  "title": "Binary heap (priority queue)",
+  "summary": "A binary heap is a complete binary tree stored in an array. Min-heap: parent ≤ children. Max-heap: parent ≥ children. Operations: insert (O(log n)), extract-min/max (O(log n)), peek (O(1)), heapify (O(n)). Used for priority queues, heapsort, and Dijkstra's algorithm.",
+  "kind": "wire-format",
+  "aliases": [
+    "Binary heap (priority queue)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Binary_heap",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Binary heap",
+    "summary": "A binary heap is a complete binary tree stored in an array. Min-heap: parent ≤ children. Max-heap: parent ≥ children. Operations: insert (O(log n)), extract-min/max (O(log n)), peek (O(1)), heapify (O(n)). Used for priority queues, heapsort, and Dijkstra's algorithm.",
+    "structure": [
+      {
+        "field": "Array representation",
+        "size": "array",
+        "meaning": "Complete binary tree stored in array. Parent of i = floor((i-1)/2). Left child = 2i+1. Right child = 2i+2."
+      },
+      {
+        "field": "Min-heap property",
+        "size": "invariant",
+        "meaning": "Parent ≤ children. Root is the minimum."
+      },
+      {
+        "field": "Max-heap property",
+        "size": "invariant",
+        "meaning": "Parent ≥ children. Root is the maximum."
+      },
+      {
+        "field": "Insert",
+        "size": "O(log n)",
+        "meaning": "Add to end, sift up (swap with parent if violates heap property)."
+      },
+      {
+        "field": "Extract-min",
+        "size": "O(log n)",
+        "meaning": "Remove root, move last element to root, sift down (swap with smaller child if violates heap property)."
+      },
+      {
+        "field": "Heapify",
+        "size": "O(n)",
+        "meaning": "Build heap from array: sift down from last internal node to root."
+      },
+      {
+        "field": "Heapsort",
+        "size": "O(n log n)",
+        "meaning": "Build max-heap, then repeatedly extract max (swap root with last, sift down). In-place, not stable."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Binary heap (placeholder)",
+    "notes": [
+      "Binary heap is the standard priority queue implementation.",
+      "Heapify is O(n) (not O(n log n)) due to the tree structure.",
+      "Heapsort is O(n log n) in-place but not stable.",
+      "Fibonacci heap has better amortized complexity but is slower in practice.",
+      "Binary heap is used in Dijkstra's algorithm, A*, and task schedulers."
+    ]
+  },
+  "updated": "2026-05-29"
+}

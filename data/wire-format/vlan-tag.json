@@ -1,0 +1,54 @@
+{
+  "id": "wire-format/vlan-tag",
+  "family": "wire-format",
+  "slug": "vlan-tag",
+  "title": "VLAN tag (802.1Q)",
+  "summary": "An 802.1Q VLAN tag is a 4-byte field inserted into an Ethernet frame between the source MAC and the EtherType. Fields: TPID (Tag Protocol Identifier, 2 bytes, 0x8100), PCP (Priority Code Point, 3 bits, 0-7), DEI (Drop Eligible Indicator, 1 bit), VID (VLAN Identifier, 12 bits, 1-4094).",
+  "kind": "wire-format",
+  "aliases": [
+    "VLAN tag (802.1Q)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/IEEE_802.1Q",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "IEEE 802.1Q",
+    "summary": "An 802.1Q VLAN tag is a 4-byte field inserted into an Ethernet frame between the source MAC and the EtherType. Fields: TPID (Tag Protocol Identifier, 2 bytes, 0x8100), PCP (Priority Code Point, 3 bits, 0-7), DEI (Drop Eligible Indicator, 1 bit), VID (VLAN Identifier, 12 bits, 1-4094).",
+    "structure": [
+      {
+        "field": "TPID",
+        "size": "2 bytes",
+        "meaning": "Tag Protocol Identifier: 0x8100 (802.1Q). Other values: 0x88A8 (QinQ outer), 0x9100 (legacy QinQ)."
+      },
+      {
+        "field": "PCP",
+        "size": "3 bits",
+        "meaning": "Priority Code Point: 0 (best effort) to 7 (highest). Maps to 802.1p priority."
+      },
+      {
+        "field": "DEI",
+        "size": "1 bit",
+        "meaning": "Drop Eligible Indicator: 1 = frame may be dropped under congestion."
+      },
+      {
+        "field": "VID",
+        "size": "12 bits",
+        "meaning": "VLAN Identifier: 1-4094 (0 and 4095 are reserved). 4094 possible VLANs."
+      }
+    ],
+    "example_hex": "81 00 00 01",
+    "example_decoded": "VLAN tag: TPID 0x8100, PCP 0, DEI 0, VID 1",
+    "notes": [
+      "VLAN tags enable virtual LANs (network segmentation).",
+      "QinQ (802.1ad) uses double tagging (outer + inner) for provider networks.",
+      "VLANs are used for network isolation, QoS, and multi-tenancy.",
+      "The VID 0 is reserved (priority-tagged frame). VID 4095 is reserved.",
+      "802.1Q is the standard for VLAN tagging."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/sha1-block",
+  "family": "wire-format",
+  "slug": "sha1-block",
+  "title": "SHA-1 (block structure)",
+  "summary": "SHA-1 processes input in 512-bit (64-byte) blocks. Similar to SHA-256 but with 160-bit (20-byte) output. 80 rounds (vs SHA-256's 64). Uses 5 working variables (a-e). Broken for collision resistance (SHAttered attack, 2017). Still used in Git (object IDs), TLS (legacy), and many systems.",
+  "kind": "wire-format",
+  "aliases": [
+    "SHA-1 (block structure)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/SHA-1",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "FIPS 180-4 (SHA-1)",
+    "summary": "SHA-1 processes input in 512-bit (64-byte) blocks. Similar to SHA-256 but with 160-bit (20-byte) output. 80 rounds (vs SHA-256's 64). Uses 5 working variables (a-e). Broken for collision resistance (SHAttered attack, 2017). Still used in Git (object IDs), TLS (legacy), and many systems.",
+    "structure": [
+      {
+        "field": "Message block",
+        "size": "64 bytes (512 bits)",
+        "meaning": "Input chunk, padded to multiple of 64 bytes."
+      },
+      {
+        "field": "W[0..15]",
+        "size": "16 x 4 bytes",
+        "meaning": "The 16 32-bit words of the message block (big-endian)."
+      },
+      {
+        "field": "W[16..79]",
+        "size": "64 x 4 bytes",
+        "meaning": "Extended words: W[t] = (W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16]) <<< 1."
+      },
+      {
+        "field": "Working variables",
+        "size": "5 x 4 bytes",
+        "meaning": "a, b, c, d, e (initial: H0-H4)."
+      },
+      {
+        "field": "Round function",
+        "size": "80 rounds",
+        "meaning": "4 stages (20 rounds each) with different functions: Ch, Parity, Maj, Parity. K constants per stage."
+      },
+      {
+        "field": "Output",
+        "size": "20 bytes (160 bits)",
+        "meaning": "Final hash = H0-H4 (each 4 bytes, big-endian)."
+      }
+    ],
+    "example_hex": "61 62 63 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 18",
+    "example_decoded": "SHA-1 padding for 'abc'",
+    "notes": [
+      "SHA-1 is broken for collision resistance (SHAttered: 2^63 operations, 2017).",
+      "SHA-1 is still used in Git (object IDs), TLS (legacy), and many systems.",
+      "SHA-1 is quantum-vulnerable (Grover's algorithm: 2^80 operations).",
+      "Git uses SHA-1 for content addressing. SHA-256 migration (SHA-256 repo format) is in progress.",
+      "SHA-1's 160-bit output is shorter than SHA-256's 256-bit, making collisions easier."
+    ]
+  },
+  "updated": "2026-05-29"
+}
