@@ -225,7 +225,49 @@ import { SITE } from "../lib/wire";
 
   <hr />
 
-  <h2 class="section-h">6. comparison with existing systems</h2>
+  <h2 class="section-h">6. radical simplification (TempleOS and the other extreme)</h2>
+  <p class="dim">TempleOS: one person, 100,000 lines, 15 years. what happens when you remove everything.</p>
+
+  <h3 class="section-h" style="margin-top:1em">TempleOS (Terry A. Davis, 1993-2017)</h3>
+  <ul class="bare">
+    <li><span class="accent">single address space.</span> no virtual memory. no MMU protection. all tasks share one address space. pointers are physical addresses.</li>
+    <li><span class="accent">ring 0 only.</span> no kernel/user separation. no system calls. all code runs in ring 0. (no security boundaries — acceptable for a personal/recreational OS.)</li>
+    <li><span class="accent">cooperative multitasking.</span> no preemption. tasks must voluntarily yield. simpler than preemptive but one runaway task freezes the system.</li>
+    <li><span class="accent">HolyC JIT.</span> JIT-compiled C-like language. no main() function. top-level expressions execute during compilation (REPL-like). no linker — single compilation unit.</li>
+    <li><span class="accent">no networking.</span> Davis: "networking would be reinventing the wheel." isolated by design.</li>
+    <li><span class="accent">640x480, 16 colors, single-voice audio.</span> deliberately limited per Davis's religious convictions.</li>
+    <li><span class="accent">RedSea filesystem.</span> flat namespace (no directories). file compression. no journaling, no permissions.</li>
+    <li><span class="accent">100,000 lines.</span> entire OS written by one person over ~15 years. demonstrates that radical simplification enables solo development.</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">what TempleOS got right (and we took)</h3>
+  <ul class="bare">
+    <li><span class="accent">no linker.</span> single compilation unit. simpler than separate compilation + linking. (we took: module system with no separate linker for the runtime.)</li>
+    <li><span class="accent">JIT as shell.</span> top-level expressions execute during compilation. interactive programming. (we took: REPL-like runtime.)</li>
+    <li><span class="accent">radical simplification enables solo development.</span> removing features (networking, virtual memory, protection rings) makes the system comprehensible by one person.</li>
+    <li><span class="accent">cooperative multitasking is simpler.</span> no preemption means no race conditions in the kernel. (we rejected: preemptive is needed for multi-core and real-time.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">what TempleOS got wrong (and we rejected)</h3>
+  <ul class="bare">
+    <li><span class="accent">no memory protection.</span> single address space + ring 0 = any bug can corrupt anything. (we took: capabilities + tagged memory.)</li>
+    <li><span class="accent">no preemption.</span> one runaway task freezes the system. (we took: preemptive scheduling.)</li>
+    <li><span class="accent">no networking.</span> isolated system. can't communicate with the outside world. (we took: full network stack.)</li>
+    <li><span class="accent">no virtual memory.</span> no process isolation, no overcommit, no demand paging. (we took: page-based virtual memory.)</li>
+    <li><span class="accent">no security.</span> no access control, no capabilities, no sandboxing. (we took: capability-based security.)</li>
+  </ul>
+
+  <h3 class="section-h" style="margin-top:1em">other radical simplifications</h3>
+  <ul class="bare">
+    <li><span class="accent">Unikernels.</span> single application + minimal OS in one address space. no kernel/user separation. (like TempleOS but for production.) used by MirageOS, IncludeOS, Nanos.</li>
+    <li><span class="accent">Exokernels.</span> minimal kernel that just allocates resources. all policy in user space. (like TempleOS's ring-0 model but with protection.) MIT Exokernel project.</li>
+    <li><span class="accent">Library OS.</span> OS as a library linked into the application. no kernel at all. (like TempleOS but portable.) used by Drawbridge, Graphene.</li>
+    <li><span class="accent">Bare metal.</span> no OS at all. application runs directly on hardware. (like TempleOS but without even a kernel.) used by embedded systems, some databases.</li>
+  </ul>
+
+  <hr />
+
+  <h2 class="section-h">7. comparison with existing systems</h2>
   <p class="dim">what we took from each, and what we rejected.</p>
   <ul class="bare">
     <li><span class="accent">seL4:</span> took formal verification, capability-based security, minimal kernel. rejected: (seL4 is single-core only; we want multi-core.)</li>

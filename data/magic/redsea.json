@@ -1,0 +1,39 @@
+{
+  "id": "magic/redsea",
+  "family": "magic",
+  "slug": "redsea",
+  "title": "RedSea filesystem signature (TempleOS)",
+  "summary": "RedSea is the native filesystem of TempleOS, created by Terry A. Davis. It uses a simple contiguous allocation scheme with a master boot record. The filesystem signature is 'RedSea' (0x52 0x65 0x64 0x53 0x65 0x61) at offset 3. RedSea supports file compression, has no directories (flat namespace), and is designed for simplicity.",
+  "kind": "signature",
+  "aliases": [
+    "redsea magic",
+    ".rs"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/TempleOS",
+  "source_version": "TempleOS 5.03, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "52 65 64 53 65 61",
+    "offset": 3,
+    "magic_ascii": "",
+    "extensions": [
+      "rs"
+    ],
+    "mime": "application/x-redsea",
+    "spec": "RedSea (TempleOS)",
+    "notes": [
+      "Signature 'RedSea' (0x52 0x65 0x64 0x53 0x65 0x61) at offset 3.",
+      "RedSea is TempleOS's native filesystem, designed by Terry A. Davis.",
+      "No directories — flat namespace. Files are identified by name only.",
+      "Supports file compression (LZW-based).",
+      "TempleOS also supports ISO 9660 and FAT32.",
+      "RedSea is designed for simplicity: no journaling, no permissions, no metadata beyond filename and size."
+    ]
+  },
+  "updated": "2026-05-29"
+}

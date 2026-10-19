@@ -1,0 +1,87 @@
+{
+  "id": "wire-format/templeos-design",
+  "family": "wire-format",
+  "slug": "templeos-design",
+  "title": "TempleOS system design (single-address-space, ring-0)",
+  "summary": "TempleOS is a 64-bit x86-64 OS with no kernel/user separation (all code runs in ring 0), single address space (no virtual memory, no MMU protection), cooperative multitasking (no preemption), and a JIT-compiled language (HolyC) that serves as both programming language and shell. Designed by Terry A. Davis (1993-2017).",
+  "kind": "wire-format",
+  "aliases": [
+    "TempleOS system design (single-address-space, ring-0)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/TempleOS",
+  "source_version": "TempleOS 5.03, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "TempleOS (Terry A. Davis)",
+    "summary": "TempleOS is a 64-bit x86-64 OS with no kernel/user separation (all code runs in ring 0), single address space (no virtual memory, no MMU protection), cooperative multitasking (no preemption), and a JIT-compiled language (HolyC) that serves as both programming language and shell. Designed by Terry A. Davis (1993-2017).",
+    "structure": [
+      {
+        "field": "Address space",
+        "size": "single, 64-bit",
+        "meaning": "No virtual memory. No MMU protection. All tasks share one address space. Pointers are physical addresses."
+      },
+      {
+        "field": "Protection rings",
+        "size": "ring 0 only",
+        "meaning": "No kernel/user separation. All code runs in ring 0. No system calls (direct function calls)."
+      },
+      {
+        "field": "Multitasking",
+        "size": "cooperative",
+        "meaning": "No preemption. Tasks must voluntarily yield (Yield()). Simpler than preemptive but one runaway task freezes the system."
+      },
+      {
+        "field": "Language",
+        "size": "HolyC (JIT)",
+        "meaning": "JIT-compiled C-like language. No main() function. Top-level expressions execute during compilation (REPL-like). No linker — single compilation unit."
+      },
+      {
+        "field": "Graphics",
+        "size": "640x480, 16 colors",
+        "meaning": "VGA mode 13h (or similar). 16-color palette. Designed per 'God's instructions' (per Davis)."
+      },
+      {
+        "field": "Audio",
+        "size": "single voice",
+        "meaning": "PC speaker (single voice). No sound card support."
+      },
+      {
+        "field": "Networking",
+        "size": "none",
+        "meaning": "No network drivers. Davis: 'networking would be reinventing the wheel.' Isolated by design."
+      },
+      {
+        "field": "Filesystem",
+        "size": "RedSea, FAT32, ISO 9660",
+        "meaning": "RedSea is native (flat namespace, no directories, compression). FAT32 and ISO 9660 for compatibility."
+      },
+      {
+        "field": "Compiler",
+        "size": "JIT",
+        "meaning": "HolyC compiles to native x86-64 code on the fly. No separate compilation step. No linker."
+      },
+      {
+        "field": "Code size",
+        "size": "~100,000 lines",
+        "meaning": "Entire OS written by one person (Terry A. Davis) over ~15 years."
+      }
+    ],
+    "example_hex": "00 00",
+    "example_decoded": "TempleOS design (placeholder)",
+    "notes": [
+      "TempleOS demonstrates that a complete OS can be built by one person.",
+      "Radical simplification: no virtual memory, no protection rings, no linker, no networking.",
+      "Single address space + ring-0 = no system calls, no context switches, no page faults.",
+      "Cooperative multitasking is simpler but vulnerable to runaway tasks.",
+      "HolyC's JIT + no-main() + top-level execution = interactive programming environment.",
+      "No kernel/user separation means no security boundaries — acceptable for a personal/recreational OS.",
+      "TempleOS is often cited as an example of 'outsider art' in software.",
+      "Davis claimed the 640x480/16-color/single-voice specs were divinely inspired."
+    ]
+  },
+  "updated": "2026-05-29"
+}
