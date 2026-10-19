@@ -1,0 +1,41 @@
+{
+  "id": "magic/le",
+  "family": "magic",
+  "slug": "le",
+  "title": "LE (Linear Executable) signature (OS/2, Windows VxD)",
+  "summary": "LE (Linear Executable) is a 32-bit executable format used by OS/2 2.x and Windows VxDs. Magic: 'MZ' at offset 0, with 'LE' at e_lfanew offset.",
+  "kind": "signature",
+  "aliases": [
+    "le magic",
+    ".exe",
+    ".dll",
+    ".vxd"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4C 45",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "exe",
+      "dll",
+      "vxd"
+    ],
+    "mime": "application/x-ms-le-executable",
+    "spec": "LE (OS/2 2.x)",
+    "notes": [
+      "'MZ' at offset 0, 'LE' at e_lfanew offset.",
+      "LE is the 32-bit predecessor of PE.",
+      "LE supports 32-bit flat addressing (vs NE's segmented model).",
+      "LE is used by OS/2 2.x and Windows 95/98 VxDs."
+    ]
+  },
+  "updated": "2026-05-29"
+}

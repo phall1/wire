@@ -1,0 +1,39 @@
+{
+  "id": "magic/ne",
+  "family": "magic",
+  "slug": "ne",
+  "title": "NE (New Executable) signature (Windows 1.x/2.x)",
+  "summary": "NE (New Executable) is the 16-bit Windows executable format. Magic: 'MZ' at offset 0, with 'NE' at the offset specified by e_lfanew (offset 0x3C). Used by Windows 1.0-3.x and OS/2 1.x.",
+  "kind": "signature",
+  "aliases": [
+    "ne magic",
+    ".exe",
+    ".dll"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4E 45",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "exe",
+      "dll"
+    ],
+    "mime": "application/x-ms-ne-executable",
+    "spec": "NE (Windows 1.x/2.x)",
+    "notes": [
+      "'MZ' at offset 0, 'NE' at e_lfanew offset.",
+      "NE is the 16-bit predecessor of PE (32-bit).",
+      "NE supports multiple segments, resources, and dynamic linking.",
+      "NE is used by Windows 1.0-3.x, Windows 95 (16-bit apps), and OS/2 1.x."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "magic/efi",
+  "family": "magic",
+  "slug": "efi",
+  "title": "UEFI firmware volume signature",
+  "summary": "A UEFI firmware volume begins with the signature '_FVH' (0x5F 0x46 0x56 0x48) at offset 0. The firmware volume header contains: signature (4), filesystem GUID (16), length (8), signature (4), checksum (2), ext header offset (2), reserved (1), revision (1), block map (variable).",
+  "kind": "signature",
+  "aliases": [
+    "efi magic",
+    ".fv",
+    ".cap"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "5F 46 56 48",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "fv",
+      "cap"
+    ],
+    "mime": "application/x-uefi-firmware",
+    "spec": "UEFI (Unified Extensible Firmware Interface)",
+    "notes": [
+      "Signature '_FVH' (0x5F 0x46 0x56 0x48) at offset 0.",
+      "UEFI firmware volumes contain PE/COFF executables, ACPI tables, and other firmware components.",
+      "UEFI replaces legacy BIOS.",
+      "UEFI supports Secure Boot, network boot, and GPT partitioning."
+    ]
+  },
+  "updated": "2026-05-29"
+}

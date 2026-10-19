@@ -1,0 +1,37 @@
+{
+  "id": "magic/ac3",
+  "family": "magic",
+  "slug": "ac3",
+  "title": "AC-3 (Dolby Digital) signature",
+  "summary": "An AC-3 file begins with the 16-bit sync word 0x0B77 (0x0B 0x77) at the start of each frame. Each frame is 1536 samples (at 48kHz, ~32ms).",
+  "kind": "signature",
+  "aliases": [
+    "ac3 magic",
+    ".ac3"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "0B 77",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "ac3"
+    ],
+    "mime": "audio/ac3",
+    "spec": "AC-3 (Dolby Digital)",
+    "notes": [
+      "Sync word 0x0B77 at the start of each frame.",
+      "AC-3 frame: sync (16) + CRC (16) + stream info (bits) + audio blocks (6 blocks of 256 samples) + auxiliary data + CRC.",
+      "AC-3 supports up to 5.1 channels (6 channels).",
+      "AC-3 is used in DVD, Blu-ray, and digital TV."
+    ]
+  },
+  "updated": "2026-05-29"
+}

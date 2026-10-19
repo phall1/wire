@@ -1,0 +1,37 @@
+{
+  "id": "magic/aout",
+  "family": "magic",
+  "slug": "aout",
+  "title": "a.out (assembler output) signature",
+  "summary": "a.out is the original Unix executable format. Magic number: 0x0107 (OMAGIC, text+data, writable text), 0x0108 (NMAGIC, text read-only, shared text), 0x010B (ZMAGIC, demand-paged, text read-only), 0x010D (QMAGIC, 32-bit, page-aligned).",
+  "kind": "signature",
+  "aliases": [
+    "aout magic",
+    ".out"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "01 07",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "out"
+    ],
+    "mime": "application/x-aout",
+    "spec": "a.out (Unix)",
+    "notes": [
+      "Magic 0x0107 (OMAGIC), 0x0108 (NMAGIC), 0x010B (ZMAGIC), 0x010D (QMAGIC).",
+      "a.out is the original Unix executable format (pre-ELF).",
+      "a.out has been replaced by ELF on all modern Unix systems.",
+      "a.out lacks dynamic linking support (static linking only)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

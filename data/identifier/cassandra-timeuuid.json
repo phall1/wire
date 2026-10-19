@@ -1,0 +1,30 @@
+{
+  "id": "identifier/cassandra-timeuuid",
+  "family": "identifier",
+  "slug": "cassandra-timeuuid",
+  "title": "Cassandra TimeUUID",
+  "summary": "Cassandra's timeuuid is a UUID v1 (time-based) with a specific layout: the timestamp is in 100-nanosecond intervals since the Unix epoch (not the UUID epoch). The clock sequence and node ID are random. TimeUUIDs are sortable by time and used as clustering keys in Cassandra.",
+  "kind": "identifier",
+  "aliases": [
+    "Cassandra TimeUUID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Apache Cassandra",
+    "example": "d2b2b8e0-5e6a-11ec-8d3d-0242ac130003",
+    "notes": [
+      "Time-based UUID with Unix epoch (not UUID epoch).",
+      "Timestamp in 100-nanosecond intervals since 1970-01-01.",
+      "Clock sequence and node ID are random (not MAC-based).",
+      "Sortable by time (unlike standard UUIDv1 which uses UUID epoch).",
+      "Used as clustering keys in Cassandra for time-series data."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "identifier/cpe",
+  "family": "identifier",
+  "slug": "cpe",
+  "title": "CPE (Common Platform Enumeration)",
+  "summary": "CPE is a standardized naming scheme for IT products: cpe:2.3:{part}:{vendor}:{product}:{version}:{update}:{edition}:{language}:{sw_edition}:{target_sw}:{target_hw}:{other}. Part: a (application), o (OS), h (hardware). Used in vulnerability databases (NVD) to identify affected products.",
+  "kind": "identifier",
+  "aliases": [
+    "CPE (Common Platform Enumeration)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "NIST CPE specification",
+    "example": "cpe:2.3:a:microsoft:windows_10:1903:*:*:*:*:*:*:*",
+    "notes": [
+      "Format: cpe:2.3:{part}:{vendor}:{product}:{version}:{update}:{edition}:{language}:{sw_edition}:{target_sw}:{target_hw}:{other}.",
+      "part: a (application), o (OS), h (hardware).",
+      "Fields can be '*' (any) or '-' (not applicable).",
+      "CPE is used in NVD (National Vulnerability Database) for CVE matching.",
+      "CPE names are case-insensitive."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "identifier/instagram-snowflake",
+  "family": "identifier",
+  "slug": "instagram-snowflake",
+  "title": "Instagram Snowflake ID",
+  "summary": "Instagram uses a Snowflake-style 64-bit ID: 41-bit millisecond timestamp (epoch 2011-01-01), 13-bit shard ID, and 10-bit sequence number. Instagram's IDs are 64-bit and sortable by time.",
+  "kind": "identifier",
+  "aliases": [
+    "Instagram Snowflake ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Instagram engineering blog",
+    "example": "1234567890123456789",
+    "notes": [
+      "41-bit timestamp in milliseconds since 2011-01-01T00:00:00Z.",
+      "13-bit shard ID (database shard).",
+      "10-bit sequence number (1024 IDs per millisecond per shard).",
+      "64-bit total fits in a signed 64-bit integer.",
+      "Custom epoch: 1293840000000 (2011-01-01)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

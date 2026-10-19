@@ -1,0 +1,30 @@
+{
+  "id": "identifier/opentelemetry-span-id",
+  "family": "identifier",
+  "slug": "opentelemetry-span-id",
+  "title": "OpenTelemetry Span ID",
+  "summary": "An OpenTelemetry span ID is a 64-bit (8-byte) identifier that uniquely identifies a span within a trace. Represented as 16 lowercase hex characters. Each span in a trace has a unique span ID.",
+  "kind": "identifier",
+  "aliases": [
+    "OpenTelemetry Span ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "OpenTelemetry specification",
+    "example": "00f067aa0ba902b7",
+    "notes": [
+      "64 bits (8 bytes), represented as 16 hex characters.",
+      "Unique within a trace (not globally).",
+      "Parent span ID references the parent span.",
+      "Used in distributed tracing for span correlation.",
+      "W3C Trace Context: traceparent header carries the span ID."
+    ]
+  },
+  "updated": "2026-05-29"
+}

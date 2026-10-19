@@ -1,0 +1,33 @@
+{
+  "id": "identifier/purl",
+  "family": "identifier",
+  "slug": "purl",
+  "title": "PURL (Package URL)",
+  "summary": "A PURL (Package URL) is a standardized URL for software packages: pkg:{type}/{namespace}/{name}@{version}?{qualifiers}#{subpath}. Types: npm, pypi, maven, gem, nuget, cargo, golang, docker, deb, rpm, etc. PURLs are used in SBOMs (Software Bill of Materials) and vulnerability databases.",
+  "kind": "identifier",
+  "aliases": [
+    "PURL (Package URL)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "ECMA-427 (PURL specification)",
+    "example": "pkg:npm/lodash@4.17.21",
+    "notes": [
+      "Format: pkg:{type}/{namespace}/{name}@{version}?{qualifiers}#{subpath}.",
+      "type: package ecosystem (npm, pypi, maven, gem, nuget, cargo, golang, docker, deb, rpm, etc.).",
+      "namespace: organization or group (optional).",
+      "name: package name.",
+      "version: package version.",
+      "qualifiers: key=value pairs (arch, os, distro, etc.).",
+      "subpath: path within the package (optional).",
+      "PURLs are used in SBOMs and vulnerability databases (CVE, OSV)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

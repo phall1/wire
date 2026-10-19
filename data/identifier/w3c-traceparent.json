@@ -1,0 +1,31 @@
+{
+  "id": "identifier/w3c-traceparent",
+  "family": "identifier",
+  "slug": "w3c-traceparent",
+  "title": "W3C Trace Context (traceparent header)",
+  "summary": "The W3C Trace Context standard defines the traceparent HTTP header: 'traceparent: {version}-{trace-id}-{parent-id}-{trace-flags}'. Version is 2 hex chars (00), trace-id is 32 hex chars (128-bit), parent-id is 16 hex chars (64-bit span ID), trace-flags is 2 hex chars (01 = sampled).",
+  "kind": "identifier",
+  "aliases": [
+    "W3C Trace Context (traceparent header)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "W3C Trace Context specification",
+    "example": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+    "notes": [
+      "Format: {version}-{trace-id}-{parent-id}-{trace-flags}.",
+      "version: 00 (current version).",
+      "trace-id: 32 hex chars (128-bit, globally unique).",
+      "parent-id: 16 hex chars (64-bit span ID).",
+      "trace-flags: 01 = sampled (trace is recorded), 00 = not sampled.",
+      "Used in HTTP headers for distributed tracing propagation."
+    ]
+  },
+  "updated": "2026-05-29"
+}

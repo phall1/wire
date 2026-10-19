@@ -1,0 +1,58 @@
+{
+  "id": "terminal-osc/15",
+  "family": "terminal-osc",
+  "slug": "15",
+  "title": "OSC 15 — Mouse background color (xterm)",
+  "summary": "OSC 15 sets the mouse pointer background color (xterm extension).",
+  "kind": "control-sequence",
+  "aliases": [
+    "OSC 15",
+    "OSC 15 — Mouse background color (xterm)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "OSC",
+    "command_number": 15,
+    "frame": {
+      "introducer_7bit": "\u001b]",
+      "introducer_7bit_readable": "ESC ] (0x1B 0x5D)",
+      "introducer_8bit": "",
+      "introducer_8bit_readable": "0x9D (single-byte OSC, 8-bit C1)",
+      "note": "OSC 15 ; ... ST."
+    },
+    "terminator": "ST|BEL",
+    "terminator_detail": {
+      "canonical_ST_7bit": "\u001b\\",
+      "alt_BEL": "\u0007",
+      "note": "ECMA-48 mandates ST; BEL is widely accepted."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Set pointer bg",
+        "meaning": "OSC 15 ; color ST sets the mouse pointer background color.",
+        "required": true,
+        "byte_sequence_ST": "\u001b]15;#000000\u001b\\",
+        "byte_sequence_ST_readable": "ESC ] 1 5 ; #000000 ST",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "OSC 15 is an xterm extension.",
+      "Use OSC 112 to reset."
+    ],
+    "v1_smoke_test": {
+      "asserts": "OSC 15 renders as a byte-exact ST-terminated OSC sequence.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

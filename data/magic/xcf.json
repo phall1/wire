@@ -1,0 +1,37 @@
+{
+  "id": "magic/xcf",
+  "family": "magic",
+  "slug": "xcf",
+  "title": "XCF (GIMP image) signature",
+  "summary": "An XCF file begins with the 9-byte signature 'gimp xcf ' (0x67 0x69 0x6D 0x70 0x20 0x78 0x63 0x66 0x20) followed by the version string ('v001', 'v002', or 'v003').",
+  "kind": "signature",
+  "aliases": [
+    "xcf magic",
+    ".xcf"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "67 69 6D 70 20 78 63 66 20",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "xcf"
+    ],
+    "mime": "image/x-xcf",
+    "spec": "XCF (GIMP)",
+    "notes": [
+      "Signature 'gimp xcf ' (0x67 0x69 0x6D 0x70 0x20 0x78 0x63 0x66 0x20) at offset 0.",
+      "Version: 'v001' (GIMP 2.6), 'v002' (GIMP 2.8), 'v003' (GIMP 2.10).",
+      "XCF is GIMP's native image format (layers, channels, paths).",
+      "XCF supports RLE compression for layer data."
+    ]
+  },
+  "updated": "2026-05-29"
+}

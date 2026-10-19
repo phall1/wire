@@ -1,0 +1,37 @@
+{
+  "id": "magic/dds",
+  "family": "magic",
+  "slug": "dds",
+  "title": "DDS (DirectDraw Surface) signature",
+  "summary": "A DDS file begins with the 4-byte signature 'DDS ' (0x44 0x44 0x53 0x20) followed by a 124-byte header (DDS_HEADER) containing width, height, pitch, format, etc.",
+  "kind": "signature",
+  "aliases": [
+    "dds magic",
+    ".dds"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "44 44 53 20",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "dds"
+    ],
+    "mime": "image/vnd.ms-dds",
+    "spec": "DDS (Microsoft)",
+    "notes": [
+      "Signature 'DDS ' (0x44 0x44 0x53 0x20) at offset 0.",
+      "DDS header (124 bytes): size (4), flags (4), height (4), width (4), pitch (4), depth (4), mip map count (4), reserved (44), pixel format (32), caps (4), caps2 (4), caps3 (4), caps4 (4), reserved2 (4).",
+      "DDS supports compressed textures (DXT1/3/5, BC1-7) and mipmaps.",
+      "DDS is used in game development (DirectX, OpenGL)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

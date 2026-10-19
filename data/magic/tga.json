@@ -1,0 +1,39 @@
+{
+  "id": "magic/tga",
+  "family": "magic",
+  "slug": "tga",
+  "title": "TGA (Targa) image signature",
+  "summary": "A TGA file has no magic number at the start. The footer (last 26 bytes) contains the signature 'TRUEVISION-XFILE.\\0' (0x54 0x52 0x55 0x45 0x56 0x49 0x53 0x49 0x4F 0x4E 0x2D 0x58 0x46 0x49 0x4C 0x45 0x2E 0x00) at offset -26 (from end of file).",
+  "kind": "signature",
+  "aliases": [
+    "tga magic",
+    ".tga",
+    ".targa"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "54 52 55 45 56 49 53 49 4F 4E 2D 58 46 49 4C 45 2E 00",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "tga",
+      "targa"
+    ],
+    "mime": "image/x-tga",
+    "spec": "TGA (Truevision)",
+    "notes": [
+      "Footer signature 'TRUEVISION-XFILE.\\0' at end of file (offset -26).",
+      "TGA header: ID length (1), color map type (1), image type (1), color map spec (5), image spec (10).",
+      "TGA supports 8/15/16/24/32-bit color depths.",
+      "TGA is used in computer graphics and game development."
+    ]
+  },
+  "updated": "2026-05-29"
+}

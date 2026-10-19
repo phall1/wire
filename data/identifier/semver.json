@@ -1,0 +1,32 @@
+{
+  "id": "identifier/semver",
+  "family": "identifier",
+  "slug": "semver",
+  "title": "Semantic Versioning (SemVer)",
+  "summary": "Semantic Versioning (SemVer) is a versioning scheme: MAJOR.MINOR.PATCH. MAJOR: incompatible API changes. MINOR: backward-compatible functionality. PATCH: backward-compatible bug fixes. Pre-release: MAJOR.MINOR.PATCH-rc.1. Build metadata: MAJOR.MINOR.PATCH+build.123.",
+  "kind": "identifier",
+  "aliases": [
+    "Semantic Versioning (SemVer)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Semantic Versioning 2.0.0",
+    "example": "1.2.3-rc.1+build.456",
+    "notes": [
+      "Format: MAJOR.MINOR.PATCH[-prerelease][+build].",
+      "MAJOR: incremented for incompatible API changes.",
+      "MINOR: incremented for backward-compatible new functionality.",
+      "PATCH: incremented for backward-compatible bug fixes.",
+      "Pre-release: hyphen + dot-separated identifiers (rc.1, alpha, beta.2).",
+      "Build metadata: plus + dot-separated identifiers (build.456).",
+      "Pre-release has lower precedence than normal version."
+    ]
+  },
+  "updated": "2026-05-29"
+}

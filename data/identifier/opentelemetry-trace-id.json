@@ -1,0 +1,30 @@
+{
+  "id": "identifier/opentelemetry-trace-id",
+  "family": "identifier",
+  "slug": "opentelemetry-trace-id",
+  "title": "OpenTelemetry Trace ID",
+  "summary": "An OpenTelemetry trace ID is a 128-bit (16-byte) identifier that uniquely identifies a trace (a distributed request). Represented as 32 lowercase hex characters. All spans within a trace share the same trace ID.",
+  "kind": "identifier",
+  "aliases": [
+    "OpenTelemetry Trace ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "OpenTelemetry specification",
+    "example": "4bf92f3577b34da6a3ce929d0e0e4736",
+    "notes": [
+      "128 bits (16 bytes), represented as 32 hex characters.",
+      "All spans within a trace share the same trace ID.",
+      "Trace IDs should be globally unique (randomly generated).",
+      "Used in distributed tracing (Jaeger, Zipkin, Tempo).",
+      "W3C Trace Context: traceparent header carries the trace ID."
+    ]
+  },
+  "updated": "2026-05-29"
+}

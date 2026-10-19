@@ -1,0 +1,68 @@
+{
+  "id": "terminal-dec-private-mode/20",
+  "family": "terminal-dec-private-mode",
+  "slug": "20",
+  "title": "DECSET 20 — New line mode (LNM)",
+  "summary": "CSI ? 20 h enables new line mode (LF also does CR). CSI ? 20 l disables it (LF only moves down).",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSET 20",
+    "DECRST 20",
+    "?20"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 20,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private modes are CSI sequences with a leading '?' (0x3F) private-parameter prefix. Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST)."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: a DEC private mode is a CSI sequence ending at its final byte ('h' to set, 'l' to reset)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 20 h new line mode (LNM)",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?20h",
+        "byte_sequence_ST_readable": "ESC [ ? 20 h",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 20 l disables the mode.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?20l",
+        "byte_sequence_ST_readable": "ESC [ ? 20 l",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "LNM = Line Feed/New Line Mode.",
+      "When enabled, LF (0x0A) also performs CR (0x0D).",
+      "Default is LNM off (LF only moves down)."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSET/DECRST 20 render as byte-exact CSI ? 20 h/l sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "magic/aac",
+  "family": "magic",
+  "slug": "aac",
+  "title": "AAC (Advanced Audio Coding) signature",
+  "summary": "An AAC file in ADTS (Audio Data Transport Stream) format begins with the 12-bit sync word 0xFFF (0xFF 0xF0 or 0xFF 0xF1) followed by 4 bits of configuration. Raw AAC (no container) has no magic number.",
+  "kind": "signature",
+  "aliases": [
+    "aac magic",
+    ".aac"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "FF F1",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "aac"
+    ],
+    "mime": "audio/aac",
+    "spec": "AAC (MPEG-4 Part 3)",
+    "notes": [
+      "ADTS sync word: 0xFFF (12 bits) at the start of each frame.",
+      "ADTS header: sync (12) + ID (1) + layer (2) + protection (1) + profile (2) + sampling freq (4) + private (1) + channel config (3) + original (1) + home (1) + copyright (1) + copyright start (1) + frame length (13) + buffer fullness (11) + number of frames (2) + CRC (16, optional).",
+      "AAC is used in MP4 (M4A), YouTube, Apple Music, etc.",
+      "AAC provides better quality than MP3 at the same bitrate."
+    ]
+  },
+  "updated": "2026-05-29"
+}

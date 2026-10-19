@@ -1,0 +1,30 @@
+{
+  "id": "identifier/sonyflake",
+  "family": "identifier",
+  "slug": "sonyflake",
+  "title": "Sonyflake (Sony's Snowflake)",
+  "summary": "Sonyflake is Sony's variant of Snowflake IDs: 39-bit millisecond timestamp (epoch 2014-09-01), 8-bit sequence number, and 16-bit machine ID. The 39-bit timestamp gives ~17.4 years of range. Sonyflake is used in Sony's internal systems.",
+  "kind": "identifier",
+  "aliases": [
+    "Sonyflake (Sony's Snowflake)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "Sony (github.com/sony/sonyflake)",
+    "example": "28511234567890123",
+    "notes": [
+      "39-bit timestamp in milliseconds since 2014-09-01T00:00:00Z.",
+      "8-bit sequence number (256 IDs per millisecond per machine).",
+      "16-bit machine ID.",
+      "63-bit total (fits in signed 64-bit).",
+      "Custom epoch: 1409529600000 (2014-09-01)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

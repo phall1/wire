@@ -1,0 +1,68 @@
+{
+  "id": "terminal-dec-private-mode/5",
+  "family": "terminal-dec-private-mode",
+  "slug": "5",
+  "title": "DECSET 5 — Reverse video (DECSCNM)",
+  "summary": "CSI ? 5 h enables reverse video (black on white). CSI ? 5 l enables normal video (white on black).",
+  "kind": "control-sequence",
+  "aliases": [
+    "DECSET 5",
+    "DECRST 5",
+    "?5"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://invisible-island.net/xterm/ctlseqs/ctlseqs.html",
+  "source_version": "xterm ctlseqs, patch #410, 2026/04/19",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "terminal-escape@1",
+  "ext": {
+    "csi_or_osc": "DEC-private-mode",
+    "command_number": 5,
+    "frame": {
+      "introducer_7bit": "\u001b[?",
+      "introducer_7bit_readable": "ESC [ ? (0x1B 0x5B 0x3F)",
+      "introducer_8bit": "?",
+      "introducer_8bit_readable": "0x9B ? (8-bit CSI + '?')",
+      "note": "DEC private modes are CSI sequences with a leading '?' (0x3F) private-parameter prefix. Set = final byte 'h' (DECSET); reset = final byte 'l' (DECRST)."
+    },
+    "terminator": "none",
+    "terminator_detail": {
+      "note": "No string terminator: a DEC private mode is a CSI sequence ending at its final byte ('h' to set, 'l' to reset)."
+    },
+    "params": [
+      {
+        "id": "set",
+        "anchor": "#set",
+        "name": "Enable (DECSET)",
+        "meaning": "CSI ? 5 h reverse video (DECSCNM)",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?5h",
+        "byte_sequence_ST_readable": "ESC [ ? 5 h",
+        "subparams": []
+      },
+      {
+        "id": "reset",
+        "anchor": "#reset",
+        "name": "Disable (DECRST)",
+        "meaning": "CSI ? 5 l disables the mode.",
+        "required": true,
+        "byte_sequence_ST": "\u001b[?5l",
+        "byte_sequence_ST_readable": "ESC [ ? 5 l",
+        "subparams": []
+      }
+    ],
+    "gotchas": [
+      "Reverse video swaps foreground and background colors.",
+      "DECSCNM = DEC Screen Mode.",
+      "Used for accessibility or preference."
+    ],
+    "v1_smoke_test": {
+      "asserts": "DECSET/DECRST 5 render as byte-exact CSI ? 5 h/l sequences.",
+      "behavioral_conformance": "deferred to v2."
+    }
+  },
+  "updated": "2026-05-29"
+}

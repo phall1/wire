@@ -1,0 +1,37 @@
+{
+  "id": "magic/chm",
+  "family": "magic",
+  "slug": "chm",
+  "title": "CHM (Compiled HTML Help) signature",
+  "summary": "A CHM file begins with the 4-byte signature 'ITSF' (0x49 0x54 0x53 0x46) followed by version number (3 for CHM). CHM is a Microsoft proprietary format for help files.",
+  "kind": "signature",
+  "aliases": [
+    "chm magic",
+    ".chm"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "49 54 53 46",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "chm"
+    ],
+    "mime": "application/vnd.ms-htmlhelp",
+    "spec": "CHM (Microsoft)",
+    "notes": [
+      "Signature 'ITSF' (0x49 0x54 0x53 0x46) at offset 0.",
+      "Version 3 (0x03 0x00 0x00 0x00).",
+      "CHM contains compressed HTML, images, and a table of contents.",
+      "CHM is used for Windows help files and documentation."
+    ]
+  },
+  "updated": "2026-05-29"
+}

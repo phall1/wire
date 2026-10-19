@@ -1,0 +1,38 @@
+{
+  "id": "magic/lx",
+  "family": "magic",
+  "slug": "lx",
+  "title": "LX (Linear Executable, OS/2 2.x) signature",
+  "summary": "LX is a variant of LE used by OS/2 2.x. Magic: 'MZ' at offset 0, with 'LX' at e_lfanew offset.",
+  "kind": "signature",
+  "aliases": [
+    "lx magic",
+    ".exe",
+    ".dll"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "4C 58",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "exe",
+      "dll"
+    ],
+    "mime": "application/x-ms-lx-executable",
+    "spec": "LX (OS/2 2.x)",
+    "notes": [
+      "'MZ' at offset 0, 'LX' at e_lfanew offset.",
+      "LX is similar to LE but with some OS/2-specific extensions.",
+      "LX is used by OS/2 2.x 32-bit executables."
+    ]
+  },
+  "updated": "2026-05-29"
+}

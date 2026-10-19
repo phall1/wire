@@ -1,0 +1,39 @@
+{
+  "id": "magic/mobi",
+  "family": "magic",
+  "slug": "mobi",
+  "title": "MOBI (Mobipocket) signature",
+  "summary": "A MOBI ebook begins with the 4-byte signature 'BOOK' (0x42 0x4F 0x4F 0x4B) or 'TPZ' (0x54 0x50 0x5A) for Topaz format. MOBI is based on PDB (Palm Database) format.",
+  "kind": "signature",
+  "aliases": [
+    "mobi magic",
+    ".mobi",
+    ".prc"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "42 4F 4F 4B",
+    "offset": 60,
+    "magic_ascii": "",
+    "extensions": [
+      "mobi",
+      "prc"
+    ],
+    "mime": "application/x-mobipocket-ebook",
+    "spec": "MOBI (Amazon)",
+    "notes": [
+      "Signature 'BOOK' (0x42 0x4F 0x4F 0x4B) at offset 60 (PDB record 0).",
+      "MOBI is based on Palm Database (PDB) format.",
+      "MOBI is used by Amazon Kindle (older format, superseded by AZW3/KFX).",
+      "MOBI supports DRM, annotations, and metadata."
+    ]
+  },
+  "updated": "2026-05-29"
+}
