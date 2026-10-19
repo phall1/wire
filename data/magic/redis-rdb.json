@@ -1,0 +1,37 @@
+{
+  "id": "magic/redis-rdb",
+  "family": "magic",
+  "slug": "redis-rdb",
+  "title": "Redis RDB (snapshot) signature",
+  "summary": "A Redis RDB file begins with the 5-byte signature 'REDIS' (0x52 0x45 0x44 0x49 0x53) followed by a 4-byte version number (e.g., '0009' for RDB version 9).",
+  "kind": "signature",
+  "aliases": [
+    "redis-rdb magic",
+    ".rdb"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "52 45 44 09",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "rdb"
+    ],
+    "mime": "application/x-redis-rdb",
+    "spec": "Redis RDB",
+    "notes": [
+      "Signature: 'REDIS' (0x52 0x45 0x44 0x49 0x53) + version (4 ASCII digits).",
+      "RDB is a point-in-time snapshot of the Redis dataset.",
+      "RDB files are compact (binary format) and fast to load.",
+      "RDB version 9 is used by Redis 7.0+."
+    ]
+  },
+  "updated": "2026-05-29"
+}

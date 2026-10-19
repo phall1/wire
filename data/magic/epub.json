@@ -1,0 +1,37 @@
+{
+  "id": "magic/epub",
+  "family": "magic",
+  "slug": "epub",
+  "title": "EPUB signature",
+  "summary": "An EPUB file is a ZIP archive containing XHTML content, CSS, images, and a container.xml (META-INF/container.xml pointing to the OPF package document). The magic is the standard ZIP signature 0x50 0x4B 0x03 0x04.",
+  "kind": "signature",
+  "aliases": [
+    "epub magic",
+    ".epub"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "50 4B 03 04",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "epub"
+    ],
+    "mime": "application/epub+zip",
+    "spec": "EPUB (IDPF)",
+    "notes": [
+      "ZIP magic: 0x50 0x4B 0x03 0x04.",
+      "EPUB contains: META-INF/container.xml, OEBPS/content.opf, XHTML files, CSS, images.",
+      "EPUB is the standard ebook format.",
+      "EPUB 3 is the current version (HTML5, CSS3, JavaScript)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

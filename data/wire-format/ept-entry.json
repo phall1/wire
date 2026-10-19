@@ -1,0 +1,84 @@
+{
+  "id": "wire-format/ept-entry",
+  "family": "wire-format",
+  "slug": "ept-entry",
+  "title": "EPT (Extended Page Table) entry",
+  "summary": "An EPT entry is 8 bytes (64 bits), similar to a regular page table entry but for guest physical → host physical translation. Fields: read (bit 0), write (bit 1), execute (bit 2), memory type (bits 3-5), ignore PAT (bit 6), accessed (bit 8), dirty (bit 9), execute for user (bit 10), reserved (bit 11), host physical frame (bits 12-51), reserved (bits 52-60), suppress VE (bit 61), reserved (bits 62-63).",
+  "kind": "wire-format",
+  "aliases": [
+    "EPT (Extended Page Table) entry"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Second_Level_Address_Translation",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel VT-x (EPT)",
+    "summary": "An EPT entry is 8 bytes (64 bits), similar to a regular page table entry but for guest physical → host physical translation. Fields: read (bit 0), write (bit 1), execute (bit 2), memory type (bits 3-5), ignore PAT (bit 6), accessed (bit 8), dirty (bit 9), execute for user (bit 10), reserved (bit 11), host physical frame (bits 12-51), reserved (bits 52-60), suppress VE (bit 61), reserved (bits 62-63).",
+    "structure": [
+      {
+        "field": "Read (R)",
+        "size": "1 bit (bit 0)",
+        "meaning": "1 = readable."
+      },
+      {
+        "field": "Write (W)",
+        "size": "1 bit (bit 1)",
+        "meaning": "1 = writable."
+      },
+      {
+        "field": "Execute (X)",
+        "size": "1 bit (bit 2)",
+        "meaning": "1 = executable."
+      },
+      {
+        "field": "Memory type (MT)",
+        "size": "3 bits (3-5)",
+        "meaning": "000 = uncacheable, 001 = write combining, 010 = write through, 011 = write back, 100 = write protected, 101 = write back (UC if MTRR says UC)."
+      },
+      {
+        "field": "Ignore PAT",
+        "size": "1 bit (bit 6)",
+        "meaning": "1 = ignore PAT (use MT field instead)."
+      },
+      {
+        "field": "Accessed (A)",
+        "size": "1 bit (bit 8)",
+        "meaning": "Set by hardware on access."
+      },
+      {
+        "field": "Dirty (D)",
+        "size": "1 bit (bit 9)",
+        "meaning": "Set by hardware on write."
+      },
+      {
+        "field": "Execute for user (XU)",
+        "size": "1 bit (bit 10)",
+        "meaning": "1 = executable in user mode (guest)."
+      },
+      {
+        "field": "Host physical frame",
+        "size": "40 bits (12-51)",
+        "meaning": "Host physical frame number (page-aligned)."
+      },
+      {
+        "field": "Suppress VE (bit 61)",
+        "size": "1 bit",
+        "meaning": "1 = suppress #VE (virtualization exception) on access violation."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "EPT entry (placeholder)",
+    "notes": [
+      "EPT provides nested paging: guest virtual → guest physical → host physical.",
+      "EPT violations cause VM exits (or #VE if enabled).",
+      "EPT is used by KVM, Hyper-V, VMware for memory virtualization.",
+      "EPT adds one more level of translation (guest virtual → guest physical → host physical).",
+      "Without EPT, shadow page tables are used (software-based, slower)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

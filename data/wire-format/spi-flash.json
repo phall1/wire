@@ -1,0 +1,89 @@
+{
+  "id": "wire-format/spi-flash",
+  "family": "wire-format",
+  "slug": "spi-flash",
+  "title": "SPI flash (NOR flash) protocol",
+  "summary": "SPI flash (NOR flash) is accessed via SPI bus. Commands: 0x03 (Read Data), 0x0B (Fast Read), 0x02 (Page Program), 0x20 (Sector Erase 4KB), 0x52 (Block Erase 32KB), 0xD8 (Block Erase 64KB), 0xC7/0x60 (Chip Erase), 0x05 (Read Status Register), 0x01 (Write Status Register), 0x06 (Write Enable), 0x04 (Write Disable), 0x9F (Read JEDEC ID), 0x90 (Read Manufacturer/Device ID). Page size: 256 bytes. Sector size: 4KB. Block size: 32KB/64KB.",
+  "kind": "wire-format",
+  "aliases": [
+    "SPI flash (NOR flash) protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Serial_Peripheral_Interface",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "SPI flash (JEDEC)",
+    "summary": "SPI flash (NOR flash) is accessed via SPI bus. Commands: 0x03 (Read Data), 0x0B (Fast Read), 0x02 (Page Program), 0x20 (Sector Erase 4KB), 0x52 (Block Erase 32KB), 0xD8 (Block Erase 64KB), 0xC7/0x60 (Chip Erase), 0x05 (Read Status Register), 0x01 (Write Status Register), 0x06 (Write Enable), 0x04 (Write Disable), 0x9F (Read JEDEC ID), 0x90 (Read Manufacturer/Device ID). Page size: 256 bytes. Sector size: 4KB. Block size: 32KB/64KB.",
+    "structure": [
+      {
+        "field": "Read Data (0x03)",
+        "size": "command",
+        "meaning": "0x03 + 3-byte address. Returns data at 1x speed."
+      },
+      {
+        "field": "Fast Read (0x0B)",
+        "size": "command",
+        "meaning": "0x0B + 3-byte address + 1 dummy byte. Returns data at higher speed."
+      },
+      {
+        "field": "Page Program (0x02)",
+        "size": "command",
+        "meaning": "0x02 + 3-byte address + up to 256 bytes data. Writes one page (must erase first)."
+      },
+      {
+        "field": "Sector Erase (0x20)",
+        "size": "command",
+        "meaning": "0x20 + 3-byte address. Erases 4KB sector (sets all bits to 1)."
+      },
+      {
+        "field": "Block Erase (0xD8)",
+        "size": "command",
+        "meaning": "0xD8 + 3-byte address. Erases 64KB block."
+      },
+      {
+        "field": "Chip Erase (0xC7)",
+        "size": "command",
+        "meaning": "0xC7 (or 0x60). Erases entire chip."
+      },
+      {
+        "field": "Read Status (0x05)",
+        "size": "command",
+        "meaning": "0x05. Returns status register: WIP (write in progress), WEL (write enable latch), BP (block protect), etc."
+      },
+      {
+        "field": "Write Enable (0x06)",
+        "size": "command",
+        "meaning": "0x06. Sets WEL bit. Required before program/erase."
+      },
+      {
+        "field": "Read JEDEC ID (0x9F)",
+        "size": "command",
+        "meaning": "0x9F. Returns manufacturer ID (1 byte), device ID (2 bytes), capacity (1 byte)."
+      },
+      {
+        "field": "Page size",
+        "size": "256 bytes",
+        "meaning": "Minimum write unit. Must erase sector before writing."
+      },
+      {
+        "field": "Sector size",
+        "size": "4KB",
+        "meaning": "Minimum erase unit."
+      }
+    ],
+    "example_hex": "9f 00 00 00",
+    "example_decoded": "SPI flash: Read JEDEC ID command (0x9F)",
+    "notes": [
+      "SPI flash is used for firmware storage (BIOS/UEFI, embedded systems).",
+      "SPI flash supports QSPI (Quad SPI) for 4x throughput (4 data lines).",
+      "SPI flash has limited write endurance (~100K erase cycles per sector).",
+      "SPI flash is non-volatile (retains data without power).",
+      "Common manufacturers: Winbond, Macronix, Micron, GigaDevice."
+    ]
+  },
+  "updated": "2026-05-29"
+}

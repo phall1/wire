@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/mbr-partition-table",
+  "family": "wire-format",
+  "slug": "mbr-partition-table",
+  "title": "MBR (Master Boot Record) partition table",
+  "summary": "The MBR is the first 512 bytes of a disk. Contains: boot code (446 bytes), partition table (4 entries × 16 bytes = 64 bytes), and signature 0x55AA (2 bytes). Each partition entry: status (1), start CHS (3), type (1), end CHS (3), start LBA (4), size in sectors (4).",
+  "kind": "wire-format",
+  "aliases": [
+    "MBR (Master Boot Record) partition table"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Master_boot_record",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "MBR (IBM PC, 1983)",
+    "summary": "The MBR is the first 512 bytes of a disk. Contains: boot code (446 bytes), partition table (4 entries × 16 bytes = 64 bytes), and signature 0x55AA (2 bytes). Each partition entry: status (1), start CHS (3), type (1), end CHS (3), start LBA (4), size in sectors (4).",
+    "structure": [
+      {
+        "field": "Boot code",
+        "size": "446 bytes",
+        "meaning": "x86 machine code executed by BIOS. Loads the active partition's boot sector."
+      },
+      {
+        "field": "Partition 1",
+        "size": "16 bytes",
+        "meaning": "Status (0x80=active), start CHS (3), type (1), end CHS (3), start LBA (4), size (4)."
+      },
+      {
+        "field": "Partition 2",
+        "size": "16 bytes",
+        "meaning": "Same format."
+      },
+      {
+        "field": "Partition 3",
+        "size": "16 bytes",
+        "meaning": "Same format."
+      },
+      {
+        "field": "Partition 4",
+        "size": "16 bytes",
+        "meaning": "Same format. (Extended partitions use type 0x05/0x0F.)"
+      },
+      {
+        "field": "Signature",
+        "size": "2 bytes",
+        "meaning": "0x55 0xAA (magic number at offset 510-511)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "MBR (placeholder)",
+    "notes": [
+      "MBR supports max 4 primary partitions (or 3 primary + 1 extended).",
+      "MBR uses 32-bit LBA → max 2TB disk size.",
+      "MBR is being replaced by GPT (GUID Partition Table) for modern systems.",
+      "The active partition's boot sector is loaded at 0x7C00 and executed.",
+      "MBR partition types: 0x07 (NTFS), 0x0B/0x0C (FAT32), 0x05/0x0F (extended), 0x83 (Linux), 0x82 (Linux swap), 0xEE (GPT protective)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

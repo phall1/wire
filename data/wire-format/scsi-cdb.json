@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/scsi-cdb",
+  "family": "wire-format",
+  "slug": "scsi-cdb",
+  "title": "SCSI CDB (Command Descriptor Block)",
+  "summary": "A SCSI CDB is the command structure used to communicate with SCSI devices. CDB sizes: 6, 10, 12, 16, or 32 bytes. Common commands: 0x00 TEST UNIT READY, 0x03 REQUEST SENSE, 0x12 INQUIRY, 0x1A MODE SENSE (6), 0x25 READ CAPACITY (10), 0x28 READ (10), 0x2A WRITE (10), 0x35 SYNCHRONIZE CACHE, 0x4D LOG SENSE, 0xA0 REPORT LUNS, 0x88 READ (16), 0x8A WRITE (16), 0x9E READ CAPACITY (16).",
+  "kind": "wire-format",
+  "aliases": [
+    "SCSI CDB (Command Descriptor Block)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/SCSI",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "SCSI specification",
+    "summary": "A SCSI CDB is the command structure used to communicate with SCSI devices. CDB sizes: 6, 10, 12, 16, or 32 bytes. Common commands: 0x00 TEST UNIT READY, 0x03 REQUEST SENSE, 0x12 INQUIRY, 0x1A MODE SENSE (6), 0x25 READ CAPACITY (10), 0x28 READ (10), 0x2A WRITE (10), 0x35 SYNCHRONIZE CACHE, 0x4D LOG SENSE, 0xA0 REPORT LUNS, 0x88 READ (16), 0x8A WRITE (16), 0x9E READ CAPACITY (16).",
+    "structure": [
+      {
+        "field": "6-byte CDB",
+        "size": "6 bytes",
+        "meaning": "Opcode (1) + LUN (3 bits) + flags (5 bits) + LBA/params (3 bytes) + transfer length (1 byte) + control (1 byte). Used for simple commands (TEST UNIT READY, REQUEST SENSE, INQUIRY, READ/WRITE 6)."
+      },
+      {
+        "field": "10-byte CDB",
+        "size": "10 bytes",
+        "meaning": "Opcode (1) + flags/LUN (1) + LBA (4) + reserved (1) + transfer length (2) + control (1). Used for READ (10), WRITE (10), READ CAPACITY (10)."
+      },
+      {
+        "field": "12-byte CDB",
+        "size": "12 bytes",
+        "meaning": "Opcode (1) + flags (1) + LBA (4) + transfer length (4) + reserved (1) + control (1). Used for READ (12), WRITE (12)."
+      },
+      {
+        "field": "16-byte CDB",
+        "size": "16 bytes",
+        "meaning": "Opcode (1) + flags (1) + LBA (8) + transfer length (4) + reserved (1) + control (1). Used for READ (16), WRITE (16), READ CAPACITY (16)."
+      },
+      {
+        "field": "Opcode",
+        "size": "1 byte",
+        "meaning": "Command code: 0x00 TEST UNIT READY, 0x03 REQUEST SENSE, 0x12 INQUIRY, 0x1A MODE SENSE, 0x25 READ CAPACITY (10), 0x28 READ (10), 0x2A WRITE (10), 0x35 SYNCHRONIZE CACHE, 0x88 READ (16), 0x8A WRITE (16), 0x9E READ CAPACITY (16), 0xA0 REPORT LUNS."
+      },
+      {
+        "field": "Control byte",
+        "size": "1 byte",
+        "meaning": "Bit 0 = linked command, bit 1 = (obsolete), bits 2-4 = task attribute (simple, ordered, head of queue, ACA), bits 5-7 = (reserved/NACA)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00 00 00",
+    "example_decoded": "SCSI CDB (placeholder)",
+    "notes": [
+      "SCSI is used for storage (SATA, SAS, USB mass storage, iSCSI).",
+      "ATAPI uses SCSI CDBs over ATA interface.",
+      "USB mass storage uses SCSI CDBs (Bulk-Only Transport).",
+      "NVMe replaces SCSI for SSDs (lower latency, higher IOPS).",
+      "iSCSI carries SCSI CDBs over TCP/IP."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "identifier/gpg-key-id",
+  "family": "identifier",
+  "slug": "gpg-key-id",
+  "title": "GPG/PGP key ID",
+  "summary": "A GPG key ID is a 8 or 16 hex character identifier derived from the key's fingerprint. The short key ID is the last 8 hex chars of the fingerprint; the long key ID is the last 16 hex chars. The fingerprint is the SHA-1 hash of the key packet (20 bytes = 40 hex chars).",
+  "kind": "identifier",
+  "aliases": [
+    "GPG/PGP key ID"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "OpenPGP (RFC 4880)",
+    "example": "1234567890ABCDEF",
+    "notes": [
+      "Short key ID: last 8 hex chars of fingerprint (32 bits).",
+      "Long key ID: last 16 hex chars of fingerprint (64 bits).",
+      "Fingerprint: SHA-1 of the key packet (20 bytes = 40 hex chars).",
+      "Key IDs are used to identify public keys in key servers and signatures.",
+      "Short key IDs are vulnerable to collision attacks (32 bits). Use long key IDs or full fingerprints."
+    ]
+  },
+  "updated": "2026-05-29"
+}

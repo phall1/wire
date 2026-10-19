@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/ata-command",
+  "family": "wire-format",
+  "slug": "ata-command",
+  "title": "ATA (IDE) command block",
+  "summary": "ATA (Advanced Technology Attachment) command block: 8 registers (Data, Error/Features, Sector Count, LBA Low/Mid/High, Device/Head, Command/Status). Commands: 0x20 READ SECTORS, 0x24 READ SECTORS EXT (48-bit), 0x30 WRITE SECTORS, 0x34 WRITE SECTORS EXT, 0xEC IDENTIFY DEVICE, 0xEF SET FEATURES, 0xE0 STANDBY IMMEDIATE, 0xE1 IDLE IMMEDIATE, 0xE3 IDLE, 0xE5 CHECK POWER MODE, 0xF8 READ NATIVE MAX ADDRESS EXT, 0x27 READ NATIVE MAX ADDRESS.",
+  "kind": "wire-format",
+  "aliases": [
+    "ATA (IDE) command block"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Parallel_ATA",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "ATA/ATAPI specification",
+    "summary": "ATA (Advanced Technology Attachment) command block: 8 registers (Data, Error/Features, Sector Count, LBA Low/Mid/High, Device/Head, Command/Status). Commands: 0x20 READ SECTORS, 0x24 READ SECTORS EXT (48-bit), 0x30 WRITE SECTORS, 0x34 WRITE SECTORS EXT, 0xEC IDENTIFY DEVICE, 0xEF SET FEATURES, 0xE0 STANDBY IMMEDIATE, 0xE1 IDLE IMMEDIATE, 0xE3 IDLE, 0xE5 CHECK POWER MODE, 0xF8 READ NATIVE MAX ADDRESS EXT, 0x27 READ NATIVE MAX ADDRESS.",
+    "structure": [
+      {
+        "field": "Data register",
+        "size": "2 bytes (16-bit)",
+        "meaning": "Data transfer (read/write 16-bit words)."
+      },
+      {
+        "field": "Error/Features",
+        "size": "1 byte",
+        "meaning": "Error (read) / Features (write): 0x02 (enable write cache), 0x03 (set transfer mode), 0x82 (disable write cache), 0x85 (disable APM), 0x86 (disable AAM)."
+      },
+      {
+        "field": "Sector Count",
+        "size": "1 byte (8-bit) or 2 bytes (48-bit)",
+        "meaning": "Number of sectors to transfer (0 = 256 for 8-bit, 0 = 65536 for 48-bit)."
+      },
+      {
+        "field": "LBA Low/Mid/High",
+        "size": "3 bytes (28-bit) or 6 bytes (48-bit)",
+        "meaning": "Logical Block Address. 28-bit LBA = 2^28 sectors = 128GB. 48-bit LBA = 2^48 sectors = 128PB."
+      },
+      {
+        "field": "Device/Head",
+        "size": "1 byte",
+        "meaning": "Bit 4 = device (0=master, 1=slave). Bit 6 = LBA mode. Bits 0-3 = head (CHS mode)."
+      },
+      {
+        "field": "Command/Status",
+        "size": "1 byte",
+        "meaning": "Command (write): 0x20 READ, 0x24 READ EXT, 0x30 WRITE, 0x34 WRITE EXT, 0xEC IDENTIFY, 0xEF SET FEATURES. Status (read): BSY (busy), DRDY (ready), DRQ (data request), ERR (error), etc."
+      },
+      {
+        "field": "IDENTIFY DEVICE",
+        "size": "command 0xEC",
+        "meaning": "Returns 256 words (512 bytes) of device info: model, serial, capacity, supported features, etc."
+      }
+    ],
+    "example_hex": "ec 00 00 00 00 00 00 00",
+    "example_decoded": "ATA: IDENTIFY DEVICE command (0xEC)",
+    "notes": [
+      "ATA (IDE) is the legacy interface for hard drives and optical drives.",
+      "ATA uses I/O ports 0x1F0-0x1F7 (primary) and 0x170-0x177 (secondary).",
+      "ATAPI (ATA Packet Interface) is used for CD/DVD drives (SCSI commands over ATA).",
+      "ATA is being replaced by SATA (serial) and NVMe.",
+      "IDENTIFY DEVICE returns model number, serial number, total sectors, supported features, etc."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/ioapic-redirection",
+  "family": "wire-format",
+  "slug": "ioapic-redirection",
+  "title": "I/O APIC redirection table entry",
+  "summary": "An I/O APIC redirection table entry (RTE) is 8 bytes (64 bits). It routes an external interrupt to a CPU. Fields: vector (8 bits), delivery mode (3 bits: fixed, lowest priority, SMI, NMI, INIT, ExtINT), destination mode (physical/logical), delivery status (idle/pending), polarity (active high/low), remote IRR (for level-triggered), trigger mode (edge/level), mask (disabled/enabled), destination (8 bits = APIC ID or logical ID).",
+  "kind": "wire-format",
+  "aliases": [
+    "I/O APIC redirection table entry"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Intel_8259",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel I/O APIC",
+    "summary": "An I/O APIC redirection table entry (RTE) is 8 bytes (64 bits). It routes an external interrupt to a CPU. Fields: vector (8 bits), delivery mode (3 bits: fixed, lowest priority, SMI, NMI, INIT, ExtINT), destination mode (physical/logical), delivery status (idle/pending), polarity (active high/low), remote IRR (for level-triggered), trigger mode (edge/level), mask (disabled/enabled), destination (8 bits = APIC ID or logical ID).",
+    "structure": [
+      {
+        "field": "Vector",
+        "size": "8 bits",
+        "meaning": "Interrupt vector (0-255). Delivered to the CPU."
+      },
+      {
+        "field": "Delivery mode",
+        "size": "3 bits",
+        "meaning": "000 fixed, 001 lowest priority, 010 SMI, 011 reserved, 100 NMI, 101 INIT, 110 reserved, 111 ExtINT."
+      },
+      {
+        "field": "Destination mode",
+        "size": "1 bit",
+        "meaning": "0 = physical (destination = APIC ID), 1 = logical (destination = logical ID)."
+      },
+      {
+        "field": "Delivery status",
+        "size": "1 bit",
+        "meaning": "0 = idle, 1 = send pending (for level-triggered)."
+      },
+      {
+        "field": "Polarity",
+        "size": "1 bit",
+        "meaning": "0 = active high, 1 = active low."
+      },
+      {
+        "field": "Remote IRR",
+        "size": "1 bit",
+        "meaning": "For level-triggered: 1 = interrupt received, not yet EOI'd."
+      },
+      {
+        "field": "Trigger mode",
+        "size": "1 bit",
+        "meaning": "0 = edge-triggered, 1 = level-triggered."
+      },
+      {
+        "field": "Mask",
+        "size": "1 bit",
+        "meaning": "1 = interrupt masked (disabled)."
+      },
+      {
+        "field": "Destination",
+        "size": "8 bits",
+        "meaning": "APIC ID (physical mode) or logical ID (logical mode)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "I/O APIC RTE (placeholder)",
+    "notes": [
+      "I/O APIC replaces the 8259 PIC for routing external interrupts.",
+      "Each IRQ has a redirection table entry (RTE).",
+      "Level-triggered interrupts require EOI to clear the remote IRR bit.",
+      "I/O APIC supports up to 24 IRQs (or more on some systems).",
+      "MSI/MSI-X bypasses I/O APIC (device writes directly to local APIC)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

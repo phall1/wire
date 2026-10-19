@@ -1,0 +1,94 @@
+{
+  "id": "wire-format/sd-card-protocol",
+  "family": "wire-format",
+  "slug": "sd-card-protocol",
+  "title": "SD card protocol",
+  "summary": "SD cards use SPI or SD bus (1-bit or 4-bit). Initialization: CMD0 (GO_IDLE_STATE), CMD8 (SEND_IF_COND), ACMD41 (SD_SEND_OP_COND), CMD2 (ALL_SEND_CID), CMD3 (SEND_RELATIVE_ADDR), CMD9 (SEND_CSD), CMD7 (SELECT_CARD). Data transfer: CMD17 (READ_SINGLE_BLOCK), CMD18 (READ_MULTIPLE_BLOCK), CMD24 (WRITE_SINGLE_BLOCK), CMD25 (WRITE_MULTIPLE_BLOCK). Status: R1 (1 byte), R3 (5 bytes, for ACMD41), R7 (5 bytes, for CMD8).",
+  "kind": "wire-format",
+  "aliases": [
+    "SD card protocol"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/SD_card",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "SD card specification",
+    "summary": "SD cards use SPI or SD bus (1-bit or 4-bit). Initialization: CMD0 (GO_IDLE_STATE), CMD8 (SEND_IF_COND), ACMD41 (SD_SEND_OP_COND), CMD2 (ALL_SEND_CID), CMD3 (SEND_RELATIVE_ADDR), CMD9 (SEND_CSD), CMD7 (SELECT_CARD). Data transfer: CMD17 (READ_SINGLE_BLOCK), CMD18 (READ_MULTIPLE_BLOCK), CMD24 (WRITE_SINGLE_BLOCK), CMD25 (WRITE_MULTIPLE_BLOCK). Status: R1 (1 byte), R3 (5 bytes, for ACMD41), R7 (5 bytes, for CMD8).",
+    "structure": [
+      {
+        "field": "CMD0 (GO_IDLE_STATE)",
+        "size": "6 bytes",
+        "meaning": "0x40 + arg (0) + CRC. Puts card in idle state."
+      },
+      {
+        "field": "CMD8 (SEND_IF_COND)",
+        "size": "6 bytes",
+        "meaning": "0x48 + arg (voltage + check pattern). Checks if card supports 3.3V and returns echo."
+      },
+      {
+        "field": "ACMD41 (SD_SEND_OP_COND)",
+        "size": "6 bytes",
+        "meaning": "0x69 (CMD41 with APP_CMD prefix 0x37). Initializes card. Arg: host capacity support (HCS) + voltage window."
+      },
+      {
+        "field": "CMD2 (ALL_SEND_CID)",
+        "size": "6 bytes",
+        "meaning": "0x42 + arg (0). Returns CID (Card ID, 128 bits)."
+      },
+      {
+        "field": "CMD3 (SEND_RELATIVE_ADDR)",
+        "size": "6 bytes",
+        "meaning": "0x43 + arg (0). Returns RCA (Relative Card Address, 16 bits)."
+      },
+      {
+        "field": "CMD9 (SEND_CSD)",
+        "size": "6 bytes",
+        "meaning": "0x49 + arg (RCA). Returns CSD (Card Specific Data, 128 bits: capacity, speed, etc.)."
+      },
+      {
+        "field": "CMD7 (SELECT_CARD)",
+        "size": "6 bytes",
+        "meaning": "0x47 + arg (RCA). Selects card for data transfer."
+      },
+      {
+        "field": "CMD17 (READ_SINGLE_BLOCK)",
+        "size": "6 bytes",
+        "meaning": "0x51 + arg (block address). Reads one 512-byte block."
+      },
+      {
+        "field": "CMD24 (WRITE_SINGLE_BLOCK)",
+        "size": "6 bytes",
+        "meaning": "0x58 + arg (block address). Writes one 512-byte block."
+      },
+      {
+        "field": "R1 (response)",
+        "size": "1 byte",
+        "meaning": "Status: in_idle_state, erase_reset, illegal_command, crc_error, erase_sequence_error, address_error, parameter_error."
+      },
+      {
+        "field": "CSD (Card Specific Data)",
+        "size": "16 bytes",
+        "meaning": "Capacity, max speed, read/write block sizes, erase sizes, etc."
+      },
+      {
+        "field": "CID (Card ID)",
+        "size": "16 bytes",
+        "meaning": "Manufacturer ID, OEM ID, product name, product revision, serial number, manufacturing date."
+      }
+    ],
+    "example_hex": "40 00 00 00 00 95",
+    "example_decoded": "SD card: CMD0 (GO_IDLE_STATE) with CRC 0x95",
+    "notes": [
+      "SD cards use SPI mode (1-bit) or SD mode (1-bit/4-bit).",
+      "SD cards support up to 2TB (SDXC) or 32GB (SDHC).",
+      "SD card initialization takes ~1-2 seconds (ACMD41 polling).",
+      "SD cards have wear leveling and bad block management internally.",
+      "SD cards are used in cameras, phones, Raspberry Pi, and many embedded systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

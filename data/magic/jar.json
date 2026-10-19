@@ -1,0 +1,37 @@
+{
+  "id": "magic/jar",
+  "family": "magic",
+  "slug": "jar",
+  "title": "JAR (Java Archive) signature",
+  "summary": "A JAR file is a ZIP archive containing Java classes, resources, and a manifest (META-INF/MANIFEST.MF). The magic is the standard ZIP signature 0x50 0x4B 0x03 0x04.",
+  "kind": "signature",
+  "aliases": [
+    "jar magic",
+    ".jar"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "50 4B 03 04",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "jar"
+    ],
+    "mime": "application/java-archive",
+    "spec": "JAR (Java)",
+    "notes": [
+      "ZIP magic: 0x50 0x4B 0x03 0x04.",
+      "JAR contains: *.class files, META-INF/MANIFEST.MF, resources.",
+      "MANIFEST.MF contains metadata: Main-Class, Class-Path, etc.",
+      "JAR is used for Java applications and libraries."
+    ]
+  },
+  "updated": "2026-05-29"
+}

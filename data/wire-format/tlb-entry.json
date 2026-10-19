@@ -1,0 +1,79 @@
+{
+  "id": "wire-format/tlb-entry",
+  "family": "wire-format",
+  "slug": "tlb-entry",
+  "title": "TLB (Translation Lookaside Buffer) entry",
+  "summary": "A TLB entry caches a virtual-to-physical address translation. Format (x86-64): VPN (virtual page number, 36-48 bits), PFN (physical frame number, 40 bits), flags (valid, dirty, accessed, global, ASID/PCID, permissions). TLB is fully associative or set-associative. On miss: page table walk (4 levels, ~100 cycles). On hit: ~1 cycle.",
+  "kind": "wire-format",
+  "aliases": [
+    "TLB (Translation Lookaside Buffer) entry"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Translation_lookaside_buffer",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "TLB (Translation Lookaside Buffer)",
+    "summary": "A TLB entry caches a virtual-to-physical address translation. Format (x86-64): VPN (virtual page number, 36-48 bits), PFN (physical frame number, 40 bits), flags (valid, dirty, accessed, global, ASID/PCID, permissions). TLB is fully associative or set-associative. On miss: page table walk (4 levels, ~100 cycles). On hit: ~1 cycle.",
+    "structure": [
+      {
+        "field": "Virtual Page Number (VPN)",
+        "size": "36-48 bits",
+        "meaning": "High bits of the virtual address (page number)."
+      },
+      {
+        "field": "Physical Frame Number (PFN)",
+        "size": "40 bits",
+        "meaning": "High bits of the physical address (frame number)."
+      },
+      {
+        "field": "Valid",
+        "size": "1 bit",
+        "meaning": "1 = entry is valid."
+      },
+      {
+        "field": "Dirty",
+        "size": "1 bit",
+        "meaning": "1 = page has been written to."
+      },
+      {
+        "field": "Accessed",
+        "size": "1 bit",
+        "meaning": "1 = page has been accessed."
+      },
+      {
+        "field": "Global",
+        "size": "1 bit",
+        "meaning": "1 = global page (not flushed on CR3 reload). Requires CR4.PGE."
+      },
+      {
+        "field": "ASID/PCID",
+        "size": "12 bits (PCID)",
+        "meaning": "Process-Context ID. Tags TLB entries to avoid flushes on context switch."
+      },
+      {
+        "field": "Permissions",
+        "size": "3 bits",
+        "meaning": "R/W/X (read/write/execute). Checked on every access."
+      },
+      {
+        "field": "Page size",
+        "size": "encoding",
+        "meaning": "4KB, 2MB, or 1GB. Encoded in the TLB entry or determined by page table level."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "TLB entry (placeholder)",
+    "notes": [
+      "TLB is the most critical structure for memory performance. A TLB miss costs ~100 cycles (page table walk).",
+      "L1 TLB: 32-64 entries, fully associative, 1-cycle hit. L2 TLB: 512-2048 entries, 4-8 way set-associative.",
+      "PCID (Process-Context ID) avoids TLB flushes on context switch (CR3 reload).",
+      "INVLPG invalidates a single TLB entry. MOV CR3 flushes all (or PCID-tagged entries).",
+      "Huge pages (2MB/1GB) reduce TLB pressure (fewer entries needed)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

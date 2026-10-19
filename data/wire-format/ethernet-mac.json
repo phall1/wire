@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/ethernet-mac",
+  "family": "wire-format",
+  "slug": "ethernet-mac",
+  "title": "Ethernet MAC frame",
+  "summary": "An Ethernet II (DIX) frame: 6-byte destination MAC, 6-byte source MAC, 2-byte EtherType (or length for 802.3), payload (46-1500 bytes), and 4-byte FCS (CRC-32). Minimum frame (without FCS) is 64 bytes; maximum is 1518 (1522 with 802.1Q VLAN tag).",
+  "kind": "wire-format",
+  "aliases": [
+    "Ethernet MAC frame"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Ethernet_frame",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "IEEE 802.3",
+    "summary": "An Ethernet II (DIX) frame: 6-byte destination MAC, 6-byte source MAC, 2-byte EtherType (or length for 802.3), payload (46-1500 bytes), and 4-byte FCS (CRC-32). Minimum frame (without FCS) is 64 bytes; maximum is 1518 (1522 with 802.1Q VLAN tag).",
+    "structure": [
+      {
+        "field": "Destination MAC",
+        "size": "6 bytes",
+        "meaning": "Target MAC address (or broadcast FF:FF:FF:FF:FF:FF, or multicast)."
+      },
+      {
+        "field": "Source MAC",
+        "size": "6 bytes",
+        "meaning": "Sender MAC address."
+      },
+      {
+        "field": "EtherType",
+        "size": "2 bytes",
+        "meaning": "Payload protocol: 0x0800 IPv4, 0x0806 ARP, 0x86DD IPv6, 0x8100 VLAN (802.1Q), 0x88CC LLDP, 0x8906 FCoE. Values ≥ 0x0600 = EtherType; < 0x0600 = 802.3 length."
+      },
+      {
+        "field": "Payload",
+        "size": "46-1500 bytes",
+        "meaning": "Upper-layer data. Padded to 46 bytes minimum (to ensure 64-byte minimum frame)."
+      },
+      {
+        "field": "FCS",
+        "size": "4 bytes",
+        "meaning": "CRC-32 (IEEE 802.3) over dst+src+type+payload. Computed by NIC."
+      },
+      {
+        "field": "VLAN tag (802.1Q)",
+        "size": "4 bytes (inserted)",
+        "meaning": "TPID 0x8100 + PCP (3 bits) + DEI (1 bit) + VID (12 bits). Inserted between src and EtherType."
+      },
+      {
+        "field": "Jumbo frame",
+        "size": "up to 9000 bytes",
+        "meaning": "Extended payload (up to 9000 bytes) for high-throughput networks. Not standardized but widely supported."
+      }
+    ],
+    "example_hex": "ff ff ff ff ff ff 00 11 22 33 44 55 08 00",
+    "example_decoded": "Ethernet frame: broadcast dst, src 00:11:22:33:44:55, EtherType 0x0800 (IPv4)",
+    "notes": [
+      "Ethernet uses CSMA/CD (half-duplex) or full-duplex (switched).",
+      "Minimum frame is 64 bytes (to detect collisions in half-duplex).",
+      "Maximum frame is 1518 bytes (1522 with VLAN).",
+      "Jumbo frames (up to 9000 bytes) reduce per-packet overhead for bulk transfer.",
+      "Ethernet is the dominant LAN technology (IEEE 802.3)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

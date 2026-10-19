@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/futex",
+  "family": "wire-format",
+  "slug": "futex",
+  "title": "Futex (Fast Userspace Mutex)",
+  "summary": "A futex is a Linux synchronization primitive: a 32-bit integer in user space. Operations: FUTEX_WAIT (if value == expected, sleep), FUTEX_WAKE (wake N waiters), FUTEX_WAIT_BITSET, FUTEX_WAKE_BITSET, FUTEX_REQUEUE (move waiters between futexes), FUTEX_CMP_REQUEUE, FUTEX_LOCK_PI (priority inheritance), FUTEX_UNLOCK_PI, FUTEX_TRYLOCK_PI, FUTEX_WAIT_REQUEUE_PI, FUTEX_CMP_REQUEUE_PI. The kernel is only involved on contention (slow path). Uncontended lock/unlock is pure userspace (atomic CAS).",
+  "kind": "wire-format",
+  "aliases": [
+    "Futex (Fast Userspace Mutex)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Futex",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Linux kernel (futex)",
+    "summary": "A futex is a Linux synchronization primitive: a 32-bit integer in user space. Operations: FUTEX_WAIT (if value == expected, sleep), FUTEX_WAKE (wake N waiters), FUTEX_WAIT_BITSET, FUTEX_WAKE_BITSET, FUTEX_REQUEUE (move waiters between futexes), FUTEX_CMP_REQUEUE, FUTEX_LOCK_PI (priority inheritance), FUTEX_UNLOCK_PI, FUTEX_TRYLOCK_PI, FUTEX_WAIT_REQUEUE_PI, FUTEX_CMP_REQUEUE_PI. The kernel is only involved on contention (slow path). Uncontended lock/unlock is pure userspace (atomic CAS).",
+    "structure": [
+      {
+        "field": "Futex word",
+        "size": "4 bytes (int32)",
+        "meaning": "The 32-bit integer in user space. Value semantics: 0 = unlocked, 1 = locked (no waiters), 2 = locked (has waiters)."
+      },
+      {
+        "field": "FUTEX_WAIT",
+        "size": "syscall",
+        "meaning": "If *addr == val, sleep. Returns 0 on wake, -EAGAIN if val changed, -EINTR if interrupted."
+      },
+      {
+        "field": "FUTEX_WAKE",
+        "size": "syscall",
+        "meaning": "Wake up to val waiters. Returns number woken."
+      },
+      {
+        "field": "FUTEX_REQUEUE",
+        "size": "syscall",
+        "meaning": "Move waiters from one futex to another. Used for condition variables (wake one, requeue rest)."
+      },
+      {
+        "field": "FUTEX_LOCK_PI",
+        "size": "syscall",
+        "meaning": "Lock with priority inheritance (real-time). Owner's priority is boosted to highest waiter's priority."
+      },
+      {
+        "field": "Fast path",
+        "size": "userspace",
+        "meaning": "Uncontended lock: atomic CAS (0→1). Uncontended unlock: atomic store (1→0). No syscall."
+      },
+      {
+        "field": "Slow path",
+        "size": "kernel",
+        "meaning": "Contention: syscall to kernel. Kernel maintains wait queue (rb-tree). Wakes waiters on unlock."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "Futex (placeholder)",
+    "notes": [
+      "Futexes are the foundation of all pthread synchronization (mutex, condvar, rwlock, barrier).",
+      "Uncontended futex operations are O(1) userspace (no syscall).",
+      "Contention requires a syscall (kernel wait queue).",
+      "FUTEX_LOCK_PI (priority inheritance) prevents priority inversion.",
+      "futex2 (Linux 5.16+) adds waitv (wait on multiple futexes) and timeout improvements."
+    ]
+  },
+  "updated": "2026-05-29"
+}

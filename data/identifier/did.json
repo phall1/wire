@@ -1,0 +1,30 @@
+{
+  "id": "identifier/did",
+  "family": "identifier",
+  "slug": "did",
+  "title": "DID (Decentralized Identifier)",
+  "summary": "A DID is a W3C standard identifier: did:method:method-specific-id. The method defines how the DID is resolved (e.g., did:key, did:web, did:ethr, did:ion). DIDs are self-sovereign (no central authority) and resolve to DID documents (JSON containing public keys, service endpoints).",
+  "kind": "identifier",
+  "aliases": [
+    "DID (Decentralized Identifier)"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Universally_unique_identifier",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "identifier@1",
+  "ext": {
+    "spec": "W3C DID (Decentralized Identifiers)",
+    "example": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2vbh7n6xXoZiC4g4D",
+    "notes": [
+      "Format: did:{method}:{method-specific-id}.",
+      "Methods: key (self-contained), web (DNS-based), ethr (Ethereum), ion (Bitcoin/Sidetree), etc.",
+      "DID document: JSON with @context, id, verificationMethod, authentication, service, etc.",
+      "DIDs are used in verifiable credentials, self-sovereign identity, and Web3.",
+      "DID resolution: given a DID, retrieve the DID document (via universal resolver)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

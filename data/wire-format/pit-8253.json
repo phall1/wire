@@ -1,0 +1,74 @@
+{
+  "id": "wire-format/pit-8253",
+  "family": "wire-format",
+  "slug": "pit-8253",
+  "title": "PIT 8253/8254 (Programmable Interval Timer)",
+  "summary": "The PIT 8253/8254 is a 3-channel timer. Channel 0: system timer (IRQ0, 18.2 Hz default). Channel 1: DRAM refresh (legacy). Channel 2: speaker (tone generation). Each channel: 16-bit counter, 4 modes (mode 0: interrupt on terminal count, mode 2: rate generator, mode 3: square wave, mode 4: software triggered strobe). Control word: 0x43 (port 0x43). Counter access: 0x40 (ch0), 0x41 (ch1), 0x42 (ch2).",
+  "kind": "wire-format",
+  "aliases": [
+    "PIT 8253/8254 (Programmable Interval Timer)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Programmable_interval_timer",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel 8253/8254",
+    "summary": "The PIT 8253/8254 is a 3-channel timer. Channel 0: system timer (IRQ0, 18.2 Hz default). Channel 1: DRAM refresh (legacy). Channel 2: speaker (tone generation). Each channel: 16-bit counter, 4 modes (mode 0: interrupt on terminal count, mode 2: rate generator, mode 3: square wave, mode 4: software triggered strobe). Control word: 0x43 (port 0x43). Counter access: 0x40 (ch0), 0x41 (ch1), 0x42 (ch2).",
+    "structure": [
+      {
+        "field": "Control word",
+        "size": "1 byte (port 0x43)",
+        "meaning": "Bits 6-7: channel (00=ch0, 01=ch1, 10=ch2, 11=read-back). Bits 4-5: access mode (00=latch, 01=LSB, 10=MSB, 11=LSB then MSB). Bits 1-3: mode (000=mode 0, 010=mode 2, 011=mode 3, 100=mode 4). Bit 0: BCD (0=binary, 1=BCD)."
+      },
+      {
+        "field": "Counter (ch0)",
+        "size": "2 bytes (port 0x40)",
+        "meaning": "System timer. Default: 1193182 Hz / 65536 = 18.2 Hz. IRQ0."
+      },
+      {
+        "field": "Counter (ch1)",
+        "size": "2 bytes (port 0x41)",
+        "meaning": "DRAM refresh (legacy, unused on modern systems)."
+      },
+      {
+        "field": "Counter (ch2)",
+        "size": "2 bytes (port 0x42)",
+        "meaning": "Speaker. Connected to PC speaker via gate (port 0x61 bit 0/1)."
+      },
+      {
+        "field": "Mode 0",
+        "size": "mode",
+        "meaning": "Interrupt on terminal count: counter decrements to 0, then IRQ."
+      },
+      {
+        "field": "Mode 2",
+        "size": "mode",
+        "meaning": "Rate generator: periodic interrupts at counter rate."
+      },
+      {
+        "field": "Mode 3",
+        "size": "mode",
+        "meaning": "Square wave: 50% duty cycle. Used for speaker tone."
+      },
+      {
+        "field": "Mode 4",
+        "size": "mode",
+        "meaning": "Software triggered strobe: one-shot pulse on terminal count."
+      }
+    ],
+    "example_hex": "36 00",
+    "example_decoded": "PIT control word: channel 0, LSB+MSB, mode 3 (square wave), binary",
+    "notes": [
+      "PIT frequency: 1193182 Hz (3.579545 MHz / 3).",
+      "Default timer: 65536 ticks = 18.2 Hz (system tick for Linux/Windows).",
+      "PIT is legacy (replaced by HPET and TSC).",
+      "Channel 2 drives the PC speaker (beep).",
+      "Mode 3 (square wave) is used for generating tones (e.g., BIOS beep)."
+    ]
+  },
+  "updated": "2026-05-29"
+}

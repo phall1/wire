@@ -1,0 +1,39 @@
+{
+  "id": "magic/coff",
+  "family": "magic",
+  "slug": "coff",
+  "title": "COFF (Common Object File Format) signature",
+  "summary": "A COFF object file begins with a 20-byte header. The magic number (first 2 bytes) identifies the target machine: 0x014C (i386), 0x8664 (x86-64), 0x01C0 (ARM), 0x01C4 (ARM Thumb), 0xAA64 (ARM64), 0x0200 (IA-64), 0x0166 (MIPS R4000), 0x0520 (RISC-V 32-bit), 0x0560 (RISC-V 64-bit).",
+  "kind": "signature",
+  "aliases": [
+    "coff magic",
+    ".o",
+    ".obj"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "01 4C",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "o",
+      "obj"
+    ],
+    "mime": "application/x-coff",
+    "spec": "COFF",
+    "notes": [
+      "Magic varies by architecture: 0x014C (i386), 0x8664 (x86-64), 0xAA64 (ARM64), 0x0560 (RISC-V 64).",
+      "COFF header: Machine (2), NumberOfSections (2), TimeDateStamp (4), PointerToSymbolTable (4), NumberOfSymbols (4), SizeOfOptionalHeader (2), Characteristics (2).",
+      "COFF is used by Windows (PE is based on COFF) and some Unix systems.",
+      "ELF has largely replaced COFF on Unix-like systems."
+    ]
+  },
+  "updated": "2026-05-29"
+}

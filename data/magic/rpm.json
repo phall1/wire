@@ -1,0 +1,37 @@
+{
+  "id": "magic/rpm",
+  "family": "magic",
+  "slug": "rpm",
+  "title": "RPM (Red Hat Package Manager) signature",
+  "summary": "An RPM package begins with the 4-byte magic 0xED 0xAB 0xEE 0xDB followed by a 4-byte version (0x00030000 for RPM v3, 0x00040000 for v4).",
+  "kind": "signature",
+  "aliases": [
+    "rpm magic",
+    ".rpm"
+  ],
+  "status": "de-facto",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+  "source_version": "Wikipedia List of file signatures, retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "see_also": [],
+  "ext_type": "file-signature@1",
+  "ext": {
+    "magic_hex": "ED AB EE DB",
+    "offset": 0,
+    "magic_ascii": "",
+    "extensions": [
+      "rpm"
+    ],
+    "mime": "application/x-rpm",
+    "spec": "RPM",
+    "notes": [
+      "Magic: 0xED 0xAB 0xEE 0xDB.",
+      "Version: 0x00030000 (v3) or 0x00040000 (v4).",
+      "RPM uses cpio archive format with a lead, signature header, and header.",
+      "RPM is the package format for RHEL, Fedora, CentOS, openSUSE, etc."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "wire-format/vmcs",
+  "family": "wire-format",
+  "slug": "vmcs",
+  "title": "VMCS (Virtual Machine Control Structure)",
+  "summary": "The VMCS is the data structure used by Intel VT-x to control a virtual machine. It contains: guest state (registers, RIP, RSP, CR0-4, etc.), host state (registers to restore on VM exit), VM-execution controls (which events cause VM exits), VM-exit controls (what to save on exit), VM-entry controls (what to load on entry), and VM-exit information (reason, qualification). The VMCS is 4KB, accessed via VMREAD/VMWRITE instructions.",
+  "kind": "wire-format",
+  "aliases": [
+    "VMCS (Virtual Machine Control Structure)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/X86_virtualization",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Intel VT-x",
+    "summary": "The VMCS is the data structure used by Intel VT-x to control a virtual machine. It contains: guest state (registers, RIP, RSP, CR0-4, etc.), host state (registers to restore on VM exit), VM-execution controls (which events cause VM exits), VM-exit controls (what to save on exit), VM-entry controls (what to load on entry), and VM-exit information (reason, qualification). The VMCS is 4KB, accessed via VMREAD/VMWRITE instructions.",
+    "structure": [
+      {
+        "field": "Guest state",
+        "size": "variable",
+        "meaning": "Guest RIP, RSP, RFLAGS, CR0-4, DR7, segment registers, etc. Loaded on VM entry."
+      },
+      {
+        "field": "Host state",
+        "size": "variable",
+        "meaning": "Host RIP, RSP, CR0, CR3, CR4, etc. Loaded on VM exit."
+      },
+      {
+        "field": "VM-execution controls",
+        "size": "4 dwords",
+        "meaning": "Pin-based (external interrupts, NMI), primary processor-based (HLT, INVLPG, CR access, I/O, MSR, etc.), secondary processor-based (EPT, RDTSCP, VPID, etc.)."
+      },
+      {
+        "field": "VM-exit controls",
+        "size": "1 dword",
+        "meaning": "Save debug controls, save IA32_PAT, load IA32_PAT, save IA32_EFER, load IA32_EFER, etc."
+      },
+      {
+        "field": "VM-entry controls",
+        "size": "1 dword",
+        "meaning": "Load debug controls, IA32_PAT, IA32_EFER, inject event, etc."
+      },
+      {
+        "field": "VM-exit information",
+        "size": "variable",
+        "meaning": "Exit reason (16 bits), exit qualification (64 bits), guest linear address, guest physical address, etc."
+      },
+      {
+        "field": "EPT (Extended Page Tables)",
+        "size": "nested paging",
+        "meaning": "Guest physical → host physical translation. 4-level page table (like regular paging but for guest physical addresses)."
+      }
+    ],
+    "example_hex": "00 00 00 00",
+    "example_decoded": "VMCS (placeholder)",
+    "notes": [
+      "VMCS is used by KVM, Xen, Hyper-V, and VMware for hardware virtualization.",
+      "VMREAD/VMWRITE instructions access VMCS fields by encoding (field index).",
+      "EPT (Extended Page Tables) provides nested paging (guest physical → host physical).",
+      "VPID (Virtual Processor ID) tags TLB entries to avoid flushes on VM switch.",
+      "VT-x supports 2-level (VMX root/non-root) and EPT for memory virtualization."
+    ]
+  },
+  "updated": "2026-05-29"
+}

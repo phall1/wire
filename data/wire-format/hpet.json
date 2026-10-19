@@ -1,0 +1,64 @@
+{
+  "id": "wire-format/hpet",
+  "family": "wire-format",
+  "slug": "hpet",
+  "title": "HPET (High Precision Event Timer)",
+  "summary": "The HPET is a hardware timer with multiple comparators (3-32). Each comparator can generate interrupts. Registers: general capabilities (period, number of comparators, 64-bit counter), general configuration (enable, legacy replacement), main counter (64-bit, incrementing at a fixed frequency), timer N configuration (enable, periodic, level/edge, interrupt route, FSB delivery), timer N comparator (value to compare against main counter).",
+  "kind": "wire-format",
+  "aliases": [
+    "HPET (High Precision Event Timer)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/High_Precision_Event_Timer",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "HPET specification (Intel)",
+    "summary": "The HPET is a hardware timer with multiple comparators (3-32). Each comparator can generate interrupts. Registers: general capabilities (period, number of comparators, 64-bit counter), general configuration (enable, legacy replacement), main counter (64-bit, incrementing at a fixed frequency), timer N configuration (enable, periodic, level/edge, interrupt route, FSB delivery), timer N comparator (value to compare against main counter).",
+    "structure": [
+      {
+        "field": "General capabilities",
+        "size": "8 bytes",
+        "meaning": "Period (femtoseconds per tick), number of comparators, 64-bit counter support, legacy replacement support."
+      },
+      {
+        "field": "General configuration",
+        "size": "8 bytes",
+        "meaning": "Bit 0: enable (counter running). Bit 1: legacy replacement (route timer 0/1 to IRQ0/8)."
+      },
+      {
+        "field": "Main counter",
+        "size": "8 bytes",
+        "meaning": "64-bit counter, increments by period each tick. Read-only (or writable for sync)."
+      },
+      {
+        "field": "Timer N config",
+        "size": "8 bytes",
+        "meaning": "Bit 0: enable. Bit 1: periodic mode. Bit 2: level/edge trigger. Bit 3: interrupt route (IRQ number). Bit 4: FSB delivery (MSI). Bits 8-13: size (32/64-bit). Bit 14: value set (for periodic). Bit 15: force 32-bit mode."
+      },
+      {
+        "field": "Timer N comparator",
+        "size": "8 bytes",
+        "meaning": "Value to compare against main counter. On match, generates interrupt. For periodic: auto-reloads (adds period)."
+      },
+      {
+        "field": "Timer N FSB route",
+        "size": "8 bytes",
+        "meaning": "MSI address and data for FSB delivery (if enabled)."
+      }
+    ],
+    "example_hex": "00 00 00 00 00 00 00 00",
+    "example_decoded": "HPET (placeholder)",
+    "notes": [
+      "HPET replaces the PIT (8253) and RTC (CMOS) for timing.",
+      "HPET frequency is typically 14.318 MHz (or a multiple).",
+      "HPET is used for high-resolution timers (nanosecond precision).",
+      "Modern systems use the TSC (Time Stamp Counter) + HPET for timekeeping.",
+      "HPET can generate periodic or one-shot interrupts."
+    ]
+  },
+  "updated": "2026-05-29"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "wire-format/multiboot-header",
+  "family": "wire-format",
+  "slug": "multiboot-header",
+  "title": "Multiboot header (bootloader protocol)",
+  "summary": "The Multiboot specification defines a header that bootloaders (GRUB, etc.) look for in the first 8KB of a kernel image. Header: magic (0x1BADB002), flags (32 bits), checksum (32 bits, magic + flags + checksum = 0). Optional fields depending on flags: header_addr, load_addr, load_end_addr, bss_end_addr, entry_addr. Multiboot2 uses magic 0xE85250D6.",
+  "kind": "wire-format",
+  "aliases": [
+    "Multiboot header (bootloader protocol)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/Multiboot_specification",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "Multiboot specification (GNU)",
+    "summary": "The Multiboot specification defines a header that bootloaders (GRUB, etc.) look for in the first 8KB of a kernel image. Header: magic (0x1BADB002), flags (32 bits), checksum (32 bits, magic + flags + checksum = 0). Optional fields depending on flags: header_addr, load_addr, load_end_addr, bss_end_addr, entry_addr. Multiboot2 uses magic 0xE85250D6.",
+    "structure": [
+      {
+        "field": "Magic",
+        "size": "4 bytes",
+        "meaning": "0x1BADB002 (Multiboot 1) or 0xE85250D6 (Multiboot 2)."
+      },
+      {
+        "field": "Flags",
+        "size": "4 bytes",
+        "meaning": "Bit 0: page align, bit 1: memory info, bit 2: video mode, bit 16: address fields present."
+      },
+      {
+        "field": "Checksum",
+        "size": "4 bytes",
+        "meaning": "magic + flags + checksum = 0 (mod 2^32)."
+      },
+      {
+        "field": "Header address",
+        "size": "4 bytes (optional)",
+        "meaning": "Physical address of the multiboot header (if flags bit 16 set)."
+      },
+      {
+        "field": "Load address",
+        "size": "4 bytes (optional)",
+        "meaning": "Physical address to load the kernel."
+      },
+      {
+        "field": "Load end address",
+        "size": "4 bytes (optional)",
+        "meaning": "End of the loaded data."
+      },
+      {
+        "field": "BSS end address",
+        "size": "4 bytes (optional)",
+        "meaning": "End of BSS (uninitialized data). Kernel zeros this region."
+      },
+      {
+        "field": "Entry address",
+        "size": "4 bytes (optional)",
+        "meaning": "Entry point of the kernel (EIP to jump to)."
+      },
+      {
+        "field": "Mode type",
+        "size": "4 bytes (Multiboot 2)",
+        "meaning": "0 = protected mode (32-bit), 1 = long mode (64-bit)."
+      }
+    ],
+    "example_hex": "02 b0 ad 1b 03 00 00 00 fb 4f 54 e4",
+    "example_decoded": "Multiboot 1 header: magic 0x1BADB002, flags 3, checksum",
+    "notes": [
+      "Multiboot is used by GRUB, QEMU, and many bootloaders.",
+      "Multiboot 2 (magic 0xE85250D6) supports 64-bit kernels, UEFI, and more features.",
+      "The bootloader passes a multiboot info structure to the kernel (memory map, modules, etc.).",
+      "Multiboot is the standard for hobbyist OS development."
+    ]
+  },
+  "updated": "2026-05-29"
+}

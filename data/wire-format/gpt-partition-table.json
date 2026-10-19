@@ -1,0 +1,109 @@
+{
+  "id": "wire-format/gpt-partition-table",
+  "family": "wire-format",
+  "slug": "gpt-partition-table",
+  "title": "GPT (GUID Partition Table)",
+  "summary": "GPT is the modern partition scheme. Layout: protective MBR (LBA 0), primary GPT header (LBA 1), partition entries (LBA 2-33, 128 entries × 128 bytes), data partitions, secondary partition entries, secondary GPT header (last LBA). GPT header: signature 'EFI PART' (8 bytes), revision (4), header size (4), CRC32 (4), reserved (4), current LBA (8), backup LBA (8), first usable LBA (8), last usable LBA (8), disk GUID (16), partition entries start LBA (8), number of entries (4), size of entry (4), CRC32 of entries (4).",
+  "kind": "wire-format",
+  "aliases": [
+    "GPT (GUID Partition Table)"
+  ],
+  "status": "standard",
+  "verification": "verified",
+  "tier": "B",
+  "source_url": "https://en.wikipedia.org/wiki/GUID_Partition_Table",
+  "source_version": "retrieved 2026-05-29",
+  "retrieved_date": "2026-05-29",
+  "ext_type": "wire-format@1",
+  "ext": {
+    "spec": "UEFI specification",
+    "summary": "GPT is the modern partition scheme. Layout: protective MBR (LBA 0), primary GPT header (LBA 1), partition entries (LBA 2-33, 128 entries × 128 bytes), data partitions, secondary partition entries, secondary GPT header (last LBA). GPT header: signature 'EFI PART' (8 bytes), revision (4), header size (4), CRC32 (4), reserved (4), current LBA (8), backup LBA (8), first usable LBA (8), last usable LBA (8), disk GUID (16), partition entries start LBA (8), number of entries (4), size of entry (4), CRC32 of entries (4).",
+    "structure": [
+      {
+        "field": "Protective MBR",
+        "size": "512 bytes (LBA 0)",
+        "meaning": "Legacy MBR with one partition of type 0xEE (GPT protective). Prevents old tools from misinterpreting the disk."
+      },
+      {
+        "field": "GPT header signature",
+        "size": "8 bytes",
+        "meaning": "'EFI PART' (0x45 0x46 0x49 0x20 0x50 0x41 0x52 0x54)."
+      },
+      {
+        "field": "Revision",
+        "size": "4 bytes",
+        "meaning": "0x00010000 (version 1.0)."
+      },
+      {
+        "field": "Header size",
+        "size": "4 bytes",
+        "meaning": "92 (0x5C)."
+      },
+      {
+        "field": "CRC32 (header)",
+        "size": "4 bytes",
+        "meaning": "CRC32 of the header (with this field zeroed during computation)."
+      },
+      {
+        "field": "Current LBA",
+        "size": "8 bytes",
+        "meaning": "LBA of this header."
+      },
+      {
+        "field": "Backup LBA",
+        "size": "8 bytes",
+        "meaning": "LBA of the backup (secondary) header."
+      },
+      {
+        "field": "First usable LBA",
+        "size": "8 bytes",
+        "meaning": "First LBA available for partitions."
+      },
+      {
+        "field": "Last usable LBA",
+        "size": "8 bytes",
+        "meaning": "Last LBA available for partitions."
+      },
+      {
+        "field": "Disk GUID",
+        "size": "16 bytes",
+        "meaning": "Unique identifier for the disk."
+      },
+      {
+        "field": "Partition entries start",
+        "size": "8 bytes",
+        "meaning": "LBA of the partition entry array."
+      },
+      {
+        "field": "Number of entries",
+        "size": "4 bytes",
+        "meaning": "Number of partition entries (default 128)."
+      },
+      {
+        "field": "Size of entry",
+        "size": "4 bytes",
+        "meaning": "Size of each partition entry (default 128 bytes)."
+      },
+      {
+        "field": "CRC32 (entries)",
+        "size": "4 bytes",
+        "meaning": "CRC32 of the partition entry array."
+      },
+      {
+        "field": "Partition entry",
+        "size": "128 bytes",
+        "meaning": "Type GUID (16), unique GUID (16), first LBA (8), last LBA (8), attributes (8), name (72 bytes, UTF-16LE)."
+      }
+    ],
+    "example_hex": "45 46 49 20 50 41 52 54",
+    "example_decoded": "GPT header signature: 'EFI PART'",
+    "notes": [
+      "GPT supports up to 128 partitions by default (configurable).",
+      "GPT uses 64-bit LBA → max 9.4 ZB (zettabytes) disk size.",
+      "GPT has a backup header at the end of the disk for recovery.",
+      "GPT partition types: C12A7328-F81F-11D2-BA4B-00A0C93EC93B (EFI System Partition), 0FC63DAF-8483-4772-8E79-3D69D8477DE4 (Linux filesystem), etc.",
+      "GPT is required for UEFI boot and disks > 2TB."
+    ]
+  },
+  "updated": "2026-05-29"
+}
